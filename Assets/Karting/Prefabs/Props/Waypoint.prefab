@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7806730790019359423}
   - component: {fileID: 8081237276967223477}
   - component: {fileID: 7162807340217979162}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Lane1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6850553478831941103}
-  m_Layer: 0
+  - component: {fileID: 2712598285713173431}
+  m_Layer: 14
   m_Name: Waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,6 +131,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2712598285713173431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456033693201064036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Trigger: {fileID: 7954928375381270080}
+  Lane1: {fileID: 7162807340217979162}
+  Lane2: {fileID: 3967334185714428553}
+  Lane3: {fileID: 2832910078839434777}
+  Lane4: {fileID: 8666022854890301565}
 --- !u!1 &2636524550627141768
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,7 +160,7 @@ GameObject:
   - component: {fileID: 7878225762419711965}
   - component: {fileID: 809215547340730202}
   - component: {fileID: 8666022854890301565}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Lane4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +255,7 @@ GameObject:
   - component: {fileID: 7289083250925430574}
   - component: {fileID: 151407766791804432}
   - component: {fileID: 7954928375381270080}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +350,7 @@ GameObject:
   - component: {fileID: 7287227031663786439}
   - component: {fileID: 5057618004266496390}
   - component: {fileID: 2832910078839434777}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Lane3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +445,7 @@ GameObject:
   - component: {fileID: 8502826420995107077}
   - component: {fileID: 674058467105092215}
   - component: {fileID: 3967334185714428553}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Lane2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

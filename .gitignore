@@ -72,3 +72,6 @@ crashlytics-build.properties
 
 WebGL Builds/
 .vsconfig
+
+# Python
+venv/

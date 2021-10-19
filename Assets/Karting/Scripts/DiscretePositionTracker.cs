@@ -1,3 +1,4 @@
+using KartGame.KartSystems;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +7,9 @@ using UnityEngine;
 
 public class DiscretePositionTracker : MonoBehaviour
 {
-
-    [Header("Player Colliders")]
-    [Tooltip("Oval Colliders of each Player's Car")]
-    public Collider Player1;
-    public Collider Player2;
+    [Header("Primary Trigger Box")]
+    [Tooltip("Collider of Trigger Box")]
+    public BoxCollider Trigger;
 
     [Header("Lane Markers")]
     [Tooltip("Boxes for each Lane")]
@@ -32,32 +31,52 @@ public class DiscretePositionTracker : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    public BoxCollider getBoxColliderForLane(int lane)
     {
-        if (other.Equals(Player1))
+        switch(lane)
         {
-            float distanceLane1 = Vector3.Distance(Player1.transform.position, Lane1.transform.position);
-            float distanceLane2 = Vector3.Distance(Player1.transform.position, Lane2.transform.position);
-            float distanceLane3 = Vector3.Distance(Player1.transform.position, Lane3.transform.position);
-            float distanceLane4 = Vector3.Distance(Player1.transform.position, Lane4.transform.position);
-            float min_distance = new float[] { distanceLane1, distanceLane2, distanceLane3, distanceLane4 }.Min();
-            if (min_distance == distanceLane1)
-            {
-                print("Closest to Lane 1");
-            } else if (min_distance == distanceLane2)
-            {
-                print("Closest to Lane 2");
-            } else if (min_distance == distanceLane3)
-            {
-                print("Closest to Lane 3");
-            } else if (min_distance == distanceLane4)
-            {
-                print("Closest to Lane 4");
-            } else
-            {
-                print("Error in determining Lane");
-            }
-
+            case 1: return Lane1;
+            case 2: return Lane2;
+            case 3: return Lane3;
+            case 4: return Lane4;
+            default:
+                print("Invalid lane number requested. Returning Trigger Box instead");
+                return Trigger;
         }
     }
+
+    public int CalculateLane(ArcadeKart player)
+    {
+        float distanceLane1 = Vector3.Distance(player.transform.position, Lane1.transform.position);
+        float distanceLane2 = Vector3.Distance(player.transform.position, Lane2.transform.position);
+        float distanceLane3 = Vector3.Distance(player.transform.position, Lane3.transform.position);
+        float distanceLane4 = Vector3.Distance(player.transform.position, Lane4.transform.position);
+        float min_distance = new float[] { distanceLane1, distanceLane2, distanceLane3, distanceLane4 }.Min();
+        if (min_distance == distanceLane1)
+        {
+            print("Closest to Lane 1");
+            return 1;
+        }
+        else if (min_distance == distanceLane2)
+        {
+            print("Closest to Lane 2");
+            return 2;
+        }
+        else if (min_distance == distanceLane3)
+        {
+            print("Closest to Lane 3");
+            return 3;
+        }
+        else if (min_distance == distanceLane4)
+        {
+            print("Closest to Lane 4");
+            return 4;
+        }
+        else
+        {
+            print("Error in determining Lane");
+            return -1;
+        }
+    }
+
 }

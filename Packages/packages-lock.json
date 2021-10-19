@@ -1,17 +1,19 @@
 {
   "dependencies": {
     "com.unity.barracuda": {
-      "version": "1.0.4",
-      "depth": 0,
+      "version": "2.0.0",
+      "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.3.4"
+        "com.unity.burst": "1.6.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.4.11",
-      "depth": 0,
+      "version": "1.6.0",
+      "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1"
@@ -99,16 +101,13 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "1.0.8",
+      "version": "2.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.barracuda": "1.0.4",
+        "com.unity.barracuda": "2.0.0",
         "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.physics2d": "1.0.0",
-        "com.unity.modules.unityanalytics": "1.0.0"
+        "com.unity.modules.jsonserialize": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },

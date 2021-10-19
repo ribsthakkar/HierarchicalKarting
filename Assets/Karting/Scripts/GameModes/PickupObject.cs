@@ -49,26 +49,26 @@ public class PickupObject : TargetObject
 
         Destroy(gameObject, collectDuration);
 
-        if(!(frontLeftWheel is null))
-        {
-            WheelFrictionCurve myWfc;
-            myWfc = frontLeftWheel.wheelCollider.sidewaysFriction;
-            myWfc.extremumSlip /= 2;
-            myWfc.asymptoteSlip /= 2;
-            frontLeftWheel.wheelCollider.sidewaysFriction = myWfc;
-            myWfc = frontRightWheel.wheelCollider.sidewaysFriction;
-            myWfc.extremumSlip /= 2;
-            myWfc.asymptoteSlip /= 2;
-            frontRightWheel.wheelCollider.sidewaysFriction = myWfc;
-            myWfc = rearLeftWheel.wheelCollider.sidewaysFriction;
-            myWfc.extremumSlip /= 2;
-            myWfc.asymptoteSlip /= 2;
-            rearLeftWheel.wheelCollider.sidewaysFriction = myWfc;
-            myWfc = rearRightWheel.wheelCollider.sidewaysFriction;
-            myWfc.extremumSlip /= 2;
-            myWfc.asymptoteSlip /= 2;
-            rearRightWheel.wheelCollider.sidewaysFriction = myWfc;
-        }
+       // if(!(frontLeftWheel is null))
+       // {
+       //     WheelFrictionCurve myWfc;
+       //     myWfc = frontLeftWheel.wheelCollider.sidewaysFriction;
+       //     myWfc.extremumSlip /= 2;
+        //    myWfc.asymptoteSlip /= 2;
+        //    frontLeftWheel.wheelCollider.sidewaysFriction = myWfc;
+        //    myWfc = frontRightWheel.wheelCollider.sidewaysFriction;
+          //  myWfc.extremumSlip /= 2;
+           // myWfc.asymptoteSlip /= 2;
+            //frontRightWheel.wheelCollider.sidewaysFriction = myWfc;
+           //myWfc = rearLeftWheel.wheelCollider.sidewaysFriction;
+            //myWfc.extremumSlip /= 2;
+            //myWfc.asymptoteSlip /= 2;
+            //rearLeftWheel.wheelCollider.sidewaysFriction = myWfc;
+            //myWfc = rearRightWheel.wheelCollider.sidewaysFriction;
+            //myWfc.extremumSlip /= 2;
+            //myWfc.asymptoteSlip /= 2;
+            //rearRightWheel.wheelCollider.sidewaysFriction = myWfc;
+        //}
     }
     
     void OnTriggerEnter(Collider other)
