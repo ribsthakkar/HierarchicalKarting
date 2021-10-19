@@ -325,7 +325,7 @@ namespace KartGame.AI
             {
                 case AgentMode.Training:
                     m_SectionIndex = Random.Range(0, Sections.Length - 1);
-                    var collider = Sections[m_SectionIndex];
+                    var collider = Sections[m_SectionIndex].Trigger;
                     transform.localRotation = collider.transform.rotation;
                     transform.position = collider.transform.position;
                     m_Kart.Rigidbody.velocity = default;
