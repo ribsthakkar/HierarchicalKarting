@@ -54,27 +54,27 @@ public class DiscretePositionTracker : MonoBehaviour
         float min_distance = new float[] { distanceLane1, distanceLane2, distanceLane3, distanceLane4 }.Min();
         if (min_distance == distanceLane1)
         {
-            print("Closest to Lane 1");
+          //  print("Closest to Lane 1");
             return 1;
         }
         else if (min_distance == distanceLane2)
         {
-            print("Closest to Lane 2");
+           // print("Closest to Lane 2");
             return 2;
         }
         else if (min_distance == distanceLane3)
         {
-            print("Closest to Lane 3");
+           // print("Closest to Lane 3");
             return 3;
         }
         else if (min_distance == distanceLane4)
         {
-            print("Closest to Lane 4");
+            //print("Closest to Lane 4");
             return 4;
         }
         else
         {
-            print("Error in determining Lane");
+            //print("Error in determining Lane");
             return -1;
         }
     }

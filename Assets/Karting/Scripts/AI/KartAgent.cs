@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 using System.Collections.Generic;
 using System;
 using Unity.MLAgents.Actuators;
+using System.Linq;
 
 namespace KartGame.AI
 {
@@ -44,28 +45,41 @@ namespace KartGame.AI
         [Tooltip("What is the initial checkpoint the agent will go to? This value is only for inferencing.")]
         public ushort InitCheckpointIndex;
 
-#endregion
 
-#region Senses
+        #endregion
+
+        #region Senses
         [Header("Observation Params")]
         [Tooltip("What objects should the raycasts hit and detect?")]
         public LayerMask Mask;
         [Tooltip("Sensors contain ray information to sense out the world, you can have as many sensors as you need.")]
         public Sensor[] Sensors;
-        [Header("Checkpoints"), Tooltip("What are the series of checkpoints for the agent to seek and pass through?")]
-        public DiscretePositionTracker[] Sections;
+        [Header("Opponents"), Tooltip("What are the other agents in the racing game?")]
+        public KartAgent[] otherAgents;
+
         [Tooltip("What layer are the checkpoints on? This should be an exclusive layer for the agent to use.")]
         public LayerMask CheckpointMask;
+        [Tooltip("What are the layers we want to detect for the track and the ground?")]
+        public LayerMask TrackMask;
+        [Tooltip("What are the layers we want to detect for other agents?")]
+        public LayerMask AgentMask;
+
 
         [Space]
         [Tooltip("Would the agent need a custom transform to be able to raycast and hit the track? " +
             "If not assigned, then the root transform will be used.")]
         public Transform AgentSensorTransform;
-#endregion
 
-#region Rewards
-        [Header("Rewards"), Tooltip("What penatly is given when the agent crashes?")]
-        public float HitPenalty = -1f;
+
+        #endregion
+
+        #region Rewards
+        [Header("Rewards"), Tooltip("What penatly is given when the agent crashes with a wall?")]
+        public float WallHitPenalty = -1f;
+        [Tooltip("What penatly is given when the agent crashes into another agent?")]
+        public float OpponentHitPenalty = -100f;
+        [Tooltip("What penatly is given when the agent is crashed by another agent?")]
+        public float HitByOpponentPenalty = -50f;
         [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
         public float PassCheckpointReward;
         [Tooltip("Should typically be a small value, but we reward the agent for moving in the right direction.")]
@@ -80,8 +94,6 @@ namespace KartGame.AI
         [Header("Inference Reset Params")]
         [Tooltip("What is the unique mask that the agent should detect when it falls out of the track?")]
         public LayerMask OutOfBoundsMask;
-        [Tooltip("What are the layers we want to detect for the track and the ground?")]
-        public LayerMask TrackMask;
         [Tooltip("How far should the ray be when casted? For larger karts - this value should be larger too.")]
         public float GroundCastDistance;
 #endregion
@@ -95,60 +107,34 @@ namespace KartGame.AI
         bool m_Acceleration;
         bool m_Brake;
         float m_Steering;
-        int m_SectionIndex;
+        public int m_SectionIndex;
         int m_Lane;
-        Dictionary<int, int> m_UpcomingLanes;
+        int m_LaneChanges;
+        public bool anyHit = false;
+        public int m_timeSteps = 0;
+        float LaneDifferenceRewardDivider = 1.0f;
+        public Dictionary<int, int> m_UpcomingLanes = new Dictionary<int, int>();
+        HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
 
-        bool m_EndEpisode;
+        bool m_HitOccured;
         float m_LastAccumulatedReward;
+        public RacingEnvController m_envController;
 
         void Awake()
         {
             m_Kart = GetComponent<ArcadeKart>();
             if (AgentSensorTransform == null) AgentSensorTransform = transform;
         }
-
         void Start()
-        {
-            // If the agent is training, then at the start of the simulation, pick a random checkpoint to train the agent.
-            OnEpisodeBegin();
-
+        {        
             if (Mode == AgentMode.Inferencing) m_SectionIndex = InitCheckpointIndex;
-            m_UpcomingLanes = new Dictionary<int, int>();
-            m_UpcomingLanes[0] = 2;
-            m_UpcomingLanes[1] = 2;
-            m_UpcomingLanes[2] = 2;
-            m_UpcomingLanes[3] = 2;
-            m_UpcomingLanes[4] = 2;
-            m_UpcomingLanes[5] = 2;
-            m_UpcomingLanes[6] = 2;
-            m_UpcomingLanes[7] = 2;
-            m_UpcomingLanes[8] = 2;
-            m_UpcomingLanes[9] = 2;
-            m_UpcomingLanes[10] = 2;
-            m_UpcomingLanes[11] = 2;
-            m_UpcomingLanes[12] = 2;
-            m_UpcomingLanes[13] = 2;
-            m_UpcomingLanes[14] = 2;
-            m_UpcomingLanes[15] = 2;
-            m_UpcomingLanes[16] = 2;
-            m_UpcomingLanes[17] = 2;
-            m_UpcomingLanes[18] = 2;
-            m_UpcomingLanes[19] = 2;
-            m_UpcomingLanes[20] = 2;
-            m_UpcomingLanes[21] = 2;
-            m_UpcomingLanes[22] = 2;
-            m_UpcomingLanes[23] = 2;
         }
 
-        void Update()
+        void FixedUpdate()
         {
-            if (m_EndEpisode)
+            if (m_HitOccured)
             {
-                m_EndEpisode = false;
-                AddReward(m_LastAccumulatedReward);
-                EndEpisode();
-                OnEpisodeBegin();
+                m_envController.ResolveEvent(Event.HitSomething, this, hitAgents);
             }
         }
 
@@ -165,7 +151,7 @@ namespace KartGame.AI
                         && ((1 << hit.collider.gameObject.layer) & OutOfBoundsMask) > 0)
                     {
                         // Reset the agent back to its last known agent checkpoint
-                        var checkpoint = Sections[m_SectionIndex].transform;
+                        var checkpoint = m_envController.Sections[m_SectionIndex].transform;
                         transform.localRotation = checkpoint.rotation;
                         transform.position = checkpoint.position;
                         m_Kart.Rigidbody.velocity = default;
@@ -185,14 +171,25 @@ namespace KartGame.AI
             FindSectionIndex(other, out var index, out var lane);
 
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_CheckpointIndex.
-            if (triggered > 0 && index > m_SectionIndex || index == 0 && m_SectionIndex == Sections.Length - 1)
+            if (triggered > 0 && index > m_SectionIndex || index == 0 && m_SectionIndex == m_envController.Sections.Length - 1)
             {
-                float LaneDifferenceDivider = 1.0f;
+                LaneDifferenceRewardDivider = 1.0f;
                 if (lane != -1)
                 {
-                    LaneDifferenceDivider = Math.Abs(lane - m_UpcomingLanes[index % Sections.Length])*1.0f;
+                    //var lines = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
+                   // print(string.Join(",", lines));
+                    //print(index);
+                    LaneDifferenceRewardDivider = Math.Abs(lane - m_UpcomingLanes[index % m_envController.Sections.Length])+1.0f;
                 }
-                AddReward(PassCheckpointReward/LaneDifferenceDivider);
+                m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
+                if (m_UpcomingLanes.Count == 0)
+                {
+                    m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
+                } 
+                else
+                {
+                    m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
+                }
                 m_SectionIndex = index;
                 m_Lane = lane;
             }
@@ -202,11 +199,11 @@ namespace KartGame.AI
         {
             for (int i = m_SectionIndex; i < m_SectionIndex + sectionHorizon; i++)
             {
-                if (Sections[i % Sections.Length].Trigger.GetInstanceID() == checkPointTrigger.GetInstanceID())
+                if (m_envController.Sections[i % m_envController.Sections.Length].Trigger.GetInstanceID() == checkPointTrigger.GetInstanceID())
                 {
                     index = i;
-                    print("Next Section" + index);
-                    lane = Sections[i % Sections.Length].CalculateLane(m_Kart);
+                    //print("Next Section" + index);
+                    lane = m_envController.Sections[i % m_envController.Sections.Length].CalculateLane(m_Kart);
                     return;
                 }
             }
@@ -229,17 +226,23 @@ namespace KartGame.AI
 
         public override void CollectObservations(VectorSensor sensor)
         {
+            //print("collecting observations");
+            // Add observation for agent state (Speed, acceleration, lane, recent lane changes)
             sensor.AddObservation(m_Kart.LocalSpeed());
+            sensor.AddObservation(m_Acceleration);
+            sensor.AddObservation(m_Lane);
+            sensor.AddObservation(m_LaneChanges);
+
+            // Add observation for opponent agent states (Speed, acceleration, lane, time diff to current section)
+
 
             // Add an observation for direction of the agent to the next checkpoint and lane.
-            var next = (m_SectionIndex + 1) % Sections.Length;
-            var nextSection = Sections[next];
+            var next = (m_SectionIndex + 1) % m_envController.Sections.Length;
+            var nextSection = m_envController.Sections[next];
             if (nextSection == null)
                 return;
-            //print(next);
-            //print(nextSection);
-            // print(m_UpcomingLanes[next]);
-            BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes[next]);
+
+            BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes.ContainsKey(next) ? m_UpcomingLanes[next] : Random.Range(1, 4));
             var direction = (targetLaneInSection.transform.position - m_Kart.transform.position).normalized;
             sensor.AddObservation(Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction));
 
@@ -247,13 +250,15 @@ namespace KartGame.AI
                 Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
 
             m_LastAccumulatedReward = 0.0f;
-            m_EndEpisode = false;
             for (var i = 0; i < Sensors.Length; i++)
             {
                 var current = Sensors[i];
                 var xform = current.Transform;
-                var hit = Physics.Raycast(AgentSensorTransform.position, xform.forward, out var hitInfo,
-                    current.RayDistance, Mask, QueryTriggerInteraction.Ignore);
+                var hitTrack = Physics.Raycast(AgentSensorTransform.position, xform.forward, out var hitTrackInfo,
+                    current.RayDistance, TrackMask, QueryTriggerInteraction.Ignore);
+
+                var hitAgent = Physics.Raycast(AgentSensorTransform.position, xform.forward, out var hitAgentInfo,
+                    current.RayDistance, AgentMask, QueryTriggerInteraction.Ignore);
 
                 if (ShowRaycasts)
                 {
@@ -261,26 +266,73 @@ namespace KartGame.AI
                     Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, 
                         Color.red);
 
-                    if (hit && hitInfo.distance < current.HitValidationDistance)
+                    if (hitTrack && hitTrackInfo.distance < current.HitValidationDistance && hitTrackInfo.distance < hitAgentInfo.distance)
                     {
-                        Debug.DrawRay(hitInfo.point, Vector3.up * 3.0f, Color.blue);
+                        Debug.DrawRay(hitTrackInfo.point, Vector3.up * 3.0f, Color.blue);
+                    }
+                    else if (hitAgent && hitAgentInfo.distance < current.HitValidationDistance)
+                    {
+                        Debug.DrawRay(hitAgentInfo.point, Vector3.up * 3.0f, Color.blue);
                     }
                 }
-
-                if (hit)
+                //print("TrackDist");
+                //print(hitTrackInfo.distance);
+                //print(hitTrack);
+                //print("AgentDist");
+                //print(hitAgentInfo.distance);
+                //print(hitAgent);
+                //print(current.HitValidationDistance);
+                if (hitTrack)
+                {                       
+                    if (hitTrackInfo.distance < current.HitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
+                    {
+                        //print("hit wall");
+                        m_HitOccured = true;
+                        m_LastAccumulatedReward += WallHitPenalty;
+                    }
+                    sensor.AddObservation(hitTrackInfo.distance);
+                }
+                else if (hitAgent)
                 {
-                    if (hitInfo.distance < current.HitValidationDistance)
+                    if (hitAgentInfo.distance < current.HitValidationDistance)
                     {
-                        m_LastAccumulatedReward += HitPenalty;
-                        m_EndEpisode = true;
+                        m_HitOccured = true;
+                        m_LastAccumulatedReward += OpponentHitPenalty;
+                        hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
                     }
+                    sensor.AddObservation(hitAgentInfo.distance);
                 }
-
-                sensor.AddObservation(hit ? hitInfo.distance : current.RayDistance);
+                else
+                {
+                    sensor.AddObservation(current.RayDistance);
+                }
             }
+        }
 
-            sensor.AddObservation(m_Acceleration);
-            sensor.AddObservation(m_Lane);
+
+
+        public void ApplyHitPenalty()
+        {
+            AddReward(WallHitPenalty);
+            m_LastAccumulatedReward = 0.0f;
+        }
+
+        public void ApplySectionReward()
+        {
+            AddReward(PassCheckpointReward/LaneDifferenceRewardDivider);
+        }
+
+        public void Deactivate()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void Activate()
+        {
+            m_LastAccumulatedReward = 0.0f;
+            m_timeSteps = 0;
+            m_HitOccured = false;
+            gameObject.SetActive(true);
         }
 
         public override void OnActionReceived(ActionBuffers actions)
@@ -289,8 +341,8 @@ namespace KartGame.AI
             InterpretDiscreteActions(actions);
 
             // Find the next checkpoint when registering the current checkpoint that the agent has passed.
-            var next = (m_SectionIndex + 1) % Sections.Length;
-            var nextCollider = Sections[next].getBoxColliderForLane(m_UpcomingLanes[next]);
+            var next = (m_SectionIndex + 1) % m_envController.Sections.Length;
+            var nextCollider = m_envController.Sections[next].getBoxColliderForLane(m_UpcomingLanes.ContainsKey(next) ? m_UpcomingLanes[next] : Random.Range(1, 4));
             var direction = (nextCollider.transform.position - m_Kart.transform.position).normalized;
             var reward = Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction);
 
@@ -321,13 +373,10 @@ namespace KartGame.AI
         }
         public override void OnEpisodeBegin()
         {
+            base.OnEpisodeBegin();
             switch (Mode)
             {
                 case AgentMode.Training:
-                    m_SectionIndex = Random.Range(0, Sections.Length - 1);
-                    var collider = Sections[m_SectionIndex].Trigger;
-                    transform.localRotation = collider.transform.rotation;
-                    transform.position = collider.transform.position;
                     m_Kart.Rigidbody.velocity = default;
                     m_Acceleration = false;
                     m_Brake = false;

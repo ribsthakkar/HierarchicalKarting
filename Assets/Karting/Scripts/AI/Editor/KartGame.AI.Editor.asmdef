@@ -1,7 +1,8 @@
 {
     "name": "KartGame.AI.Editor",
+    "rootNamespace": "",
     "references": [
-        "GUID:c3aefbb81b4ef42e58aa75666617a7b2"
+        "GUID:a54b96d5ddd2c488aadb7e2cb0921b9b"
     ],
     "includePlatforms": [
         "Editor"
@@ -12,5 +13,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }
