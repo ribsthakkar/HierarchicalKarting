@@ -20,6 +20,8 @@ public class RacingEnvController : MonoBehaviour
     public KartAgent[] Agents;
     [Header("Checkpoints"), Tooltip("What are the series of checkpoints for the agent to seek and pass through?")]
     public DiscretePositionTracker[] Sections;
+    [Tooltip("How many sections ahead should the agents be looking ahead/driving to")]
+    public int sectionHorizon;
 
     public Dictionary<Rigidbody, KartAgent> AgentBodies = new Dictionary<Rigidbody, KartAgent>();
     public HashSet<KartAgent> inactiveAgents = new HashSet<KartAgent>();
@@ -143,27 +145,63 @@ public class RacingEnvController : MonoBehaviour
         // For each agent
         var furthestForwardSection = -1;
         HashSet< Collider > addedColliders = new HashSet<Collider>();
+        bool headToHead = UnityEngine.Random.Range(0, 1) == 1;
+        var initialSection = -1;
         for (int i = 0; i < Agents.Length; i++)
         {
-            // Randomly Set Iniital Track Position
-            while (true)
+            if (!headToHead)
             {
-                Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
-                furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
-                var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
-                Agents[i].transform.localRotation = collider.transform.rotation;
-                Agents[i].transform.position = collider.transform.position;
-                Agents[i].m_UpcomingLanes.Clear();
-                if (!addedColliders.Contains(collider))
+                // Randomly Set Iniital Track Position
+                while (true)
                 {
+                    Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
+                    var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                    if (!addedColliders.Contains(collider))
+                    {
+                        furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                        Agents[i].transform.localRotation = collider.transform.rotation;
+                        Agents[i].transform.position = collider.transform.position;
+                        Agents[i].m_UpcomingLanes.Clear();
+                        addedColliders.Add(collider);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                if (addedColliders.Count == 0)
+                {
+                    Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
+                    initialSection = Agents[i].m_SectionIndex;
+                    furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                    var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                    Agents[i].transform.localRotation = collider.transform.rotation;
+                    Agents[i].transform.position = collider.transform.position;
+                    Agents[i].m_UpcomingLanes.Clear();
                     addedColliders.Add(collider);
-                    break;
+                }
+                else
+                {
+                    while (true)
+                    {
+                        Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Min(initialSection - 2, 0), initialSection + 2);
+                        var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                        if (!addedColliders.Contains(collider))
+                        {
+                            furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                            Agents[i].transform.localRotation = collider.transform.rotation;
+                            Agents[i].transform.position = collider.transform.position;
+                            Agents[i].m_UpcomingLanes.Clear();
+                            addedColliders.Add(collider);
+                            break;
+                        }
+                    }
                 }
             }
         }
 
         // Use the furthest forward agent to determine the final goal track section by adding a fixed amount of sections to it
-        var maxSection = furthestForwardSection + 8;
+        var maxSection = furthestForwardSection + sectionHorizon;
         for (int i = 0; i < Agents.Length; i++)
         {
         // Then, for each agent, Generate a Sequence of Lanes to follow

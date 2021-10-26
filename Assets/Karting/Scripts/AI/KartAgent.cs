@@ -57,8 +57,8 @@ namespace KartGame.AI
         public Sensor[] Sensors;
         [Header("Opponents"), Tooltip("What are the other agents in the racing game?")]
         public KartAgent[] otherAgents;
-        [Tooltip("How many sections/checkpoints ahead does the agent expect to reach between a pair of actions/observations?")]
-        public int sectionHorizon;
+
+        [HideInInspector] protected int sectionHorizon;
 
         [Space]
         [Tooltip("What layer are the checkpoints on? This should be an exclusive layer for the agent to use.")]
@@ -152,6 +152,7 @@ namespace KartGame.AI
         {
             m_Kart = GetComponent<ArcadeKart>();
             if (AgentSensorTransform == null) AgentSensorTransform = transform;
+            sectionHorizon = m_envController.sectionHorizon;
         }
 
         void LateUpdate()

@@ -127,6 +127,7 @@ namespace KartGame.AI
                 {
                     if (hitAgentInfo.distance < current.HitValidationDistance)
                     {
+                        //print("hit agent");
                         m_HitOccured = true;
                         m_LastAccumulatedReward += OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
