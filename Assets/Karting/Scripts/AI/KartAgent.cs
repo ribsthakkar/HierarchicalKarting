@@ -56,7 +56,10 @@ namespace KartGame.AI
         public Sensor[] Sensors;
         [Header("Opponents"), Tooltip("What are the other agents in the racing game?")]
         public KartAgent[] otherAgents;
+        [Tooltip("How many sections/checkpoints ahead does the agent expect to reach between a pair of actions/observations?")]
+        public int sectionHorizon;
 
+        [Space]
         [Tooltip("What layer are the checkpoints on? This should be an exclusive layer for the agent to use.")]
         public LayerMask CheckpointMask;
         [Tooltip("What are the layers we want to detect for the track and the ground?")]
@@ -77,17 +80,21 @@ namespace KartGame.AI
         [Header("Rewards"), Tooltip("What penatly is given when the agent crashes with a wall?")]
         public float WallHitPenalty = -1f;
         [Tooltip("What penatly is given when the agent crashes into another agent?")]
-        public float OpponentHitPenalty = -100f;
+        public float OpponentHitPenalty = -10f;
         [Tooltip("What penatly is given when the agent is crashed by another agent?")]
-        public float HitByOpponentPenalty = -50f;
+        public float HitByOpponentPenalty = -5f;
         [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
-        public float PassCheckpointReward;
+        public float PassCheckpointReward = 0.1f;
+        [Tooltip("How much the normalized remaining time is multiplied by to provide as a reward for the agent reaching the goal checkpoint?")]
+        public float ReachGoalCheckpointRewardMultplier = 5.0f;
+        [Tooltip("How much reward base reward is given to the agent for reaching the goal checkpoint?")]
+        public float ReachGoalCheckpointRewardBase = 1.0f;
         [Tooltip("Should typically be a small value, but we reward the agent for moving in the right direction.")]
-        public float TowardsCheckpointReward;
+        public float TowardsCheckpointReward = 0.003f;
         [Tooltip("Typically if the agent moves faster, we want to reward it for finishing the track quickly.")]
-        public float SpeedReward;
+        public float SpeedReward = 0.002f;
         [Tooltip("Reward the agent when it keeps accelerating")]
-        public float AccelerationReward;
+        public float AccelerationReward = 0.0f;
         #endregion
 
         #region ResetParams
@@ -195,7 +202,7 @@ namespace KartGame.AI
             }
         }
 
-        void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane, int sectionHorizon = 6)
+        void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)
         {
             for (int i = m_SectionIndex; i < m_SectionIndex + sectionHorizon; i++)
             {
@@ -237,18 +244,26 @@ namespace KartGame.AI
 
 
             // Add an observation for direction of the agent to the next checkpoint and lane.
-            var next = (m_SectionIndex + 1) % m_envController.Sections.Length;
-            var nextSection = m_envController.Sections[next];
-            if (nextSection == null)
-                return;
+            for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + sectionHorizon; i++)
+            {
+                var next = (i) % m_envController.Sections.Length;
+                var nextSection = m_envController.Sections[next];
+                if (nextSection == null)
+                    return;
+                if (m_UpcomingLanes.ContainsKey(next))
+                {
+                    BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes[next]);
+                    var direction = (targetLaneInSection.transform.position - m_Kart.transform.position).normalized;
+                    sensor.AddObservation(Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction));
 
-            BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes.ContainsKey(next) ? m_UpcomingLanes[next] : Random.Range(1, 4));
-            var direction = (targetLaneInSection.transform.position - m_Kart.transform.position).normalized;
-            sensor.AddObservation(Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction));
-
-            if (ShowRaycasts)
-                Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
-
+                    if (ShowRaycasts)
+                        Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
+                }
+                else
+                {
+                    sensor.AddObservation(3.5f);
+                }
+            }
             m_LastAccumulatedReward = 0.0f;
             for (var i = 0; i < Sensors.Length; i++)
             {
@@ -313,7 +328,7 @@ namespace KartGame.AI
 
         public void ApplyHitPenalty()
         {
-            AddReward(WallHitPenalty);
+            AddReward(m_LastAccumulatedReward);
             m_LastAccumulatedReward = 0.0f;
         }
 

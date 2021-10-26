@@ -42,13 +42,9 @@ public class RacingEnvController : MonoBehaviour
     {
         if(Agents.Length == 1)
         {
-            if (Agents[0].m_timeSteps == 0)
+            if (Agents[0].m_timeSteps != 0)
             {
-                Agents[0].AddReward(-maxEpisodeSteps);
-            }
-            else
-            {
-                Agents[0].AddReward(-Agents[0].m_timeSteps);
+                Agents[0].AddReward(Agents[0].ReachGoalCheckpointRewardMultplier * (1.0f-Agents[0].m_timeSteps*1.0f/maxEpisodeSteps) + Agents[0].ReachGoalCheckpointRewardBase);
             }
             return;
         }
@@ -66,9 +62,13 @@ public class RacingEnvController : MonoBehaviour
         }
         for (int i = 0; i < Agents.Length; i++)
         {
-            Agents[i].AddReward(maxGoalTiming - Agents[i].m_timeSteps);
+            if (Agents[i].m_timeSteps != 0)
+            {
+                Agents[i].AddReward(Agents[i].ReachGoalCheckpointRewardMultplier * (maxGoalTiming - Agents[i].m_timeSteps) * 1.0f / maxEpisodeSteps + Agents[i].ReachGoalCheckpointRewardBase);
+            }
         }
     }
+
 
     void FixedUpdate()
     {
@@ -76,7 +76,7 @@ public class RacingEnvController : MonoBehaviour
         {
 
             // print("from here 1");
-            //AddGoalTimingRewards();
+            AddGoalTimingRewards();
             for (int i = 0; i < Agents.Length; i++)
             {
                 Agents[i].EndEpisode();
@@ -88,7 +88,7 @@ public class RacingEnvController : MonoBehaviour
             episodeSteps += 1;
             if (episodeSteps >= maxEpisodeSteps)
             {
-                //AddGoalTimingRewards();
+                AddGoalTimingRewards();
                 for (int i = 0; i < Agents.Length; i++)
                 {
                     Agents[i].EpisodeInterrupted();
