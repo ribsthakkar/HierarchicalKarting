@@ -17,6 +17,19 @@ namespace KartGame.AI
     /// </summary>
     public class HierarchicalKartAgent : KartAgent
     {
+        protected override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            episodeSteps += 1;
+            if (episodeSteps % 100 == 0)
+            {
+                for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon, m_envController.goalSection) + 1; i++)
+                {
+                    m_UpcomingLanes[i % m_envController.Sections.Length] = Random.Range(1, 4);
+                }
+            }
+        }
+
         protected override void Awake()
         {
             base.Awake();
@@ -31,9 +44,9 @@ namespace KartGame.AI
             if (lane != -1)
             {
                 //var lines = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
-                // print(string.Join(",", lines));
-                //print(index);
-                LaneDifferenceRewardDivider = Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) + 1.0f;
+                //print(string.Join(",", lines));
+                //print(sectionIndex);
+                LaneDifferenceRewardDivider = (float) Math.Pow(2.0, 1.0*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]));
             }
         }
 
@@ -45,6 +58,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges);
+            //print("Section Index" + m_SectionIndex);
             sensor.AddObservation(m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
 
             // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, distance, direction)
@@ -56,7 +70,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_LaneChanges);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
-                sensor.AddObservation(Vector3.Angle(m_Kart.transform.position, agent.m_Kart.transform.position));
+                sensor.AddObservation(Vector3.SignedAngle(m_Kart.transform.forward, agent.m_Kart.transform.position, Vector3.up));
 
             }
 
@@ -119,7 +133,7 @@ namespace KartGame.AI
                     {
                         //print("hit wall");
                         m_HitOccured = true;
-                        m_LastAccumulatedReward += WallHitPenalty;
+                        m_LastAccumulatedReward += m_envController.WallHitPenalty;
                     }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
@@ -129,7 +143,7 @@ namespace KartGame.AI
                     {
                         //print("hit agent");
                         m_HitOccured = true;
-                        m_LastAccumulatedReward += OpponentHitPenalty;
+                        m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
                     }
                     sensor.AddObservation(hitAgentInfo.distance);

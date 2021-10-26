@@ -44,7 +44,7 @@ namespace KartGame.AI
         [Tooltip("Are we training the agent or is the agent production ready?")]
         public AgentMode Mode = AgentMode.Training;
         [Tooltip("What is the initial checkpoint the agent will go to? This value is only for inferencing.")]
-        public ushort InitCheckpointIndex;
+        public int InitCheckpointIndex;
 
 
         #endregion
@@ -80,27 +80,6 @@ namespace KartGame.AI
         public RacingEnvController m_envController;
         #endregion
 
-        #region Rewards
-        [Header("Rewards"), Tooltip("What penatly is given when the agent crashes with a wall?")]
-        public float WallHitPenalty = -1f;
-        [Tooltip("What penatly is given when the agent crashes into another agent?")]
-        public float OpponentHitPenalty = -10f;
-        [Tooltip("What penatly is given when the agent is crashed by another agent?")]
-        public float HitByOpponentPenalty = -5f;
-        [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
-        public float PassCheckpointReward = 0.1f;
-        [Tooltip("How much the normalized remaining time is multiplied by to provide as a reward for the agent reaching the goal checkpoint?")]
-        public float ReachGoalCheckpointRewardMultplier = 5.0f;
-        [Tooltip("How much reward base reward is given to the agent for reaching the goal checkpoint?")]
-        public float ReachGoalCheckpointRewardBase = 1.0f;
-        [Tooltip("Should typically be a small value, but we reward the agent for moving in the right direction.")]
-        public float TowardsCheckpointReward = 0.003f;
-        [Tooltip("Typically if the agent moves faster, we want to reward it for finishing the track quickly.")]
-        public float SpeedReward = 0.002f;
-        [Tooltip("Reward the agent when it keeps accelerating")]
-        public float AccelerationReward = 0.0f;
-        #endregion
-
         #region ResetParams
         [Header("Inference Reset Params")]
         [Tooltip("What is the unique mask that the agent should detect when it falls out of the track?")]
@@ -132,7 +111,7 @@ namespace KartGame.AI
         [HideInInspector] public HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
         [HideInInspector] public bool m_HitOccured;
         [HideInInspector] public float m_LastAccumulatedReward;
-
+        [HideInInspector] protected int episodeSteps = 0;
 
 
         void Start()
@@ -140,7 +119,7 @@ namespace KartGame.AI
             if (Mode == AgentMode.Inferencing) m_SectionIndex = InitCheckpointIndex;
         }
 
-        void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if (m_HitOccured)
             {
@@ -191,13 +170,16 @@ namespace KartGame.AI
             var triggered = maskedValue & CheckpointMask;
 
             FindSectionIndex(other, out var index, out var lane);
-
+            LaneDifferenceRewardDivider = 1.0f;
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_CheckpointIndex.
-            if (triggered > 0 && index > m_SectionIndex || index == 0 && m_SectionIndex == m_envController.Sections.Length - 1)
+            if ((triggered > 0 && index != 1) && ((index > m_SectionIndex) || (index == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
-                setLaneDifferenceDivider(index, lane);
-                m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
-                if (m_UpcomingLanes.Count == 0)
+                if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
+                {
+                    setLaneDifferenceDivider(index, lane);
+                    m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
+                }
+                if (index == m_envController.goalSection)
                 {
                     m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
                 } 
@@ -224,6 +206,7 @@ namespace KartGame.AI
             }
             index = -1;
             lane = -1;
+            print("Original Section " + m_SectionIndex + ", New Section: " + index);
         }
 
         float Sign(float value)
@@ -247,7 +230,7 @@ namespace KartGame.AI
 
         public void ApplySectionReward()
         {
-            AddReward(PassCheckpointReward/LaneDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointReward /LaneDifferenceRewardDivider);
         }
 
         public void Deactivate()
@@ -277,9 +260,9 @@ namespace KartGame.AI
             if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
 
             // Add rewards if the agent is heading in the right direction
-            AddReward(reward * TowardsCheckpointReward);
-            AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * AccelerationReward);
-            AddReward(m_Kart.LocalSpeed() * SpeedReward);
+            AddReward(reward * m_envController.TowardsCheckpointReward);
+            AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * m_envController.AccelerationReward);
+            AddReward(m_Kart.LocalSpeed() * m_envController.SpeedReward);
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)
