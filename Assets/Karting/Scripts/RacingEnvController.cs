@@ -76,7 +76,7 @@ public class RacingEnvController : MonoBehaviour
         {
 
             // print("from here 1");
-            AddGoalTimingRewards();
+            //AddGoalTimingRewards();
             for (int i = 0; i < Agents.Length; i++)
             {
                 Agents[i].EndEpisode();
@@ -88,7 +88,7 @@ public class RacingEnvController : MonoBehaviour
             episodeSteps += 1;
             if (episodeSteps >= maxEpisodeSteps)
             {
-                AddGoalTimingRewards();
+                //AddGoalTimingRewards();
                 for (int i = 0; i < Agents.Length; i++)
                 {
                     Agents[i].EpisodeInterrupted();
@@ -150,6 +150,7 @@ public class RacingEnvController : MonoBehaviour
             var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
             Agents[i].transform.localRotation = collider.transform.rotation;
             Agents[i].transform.position = collider.transform.position;
+            Agents[i].m_UpcomingLanes.Clear();
         }
 
         // Use the furthest forward agent to determine the final goal track section by adding a fixed amount of sections to it
