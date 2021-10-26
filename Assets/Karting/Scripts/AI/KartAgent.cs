@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using Unity.MLAgents.Actuators;
 using System.Linq;
+using Unity.MLAgents.Policies;
 
 namespace KartGame.AI
 {
@@ -72,8 +73,11 @@ namespace KartGame.AI
         [Tooltip("Would the agent need a custom transform to be able to raycast and hit the track? " +
             "If not assigned, then the root transform will be used.")]
         public Transform AgentSensorTransform;
+        #endregion
 
-
+        #region TrainingEnvironment
+        [Header("Traning Environment"), Tooltip("What training enviornment controller to use?")]
+        public RacingEnvController m_envController;
         #endregion
 
         #region Rewards
@@ -103,7 +107,7 @@ namespace KartGame.AI
         public LayerMask OutOfBoundsMask;
         [Tooltip("How far should the ray be when casted? For larger karts - this value should be larger too.")]
         public float GroundCastDistance;
-#endregion
+        #endregion
 
 #region Debugging
         [Header("Debug Option")] [Tooltip("Should we visualize the rays that the agent draws?")]
@@ -125,12 +129,15 @@ namespace KartGame.AI
 
         bool m_HitOccured;
         float m_LastAccumulatedReward;
-        public RacingEnvController m_envController;
+
 
         void Awake()
         {
             m_Kart = GetComponent<ArcadeKart>();
             if (AgentSensorTransform == null) AgentSensorTransform = transform;
+            var behaviorParameters = GetComponent<BehaviorParameters>();
+            var brainParameters = behaviorParameters.BrainParameters;
+            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon - 1) + 5 + 7 * otherAgents.Length;
         }
         void Start()
         {        
@@ -234,14 +241,25 @@ namespace KartGame.AI
         public override void CollectObservations(VectorSensor sensor)
         {
             //print("collecting observations");
-            // Add observation for agent state (Speed, acceleration, lane, recent lane changes)
+            // Add observation for agent state (Speed, acceleration, lane, recent lane changes, section type)
             sensor.AddObservation(m_Kart.LocalSpeed());
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges);
+            sensor.AddObservation(m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
 
-            // Add observation for opponent agent states (Speed, acceleration, lane, time diff to current section)
+            // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, distance, direction)
+            foreach (KartAgent agent in otherAgents)
+            {
+                sensor.AddObservation(agent.m_Kart.LocalSpeed());
+                sensor.AddObservation(agent.m_Acceleration);
+                sensor.AddObservation(agent.m_Lane);
+                sensor.AddObservation(agent.m_LaneChanges);
+                sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
+                sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
+                sensor.AddObservation(Vector3.Angle(m_Kart.transform.position, agent.m_Kart.transform.position));
 
+            }
 
             // Add an observation for direction of the agent to the next checkpoint and lane.
             for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + sectionHorizon; i++)

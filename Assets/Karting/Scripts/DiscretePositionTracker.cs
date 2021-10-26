@@ -5,6 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+public enum SectionType
+{
+    Straight = 0,
+    Turn = 1
+}
 public class DiscretePositionTracker : MonoBehaviour
 {
     [Header("Primary Trigger Box")]
@@ -17,6 +22,9 @@ public class DiscretePositionTracker : MonoBehaviour
     public BoxCollider Lane2;
     public BoxCollider Lane3;
     public BoxCollider Lane4;
+
+    [Header("Type of Section")]
+    public SectionType sectionType;
 
 
     // Start is called before the first frame update

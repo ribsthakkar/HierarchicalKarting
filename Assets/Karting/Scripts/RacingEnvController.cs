@@ -142,15 +142,24 @@ public class RacingEnvController : MonoBehaviour
         inactiveAgents.Clear();
         // For each agent
         var furthestForwardSection = -1;
+        HashSet< Collider > addedColliders = new HashSet<Collider>();
         for (int i = 0; i < Agents.Length; i++)
         {
             // Randomly Set Iniital Track Position
-            Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
-            furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
-            var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
-            Agents[i].transform.localRotation = collider.transform.rotation;
-            Agents[i].transform.position = collider.transform.position;
-            Agents[i].m_UpcomingLanes.Clear();
+            while (true)
+            {
+                Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
+                furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                Agents[i].transform.localRotation = collider.transform.rotation;
+                Agents[i].transform.position = collider.transform.position;
+                Agents[i].m_UpcomingLanes.Clear();
+                if (!addedColliders.Contains(collider))
+                {
+                    addedColliders.Add(collider);
+                    break;
+                }
+            }
         }
 
         // Use the furthest forward agent to determine the final goal track section by adding a fixed amount of sections to it
