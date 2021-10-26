@@ -1,4 +1,4 @@
-﻿using KartGame.KartSystems;
+using KartGame.KartSystems;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
@@ -114,31 +114,27 @@ namespace KartGame.AI
         public bool ShowRaycasts;
 #endregion
 
-        ArcadeKart m_Kart;
-        bool m_Acceleration;
-        bool m_Brake;
-        float m_Steering;
-        public int m_SectionIndex;
-        int m_Lane;
-        int m_LaneChanges;
-        public bool anyHit = false;
-        public int m_timeSteps = 0;
-        float LaneDifferenceRewardDivider = 1.0f;
-        public Dictionary<int, int> m_UpcomingLanes = new Dictionary<int, int>();
-        HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
+        [HideInInspector]
+        public ArcadeKart m_Kart;
+        [HideInInspector]
+        public bool m_Acceleration;
+        [HideInInspector]
+        public bool m_Brake;
+        [HideInInspector]
+        public float m_Steering;
+        [HideInInspector] public int m_SectionIndex;
+        [HideInInspector] public int m_Lane;
+        [HideInInspector] public int m_LaneChanges;
+        [HideInInspector] public bool anyHit = false;
+        [HideInInspector] public int m_timeSteps = 0;
+        [HideInInspector] public float LaneDifferenceRewardDivider = 1.0f;
+        [HideInInspector] public Dictionary<int, int> m_UpcomingLanes = new Dictionary<int, int>();
+        [HideInInspector] public HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
+        [HideInInspector] public bool m_HitOccured;
+        [HideInInspector] public float m_LastAccumulatedReward;
 
-        bool m_HitOccured;
-        float m_LastAccumulatedReward;
 
 
-        void Awake()
-        {
-            m_Kart = GetComponent<ArcadeKart>();
-            if (AgentSensorTransform == null) AgentSensorTransform = transform;
-            var behaviorParameters = GetComponent<BehaviorParameters>();
-            var brainParameters = behaviorParameters.BrainParameters;
-            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon - 1) + 5 + 7 * otherAgents.Length;
-        }
         void Start()
         {        
             if (Mode == AgentMode.Inferencing) m_SectionIndex = InitCheckpointIndex;
@@ -150,6 +146,12 @@ namespace KartGame.AI
             {
                 m_envController.ResolveEvent(Event.HitSomething, this, hitAgents);
             }
+        }
+
+        protected virtual void Awake()
+        {
+            m_Kart = GetComponent<ArcadeKart>();
+            if (AgentSensorTransform == null) AgentSensorTransform = transform;
         }
 
         void LateUpdate()
@@ -177,6 +179,11 @@ namespace KartGame.AI
             }
         }
 
+        protected virtual void setLaneDifferenceDivider(int sectionIndex, int lane)
+        {
+            LaneDifferenceRewardDivider = 1.0f;
+        }
+
         void OnTriggerEnter(Collider other)
         {
             var maskedValue = 1 << other.gameObject.layer;
@@ -187,14 +194,7 @@ namespace KartGame.AI
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_CheckpointIndex.
             if (triggered > 0 && index > m_SectionIndex || index == 0 && m_SectionIndex == m_envController.Sections.Length - 1)
             {
-                LaneDifferenceRewardDivider = 1.0f;
-                if (lane != -1)
-                {
-                    //var lines = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
-                   // print(string.Join(",", lines));
-                    //print(index);
-                    LaneDifferenceRewardDivider = Math.Abs(lane - m_UpcomingLanes[index % m_envController.Sections.Length])+1.0f;
-                }
+                setLaneDifferenceDivider(index, lane);
                 m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                 if (m_UpcomingLanes.Count == 0)
                 {
@@ -238,112 +238,6 @@ namespace KartGame.AI
             return 0;
         }
 
-        public override void CollectObservations(VectorSensor sensor)
-        {
-            //print("collecting observations");
-            // Add observation for agent state (Speed, acceleration, lane, recent lane changes, section type)
-            sensor.AddObservation(m_Kart.LocalSpeed());
-            sensor.AddObservation(m_Acceleration);
-            sensor.AddObservation(m_Lane);
-            sensor.AddObservation(m_LaneChanges);
-            sensor.AddObservation(m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
-
-            // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, distance, direction)
-            foreach (KartAgent agent in otherAgents)
-            {
-                sensor.AddObservation(agent.m_Kart.LocalSpeed());
-                sensor.AddObservation(agent.m_Acceleration);
-                sensor.AddObservation(agent.m_Lane);
-                sensor.AddObservation(agent.m_LaneChanges);
-                sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
-                sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
-                sensor.AddObservation(Vector3.Angle(m_Kart.transform.position, agent.m_Kart.transform.position));
-
-            }
-
-            // Add an observation for direction of the agent to the next checkpoint and lane.
-            for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + sectionHorizon; i++)
-            {
-                var next = (i) % m_envController.Sections.Length;
-                var nextSection = m_envController.Sections[next];
-                if (nextSection == null)
-                    return;
-                if (m_UpcomingLanes.ContainsKey(next))
-                {
-                    BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes[next]);
-                    var direction = (targetLaneInSection.transform.position - m_Kart.transform.position).normalized;
-                    sensor.AddObservation(Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction));
-
-                    if (ShowRaycasts)
-                        Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
-                }
-                else
-                {
-                    sensor.AddObservation(3.5f);
-                }
-            }
-            m_LastAccumulatedReward = 0.0f;
-            for (var i = 0; i < Sensors.Length; i++)
-            {
-                var current = Sensors[i];
-                var xform = current.Transform;
-                var hitTrack = Physics.Raycast(AgentSensorTransform.position, xform.forward, out var hitTrackInfo,
-                    current.RayDistance, TrackMask, QueryTriggerInteraction.Ignore);
-
-                var hitAgent = Physics.Raycast(AgentSensorTransform.position, xform.forward, out var hitAgentInfo,
-                    current.RayDistance, AgentMask, QueryTriggerInteraction.Ignore);
-
-                if (ShowRaycasts)
-                {
-                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.RayDistance, Color.green);
-                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, 
-                        Color.red);
-
-                    if (hitTrack && hitTrackInfo.distance < current.HitValidationDistance && hitTrackInfo.distance < hitAgentInfo.distance)
-                    {
-                        Debug.DrawRay(hitTrackInfo.point, Vector3.up * 3.0f, Color.blue);
-                    }
-                    else if (hitAgent && hitAgentInfo.distance < current.HitValidationDistance)
-                    {
-                        Debug.DrawRay(hitAgentInfo.point, Vector3.up * 3.0f, Color.blue);
-                    }
-                }
-                //print("TrackDist");
-                //print(hitTrackInfo.distance);
-                //print(hitTrack);
-                //print("AgentDist");
-                //print(hitAgentInfo.distance);
-                //print(hitAgent);
-                //print(current.HitValidationDistance);
-                if (hitTrack)
-                {                       
-                    if (hitTrackInfo.distance < current.HitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
-                    {
-                        //print("hit wall");
-                        m_HitOccured = true;
-                        m_LastAccumulatedReward += WallHitPenalty;
-                    }
-                    sensor.AddObservation(hitTrackInfo.distance);
-                }
-                else if (hitAgent)
-                {
-                    if (hitAgentInfo.distance < current.HitValidationDistance)
-                    {
-                        m_HitOccured = true;
-                        m_LastAccumulatedReward += OpponentHitPenalty;
-                        hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
-                    }
-                    sensor.AddObservation(hitAgentInfo.distance);
-                }
-                else
-                {
-                    sensor.AddObservation(current.RayDistance);
-                }
-            }
-        }
-
-
-
         public void ApplyHitPenalty()
         {
             AddReward(m_LastAccumulatedReward);
@@ -386,6 +280,7 @@ namespace KartGame.AI
             AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * AccelerationReward);
             AddReward(m_Kart.LocalSpeed() * SpeedReward);
         }
+
         public override void Heuristic(in ActionBuffers actionsOut)
         {
             base.Heuristic(actionsOut);
@@ -404,6 +299,7 @@ namespace KartGame.AI
             }
 
         }
+
         public override void OnEpisodeBegin()
         {
             base.OnEpisodeBegin();
