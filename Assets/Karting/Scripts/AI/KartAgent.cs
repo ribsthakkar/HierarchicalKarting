@@ -172,7 +172,7 @@ namespace KartGame.AI
             FindSectionIndex(other, out var index, out var lane);
             LaneDifferenceRewardDivider = 1.0f;
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_CheckpointIndex.
-            if ((triggered > 0 && index != 1) && ((index > m_SectionIndex) || (index == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            if ((triggered > 0 && index != 1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
                 {
@@ -189,18 +189,24 @@ namespace KartGame.AI
                 }
                 m_SectionIndex = index;
                 m_Lane = lane;
+            } 
+            else if ((triggered > 0 && index !=1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            {
+                // print("going backwards");
+                AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
             }
         }
 
         void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)
         {
-            for (int i = m_SectionIndex; i < m_SectionIndex + sectionHorizon; i++)
+            for (int i = m_SectionIndex-m_envController.Sections.Length + sectionHorizon; i < m_SectionIndex + sectionHorizon; i++)
             {
-                if (m_envController.Sections[i % m_envController.Sections.Length].Trigger.GetInstanceID() == checkPointTrigger.GetInstanceID())
+                int idx = i < 0 ? i + m_envController.Sections.Length : i;
+                if (m_envController.Sections[idx % m_envController.Sections.Length].Trigger.GetInstanceID() == checkPointTrigger.GetInstanceID())
                 {
-                    index = i;
+                    index = idx;
                     //print("Next Section" + index);
-                    lane = m_envController.Sections[i % m_envController.Sections.Length].CalculateLane(m_Kart);
+                    lane = m_envController.Sections[idx % m_envController.Sections.Length].CalculateLane(m_Kart);
                     return;
                 }
             }

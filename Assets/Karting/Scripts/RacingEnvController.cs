@@ -32,9 +32,11 @@ public class RacingEnvController : MonoBehaviour
     [Tooltip("What penatly is given when the agent crashes into another agent?")]
     public float OpponentHitPenalty = -2f;
     [Tooltip("What penatly is given when the agent is crashed by another agent?")]
-    public float HitByOpponentPenalty = -1f;
+    public float HitByOpponentPenalty = -2f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
     public float PassCheckpointReward = 0.1f;
+    [Tooltip("How much reward is given when the agent travels backwards through the checkpoints?")]
+    public float ReversePenalty = -0.5f;
     [Tooltip("How much the normalized remaining time is multiplied by to provide as a reward for the agent reaching the goal checkpoint?")]
     public float ReachGoalCheckpointRewardMultplier = 5.0f;
     [Tooltip("How much reward base reward is given to the agent for reaching the goal checkpoint?")]

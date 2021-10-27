@@ -35,7 +35,7 @@ namespace KartGame.AI
             base.Awake();
             var behaviorParameters = GetComponent<BehaviorParameters>();
             var brainParameters = behaviorParameters.BrainParameters;
-            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon + 5 + 7 * otherAgents.Length;
+            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon + 5 + 8 * otherAgents.Length;
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -68,6 +68,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_Acceleration);
                 sensor.AddObservation(agent.m_Lane);
                 sensor.AddObservation(agent.m_LaneChanges);
+                sensor.AddObservation(agent.gameObject.activeSelf);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(Vector3.SignedAngle(m_Kart.transform.forward, agent.m_Kart.transform.position, Vector3.up));
