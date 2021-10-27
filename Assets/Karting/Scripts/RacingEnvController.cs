@@ -63,7 +63,7 @@ public class RacingEnvController : MonoBehaviour
             AgentBodies[Agents[i].GetComponent<Rigidbody>()] = Agents[i];
         }
         goalSection = laps * Sections.Length + 1;
-        ResetGame();
+        //ResetGame();
     }
 
     void AddGoalTimingRewards()
@@ -212,7 +212,7 @@ public class RacingEnvController : MonoBehaviour
                 {
                     while (true)
                     {
-                        Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Min(initialSection - 1, 0), initialSection + 1);
+                        Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), initialSection + 1);
                         Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                         var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
                         if (!addedColliders.Contains(collider))

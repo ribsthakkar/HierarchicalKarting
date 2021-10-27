@@ -206,7 +206,7 @@ namespace KartGame.AI
             }
             index = -1;
             lane = -1;
-            print("Original Section " + m_SectionIndex + ", New Section: " + index);
+            // print("Original Section " + m_SectionIndex + ", New Section: " + index);
         }
 
         float Sign(float value)
