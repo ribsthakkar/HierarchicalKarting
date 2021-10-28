@@ -121,10 +121,6 @@ namespace KartGame.AI
 
         protected virtual void FixedUpdate()
         {
-            if (m_HitOccured)
-            {
-                m_envController.ResolveEvent(Event.HitSomething, this, hitAgents);
-            }
         }
 
         protected virtual void Awake()
@@ -228,10 +224,19 @@ namespace KartGame.AI
             return 0;
         }
 
-        public void ApplyHitPenalty()
+        public void ApplyHitWallPenalty()
         {
-            AddReward(m_LastAccumulatedReward);
-            m_LastAccumulatedReward = 0.0f;
+            AddReward(m_envController.WallHitPenalty);
+        }
+
+        public void ApplyHitOpponentPenalty()
+        {
+            AddReward(m_envController.OpponentHitPenalty);
+        }
+
+        public void ApplyHitByOpponentPenalty()
+        {
+            AddReward(m_envController.HitByOpponentPenalty);
         }
 
         public void ApplySectionReward()
@@ -259,7 +264,7 @@ namespace KartGame.AI
 
             // Find the next checkpoint when registering the current checkpoint that the agent has passed.
             var next = (m_SectionIndex + 1) % m_envController.Sections.Length;
-            var nextCollider = m_envController.Sections[next].getBoxColliderForLane(m_UpcomingLanes.ContainsKey(next) ? m_UpcomingLanes[next] : Random.Range(1, 4));
+            var nextCollider = m_UpcomingLanes.ContainsKey(next) ? m_envController.Sections[next].getBoxColliderForLane(m_UpcomingLanes[next]) : m_envController.Sections[next].Trigger;
             var direction = (nextCollider.transform.position - m_Kart.transform.position).normalized;
             var reward = Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction);
 
@@ -286,6 +291,10 @@ namespace KartGame.AI
             } else  if (Input.GetButton("Brake"))
             {
                 discreteActions[0] = -1;
+            }
+            else
+            {
+                discreteActions[0] = 0;
             }
 
         }

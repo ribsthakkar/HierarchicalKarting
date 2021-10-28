@@ -134,7 +134,7 @@ namespace KartGame.AI
                     {
                         //print("hit wall");
                         m_HitOccured = true;
-                        m_LastAccumulatedReward += m_envController.WallHitPenalty;
+                        m_envController.ResolveEvent(Event.HitWall, this, null);
                     }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
@@ -146,6 +146,7 @@ namespace KartGame.AI
                         m_HitOccured = true;
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
+                        m_envController.ResolveEvent(Event.HitOpponent, this, hitAgents);
                     }
                     sensor.AddObservation(hitAgentInfo.distance);
                 }

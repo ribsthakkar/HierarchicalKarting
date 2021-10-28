@@ -7,7 +7,8 @@ using UnityEngine;
 
 public enum Event
 {
-    HitSomething = 1,
+    HitWall = 0,
+    HitOpponent = 1,
     ReachNonGoalSection = 2,
     ReachGoalSection = 3
 }
@@ -42,9 +43,9 @@ public class RacingEnvController : MonoBehaviour
     [Tooltip("How much reward base reward is given to the agent for reaching the goal checkpoint?")]
     public float ReachGoalCheckpointRewardBase = 3.0f;
     [Tooltip("Should typically be a small value, but we reward the agent for moving in the right direction.")]
-    public float TowardsCheckpointReward = 0.003f;
+    public float TowardsCheckpointReward = 0.008f;
     [Tooltip("Typically if the agent moves faster, we want to reward it for finishing the track quickly.")]
-    public float SpeedReward = 0.02f;
+    public float SpeedReward = 0.07f;
     [Tooltip("Reward the agent when it keeps accelerating")]
     public float AccelerationReward = 0.002f;
     #endregion
@@ -136,21 +137,14 @@ public class RacingEnvController : MonoBehaviour
         //print(triggeringEvent);
         switch (triggeringEvent)
         {
-            case Event.HitSomething:
-                triggeringAgent.ApplyHitPenalty();
-                //if (!inactiveAgents.Contains(triggeringAgent))
-                //{
-                //    triggeringAgent.Deactivate();
-                //    inactiveAgents.Add(triggeringAgent);
-                //}
+            case Event.HitWall:
+                triggeringAgent.ApplyHitWallPenalty();
+                break;
+            case Event.HitOpponent:
+                triggeringAgent.ApplyHitOpponentPenalty();
                 foreach (KartAgent agent in otherInvolvedAgents)
                 {
-                    agent.ApplyHitPenalty();
-                    //if (!inactiveAgents.Contains(triggeringAgent))
-                    //{
-                    //    agent.Deactivate();
-                   //     inactiveAgents.Add(agent);
-                   // }
+                    agent.ApplyHitByOpponentPenalty();
                 }
                 otherInvolvedAgents.Clear();
                 break;
