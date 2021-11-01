@@ -284,17 +284,17 @@ namespace KartGame.AI
             continuousActions[0] = Input.GetAxisRaw("Horizontal");
             if (Input.GetButton("Accelerate") && Input.GetButton("Brake"))
             {
-                discreteActions[0] = 0;
+                discreteActions[0] = 1;
             } else if (Input.GetButton("Accelerate"))
             {
-                discreteActions[0] = 1;
+                discreteActions[0] = 2;
             } else  if (Input.GetButton("Brake"))
             {
-                discreteActions[0] = -1;
+                discreteActions[0] = 0;
             }
             else
             {
-                discreteActions[0] = 0;
+                discreteActions[0] = 1;
             }
 
         }
@@ -318,7 +318,7 @@ namespace KartGame.AI
         void InterpretDiscreteActions(ActionBuffers actions)
         {
             m_Steering = actions.ContinuousActions[0];
-            m_Acceleration = actions.DiscreteActions[0] >= 1;
+            m_Acceleration = actions.DiscreteActions[0] > 1;
             m_Brake = actions.DiscreteActions[0] < 1;
         }
 
