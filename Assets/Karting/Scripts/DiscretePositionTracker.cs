@@ -23,14 +23,35 @@ public class DiscretePositionTracker : MonoBehaviour
     public BoxCollider Lane3;
     public BoxCollider Lane4;
 
-    [Header("Type of Section")]
-    public SectionType sectionType;
+    // [Header("Type of Section")]
+    // public SectionType sectionType;
+
+    public float trackInsideRadius;
+    public float trackLength;
+    public float trackWidth;
+    public bool leftTurn;
+    public float turnDegrees;
+
+    List<float> radiuses = new List<float>();
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (leftTurn)
+        {
+            radiuses.Add(trackInsideRadius);
+            radiuses.Add(trackInsideRadius + trackWidth * (1.0f / 4.0f));
+            radiuses.Add(trackInsideRadius + trackWidth * (2.0f / 4.0f));
+            radiuses.Add(trackInsideRadius + trackWidth * (3.0f / 4.0f));
+        }
+        else
+        {
+            radiuses.Add(trackInsideRadius + trackWidth * (3.0f / 4.0f));
+            radiuses.Add(trackInsideRadius + trackWidth * (2.0f / 4.0f));
+            radiuses.Add(trackInsideRadius + trackWidth * (1.0f / 4.0f));
+            radiuses.Add(trackInsideRadius);
+        }
     }
 
     // Update is called once per frame
@@ -87,4 +108,56 @@ public class DiscretePositionTracker : MonoBehaviour
         }
     }
 
+    public float radiusOfLane(int initLane, int finalLane)
+    {
+        return (radiuses[initLane - 1] + radiuses[finalLane - 1]) / 2.0f;
+    }
+
+
+    public float distanceToTravel(int initLane, int finalLane)
+    {
+        if (!isStraight())
+        {
+            float widthTraversed = (Math.Abs(initLane - finalLane) * 1.0f / 3.0f) * trackWidth;
+            return Mathf.Sqrt(widthTraversed * widthTraversed + trackLength * trackLength);
+        }
+        else
+        {
+            float avgRad = radiusOfLane(initLane, finalLane);
+            return Mathf.PI * turnDegrees * avgRad;
+        }
+    }
+
+    public float tireLoad(float velocity, int initLane, int finalLane)
+    {
+        if (!isStraight())
+        {
+            float gs = (velocity * velocity) / radiusOfLane(initLane, finalLane);
+            return gs * distanceToTravel(initLane, finalLane) * 0.01f;
+        }
+        else
+        {
+            return distanceToTravel(initLane, finalLane) * 0.01f;
+        }
+    }
+
+    public bool isStraight()
+    {
+        return transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight";
+    }
+
+    internal bool isVelFeasible(int velocity, int initLane, int finalLane, float tireWearProportion, float maxGs, float minGs)
+    {
+        if (isStraight())
+        {
+            return true;
+        }
+        else
+        {
+            float gs = ((velocity * velocity) / radiusOfLane(initLane, finalLane))/9.81f;
+            float g_diff = (maxGs - minGs) * (1 - tireWearProportion);
+            return gs <= maxGs - g_diff;
+
+        }
+    }
 }

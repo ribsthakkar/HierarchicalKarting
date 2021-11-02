@@ -49,6 +49,21 @@ namespace KartGame.KartSystems
             [Tooltip("How tightly the kart can turn left or right.")]
             public float Steer;
 
+            [Tooltip("Max of how tightly the kart can turn left or right.")]
+            public float MaxSteer;
+
+            [Tooltip("Min of how tightly the kart can turn left or right.")]
+            public float MinSteer;
+
+            [Tooltip("Coeffecient of tire wear for this car")]
+            public float TireWearFactor;
+
+            [Tooltip("Minimum Lateral Gs the car will always be able to sustain")]
+            public float MinGs;
+
+            [Tooltip("Maximum Lateral Gs of the tire performance")]
+            public float MaxGs;
+
             [Tooltip("Additional gravity for when the kart is in the air.")]
             public float AddedGravity;
 
@@ -57,16 +72,21 @@ namespace KartGame.KartSystems
             {
                 return new Stats
                 {
-                    Acceleration        = a.Acceleration + b.Acceleration,
-                    AccelerationCurve   = a.AccelerationCurve + b.AccelerationCurve,
-                    Braking             = a.Braking + b.Braking,
-                    CoastingDrag        = a.CoastingDrag + b.CoastingDrag,
-                    AddedGravity        = a.AddedGravity + b.AddedGravity,
-                    Grip                = a.Grip + b.Grip,
+                    Acceleration = a.Acceleration + b.Acceleration,
+                    AccelerationCurve = a.AccelerationCurve + b.AccelerationCurve,
+                    Braking = a.Braking + b.Braking,
+                    CoastingDrag = a.CoastingDrag + b.CoastingDrag,
+                    AddedGravity = a.AddedGravity + b.AddedGravity,
+                    Grip = a.Grip + b.Grip,
                     ReverseAcceleration = a.ReverseAcceleration + b.ReverseAcceleration,
-                    ReverseSpeed        = a.ReverseSpeed + b.ReverseSpeed,
-                    TopSpeed            = a.TopSpeed + b.TopSpeed,
-                    Steer               = a.Steer + b.Steer,
+                    ReverseSpeed = a.ReverseSpeed + b.ReverseSpeed,
+                    TopSpeed = a.TopSpeed + b.TopSpeed,
+                    MaxSteer = a.MaxSteer + b.MaxSteer,
+                    MinSteer = a.MinSteer + b.MinSteer,
+                    Steer = a.Steer + b.Steer,
+                    TireWearFactor = a.TireWearFactor + b.TireWearFactor,
+                    MinGs = a.MinGs + b.MinGs,
+                    MaxGs = a.MaxGs + b.MaxGs
                 };
             }
         }
@@ -85,9 +105,14 @@ namespace KartGame.KartSystems
             ReverseAcceleration = 5f,
             ReverseSpeed        = 5f,
             Steer               = 5f,
+            MaxSteer            = 5f,
+            MinSteer            = 1f,
             CoastingDrag        = 4f,
             Grip                = .95f,
             AddedGravity        = 1f,
+            TireWearFactor      = 0.0001f,
+            MinGs               = 0.5f,
+            MaxGs               = 1.5f
         };
 
         [Header("Vehicle Visual")] 
@@ -161,19 +186,14 @@ namespace KartGame.KartSystems
         const float k_NullSpeed = 0.01f;
         Vector3 m_VerticalReference = Vector3.up;
 
-        // Drift params
-        public bool WantsToDrift { get; private set; } = false;
-        public bool IsDrifting { get; private set; } = false;
         float m_CurrentGrip = 1.0f;
-        float m_DriftTurningPower = 0.0f;
+        float m_AccumulatedAngularV = 0.0f;
         float m_PreviousGroundPercent = 1.0f;
-        readonly List<(GameObject trailRoot, WheelCollider wheel, TrailRenderer trail)> m_DriftTrailInstances = new List<(GameObject, WheelCollider, TrailRenderer)>();
-        readonly List<(WheelCollider wheel, float horizontalOffset, float rotation, ParticleSystem sparks)> m_DriftSparkInstances = new List<(WheelCollider, float, float, ParticleSystem)>();
 
         // can the kart move?
         bool m_CanMove = true;
         List<StatPowerup> m_ActivePowerupList = new List<StatPowerup>();
-        ArcadeKart.Stats m_FinalStats;
+        [HideInInspector] public ArcadeKart.Stats m_FinalStats;
 
         Quaternion m_LastValidRotation;
         Vector3 m_LastValidPosition;
@@ -184,42 +204,6 @@ namespace KartGame.KartSystems
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
         public float GetMaxSpeed() => Mathf.Max(m_FinalStats.TopSpeed, m_FinalStats.ReverseSpeed);
-
-        private void ActivateDriftVFX(bool active)
-        {
-            foreach (var vfx in m_DriftSparkInstances)
-            {
-                if (active && vfx.wheel.GetGroundHit(out WheelHit hit))
-                {
-                    if (!vfx.sparks.isPlaying)
-                        vfx.sparks.Play();
-                }
-                else
-                {
-                    if (vfx.sparks.isPlaying)
-                        vfx.sparks.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-                }
-                    
-            }
-
-            foreach (var trail in m_DriftTrailInstances)
-                trail.Item3.emitting = active && trail.wheel.GetGroundHit(out WheelHit hit);
-        }
-
-        private void UpdateDriftVFXOrientation()
-        {
-            foreach (var vfx in m_DriftSparkInstances)
-            {
-                vfx.sparks.transform.position = vfx.wheel.transform.position - (vfx.wheel.radius * Vector3.up) + (DriftTrailVerticalOffset * Vector3.up) + (transform.right * vfx.horizontalOffset);
-                vfx.sparks.transform.rotation = transform.rotation * Quaternion.Euler(0.0f, 0.0f, vfx.rotation);
-            }
-
-            foreach (var trail in m_DriftTrailInstances)
-            {
-                trail.trailRoot.transform.position = trail.wheel.transform.position - (trail.wheel.radius * Vector3.up) + (DriftTrailVerticalOffset * Vector3.up);
-                trail.trailRoot.transform.rotation = transform.rotation;
-            }
-        }
 
         void UpdateSuspensionParams(WheelCollider wheel)
         {
@@ -242,19 +226,6 @@ namespace KartGame.KartSystems
             UpdateSuspensionParams(RearRightWheel);
 
             m_CurrentGrip = baseStats.Grip;
-
-            if (DriftSparkVFX != null)
-            {
-                AddSparkToWheel(RearLeftWheel, -DriftSparkHorizontalOffset, -DriftSparkRotation);
-                AddSparkToWheel(RearRightWheel, DriftSparkHorizontalOffset, DriftSparkRotation);
-            }
-
-            if (DriftTrailPrefab != null)
-            {
-                AddTrailToWheel(RearLeftWheel);
-                AddTrailToWheel(RearRightWheel);
-            }
-
             if (NozzleVFX != null)
             {
                 foreach (var nozzle in Nozzles)
@@ -262,22 +233,6 @@ namespace KartGame.KartSystems
                     Instantiate(NozzleVFX, nozzle, false);
                 }
             }
-        }
-
-        void AddTrailToWheel(WheelCollider wheel)
-        {
-            GameObject trailRoot = Instantiate(DriftTrailPrefab, gameObject.transform, false);
-            TrailRenderer trail = trailRoot.GetComponentInChildren<TrailRenderer>();
-            trail.emitting = false;
-            m_DriftTrailInstances.Add((trailRoot, wheel, trail));
-        }
-
-        void AddSparkToWheel(WheelCollider wheel, float horizontalOffset, float rotation)
-        {
-            GameObject vfx = Instantiate(DriftSparkVFX.gameObject, wheel.transform, false);
-            ParticleSystem spark = vfx.GetComponent<ParticleSystem>();
-            spark.Stop();
-            m_DriftSparkInstances.Add((wheel, horizontalOffset, -rotation, spark));
         }
 
         void FixedUpdate()
@@ -289,7 +244,6 @@ namespace KartGame.KartSystems
 
             GatherInputs();
 
-            // apply our powerups to create our finalStats
             TickPowerups();
 
             // apply our physics properties
@@ -318,20 +272,17 @@ namespace KartGame.KartSystems
 
             m_PreviousGroundPercent = GroundPercent;
 
-            UpdateDriftVFXOrientation();
         }
 
         void GatherInputs()
         {
             // reset input
             Input = new InputData();
-            WantsToDrift = false;
 
             // gather nonzero input from our sources
             for (int i = 0; i < m_Inputs.Length; i++)
             {
                 Input = m_Inputs[i].GenerateInput();
-                WantsToDrift = Input.Brake && Vector3.Dot(Rigidbody.velocity, transform.forward) > 0.0f;
             }
         }
 
@@ -360,6 +311,8 @@ namespace KartGame.KartSystems
 
             // clamp values in finalstats
             m_FinalStats.Grip = Mathf.Clamp(m_FinalStats.Grip, 0, 1);
+            m_FinalStats.Steer = Mathf.Clamp((baseStats.MaxSteer * Mathf.Exp(-m_AccumulatedAngularV/10000.0f)), baseStats.MinSteer, baseStats.MaxSteer);
+            // print(m_FinalStats.Steer);
         }
 
         void GroundAirbourne()
@@ -442,7 +395,7 @@ namespace KartGame.KartSystems
             float finalAcceleration = finalAccelPower * accelRamp;
 
             // apply inputs to forward/backward
-            float turningPower = IsDrifting ? m_DriftTurningPower : turnInput * m_FinalStats.Steer;
+            float turningPower = turnInput * m_FinalStats.Steer;
 
             Quaternion turnAngle = Quaternion.AngleAxis(turningPower, transform.up);
             Vector3 fwd = turnAngle * transform.forward;
@@ -493,67 +446,13 @@ namespace KartGame.KartSystems
 
                 // move the Y angular velocity towards our target
                 angularVel.y = Mathf.MoveTowards(angularVel.y, turningPower * angularVelocitySteering, Time.fixedDeltaTime * angularVelocitySmoothSpeed);
-
+                m_AccumulatedAngularV += Mathf.Abs(angularVel.y);
                 // apply the angular velocity
                 Rigidbody.angularVelocity = angularVel;
 
                 // rotate rigidbody's velocity as well to generate immediate velocity redirection
                 // manual velocity steering coefficient
                 float velocitySteering = 25f;
-
-                // If the karts lands with a forward not in the velocity direction, we start the drift
-                if (GroundPercent >= 0.0f && m_PreviousGroundPercent < 0.1f)
-                {
-                    Vector3 flattenVelocity = Vector3.ProjectOnPlane(Rigidbody.velocity, m_VerticalReference).normalized;
-                    if (Vector3.Dot(flattenVelocity, transform.forward * Mathf.Sign(accelInput)) < Mathf.Cos(MinAngleToFinishDrift * Mathf.Deg2Rad))
-                    {
-                        IsDrifting = true;
-                        m_CurrentGrip = DriftGrip;
-                        m_DriftTurningPower = 0.0f;
-                    }
-                }
-
-                // Drift Management
-                if (!IsDrifting)
-                {
-                    if ((WantsToDrift || isBraking) && currentSpeed > maxSpeed * MinSpeedPercentToFinishDrift)
-                    {
-                        IsDrifting = true;
-                        m_DriftTurningPower = turningPower + (Mathf.Sign(turningPower) * DriftAdditionalSteer);
-                        m_CurrentGrip = DriftGrip;
-
-                        ActivateDriftVFX(true);
-                    }
-                }
-
-                if (IsDrifting)
-                {
-                    float turnInputAbs = Mathf.Abs(turnInput);
-                    if (turnInputAbs < k_NullInput)
-                        m_DriftTurningPower = Mathf.MoveTowards(m_DriftTurningPower, 0.0f, Mathf.Clamp01(DriftDampening * Time.fixedDeltaTime));
-
-                    // Update the turning power based on input
-                    float driftMaxSteerValue = m_FinalStats.Steer + DriftAdditionalSteer;
-                    m_DriftTurningPower = Mathf.Clamp(m_DriftTurningPower + (turnInput * Mathf.Clamp01(DriftControl * Time.fixedDeltaTime)), -driftMaxSteerValue, driftMaxSteerValue);
-
-                    bool facingVelocity = Vector3.Dot(Rigidbody.velocity.normalized, transform.forward * Mathf.Sign(accelInput)) > Mathf.Cos(MinAngleToFinishDrift * Mathf.Deg2Rad);
-
-                    bool canEndDrift = true;
-                    if (isBraking)
-                        canEndDrift = false;
-                    else if (!facingVelocity)
-                        canEndDrift = false;
-                    else if (turnInputAbs >= k_NullInput && currentSpeed > maxSpeed * MinSpeedPercentToFinishDrift)
-                        canEndDrift = false;
-
-                    if (canEndDrift || currentSpeed < k_NullSpeed)
-                    {
-                        // No Input, and car aligned with speed direction => Stop the drift
-                        IsDrifting = false;
-                        m_CurrentGrip = m_FinalStats.Grip;
-                    }
-
-                }
 
                 // rotate our velocity based on current steer value
                 Rigidbody.velocity = Quaternion.AngleAxis(turningPower * Mathf.Sign(localVel.z) * velocitySteering * m_CurrentGrip * Time.fixedDeltaTime, transform.up) * Rigidbody.velocity;
@@ -593,8 +492,6 @@ namespace KartGame.KartSystems
                 m_LastValidPosition = transform.position;
                 m_LastValidRotation.eulerAngles = new Vector3(0.0f, transform.rotation.y, 0.0f);
             }
-
-            ActivateDriftVFX(IsDrifting && GroundPercent > 0.0f);
         }
     }
 }

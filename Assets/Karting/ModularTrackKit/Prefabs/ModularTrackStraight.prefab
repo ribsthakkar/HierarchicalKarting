@@ -191,6 +191,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 1085248572456030575, guid: b73049a919fa59e449f000a3db861b1d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264814646459000489, guid: b73049a919fa59e449f000a3db861b1d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2550904585318904897, guid: b73049a919fa59e449f000a3db861b1d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712598285713173431, guid: b73049a919fa59e449f000a3db861b1d,
+        type: 3}
+      propertyPath: trackWidth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2712598285713173431, guid: b73049a919fa59e449f000a3db861b1d,
+        type: 3}
+      propertyPath: trackLength
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233041578322598758, guid: b73049a919fa59e449f000a3db861b1d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6850553478831941103, guid: b73049a919fa59e449f000a3db861b1d,
         type: 3}
       propertyPath: m_RootOrder
@@ -199,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 6850553478831941103, guid: b73049a919fa59e449f000a3db861b1d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.13209662
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6850553478831941103, guid: b73049a919fa59e449f000a3db861b1d,
         type: 3}

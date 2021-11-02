@@ -188,7 +188,12 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.Grip
-      value: 0.979
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: baseStats.MaxSteer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -203,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Mode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -217,6 +222,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: sectionWindow
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: timePrecision
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: WallHitPenalty
       value: -1
       objectReference: {fileID: 0}
@@ -224,6 +239,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sectionHorizon
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: collisionWindow
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -239,6 +259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OpponentHitPenalty
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: velocityBucketSize
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -394,7 +419,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: 40d70613dfe4f0b4d829b9a75a4f5ce5,
+        type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
@@ -803,7 +829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &26756718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,7 +924,11 @@ MonoBehaviour:
   Lane2: {fileID: 1123528470}
   Lane3: {fileID: 548723397}
   Lane4: {fileID: 1690073267}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!65 &58359740 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 4542118274883038761, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -1156,7 +1186,11 @@ MonoBehaviour:
   Lane2: {fileID: 1500422740}
   Lane3: {fileID: 1500422739}
   Lane4: {fileID: 1500422738}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!1001 &135655954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2165,12 +2199,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 560899842}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &273834004 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 7737591795549459898, guid: 941fac9249b6442cdb2d3f23472128e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1382268768}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &279104157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,7 +2215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &279104158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3475,7 +3503,11 @@ MonoBehaviour:
   Lane2: {fileID: 1551110227}
   Lane3: {fileID: 1164722455}
   Lane4: {fileID: 2128899458}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &471106195 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -3607,7 +3639,11 @@ MonoBehaviour:
   Lane2: {fileID: 2081584101}
   Lane3: {fileID: 1510496556}
   Lane4: {fileID: 1648519759}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!1 &490976033
 GameObject:
   m_ObjectHideFlags: 0
@@ -4359,7 +4395,11 @@ MonoBehaviour:
   Lane2: {fileID: 1802844853}
   Lane3: {fileID: 1985313648}
   Lane4: {fileID: 1908107665}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!4 &564232452 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1579282987822796750, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -4794,7 +4834,11 @@ MonoBehaviour:
   Lane2: {fileID: 2130051498}
   Lane3: {fileID: 1415010695}
   Lane4: {fileID: 1494854291}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!65 &619362635 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 4542118274883038761, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -4854,7 +4898,11 @@ MonoBehaviour:
   Lane2: {fileID: 1350755238}
   Lane3: {fileID: 1979873052}
   Lane4: {fileID: 1852327504}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!65 &647743625 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -5382,7 +5430,11 @@ MonoBehaviour:
   Lane2: {fileID: 404377146}
   Lane3: {fileID: 292954289}
   Lane4: {fileID: 1069931369}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &707550716 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -5473,37 +5525,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &818848547 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1031955258821633220, guid: 941fac9249b6442cdb2d3f23472128e2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1382268768}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &818848549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818848547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Trigger: {fileID: 0}
-  Lane1: {fileID: 273834004}
-  Lane2: {fileID: 0}
-  Lane3: {fileID: 0}
-  Lane4: {fileID: 0}
-  sectionType: 0
 --- !u!114 &818848550 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
     type: 3}
   m_PrefabInstance: {fileID: 1382268768}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818848547}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
@@ -6301,7 +6329,11 @@ MonoBehaviour:
   Lane2: {fileID: 0}
   Lane3: {fileID: 0}
   Lane4: {fileID: 0}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &898633605 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -6567,7 +6599,11 @@ MonoBehaviour:
   Lane2: {fileID: 919539592}
   Lane3: {fileID: 919539591}
   Lane4: {fileID: 919539590}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &920458202 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -7052,7 +7088,11 @@ MonoBehaviour:
   Lane2: {fileID: 1350755238}
   Lane3: {fileID: 1979873052}
   Lane4: {fileID: 1852327504}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!4 &998726536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6602977218683986153, guid: 06604f26f581c4de08c3f45572924c7d,
@@ -7082,7 +7122,11 @@ MonoBehaviour:
   Lane2: {fileID: 619362635}
   Lane3: {fileID: 2047488421}
   Lane4: {fileID: 1318413895}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!65 &1000246662 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -7922,7 +7966,11 @@ MonoBehaviour:
   Lane2: {fileID: 0}
   Lane3: {fileID: 0}
   Lane4: {fileID: 0}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &1096583195 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -8671,7 +8719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1156200746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9333,7 +9381,11 @@ MonoBehaviour:
   Lane2: {fileID: 2081584101}
   Lane3: {fileID: 1510496556}
   Lane4: {fileID: 1648519759}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!65 &1264250987 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -9603,7 +9655,11 @@ MonoBehaviour:
   Lane2: {fileID: 0}
   Lane3: {fileID: 0}
   Lane4: {fileID: 0}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &1325766308 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -10148,7 +10204,11 @@ MonoBehaviour:
   Lane2: {fileID: 2130051498}
   Lane3: {fileID: 1415010695}
   Lane4: {fileID: 1494854291}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!4 &1408844342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1579282987822796750, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -10564,7 +10624,11 @@ MonoBehaviour:
   Lane2: {fileID: 1907217843}
   Lane3: {fileID: 1191281015}
   Lane4: {fileID: 723415434}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!1001 &1487112665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10998,7 +11062,11 @@ MonoBehaviour:
   Lane2: {fileID: 95355185}
   Lane3: {fileID: 2124667413}
   Lane4: {fileID: 187590548}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!4 &1554182079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1579282987822796750, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -11052,7 +11120,11 @@ MonoBehaviour:
   Lane2: {fileID: 2009546922}
   Lane3: {fileID: 1743790136}
   Lane4: {fileID: 928460691}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!1001 &1580608389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12501,7 +12573,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12948,7 +13020,11 @@ MonoBehaviour:
   Lane2: {fileID: 58359740}
   Lane3: {fileID: 2004362667}
   Lane4: {fileID: 1358167800}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!65 &1802844853 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 4542118274883038761, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -13204,7 +13280,11 @@ MonoBehaviour:
   Lane2: {fileID: 942449965}
   Lane3: {fileID: 584179181}
   Lane4: {fileID: 985519802}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!1001 &1848890720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13215,7 +13295,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13762,7 +13842,11 @@ MonoBehaviour:
   Lane2: {fileID: 619362635}
   Lane3: {fileID: 2047488421}
   Lane4: {fileID: 1318413895}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!1001 &1969992148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14009,7 +14093,11 @@ MonoBehaviour:
   Lane2: {fileID: 911538641}
   Lane3: {fileID: 503051527}
   Lane4: {fileID: 498316378}
-  sectionType: 0
+  trackInsideRadius: 0
+  trackLength: 0
+  trackWidth: 0
+  leftTurn: 0
+  turnDegrees: 0
 --- !u!114 &2049744153 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -14096,6 +14184,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: baseStats.MaxSteer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_Name
@@ -14109,7 +14202,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Mode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14123,6 +14216,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: sectionWindow
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: timePrecision
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: WallHitPenalty
       value: -1
       objectReference: {fileID: 0}
@@ -14130,6 +14233,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sectionHorizon
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: collisionWindow
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14145,6 +14253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OpponentHitPenalty
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: velocityBucketSize
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14314,7 +14427,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

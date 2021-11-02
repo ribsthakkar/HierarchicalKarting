@@ -40,7 +40,6 @@ namespace KartGame.KartSystems
             if (arcadeKart != null)
             {
                 kartSpeed = arcadeKart.LocalSpeed();
-                Drift.volume = arcadeKart.IsDrifting && arcadeKart.GroundPercent > 0.0f ? arcadeKart.Rigidbody.velocity.magnitude / arcadeKart.GetMaxSpeed() : 0.0f;
             }
 
             IdleSound.volume    = Mathf.Lerp(0.6f, 0.0f, kartSpeed * 4);

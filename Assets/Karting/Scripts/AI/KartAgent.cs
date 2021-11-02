@@ -112,7 +112,7 @@ namespace KartGame.AI
         [HideInInspector] public bool m_HitOccured;
         [HideInInspector] public float m_LastAccumulatedReward;
         [HideInInspector] protected int episodeSteps = 0;
-
+        public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
 
         void Start()
         {        
@@ -167,7 +167,7 @@ namespace KartGame.AI
 
             FindSectionIndex(other, out var index, out var lane);
             LaneDifferenceRewardDivider = 1.0f;
-            // Ensure that the agent touched the checkpoint and the new index is greater than the m_CheckpointIndex.
+            // Ensure that the agent touched the checkpoint and the new index is greater than the m_SectionIndex.
             if ((triggered > 0 && index != 1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
@@ -185,6 +185,7 @@ namespace KartGame.AI
                 }
                 m_SectionIndex = index;
                 m_Lane = lane;
+                sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
             } 
             else if ((triggered > 0 && index !=1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {

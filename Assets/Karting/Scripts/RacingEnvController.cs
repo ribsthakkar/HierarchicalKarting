@@ -1,4 +1,5 @@
 using KartGame.AI;
+using KartGame.KartSystems;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -100,7 +101,6 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
-
     void FixedUpdate()
     {
         if (inactiveAgents.Count == Agents.Length)
@@ -159,6 +159,7 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
+
     void ResetGame()
     {
         //print("resetting game");
@@ -166,6 +167,7 @@ public class RacingEnvController : MonoBehaviour
         inactiveAgents.Clear();
         // For each agent
         var furthestForwardSection = -1;
+        var furthestBackSection = 100000;
         HashSet< Collider > addedColliders = new HashSet<Collider>();
         bool headToHead = UnityEngine.Random.Range(0, 7) != 1;
         var initialSection = -1;
@@ -182,8 +184,10 @@ public class RacingEnvController : MonoBehaviour
                     if (!addedColliders.Contains(collider))
                     {
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                        furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                         Agents[i].transform.localRotation = collider.transform.rotation;
                         Agents[i].transform.position = collider.transform.position;
+                        Agents[i].sectionTimes.Clear();
                         Agents[i].m_UpcomingLanes.Clear();
                         addedColliders.Add(collider);
                         break;
@@ -198,9 +202,11 @@ public class RacingEnvController : MonoBehaviour
                     initialSection = Agents[i].m_SectionIndex;
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                     furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                    furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
                     Agents[i].transform.localRotation = collider.transform.rotation;
                     Agents[i].transform.position = collider.transform.position;
+                    Agents[i].sectionTimes.Clear();
                     Agents[i].m_UpcomingLanes.Clear();
                     addedColliders.Add(collider);
                 }
@@ -214,8 +220,10 @@ public class RacingEnvController : MonoBehaviour
                         if (!addedColliders.Contains(collider))
                         {
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
+                            furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                             Agents[i].transform.localRotation = collider.transform.rotation;
                             Agents[i].transform.position = collider.transform.position;
+                            Agents[i].sectionTimes.Clear();
                             Agents[i].m_UpcomingLanes.Clear();
                             addedColliders.Add(collider);
                             break;
@@ -229,7 +237,17 @@ public class RacingEnvController : MonoBehaviour
         var maxSection = furthestForwardSection + sectionHorizon;
         for (int i = 0; i < Agents.Length; i++)
         {
-        // Then, for each agent, Generate a Sequence of Lanes to follow
+            // Generate times for reaching certain sections upto random one
+            int earliestTime = -maxEpisodeSteps;
+            for (int tp = furthestBackSection; tp < Agents[i].m_SectionIndex; tp++)
+            {
+                Agents[i].sectionTimes[tp] = UnityEngine.Random.Range(earliestTime, 0);
+                earliestTime = Agents[i].sectionTimes[tp];
+            }
+
+            Agents[i].sectionTimes[Agents[i].m_SectionIndex] = 0;
+
+            // Then, for each agent, Generate a Sequence of Lanes to follow
             for(int tp = Agents[i].m_SectionIndex+1; tp < maxSection; tp++)
             {
                 Agents[i].m_UpcomingLanes[tp % Sections.Length] = UnityEngine.Random.Range(1, 4);
@@ -243,4 +261,25 @@ public class RacingEnvController : MonoBehaviour
             Agents[i].OnEpisodeBegin();
         }
     }
+
+    public bool sectionIsStraight(int section)
+    {
+        return Sections[section % Sections.Length].isStraight();
+    }
+
+    public bool sectionSpeedFeasible(int section, int velocity, int initLane, int finalLane, ArcadeKart m_Kart)
+    {
+        return Sections[section % Sections.Length].isVelFeasible(velocity, initLane, finalLane, (m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer), m_Kart.m_FinalStats.MaxGs, m_Kart.m_FinalStats.MinGs);
+    }
+
+    public float computeDistanceInSection(int section, int initLane, int finalLane)
+    {
+        return Sections[section % Sections.Length].distanceToTravel(initLane, finalLane);
+    }
+
+    public float computeTireLoadInSection(int section, int max_velocity, int initLane, int finalLane)
+    {
+        return Sections[section % Sections.Length].tireLoad(max_velocity, initLane, finalLane);
+    }
+
 }
