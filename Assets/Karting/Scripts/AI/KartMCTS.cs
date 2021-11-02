@@ -36,8 +36,8 @@ public class KartMCTS
             timer.Start();
             KartMCTSNode leaf = findLeaf(root);
             // UnityEngine.Debug.Log(leaf.state.lastCompletedSection);
-            //var simRes = simulate(leaf);
-            //backpropagate(simRes.Item1, simRes.Item2);
+            var simRes = simulate(leaf);
+            backpropagate(simRes.Item1, simRes.Item2);
             timer.Stop();
             total += timer.Elapsed.TotalSeconds;
         }
@@ -90,24 +90,27 @@ public class KartMCTS
     private static Tuple<KartMCTSNode, List<int>> simulate(KartMCTSNode leaf)
     {
         System.Random random = new System.Random();
-        while (true)
+        int count = 0;
+        while (count < 10)
         {
             var result = leaf.state.isOver();
-            UnityEngine.Debug.Log(leaf.state.lastCompletedSection);
+            // UnityEngine.Debug.Log(leaf.state.lastCompletedSection + " " + leaf.state.initialSection + " " + leaf.state.finalSection);
             if (result.Item1)
             {
                 return Tuple.Create(leaf, result.Item2);
             }
             DiscreteGameState state = leaf.state;
-            List<DiscreteKartAction> nextActions = state.nextMoves().OrderByDescending(action => action.max_velocity).ToList();
-            int index = random.Next(nextActions.Count);
+            var nextActions = state.nextMoves().OrderByDescending(action => action.max_velocity).ToArray();
+            int index = random.Next(nextActions.Length);
             DiscreteKartAction move = nextActions[index];
             if(!leaf.children.ContainsKey(move))
             {
                 leaf.children[move] = new KartMCTSNode(state.makeMove(move), leaf);
             }
             leaf = leaf.children[move];
+            count += 1;
         }
+        return null;
     }
 
     private static void backpropagate(KartMCTSNode node, List<int> result)

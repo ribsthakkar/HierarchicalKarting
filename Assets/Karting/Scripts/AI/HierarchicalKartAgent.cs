@@ -101,11 +101,18 @@ namespace KartGame.AI
         }
     }
 
+    [System.Serializable]
     public struct DiscreteGameParams
     {
+        [Header("High-Level MCTS Planner Parameters")]
+        [Tooltip("What is the size of the discrete velocity buckets")]
         public int velocityBucketSize;
-        public int collisionWindow;
+        [Tooltip("What is the precision of time (1, 10, 100, etc. to use)?")]
         public int timePrecision;
+        [Tooltip("What is the time gap to represent a collision in the discrete game?")]
+        public float collisionWindow;
+        [Tooltip("When do we consider agents to be in game-theoritetic mode?")]
+        public int sectionWindow;
     }
 
     public class DiscreteGameState
@@ -210,7 +217,7 @@ namespace KartGame.AI
             List<DiscreteKartAction> possibleActions = new List<DiscreteKartAction>();
             for(int i = 0; i < (int) agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
             {
-                Console.WriteLine("Here");
+                // UnityEngine.Debug.Log("Here");
                 for (int j = 1; j < 5; j++)
                 {
                     possibleActions.Add(new DiscreteKartAction
@@ -294,16 +301,7 @@ namespace KartGame.AI
     {
 
         #region MCTS Params
-        [HideInInspector] private DiscreteGameParams gameParams;
-        [Header("High-Level MCTS Planner Parameters")]
-        [Tooltip("What is the size of the discrete velocity buckets")]
-        public int velocityBucketSize;
-        [Tooltip("What is the precision of time (1, 10, 100, etc. to use)?")]
-        public int timePrecision;
-        [Tooltip("What is the time gap to represent a collision in the discrete game?")]
-        public float collisionWindow;
-        [Tooltip("When do we consider agents to be in game-theoritetic mode?")]
-        public int sectionWindow;
+        public DiscreteGameParams gameParams;
         #endregion
 
         private void planRandomly()
@@ -323,7 +321,7 @@ namespace KartGame.AI
             KartAgent furthestForwardAgent = this;
             foreach(KartAgent agent in m_envController.Agents)
             {
-                if(Math.Abs(agent.m_SectionIndex - m_SectionIndex) < sectionWindow)
+                if(Math.Abs(agent.m_SectionIndex - m_SectionIndex) < gameParams.sectionWindow)
                 {
                     nearbyAgents.Add(agent);
                     initialSection = Math.Max(initialSection, agent.m_SectionIndex);
