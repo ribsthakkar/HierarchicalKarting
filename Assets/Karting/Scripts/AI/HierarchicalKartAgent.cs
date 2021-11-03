@@ -81,13 +81,13 @@ namespace KartGame.AI
             newState.min_velocity = action.min_velocity;
             newState.max_velocity = action.max_velocity;
             newState.lane = action.lane;
-            if (newState.lane != lane)
-            {
-                newState.laneChanges = laneChanges + Math.Abs(newState.lane - lane);
-            }
-            else if (environment.sectionIsStraight(section) != environment.sectionIsStraight(section+1))
+            if (environment.sectionIsStraight(section) != environment.sectionIsStraight(section + 1))
             {
                 newState.laneChanges = 0;
+            }
+            else if (newState.lane != lane)
+            {
+                newState.laneChanges = laneChanges + Math.Abs(newState.lane - lane);
             }
             else
             {
