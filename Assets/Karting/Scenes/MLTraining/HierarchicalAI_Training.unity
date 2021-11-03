@@ -542,6 +542,7 @@ MonoBehaviour:
   HitByOpponentPenalty: -1
   PassCheckpointReward: 0.1
   ReversePenalty: -0.5
+  SwervingPenalty: -0.5
   ReachGoalCheckpointRewardMultplier: 5
   ReachGoalCheckpointRewardBase: 3
   TowardsCheckpointReward: 0.003
@@ -1930,7 +1931,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.sectionWindow
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3376,6 +3377,7 @@ MonoBehaviour:
   HitByOpponentPenalty: -1
   PassCheckpointReward: 0.1
   ReversePenalty: -0.5
+  SwervingPenalty: -0.5
   ReachGoalCheckpointRewardMultplier: 5
   ReachGoalCheckpointRewardBase: 3
   TowardsCheckpointReward: 0.003
@@ -3794,7 +3796,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.sectionWindow
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7972,6 +7974,7 @@ MonoBehaviour:
   HitByOpponentPenalty: -1
   PassCheckpointReward: 0.1
   ReversePenalty: -0.5
+  SwervingPenalty: -0.5
   ReachGoalCheckpointRewardMultplier: 5
   ReachGoalCheckpointRewardBase: 3
   TowardsCheckpointReward: 0.003
@@ -12073,7 +12076,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.sectionWindow
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14348,7 +14351,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.sectionWindow
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14476,6 +14479,7 @@ MonoBehaviour:
   HitByOpponentPenalty: -1
   PassCheckpointReward: 0.1
   ReversePenalty: -0.5
+  SwervingPenalty: -0.5
   ReachGoalCheckpointRewardMultplier: 5
   ReachGoalCheckpointRewardBase: 3
   TowardsCheckpointReward: 0.003

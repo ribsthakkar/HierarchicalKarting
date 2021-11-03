@@ -100,6 +100,7 @@ public class KartMCTS
             }
             DiscreteGameState state = leaf.state;
             var nextActions = state.nextMoves().OrderByDescending(action => action.max_velocity).ToArray();
+            // UnityEngine.Debug.Log(nextActions[0].max_velocity);
             int index = random.Next(nextActions.Length);
             DiscreteKartAction move = nextActions[index];
             if(!leaf.children.ContainsKey(move))
