@@ -90,8 +90,7 @@ public class KartMCTS
     private static Tuple<KartMCTSNode, List<int>> simulate(KartMCTSNode leaf)
     {
         System.Random random = new System.Random();
-        int count = 0;
-        while (count < 10)
+        while (true)
         {
             var result = leaf.state.isOver();
             // UnityEngine.Debug.Log(leaf.state.lastCompletedSection + " " + leaf.state.initialSection + " " + leaf.state.finalSection);
@@ -108,9 +107,7 @@ public class KartMCTS
                 leaf.children[move] = new KartMCTSNode(state.makeMove(move), leaf);
             }
             leaf = leaf.children[move];
-            count += 1;
         }
-        return null;
     }
 
     private static void backpropagate(KartMCTSNode node, List<int> result)

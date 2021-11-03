@@ -107,7 +107,9 @@ namespace KartGame.AI
         [HideInInspector] public bool anyHit = false;
         [HideInInspector] public int m_timeSteps = 0;
         [HideInInspector] public float LaneDifferenceRewardDivider = 1.0f;
+        [HideInInspector] public float VelocityDifferenceRewardDivider = 1.0f;
         [HideInInspector] public Dictionary<int, int> m_UpcomingLanes = new Dictionary<int, int>();
+        [HideInInspector] public Dictionary<int, float> m_UpcomingVelocities = new Dictionary<int, float>();
         [HideInInspector] public HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
         [HideInInspector] public bool m_HitOccured;
         [HideInInspector] public float m_LastAccumulatedReward;
@@ -160,6 +162,26 @@ namespace KartGame.AI
             LaneDifferenceRewardDivider = 1.0f;
         }
 
+        protected virtual void setVelocityDifferenceDivider(int sectionIndex, float velocity)
+        {
+            VelocityDifferenceRewardDivider = 1.0f;
+        }
+
+
+        public void planRandomly()
+        {
+            for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon, m_envController.goalSection) + 1; i++)
+            {
+                if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
+                    m_UpcomingLanes[i % m_envController.Sections.Length] = Random.Range(1, 4);
+            }
+        }
+
+        public virtual void initialPlan()
+        {
+            planRandomly();
+        }
+
         void OnTriggerEnter(Collider other)
         {
             var maskedValue = 1 << other.gameObject.layer;
@@ -167,13 +189,17 @@ namespace KartGame.AI
 
             FindSectionIndex(other, out var index, out var lane);
             LaneDifferenceRewardDivider = 1.0f;
+            VelocityDifferenceRewardDivider = 1.0f;
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_SectionIndex.
             if ((triggered > 0 && index != 1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
                 {
                     setLaneDifferenceDivider(index, lane);
+                    setVelocityDifferenceDivider(index, m_Kart.Rigidbody.velocity.magnitude);
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
+                    m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
+
                 }
                 if (index == m_envController.goalSection)
                 {
@@ -183,6 +209,20 @@ namespace KartGame.AI
                 {
                     m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
                 }
+                if (m_Lane != lane && m_envController.sectionIsStraight(m_SectionIndex))
+                {
+                    m_LaneChanges += 1;
+                }
+                else
+                {
+                    m_LaneChanges = 0;
+                }
+
+                if (m_LaneChanges > 1 && m_envController.sectionIsStraight(m_SectionIndex))
+                {
+                    AddReward(m_envController.SwervingPenalty);
+                }
+
                 m_SectionIndex = index;
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
@@ -243,6 +283,7 @@ namespace KartGame.AI
         public void ApplySectionReward()
         {
             AddReward(m_envController.PassCheckpointReward /LaneDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointReward / VelocityDifferenceRewardDivider);
         }
 
         public void Deactivate()

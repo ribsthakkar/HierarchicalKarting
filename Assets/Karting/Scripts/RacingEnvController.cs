@@ -39,6 +39,8 @@ public class RacingEnvController : MonoBehaviour
     public float PassCheckpointReward = 0.1f;
     [Tooltip("How much reward is given when the agent travels backwards through the checkpoints?")]
     public float ReversePenalty = -0.5f;
+    [Tooltip("How much reward is given when the agent switches lanes multiple times on a straightaway?")]
+    public float SwervingPenalty = -0.5f;
     [Tooltip("How much the normalized remaining time is multiplied by to provide as a reward for the agent reaching the goal checkpoint?")]
     public float ReachGoalCheckpointRewardMultplier = 5.0f;
     [Tooltip("How much reward base reward is given to the agent for reaching the goal checkpoint?")]
@@ -180,7 +182,8 @@ public class RacingEnvController : MonoBehaviour
                 {
                     Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
-                    var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                    Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                    var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     if (!addedColliders.Contains(collider))
                     {
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
@@ -189,6 +192,7 @@ public class RacingEnvController : MonoBehaviour
                         Agents[i].transform.position = collider.transform.position;
                         Agents[i].sectionTimes.Clear();
                         Agents[i].m_UpcomingLanes.Clear();
+                        Agents[i].m_UpcomingVelocities.Clear();
                         addedColliders.Add(collider);
                         break;
                     }
@@ -203,11 +207,13 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                     furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                     furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
-                    var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                    Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                    var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     Agents[i].transform.localRotation = collider.transform.rotation;
                     Agents[i].transform.position = collider.transform.position;
                     Agents[i].sectionTimes.Clear();
                     Agents[i].m_UpcomingLanes.Clear();
+                    Agents[i].m_UpcomingVelocities.Clear();
                     addedColliders.Add(collider);
                 }
                 else
@@ -216,7 +222,8 @@ public class RacingEnvController : MonoBehaviour
                     {
                         Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), initialSection + 1);
                         Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
-                        var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(UnityEngine.Random.Range(1, 4));
+                        Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                        var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                         if (!addedColliders.Contains(collider))
                         {
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
@@ -225,6 +232,7 @@ public class RacingEnvController : MonoBehaviour
                             Agents[i].transform.position = collider.transform.position;
                             Agents[i].sectionTimes.Clear();
                             Agents[i].m_UpcomingLanes.Clear();
+                            Agents[i].m_UpcomingVelocities.Clear();
                             addedColliders.Add(collider);
                             break;
                         }
@@ -247,16 +255,17 @@ public class RacingEnvController : MonoBehaviour
 
             Agents[i].sectionTimes[Agents[i].m_SectionIndex] = 0;
 
-            // Then, for each agent, Generate a Sequence of Lanes to follow
-            for(int tp = Agents[i].m_SectionIndex+1; tp < maxSection; tp++)
-            {
-                Agents[i].m_UpcomingLanes[tp % Sections.Length] = UnityEngine.Random.Range(1, 4);
-
-            }
         }
 
         for (int i = 0; i < Agents.Length; i++)
         {
+            // Then, for each agent, Generate the initial plan
+            Agents[i].initialPlan();
+        }
+
+        for (int i = 0; i < Agents.Length; i++)
+        {
+
             Agents[i].Activate();
             Agents[i].OnEpisodeBegin();
         }

@@ -75,7 +75,7 @@ namespace KartGame.AI
             newState.min_velocity = action.min_velocity;
             newState.max_velocity = action.max_velocity;
             newState.lane = action.lane;
-            if (newState.lane != lane && environment.sectionIsStraight(section) && environment.sectionIsStraight(newState.section))
+            if (newState.lane != lane && environment.sectionIsStraight(section))
             {
                 newState.laneChanges = laneChanges + 1;
             }
@@ -217,7 +217,6 @@ namespace KartGame.AI
             List<DiscreteKartAction> possibleActions = new List<DiscreteKartAction>();
             for(int i = 0; i < (int) agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
             {
-                // UnityEngine.Debug.Log("Here");
                 for (int j = 1; j < 5; j++)
                 {
                     possibleActions.Add(new DiscreteKartAction
@@ -229,9 +228,10 @@ namespace KartGame.AI
                 }
             }
             return possibleActions.FindAll((action) =>
-            {   
+            {
+                //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
-                if(envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges == 1 && action.lane != currentState.lane)
+                if (envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges == 1 && action.lane != currentState.lane)
                 {
                     return false;
                 }                
@@ -253,8 +253,13 @@ namespace KartGame.AI
                 // Will there be a collision?
                 foreach (DiscreteKartState other in kartStates)
                 {
-                    if (other.section == lastCompletedSection + 1 && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection)*1.0f/gameParams.timePrecision < gameParams.collisionWindow)
+                    if (other.player != appliedAction.player && other.section == lastCompletedSection + 1 && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection)*1.0f/gameParams.timePrecision < gameParams.collisionWindow)
                     {
+                        Debug.Log("Our Player" + appliedAction.player);
+                        Debug.Log("Other Player " + other.player);
+                        Debug.Log("Our tas " + appliedAction.timeAtSection);
+                        Debug.Log("Other tas " + other.timeAtSection);
+                        Debug.Log("Collision Fear");
                         return false;
                     }
                 }
@@ -304,16 +309,12 @@ namespace KartGame.AI
         public DiscreteGameParams gameParams;
         #endregion
 
-        private void planRandomly()
+        public override void initialPlan()
         {
-            for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon, m_envController.goalSection) + 1; i++)
-            {
-                if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
-                    m_UpcomingLanes[i % m_envController.Sections.Length] = Random.Range(1, 4);
-            }
+            planWithMCTS();
         }
 
-        private void planWithMCTS()
+        public void planWithMCTS()
         {
             List<KartAgent> nearbyAgents = new List<KartAgent>();
             List<DiscreteKartState> nearbyAgentStates = new List<DiscreteKartState>();
@@ -352,6 +353,10 @@ namespace KartGame.AI
                 {
                     timeAtSection = (int) ((agent.sectionTimes[agent.m_SectionIndex] - furthestForwardAgent.sectionTimes[agent.m_SectionIndex]) * Time.fixedDeltaTime * gameParams.timePrecision);
                 }
+                if (m_Lane <= 0)
+                {
+                    Debug.Log("LANE LESS THAN 0 for TEAM " + agent.name);
+                }
                 nearbyAgentStates.Add(new DiscreteKartState
                 {
                     player = count,
@@ -387,6 +392,7 @@ namespace KartGame.AI
                     if (gameState.kartAgents[kartState.player] == this && kartState.section > m_SectionIndex)
                     {
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
+                        m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
                     }
                 }
             }
@@ -396,7 +402,7 @@ namespace KartGame.AI
         {
             base.FixedUpdate();
             episodeSteps += 1;
-            if (episodeSteps % 100 == 0)
+            if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
                 //try
                 //{
@@ -415,7 +421,13 @@ namespace KartGame.AI
             base.Awake();
             var behaviorParameters = GetComponent<BehaviorParameters>();
             var brainParameters = behaviorParameters.BrainParameters;
-            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon + 5 + 8 * otherAgents.Length;
+            /**
+             * Sensors.Lenght -> RayCasts
+             * SectionHorizon*2 -> Upcoming Lanes and Velocities
+             * 5 -> Current Player's state
+             * 8 -> Other player states
+             **/
+            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon*2 + 5 + 8 * otherAgents.Length;
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -428,6 +440,18 @@ namespace KartGame.AI
                 //print(sectionIndex);
                 LaneDifferenceRewardDivider = (float) Math.Pow(2.0, 1.0*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]));
             }
+        }
+
+        protected override void setVelocityDifferenceDivider(int sectionIndex, float velocity)
+        {
+            VelocityDifferenceRewardDivider = 1.0f;
+            //var lines1 = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
+            //print("Upcoming Lanes " + this.name + " " + string.Join(",", lines1));
+            //var lines = m_UpcomingVelocities.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
+            //print("Upcoming Velocities " + this.name + " " + string.Join(",", lines));
+            //print(sectionIndex);
+            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize/2.0f)
+                VelocityDifferenceRewardDivider = (float)Math.Pow(2.0, 1.0 * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0));
         }
 
         public override void CollectObservations(VectorSensor sensor)
@@ -449,13 +473,13 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_Lane);
                 sensor.AddObservation(agent.m_LaneChanges);
                 sensor.AddObservation(agent.gameObject.activeSelf);
-                sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight");
+                sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(Vector3.SignedAngle(m_Kart.transform.forward, agent.m_Kart.transform.position, Vector3.up));
 
             }
 
-            // Add an observation for direction of the agent to the next checkpoint and lane.
+            // Add an observation for direction of the agent to the next checkpoint and lane and the velocity at that lane.
             for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + sectionHorizon; i++)
             {
                 var next = (i) % m_envController.Sections.Length;
@@ -467,13 +491,14 @@ namespace KartGame.AI
                     BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes[next]);
                     var direction = (targetLaneInSection.transform.position - m_Kart.transform.position).normalized;
                     sensor.AddObservation(Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction));
-
+                    sensor.AddObservation(m_UpcomingVelocities[next] / m_Kart.GetMaxSpeed());
                     if (ShowRaycasts)
                         Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
                 }
                 else
                 {
                     sensor.AddObservation(3.5f);
+                    sensor.AddObservation(0.5f);
                 }
             }
             for (var i = 0; i < Sensors.Length; i++)
