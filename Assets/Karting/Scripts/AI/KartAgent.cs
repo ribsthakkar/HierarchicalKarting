@@ -199,8 +199,8 @@ namespace KartGame.AI
                     setVelocityDifferenceDivider(index, m_Kart.Rigidbody.velocity.magnitude);
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
-
                 }
+                m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<MeshRenderer>().material = Resources.Load<Material>("None");
                 if (index == m_envController.goalSection)
                 {
                     m_envController.ResolveEvent(Event.ReachGoalSection, this, null);

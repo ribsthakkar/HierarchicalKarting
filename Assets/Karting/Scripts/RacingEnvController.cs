@@ -279,18 +279,20 @@ public class RacingEnvController : MonoBehaviour
         return Sections[section % Sections.Length].isStraight();
     }
 
-    public bool sectionSpeedFeasible(int section, int velocity, int initLane, int finalLane, ArcadeKart m_Kart)
+    public bool sectionSpeedFeasible(int section, int velocity, int initLane, int finalLane, float tireAge, ArcadeKart m_Kart)
     {
-        return Sections[section % Sections.Length].isVelFeasible(velocity, initLane, finalLane, (m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer), m_Kart.m_FinalStats.MaxGs, m_Kart.m_FinalStats.MinGs);
+        return Sections[section % Sections.Length].isVelFeasible(velocity, initLane, finalLane, tireAge, m_Kart.m_FinalStats.MaxGs, m_Kart.m_FinalStats.MinGs);
     }
 
     public float computeDistanceInSection(int section, int initLane, int finalLane)
     {
+        // print("Going from lane " + initLane + " to lane " + finalLane + " in section " + Sections[section % Sections.Length].name + "is this long " + Sections[section % Sections.Length].distanceToTravel(initLane, finalLane));
         return Sections[section % Sections.Length].distanceToTravel(initLane, finalLane);
     }
 
     public float computeTireLoadInSection(int section, int max_velocity, int initLane, int finalLane)
     {
+        // print("Section " + section + " tire load is " + Sections[section % Sections.Length].tireLoad(max_velocity, initLane, finalLane) + " with velocity" + max_velocity);
         return Sections[section % Sections.Length].tireLoad(max_velocity, initLane, finalLane);
     }
 

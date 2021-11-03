@@ -87,7 +87,7 @@ public class KartMCTS
         return root;
     }
 
-    private static Tuple<KartMCTSNode, List<int>> simulate(KartMCTSNode leaf)
+    private static Tuple<KartMCTSNode, List<float>> simulate(KartMCTSNode leaf)
     {
         System.Random random = new System.Random();
         while (true)
@@ -111,7 +111,7 @@ public class KartMCTS
         }
     }
 
-    private static void backpropagate(KartMCTSNode node, List<int> result)
+    private static void backpropagate(KartMCTSNode node, List<float> result)
     {
         while (node != null)
         {

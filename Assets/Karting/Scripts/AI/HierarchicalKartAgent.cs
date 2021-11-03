@@ -29,6 +29,7 @@ namespace KartGame.AI
         public int tireAge;
         public int laneChanges;
         public bool infeasible;
+        public string name;
         
         public float getAverageVelocity()
         {
@@ -40,6 +41,10 @@ namespace KartGame.AI
             // Full acceleration or full braking does not have enough distance
             if (finalV > initV && (finalV*finalV - initV*initV)/(2*kart.m_FinalStats.Acceleration) > distance)
             {
+                //Debug.Log(finalV);
+                //Debug.Log(initV);
+                //Debug.Log((finalV * finalV - initV * initV) / (2 * kart.m_FinalStats.Acceleration));
+                //Debug.Log(distance);
                 return -1.0f;
             }
             if (initV > finalV && (initV * initV - finalV * finalV) / (2 * kart.m_FinalStats.Braking) > distance)
@@ -70,6 +75,7 @@ namespace KartGame.AI
         {
             ArcadeKart kart = environment.Agents[player].m_Kart;
             DiscreteKartState newState = new DiscreteKartState();
+            newState.name = name;
             newState.player = player;
             newState.section = section + 1;
             newState.min_velocity = action.min_velocity;
@@ -89,13 +95,14 @@ namespace KartGame.AI
             int timeUpdate = (int) computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision;
             if (timeUpdate < 0)
             {
+                // Debug.Log(timeUpdate);
                 newState.infeasible = true;
             }
             newState.timeAtSection = timeAtSection + timeUpdate;
 
             // Update TireAge estimate
             float tireLoad = environment.computeTireLoadInSection(section, action.max_velocity, lane, action.lane);
-            newState.tireAge = tireAge + (int) (tireLoad * kart.m_FinalStats.TireWearFactor);
+            newState.tireAge =  (int) ((tireAge/10000f + tireLoad * kart.m_FinalStats.TireWearFactor) * 10000);
 
             return newState;
         }
@@ -181,15 +188,18 @@ namespace KartGame.AI
             }
             return -1;
         }
-        public Tuple<bool, List<int>> isOver()
+        public Tuple<bool, List<float>> isOver()
         {
             if (lastCompletedSection != finalSection)
             {
-                return Tuple.Create(false, new List<int>());
+                return Tuple.Create(false, new List<float>());
             }
             else
             {
+                int maxScore = gameParams.timePrecision * -1000;
+                int minScore = gameParams.timePrecision * 1000;
                 List<int> scores = new List<int>();
+                List<float> normalizedScores = new List<float>();
                 foreach(DiscreteKartState s in kartStates)
                 {
                     int score = 0;
@@ -205,8 +215,14 @@ namespace KartGame.AI
                         }
                     }
                     scores.Add(score);
+                    maxScore = Math.Max(maxScore, score);
+                    minScore = Math.Min(minScore, score);
                 }
-                return Tuple.Create(true, scores);
+                foreach(int score in scores)
+                {
+                    normalizedScores.Add((score - minScore) * 1.0f / (maxScore - minScore));
+                }
+                return Tuple.Create(true, normalizedScores);
             }
         }
         public List<DiscreteKartAction> nextMoves()
@@ -237,7 +253,7 @@ namespace KartGame.AI
                 }                
                 
                 // Is lateral gs infeasible?
-                if (!envController.sectionSpeedFeasible(lastCompletedSection, action.max_velocity, currentState.lane, action.lane, agent.m_Kart))
+                if (!envController.sectionSpeedFeasible(lastCompletedSection, action.max_velocity, currentState.lane, action.lane, currentState.tireAge /10000f, agent.m_Kart))
                 {
                     return false;
                 }
@@ -246,6 +262,7 @@ namespace KartGame.AI
                 DiscreteKartState appliedAction = currentState.applyAction(action, envController, gameParams);
                 if(appliedAction.infeasible)
                 {
+                    // Debug.Log("Going from speed " + currentState.getAverageVelocity() + " to " + appliedAction.getAverageVelocity() + " infeasible in section " + appliedAction.section);
                     return false;
                 }
 
@@ -365,9 +382,10 @@ namespace KartGame.AI
                     min_velocity = min_velocity,
                     max_velocity = max_velocity,
                     lane = agent.m_Lane,
-                    tireAge = (int) (m_Kart.m_FinalStats.Steer/m_Kart.baseStats.Steer * 100),
+                    tireAge = (int) ((m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer) * 10000),
                     laneChanges = agent.m_LaneChanges,
-                    infeasible = false
+                    infeasible = false,
+                    name = agent.name
                 });
             }
 
@@ -382,19 +400,29 @@ namespace KartGame.AI
                 gameParams = gameParams
                 
             };
-            KartMCTSNode root = KartMCTS.constructSearchTree(initialGameState);
+            KartMCTSNode root = KartMCTS.constructSearchTree(initialGameState, T: 0.15);
             List<DiscreteGameState> bestStates = KartMCTS.getBestStatesSequence(root);
-
+            print(this.name + " " + initialGameState.kartAgents.Count);
             foreach(DiscreteGameState gameState in bestStates)
             {
                 foreach(DiscreteKartState kartState in gameState.kartStates)
                 {
-                    if (gameState.kartAgents[kartState.player] == this && kartState.section > m_SectionIndex)
+                    if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex)
                     {
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
+                        m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<MeshRenderer>().material = Resources.Load<Material>("Basic Green");
+                        // print(kartState.tireAge);
                     }
                 }
+            }
+            if (Mode == AgentMode.Inferencing)
+            {
+                var lines1 = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
+                print("Upcoming Lanes " + this.name + " " + string.Join(",", lines1));
+                var lines = m_UpcomingVelocities.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
+                print("Upcoming Velocities " + this.name + " " + string.Join(",", lines));
+                print(m_SectionIndex);
             }
         }
 
@@ -448,8 +476,9 @@ namespace KartGame.AI
             //var lines1 = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
             //print("Upcoming Lanes " + this.name + " " + string.Join(",", lines1));
             //var lines = m_UpcomingVelocities.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
-            //print("Upcoming Velocities " + this.name + " " + string.Join(",", lines));
-            //print(sectionIndex);
+            // print("Upcoming Velocities " + this.name + " " + m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]);
+            // print(sectionIndex);
+            // print("Actual velocity " + velocity);
             if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize/2.0f)
                 VelocityDifferenceRewardDivider = (float)Math.Pow(2.0, 1.0 * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0));
         }

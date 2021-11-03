@@ -116,7 +116,7 @@ public class DiscretePositionTracker : MonoBehaviour
 
     public float distanceToTravel(int initLane, int finalLane)
     {
-        if (!isStraight())
+        if (isStraight())
         {
             float widthTraversed = (Math.Abs(initLane - finalLane) * 1.0f / 3.0f) * trackWidth;
             return Mathf.Sqrt(widthTraversed * widthTraversed + trackLength * trackLength);
@@ -124,20 +124,21 @@ public class DiscretePositionTracker : MonoBehaviour
         else
         {
             float avgRad = radiusOfLane(initLane, finalLane);
-            return Mathf.PI * turnDegrees * avgRad;
+            return (Mathf.PI / 180f) * turnDegrees * avgRad;
         }
     }
 
     public float tireLoad(float velocity, int initLane, int finalLane)
     {
-        if (!isStraight())
+        if (isStraight())
         {
-            float gs = (velocity * velocity) / radiusOfLane(initLane, finalLane);
-            return gs * distanceToTravel(initLane, finalLane) * 0.01f;
+
+            return distanceToTravel(initLane, finalLane) * 0.01f;
         }
         else
         {
-            return distanceToTravel(initLane, finalLane) * 0.01f;
+            float gs = (velocity * velocity) / radiusOfLane(initLane, finalLane);
+            return gs * distanceToTravel(initLane, finalLane) * 0.01f;
         }
     }
 
@@ -155,7 +156,7 @@ public class DiscretePositionTracker : MonoBehaviour
         else
         {
             float gs = ((velocity * velocity) / radiusOfLane(initLane, finalLane))/9.81f;
-            float g_diff = (maxGs - minGs) * (1 - tireWearProportion);
+            float g_diff = (maxGs - minGs) * (tireWearProportion);
             return gs <= maxGs - g_diff;
 
         }

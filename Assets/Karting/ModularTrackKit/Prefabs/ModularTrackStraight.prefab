@@ -172,12 +172,12 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1579282987822437358}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 83f0e1b2590734b80bda8c5dcda941da, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: -1
   m_Mesh: {fileID: 4300002, guid: 4c266eccb4ff24ae9aeaf6fa734f60ea, type: 3}
 --- !u!1001 &578173711743648928
 PrefabInstance:
@@ -190,36 +190,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Waypoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 1085248572456030575, guid: b73049a919fa59e449f000a3db861b1d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264814646459000489, guid: b73049a919fa59e449f000a3db861b1d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550904585318904897, guid: b73049a919fa59e449f000a3db861b1d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2712598285713173431, guid: b73049a919fa59e449f000a3db861b1d,
-        type: 3}
-      propertyPath: trackWidth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2712598285713173431, guid: b73049a919fa59e449f000a3db861b1d,
-        type: 3}
-      propertyPath: trackLength
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3233041578322598758, guid: b73049a919fa59e449f000a3db861b1d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6850553478831941103, guid: b73049a919fa59e449f000a3db861b1d,
         type: 3}
