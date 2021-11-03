@@ -11,7 +11,8 @@ public enum Event
     HitWall = 0,
     HitOpponent = 1,
     ReachNonGoalSection = 2,
-    ReachGoalSection = 3
+    ReachGoalSection = 3,
+    DroveReverseLimit = 4
 }
 
 
@@ -162,6 +163,11 @@ public class RacingEnvController : MonoBehaviour
                 break;
             case Event.ReachGoalSection:
                 triggeringAgent.m_timeSteps = episodeSteps;
+                triggeringAgent.Deactivate();
+                inactiveAgents.Add(triggeringAgent);
+                break;
+            case Event.DroveReverseLimit:
+                triggeringAgent.m_timeSteps = maxEpisodeSteps;
                 triggeringAgent.Deactivate();
                 inactiveAgents.Add(triggeringAgent);
                 break;

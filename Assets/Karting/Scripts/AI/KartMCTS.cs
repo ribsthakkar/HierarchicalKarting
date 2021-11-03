@@ -50,7 +50,8 @@ public class KartMCTS
         while (node.children.Count > 0)
         {
             node = node.children[upperConfidenceStrategy(node)];
-            bestStates.Add(node.state);
+            if (node.state.kartStates.All((state) => state.section == node.state.lastCompletedSection))
+                bestStates.Add(node.state);
         }
         return bestStates;
     }

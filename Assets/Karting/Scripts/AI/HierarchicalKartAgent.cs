@@ -92,11 +92,15 @@ namespace KartGame.AI
 
             // Update timeAtSection estimate using 1D TOC
             float distanceInSection = environment.computeDistanceInSection(section, lane, action.lane);
-            int timeUpdate = (int) computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision;
+            int timeUpdate = (int) (computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision);
             if (timeUpdate < 0)
             {
                 // Debug.Log(timeUpdate);
                 newState.infeasible = true;
+            }
+            else
+            {
+                // Debug.Log("To travel " + distanceInSection + " it takes " + timeUpdate);
             }
             newState.timeAtSection = timeAtSection + timeUpdate;
 
@@ -243,7 +247,7 @@ namespace KartGame.AI
                     });
                 }
             }
-            return possibleActions.FindAll((action) =>
+            List<DiscreteKartAction> filteredActions =  possibleActions.FindAll((action) =>
             {
                 //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
@@ -270,13 +274,13 @@ namespace KartGame.AI
                 // Will there be a collision?
                 foreach (DiscreteKartState other in kartStates)
                 {
-                    if (other.player != appliedAction.player && other.section == lastCompletedSection + 1 && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection)*1.0f/gameParams.timePrecision < gameParams.collisionWindow)
+                    if (!other.name.Equals(appliedAction.name) && other.section == appliedAction.section && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection)*1.0f/gameParams.timePrecision < gameParams.collisionWindow)
                     {
-                        Debug.Log("Our Player" + appliedAction.player);
-                        Debug.Log("Other Player " + other.player);
-                        Debug.Log("Our tas " + appliedAction.timeAtSection);
-                        Debug.Log("Other tas " + other.timeAtSection);
-                        Debug.Log("Collision Fear");
+                        //Debug.Log("Our Player" + appliedAction.name);
+                        //Debug.Log("Other Player " + other.name);
+                        //Debug.Log("Our tas " + appliedAction.timeAtSection);
+                        //Debug.Log("Other tas " + other.timeAtSection);
+                        //Debug.Log("Collision Fear");
                         return false;
                     }
                 }
@@ -284,6 +288,39 @@ namespace KartGame.AI
                 return true;
             }
             ).ToList();
+            // If can't find collision free action set, allow collision action-set hoping that Low-level planner will prevent the crash
+            if (filteredActions.Count == 0)
+            {
+                return possibleActions.FindAll((action) =>
+                {
+                    //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
+                    // Is Lane changing not allowed?
+                    if (envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges > envController.MaxLaneChanges && action.lane != currentState.lane)
+                    {
+                        return false;
+                    }
+
+                    // Is lateral gs infeasible?
+                    if (!envController.sectionSpeedFeasible(lastCompletedSection, action.max_velocity, currentState.lane, action.lane, currentState.tireAge / 10000f, agent.m_Kart))
+                    {
+                        return false;
+                    }
+
+                    // Is changing speed infeasible?
+                    DiscreteKartState appliedAction = currentState.applyAction(action, envController, gameParams);
+                    if (appliedAction.infeasible)
+                    {
+                        // Debug.Log("Going from speed " + currentState.getAverageVelocity() + " to " + appliedAction.getAverageVelocity() + " infeasible in section " + appliedAction.section);
+                        return false;
+                    }
+                    return true;
+                }
+                ).ToList();
+            }
+            else
+            {
+                return filteredActions;
+            }
 
         }
         public DiscreteGameState makeMove(DiscreteKartAction action)
@@ -400,19 +437,26 @@ namespace KartGame.AI
                 gameParams = gameParams
                 
             };
-            KartMCTSNode root = KartMCTS.constructSearchTree(initialGameState, T: 0.15);
+            KartMCTSNode root = KartMCTS.constructSearchTree(initialGameState);
             List<DiscreteGameState> bestStates = KartMCTS.getBestStatesSequence(root);
-            print(this.name + " " + initialGameState.kartAgents.Count);
+            // print(this.name + " " + initialGameState.kartAgents.Count);
             foreach(DiscreteGameState gameState in bestStates)
             {
                 foreach(DiscreteKartState kartState in gameState.kartStates)
                 {
+                    //if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                    //{
+                    //    print(kartState.name);
+                    //}
                     if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex)
                     {
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
                         m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<MeshRenderer>().material = Resources.Load<Material>("Basic Green");
-                        // print(kartState.tireAge);
+                        //if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                        //{
+                        //    print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                        //}
                     }
                 }
             }

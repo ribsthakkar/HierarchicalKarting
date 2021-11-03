@@ -191,7 +191,7 @@ namespace KartGame.AI
             LaneDifferenceRewardDivider = 1.0f;
             VelocityDifferenceRewardDivider = 1.0f;
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_SectionIndex.
-            if ((triggered > 0 && index != 1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            if ((triggered > 0 && index != -1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
                 {
@@ -227,11 +227,15 @@ namespace KartGame.AI
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
             } 
-            else if ((triggered > 0 && index !=1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            else if ((triggered > 0 && index !=-1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 // print("going backwards");
                 AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
+            } else if ((triggered > 0 && index == -1))
+            {
+                m_envController.ResolveEvent(Event.DroveReverseLimit, this, null);
             }
+
         }
 
         void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)

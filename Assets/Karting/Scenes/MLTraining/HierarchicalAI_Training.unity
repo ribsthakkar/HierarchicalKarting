@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -433,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2880,8 +2880,6 @@ MonoBehaviour:
   - {fileID: 1594489489}
   - {fileID: 949860447}
   - {fileID: 101761882}
-  sectionHorizon: 8
-  laps: 1
   WallHitPenalty: -0.01
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -1
@@ -2893,9 +2891,12 @@ MonoBehaviour:
   TowardsCheckpointReward: 0.003
   SpeedReward: 0.1
   AccelerationReward: 0.002
+  MaxLaneChanges: 4
+  laps: 1
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 3000
+  sectionHorizon: 8
 --- !u!4 &460428876
 Transform:
   m_ObjectHideFlags: 0
@@ -4307,8 +4308,6 @@ MonoBehaviour:
   - {fileID: 382761939}
   - {fileID: 1181989138}
   - {fileID: 1675551846}
-  sectionHorizon: 8
-  laps: 1
   WallHitPenalty: -0.01
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -1
@@ -4320,9 +4319,12 @@ MonoBehaviour:
   TowardsCheckpointReward: 0.003
   SpeedReward: 0.1
   AccelerationReward: 0.002
+  MaxLaneChanges: 4
+  laps: 1
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 3000
+  sectionHorizon: 8
 --- !u!4 &842532269
 Transform:
   m_ObjectHideFlags: 0
@@ -5300,8 +5302,6 @@ MonoBehaviour:
   - {fileID: 1019148233}
   - {fileID: 1640948802}
   - {fileID: 1669923138}
-  sectionHorizon: 8
-  laps: 1
   WallHitPenalty: -0.01
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -1
@@ -5313,9 +5313,12 @@ MonoBehaviour:
   TowardsCheckpointReward: 0.003
   SpeedReward: 0.1
   AccelerationReward: 0.002
+  MaxLaneChanges: 4
+  laps: 1
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 3000
+  sectionHorizon: 8
 --- !u!4 &935198995
 Transform:
   m_ObjectHideFlags: 0
@@ -6133,7 +6136,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6368,7 +6371,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6378,7 +6381,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6832,8 +6835,6 @@ MonoBehaviour:
   - {fileID: 327722464}
   - {fileID: 1553871821}
   - {fileID: 1532917104}
-  sectionHorizon: 8
-  laps: 1
   WallHitPenalty: -0.01
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -1
@@ -6845,9 +6846,12 @@ MonoBehaviour:
   TowardsCheckpointReward: 0.003
   SpeedReward: 0.1
   AccelerationReward: 0.002
+  MaxLaneChanges: 4
+  laps: 1
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 3000
+  sectionHorizon: 8
 --- !u!4 &1132641210
 Transform:
   m_ObjectHideFlags: 0
@@ -7448,7 +7452,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7683,7 +7687,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7693,7 +7697,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8946,7 +8950,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9181,7 +9185,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9191,7 +9195,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9459,7 +9463,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9694,7 +9698,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9704,7 +9708,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11607,7 +11611,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11842,7 +11846,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11852,7 +11856,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12225,7 +12229,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12460,7 +12464,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12470,7 +12474,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13273,7 +13277,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: baseStats.MinGs
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198658, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13508,7 +13512,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.timePrecision
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13518,7 +13522,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
