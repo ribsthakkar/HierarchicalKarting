@@ -187,7 +187,8 @@ namespace KartGame.KartSystems
         Vector3 m_VerticalReference = Vector3.up;
 
         float m_CurrentGrip = 1.0f;
-        float m_AccumulatedAngularV = 0.0f;
+        [HideInInspector] public float m_AccumulatedAngularV = 0.0f;
+        [HideInInspector] public float TireWearRate = 10000.0f;
         float m_PreviousGroundPercent = 1.0f;
 
         // can the kart move?
@@ -233,6 +234,7 @@ namespace KartGame.KartSystems
                     Instantiate(NozzleVFX, nozzle, false);
                 }
             }
+            UpdateStats();
         }
 
         void FixedUpdate()
@@ -243,8 +245,6 @@ namespace KartGame.KartSystems
             UpdateSuspensionParams(RearRightWheel);
 
             GatherInputs();
-
-            TickPowerups();
 
             // apply our physics properties
             Rigidbody.centerOfMass = transform.InverseTransformPoint(CenterOfMass.position);
@@ -286,32 +286,12 @@ namespace KartGame.KartSystems
             }
         }
 
-        void TickPowerups()
+        public void UpdateStats()
         {
-            // remove all elapsed powerups
-            m_ActivePowerupList.RemoveAll((p) => { return p.ElapsedTime > p.MaxTime; });
-
-            // zero out powerups before we add them all up
-            var powerups = new Stats();
-
-            // add up all our powerups
-            for (int i = 0; i < m_ActivePowerupList.Count; i++)
-            {
-                var p = m_ActivePowerupList[i];
-
-                // add elapsed time
-                p.ElapsedTime += Time.fixedDeltaTime;
-
-                // add up the powerups
-                powerups += p.modifiers;
-            }
-
-            // add powerups to our final stats
-            m_FinalStats = baseStats + powerups;
-
+            m_FinalStats = baseStats;
             // clamp values in finalstats
             m_FinalStats.Grip = Mathf.Clamp(m_FinalStats.Grip, 0, 1);
-            m_FinalStats.Steer = Mathf.Clamp((baseStats.MaxSteer * Mathf.Exp(-m_AccumulatedAngularV/10000.0f)), baseStats.MinSteer, baseStats.MaxSteer);
+            m_FinalStats.Steer = Mathf.Clamp((baseStats.MaxSteer * Mathf.Exp(-m_AccumulatedAngularV/TireWearRate)), baseStats.MinSteer, baseStats.MaxSteer);
             // print(m_FinalStats.Steer);
         }
 
@@ -349,7 +329,10 @@ namespace KartGame.KartSystems
                 return Input.Accelerate ? 1.0f : 0.0f;
             }
         }
-
+        void OnEnable()
+        {
+            UpdateStats();
+        }
         void OnCollisionEnter(Collision collision) => m_HasCollision = true;
         void OnCollisionExit(Collision collision) => m_HasCollision = false;
 

@@ -186,6 +186,7 @@ public class RacingEnvController : MonoBehaviour
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     if (!addedColliders.Contains(collider))
                     {
+                        Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                         furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                         Agents[i].transform.localRotation = collider.transform.rotation;
@@ -205,6 +206,7 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
                     initialSection = Agents[i].m_SectionIndex;
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
+                    Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);
                     furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                     furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                     Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
@@ -226,6 +228,7 @@ public class RacingEnvController : MonoBehaviour
                         var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                         if (!addedColliders.Contains(collider))
                         {
+                            Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                             furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                             Agents[i].transform.localRotation = collider.transform.rotation;
@@ -254,7 +257,7 @@ public class RacingEnvController : MonoBehaviour
             }
 
             Agents[i].sectionTimes[Agents[i].m_SectionIndex] = 0;
-
+            Agents[i].m_Kart.UpdateStats();
         }
 
         for (int i = 0; i < Agents.Length; i++)

@@ -424,10 +424,10 @@ namespace KartGame.AI
             /**
              * Sensors.Lenght -> RayCasts
              * SectionHorizon*2 -> Upcoming Lanes and Velocities
-             * 5 -> Current Player's state
-             * 8 -> Other player states
+             * 6 -> Current Player's state
+             * 9 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon*2 + 5 + 8 * otherAgents.Length;
+            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon*2 + 6 + 9 * otherAgents.Length;
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -457,15 +457,16 @@ namespace KartGame.AI
         public override void CollectObservations(VectorSensor sensor)
         {
             //print("collecting observations");
-            // Add observation for agent state (Speed, acceleration, lane, recent lane changes, section type)
+            // Add observation for agent state (Speed, acceleration, lane, recent lane changes, tire age, section type)
             sensor.AddObservation(m_Kart.LocalSpeed());
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges);
             //print("Section Index" + m_SectionIndex);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
+            sensor.AddObservation(m_Kart.m_FinalStats.Steer / m_Kart.baseStats.Steer);
 
-            // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, distance, direction)
+            // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, tire age, distance, direction)
             foreach (KartAgent agent in otherAgents)
             {
                 sensor.AddObservation(agent.m_Kart.LocalSpeed());
@@ -474,6 +475,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_LaneChanges);
                 sensor.AddObservation(agent.gameObject.activeSelf);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
+                sensor.AddObservation(m_Kart.m_FinalStats.Steer / m_Kart.baseStats.Steer);
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(Vector3.SignedAngle(m_Kart.transform.forward, agent.m_Kart.transform.position, Vector3.up));
 
