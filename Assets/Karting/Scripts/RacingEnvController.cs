@@ -22,11 +22,8 @@ public class RacingEnvController : MonoBehaviour
     public KartAgent[] Agents;
     [Header("Checkpoints"), Tooltip("What are the series of checkpoints for the agent to seek and pass through?")]
     public DiscretePositionTracker[] Sections;
-    [Tooltip("How many sections ahead should the agents be looking ahead/driving to")]
-    public int sectionHorizon;
 
-    [Tooltip("How many laps is considered reaching the goal")]
-    public int laps=2;
+
 
     #region Rewards
     [Header("Rewards"), Tooltip("What penatly is given when the agent crashes with a wall?")]
@@ -53,12 +50,22 @@ public class RacingEnvController : MonoBehaviour
     public float AccelerationReward = 0.002f;
     #endregion
 
+    #region Rules
+    [Header("Rules"), Tooltip("How many lane changes is allowed for an agent on a straight?")]
+    public int MaxLaneChanges = 4;
+    [Tooltip("How many laps is considered reaching the goal")]
+    public int laps = 2;
+    #endregion
+
     public Dictionary<Rigidbody, KartAgent> AgentBodies = new Dictionary<Rigidbody, KartAgent>();
     public HashSet<KartAgent> inactiveAgents = new HashSet<KartAgent>();
     [HideInInspector] public int goalSection;
 
+    [Header("Training Params")]
     public int episodeSteps;
     public int maxEpisodeSteps;
+    [Tooltip("How many sections ahead should the agents be looking ahead/driving to")]
+    public int sectionHorizon;
 
     // Start is called before the first frame update
     void Start()

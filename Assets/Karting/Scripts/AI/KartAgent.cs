@@ -211,14 +211,14 @@ namespace KartGame.AI
                 }
                 if (m_Lane != lane && m_envController.sectionIsStraight(m_SectionIndex))
                 {
-                    m_LaneChanges += 1;
+                    m_LaneChanges += Math.Abs(m_Lane-lane);
                 }
                 else
                 {
                     m_LaneChanges = 0;
                 }
 
-                if (m_LaneChanges > 1 && m_envController.sectionIsStraight(m_SectionIndex))
+                if (m_LaneChanges > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
                 }

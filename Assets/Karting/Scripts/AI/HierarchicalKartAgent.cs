@@ -83,7 +83,7 @@ namespace KartGame.AI
             newState.lane = action.lane;
             if (newState.lane != lane && environment.sectionIsStraight(section))
             {
-                newState.laneChanges = laneChanges + 1;
+                newState.laneChanges = laneChanges + Math.Abs(newState.lane - lane);
             }
             else
             {
@@ -247,7 +247,7 @@ namespace KartGame.AI
             {
                 //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
-                if (envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges == 1 && action.lane != currentState.lane)
+                if (envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges > envController.MaxLaneChanges && action.lane != currentState.lane)
                 {
                     return false;
                 }                
