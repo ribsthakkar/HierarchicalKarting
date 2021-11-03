@@ -81,13 +81,17 @@ namespace KartGame.AI
             newState.min_velocity = action.min_velocity;
             newState.max_velocity = action.max_velocity;
             newState.lane = action.lane;
-            if (newState.lane != lane && environment.sectionIsStraight(section))
+            if (newState.lane != lane)
             {
                 newState.laneChanges = laneChanges + Math.Abs(newState.lane - lane);
             }
-            else
+            else if (environment.sectionIsStraight(section) != environment.sectionIsStraight(section+1))
             {
                 newState.laneChanges = 0;
+            }
+            else
+            {
+                newState.laneChanges = laneChanges;
             }
 
             // Update timeAtSection estimate using 1D TOC
@@ -251,7 +255,7 @@ namespace KartGame.AI
             {
                 //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
-                if (envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges > envController.MaxLaneChanges && action.lane != currentState.lane)
+                if (envController.sectionIsStraight(currentState.section) && currentState.laneChanges + (action.lane - currentState.lane) > envController.MaxLaneChanges)
                 {
                     return false;
                 }                

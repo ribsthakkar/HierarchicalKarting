@@ -209,20 +209,19 @@ namespace KartGame.AI
                 {
                     m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
                 }
-                if (m_Lane != lane && m_envController.sectionIsStraight(m_SectionIndex))
-                {
-                    m_LaneChanges += Math.Abs(m_Lane-lane);
-                }
-                else
-                {
-                    m_LaneChanges = 0;
-                }
 
-                if (m_LaneChanges > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
+                if (m_LaneChanges + Math.Abs(m_Lane-lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
                 }
-
+                if (m_Lane != lane)
+                {
+                    m_LaneChanges += Math.Abs(m_Lane-lane);
+                }
+                else if (m_envController.sectionIsStraight(m_SectionIndex) != m_envController.sectionIsStraight(index))
+                {
+                    m_LaneChanges = 0;
+                }
                 m_SectionIndex = index;
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
