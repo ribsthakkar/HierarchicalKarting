@@ -541,7 +541,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_LaneChanges);
             //print("Section Index" + m_SectionIndex);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
-            sensor.AddObservation(m_Kart.m_FinalStats.Steer / m_Kart.baseStats.Steer);
+            sensor.AddObservation((m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer));
 
             // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, tire age, distance, direction)
             foreach (KartAgent agent in otherAgents)
@@ -552,7 +552,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_LaneChanges);
                 sensor.AddObservation(agent.gameObject.activeSelf);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
-                sensor.AddObservation(m_Kart.m_FinalStats.Steer / m_Kart.baseStats.Steer);
+                sensor.AddObservation((agent.m_Kart.baseStats.MaxSteer - agent.m_Kart.m_FinalStats.Steer) / (agent.m_Kart.baseStats.MaxSteer -agent.m_Kart.baseStats.MinSteer));
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(Vector3.SignedAngle(m_Kart.transform.forward, agent.m_Kart.transform.position, Vector3.up));
 
