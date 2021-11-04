@@ -16,6 +16,9 @@ behaviors:
       num_layers: 2
       vis_encode_type: simple
       goal_conditioning_type: hyper
+      memory:
+        memory_size: 128
+        sequence_length: 32
     reward_signals:
       extrinsic:
         gamma: 0.99
@@ -38,4 +41,5 @@ behaviors:
     time_horizon: 64
     summary_freq: 1000
     threaded: false
+
   
