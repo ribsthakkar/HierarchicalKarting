@@ -13,12 +13,12 @@ behaviors:
     network_settings:
       normalize: true
       hidden_units: 128
-      num_layers: 2
+      num_layers: 4
       vis_encode_type: simple
       goal_conditioning_type: hyper
-      memory:
-        memory_size: 128
-        sequence_length: 32
+      #memory:
+      #  memory_size: 128
+      #  sequence_length: 32
     reward_signals:
       extrinsic:
         gamma: 0.99
@@ -26,7 +26,7 @@ behaviors:
         network_settings:
           normalize: true
           hidden_units: 128
-          num_layers: 2
+          num_layers: 4
           vis_encode_type: simple
           goal_conditioning_type: hyper
     self_play:

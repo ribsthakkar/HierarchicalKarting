@@ -123,6 +123,7 @@ namespace KartGame.AI
 
         protected virtual void FixedUpdate()
         {
+            episodeSteps += 1;
         }
 
         protected virtual void Awake()
@@ -200,16 +201,9 @@ namespace KartGame.AI
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
-                m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<MeshRenderer>().material = Resources.Load<Material>("None");
-                if (index == m_envController.goalSection)
-                {
-                    m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
-                } 
-                else
-                {
-                    m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
-                }
-
+                if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                    for(int i = 1; i <=4; i++)
+                        m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
                 if (m_LaneChanges + Math.Abs(m_Lane-lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
@@ -225,7 +219,16 @@ namespace KartGame.AI
                 m_SectionIndex = index;
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
-            } 
+                if (index == m_envController.goalSection)
+                {
+                    m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
+                }
+                else
+                {
+                    m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
+                }
+
+            }
             else if ((triggered > 0 && index !=-1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 // print("going backwards");
@@ -239,7 +242,7 @@ namespace KartGame.AI
 
         void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)
         {
-            for (int i = m_SectionIndex-m_envController.Sections.Length + sectionHorizon; i < m_SectionIndex + sectionHorizon; i++)
+            for (int i = m_SectionIndex - sectionHorizon; i < m_SectionIndex + sectionHorizon; i++)
             {
                 int idx = i < 0 ? i + m_envController.Sections.Length : i;
                 if (m_envController.Sections[idx % m_envController.Sections.Length].Trigger.GetInstanceID() == checkPointTrigger.GetInstanceID())
@@ -323,7 +326,6 @@ namespace KartGame.AI
 
         public override void Heuristic(in ActionBuffers actionsOut)
         {
-            base.Heuristic(actionsOut);
             ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
             ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
             continuousActions[0] = Input.GetAxisRaw("Horizontal");

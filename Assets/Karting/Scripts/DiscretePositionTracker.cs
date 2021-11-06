@@ -157,8 +157,15 @@ public class DiscretePositionTracker : MonoBehaviour
         {
             float gs = ((velocity * velocity) / radiusOfLane(initLane, finalLane))/9.81f;
             float g_diff = (maxGs - minGs) * (tireWearProportion);
+            if (!(gs <= maxGs - g_diff))
+            Debug.Log("Tested gs: " + gs + " max Gs " + maxGs + " minGs " + minGs);
             return gs <= maxGs - g_diff;
-
         }
+    }
+    
+    public void resetColors()
+    {
+        for (int i = 1; i <= 4; i++)
+            getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
     }
 }

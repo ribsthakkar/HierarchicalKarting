@@ -245,7 +245,7 @@ namespace KartGame.KartSystems
             UpdateSuspensionParams(RearRightWheel);
 
             GatherInputs();
-
+            UpdateStats();
             // apply our physics properties
             Rigidbody.centerOfMass = transform.InverseTransformPoint(CenterOfMass.position);
 
@@ -293,6 +293,11 @@ namespace KartGame.KartSystems
             m_FinalStats.Grip = Mathf.Clamp(m_FinalStats.Grip, 0, 1);
             m_FinalStats.Steer = Mathf.Clamp((baseStats.MaxSteer * Mathf.Exp(-m_AccumulatedAngularV/TireWearRate)), baseStats.MinSteer, baseStats.MaxSteer);
             // print(m_FinalStats.Steer);
+        }
+
+        public float TireWearProportion()
+        {
+            return (baseStats.MaxSteer - m_FinalStats.Steer) / (baseStats.MaxSteer - baseStats.MinSteer);
         }
 
         void GroundAirbourne()

@@ -31,6 +31,24 @@ namespace KartGame.AI
         public bool infeasible;
         public string name;
         
+
+        public static DiscreteKartState Copy(DiscreteKartState state)
+        {
+            return new DiscreteKartState
+            {
+                player = state.player,
+                section = state.section,
+                timeAtSection = state.timeAtSection,
+                min_velocity = state.min_velocity,
+                max_velocity = state.max_velocity,
+                lane = state.lane,
+                tireAge = state.tireAge,
+                laneChanges = state.laneChanges,
+                infeasible = state.infeasible,
+                name = state.name
+            };
+        }
+
         public float getAverageVelocity()
         {
             return (1.0f * (min_velocity + max_velocity)) / 2.0f;
@@ -198,7 +216,21 @@ namespace KartGame.AI
         }
         public Tuple<bool, List<float>> isOver()
         {
-            if (lastCompletedSection != finalSection)
+            if (nextMoves().Count == 0)
+            {
+                List<float> scores = new List<float>();
+                int noMovePlayer = upNext();
+                for (int i = 0; i < kartStates.Count; i++)
+                {
+                    if (i == noMovePlayer)
+                    {
+                        scores.Add(0.0f);
+                    }
+                    scores.Add(0.5f);
+                }
+                return Tuple.Create(true, scores);
+            }
+            else if (lastCompletedSection != finalSection)
             {
                 return Tuple.Create(false, new List<float>());
             }
@@ -206,7 +238,7 @@ namespace KartGame.AI
             {
                 int maxScore = gameParams.timePrecision * -1000;
                 int minScore = gameParams.timePrecision * 1000;
-                List<int> scores = new List<int>();
+                List<float> scores = new List<float>();
                 List<float> normalizedScores = new List<float>();
                 foreach(DiscreteKartState s in kartStates)
                 {
@@ -239,7 +271,7 @@ namespace KartGame.AI
             KartAgent agent = kartAgents[nextPlayer];
             DiscreteKartState currentState = kartStates[nextPlayer];
             List<DiscreteKartAction> possibleActions = new List<DiscreteKartAction>();
-            for(int i = 0; i < (int) agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
+            for(int i = 6; i < (int) agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
             {
                 for (int j = 1; j < 5; j++)
                 {
@@ -251,18 +283,26 @@ namespace KartGame.AI
                     });
                 }
             }
-            List<DiscreteKartAction> filteredActions =  possibleActions.FindAll((action) =>
+            List<DiscreteKartAction> preCollisionFilteredActions =  possibleActions.FindAll((action) =>
             {
                 //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
                 if (envController.sectionIsStraight(currentState.section) && currentState.laneChanges + (action.lane - currentState.lane) > envController.MaxLaneChanges)
                 {
+                    // Debug.Log("Current Lane changes " + currentState.laneChanges);
+                    // Debug.Log("Delta change " + (action.lane - currentState.lane));
+                    // Debug.Log("Max change " + envController.MaxLaneChanges);
                     return false;
                 }                
                 
                 // Is lateral gs infeasible?
-                if (!envController.sectionSpeedFeasible(lastCompletedSection, action.max_velocity, currentState.lane, action.lane, currentState.tireAge /10000f, agent.m_Kart))
+                if (!envController.sectionSpeedFeasible(currentState.section, action.max_velocity, currentState.lane, action.lane, currentState.tireAge /10000f, agent.m_Kart))
                 {
+                    // Debug.Log("Tire age " + currentState.tireAge);
+                    if (! envController.sectionIsStraight(currentState.section))
+                    {
+                        Debug.Log("Going on " + currentState.section + " from lane " + currentState.lane + " to " + action.lane + " at max velocity " + action.max_velocity + " with tire age " + currentState.tireAge/10000f + " is infeasible");
+                    }
                     return false;
                 }
 
@@ -274,65 +314,51 @@ namespace KartGame.AI
                     return false;
                 }
 
-
-                // Will there be a collision?
-                foreach (DiscreteKartState other in kartStates)
-                {
-                    if (!other.name.Equals(appliedAction.name) && other.section == appliedAction.section && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection)*1.0f/gameParams.timePrecision < gameParams.collisionWindow)
-                    {
-                        //Debug.Log("Our Player" + appliedAction.name);
-                        //Debug.Log("Other Player " + other.name);
-                        //Debug.Log("Our tas " + appliedAction.timeAtSection);
-                        //Debug.Log("Other tas " + other.timeAtSection);
-                        //Debug.Log("Collision Fear");
-                        return false;
-                    }
-                }
-
                 return true;
             }
             ).ToList();
-            // If can't find collision free action set, allow collision action-set hoping that Low-level planner will prevent the crash
-            if (filteredActions.Count == 0)
+            if(preCollisionFilteredActions.Count == 0)
             {
-                return possibleActions.FindAll((action) =>
+                return preCollisionFilteredActions;
+            }
+            // If can't find collision free action set, allow collision action-set hoping that Low-level planner will prevent the crash
+            List<DiscreteKartAction> filteredActions = new List<DiscreteKartAction>();
+            float windowDivider = 1.0f;
+            float windowGrowthRate = 2f;
+            do
+            {
+                filteredActions = preCollisionFilteredActions.FindAll((action) =>
                 {
-                    //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
-                    // Is Lane changing not allowed?
-                    if (envController.sectionIsStraight(lastCompletedSection) && currentState.laneChanges > envController.MaxLaneChanges && action.lane != currentState.lane)
-                    {
-                        return false;
-                    }
 
-                    // Is lateral gs infeasible?
-                    if (!envController.sectionSpeedFeasible(lastCompletedSection, action.max_velocity, currentState.lane, action.lane, currentState.tireAge / 10000f, agent.m_Kart))
-                    {
-                        return false;
-                    }
-
-                    // Is changing speed infeasible?
                     DiscreteKartState appliedAction = currentState.applyAction(action, envController, gameParams);
-                    if (appliedAction.infeasible)
+                    // Will there be a collision?
+                    foreach (DiscreteKartState other in kartStates)
                     {
-                        // Debug.Log("Going from speed " + currentState.getAverageVelocity() + " to " + appliedAction.getAverageVelocity() + " infeasible in section " + appliedAction.section);
-                        return false;
+                        //Debug.Log(Math.Abs(appliedAction.timeAtSection - other.timeAtSection) * 1.0f / gameParams.timePrecision);
+                        if (false && !other.name.Equals(appliedAction.name) && other.section == appliedAction.section && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection) * 1.0f / gameParams.timePrecision < 0)
+                        {
+                            //Debug.Log("Our Player" + appliedAction.name);
+                            //Debug.Log("Other Player " + other.name);
+                            //Debug.Log("Our tas " + appliedAction.timeAtSection);
+                            //Debug.Log("Other tas " + other.timeAtSection);
+                            //Debug.Log("Collision Fear");
+                            return false;
+                        }
                     }
                     return true;
                 }
                 ).ToList();
-            }
-            else
-            {
-                return filteredActions;
-            }
-
+                windowDivider *= windowGrowthRate;
+            } while (filteredActions.Count == 0);
+           
+            return preCollisionFilteredActions;
         }
         public DiscreteGameState makeMove(DiscreteKartAction action)
         {
             DiscreteGameState newGameState = new DiscreteGameState
             {
                 envController = envController,
-                kartStates = kartStates.ConvertAll(state => state),
+                kartStates = kartStates.ConvertAll(state => DiscreteKartState.Copy(state)),
                 kartAgents = kartAgents,
                 initialSection = initialSection,
                 lastCompletedSection = lastCompletedSection,
@@ -390,7 +416,7 @@ namespace KartGame.AI
                     }
                 }
             }
-            int finalSection = initialSection + sectionHorizon;
+            int finalSection = initialSection + 5;
             int count = 0;
             foreach(KartAgent agent in nearbyAgents)
             {
@@ -452,15 +478,22 @@ namespace KartGame.AI
                     //{
                     //    print(kartState.name);
                     //}
+
                     if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex)
                     {
+                        if(m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
+                        {
+                            if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                                m_envController.Sections[kartState.section % m_envController.Sections.Length].resetColors();
+
+                        }
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
-                        m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<MeshRenderer>().material = Resources.Load<Material>("Basic Green");
-                        //if (name.Equals("KartClassic_HierarchicalMLAgent"))
-                        //{
-                        //    print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
-                        //}
+                        if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                        {
+                            m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
+                            //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                        }
                     }
                 }
             }
@@ -477,7 +510,6 @@ namespace KartGame.AI
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-            episodeSteps += 1;
             if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
                 //try
@@ -616,7 +648,7 @@ namespace KartGame.AI
                 {
                     if (hitTrackInfo.distance < current.HitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                     {
-                        //print("hit wall");
+                        // print("hit wall");
                         m_HitOccured = true;
                         m_envController.ResolveEvent(Event.HitWall, this, null);
                     }
@@ -626,8 +658,8 @@ namespace KartGame.AI
                 {
                     if (hitAgentInfo.distance < current.HitValidationDistance)
                     {
-                        //print("hit agent");
-                        m_HitOccured = true;
+                        // print("hit agent");
+                        // m_HitOccured = true;
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
                         m_envController.ResolveEvent(Event.HitOpponent, this, hitAgents);

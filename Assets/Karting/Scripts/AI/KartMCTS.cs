@@ -30,6 +30,7 @@ public class KartMCTS
         KartMCTSNode root = new KartMCTSNode(state);
         var timer = new Stopwatch();
         double total = 0.0f;
+        int exploredStates = 1;
         while (total < T)
         {
             timer.Reset();
@@ -37,10 +38,12 @@ public class KartMCTS
             KartMCTSNode leaf = findLeaf(root);
             // UnityEngine.Debug.Log(leaf.state.lastCompletedSection);
             var simRes = simulate(leaf);
+            exploredStates += simRes.Item3;
             backpropagate(simRes.Item1, simRes.Item2);
             timer.Stop();
             total += timer.Elapsed.TotalSeconds;
         }
+        UnityEngine.Debug.Log("MCTS explored " + exploredStates + " states");
         return root;
     }
 
@@ -58,7 +61,7 @@ public class KartMCTS
 
     private static float UCTWeight(KartMCTSNode node)
     {
-        return (node.totalValue / node.numEpisodes) + Mathf.Sqrt(2.0f) * (Mathf.Log(node.parent.numEpisodes / node.numEpisodes));
+        return (node.totalValue / node.numEpisodes) + Mathf.Sqrt(1.0f) * (Mathf.Log(node.parent.numEpisodes / node.numEpisodes));
     }
 
     public static DiscreteKartAction upperConfidenceStrategy(KartMCTSNode node)
@@ -88,25 +91,56 @@ public class KartMCTS
         return root;
     }
 
-    private static Tuple<KartMCTSNode, List<float>> simulate(KartMCTSNode leaf)
+    public static float NextGaussian()
+    {
+        float v1, v2, s;
+        do
+        {
+            v1 = 2.0f * UnityEngine.Random.Range(0f, 1f) - 1.0f;
+            v2 = 2.0f * UnityEngine.Random.Range(0f, 1f) - 1.0f;
+            s = v1 * v1 + v2 * v2;
+        } while (s >= 1.0f || s == 0f);
+
+        s = Mathf.Sqrt((-2.0f * Mathf.Log(s)) / s);
+
+        return v1 * s;
+    }
+    public static float NextGaussian(float mean, float standard_deviation)
+    {
+        return mean + NextGaussian() * standard_deviation;
+    }
+    public static float NextGaussian(float mean, float standard_deviation, float min, float max)
+    {
+        float x;
+        do
+        {
+            x = NextGaussian(mean, standard_deviation);
+        } while (x < min || x > max);
+        return x;
+    }
+
+    private static Tuple<KartMCTSNode, List<float>, int> simulate(KartMCTSNode leaf)
     {
         System.Random random = new System.Random();
+        int new_states = 0;
         while (true)
         {
             var result = leaf.state.isOver();
             // UnityEngine.Debug.Log(leaf.state.lastCompletedSection + " " + leaf.state.initialSection + " " + leaf.state.finalSection);
             if (result.Item1)
             {
-                return Tuple.Create(leaf, result.Item2);
+                return Tuple.Create(leaf, result.Item2, new_states);
             }
             DiscreteGameState state = leaf.state;
-            var nextActions = state.nextMoves().OrderByDescending(action => action.max_velocity).ToArray();
+            var nextActions = state.nextMoves().OrderBy((action) => state.envController.sectionIsStraight(state.lastCompletedSection) ? -action.lane : action.lane).ThenByDescending((action) => action.max_velocity).ToList();
             // UnityEngine.Debug.Log(nextActions[0].max_velocity);
-            int index = random.Next(nextActions.Length);
+            // int index = random.Next(nextActions.Count);
+            int index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, nextActions.Count/3, 0f, (float) nextActions.Count -1f)));
             DiscreteKartAction move = nextActions[index];
             if(!leaf.children.ContainsKey(move))
             {
                 leaf.children[move] = new KartMCTSNode(state.makeMove(move), leaf);
+                new_states += 1;
             }
             leaf = leaf.children[move];
         }
