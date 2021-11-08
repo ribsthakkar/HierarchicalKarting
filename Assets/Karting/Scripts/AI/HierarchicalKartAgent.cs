@@ -146,6 +146,8 @@ namespace KartGame.AI
         public float collisionWindow;
         [Tooltip("When do we consider agents to be in game-theoritetic mode?")]
         public int sectionWindow;
+        [Tooltip("How far to search in the tree?")]
+        public int treeSearchDepth;
     }
 
     public class DiscreteGameState
@@ -416,7 +418,7 @@ namespace KartGame.AI
                     }
                 }
             }
-            int finalSection = initialSection + 5;
+            int finalSection = initialSection + gameParams.treeSearchDepth;
             int count = 0;
             foreach(KartAgent agent in nearbyAgents)
             {
@@ -531,11 +533,11 @@ namespace KartGame.AI
             var brainParameters = behaviorParameters.BrainParameters;
             /**
              * Sensors.Lenght -> RayCasts
-             * SectionHorizon*2 -> Upcoming Lanes and Velocities
+             * TreeDepth*5 -> Upcoming Lanes and Velocities and lane types
              * 6 -> Current Player's state
-             * 9 -> Other player states
+             * 11 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + sectionHorizon*2 + 6 + 9 * otherAgents.Length;
+            brainParameters.VectorObservationSize = Sensors.Length + (gameParams.treeSearchDepth*5) + 6 + (11 *otherAgents.Length);
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -546,7 +548,13 @@ namespace KartGame.AI
                 //var lines = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
                 //print(string.Join(",", lines));
                 //print(sectionIndex);
-                LaneDifferenceRewardDivider = (float) Math.Pow(2.0, 1.0*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]));
+                LaneDifferenceRewardDivider = -Mathf.Pow(1.5f, -1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]));
+                //LaneDifferenceRewardDivider = Mathf.Pow(3f, 1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) - 1);
+            }
+            else
+            {
+                LaneDifferenceRewardDivider = -Mathf.Pow(2f, -1.0f *3);
+                //LaneDifferenceRewardDivider = Mathf.Pow(2f, 1.0f *3);
             }
         }
 
@@ -559,8 +567,8 @@ namespace KartGame.AI
             // print("Upcoming Velocities " + this.name + " " + m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]);
             // print(sectionIndex);
             // print("Actual velocity " + velocity);
-            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize/2.0f)
-                VelocityDifferenceRewardDivider = (float)Math.Pow(2.0, 1.0 * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0));
+            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length])/m_Kart.GetMaxSpeed() > gameParams.velocityBucketSize/2.0f)
+                VelocityDifferenceRewardDivider = (float)Math.Pow(1.5, 1.0 * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0));
         }
 
         public override void CollectObservations(VectorSensor sensor)
@@ -570,28 +578,28 @@ namespace KartGame.AI
             sensor.AddObservation(m_Kart.LocalSpeed());
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
-            sensor.AddObservation(m_LaneChanges);
+            sensor.AddObservation(m_LaneChanges*1f/m_envController.MaxLaneChanges);
             //print("Section Index" + m_SectionIndex);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
-            sensor.AddObservation((m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer));
+            sensor.AddObservation(m_Kart.TireWearProportion());
 
-            // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, tire age, distance, direction)
+            // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, tire age, distance, relative position)
             foreach (KartAgent agent in otherAgents)
             {
                 sensor.AddObservation(agent.m_Kart.LocalSpeed());
                 sensor.AddObservation(agent.m_Acceleration);
                 sensor.AddObservation(agent.m_Lane);
-                sensor.AddObservation(agent.m_LaneChanges);
+                sensor.AddObservation(agent.m_LaneChanges * 1f / m_envController.MaxLaneChanges);
                 sensor.AddObservation(agent.gameObject.activeSelf);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
-                sensor.AddObservation((agent.m_Kart.baseStats.MaxSteer - agent.m_Kart.m_FinalStats.Steer) / (agent.m_Kart.baseStats.MaxSteer -agent.m_Kart.baseStats.MinSteer));
+                sensor.AddObservation(agent.m_Kart.TireWearProportion());
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
-                sensor.AddObservation(Vector3.SignedAngle(m_Kart.transform.forward, agent.m_Kart.transform.position, Vector3.up));
+                sensor.AddObservation(m_Kart.transform.InverseTransformPoint(agent.m_Kart.transform.position));
 
             }
 
             // Add an observation for direction of the agent to the next checkpoint and lane and the velocity at that lane.
-            for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + sectionHorizon; i++)
+            for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + gameParams.treeSearchDepth; i++)
             {
                 var next = (i) % m_envController.Sections.Length;
                 var nextSection = m_envController.Sections[next];
@@ -600,16 +608,17 @@ namespace KartGame.AI
                 if (m_UpcomingLanes.ContainsKey(next))
                 {
                     BoxCollider targetLaneInSection = nextSection.getBoxColliderForLane(m_UpcomingLanes[next]);
-                    var direction = (targetLaneInSection.transform.position - m_Kart.transform.position).normalized;
-                    sensor.AddObservation(Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction));
+                    sensor.AddObservation(m_Kart.transform.InverseTransformPoint(targetLaneInSection.transform.position));
                     sensor.AddObservation(m_UpcomingVelocities[next] / m_Kart.GetMaxSpeed());
+                    sensor.AddObservation(m_envController.sectionIsStraight(next));
                     if (ShowRaycasts)
                         Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
                 }
                 else
                 {
-                    sensor.AddObservation(3.5f);
-                    sensor.AddObservation(0.5f);
+                    sensor.AddObservation(Vector3.zero);
+                    sensor.AddObservation(0f);
+                    sensor.AddObservation(m_envController.sectionIsStraight(next));
                 }
             }
             for (var i = 0; i < Sensors.Length; i++)
@@ -625,14 +634,13 @@ namespace KartGame.AI
                 if (ShowRaycasts)
                 {
                     Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.RayDistance, Color.green);
-                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance,
-                        Color.red);
+                    //Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, Color.red);
 
-                    if (hitTrack && hitTrackInfo.distance < current.HitValidationDistance && hitTrackInfo.distance < hitAgentInfo.distance)
+                    if (hitTrack && hitTrackInfo.distance < current.WallHitValidationDistance && hitTrackInfo.distance < hitAgentInfo.distance)
                     {
                         Debug.DrawRay(hitTrackInfo.point, Vector3.up * 3.0f, Color.blue);
                     }
-                    else if (hitAgent && hitAgentInfo.distance < current.HitValidationDistance)
+                    else if (hitAgent && hitAgentInfo.distance < current.AgentHitValidationDistance)
                     {
                         Debug.DrawRay(hitAgentInfo.point, Vector3.up * 3.0f, Color.blue);
                     }
@@ -646,17 +654,17 @@ namespace KartGame.AI
                 //print(current.HitValidationDistance);
                 if (hitTrack)
                 {
-                    if (hitTrackInfo.distance < current.HitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
+                    if (hitTrackInfo.distance < current.WallHitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                     {
                         // print("hit wall");
-                        m_HitOccured = true;
+                        // m_HitOccured = true;
                         m_envController.ResolveEvent(Event.HitWall, this, null);
                     }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
                 else if (hitAgent)
                 {
-                    if (hitAgentInfo.distance < current.HitValidationDistance)
+                    if (hitAgentInfo.distance < current.AgentHitValidationDistance)
                     {
                         // print("hit agent");
                         // m_HitOccured = true;

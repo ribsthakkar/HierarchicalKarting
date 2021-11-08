@@ -38,31 +38,40 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 4189840649838208678}
     RayDistance: 30
-    HitValidationDistance: 3
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 516795004279488822}
     RayDistance: 15
-    HitValidationDistance: 1.8
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 7106280111870196688}
     RayDistance: 10
-    HitValidationDistance: 1.5
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 1442251551975190614}
     RayDistance: 5
-    HitValidationDistance: 1
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 4966937236340768798}
     RayDistance: 15
-    HitValidationDistance: 1.8
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 6401551412052297723}
     RayDistance: 10
-    HitValidationDistance: 1.5
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 9054781172883881609}
     RayDistance: 5
-    HitValidationDistance: 1
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 2294172045632017112}
     RayDistance: 12.5
-    HitValidationDistance: 1.7
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   - Transform: {fileID: 8540282972694752863}
     RayDistance: 12.5
-    HitValidationDistance: 1.7
+    WallHitValidationDistance: 0
+    AgentHitValidationDistance: 0
   otherAgents: []
   CheckpointMask:
     serializedVersion: 2
@@ -79,7 +88,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   GroundCastDistance: 1
-  ShowRaycasts: 0
+  ShowRaycasts: 1
   m_Kart: {fileID: 0}
   m_Acceleration: 0
   m_Brake: 0
@@ -90,8 +99,15 @@ MonoBehaviour:
   anyHit: 0
   m_timeSteps: 0
   LaneDifferenceRewardDivider: 1
+  VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  gameParams:
+    velocityBucketSize: 0
+    timePrecision: 0
+    collisionWindow: 0
+    sectionWindow: 0
+    treeSearchDepth: 0
 --- !u!114 &8760494638502963209
 MonoBehaviour:
   m_ObjectHideFlags: 0

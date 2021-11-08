@@ -462,8 +462,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -837,8 +932,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -1863,8 +2053,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2811,8 +3096,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3268,8 +3648,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5447,8 +5922,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6687,6 +7257,11 @@ PrefabInstance:
       propertyPath: agent
       value: 
       objectReference: {fileID: 2049744153}
+    - target: {fileID: 944144076728837461, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
+        type: 3}
+      propertyPath: agent2
+      value: 
+      objectReference: {fileID: 1244575715}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -7336,23 +7911,23 @@ MonoBehaviour:
   - {fileID: 872942152}
   - {fileID: 844581850}
   - {fileID: 1893277585}
-  WallHitPenalty: -0.5
+  WallHitPenalty: -0.6
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: -1
+  HitByOpponentPenalty: 0
   PassCheckpointReward: 5
   BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -5
+  ReversePenalty: -50
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
-  ReachGoalCheckpointRewardBase: 40
+  ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 3000
+  maxEpisodeSteps: 1000
   sectionHorizon: 8
 --- !u!4 &812495737
 Transform:
@@ -10515,8 +11090,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11005,8 +11675,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11666,23 +12431,23 @@ MonoBehaviour:
   - {fileID: 327722464}
   - {fileID: 1553871821}
   - {fileID: 1532917104}
-  WallHitPenalty: -0.5
+  WallHitPenalty: -0.6
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: -1
+  HitByOpponentPenalty: 0
   PassCheckpointReward: 5
   BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -5
+  ReversePenalty: -50
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
-  ReachGoalCheckpointRewardBase: 40
+  ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 3000
+  maxEpisodeSteps: 1000
   sectionHorizon: 8
 --- !u!4 &1132641210
 Transform:
@@ -12245,8 +13010,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12896,8 +13756,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14880,23 +15835,23 @@ MonoBehaviour:
   - {fileID: 693569913}
   - {fileID: 2089615964}
   - {fileID: 849198697}
-  WallHitPenalty: -0.5
+  WallHitPenalty: -0.6
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: -1
+  HitByOpponentPenalty: 0
   PassCheckpointReward: 5
   BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -5
+  ReversePenalty: -50
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
-  ReachGoalCheckpointRewardBase: 40
+  ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 3000
+  maxEpisodeSteps: 1000
   sectionHorizon: 8
 --- !u!4 &1482761728
 Transform:
@@ -18019,23 +18974,23 @@ MonoBehaviour:
   - {fileID: 579774164}
   - {fileID: 1290507583}
   - {fileID: 2031244226}
-  WallHitPenalty: -0.5
+  WallHitPenalty: -0.6
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: -1
+  HitByOpponentPenalty: 0
   PassCheckpointReward: 5
   BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -5
+  ReversePenalty: -50
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
-  ReachGoalCheckpointRewardBase: 40
+  ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 3000
+  maxEpisodeSteps: 1000
   sectionHorizon: 8
 --- !u!4 &1909618924
 Transform:
@@ -18563,23 +19518,23 @@ MonoBehaviour:
   - {fileID: 49180487}
   - {fileID: 1471530527}
   - {fileID: 73073156}
-  WallHitPenalty: -0.5
+  WallHitPenalty: -0.6
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: -1
+  HitByOpponentPenalty: 0
   PassCheckpointReward: 5
   BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -5
+  ReversePenalty: -50
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
-  ReachGoalCheckpointRewardBase: 40
+  ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 3000
+  maxEpisodeSteps: 1000
   sectionHorizon: 8
 --- !u!4 &1962706282
 Transform:
@@ -19018,23 +19973,23 @@ MonoBehaviour:
   - {fileID: 1893177968}
   - {fileID: 376998214}
   - {fileID: 1120278770}
-  WallHitPenalty: -0.5
+  WallHitPenalty: -0.6
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: -1
+  HitByOpponentPenalty: 0
   PassCheckpointReward: 5
   BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -5
+  ReversePenalty: -50
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
-  ReachGoalCheckpointRewardBase: 40
+  ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 3000
+  maxEpisodeSteps: 1000
   sectionHorizon: 8
 --- !u!4 &1999774420
 Transform:
@@ -19942,8 +20897,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20316,8 +21366,103 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: gameParams.treeSearchDepth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 3
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].WallHitValidationDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[0].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[1].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[2].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].AgentHitValidationDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].AgentHitValidationDistance
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

@@ -5,7 +5,7 @@ behaviors:
       batch_size: 512
       buffer_size: 10240
       learning_rate: 0.0002
-      beta: 0.005
+      beta: 1e-2
       epsilon: 0.2
       lambd: 0.95
       num_epoch: 3
@@ -17,8 +17,8 @@ behaviors:
       vis_encode_type: simple
       goal_conditioning_type: hyper
       #memory:
-      #  memory_size: 128
-      #  sequence_length: 32
+        #memory_size: 128
+        #sequence_length: 64
     reward_signals:
       extrinsic:
         gamma: 0.99
@@ -35,6 +35,7 @@ behaviors:
       save_steps: 20000
       swap_steps: 10000
       team_change: 100000
+      initial_elo: 400
     keep_checkpoints: 5
     checkpoint_interval: 500000
     max_steps: 50000000000

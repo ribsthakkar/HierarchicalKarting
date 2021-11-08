@@ -9,15 +9,18 @@ public class FramerateCounter : MonoBehaviour
     public TextMeshProUGUI uiText;
 
     public KartGame.AI.KartAgent agent;
+    public KartGame.AI.KartAgent agent2;
 
     float m_AccumulatedDeltaTime = 0f;
     int m_AccumulatedFrameCount = 0;
 
     void Update()
     {
-        float speed = agent.m_Kart.Rigidbody.velocity.magnitude;
-        float tireAge = agent.m_Kart.TireWearProportion();
-        uiText.text = speed.ToString() + " \n " + tireAge.ToString();
+        float speed1 = agent.m_Kart.Rigidbody.velocity.magnitude;
+        float speed2 = agent2.m_Kart.Rigidbody.velocity.magnitude;
+        float tireAge1 = agent.m_Kart.TireWearProportion();
+        float tireAge2 = agent2.m_Kart.TireWearProportion();
+        uiText.text = "Agent1 Speed:" + speed1.ToString() + " \nAgent1 Tire Wear:" + tireAge1.ToString() + "\nAgent2 Speed:" + speed2.ToString() + " \nAgent2 Tire Wear:" + tireAge2.ToString();
 
     }
 }

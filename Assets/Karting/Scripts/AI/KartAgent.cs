@@ -20,7 +20,8 @@ namespace KartGame.AI
     {
         public Transform Transform;
         public float RayDistance;
-        public float HitValidationDistance;
+        public float WallHitValidationDistance;
+        public float AgentHitValidationDistance;
     }
 
 
@@ -171,7 +172,7 @@ namespace KartGame.AI
 
         public void planRandomly()
         {
-            for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon, m_envController.goalSection) + 1; i++)
+            for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon,1000) + 1; i++)
             {
                 if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
                     m_UpcomingLanes[i % m_envController.Sections.Length] = Random.Range(1, 4);
@@ -219,7 +220,7 @@ namespace KartGame.AI
                 m_SectionIndex = index;
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
-                if (index == m_envController.goalSection)
+                if (false)
                 {
                     m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
                 }
@@ -321,6 +322,7 @@ namespace KartGame.AI
             // Add rewards if the agent is heading in the right direction
             AddReward(reward * m_envController.TowardsCheckpointReward);
             AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * m_envController.AccelerationReward);
+            AddReward(m_Kart.LocalSpeed() < 0.2f ? -10f: 0.0f);
             AddReward(m_Kart.LocalSpeed() * m_envController.SpeedReward);
         }
 

@@ -135,7 +135,7 @@ public class KartMCTS
             var nextActions = state.nextMoves().OrderBy((action) => state.envController.sectionIsStraight(state.lastCompletedSection) ? -action.lane : action.lane).ThenByDescending((action) => action.max_velocity).ToList();
             // UnityEngine.Debug.Log(nextActions[0].max_velocity);
             // int index = random.Next(nextActions.Count);
-            int index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, nextActions.Count/3, 0f, (float) nextActions.Count -1f)));
+            int index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, nextActions.Count/3, -(float)nextActions.Count + 1f, (float) nextActions.Count -1f)));
             DiscreteKartAction move = nextActions[index];
             if(!leaf.children.ContainsKey(move))
             {
