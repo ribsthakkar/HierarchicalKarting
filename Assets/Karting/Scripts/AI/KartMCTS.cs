@@ -47,6 +47,27 @@ public class KartMCTS
         return root;
     }
 
+    public static KartMCTSNode constructSearchTree(KartMCTSNode root, double T = 0.09)
+    {
+        var timer = new Stopwatch();
+        double total = 0.0f;
+        int exploredStates = 1;
+        while (total < T)
+        {
+            timer.Reset();
+            timer.Start();
+            KartMCTSNode leaf = findLeaf(root);
+            // UnityEngine.Debug.Log(leaf.state.lastCompletedSection);
+            var simRes = simulate(leaf);
+            exploredStates += simRes.Item3;
+            backpropagate(simRes.Item1, simRes.Item2);
+            timer.Stop();
+            total += timer.Elapsed.TotalSeconds;
+        }
+        UnityEngine.Debug.Log("MCTS explored " + exploredStates + " states");
+        return root;
+    }
+
     public static List<DiscreteGameState> getBestStatesSequence(KartMCTSNode node)
     {
         List<DiscreteGameState> bestStates = new List<DiscreteGameState>();

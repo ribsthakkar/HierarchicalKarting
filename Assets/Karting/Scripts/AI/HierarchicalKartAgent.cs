@@ -395,82 +395,93 @@ namespace KartGame.AI
         public DiscreteGameParams gameParams;
         #endregion
 
+        [HideInInspector] KartMCTSNode currentRoot = null;
+
         public override void initialPlan()
         {
+
+            currentRoot = null;
             planWithMCTS();
         }
 
         public void planWithMCTS()
         {
-            List<KartAgent> nearbyAgents = new List<KartAgent>();
-            List<DiscreteKartState> nearbyAgentStates = new List<DiscreteKartState>();
-            int initialSection = m_SectionIndex;
-            KartAgent furthestForwardAgent = this;
-            foreach(KartAgent agent in m_envController.Agents)
+            if (currentRoot == null)
             {
-                if(Math.Abs(agent.m_SectionIndex - m_SectionIndex) < gameParams.sectionWindow)
+                List<KartAgent> nearbyAgents = new List<KartAgent>();
+                List<DiscreteKartState> nearbyAgentStates = new List<DiscreteKartState>();
+                int initialSection = m_SectionIndex;
+                KartAgent furthestForwardAgent = this;
+                foreach (KartAgent agent in m_envController.Agents)
                 {
-                    nearbyAgents.Add(agent);
-                    initialSection = Math.Max(initialSection, agent.m_SectionIndex);
-                    if (initialSection == agent.m_SectionIndex)
+                    if (Math.Abs(agent.m_SectionIndex - m_SectionIndex) < gameParams.sectionWindow)
                     {
-                        furthestForwardAgent = agent;
+                        nearbyAgents.Add(agent);
+                        initialSection = Math.Max(initialSection, agent.m_SectionIndex);
+                        if (initialSection == agent.m_SectionIndex)
+                        {
+                            furthestForwardAgent = agent;
+                        }
                     }
                 }
-            }
-            int finalSection = initialSection + gameParams.treeSearchDepth;
-            int count = 0;
-            foreach(KartAgent agent in nearbyAgents)
-            {
-                int min_velocity = 0;
-                int max_velocity = (int) agent.m_Kart.GetMaxSpeed();
-                for (int i = 0; i < (int)agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
+                int finalSection = initialSection + gameParams.treeSearchDepth;
+                int count = 0;
+                foreach (KartAgent agent in nearbyAgents)
                 {
-                    if (agent.m_Kart.Rigidbody.velocity.magnitude >= i && agent.m_Kart.Rigidbody.velocity.magnitude >= i)
+                    int min_velocity = 0;
+                    int max_velocity = (int)agent.m_Kart.GetMaxSpeed();
+                    for (int i = 0; i < (int)agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
                     {
-                        min_velocity = i;
-                        max_velocity = Math.Min(i + gameParams.velocityBucketSize, (int)agent.m_Kart.GetMaxSpeed());
-                        break;
-                    }
- 
-                }
-                int timeAtSection = 0;
-                if (agent.m_SectionIndex != initialSection)
-                {
-                    timeAtSection = (int) ((agent.sectionTimes[agent.m_SectionIndex] - furthestForwardAgent.sectionTimes[agent.m_SectionIndex]) * Time.fixedDeltaTime * gameParams.timePrecision);
-                }
-                if (m_Lane <= 0)
-                {
-                    Debug.Log("LANE LESS THAN 0 for TEAM " + agent.name);
-                }
-                nearbyAgentStates.Add(new DiscreteKartState
-                {
-                    player = count,
-                    section = initialSection,
-                    timeAtSection = timeAtSection,
-                    min_velocity = min_velocity,
-                    max_velocity = max_velocity,
-                    lane = agent.m_Lane,
-                    tireAge = (int) ((m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer) * 10000),
-                    laneChanges = agent.m_LaneChanges,
-                    infeasible = false,
-                    name = agent.name
-                });
-            }
+                        if (agent.m_Kart.Rigidbody.velocity.magnitude >= i && agent.m_Kart.Rigidbody.velocity.magnitude >= i)
+                        {
+                            min_velocity = i;
+                            max_velocity = Math.Min(i + gameParams.velocityBucketSize, (int)agent.m_Kart.GetMaxSpeed());
+                            break;
+                        }
 
-            DiscreteGameState initialGameState = new DiscreteGameState
+                    }
+                    int timeAtSection = 0;
+                    if (agent.m_SectionIndex != initialSection)
+                    {
+                        timeAtSection = (int)((agent.sectionTimes[agent.m_SectionIndex] - furthestForwardAgent.sectionTimes[agent.m_SectionIndex]) * Time.fixedDeltaTime * gameParams.timePrecision);
+                    }
+                    if (m_Lane <= 0)
+                    {
+                        Debug.Log("LANE LESS THAN 0 for TEAM " + agent.name);
+                    }
+                    nearbyAgentStates.Add(new DiscreteKartState
+                    {
+                        player = count,
+                        section = initialSection,
+                        timeAtSection = timeAtSection,
+                        min_velocity = min_velocity,
+                        max_velocity = max_velocity,
+                        lane = agent.m_Lane,
+                        tireAge = (int)((m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer) * 10000),
+                        laneChanges = agent.m_LaneChanges,
+                        infeasible = false,
+                        name = agent.name
+                    });
+                }
+
+                DiscreteGameState initialGameState = new DiscreteGameState
+                {
+                    envController = m_envController,
+                    kartStates = nearbyAgentStates,
+                    kartAgents = nearbyAgents,
+                    initialSection = initialSection,
+                    finalSection = finalSection,
+                    lastCompletedSection = initialSection,
+                    gameParams = gameParams
+
+                };
+                currentRoot = KartMCTS.constructSearchTree(initialGameState);
+            }
+            else
             {
-                envController = m_envController,
-                kartStates = nearbyAgentStates,
-                kartAgents = nearbyAgents,
-                initialSection = initialSection,
-                finalSection = finalSection,
-                lastCompletedSection = initialSection,
-                gameParams = gameParams
-                
-            };
-            KartMCTSNode root = KartMCTS.constructSearchTree(initialGameState);
-            List<DiscreteGameState> bestStates = KartMCTS.getBestStatesSequence(root);
+                currentRoot = KartMCTS.constructSearchTree(currentRoot);
+            }
+            List<DiscreteGameState> bestStates = KartMCTS.getBestStatesSequence(currentRoot);
             // print(this.name + " " + initialGameState.kartAgents.Count);
             foreach(DiscreteGameState gameState in bestStates)
             {
@@ -681,6 +692,62 @@ namespace KartGame.AI
             }
         }
 
+        void OnTriggerEnter(Collider other)
+        {
+            var maskedValue = 1 << other.gameObject.layer;
+            var triggered = maskedValue & CheckpointMask;
+
+            FindSectionIndex(other, out var index, out var lane);
+            LaneDifferenceRewardDivider = 1.0f;
+            VelocityDifferenceRewardDivider = 1.0f;
+            // Ensure that the agent touched the checkpoint and the new index is greater than the m_SectionIndex.
+            if ((triggered > 0 && index != -1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            {
+                if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
+                {
+                    setLaneDifferenceDivider(index, lane);
+                    setVelocityDifferenceDivider(index, m_Kart.Rigidbody.velocity.magnitude);
+                    m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
+                    m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
+                }
+                if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                    for (int i = 1; i <= 4; i++)
+                        m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
+                if (m_LaneChanges + Math.Abs(m_Lane - lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
+                {
+                    AddReward(m_envController.SwervingPenalty);
+                }
+                if (m_envController.sectionIsStraight(m_SectionIndex) != m_envController.sectionIsStraight(index))
+                {
+                    m_LaneChanges = 0;
+                }
+                else if (m_Lane != lane)
+                {
+                    m_LaneChanges += Math.Abs(m_Lane - lane);
+                }
+                m_SectionIndex = index;
+                m_Lane = lane;
+                sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
+                if (false)
+                {
+                    m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
+                }
+                else
+                {
+                    m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
+                }
+                currentRoot = null;
+            }
+            else if ((triggered > 0 && index != -1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            {
+                // print("going backwards");
+                AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
+            }
+            else if ((triggered > 0 && index == -1))
+            {
+                m_envController.ResolveEvent(Event.DroveReverseLimit, this, null);
+            }
+        }
     }
 
 

@@ -241,7 +241,7 @@ namespace KartGame.AI
 
         }
 
-        void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)
+        protected void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)
         {
             for (int i = m_SectionIndex - sectionHorizon; i < m_SectionIndex + sectionHorizon; i++)
             {

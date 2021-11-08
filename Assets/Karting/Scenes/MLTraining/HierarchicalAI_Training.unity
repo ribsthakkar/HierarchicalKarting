@@ -7911,7 +7911,7 @@ MonoBehaviour:
   - {fileID: 872942152}
   - {fileID: 844581850}
   - {fileID: 1893277585}
-  WallHitPenalty: -0.25
+  WallHitPenalty: -0.5
   OpponentHitPenalty: -1
   HitByOpponentPenalty: 0
   PassCheckpointReward: 5
@@ -7922,7 +7922,7 @@ MonoBehaviour:
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
@@ -12443,7 +12443,7 @@ MonoBehaviour:
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
@@ -15837,7 +15837,7 @@ MonoBehaviour:
   - {fileID: 693569913}
   - {fileID: 2089615964}
   - {fileID: 849198697}
-  WallHitPenalty: -0.25
+  WallHitPenalty: -0.5
   OpponentHitPenalty: -1
   HitByOpponentPenalty: 0
   PassCheckpointReward: 5
@@ -15848,7 +15848,7 @@ MonoBehaviour:
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
@@ -18977,7 +18977,7 @@ MonoBehaviour:
   - {fileID: 579774164}
   - {fileID: 1290507583}
   - {fileID: 2031244226}
-  WallHitPenalty: -0.25
+  WallHitPenalty: -0.5
   OpponentHitPenalty: -1
   HitByOpponentPenalty: 0
   PassCheckpointReward: 5
@@ -18988,7 +18988,7 @@ MonoBehaviour:
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
@@ -19522,7 +19522,7 @@ MonoBehaviour:
   - {fileID: 49180487}
   - {fileID: 1471530527}
   - {fileID: 73073156}
-  WallHitPenalty: -0.25
+  WallHitPenalty: -0.5
   OpponentHitPenalty: -1
   HitByOpponentPenalty: 0
   PassCheckpointReward: 5
@@ -19533,7 +19533,7 @@ MonoBehaviour:
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
@@ -19978,7 +19978,7 @@ MonoBehaviour:
   - {fileID: 1893177968}
   - {fileID: 376998214}
   - {fileID: 1120278770}
-  WallHitPenalty: -0.25
+  WallHitPenalty: -0.5
   OpponentHitPenalty: -1
   HitByOpponentPenalty: 0
   PassCheckpointReward: 5
@@ -19989,7 +19989,7 @@ MonoBehaviour:
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.03
-  SpeedReward: 2
+  SpeedReward: 3
   AccelerationReward: 0.02
   MaxLaneChanges: 4
   laps: 1
