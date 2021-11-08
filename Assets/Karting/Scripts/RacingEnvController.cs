@@ -138,7 +138,7 @@ public class RacingEnvController : MonoBehaviour
                 // AddGoalTimingRewards();
                 for (int i = 0; i < Agents.Length; i++)
                 {
-                    Agents[i].EpisodeInterrupted();
+                    Agents[i].EndEpisode();
                 }
                 //print("from here 2");
                 ResetGame();

@@ -553,7 +553,7 @@ namespace KartGame.AI
             }
             else
             {
-                LaneDifferenceRewardDivider = -Mathf.Pow(2f, -1.0f *3);
+                //LaneDifferenceRewardDivider = -Mathf.Pow(2f, -1.0f *3);
                 //LaneDifferenceRewardDivider = Mathf.Pow(2f, 1.0f *3);
             }
         }
