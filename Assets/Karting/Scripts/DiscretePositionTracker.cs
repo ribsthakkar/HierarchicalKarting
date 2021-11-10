@@ -144,7 +144,8 @@ public class DiscretePositionTracker : MonoBehaviour
 
     public bool isStraight()
     {
-        return transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight";
+        return trackInsideRadius == 0f;
+        // return transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight";
     }
 
     internal bool isVelFeasible(int velocity, int initLane, int finalLane, float tireWearProportion, float maxGs, float minGs)

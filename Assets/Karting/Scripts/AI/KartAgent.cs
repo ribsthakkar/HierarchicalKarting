@@ -175,7 +175,10 @@ namespace KartGame.AI
             for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon,1000) + 1; i++)
             {
                 if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
+                {
                     m_UpcomingLanes[i % m_envController.Sections.Length] = Random.Range(1, 4);
+                    m_UpcomingVelocities[i % m_envController.Sections.Length] = Random.Range(5f, m_Kart.GetMaxSpeed());
+                }
             }
         }
 

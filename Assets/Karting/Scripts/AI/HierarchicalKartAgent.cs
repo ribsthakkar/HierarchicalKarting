@@ -8,6 +8,7 @@ using System;
 using Unity.MLAgents.Actuators;
 using System.Linq;
 using Unity.MLAgents.Policies;
+using System.Threading;
 
 namespace KartGame.AI
 {
@@ -236,7 +237,7 @@ namespace KartGame.AI
             {
                 return Tuple.Create(false, new List<float>());
             }
-            else
+            else if (kartStates.Count > 1)
             {
                 int maxScore = gameParams.timePrecision * -1000;
                 int minScore = gameParams.timePrecision * 1000;
@@ -265,6 +266,11 @@ namespace KartGame.AI
                     normalizedScores.Add((score - minScore) * 1.0f / (maxScore - minScore));
                 }
                 return Tuple.Create(true, normalizedScores);
+            } else
+            {
+                List<float> scores = new List<float>();
+                scores.Add(envController.maxEpisodeSteps - kartStates[0].timeAtSection / envController.maxEpisodeSteps);
+                return Tuple.Create(true, scores);
             }
         }
         public List<DiscreteKartAction> nextMoves()
@@ -396,12 +402,39 @@ namespace KartGame.AI
         #endregion
 
         [HideInInspector] KartMCTSNode currentRoot = null;
+        [HideInInspector] List<DiscreteGameState> bestStates = new List<DiscreteGameState>();
+        [HideInInspector] Thread t = null;
 
         public override void initialPlan()
         {
 
             currentRoot = null;
-            planWithMCTS();
+            if (Mode == AgentMode.Inferencing)
+            {
+                planWithMCTS();
+            }
+            else
+            {
+            planRandomly();
+            }
+        }
+
+        public new void planRandomly()
+        {
+            for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + gameParams.treeSearchDepth, 1000) + 1; i++)
+            {
+                if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
+                {
+                    int lane = Random.Range(1, 4);
+                    m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
+                    m_UpcomingVelocities[i % m_envController.Sections.Length] = Random.Range(5f, m_Kart.GetMaxSpeed());
+                    if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                    {
+                        m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
+                        //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                    }
+                }
+            }
         }
 
         public void planWithMCTS()
@@ -476,16 +509,49 @@ namespace KartGame.AI
 
                 };
                 currentRoot = KartMCTS.constructSearchTree(initialGameState);
+                t = new Thread(() =>
+                {
+                    currentRoot = KartMCTS.constructSearchTree(initialGameState, T: 1.0);
+                    bestStates = KartMCTS.getBestStatesSequence(currentRoot);
+                });
+                t.Start();
             }
             else
             {
-                currentRoot = KartMCTS.constructSearchTree(currentRoot);
-            }
-            List<DiscreteGameState> bestStates = KartMCTS.getBestStatesSequence(currentRoot);
-            // print(this.name + " " + initialGameState.kartAgents.Count);
-            foreach(DiscreteGameState gameState in bestStates)
+                t = new Thread(() =>
+                {
+                    currentRoot = KartMCTS.constructSearchTree(currentRoot, T: 1.0);
+                    bestStates = KartMCTS.getBestStatesSequence(currentRoot);
+                });
+                t.Start();
+            }      
+        }
+
+        protected override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
-                foreach(DiscreteKartState kartState in gameState.kartStates)
+                if (t != null)
+                    t.Join();
+
+                if(Mode == AgentMode.Inferencing)
+                {
+                    planWithMCTS();
+                }
+                else
+                {
+                    planRandomly();
+                }
+
+
+            }
+            // print(this.name + " " + initialGameState.kartAgents.Count);
+            // print(bestStates.Count);
+
+            foreach (DiscreteGameState gameState in bestStates)
+            {
+                foreach (DiscreteKartState kartState in gameState.kartStates)
                 {
                     //if (name.Equals("KartClassic_HierarchicalMLAgent"))
                     //{
@@ -494,7 +560,7 @@ namespace KartGame.AI
 
                     if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex)
                     {
-                        if(m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
+                        if (m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
                         {
                             if (name.Equals("KartClassic_HierarchicalMLAgent"))
                                 m_envController.Sections[kartState.section % m_envController.Sections.Length].resetColors();
@@ -517,23 +583,6 @@ namespace KartGame.AI
                 var lines = m_UpcomingVelocities.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
                 print("Upcoming Velocities " + this.name + " " + string.Join(",", lines));
                 print(m_SectionIndex);
-            }
-        }
-
-        protected override void FixedUpdate()
-        {
-            base.FixedUpdate();
-            if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
-            {
-                //try
-                //{
-                    planWithMCTS();
-                //}
-                //catch (Exception e)
-                //{
-                //    print(e.ToString());
-                //    planRandomly();
-                //}
             }
         }
 
@@ -692,6 +741,7 @@ namespace KartGame.AI
             }
         }
 
+
         void OnTriggerEnter(Collider other)
         {
             var maskedValue = 1 << other.gameObject.layer;
@@ -747,6 +797,7 @@ namespace KartGame.AI
             {
                 m_envController.ResolveEvent(Event.DroveReverseLimit, this, null);
             }
+
         }
     }
 
