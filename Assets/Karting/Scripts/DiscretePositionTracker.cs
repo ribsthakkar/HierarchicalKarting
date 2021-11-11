@@ -12,8 +12,8 @@ public enum SectionType
 }
 public class DiscretePositionTracker : MonoBehaviour
 {
-    [Header("Primary Trigger Box")]
-    [Tooltip("Collider of Trigger Box")]
+    [Header("Trigger Boxes")]
+    [Tooltip("Primary Trigger Collider of Trigger Box")]
     public BoxCollider Trigger;
 
     [Header("Lane Markers")]
@@ -33,7 +33,6 @@ public class DiscretePositionTracker : MonoBehaviour
     public float turnDegrees;
 
     List<float> radiuses = new List<float>();
-
 
     // Start is called before the first frame update
     void Start()

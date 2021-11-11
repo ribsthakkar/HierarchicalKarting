@@ -9,9 +9,18 @@ using Unity.MLAgents.Actuators;
 using System.Linq;
 using Unity.MLAgents.Policies;
 using System.Threading;
+using CenterSpace.NMath.Core;
+using KartGame.AI.MPC;
 
 namespace KartGame.AI
 {
+    [System.Serializable]
+    public enum LowLevelMode
+    {
+        RL,
+        MPC
+    }
+
     public struct DiscreteKartAction
     {
         public int min_velocity;
@@ -400,10 +409,14 @@ namespace KartGame.AI
         #region MCTS Params
         public DiscreteGameParams gameParams;
         #endregion
+        [Tooltip("Are we using the RL brain for low level control or MPC?")]
+        public LowLevelMode LowMode = LowLevelMode.MPC;
 
         [HideInInspector] KartMCTSNode currentRoot = null;
         [HideInInspector] List<DiscreteGameState> bestStates = new List<DiscreteGameState>();
         [HideInInspector] Thread t = null;
+        [HideInInspector] List<Vector2> finerWaypoints;
+        [HideInInspector] int currentFinerIndex;
 
         public override void initialPlan()
         {
@@ -527,9 +540,16 @@ namespace KartGame.AI
             }      
         }
 
+        public new void Start()
+        {
+            base.Start();
+            updateFinerIdxGuess();
+        }
+
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
+            updateFinerIdxGuess();
             if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
                 if (t != null)
@@ -598,6 +618,7 @@ namespace KartGame.AI
              * 11 -> Other player states
              **/
             brainParameters.VectorObservationSize = Sensors.Length + (gameParams.treeSearchDepth*5) + 6 + (11 *otherAgents.Length);
+            finerWaypoints = Curver.MakeSmoothCurve(m_envController.Sections.Select((sec) => sec.Trigger.transform.position).ToArray(), 10f).Select((pt) => new Vector2(pt.x, pt.z)).ToList();
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -741,7 +762,6 @@ namespace KartGame.AI
             }
         }
 
-
         void OnTriggerEnter(Collider other)
         {
             var maskedValue = 1 << other.gameObject.layer;
@@ -798,6 +818,114 @@ namespace KartGame.AI
                 m_envController.ResolveEvent(Event.DroveReverseLimit, this, null);
             }
 
+        }
+
+        void updateFinerIdxGuess()
+        {
+            currentFinerIndex = m_SectionIndex * 10;
+            double minDistance = 1000;
+            for(int initialFinerIdxGuess = m_SectionIndex * 10; initialFinerIdxGuess < m_SectionIndex*10 + 10; initialFinerIdxGuess++)
+            {
+                Vector2 pt = new Vector2(m_Kart.Rigidbody.transform.position.x, m_Kart.Rigidbody.transform.position.z);
+                if((finerWaypoints[initialFinerIdxGuess] - pt).sqrMagnitude < minDistance)
+                {
+                    minDistance = (finerWaypoints[initialFinerIdxGuess] - pt).sqrMagnitude;
+                    currentFinerIndex = initialFinerIdxGuess;
+                }
+            }
+        }
+
+
+
+        public InputData SolveMPC()
+        {
+            List<KartAgent> allPlayers = new[] { this }.Concat(otherAgents).ToList();
+            List<KartMPCDynamics> dynamics = new List<KartMPCDynamics>();
+            List<DoubleVector> initialStates = new List<DoubleVector>();
+            List<List<KartMPCConstraints>> individualConstraints = new List<List<KartMPCConstraints>>();
+            List<List<KartMPCCosts>> individualCosts = new List<List<KartMPCCosts>>();
+            List<List<CoupledKartMPCConstraints>> coupledConstraints = new List<List<CoupledKartMPCConstraints>>();
+            List<List<CoupledKartMPCCosts>> coupledCosts = new List<List<CoupledKartMPCCosts>>();
+            for(int i = 0; i < allPlayers.Count; i ++)
+            {
+                KartAgent k = allPlayers[i];
+                // Create Dynamics
+                dynamics.Add(new Bicycle(Time.fixedTimeAsDouble, k.m_Kart.m_FinalStats.Acceleration, k.m_Kart.m_FinalStats.Braking, k.m_Kart.getMaxAngularVelocity(), -k.m_Kart.getMaxAngularVelocity(), k.m_Kart.GetMaxSpeed(), k.m_Kart.getMaxLateralGs()));
+                // Create Initial Vector
+                initialStates.Add(new DoubleVector(new double[] {
+                    k.m_Kart.transform.position.x,
+                    k.m_Kart.transform.position.z,
+                    k.m_Kart.Rigidbody.velocity.magnitude,
+                    k.m_Kart.transform.rotation.eulerAngles.normalized.y * Mathf.Deg2Rad,
+                    k.m_Kart.acc.magnitude,
+                    k.m_Kart.Rigidbody.angularVelocity.y,
+                }));
+                // Create Individual Constraints
+                List<KartMPCConstraints> constraints = new List<KartMPCConstraints>();
+                constraints.Add(new OnTrackConstraint(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon/2*10, 5));
+                individualConstraints.Add(constraints);
+
+                // Create Individual Costs
+                List<KartMPCCosts> costs = new List<KartMPCCosts>();
+                for(int s = m_SectionIndex + 1; s < m_SectionIndex + 1 + gameParams.treeSearchDepth; s++)
+                {
+                    int idx = s % m_envController.Sections.Length;
+                    if (m_UpcomingLanes.ContainsKey(idx))
+                    {
+                        var lane = m_envController.Sections[idx].getBoxColliderForLane(m_UpcomingLanes[idx]);
+                        costs.Add(new WaypointCost(10, 4, lane.transform.position.x, lane.transform.position.z, m_UpcomingVelocities[idx]));
+                    }
+                }
+                costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon/2 * 10, 5));
+                individualCosts.Add(costs);
+
+                List<CoupledKartMPCConstraints> cConstraints = new List<CoupledKartMPCConstraints>();
+                List<CoupledKartMPCCosts> cCosts = new List<CoupledKartMPCCosts>();
+                for (int j = 0; j < allPlayers.Count; j++)
+                {
+                    if (i == j) continue;
+                    KartAgent k2 = allPlayers[j];
+                    // Create Coupled Constraints
+                    cConstraints.Add(new CoupledDistanceConstraint(0.8, j));
+                    // Create Coupled Costs
+                    cCosts.Add(new CoupledProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon/2 * 10, 20, j));
+                }
+
+            }
+
+            // Sovle MPC
+            List<DoubleVector> result = KartMPC.solveGame(dynamics, individualCosts, individualConstraints, coupledCosts, coupledConstraints, initialStates, 200);
+            // Parse Results
+            print(result[0].ToString());
+            return new InputData
+            {
+                Accelerate = m_Acceleration,
+                Brake = m_Brake,
+                TurnInput = m_Steering
+            };
+        }
+
+
+        public override InputData GenerateInput()
+        {
+            if (LowMode == LowLevelMode.RL)
+            {
+                return new InputData
+                {
+                    Accelerate = m_Acceleration,
+                    Brake = m_Brake,
+                    TurnInput = m_Steering
+                };
+            } else if (LowMode == LowLevelMode.MPC)
+            {
+                return SolveMPC();
+            }
+            return new InputData
+            {
+                Accelerate = false,
+                Brake = false,
+                TurnInput = 0f,
+            };
         }
     }
 

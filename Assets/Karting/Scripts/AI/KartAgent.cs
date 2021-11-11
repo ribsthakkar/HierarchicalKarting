@@ -8,6 +8,7 @@ using System;
 using Unity.MLAgents.Actuators;
 using System.Linq;
 using Unity.MLAgents.Policies;
+using CenterSpace.NMath.Core;
 
 namespace KartGame.AI
 {
@@ -117,7 +118,7 @@ namespace KartGame.AI
         [HideInInspector] protected int episodeSteps = 0;
         public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
 
-        void Start()
+        public void Start()
         {        
             if (Mode == AgentMode.Inferencing) m_SectionIndex = InitCheckpointIndex;
         }
@@ -169,8 +170,7 @@ namespace KartGame.AI
             VelocityDifferenceRewardDivider = 1.0f;
         }
 
-
-        public void planRandomly()
+        public virtual void planRandomly()
         {
             for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon,1000) + 1; i++)
             {
@@ -374,7 +374,7 @@ namespace KartGame.AI
             m_Brake = actions.DiscreteActions[0] < 1;
         }
 
-        public InputData GenerateInput()
+        public virtual InputData GenerateInput()
         {
             return new InputData
             {

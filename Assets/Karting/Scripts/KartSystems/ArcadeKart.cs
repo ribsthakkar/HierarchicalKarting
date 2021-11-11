@@ -202,6 +202,9 @@ namespace KartGame.KartSystems
         bool m_HasCollision;
         bool m_InAir = false;
 
+        [HideInInspector] public Vector3 acc = Vector3.zero;
+
+
         public void AddPowerup(StatPowerup statPowerup) => m_ActivePowerupList.Add(statPowerup);
         public void SetCanMove(bool move) => m_CanMove = move;
         public float GetMaxSpeed() => Mathf.Max(m_FinalStats.TopSpeed, m_FinalStats.ReverseSpeed);
@@ -387,16 +390,16 @@ namespace KartGame.KartSystems
 
             Quaternion turnAngle = Quaternion.AngleAxis(turningPower, transform.up);
             Vector3 fwd = turnAngle * transform.forward;
-            Vector3 movement = fwd * accelInput * finalAcceleration * ((m_HasCollision || GroundPercent > 0.0f) ? 1.0f : 0.0f);
+            acc = fwd * accelInput * finalAcceleration * ((m_HasCollision || GroundPercent > 0.0f) ? 1.0f : 0.0f);
 
             // forward movement
             bool wasOverMaxSpeed = currentSpeed >= maxSpeed;
 
             // if over max speed, cannot accelerate faster.
             if (wasOverMaxSpeed && !isBraking) 
-                movement *= 0.0f;
+                acc *= 0.0f;
 
-            Vector3 newVelocity = Rigidbody.velocity + movement * Time.fixedDeltaTime;
+            Vector3 newVelocity = Rigidbody.velocity + acc * Time.fixedDeltaTime;
             newVelocity.y = Rigidbody.velocity.y;
 
             //  clamp max speed if we are on ground
@@ -480,6 +483,18 @@ namespace KartGame.KartSystems
                 m_LastValidPosition = transform.position;
                 m_LastValidRotation.eulerAngles = new Vector3(0.0f, transform.rotation.y, 0.0f);
             }
+        }
+
+        public float getMaxAngularVelocity()
+        {
+            float angularVelocitySteering = 0.4f;
+            float turningPower =  m_FinalStats.Steer;
+            return turningPower * angularVelocitySteering;
+        }
+
+        public float getMaxLateralGs()
+        {
+            return (1 - TireWearProportion()) * (m_FinalStats.MaxGs - m_FinalStats.MinGs) + m_FinalStats.MinGs;
         }
     }
 }
