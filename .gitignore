@@ -76,3 +76,5 @@ WebGL Builds/
 # Python
 venv/
 results/
+Assets/Plugins/nmath_native_x64.dll
+Assets/Plugins/nmath_native_x64.dll.meta
