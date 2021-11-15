@@ -37,39 +37,40 @@ namespace KartGame.AI.MPC
         public void AddDynamics(NonlinearProgrammingProblem problem)
         {
             int T = problem.NumVariables / (KartMPC.xDim + KartMPC.uDim);
-            for(int i = 1; i < T; i++)
+            for(int t = 1; t < T; t++)
             {
+                int i = t;
                 // Piecewise Dynamics
                 problem.AddNonlinearConstraint(
                     new NonlinearConstraint(problem.NumVariables, (vec) =>
-                    (vec[KartMPC.xIndex*T + (i)] - vec[KartMPC.xIndex*T + (i-1)]) - dt*vec[KartMPC.vIndex*T + (i-1)] * Math.Cos(vec[KartMPC.hIndex * T + (i - 1)]), 
+                    (vec[KartMPC.xIndex * T + (i)] - vec[KartMPC.xIndex * T + (i - 1)]) - dt * vec[KartMPC.vIndex * T + (i - 1)] * Math.Cos(vec[KartMPC.hIndex * T + (i - 1)]),
                     ConstraintType.EqualTo));
                 problem.AddNonlinearConstraint(
                     new NonlinearConstraint(problem.NumVariables, (vec) =>
-                    (vec[KartMPC.zIndex * T + (i)] - vec[KartMPC.zIndex * T + (i - 1)]) - dt*vec[KartMPC.vIndex * T + (i - 1)] * Math.Sin(vec[KartMPC.hIndex * T + (i - 1)]),
+                    (vec[KartMPC.zIndex * T + (i)] - vec[KartMPC.zIndex * T + (i - 1)]) - dt * vec[KartMPC.vIndex * T + (i - 1)] * Math.Sin(vec[KartMPC.hIndex * T + (i - 1)]),
                     ConstraintType.EqualTo));
                 problem.AddNonlinearConstraint(
                     new NonlinearConstraint(problem.NumVariables, (vec) =>
-                    (vec[KartMPC.hIndex * T + (i)] - vec[KartMPC.hIndex * T + (i - 1)]) - dt*vec[KartMPC.sIndex * T + (i - 1)],
+                    (vec[KartMPC.hIndex * T + (i)] - vec[KartMPC.hIndex * T + (i - 1)]) - dt * vec[KartMPC.sIndex * T + (i - 1)],
                     ConstraintType.EqualTo));
                 problem.AddNonlinearConstraint(
                     new NonlinearConstraint(problem.NumVariables, (vec) =>
-                    (vec[KartMPC.vIndex * T + (i)] - vec[KartMPC.vIndex * T + (i - 1)]) - dt*vec[KartMPC.aIndex * T + (i - 1)],
+                    (vec[KartMPC.vIndex * T + (i)] - vec[KartMPC.vIndex * T + (i - 1)]) - dt * vec[KartMPC.aIndex * T + (i - 1)],
                     ConstraintType.EqualTo));
 
                 // Control input Bounds
-                problem.AddBounds(KartMPC.sIndex * T + (i - 1), sLower, sUpper);
-                problem.AddBounds(KartMPC.aIndex * T + (i - 1), aLower, aUpper);
+                problem.AddBounds(KartMPC.sIndex * T + (i), sLower, sUpper);
+                problem.AddBounds(KartMPC.aIndex * T + (i), aLower, aUpper);
 
                 // State Bounds
-                problem.AddBounds(KartMPC.vIndex * T + (i - 1), 0, vUpper);
+                problem.AddBounds(KartMPC.vIndex * T + (i), 0, vUpper);
 
                 // Dynamical Constraints
-                problem.AddNonlinearConstraint(new NonlinearConstraint(problem.NumVariables, (vec) =>
-                {
-                    double lateralGs = ((vec[KartMPC.sIndex * T + (i)] - vec[KartMPC.sIndex * T + (i - 1)])/dt)/9.81;
-                    return lateralGsUpper - lateralGs;
-                }, ConstraintType.GreaterThanOrEqualTo));
+                //problem.AddNonlinearConstraint(new NonlinearConstraint(problem.NumVariables, (vec) =>
+                //{
+                //    double lateralGs = ((vec[KartMPC.sIndex * T + (i)] - vec[KartMPC.sIndex * T + (i - 1)]) / dt) / 9.81;
+                //    return lateralGsUpper - lateralGs;
+                //}, ConstraintType.GreaterThanOrEqualTo));
 
             }
         }

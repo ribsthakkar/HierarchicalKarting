@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace KartGame.AI.MPC
 {
-    public class KartMPC
+    public class KartMPC : MonoBehaviour
     {
         public const int xDim = 4;
         public const int uDim = 2;
@@ -28,7 +28,7 @@ namespace KartGame.AI.MPC
             {
                 last_trajectory.Add(solveOptimalControl(dynamics[ii], individualConstraints[ii], individualCosts[ii], initial[ii], steps));
             }
-
+            print("Finished initial trajectory");
             for(int iter = 0; iter < maxIBRIterations; iter++)
             {
                 for (int ii = 0; ii < N; ii++)
@@ -80,6 +80,14 @@ namespace KartGame.AI.MPC
 
             var solver = new ActiveSetLineSearchSQP(1e-4);
             bool succcess = solver.Solve(problem, x0);
+            // print(solver.OptimalX.ToString());
+            print(solver.SolverTerminationStatus);
+            DoubleMatrix m = new DoubleMatrix(solver.OptimalX).Resize(solver.OptimalX.Length / 6, 6).Transpose();
+            print(objective(solver.OptimalX) + " " + m.ToString());
+            //var solverParams = new StochasticHillClimbingParameters { Minimize = true, TimeLimitMilliSeconds = 10000, Presolve=true };
+            //var solver = new StochasticHillClimbingSolver();
+            //solver.Solve(problem, x0, solverParams);
+            //print(solver.OptimalX);
             return solver.OptimalX;
         }
     }

@@ -40,17 +40,17 @@ namespace KartGame.AI.MPC
 
         public double Evaluate(DoubleVector v)
         {
-            DoubleMatrix m = new DoubleMatrix(v).Resize(v.Length, 4).Transpose();
+            int T = v.Length / (KartMPC.xDim + KartMPC.uDim);
             double minDist = 1000000.0;
             double distCost = 0.0;
             double speedCost = 0.0;
-            for(int j = 0; j < m.Cols; j++)
+            for(int j = 0; j < T; j++)
             {
-                double dist = Math.Pow((m[1, j] - x), 2) + Math.Pow((m[2, j] - z), 2);
+                double dist = Math.Pow((v[KartMPC.xIndex*T + j] - x), 2) + Math.Pow((v[KartMPC.zIndex*T + j] - z), 2);
                 if (dist < minDist)
                 {
                     distCost = 0.5 * position_weight * dist;
-                    speedCost = 0.5 * speed_weight * Math.Pow(speed - m[3, j], 2);
+                    speedCost = 0.5 * speed_weight * Math.Pow(speed - v[KartMPC.vIndex*T + j], 2);
                 }
             }
             return  distCost + speedCost;
@@ -82,9 +82,9 @@ namespace KartGame.AI.MPC
                 double minDist = 1000*1000;
                 for (int j = initialIndex; j < finalIndex; j++)
                 {
-                    minDist = Math.Min(Math.Pow(centerPoints[j].x - x[KartMPC.xIndex * T + (i)], 2) + Math.Pow(x[KartMPC.zIndex * T + (i)] - centerPoints[j].y, 2), minDist);
+                    minDist = Math.Min(Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (i)], 2) + Math.Pow(x[KartMPC.zIndex * T + (i)] - centerPoints[j % centerPoints.Count].y, 2), minDist);
                 }
-                cost += minDist <= maxDist ? 0 : weight * minDist;
+                cost += minDist <= maxDist*maxDist ? 0 : weight * Math.Sqrt(minDist-maxDist*maxDist);
             }
             return cost;
         }
@@ -112,16 +112,40 @@ namespace KartGame.AI.MPC
             int bestProgress = initialIndex;
             for (int j = initialIndex; j < finalIndex; j++)
             {
-                if (Math.Pow(centerPoints[j].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j].y, 2) <= minDist)
+                if (Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j % centerPoints.Count].y, 2) <= minDist)
                 {
-                    minDist = Math.Pow(centerPoints[j].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j].y, 2);
+                    minDist = Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j % centerPoints.Count].y, 2);
                     bestProgress = j;
                 }
             }
+            // UnityEngine.Debug.Log("obj:" + (-bestProgress*weight) + " x " + x.ToString());
             return -bestProgress * weight;
         }
     }
 
+    public class DistanceTraveledReward : KartMPCCosts
+    {
+        double weight;
+        double dt;
+
+        public DistanceTraveledReward(double dt, double weight)
+        {
+            this.dt = dt;
+            this.weight = weight;
+        }
+        public double Evaluate(DoubleVector x)
+        {
+            int T = x.Length / (KartMPC.xDim + KartMPC.uDim);
+            int finalT = T - 1;
+            double dist = 0.0;
+            for (int t = 0; t < T; t++)
+            {
+                dist += x[KartMPC.vIndex * T + t] * dt;
+            }
+            // UnityEngine.Debug.Log("obj:" + (-bestProgress*weight) + " x " + x.ToString());
+            return -dist * weight;
+        }
+    }
 
     public class CoupledDistanceCost : CoupledKartMPCCosts
     {
@@ -174,15 +198,15 @@ namespace KartGame.AI.MPC
 
             for (int j = initialIndex; j < finalIndex; j++)
             {
-                if (Math.Pow(centerPoints[j].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j].y, 2) <= minDistMine)
+                if (Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j % centerPoints.Count].y, 2) <= minDistMine)
                 {
-                    minDistMine = Math.Pow(centerPoints[j].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j].y, 2);
+                    minDistMine = Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(x[KartMPC.zIndex * T + (finalT)] - centerPoints[j % centerPoints.Count].y, 2);
                     bestProgressMine = j;
                 }
 
-                if (Math.Pow(centerPoints[j].x - other[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(other[KartMPC.zIndex * T + (finalT)] - centerPoints[j].y, 2) <= minDistOther)
+                if (Math.Pow(centerPoints[j % centerPoints.Count].x - other[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(other[KartMPC.zIndex * T + (finalT)] - centerPoints[j % centerPoints.Count].y, 2) <= minDistOther)
                 {
-                    minDistOther = Math.Pow(centerPoints[j].x - other[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(other[KartMPC.zIndex * T + (finalT)] - centerPoints[j].y, 2);
+                    minDistOther = Math.Pow(centerPoints[j % centerPoints.Count].x - other[KartMPC.xIndex * T + (finalT)], 2) + Math.Pow(other[KartMPC.zIndex * T + (finalT)] - centerPoints[j % centerPoints.Count].y, 2);
                     bestProgressOther = j;
                 }
             }

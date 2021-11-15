@@ -15,6 +15,7 @@ public class DiscretePositionTracker : MonoBehaviour
     [Header("Trigger Boxes")]
     [Tooltip("Primary Trigger Collider of Trigger Box")]
     public BoxCollider Trigger;
+    public BoxCollider NextTrigger;
 
     [Header("Lane Markers")]
     [Tooltip("Boxes for each Lane")]
@@ -33,6 +34,28 @@ public class DiscretePositionTracker : MonoBehaviour
     public float turnDegrees;
 
     List<float> radiuses = new List<float>();
+    [HideInInspector] public List<Vector2> finePoints = new List<Vector2>();
+
+    void Awake()
+    {
+        if (isStraight())
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Vector3 interpolated = Vector3.Lerp(Trigger.transform.position, NextTrigger.transform.position, i / 10f);
+                finePoints.Add(new Vector2(interpolated.x, interpolated.z));
+            }
+        }
+        else
+        {
+            Vector3 center = Trigger.transform.position + (leftTurn ? -Trigger.transform.right : Trigger.transform.right) * (trackInsideRadius + trackWidth / 2);
+            for (int i = 0; i < 10; i++)
+            {
+                Vector3 interpolated = center + Vector3.Slerp(Trigger.transform.position - center, NextTrigger.transform.position - center, i / 10f);
+                finePoints.Add(new Vector2(interpolated.x, interpolated.z));
+            }
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

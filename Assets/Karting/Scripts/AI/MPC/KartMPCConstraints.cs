@@ -40,16 +40,17 @@ namespace KartGame.AI.MPC
         {
             int T = problem.NumVariables / (KartMPC.xDim + KartMPC.uDim);
             double cost = 0;
-            for (int i = 1; i < T; i++)
+            for (int t = 1; t < T; t++)
             {
+                int i = t;
                 problem.AddNonlinearConstraint(new NonlinearConstraint(problem.NumVariables, (vec) =>
                 {
                     double minDist = 1000 * 1000;
                     for (int j = initialIndex; j < finalIndex; j++)
                     {
-                        minDist = Math.Min(Math.Pow(centerPoints[j].x - vec[KartMPC.xIndex * T + (i)], 2) + Math.Pow(vec[KartMPC.zIndex * T + (i)] - centerPoints[j].y, 2), minDist);
+                        minDist = Math.Min(Math.Pow(centerPoints[j % centerPoints.Count].x - vec[KartMPC.xIndex * T + (i)], 2) + Math.Pow(vec[KartMPC.zIndex * T + (i)] - centerPoints[j % centerPoints.Count].y, 2), minDist);
                     }
-                    return maxDist - minDist;
+                    return maxDist*maxDist - minDist;
                 }, ConstraintType.GreaterThanOrEqualTo));
 
             }
@@ -59,13 +60,13 @@ namespace KartGame.AI.MPC
         {
             int T = x.Length / (KartMPC.xDim + KartMPC.uDim);
             double cost = 0;
-            for (int i = 1; i < T; i++)
+            for (int t = 1; t < T; t++)
             {
-
+                int i = t;
                 double minDist = 1000 * 1000;
                 for (int j = initialIndex; j < finalIndex; j++)
                 {
-                    minDist = Math.Min(Math.Pow(centerPoints[j].x - x[KartMPC.xIndex * T + (i)], 2) + Math.Pow(x[KartMPC.zIndex * T + (i)] - centerPoints[j].y, 2), minDist);
+                    minDist = Math.Min(Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (i)], 2) + Math.Pow(x[KartMPC.zIndex * T + (i)] - centerPoints[j % centerPoints.Count].y, 2), minDist);
                 }
                 if (maxDist - minDist < 0)
                 {
@@ -89,8 +90,9 @@ namespace KartGame.AI.MPC
         {
             int T = problem.NumVariables / (KartMPC.xDim + KartMPC.uDim);
             double cost = 0;
-            for (int i = 1; i < T; i++)
+            for (int t = 1; t < T; t++)
             {
+                int i = t;
                 problem.AddNonlinearConstraint(new NonlinearConstraint(problem.NumVariables, (vec) => {
                 double dist2 = Math.Pow(vec[KartMPC.xIndex * T + (i)] - other[KartMPC.xIndex * T + (i)], 2) + Math.Pow(vec[KartMPC.zIndex * T + (i)] - other[KartMPC.zIndex * T + (i)], 2);
                     return minDist * minDist - dist2;
@@ -103,8 +105,9 @@ namespace KartGame.AI.MPC
         {
             int T = x.Length / (KartMPC.xDim + KartMPC.uDim);
             double cost = 0;
-            for (int i = 1; i < T; i++)
+            for (int t = 1; t < T; t++)
             {
+                int i = t;
                 double dist2 = Math.Pow(x[KartMPC.xIndex * T + (i)] - other[KartMPC.xIndex * T + (i)], 2) + Math.Pow(x[KartMPC.zIndex * T + (i)] - other[KartMPC.zIndex * T + (i)], 2);
                 if (dist2 < minDist * minDist)
                     return false;
