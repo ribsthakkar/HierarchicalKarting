@@ -84,7 +84,8 @@ namespace KartGame.AI.MPC
                 {
                     minDist = Math.Min(Math.Pow(centerPoints[j % centerPoints.Count].x - x[KartMPC.xIndex * T + (i)], 2) + Math.Pow(x[KartMPC.zIndex * T + (i)] - centerPoints[j % centerPoints.Count].y, 2), minDist);
                 }
-                cost += minDist <= maxDist*maxDist ? 0 : weight * Math.Sqrt(minDist-maxDist*maxDist);
+                // cost += minDist <= maxDist*maxDist ? 0 : weight * Math.Sqrt(minDist-maxDist*maxDist);
+                cost += Math.Sqrt(minDist) * weight;
             }
             return cost;
         }

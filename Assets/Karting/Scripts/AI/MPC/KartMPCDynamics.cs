@@ -75,17 +75,37 @@ namespace KartGame.AI.MPC
             }
         }
 
-        public bool areInputsFeasible(DoubleVector x)
+        public bool areInputsFeasible(DoubleVector vec)
         {
-            int T = x.Length / (KartMPC.xDim + KartMPC.uDim);
+            int T = vec.Length / (KartMPC.xDim + KartMPC.uDim);
             for (int i = 1; i < T; i++)
             {
-                if (x[KartMPC.sIndex * T + (i)] > aUpper || x[KartMPC.sIndex * T + (i)] < sLower)
+                if (vec[KartMPC.sIndex * T + (i)] > aUpper || vec[KartMPC.sIndex * T + (i)] < sLower)
                 {
                     return false;
                 }
-                if (x[KartMPC.aIndex * T + (i)] > aUpper || x[KartMPC.aIndex * T + (i)] < aLower)
+                if (vec[KartMPC.aIndex * T + (i)] > aUpper || vec[KartMPC.aIndex * T + (i)] < aLower)
                 {
+                    return false;
+                }
+                if (Math.Abs((vec[KartMPC.xIndex * T + (i)] - vec[KartMPC.xIndex * T + (i - 1)]) - dt * vec[KartMPC.vIndex * T + (i - 1)] * Math.Cos(vec[KartMPC.hIndex * T + (i - 1)])) >= 1e-3)
+                {
+                    Debug.Log("Broke x dynamics: " + Math.Abs((vec[KartMPC.xIndex * T + (i)] - vec[KartMPC.xIndex * T + (i - 1)]) - dt * vec[KartMPC.vIndex * T + (i - 1)] * Math.Cos(vec[KartMPC.hIndex * T + (i - 1)])));
+                    return false;
+                }
+                if (Math.Abs((vec[KartMPC.zIndex * T + (i)] - vec[KartMPC.zIndex * T + (i - 1)]) - dt * vec[KartMPC.vIndex * T + (i - 1)] * Math.Sin(vec[KartMPC.hIndex * T + (i - 1)])) >= 1e-3)
+                {
+                    Debug.Log("Broke z dynamics: " + Math.Abs((vec[KartMPC.zIndex * T + (i)] - vec[KartMPC.zIndex * T + (i - 1)]) - dt * vec[KartMPC.vIndex * T + (i - 1)] * Math.Sin(vec[KartMPC.hIndex * T + (i - 1)])));
+                    return false;
+                }
+                if (Math.Abs((vec[KartMPC.hIndex * T + (i)] - vec[KartMPC.hIndex * T + (i - 1)]) - dt * vec[KartMPC.sIndex * T + (i - 1)]) >= 1e-3)
+                {
+                    Debug.Log("Broke heading dyanmics" + Math.Abs((vec[KartMPC.hIndex * T + (i)] - vec[KartMPC.hIndex * T + (i - 1)]) - dt * vec[KartMPC.sIndex * T + (i - 1)]));
+                    return false;
+                }
+                if (Math.Abs((vec[KartMPC.vIndex * T + (i)] - vec[KartMPC.vIndex * T + (i - 1)]) - dt * vec[KartMPC.aIndex * T + (i - 1)]) >= 1e-3)
+                {
+                    Debug.Log("Broke velocity dynamics: " + Math.Abs((vec[KartMPC.vIndex * T + (i)] - vec[KartMPC.vIndex * T + (i - 1)]) - dt * vec[KartMPC.aIndex * T + (i - 1)]));
                     return false;
                 }
             }

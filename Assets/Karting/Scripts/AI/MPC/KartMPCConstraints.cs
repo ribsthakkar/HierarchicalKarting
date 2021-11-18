@@ -39,7 +39,6 @@ namespace KartGame.AI.MPC
         public void AddConstraints(NonlinearProgrammingProblem problem)
         {
             int T = problem.NumVariables / (KartMPC.xDim + KartMPC.uDim);
-            double cost = 0;
             for (int t = 1; t < T; t++)
             {
                 int i = t;

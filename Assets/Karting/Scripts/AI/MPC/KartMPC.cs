@@ -18,6 +18,8 @@ namespace KartGame.AI.MPC
         public const int hIndex = 3;
         public const int aIndex = 4;
         public const int sIndex = 5;
+        public const int vxIndex = 4;
+        public const int vyIndex = 5;
 
 
         public static List<DoubleVector> solveGame(List<KartMPCDynamics> dynamics, List<List<KartMPCCosts>> individualCosts, List<List<KartMPCConstraints>> individualConstraints, List<List<CoupledKartMPCCosts>> coupledCosts, List<List<CoupledKartMPCConstraints>> coupledConstraints, List<DoubleVector> initial, int steps, int maxIBRIterations=2)
@@ -42,7 +44,7 @@ namespace KartGame.AI.MPC
                         c.other = last_trajectory[c.otherIdx];
                     }
 
-                    DoubleVector newSol = solveOptimalControl(dynamics[ii], individualConstraints[ii].Concat(coupledConstraints[ii]).ToList(), individualCosts[ii].Concat(coupledCosts[ii]).ToList(), initial[ii], steps);
+                    DoubleVector newSol = solveOptimalControl(dynamics[ii], individualConstraints[ii].Concat(coupledConstraints[ii]).ToList(), individualCosts[ii].Concat(coupledCosts[ii]).ToList(), last_trajectory[ii], steps);
                     last_trajectory[ii] = newSol;
                 }
             }
@@ -59,15 +61,15 @@ namespace KartGame.AI.MPC
             };
 
             var problem = new NonlinearProgrammingProblem(totalDim, objective);
-            var x0 = new DoubleVector(totalDim);
+            var x0 = new DoubleVector(initial);
             //Set initial variable constraints
 
             for (int i = 0; i < totalDim; i += steps)
             {
                 problem.AddBounds(i, initial[i], initial[i]);
-                x0[i] = initial[i];
             }
 
+            print(dynamics.areInputsFeasible(x0));
 
             // Add dynamic constraints
             dynamics.AddDynamics(problem);
@@ -78,16 +80,18 @@ namespace KartGame.AI.MPC
                 c.AddConstraints(problem);
             }
 
-            var solver = new ActiveSetLineSearchSQP(1e-4);
+            var solver = new ActiveSetLineSearchSQP(1e-12);
             bool succcess = solver.Solve(problem, x0);
-            // print(solver.OptimalX.ToString());
             print(solver.SolverTerminationStatus);
-            DoubleMatrix m = new DoubleMatrix(solver.OptimalX).Resize(solver.OptimalX.Length / 6, 6).Transpose();
-            print(objective(solver.OptimalX) + " " + m.ToString());
-            //var solverParams = new StochasticHillClimbingParameters { Minimize = true, TimeLimitMilliSeconds = 10000, Presolve=true };
+            // print(constraints[0].isSatisfied(solver.OptimalX));
+            //var solverParams = new StochasticHillClimbingParameters { Minimize = true, TimeLimitMilliSeconds = 1500, Presolve = true };
             //var solver = new StochasticHillClimbingSolver();
             //solver.Solve(problem, x0, solverParams);
-            //print(solver.OptimalX);
+
+            print(dynamics.areInputsFeasible(solver.OptimalX));
+
+            DoubleMatrix m = new DoubleMatrix(solver.OptimalX).Resize(solver.OptimalX.Length / 6, 6).Transpose();
+            print(objective(solver.OptimalX) + " " + m.ToString());
             return solver.OptimalX;
         }
     }
