@@ -12,6 +12,7 @@ using System.Threading;
 using CenterSpace.NMath.Core;
 using KartGame.AI.MPC;
 using KartGame.AI.LQR;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace KartGame.AI
 {
@@ -861,7 +862,7 @@ namespace KartGame.AI
                 initial[KartMPC.xIndex * numSteps] = k.m_Kart.transform.position.x;
                 initial[KartMPC.zIndex * numSteps] = k.m_Kart.transform.position.z;
                 initial[KartMPC.vIndex * numSteps] = k.m_Kart.Rigidbody.velocity.magnitude;
-                var heading = Mathf.Atan2(k.m_Kart.transform.forward.z, m_Kart.transform.forward.x);
+                var heading = Mathf.Atan2(k.m_Kart.transform.forward.z, k.m_Kart.transform.forward.x);
                 initial[KartMPC.hIndex * numSteps] =  heading;
                 initial[KartMPC.aIndex * numSteps] = k.m_Kart.acc.magnitude;
                 initial[KartMPC.sIndex * numSteps] = k.m_Kart.Rigidbody.angularVelocity.y;
@@ -933,79 +934,51 @@ namespace KartGame.AI
         public InputData SolveLQR(int numSteps = 200)
         {
             List<KartAgent> allPlayers = new[] { this }.Concat(otherAgents).ToList();
-            List<KartLQRDynamics> lqrDynamics = new List<KartLQRDynamics>();
-            List<DoubleVector> initialStates = new List<DoubleVector>();
-            List<DoubleMatrix> costs = new List<KartLQRCosts>();
+            List<KartLQRDynamics> dynamics = new List<KartLQRDynamics>();
+            List<Vector<double>> initialStates = new List<Vector<double>>();
+            List<KartLQRCosts> costs = new List<KartLQRCosts>();
             double dt = Time.fixedTimeAsDouble;
             for (int i = 0; i < allPlayers.Count; i++)
             {
                 KartAgent k = allPlayers[i];
-                // Create Dynamics
-                lqrDynamics.Add(new LinearizedBicycle(dt, k.m_Kart.m_FinalStats.Acceleration, -k.m_Kart.m_FinalStats.Braking, k.m_Kart.getMaxAngularVelocity(), -k.m_Kart.getMaxAngularVelocity(), k.m_Kart.GetMaxSpeed(), k.m_Kart.getMaxLateralGs()));
                 // Create Initial Vector
-                DoubleVector initial = new DoubleVector(numSteps * (KartMPC.xDim + KartMPC.uDim));
+                var initial = CreateVector.Dense<double>(4);
                 initial[KartMPC.xIndex] = k.m_Kart.transform.position.x;
                 initial[KartMPC.zIndex] = k.m_Kart.transform.position.z;
                 initial[KartMPC.vIndex] = k.m_Kart.Rigidbody.velocity.magnitude;
                 var heading = Mathf.Atan2(k.m_Kart.transform.forward.z, m_Kart.transform.forward.x);
-                initial[KartMPC.hIndex * numSteps] = heading;
-                initial[KartMPC.aIndex * numSteps] = k.m_Kart.acc.magnitude;
-                initial[KartMPC.sIndex * numSteps] = k.m_Kart.Rigidbody.angularVelocity.y;
-                int T = numSteps;
-                for (int t = 1; t < T; t++)
-                {
-                    // Piecewise Dynamics
-                    initial[KartMPC.xIndex * T + (t)] = initial[KartMPC.xIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Cos(initial[KartMPC.hIndex * T + (t - 1)]);
-                    // initial[KartMPC.xIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].x;
-                    initial[KartMPC.zIndex * T + (t)] = initial[KartMPC.zIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Sin(initial[KartMPC.hIndex * T + (t - 1)]);
-                    // initial[KartMPC.zIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].y;
-                    initial[KartMPC.hIndex * T + (t)] = initial[KartMPC.hIndex * T + (t - 1)] + dt * initial[KartMPC.sIndex * T + (t - 1)];
-                    initial[KartMPC.vIndex * T + (t)] = initial[KartMPC.vIndex * T + (t - 1)] + dt * initial[KartMPC.aIndex * T + (t - 1)];
-                    initial[KartMPC.aIndex * T + (t)] = 0;
-                    initial[KartMPC.sIndex * T + (t)] = 0;
-                }
+                initial[KartMPC.hIndex] = heading;
+                
+                // Create Dynamics
+                dynamics.Add(new LinearizedBicycle(dt, initial));
 
                 print(initial.ToString());
                 initialStates.Add(initial);
-                // Create Individual Constraints
-                List<KartMPCConstraints> constraints = new List<KartMPCConstraints>();
-                //constraints.Add(new OnTrackConstraint(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5));
-                individualConstraints.Add(constraints);
 
-                // Create Individual Costs
-                List<KartMPCCosts> costs = new List<KartMPCCosts>();
-                print(currentFinerIndex + " " + m_SectionIndex * 10);
-                for (int s = m_SectionIndex + 1; s < m_SectionIndex + 1 + 1; s++)
+                // Add Cost Matrix Details
+                var targetState = CreateVector.Dense<double>(4);
+                int s = m_SectionIndex + 1;
+                int idx = s % m_envController.Sections.Length;
+                BoxCollider lane;
+                double vel;
+                if (m_UpcomingLanes.ContainsKey(idx))
                 {
-                    int idx = s % m_envController.Sections.Length;
-                    if (m_UpcomingLanes.ContainsKey(idx))
-                    {
-                        var lane = m_envController.Sections[idx].getBoxColliderForLane(m_UpcomingLanes[idx]);
-                        // costs.Add(new WaypointCost(10, 4, lane.transform.position.x, lane.transform.position.z, m_UpcomingVelocities[idx]));
-                    }
+                    lane = m_envController.Sections[idx].getBoxColliderForLane(m_UpcomingLanes[idx]);
+                    vel = m_UpcomingVelocities[idx];
                 }
-                // costs.Add(new DistanceFromCenterCost(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5f, 1000));
-                //costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 50));
-                //costs.Add(new DistanceTraveledReward(dt, 5));
-                individualCosts.Add(costs);
-
-                List<CoupledKartMPCConstraints> cConstraints = new List<CoupledKartMPCConstraints>();
-                List<CoupledKartMPCCosts> cCosts = new List<CoupledKartMPCCosts>();
-                for (int j = 0; j < allPlayers.Count; j++)
+                else
                 {
-                    if (i == j) continue;
-                    KartAgent k2 = allPlayers[j];
-                    // Create Coupled Constraints
-                    // cConstraints.Add(new CoupledDistanceConstraint(0.8, j));
-                    // Create Coupled Costs
-                    // cCosts.Add(new CoupledProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon/2 * 10, 20, j));
+                    lane = m_envController.Sections[idx].Trigger;
+                    vel = m_Kart.GetMaxSpeed();
                 }
-                coupledConstraints.Add(cConstraints);
-                coupledCosts.Add(cCosts);
+                targetState[KartMPC.xIndex] = lane.transform.position.x;
+                targetState[KartMPC.zIndex] = lane.transform.position.z;
+                targetState[KartMPC.vIndex] = vel;
+                costs.Add(new LQRCheckpointReachAvoidCost(targetState, 5.0, avoidWeights, avoidIndices, avoidDynamics));
             }
 
             // Sovle MPC
-            resultVector = KartMPC.solveGame(dynamics, individualCosts, individualConstraints, coupledCosts, coupledConstraints, initialStates, numSteps);
+            var resultVector = KartLQR.solveFeedbackLQR(dynamics, costs, initialStates, numSteps);
             // Parse Results
 
             return new InputData

@@ -1,4 +1,5 @@
 using CenterSpace.NMath.Core;
+using MathNet.Numerics.LinearAlgebra;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +9,23 @@ namespace KartGame.AI.LQR
 {
     public abstract class KartLQRCosts : MonoBehaviour
     {
-        public abstract DoubleVector getQVec();
-        public abstract DoubleMatrix getQMatrix();
+        public abstract Vector<double> getQVec();
+        public abstract Matrix<double> getQMatrix();
     }
 
     public class LQRCheckpointReachAvoidCost: KartLQRCosts
     {
-        DoubleVector targetState;
+        Vector<double> targetState;
         double targetWeight;
         KartLQRDynamics currentDynamics;
         Dictionary<int, List<double>> avoidWeights;
         Dictionary<int, List<int>> avoidIndices;
         List<KartLQRDynamics> avoidDynamics;
+        Matrix<double> qMat = null;
+        Vector<double> qVec = null;
 
-        public LQRCheckpointReachAvoidCost(DoubleVector targetState, double targetWeight, Dictionary<int, List<double>> avoidWeights, Dictionary<int, List<int>> avoidIndices, List<KartLQRDynamics> avoidDynamics)
+
+        public LQRCheckpointReachAvoidCost(Vector<double> targetState, double targetWeight, Dictionary<int, List<double>> avoidWeights, Dictionary<int, List<int>> avoidIndices, List<KartLQRDynamics> avoidDynamics)
         {
             this.targetState = targetState;
             this.targetWeight = targetWeight;
@@ -30,41 +34,43 @@ namespace KartGame.AI.LQR
             this.avoidWeights = avoidWeights;
         }
 
-        public override DoubleMatrix getQMatrix()
+        public override Matrix<double> getQMatrix()
         {
-            int totalDim = currentDynamics.getXDim() + avoidDynamics.Sum((d) => d.getXDim());
-            var output = new DoubleMatrix(totalDim, totalDim);
-            int currIndex = currentDynamics.getXDim();
-            foreach (int currStateIndex in avoidWeights.Keys)
+            if (qMat == null)
             {
-                double stateIndexTotal = 0.0;
-                var idxWeights = avoidWeights[currStateIndex];
-                var idxIndices = avoidIndices[currStateIndex];
-                for(int i = 0; i < avoidDynamics.Count; i++)
+                int totalDim = currentDynamics.getXDim() + avoidDynamics.Sum((d) => d.getXDim());
+                qMat = CreateMatrix.Sparse<double>(totalDim, totalDim);
+                int currIndex = currentDynamics.getXDim();
+                foreach (int currStateIndex in avoidWeights.Keys)
                 {
-                    int targetIdx = currIndex + idxIndices[i];
-                    output[currStateIndex, targetIdx] = idxWeights[i]/2;
-                    output[targetIdx, currStateIndex] = idxWeights[i]/2;
-                    output[targetIdx, targetIdx] = -idxWeights[i];
-                    stateIndexTotal -= idxWeights[i];
+                    double stateIndexTotal = 0.0;
+                    var idxWeights = avoidWeights[currStateIndex];
+                    var idxIndices = avoidIndices[currStateIndex];
+                    for (int i = 0; i < avoidDynamics.Count; i++)
+                    {
+                        int targetIdx = currIndex + idxIndices[i];
+                        qMat[currStateIndex, targetIdx] = idxWeights[i] / 2;
+                        qMat[targetIdx, currStateIndex] = idxWeights[i] / 2;
+                        qMat[targetIdx, targetIdx] = -idxWeights[i];
+                        stateIndexTotal -= idxWeights[i];
+                    }
+                    qMat[currStateIndex, currStateIndex] = stateIndexTotal + targetWeight;
                 }
-                output[currStateIndex, currStateIndex] = stateIndexTotal += targetWeight; 
             }
 
-            return output;
+            return qMat;
         }
 
-        public override DoubleVector getQVec()
+        public override Vector<double> getQVec()
         {
-            var output = new DoubleVector(targetState);
-            output *= targetWeight;
-
-            foreach(KartLQRDynamics a in avoidDynamics)
+            if (qVec == null)
             {
-                output.Append(new DoubleVector(a.getXDim()));
+                int totalDim = currentDynamics.getXDim() + avoidDynamics.Sum((d) => d.getXDim());
+                qVec = CreateVector.Sparse<double>(totalDim);
+                qVec.SetSubVector(0, currentDynamics.getXDim(), targetState.Negate());
+                qVec.Multiply(targetWeight, qVec);
             }
-
-            return output;
+            return qVec;
         }
     }
 }

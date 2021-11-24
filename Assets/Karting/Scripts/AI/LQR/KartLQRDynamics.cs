@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using CenterSpace.NMath.Core;
 using System;
+using MathNet.Numerics.LinearAlgebra;
 
 namespace KartGame.AI.LQR
 {
     public abstract class KartLQRDynamics: MonoBehaviour
     {
-        public abstract DoubleMatrix getA(DoubleVector initial);
-        public abstract DoubleMatrix getB(DoubleVector initial);
+        public abstract Matrix<double> getA();
+        public abstract Matrix<double> getB();
         public abstract int getXDim();
         public abstract int getUDim();
     }
@@ -18,37 +19,35 @@ namespace KartGame.AI.LQR
         public const int xDim = 4;
         public const int uDim = 2;
         double dt;
-        double aUpper;
-        double aLower;
-        double sUpper;
-        double sLower;
-        double vUpper;
-        double lateralGsUpper;
+        Vector<double> initial;
+        Matrix<double> BMat = null;
+        Matrix<double> AMat = null;
 
-        public LinearizedBicycle(double dt, double aUpper, double aLower, double sUpper, double sLower, double vUpper, double lateralGsUpper)
+        public LinearizedBicycle(double dt, Vector<double> initial)
         {
             this.dt = dt;
-            this.aUpper = aUpper;
-            this.aLower = aLower;
-            this.sUpper = sUpper;
-            this.sLower = sLower;
-            this.vUpper = vUpper;
-            this.lateralGsUpper = lateralGsUpper;
+            this.initial = initial.Clone();
         }
 
-        public override DoubleMatrix getA(DoubleVector initial)
+        public override Matrix<double> getA()
         {
-            var AMat = DoubleMatrix.Identity(xDim);
-            AMat[0, 2] = Math.Cos(initial[2]);
-            AMat[1, 2] = Math.Sin(initial[2]);
+            if (AMat == null)
+            {
+                 AMat = CreateMatrix.SparseIdentity<double>(xDim);
+                AMat[0, 2] = Math.Cos(initial[2]);
+                AMat[1, 2] = Math.Sin(initial[2]);
+            }
             return AMat;
         }
 
-        public override DoubleMatrix getB(DoubleVector initial)
+        public override Matrix<double> getB()
         {
-            var BMat = new DoubleMatrix(xDim, uDim);
-            BMat[2, 0] = dt;
-            BMat[3, 1] = dt;
+            if (BMat == null)
+            {
+                BMat = CreateMatrix.Sparse<double>(xDim, uDim);
+                BMat[2, 0] = dt;
+                BMat[3, 1] = dt;
+            }
             return BMat;
         }
 
