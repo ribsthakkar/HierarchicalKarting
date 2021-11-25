@@ -978,14 +978,24 @@ namespace KartGame.AI
                 targetState[KartMPC.xIndex] = lane.transform.position.x;
                 targetState[KartMPC.zIndex] = lane.transform.position.z;
                 targetState[KartMPC.vIndex] = vel;
+                var targetHeading = Mathf.Atan2(lane.transform.forward.z, lane.transform.forward.x);
+                targetState[KartMPC.hIndex] = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex] * Mathf.Rad2Deg, targetHeading * Mathf.Rad2Deg) * Mathf.Deg2Rad;
+
+
                 var avoidWeights = new Dictionary<int, List<double>>();
                 avoidWeights[KartMPC.xIndex] = new List<double>();
                 avoidWeights[KartMPC.zIndex] = new List<double>();
                 var avoidIndices = new Dictionary<int, List<int>>();
                 avoidIndices[KartMPC.xIndex] = new List<int>();
                 avoidIndices[KartMPC.zIndex] = new List<int>();
-                var avoidDynamics = new List<KartLQRDynamics>();
 
+                var targetWeights = new Dictionary<int, double>();
+                targetWeights[KartMPC.xIndex] = 5;
+                targetWeights[KartMPC.zIndex] = 5;
+                targetWeights[KartMPC.hIndex] = 1.5;
+                targetWeights[KartMPC.vIndex] = 5;
+
+                var avoidDynamics = new List<KartLQRDynamics>();
                 for (int j = 0; j < otherAgents.Length; j++)
                 {
                     k = otherAgents[j];
@@ -1005,7 +1015,7 @@ namespace KartGame.AI
                     avoidDynamics.Add(new LinearizedBicycle(dt, otherInitial));
                 }
 
-                costs.Add(new LQRCheckpointReachAvoidCost(targetState, 5, 0.1, dynamics.Last(), avoidWeights, avoidIndices, avoidDynamics));
+                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, 5, dynamics.Last(), avoidWeights, avoidIndices, avoidDynamics));
             }
 
             // Sovle LQR
@@ -1039,6 +1049,12 @@ namespace KartGame.AI
             };
         }
 
+        // From StackOverflow
+        public static double AngleDifference(double angle1, double angle2)
+        {
+            double diff = (angle2 - angle1 + 180) % 360 - 180;
+            return diff < -180 ? diff + 360 : diff;
+        }
 
         public new InputData GenerateInput()
         {

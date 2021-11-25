@@ -17,7 +17,7 @@ namespace KartGame.AI.LQR
     public class LQRCheckpointReachAvoidCost: KartLQRCosts
     {
         Vector<double> targetState;
-        double targetWeight;
+        Dictionary<int, double> targetWeights;
         double controlWeight;
         KartLQRDynamics currentDynamics;
         Dictionary<int, List<double>> avoidWeights;
@@ -28,10 +28,10 @@ namespace KartGame.AI.LQR
         Matrix<double> rMat = null;
 
 
-        public LQRCheckpointReachAvoidCost(Vector<double> targetState, double targetWeight, double controlWeight, KartLQRDynamics currentDynamics, Dictionary<int, List<double>> avoidWeights, Dictionary<int, List<int>> avoidIndices, List<KartLQRDynamics> avoidDynamics)
+        public LQRCheckpointReachAvoidCost(Vector<double> targetState, Dictionary<int, double> targetWeights, double controlWeight, KartLQRDynamics currentDynamics, Dictionary<int, List<double>> avoidWeights, Dictionary<int, List<int>> avoidIndices, List<KartLQRDynamics> avoidDynamics)
         {
             this.targetState = targetState;
-            this.targetWeight = targetWeight;
+            this.targetWeights = targetWeights;
             this.controlWeight = controlWeight;
             this.currentDynamics = currentDynamics;
             this.avoidDynamics = avoidDynamics;
@@ -59,7 +59,11 @@ namespace KartGame.AI.LQR
                         qMat[targetIdx, targetIdx] = -idxWeights[i];
                         stateIndexTotal -= idxWeights[i];
                     }
-                    qMat[currStateIndex, currStateIndex] = stateIndexTotal + targetWeight;
+                    qMat[currStateIndex, currStateIndex] = stateIndexTotal;
+                }
+                foreach (int currStateIndex in targetWeights.Keys)
+                {
+                    qMat[currStateIndex, currStateIndex] += targetWeights[currStateIndex];
                 }
             }
 
@@ -73,7 +77,10 @@ namespace KartGame.AI.LQR
                 int totalDim = currentDynamics.getXDim() + avoidDynamics.Sum((d) => d.getXDim());
                 qVec = CreateVector.Sparse<double>(totalDim);
                 qVec.SetSubVector(0, currentDynamics.getXDim(), targetState.Negate());
-                qVec.Multiply(targetWeight, qVec);
+                foreach (int currStateIndex in targetWeights.Keys)
+                {
+                    qVec[currStateIndex] = qVec[currStateIndex] * targetWeights[currStateIndex];
+                }
             }
             return qVec;
         }

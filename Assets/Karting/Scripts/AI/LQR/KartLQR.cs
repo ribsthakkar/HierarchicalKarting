@@ -81,10 +81,7 @@ namespace KartGame.AI.LQR
                             //{
                             //    offDiag = dynamics[j].getB().TransposeThisAndMultiply(Zs[j].Multiply(Enumerable.Range(0, players).Where((k) => k != j).Aggregate(,(acc, k) => acc + dynamics[k].getB())));
                             //}
-                            if (col != null)
-                                col = col.Stack(Bs[i].TransposeThisAndMultiply(Zs[i].Multiply(Bs[j])));
-                            else
-                                col = Bs[i].TransposeThisAndMultiply(Zs[i].Multiply(Bs[j]));
+                            col = col.Stack(Bs[i].TransposeThisAndMultiply(Zs[i].Multiply(Bs[j])));
                         }
                     }
                     LHS = LHS.Append(col);
@@ -98,7 +95,7 @@ namespace KartGame.AI.LQR
                 {
                     if (i > 0)
                         RHSMat = RHSMat.Stack(Bs[i].TransposeThisAndMultiply(Zs[i].Multiply(A)));
-                    RHSVec.SetSubVector(currIndex, dynamics[i].getUDim(), etas[i]);
+                    RHSVec.SetSubVector(currIndex, dynamics[i].getUDim(), Bs[i].TransposeThisAndMultiply(etas[i]));
                     currIndex += dynamics[i].getUDim();
                 }
                 // Solve for P and alpha
@@ -108,7 +105,7 @@ namespace KartGame.AI.LQR
                 //print("T: " + t + " " + RHSVec.ToString());
                 P = LHS.Solve(RHSMat);
                 alpha = LHS.Solve(RHSVec);
-                //print("T: " + t + " " + P.ToString());
+                //print("T: " + t + " B*eta" + Bs[0].TransposeThisAndMultiply(etas[0]).ToString());
                 //print("T: " + t + " " + alpha.ToString());
                 // Update Zs and etas
                 currIndex = 0;
@@ -125,7 +122,9 @@ namespace KartGame.AI.LQR
             }
             P = P.SubMatrix(uIndices[0].Item1, uIndices[0].Item2, 0, totalXDim);
             alpha = alpha.SubVector(uIndices[0].Item1, uIndices[0].Item2);
-
+            print(P.ToString());
+            print(alpha.ToString());
+            print(initial.ToString());
             var optimal_control = -P * initial - alpha;
             return optimal_control;
         }
