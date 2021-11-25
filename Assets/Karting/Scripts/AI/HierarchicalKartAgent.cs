@@ -421,7 +421,7 @@ namespace KartGame.AI
         [HideInInspector] List<Vector2> finerWaypoints;
         [HideInInspector] int currentFinerIndex;
         [HideInInspector] List<DoubleVector> resultVector;
-        [HideInInspector] int mpcSteps = 50;
+        [HideInInspector] int mpcSteps = 3;
 
         public override void initialPlan()
         {
@@ -556,11 +556,11 @@ namespace KartGame.AI
         {
             base.FixedUpdate();
             updateFinerIdxGuess();
-            if (episodeSteps % 2 == 0)
-                SolveLQR(numSteps: mpcSteps);
+            //if (episodeSteps % 2 == 0)
+            //    SolveLQR(numSteps: mpcSteps);
             if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
-                // SolveMPC(numSteps: mpcSteps);
+                SolveMPC(numSteps: mpcSteps);
                 // SolveLQR(numSteps: mpcSteps);
                 if (t != null)
                     t.Join();
@@ -855,7 +855,7 @@ namespace KartGame.AI
             List<List<KartMPCCosts>> individualCosts = new List<List<KartMPCCosts>>();
             List<List<CoupledKartMPCConstraints>> coupledConstraints = new List<List<CoupledKartMPCConstraints>>();
             List<List<CoupledKartMPCCosts>> coupledCosts = new List<List<CoupledKartMPCCosts>>();
-            double dt = Time.fixedDeltaTime;
+            double dt = Time.fixedDeltaTime*5;
             for(int i = 0; i < allPlayers.Count; i ++)
             {
                 KartAgent k = allPlayers[i];
@@ -904,8 +904,8 @@ namespace KartGame.AI
                     }
                 }
                 // costs.Add(new DistanceFromCenterCost(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5f, 1000));
-                //costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 50));
-                //costs.Add(new DistanceTraveledReward(dt, 5));
+                costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 50));
+                costs.Add(new DistanceTraveledReward(dt, 50));
                 individualCosts.Add(costs);
 
                 List<CoupledKartMPCConstraints> cConstraints = new List<CoupledKartMPCConstraints>();
@@ -926,6 +926,12 @@ namespace KartGame.AI
             // Sovle MPC
             resultVector = KartMPC.solveGame(dynamics, individualCosts, individualConstraints, coupledCosts, coupledConstraints, initialStates, numSteps);
             // Parse Results
+            m_Acceleration = resultVector[0][KartMPC.aIndex * numSteps + 1] > 0.1;
+            m_Brake = resultVector[0][KartMPC.aIndex * numSteps + 1] < -0.1;
+            m_Steering = Mathf.Clamp((float)resultVector[0][KartMPC.sIndex * numSteps + 1], -m_Kart.getMaxAngularVelocity(), m_Kart.getMaxAngularVelocity()) / (0.4f * m_Kart.m_FinalStats.Steer);
+
+
+
 
             return new InputData
             {
@@ -1070,9 +1076,9 @@ namespace KartGame.AI
             {
                 return new InputData
                 {
-                    Accelerate = false,
-                    Brake = false,
-                    TurnInput = 0f,
+                    Accelerate = m_Acceleration,
+                    Brake = m_Brake,
+                    TurnInput = m_Steering
                 };
             } else if (LowMode == LowLevelMode.LQR)
             {
