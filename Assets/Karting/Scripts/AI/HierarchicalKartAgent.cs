@@ -990,6 +990,12 @@ namespace KartGame.AI
                 var targetHeading = Mathf.Atan2(lane.transform.position.z - k.m_Kart.transform.position.z, lane.transform.position.x - k.m_Kart.transform.position.x);
                 targetState[KartMPC.hIndex] = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex] * Mathf.Rad2Deg, targetHeading * Mathf.Rad2Deg) * Mathf.Deg2Rad;
 
+                var targetWeights = new Dictionary<int, double>();
+                targetWeights[KartMPC.xIndex] = 4.5;
+                targetWeights[KartMPC.zIndex] = 4.5;
+                targetWeights[KartMPC.hIndex] = 1;
+                targetWeights[KartMPC.vIndex] = 3;
+
 
                 var avoidWeights = new Dictionary<int, List<double>>();
                 avoidWeights[KartMPC.xIndex] = new List<double>();
@@ -998,16 +1004,14 @@ namespace KartGame.AI
                 avoidIndices[KartMPC.xIndex] = new List<int>();
                 avoidIndices[KartMPC.zIndex] = new List<int>();
 
-                var targetWeights = new Dictionary<int, double>();
-                targetWeights[KartMPC.xIndex] = 4.5;
-                targetWeights[KartMPC.zIndex] = 4.5;
-                targetWeights[KartMPC.hIndex] = 1;
-                targetWeights[KartMPC.vIndex] = 3;
+                var opponentTargetStates = new List<Vector<double>>();
+                var opponentTargetWeights = new List<Dictionary<int, double>>();
 
                 var avoidDynamics = new List<KartLQRDynamics>();
-                for (int j = 0; j < otherAgents.Length; j++)
+                for (int j = 0; j < k.otherAgents.Length; j++)
                 {
-                    k = otherAgents[j];
+                    var o = otherAgents[j];
+                    // Avoidance Weights
                     avoidWeights[KartMPC.xIndex].Add(1.0);
                     avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
                     avoidWeights[KartMPC.zIndex].Add(1.0);
@@ -1016,15 +1020,32 @@ namespace KartGame.AI
                     
                     // Create Other Dynamics
                     var otherInitial = CreateVector.Dense<double>(4);
-                    otherInitial[KartMPC.xIndex] = k.m_Kart.transform.position.x;
-                    otherInitial[KartMPC.zIndex] = k.m_Kart.transform.position.z;
-                    otherInitial[KartMPC.vIndex] = k.m_Kart.Rigidbody.velocity.magnitude;
-                    heading = Mathf.Atan2(k.m_Kart.transform.forward.z, m_Kart.transform.forward.x);
+                    otherInitial[KartMPC.xIndex] = o.m_Kart.transform.position.x;
+                    otherInitial[KartMPC.zIndex] = o.m_Kart.transform.position.z;
+                    otherInitial[KartMPC.vIndex] = o.m_Kart.Rigidbody.velocity.magnitude;
+                    heading = Mathf.Atan2(o.m_Kart.transform.forward.z, o.m_Kart.transform.forward.x);
                     otherInitial[KartMPC.hIndex] = heading;
                     avoidDynamics.Add(new LinearizedBicycle(dt, otherInitial));
+
+                    // Create Opponent Target State
+                    var otherTarget = CreateVector.Dense<double>(avoidDynamics.Last().getXDim());
+                    s = o.m_SectionIndex + 1;
+                    idx = s % o.m_envController.Sections.Length;
+                    var otherSection = o.m_envController.Sections[idx].Trigger;
+                    otherTarget[KartMPC.xIndex] = otherSection.transform.position.x;
+                    otherTarget[KartMPC.zIndex] = otherSection.transform.position.z;
+                    otherTarget[KartMPC.vIndex] = o.m_Kart.GetMaxSpeed();
+                    opponentTargetStates.Add(otherTarget);
+
+                    // Add weights for preventing opponent's target state
+                    var otherTargetWeights = new Dictionary<int, double>();
+                    otherTargetWeights[KartMPC.xIndex] = 1.0;
+                    otherTargetWeights[KartMPC.zIndex] = 1.0;
+                    otherTargetWeights[KartMPC.vIndex] = 3.0;
+                    opponentTargetWeights.Add(otherTargetWeights);
                 }
 
-                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, 0.1, dynamics.Last(), avoidWeights, avoidIndices, avoidDynamics));
+                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, 0.1, dynamics.Last(), opponentTargetStates, opponentTargetWeights, avoidWeights, avoidIndices, avoidDynamics));
             }
 
             // Sovle LQR
