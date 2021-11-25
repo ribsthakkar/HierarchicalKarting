@@ -20,7 +20,8 @@ namespace KartGame.AI
     public enum LowLevelMode
     {
         RL,
-        MPC
+        MPC,
+        LQR
     }
 
     public struct DiscreteKartAction
@@ -405,7 +406,7 @@ namespace KartGame.AI
     /// The KartAgent will drive the inputs for the KartController.
     /// </summary>
     ///
-    public class HierarchicalKartAgent : KartAgent
+    public class HierarchicalKartAgent : KartAgent, IInput
     {
 
         #region MCTS Params
@@ -420,7 +421,7 @@ namespace KartGame.AI
         [HideInInspector] List<Vector2> finerWaypoints;
         [HideInInspector] int currentFinerIndex;
         [HideInInspector] List<DoubleVector> resultVector;
-        [HideInInspector] int mpcSteps = 5;
+        [HideInInspector] int mpcSteps = 50;
 
         public override void initialPlan()
         {
@@ -555,9 +556,12 @@ namespace KartGame.AI
         {
             base.FixedUpdate();
             updateFinerIdxGuess();
+            if (episodeSteps % 2 == 0)
+                SolveLQR(numSteps: mpcSteps);
             if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
-                SolveMPC(numSteps: mpcSteps);
+                // SolveMPC(numSteps: mpcSteps);
+                // SolveLQR(numSteps: mpcSteps);
                 if (t != null)
                     t.Join();
 
@@ -832,9 +836,9 @@ namespace KartGame.AI
             for(int initialFinerIdxGuess = m_SectionIndex * 10; initialFinerIdxGuess < m_SectionIndex*10 + 10; initialFinerIdxGuess++)
             {
                 Vector2 pt = new Vector2(m_Kart.Rigidbody.transform.position.x, m_Kart.Rigidbody.transform.position.z);
-                if((finerWaypoints[initialFinerIdxGuess] - pt).sqrMagnitude < minDistance)
+                if((finerWaypoints[initialFinerIdxGuess % finerWaypoints.Count] - pt).sqrMagnitude < minDistance)
                 {
-                    minDistance = (finerWaypoints[initialFinerIdxGuess] - pt).sqrMagnitude;
+                    minDistance = (finerWaypoints[initialFinerIdxGuess % finerWaypoints.Count] - pt).sqrMagnitude;
                     currentFinerIndex = initialFinerIdxGuess;
                 }
             }
@@ -851,7 +855,7 @@ namespace KartGame.AI
             List<List<KartMPCCosts>> individualCosts = new List<List<KartMPCCosts>>();
             List<List<CoupledKartMPCConstraints>> coupledConstraints = new List<List<CoupledKartMPCConstraints>>();
             List<List<CoupledKartMPCCosts>> coupledCosts = new List<List<CoupledKartMPCCosts>>();
-            double dt = Time.fixedTimeAsDouble;
+            double dt = Time.fixedDeltaTime;
             for(int i = 0; i < allPlayers.Count; i ++)
             {
                 KartAgent k = allPlayers[i];
@@ -937,7 +941,7 @@ namespace KartGame.AI
             List<KartLQRDynamics> dynamics = new List<KartLQRDynamics>();
             List<Vector<double>> initialStates = new List<Vector<double>>();
             List<KartLQRCosts> costs = new List<KartLQRCosts>();
-            double dt = Time.fixedTimeAsDouble;
+            double dt = Time.fixedDeltaTime;
             for (int i = 0; i < allPlayers.Count; i++)
             {
                 KartAgent k = allPlayers[i];
@@ -974,13 +978,59 @@ namespace KartGame.AI
                 targetState[KartMPC.xIndex] = lane.transform.position.x;
                 targetState[KartMPC.zIndex] = lane.transform.position.z;
                 targetState[KartMPC.vIndex] = vel;
-                costs.Add(new LQRCheckpointReachAvoidCost(targetState, 5.0, avoidWeights, avoidIndices, avoidDynamics));
+                var avoidWeights = new Dictionary<int, List<double>>();
+                avoidWeights[KartMPC.xIndex] = new List<double>();
+                avoidWeights[KartMPC.zIndex] = new List<double>();
+                var avoidIndices = new Dictionary<int, List<int>>();
+                avoidIndices[KartMPC.xIndex] = new List<int>();
+                avoidIndices[KartMPC.zIndex] = new List<int>();
+                var avoidDynamics = new List<KartLQRDynamics>();
+
+                for (int j = 0; j < otherAgents.Length; j++)
+                {
+                    k = otherAgents[j];
+                    avoidWeights[KartMPC.xIndex].Add(1.0);
+                    avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
+                    avoidWeights[KartMPC.zIndex].Add(1.0);
+                    avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
+                    
+                    
+                    // Create Other Dynamics
+                    var otherInitial = CreateVector.Dense<double>(4);
+                    otherInitial[KartMPC.xIndex] = k.m_Kart.transform.position.x;
+                    otherInitial[KartMPC.zIndex] = k.m_Kart.transform.position.z;
+                    otherInitial[KartMPC.vIndex] = k.m_Kart.Rigidbody.velocity.magnitude;
+                    heading = Mathf.Atan2(k.m_Kart.transform.forward.z, m_Kart.transform.forward.x);
+                    otherInitial[KartMPC.hIndex] = heading;
+                    avoidDynamics.Add(new LinearizedBicycle(dt, otherInitial));
+                }
+
+                costs.Add(new LQRCheckpointReachAvoidCost(targetState, 5, 0.1, dynamics.Last(), avoidWeights, avoidIndices, avoidDynamics));
             }
 
-            // Sovle MPC
+            // Sovle LQR
             var resultVector = KartLQR.solveFeedbackLQR(dynamics, costs, initialStates, numSteps);
-            // Parse Results
 
+            // Parse Results
+            var angVel = Mathf.Clamp((float)resultVector[1], -m_Kart.getMaxAngularVelocity(), m_Kart.getMaxAngularVelocity());
+            if (resultVector[0] < -0.1)
+            {
+                m_Acceleration = false;
+                m_Brake = true;
+            } else if (resultVector[0] > 0.1)
+            {
+                m_Acceleration = true;
+                m_Brake = false;
+            }
+            else
+            {
+                m_Acceleration = false;
+                m_Brake = false;
+                angVel = 0.0f;
+            }
+
+            m_Steering = angVel / (0.4f * m_Kart.m_FinalStats.Steer);
+            print("Result Control input " + resultVector.ToString() + "\n Accelerate " + m_Acceleration + " Brake: " + m_Brake + " turning input: " + m_Steering);
             return new InputData
             {
                 Accelerate = m_Acceleration,
@@ -990,7 +1040,7 @@ namespace KartGame.AI
         }
 
 
-        public override InputData GenerateInput()
+        public new InputData GenerateInput()
         {
             if (LowMode == LowLevelMode.RL)
             {
@@ -1002,15 +1052,40 @@ namespace KartGame.AI
                 };
             } else if (LowMode == LowLevelMode.MPC)
             {
-                ;
+                return new InputData
+                {
+                    Accelerate = false,
+                    Brake = false,
+                    TurnInput = 0f,
+                };
+            } else if (LowMode == LowLevelMode.LQR)
+            {
+                // print("GENERATING INPUT FROM HERE" + "\n Accelerate " + m_Acceleration + " Brake: " + m_Brake + " turning input: " + m_Steering);
+                return new InputData
+                {
+                    Accelerate = m_Acceleration,
+                    Brake = m_Brake,
+                    TurnInput = m_Steering
+                };
             }
             return new InputData
             {
-                Accelerate = false,
-                Brake = false,
-                TurnInput = 0f,
+                Accelerate = m_Acceleration,
+                Brake = m_Brake,
+                TurnInput = m_Steering
             };
         }
+
+        public new void InterpretDiscreteActions(ActionBuffers actions)
+        {
+            if (LowMode == LowLevelMode.RL)
+            {
+                m_Steering = actions.ContinuousActions[0];
+                m_Acceleration = actions.DiscreteActions[0] > 1;
+                m_Brake = actions.DiscreteActions[0] < 1;
+            }
+        }
+
         void OnDrawGizmos()
         {
             if (finerWaypoints != null)

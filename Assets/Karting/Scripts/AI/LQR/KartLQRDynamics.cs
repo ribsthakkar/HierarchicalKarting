@@ -7,7 +7,7 @@ using MathNet.Numerics.LinearAlgebra;
 
 namespace KartGame.AI.LQR
 {
-    public abstract class KartLQRDynamics: MonoBehaviour
+    public abstract class KartLQRDynamics
     {
         public abstract Matrix<double> getA();
         public abstract Matrix<double> getB();
@@ -33,9 +33,9 @@ namespace KartGame.AI.LQR
         {
             if (AMat == null)
             {
-                 AMat = CreateMatrix.SparseIdentity<double>(xDim);
-                AMat[0, 2] = Math.Cos(initial[2]);
-                AMat[1, 2] = Math.Sin(initial[2]);
+                AMat = CreateMatrix.SparseIdentity<double>(xDim);
+                AMat[0, 2] = Math.Cos(initial[3])*dt;
+                AMat[1, 2] = Math.Sin(initial[3])*dt;
             }
             return AMat;
         }

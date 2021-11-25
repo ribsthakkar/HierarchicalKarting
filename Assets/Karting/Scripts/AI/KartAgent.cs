@@ -367,14 +367,15 @@ namespace KartGame.AI
             }
         }
 
-        void InterpretDiscreteActions(ActionBuffers actions)
+        public void InterpretDiscreteActions(ActionBuffers actions)
         {
-            m_Steering = actions.ContinuousActions[0];
-            m_Acceleration = actions.DiscreteActions[0] > 1;
-            m_Brake = actions.DiscreteActions[0] < 1;
+            //print("Here ida");
+            //m_Steering = actions.ContinuousActions[0];
+            //m_Acceleration = actions.DiscreteActions[0] > 1;
+            //m_Brake = actions.DiscreteActions[0] < 1;
         }
 
-        public virtual InputData GenerateInput()
+        public InputData GenerateInput()
         {
             return new InputData
             {

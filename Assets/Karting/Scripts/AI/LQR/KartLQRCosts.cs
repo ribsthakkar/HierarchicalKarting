@@ -7,28 +7,33 @@ using UnityEngine;
 
 namespace KartGame.AI.LQR
 {
-    public abstract class KartLQRCosts : MonoBehaviour
+    public abstract class KartLQRCosts
     {
         public abstract Vector<double> getQVec();
         public abstract Matrix<double> getQMatrix();
+        public abstract Matrix<double> getRMatrix();
     }
 
     public class LQRCheckpointReachAvoidCost: KartLQRCosts
     {
         Vector<double> targetState;
         double targetWeight;
+        double controlWeight;
         KartLQRDynamics currentDynamics;
         Dictionary<int, List<double>> avoidWeights;
         Dictionary<int, List<int>> avoidIndices;
         List<KartLQRDynamics> avoidDynamics;
         Matrix<double> qMat = null;
         Vector<double> qVec = null;
+        Matrix<double> rMat = null;
 
 
-        public LQRCheckpointReachAvoidCost(Vector<double> targetState, double targetWeight, Dictionary<int, List<double>> avoidWeights, Dictionary<int, List<int>> avoidIndices, List<KartLQRDynamics> avoidDynamics)
+        public LQRCheckpointReachAvoidCost(Vector<double> targetState, double targetWeight, double controlWeight, KartLQRDynamics currentDynamics, Dictionary<int, List<double>> avoidWeights, Dictionary<int, List<int>> avoidIndices, List<KartLQRDynamics> avoidDynamics)
         {
             this.targetState = targetState;
             this.targetWeight = targetWeight;
+            this.controlWeight = controlWeight;
+            this.currentDynamics = currentDynamics;
             this.avoidDynamics = avoidDynamics;
             this.avoidIndices = avoidIndices;
             this.avoidWeights = avoidWeights;
@@ -71,6 +76,16 @@ namespace KartGame.AI.LQR
                 qVec.Multiply(targetWeight, qVec);
             }
             return qVec;
+        }
+
+        public override Matrix<double> getRMatrix()
+        {
+            if (rMat == null)
+            {
+                rMat = CreateMatrix.SparseIdentity<double>(currentDynamics.getUDim()) * controlWeight;
+                // rMat[1, 1] = 100;
+            }
+            return rMat;
         }
     }
 }

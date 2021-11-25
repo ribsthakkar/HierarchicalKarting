@@ -286,6 +286,8 @@ namespace KartGame.KartSystems
             for (int i = 0; i < m_Inputs.Length; i++)
             {
                 Input = m_Inputs[i].GenerateInput();
+                // print("Input " + i + " accelerate is " + Input.Accelerate);
+                // print("Input " + i + " brake is " + Input.Brake);
             }
         }
 
@@ -359,6 +361,8 @@ namespace KartGame.KartSystems
 
         void MoveVehicle(bool accelerate, bool brake, float turnInput)
         {
+            // print("actual moving Accelerate " + accelerate + " Brake: " + brake + " turning input: " + turnInput);
+
             float accelInput = (accelerate ? 1.0f : 0.0f) - (brake ? 1.0f : 0.0f);
 
             // manual acceleration curve coefficient scalar
