@@ -556,12 +556,15 @@ namespace KartGame.AI
         {
             base.FixedUpdate();
             updateFinerIdxGuess();
-            //if (episodeSteps % 2 == 0)
-            //    SolveLQR(numSteps: mpcSteps);
+            if (episodeSteps % 2 == 0)
+            {
+                if(LowMode == LowLevelMode.LQR)
+                    SolveLQR(numSteps: mpcSteps);
+            }
             if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
             {
-                SolveMPC(numSteps: mpcSteps);
-                // SolveLQR(numSteps: mpcSteps);
+                if (LowMode == LowLevelMode.MPC)
+                    SolveMPC(numSteps: mpcSteps);
                 if (t != null)
                     t.Join();
 
@@ -874,10 +877,10 @@ namespace KartGame.AI
                 for (int t = 1; t < T; t++)
                 {
                     // Piecewise Dynamics
-                    initial[KartMPC.xIndex * T + (t)] = initial[KartMPC.xIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Cos(initial[KartMPC.hIndex * T + (t - 1)]);
-                    // initial[KartMPC.xIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].x;
-                    initial[KartMPC.zIndex * T + (t)] = initial[KartMPC.zIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Sin(initial[KartMPC.hIndex * T + (t - 1)]);
-                    // initial[KartMPC.zIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].y;
+                    // initial[KartMPC.xIndex * T + (t)] = initial[KartMPC.xIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Cos(initial[KartMPC.hIndex * T + (t - 1)]);
+                    initial[KartMPC.xIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].x;
+                    // initial[KartMPC.zIndex * T + (t)] = initial[KartMPC.zIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Sin(initial[KartMPC.hIndex * T + (t - 1)]);
+                    initial[KartMPC.zIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].y;
                     initial[KartMPC.hIndex * T + (t)] = initial[KartMPC.hIndex * T + (t - 1)] + dt * initial[KartMPC.sIndex * T + (t - 1)];
                     initial[KartMPC.vIndex * T + (t)] = initial[KartMPC.vIndex * T + (t - 1)] + dt * initial[KartMPC.aIndex * T + (t - 1)];
                     initial[KartMPC.aIndex * T + (t)] = 0;
@@ -903,8 +906,8 @@ namespace KartGame.AI
                         // costs.Add(new WaypointCost(10, 4, lane.transform.position.x, lane.transform.position.z, m_UpcomingVelocities[idx]));
                     }
                 }
-                // costs.Add(new DistanceFromCenterCost(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5f, 1000));
-                costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 50));
+                costs.Add(new DistanceFromCenterCost(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5f, 1000));
+                // costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 50));
                 costs.Add(new DistanceTraveledReward(dt, 50));
                 individualCosts.Add(costs);
 
@@ -983,8 +986,8 @@ namespace KartGame.AI
                 }
                 targetState[KartMPC.xIndex] = lane.transform.position.x;
                 targetState[KartMPC.zIndex] = lane.transform.position.z;
-                targetState[KartMPC.vIndex] = vel;
-                var targetHeading = Mathf.Atan2(lane.transform.forward.z, lane.transform.forward.x);
+                targetState[KartMPC.vIndex] = m_Kart.GetMaxSpeed();
+                var targetHeading = Mathf.Atan2(lane.transform.position.z - k.m_Kart.transform.position.z, lane.transform.position.x - k.m_Kart.transform.position.x);
                 targetState[KartMPC.hIndex] = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex] * Mathf.Rad2Deg, targetHeading * Mathf.Rad2Deg) * Mathf.Deg2Rad;
 
 
@@ -996,10 +999,10 @@ namespace KartGame.AI
                 avoidIndices[KartMPC.zIndex] = new List<int>();
 
                 var targetWeights = new Dictionary<int, double>();
-                targetWeights[KartMPC.xIndex] = 5;
-                targetWeights[KartMPC.zIndex] = 5;
-                targetWeights[KartMPC.hIndex] = 1.5;
-                targetWeights[KartMPC.vIndex] = 5;
+                targetWeights[KartMPC.xIndex] = 4.5;
+                targetWeights[KartMPC.zIndex] = 4.5;
+                targetWeights[KartMPC.hIndex] = 1;
+                targetWeights[KartMPC.vIndex] = 3;
 
                 var avoidDynamics = new List<KartLQRDynamics>();
                 for (int j = 0; j < otherAgents.Length; j++)
@@ -1021,7 +1024,7 @@ namespace KartGame.AI
                     avoidDynamics.Add(new LinearizedBicycle(dt, otherInitial));
                 }
 
-                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, 5, dynamics.Last(), avoidWeights, avoidIndices, avoidDynamics));
+                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, 0.1, dynamics.Last(), avoidWeights, avoidIndices, avoidDynamics));
             }
 
             // Sovle LQR
