@@ -437,7 +437,7 @@ namespace KartGame.AI
             }
         }
 
-        public new void planRandomly()
+        public override void planRandomly()
         {
             for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + gameParams.treeSearchDepth, 1000) + 1; i++)
             {
@@ -545,7 +545,7 @@ namespace KartGame.AI
             }      
         }
 
-        public new void Start()
+        public override void Start()
         {
             base.Start();
             finerWaypoints = m_envController.Sections.SelectMany(s => s.finePoints).ToList();
@@ -688,7 +688,6 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_Kart.TireWearProportion());
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(m_Kart.transform.InverseTransformPoint(agent.m_Kart.transform.position));
-
             }
 
             // Add an observation for direction of the agent to the next checkpoint and lane and the velocity at that lane.
@@ -709,8 +708,9 @@ namespace KartGame.AI
                 }
                 else
                 {
-                    sensor.AddObservation(Vector3.zero);
-                    sensor.AddObservation(0f);
+                    Collider target = nextSection.Trigger;
+                    sensor.AddObservation(m_Kart.transform.InverseTransformPoint(target.transform.position));
+                    sensor.AddObservation(1.0f);
                     sensor.AddObservation(m_envController.sectionIsStraight(next));
                 }
             }
@@ -1086,34 +1086,8 @@ namespace KartGame.AI
             return diff < -180 ? diff + 360 : diff;
         }
 
-        public new InputData GenerateInput()
+        public override InputData GenerateInput()
         {
-            if (LowMode == LowLevelMode.RL)
-            {
-                return new InputData
-                {
-                    Accelerate = m_Acceleration,
-                    Brake = m_Brake,
-                    TurnInput = m_Steering
-                };
-            } else if (LowMode == LowLevelMode.MPC)
-            {
-                return new InputData
-                {
-                    Accelerate = m_Acceleration,
-                    Brake = m_Brake,
-                    TurnInput = m_Steering
-                };
-            } else if (LowMode == LowLevelMode.LQR)
-            {
-                // print("GENERATING INPUT FROM HERE" + "\n Accelerate " + m_Acceleration + " Brake: " + m_Brake + " turning input: " + m_Steering);
-                return new InputData
-                {
-                    Accelerate = m_Acceleration,
-                    Brake = m_Brake,
-                    TurnInput = m_Steering
-                };
-            }
             return new InputData
             {
                 Accelerate = m_Acceleration,
@@ -1122,7 +1096,7 @@ namespace KartGame.AI
             };
         }
 
-        public new void InterpretDiscreteActions(ActionBuffers actions)
+        public override void InterpretDiscreteActions(ActionBuffers actions)
         {
             if (LowMode == LowLevelMode.RL)
             {

@@ -118,7 +118,7 @@ namespace KartGame.AI
         [HideInInspector] protected int episodeSteps = 0;
         public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
 
-        public void Start()
+        public virtual void Start()
         {        
             if (Mode == AgentMode.Inferencing) m_SectionIndex = InitCheckpointIndex;
         }
@@ -367,15 +367,15 @@ namespace KartGame.AI
             }
         }
 
-        public void InterpretDiscreteActions(ActionBuffers actions)
+        public virtual void InterpretDiscreteActions(ActionBuffers actions)
         {
-            //print("Here ida");
-            //m_Steering = actions.ContinuousActions[0];
-            //m_Acceleration = actions.DiscreteActions[0] > 1;
-            //m_Brake = actions.DiscreteActions[0] < 1;
+            // print("Here ida");
+            m_Steering = actions.ContinuousActions[0];
+            m_Acceleration = actions.DiscreteActions[0] > 1;
+            m_Brake = actions.DiscreteActions[0] < 1;
         }
 
-        public InputData GenerateInput()
+        public virtual InputData GenerateInput()
         {
             return new InputData
             {
