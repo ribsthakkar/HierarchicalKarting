@@ -86,6 +86,21 @@ namespace KartGame.AI
                 var hitAgent = Physics.Raycast(AgentSensorTransform.position, xform.forward, out var hitAgentInfo,
                     current.RayDistance, AgentMask, QueryTriggerInteraction.Ignore);
 
+                if (ShowRaycasts)
+                {
+                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.RayDistance, Color.green);
+                    //Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, Color.red);
+
+                    if (hitTrack && hitTrackInfo.distance < current.WallHitValidationDistance && hitTrackInfo.distance < hitAgentInfo.distance)
+                    {
+                        Debug.DrawRay(hitTrackInfo.point, Vector3.up * 3.0f, Color.blue);
+                    }
+                    else if (hitAgent && hitAgentInfo.distance < current.AgentHitValidationDistance)
+                    {
+                        Debug.DrawRay(hitAgentInfo.point, Vector3.up * 3.0f, Color.blue);
+                    }
+                }
+
                 if (hitTrack)
                 {
                     if (hitTrackInfo.distance < current.WallHitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))

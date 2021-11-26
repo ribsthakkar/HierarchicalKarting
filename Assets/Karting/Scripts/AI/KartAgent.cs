@@ -320,7 +320,7 @@ namespace KartGame.AI
             var direction = (nextCollider.transform.position - m_Kart.transform.position).normalized;
             var reward = Vector3.Dot(m_Kart.Rigidbody.velocity.normalized, direction);
 
-            if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
+            // if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
 
             // Add rewards if the agent is heading in the right direction
             AddReward(reward * m_envController.TowardsCheckpointReward);
