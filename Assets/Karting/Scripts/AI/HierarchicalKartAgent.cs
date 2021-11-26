@@ -726,41 +726,32 @@ namespace KartGame.AI
 
                 if (ShowRaycasts)
                 {
-                    Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.RayDistance, Color.green);
                     //Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, Color.red);
-
-                    if (hitTrack && hitTrackInfo.distance < current.WallHitValidationDistance && hitTrackInfo.distance < hitAgentInfo.distance)
+                    print("Sensor: " + i + "Hit Track: " + hitTrack + " Hit Agent: " + hitAgent);
+                    if (hitTrack && hitTrackInfo.distance < current.RayDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                     {
-                        Debug.DrawRay(hitTrackInfo.point, Vector3.up * 3.0f, Color.blue);
+                        Debug.DrawLine(xform.position, hitTrackInfo.point, Color.blue);
                     }
-                    else if (hitAgent && hitAgentInfo.distance < current.AgentHitValidationDistance)
+                    else if (hitAgent && hitAgentInfo.distance < current.RayDistance)
                     {
-                        Debug.DrawRay(hitAgentInfo.point, Vector3.up * 3.0f, Color.blue);
+                        Debug.DrawLine(xform.position, hitAgentInfo.point, Color.blue);
+                    }
+                    else
+                    {
+                        Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.RayDistance, Color.green);
                     }
                 }
-                //print("TrackDist");
-                //print(hitTrackInfo.distance);
-                //print(hitTrack);
-                //print("AgentDist");
-                //print(hitAgentInfo.distance);
-                //print(hitAgent);
-                //print(current.HitValidationDistance);
-                if (hitTrack)
+
+                if (hitTrack && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                 {
-                    if (hitTrackInfo.distance < current.WallHitValidationDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
-                    {
-                        // print("hit wall");
-                        // m_HitOccured = true;
+                    if (hitTrackInfo.distance < current.WallHitValidationDistance)
                         m_envController.ResolveEvent(Event.HitWall, this, null);
-                    }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
                 else if (hitAgent)
                 {
                     if (hitAgentInfo.distance < current.AgentHitValidationDistance)
                     {
-                        // print("hit agent");
-                        // m_HitOccured = true;
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
                         m_envController.ResolveEvent(Event.HitOpponent, this, hitAgents);
