@@ -4181,13 +4181,13 @@ MonoBehaviour:
   - {fileID: 1391551895}
   - {fileID: 1683828759}
   - {fileID: 59718384}
-  WallHitPenalty: -3
+  WallHitPenalty: -1.8
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: 0
-  PassCheckpointReward: 5
+  HitByOpponentPenalty: -0.02
+  PassCheckpointStateReward: 2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -50
+  BeingBehindCheckpoingPenalty: -0.01
+  ReversePenalty: -5000
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
@@ -13763,13 +13763,13 @@ MonoBehaviour:
   - {fileID: 327722464}
   - {fileID: 1553871821}
   - {fileID: 1532917104}
-  WallHitPenalty: -3
+  WallHitPenalty: -1.8
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: 0
-  PassCheckpointReward: 5
+  HitByOpponentPenalty: -0.02
+  PassCheckpointStateReward: 2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -50
+  BeingBehindCheckpoingPenalty: -0.01
+  ReversePenalty: -5000
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
@@ -18200,13 +18200,13 @@ MonoBehaviour:
   - {fileID: 717506024}
   - {fileID: 1690898120}
   - {fileID: 1681543284}
-  WallHitPenalty: -3
+  WallHitPenalty: -1.8
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: 0
-  PassCheckpointReward: 5
+  HitByOpponentPenalty: -0.02
+  PassCheckpointStateReward: 2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -50
+  BeingBehindCheckpoingPenalty: -0.01
+  ReversePenalty: -5000
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
@@ -19628,13 +19628,13 @@ MonoBehaviour:
   - {fileID: 1223549033}
   - {fileID: 575223978}
   - {fileID: 1416152611}
-  WallHitPenalty: -3
+  WallHitPenalty: -1.8
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: 0
-  PassCheckpointReward: 5
+  HitByOpponentPenalty: -0.02
+  PassCheckpointStateReward: 2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -50
+  BeingBehindCheckpoingPenalty: -0.01
+  ReversePenalty: -5000
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
@@ -25320,13 +25320,13 @@ MonoBehaviour:
   - {fileID: 1449744278}
   - {fileID: 455417758}
   - {fileID: 160215441}
-  WallHitPenalty: -3
+  WallHitPenalty: -1.8
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: 0
-  PassCheckpointReward: 5
+  HitByOpponentPenalty: -0.02
+  PassCheckpointStateReward: 2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -50
+  BeingBehindCheckpoingPenalty: -0.01
+  ReversePenalty: -5000
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
@@ -25612,13 +25612,13 @@ MonoBehaviour:
   - {fileID: 91539630}
   - {fileID: 820899285}
   - {fileID: 1085811947}
-  WallHitPenalty: -3
+  WallHitPenalty: -1.8
   OpponentHitPenalty: -1
-  HitByOpponentPenalty: 0
-  PassCheckpointReward: 5
+  HitByOpponentPenalty: -0.02
+  PassCheckpointStateReward: 2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.1
-  ReversePenalty: -50
+  BeingBehindCheckpoingPenalty: -0.01
+  ReversePenalty: -5000
   SwervingPenalty: -10
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10

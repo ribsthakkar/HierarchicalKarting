@@ -89,7 +89,6 @@ namespace KartGame.AI
                 if (ShowRaycasts)
                 {
                     //Debug.DrawRay(AgentSensorTransform.position, xform.forward * current.HitValidationDistance, Color.red);
-                    print("Sensor: " + i + "Hit Track: " + hitTrack + " Hit Agent: " + hitAgent);
                     if (hitTrack && hitTrackInfo.distance < current.RayDistance && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                     {
                         Debug.DrawLine(xform.position, hitTrackInfo.point, Color.blue);

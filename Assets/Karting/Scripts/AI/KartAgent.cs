@@ -292,8 +292,8 @@ namespace KartGame.AI
 
         public void ApplySectionReward()
         {
-            AddReward(m_envController.PassCheckpointReward /LaneDifferenceRewardDivider);
-            AddReward(m_envController.PassCheckpointReward / VelocityDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointStateReward /LaneDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointStateReward / VelocityDifferenceRewardDivider);
         }
 
         public void Deactivate()

@@ -34,8 +34,8 @@ public class RacingEnvController : MonoBehaviour
     public float OpponentHitPenalty = -2f;
     [Tooltip("What penatly is given when the agent is crashed by another agent?")]
     public float HitByOpponentPenalty = -2f;
-    [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
-    public float PassCheckpointReward = 0.1f;
+    [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired state?")]
+    public float PassCheckpointStateReward = 0.1f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
     public float PassCheckpointBase = 5f;
     [Tooltip("How much penalty is given for being behind first agent?")]
@@ -176,6 +176,7 @@ public class RacingEnvController : MonoBehaviour
                 otherInvolvedAgents.Clear();
                 break;
             case Event.ReachNonGoalSection:
+                triggeringAgent.m_timeSteps = episodeSteps;
                 triggeringAgent.ApplySectionReward();
                 triggeringAgent.AddReward(PassCheckpointBase);
                 timeDifferenceAtSectionPenalty(triggeringAgent);
