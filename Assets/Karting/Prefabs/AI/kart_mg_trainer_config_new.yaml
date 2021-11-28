@@ -60,9 +60,9 @@ behaviors:
       num_layers: 3
       vis_encode_type: simple
       goal_conditioning_type: hyper
-      memory:
-        memory_size: 256
-        sequence_length: 64
+      #memory:
+      #  memory_size: 256
+      #  sequence_length: 64
     reward_signals:
       extrinsic:
         gamma: 0.99

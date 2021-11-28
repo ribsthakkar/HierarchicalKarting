@@ -52,6 +52,8 @@ public class RacingEnvController : MonoBehaviour
     public float TowardsCheckpointReward = 0.008f;
     [Tooltip("Typically if the agent moves faster, we want to reward it for finishing the track quickly.")]
     public float SpeedReward = 0.07f;
+    [Tooltip("If the agent is moving too slowly, we want to penalize it.")]
+    public float SlowMovingPenalty = -3.0f;
     [Tooltip("Reward the agent when it keeps accelerating")]
     public float AccelerationReward = 0.002f;
     #endregion
@@ -73,6 +75,8 @@ public class RacingEnvController : MonoBehaviour
     public int maxEpisodeSteps;
     [Tooltip("How many sections ahead should the agents be looking ahead/driving to")]
     public int sectionHorizon;
+
+    bool initialStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -96,24 +100,17 @@ public class RacingEnvController : MonoBehaviour
             }
             return;
         }
-        int maxGoalTiming = 0;
         for (int i = 0; i < Agents.Length; i++)
         {
-            if (Agents[i].m_timeSteps == 0)
+            int currAgentScore = (Agents.Length - 1)*Agents[i].m_timeSteps;
+            int oppAgentScore = 0;
+            for (int j = 0; j < Agents.Length; j++)
             {
-                maxGoalTiming = maxEpisodeSteps;
-                Agents[i].m_timeSteps = maxEpisodeSteps;
-            } else
-            {
-                maxGoalTiming = Math.Max(Agents[i].m_timeSteps, maxGoalTiming);
+                if (i != j)
+                    oppAgentScore += Agents[j].m_timeSteps;
+
             }
-        }
-        for (int i = 0; i < Agents.Length; i++)
-        {
-            if (Agents[i].m_timeSteps != 0)
-            {
-                Agents[i].AddReward(ReachGoalCheckpointRewardMultplier * (maxGoalTiming - Agents[i].m_timeSteps) * 1.0f / maxEpisodeSteps + ReachGoalCheckpointRewardBase);
-            }
+            Agents[i].AddReward(-ReachGoalCheckpointRewardMultplier * (currAgentScore - oppAgentScore)/(1f*(Agents.Length-1)*maxEpisodeSteps));
         }
     }
 
@@ -123,19 +120,21 @@ public class RacingEnvController : MonoBehaviour
         {
 
             // print("from here 1");
-            // AddGoalTimingRewards();
+            AddGoalTimingRewards();
             for (int i = 0; i < Agents.Length; i++)
             {
-                Agents[i].EndEpisode();
+                if(initialStarted)
+                    Agents[i].EndEpisode();
             }
             ResetGame();
+            initialStarted = true;
         }
         else
         {
             episodeSteps += 1;
             if (episodeSteps >= maxEpisodeSteps)
             {
-                // AddGoalTimingRewards();
+                AddGoalTimingRewards();
                 for (int i = 0; i < Agents.Length; i++)
                 {
                     Agents[i].EndEpisode();
@@ -151,10 +150,10 @@ public class RacingEnvController : MonoBehaviour
     {
         if (!minSectionTimes.ContainsKey(agent.m_SectionIndex))
         {
-            minSectionTimes[agent.m_SectionIndex] = agent.m_timeSteps;
+            minSectionTimes[agent.m_SectionIndex] = episodeSteps;
         } else
         {
-            agent.AddReward(BeingBehindCheckpoingPenalty * (minSectionTimes[agent.m_SectionIndex] - agent.m_timeSteps));
+            agent.AddReward(BeingBehindCheckpoingPenalty * (minSectionTimes[agent.m_SectionIndex] - episodeSteps));
         }
     }
 
@@ -176,7 +175,6 @@ public class RacingEnvController : MonoBehaviour
                 otherInvolvedAgents.Clear();
                 break;
             case Event.ReachNonGoalSection:
-                triggeringAgent.m_timeSteps = episodeSteps;
                 triggeringAgent.ApplySectionReward();
                 triggeringAgent.AddReward(PassCheckpointBase);
                 timeDifferenceAtSectionPenalty(triggeringAgent);
@@ -233,9 +231,9 @@ public class RacingEnvController : MonoBehaviour
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                         furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                         Agents[i].transform.localRotation = collider.transform.rotation;
-                        Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2.5f;
+                        Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                         Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
-                        Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2.5f;
+                        Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                         Agents[i].sectionTimes.Clear();
                         Agents[i].m_UpcomingLanes.Clear();
                         Agents[i].m_UpcomingVelocities.Clear();
@@ -258,9 +256,9 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_LaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     Agents[i].transform.localRotation = collider.transform.rotation;
-                    Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2f;
+                    Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                     Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
-                    Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2.5f;
+                    Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                     Agents[i].sectionTimes.Clear();
                     Agents[i].m_UpcomingLanes.Clear();
                     Agents[i].m_UpcomingVelocities.Clear();
@@ -281,7 +279,7 @@ public class RacingEnvController : MonoBehaviour
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                             furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                             Agents[i].transform.localRotation = collider.transform.rotation;
-                            Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2.5f;
+                            Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                             Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
                             Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2.5f;
                             Agents[i].sectionTimes.Clear();

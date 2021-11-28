@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -1391,7 +1391,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4181,19 +4181,20 @@ MonoBehaviour:
   - {fileID: 1391551895}
   - {fileID: 1683828759}
   - {fileID: 59718384}
-  WallHitPenalty: -1.8
-  OpponentHitPenalty: -1
+  WallHitPenalty: -0.15
+  OpponentHitPenalty: -0.5
   HitByOpponentPenalty: -0.02
-  PassCheckpointStateReward: 2
+  PassCheckpointStateReward: 0.2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.01
-  ReversePenalty: -5000
-  SwervingPenalty: -10
+  BeingBehindCheckpoingPenalty: -0.002
+  ReversePenalty: -10
+  SwervingPenalty: -3
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.03
-  SpeedReward: 3
-  AccelerationReward: 0.02
+  TowardsCheckpointReward: 0.008
+  SpeedReward: 1
+  SlowMovingPenalty: 0
+  AccelerationReward: 0.002
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
@@ -4226,7 +4227,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9594,7 +9595,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11490,7 +11491,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12889,7 +12890,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13763,19 +13764,20 @@ MonoBehaviour:
   - {fileID: 327722464}
   - {fileID: 1553871821}
   - {fileID: 1532917104}
-  WallHitPenalty: -1.8
-  OpponentHitPenalty: -1
+  WallHitPenalty: -0.15
+  OpponentHitPenalty: -0.5
   HitByOpponentPenalty: -0.02
-  PassCheckpointStateReward: 2
+  PassCheckpointStateReward: 0.2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.01
-  ReversePenalty: -5000
-  SwervingPenalty: -10
+  BeingBehindCheckpoingPenalty: -0.002
+  ReversePenalty: -10
+  SwervingPenalty: -3
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.03
-  SpeedReward: 3
-  AccelerationReward: 0.02
+  TowardsCheckpointReward: 0.008
+  SpeedReward: 1
+  SlowMovingPenalty: 0
+  AccelerationReward: 0.002
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
@@ -14664,7 +14666,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -16631,7 +16633,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -18200,19 +18202,20 @@ MonoBehaviour:
   - {fileID: 717506024}
   - {fileID: 1690898120}
   - {fileID: 1681543284}
-  WallHitPenalty: -1.8
-  OpponentHitPenalty: -1
+  WallHitPenalty: -0.15
+  OpponentHitPenalty: -0.5
   HitByOpponentPenalty: -0.02
-  PassCheckpointStateReward: 2
+  PassCheckpointStateReward: 0.2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.01
-  ReversePenalty: -5000
-  SwervingPenalty: -10
+  BeingBehindCheckpoingPenalty: -0.002
+  ReversePenalty: -10
+  SwervingPenalty: -3
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.03
-  SpeedReward: 3
-  AccelerationReward: 0.02
+  TowardsCheckpointReward: 0.008
+  SpeedReward: 1
+  SlowMovingPenalty: 0
+  AccelerationReward: 0.002
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
@@ -18759,7 +18762,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -19628,19 +19631,20 @@ MonoBehaviour:
   - {fileID: 1223549033}
   - {fileID: 575223978}
   - {fileID: 1416152611}
-  WallHitPenalty: -1.8
-  OpponentHitPenalty: -1
+  WallHitPenalty: -0.15
+  OpponentHitPenalty: -0.5
   HitByOpponentPenalty: -0.02
-  PassCheckpointStateReward: 2
+  PassCheckpointStateReward: 0.2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.01
-  ReversePenalty: -5000
-  SwervingPenalty: -10
+  BeingBehindCheckpoingPenalty: -0.002
+  ReversePenalty: -10
+  SwervingPenalty: -3
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.03
-  SpeedReward: 3
-  AccelerationReward: 0.02
+  TowardsCheckpointReward: 0.008
+  SpeedReward: 1
+  SlowMovingPenalty: 0
+  AccelerationReward: 0.002
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
@@ -21091,7 +21095,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -21824,7 +21828,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23256,7 +23260,7 @@ PrefabInstance:
     - target: {fileID: 1053111055632701601, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: DecisionPeriod
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -25320,19 +25324,20 @@ MonoBehaviour:
   - {fileID: 1449744278}
   - {fileID: 455417758}
   - {fileID: 160215441}
-  WallHitPenalty: -1.8
-  OpponentHitPenalty: -1
+  WallHitPenalty: -0.15
+  OpponentHitPenalty: -0.5
   HitByOpponentPenalty: -0.02
-  PassCheckpointStateReward: 2
+  PassCheckpointStateReward: 0.2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.01
-  ReversePenalty: -5000
-  SwervingPenalty: -10
+  BeingBehindCheckpoingPenalty: -0.002
+  ReversePenalty: -10
+  SwervingPenalty: -3
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.03
-  SpeedReward: 3
-  AccelerationReward: 0.02
+  TowardsCheckpointReward: 0.008
+  SpeedReward: 1
+  SlowMovingPenalty: 0
+  AccelerationReward: 0.002
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
@@ -25612,19 +25617,20 @@ MonoBehaviour:
   - {fileID: 91539630}
   - {fileID: 820899285}
   - {fileID: 1085811947}
-  WallHitPenalty: -1.8
-  OpponentHitPenalty: -1
+  WallHitPenalty: -0.15
+  OpponentHitPenalty: -0.5
   HitByOpponentPenalty: -0.02
-  PassCheckpointStateReward: 2
+  PassCheckpointStateReward: 0.2
   PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.01
-  ReversePenalty: -5000
-  SwervingPenalty: -10
+  BeingBehindCheckpoingPenalty: -0.002
+  ReversePenalty: -10
+  SwervingPenalty: -3
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.03
-  SpeedReward: 3
-  AccelerationReward: 0.02
+  TowardsCheckpointReward: 0.008
+  SpeedReward: 1
+  SlowMovingPenalty: 0
+  AccelerationReward: 0.002
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0

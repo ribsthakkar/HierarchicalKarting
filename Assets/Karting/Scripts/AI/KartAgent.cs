@@ -223,7 +223,7 @@ namespace KartGame.AI
                 m_SectionIndex = index;
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
-                if (false)
+                if (m_SectionIndex == m_envController.goalSection)
                 {
                     m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
                 }
@@ -237,6 +237,7 @@ namespace KartGame.AI
             {
                 // print("going backwards");
                 AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
+                m_SectionIndex = index;
             } else if ((triggered > 0 && index == -1))
             {
                 m_envController.ResolveEvent(Event.DroveReverseLimit, this, null);
@@ -323,10 +324,17 @@ namespace KartGame.AI
             // if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
 
             // Add rewards if the agent is heading in the right direction
+            var speedProportion = 0.01f;
             AddReward(reward * m_envController.TowardsCheckpointReward);
             AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * m_envController.AccelerationReward);
-            AddReward(m_Kart.LocalSpeed() < 0.2f ? -10f: 0.0f);
-            AddReward(m_Kart.LocalSpeed() * m_envController.SpeedReward);
+            if (m_Kart.LocalSpeed() <= speedProportion)
+            {
+                AddReward(m_envController.SlowMovingPenalty + (-m_envController.SlowMovingPenalty) * (m_Kart.LocalSpeed()/speedProportion));
+            }
+            else
+            {
+                AddReward((m_Kart.LocalSpeed()- speedProportion) /(1- speedProportion) * m_envController.SpeedReward);
+            }
         }
 
         public override void Heuristic(in ActionBuffers actionsOut)

@@ -814,6 +814,7 @@ namespace KartGame.AI
             {
                 // print("going backwards");
                 AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
+                m_SectionIndex = index;
             }
             else if ((triggered > 0 && index == -1))
             {

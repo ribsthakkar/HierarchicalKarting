@@ -26,10 +26,10 @@ namespace KartGame.AI
             /**
              * Sensors.Lenght -> RayCasts
              * SectionHorizon * 5 -> Upcoming Checkpoints (Vector3 location, target speed, isStaright)
-             * 6 -> Current Player's state
-             * 11 -> Other player states
+             * 7 -> Current Player's state
+             * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + 6 + (11 * otherAgents.Length);
+            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + 7 + (12 * otherAgents.Length);
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -50,6 +50,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
+            sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
             foreach (KartAgent agent in otherAgents)
             {
                 sensor.AddObservation(agent.m_Kart.LocalSpeed());
@@ -59,6 +60,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.gameObject.activeSelf);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
                 sensor.AddObservation(agent.m_Kart.TireWearProportion());
+                sensor.AddObservation(agent.m_SectionIndex * 1f / m_envController.goalSection);
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(m_Kart.transform.InverseTransformPoint(agent.m_Kart.transform.position));
             }

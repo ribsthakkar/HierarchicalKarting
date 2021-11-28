@@ -390,7 +390,7 @@ namespace KartGame.KartSystems
             float finalAcceleration = finalAccelPower * accelRamp;
 
             // apply inputs to forward/backward
-            float turningPower = turnInput * m_FinalStats.Steer;
+            float turningPower = turnInput * m_FinalStats.Steer * (Mathf.Abs(currentSpeed) > 0.5f ? 1f: 0f);
 
             Quaternion turnAngle = Quaternion.AngleAxis(turningPower, transform.up);
             Vector3 fwd = turnAngle * transform.forward;
