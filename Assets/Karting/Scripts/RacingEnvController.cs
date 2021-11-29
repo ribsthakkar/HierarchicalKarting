@@ -13,7 +13,7 @@ public enum Event
     ReachNonGoalSection = 2,
     ReachGoalSection = 3,
     DroveReverseLimit = 4,
-    HitEpisodeEnd = 5
+    FellOffWorld = 5
 }
 
 
@@ -38,6 +38,8 @@ public class RacingEnvController : MonoBehaviour
     public float PassCheckpointStateReward = 0.1f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
     public float PassCheckpointBase = 5f;
+    [Tooltip("How much reward is given when the agent successfully passes the checkpoints in faster time")]
+    public float PassCheckpointTimeMultiplier = 10f;
     [Tooltip("How much penalty is given for being behind first agent?")]
     public float BeingBehindCheckpoingPenalty = -0.1f;
     [Tooltip("How much reward is given when the agent travels backwards through the checkpoints?")]
@@ -111,6 +113,16 @@ public class RacingEnvController : MonoBehaviour
 
             }
             Agents[i].AddReward(-ReachGoalCheckpointRewardMultplier * (currAgentScore - oppAgentScore)/(1f*(Agents.Length-1)*maxEpisodeSteps));
+            if (currAgentScore - oppAgentScore < 0)
+            {
+                Agents[i].AddReward(1);
+            } else if (currAgentScore - oppAgentScore > 0)
+            {
+                Agents[i].AddReward(-1);
+            } else
+            {
+                Agents[i].AddReward(0);
+            }
         }
     }
 
@@ -177,6 +189,7 @@ public class RacingEnvController : MonoBehaviour
             case Event.ReachNonGoalSection:
                 triggeringAgent.ApplySectionReward();
                 triggeringAgent.AddReward(PassCheckpointBase);
+                triggeringAgent.AddReward(PassCheckpointTimeMultiplier * (maxEpisodeSteps - episodeSteps)/(1f*maxEpisodeSteps));
                 timeDifferenceAtSectionPenalty(triggeringAgent);
                 break;
             case Event.ReachGoalSection:
@@ -189,7 +202,7 @@ public class RacingEnvController : MonoBehaviour
                 triggeringAgent.Deactivate();
                 inactiveAgents.Add(triggeringAgent);
                 break;
-            case Event.HitEpisodeEnd:
+            case Event.FellOffWorld:
                 triggeringAgent.m_timeSteps = maxEpisodeSteps*2;
                 triggeringAgent.Deactivate();
                 inactiveAgents.Add(triggeringAgent);

@@ -627,10 +627,10 @@ namespace KartGame.AI
             /**
              * Sensors.Lenght -> RayCasts
              * TreeDepth*5 -> Upcoming Lanes and Velocities and lane types
-             * 6 -> Current Player's state
-             * 11 -> Other player states
+             * 7 -> Current Player's state
+             * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (gameParams.treeSearchDepth*5) + 6 + (11 *otherAgents.Length);
+            brainParameters.VectorObservationSize = Sensors.Length + (gameParams.treeSearchDepth*5) + 7 + (12 *otherAgents.Length);
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -672,7 +672,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges*1f/m_envController.MaxLaneChanges);
-            //print("Section Index" + m_SectionIndex);
+            sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
 
@@ -686,6 +686,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.gameObject.activeSelf);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
                 sensor.AddObservation(agent.m_Kart.TireWearProportion());
+                sensor.AddObservation(agent.m_SectionIndex * 1f / m_envController.goalSection);
                 sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
                 sensor.AddObservation(m_Kart.transform.InverseTransformPoint(agent.m_Kart.transform.position));
             }
@@ -800,7 +801,7 @@ namespace KartGame.AI
                 m_SectionIndex = index;
                 m_Lane = lane;
                 sectionTimes[m_SectionIndex] = m_envController.episodeSteps;
-                if (false)
+                if (m_SectionIndex == m_envController.goalSection)
                 {
                     m_envController.ResolveEvent(Event.ReachGoalSection, this, null);
                 }

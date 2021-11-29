@@ -4181,14 +4181,15 @@ MonoBehaviour:
   - {fileID: 1391551895}
   - {fileID: 1683828759}
   - {fileID: 59718384}
-  WallHitPenalty: -0.15
-  OpponentHitPenalty: -0.5
-  HitByOpponentPenalty: -0.02
+  WallHitPenalty: -3
+  OpponentHitPenalty: -4.5
+  HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 0.2
-  PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.002
+  PassCheckpointBase: 2
+  PassCheckpointTimeMultiplier: 10
+  BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
-  SwervingPenalty: -3
+  SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.008
@@ -4199,7 +4200,7 @@ MonoBehaviour:
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 1000
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &277507428
 Transform:
@@ -13764,14 +13765,15 @@ MonoBehaviour:
   - {fileID: 327722464}
   - {fileID: 1553871821}
   - {fileID: 1532917104}
-  WallHitPenalty: -0.15
-  OpponentHitPenalty: -0.5
-  HitByOpponentPenalty: -0.02
+  WallHitPenalty: -3
+  OpponentHitPenalty: -4.5
+  HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 0.2
-  PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.002
+  PassCheckpointBase: 2
+  PassCheckpointTimeMultiplier: 10
+  BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
-  SwervingPenalty: -3
+  SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.008
@@ -13782,7 +13784,7 @@ MonoBehaviour:
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 1000
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &1132641210
 Transform:
@@ -18202,14 +18204,15 @@ MonoBehaviour:
   - {fileID: 717506024}
   - {fileID: 1690898120}
   - {fileID: 1681543284}
-  WallHitPenalty: -0.15
-  OpponentHitPenalty: -0.5
-  HitByOpponentPenalty: -0.02
+  WallHitPenalty: -3
+  OpponentHitPenalty: -4.5
+  HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 0.2
-  PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.002
+  PassCheckpointBase: 2
+  PassCheckpointTimeMultiplier: 10
+  BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
-  SwervingPenalty: -3
+  SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.008
@@ -18220,7 +18223,7 @@ MonoBehaviour:
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 1000
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &1520054288
 Transform:
@@ -19631,14 +19634,15 @@ MonoBehaviour:
   - {fileID: 1223549033}
   - {fileID: 575223978}
   - {fileID: 1416152611}
-  WallHitPenalty: -0.15
-  OpponentHitPenalty: -0.5
-  HitByOpponentPenalty: -0.02
+  WallHitPenalty: -3
+  OpponentHitPenalty: -4.5
+  HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 0.2
-  PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.002
+  PassCheckpointBase: 2
+  PassCheckpointTimeMultiplier: 10
+  BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
-  SwervingPenalty: -3
+  SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.008
@@ -19649,7 +19653,7 @@ MonoBehaviour:
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 1000
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &1608355557
 Transform:
@@ -25324,14 +25328,15 @@ MonoBehaviour:
   - {fileID: 1449744278}
   - {fileID: 455417758}
   - {fileID: 160215441}
-  WallHitPenalty: -0.15
-  OpponentHitPenalty: -0.5
-  HitByOpponentPenalty: -0.02
+  WallHitPenalty: -3
+  OpponentHitPenalty: -4.5
+  HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 0.2
-  PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.002
+  PassCheckpointBase: 2
+  PassCheckpointTimeMultiplier: 10
+  BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
-  SwervingPenalty: -3
+  SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.008
@@ -25342,7 +25347,7 @@ MonoBehaviour:
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 1000
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &1976657639
 Transform:
@@ -25617,14 +25622,15 @@ MonoBehaviour:
   - {fileID: 91539630}
   - {fileID: 820899285}
   - {fileID: 1085811947}
-  WallHitPenalty: -0.15
-  OpponentHitPenalty: -0.5
-  HitByOpponentPenalty: -0.02
+  WallHitPenalty: -3
+  OpponentHitPenalty: -4.5
+  HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 0.2
-  PassCheckpointBase: 5
-  BeingBehindCheckpoingPenalty: -0.002
+  PassCheckpointBase: 2
+  PassCheckpointTimeMultiplier: 10
+  BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
-  SwervingPenalty: -3
+  SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
   TowardsCheckpointReward: 0.008
@@ -25635,7 +25641,7 @@ MonoBehaviour:
   laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 1000
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &1999774420
 Transform:

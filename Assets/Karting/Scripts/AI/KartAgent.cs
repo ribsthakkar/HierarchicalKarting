@@ -137,27 +137,31 @@ namespace KartGame.AI
 
         void LateUpdate()
         {
-            switch (Mode)
+            if (ShowRaycasts) 
+                Debug.DrawRay(transform.position, Vector3.down * GroundCastDistance, Color.cyan);
+            var inAir = !Physics.Raycast(transform.position, Vector3.down, out var hit, 5, TrackMask);
+            // We want to place the agent back on the track if the agent happens to launch itself outside of the track.
+            if (inAir)
             {
-                case AgentMode.Inferencing:
-                    if (ShowRaycasts) 
-                        Debug.DrawRay(transform.position, Vector3.down * GroundCastDistance, Color.cyan);
-
-                    // We want to place the agent back on the track if the agent happens to launch itself outside of the track.
-                    if (Physics.Raycast(transform.position + Vector3.up, Vector3.down, out var hit, GroundCastDistance, TrackMask)
-                        && ((1 << hit.collider.gameObject.layer) & OutOfBoundsMask) > 0)
-                    {
+                // print("I am falling");
+                switch(Mode)
+                {
+                    case AgentMode.Training:
+                        m_envController.ResolveEvent(Event.FellOffWorld, this, null);
+                        break;
+                    case AgentMode.Inferencing:
                         // Reset the agent back to its last known agent checkpoint
                         var checkpoint = m_envController.Sections[m_SectionIndex].transform;
                         transform.localRotation = checkpoint.rotation;
                         transform.position = checkpoint.position;
                         m_Kart.Rigidbody.velocity = default;
                         m_Steering = 0f;
-						m_Acceleration = m_Brake = false; 
-                    }
+				        m_Acceleration = m_Brake = false;
+                        break;
+                }
 
-                    break;
             }
+
         }
 
         protected virtual void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -247,7 +251,7 @@ namespace KartGame.AI
 
         protected void FindSectionIndex(Collider checkPointTrigger, out int index, out int lane)
         {
-            for (int i = m_SectionIndex - sectionHorizon; i < m_SectionIndex + sectionHorizon; i++)
+            for (int i = Math.Max(m_SectionIndex - sectionHorizon, InitCheckpointIndex); i < m_SectionIndex + sectionHorizon; i++)
             {
                 int idx = i < 0 ? i + m_envController.Sections.Length : i;
                 if (m_envController.Sections[idx % m_envController.Sections.Length].Trigger.GetInstanceID() == checkPointTrigger.GetInstanceID())
@@ -324,10 +328,10 @@ namespace KartGame.AI
             // if (ShowRaycasts) Debug.DrawRay(AgentSensorTransform.position, m_Kart.Rigidbody.velocity, Color.blue);
 
             // Add rewards if the agent is heading in the right direction
-            var speedProportion = 0.01f;
+            var speedProportion = 0.00f;
             AddReward(reward * m_envController.TowardsCheckpointReward);
             AddReward((m_Acceleration && !m_Brake ? 1.0f : 0.0f) * m_envController.AccelerationReward);
-            if (m_Kart.LocalSpeed() <= speedProportion)
+            if (speedProportion > 0.01f && m_Kart.LocalSpeed() < speedProportion)
             {
                 AddReward(m_envController.SlowMovingPenalty + (-m_envController.SlowMovingPenalty) * (m_Kart.LocalSpeed()/speedProportion));
             }
