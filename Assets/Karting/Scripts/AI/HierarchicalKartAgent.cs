@@ -974,7 +974,7 @@ namespace KartGame.AI
                 else
                 {
                     lane = m_envController.Sections[idx].Trigger;
-                    vel = m_Kart.GetMaxSpeed();
+                    vel = m_Kart.getMaxSpeedForState();
                 }
                 targetState[KartMPC.xIndex] = lane.transform.position.x;
                 targetState[KartMPC.zIndex] = lane.transform.position.z;

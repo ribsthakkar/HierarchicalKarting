@@ -141,7 +141,8 @@ namespace KartGame.AI
                 Debug.DrawRay(transform.position, Vector3.down * GroundCastDistance, Color.cyan);
             var inAir = !Physics.Raycast(transform.position, Vector3.down, out var hit, 5, TrackMask);
             // We want to place the agent back on the track if the agent happens to launch itself outside of the track.
-            if (inAir)
+            var dist2Track = (m_Kart.transform.position - m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform.position).magnitude;
+            if (inAir && dist2Track > 25)
             {
                 // print("I am falling");
                 switch(Mode)
@@ -151,7 +152,7 @@ namespace KartGame.AI
                         break;
                     case AgentMode.Inferencing:
                         // Reset the agent back to its last known agent checkpoint
-                        var checkpoint = m_envController.Sections[m_SectionIndex].transform;
+                        var checkpoint = m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform;
                         transform.localRotation = checkpoint.rotation;
                         transform.position = checkpoint.position;
                         m_Kart.Rigidbody.velocity = default;

@@ -16,6 +16,11 @@ public enum Event
     FellOffWorld = 5
 }
 
+public enum EnvironmentMode
+{
+    Race = 0,
+    Training =1
+}
 
 
 public class RacingEnvController : MonoBehaviour
@@ -25,6 +30,8 @@ public class RacingEnvController : MonoBehaviour
     [Header("Checkpoints"), Tooltip("What are the series of checkpoints for the agent to seek and pass through?")]
     public DiscretePositionTracker[] Sections;
 
+    [Header("Environment Mode"), Tooltip("Mode of the environment")]
+    public EnvironmentMode mode = EnvironmentMode.Training;
 
 
     #region Rewards
@@ -224,8 +231,10 @@ public class RacingEnvController : MonoBehaviour
         var furthestForwardSection = -1;
         var furthestBackSection = 100000;
         HashSet< Collider > addedColliders = new HashSet<Collider>();
-        bool headToHead = UnityEngine.Random.Range(0, 7) != 1;
+        bool headToHead = mode == EnvironmentMode.Training ? UnityEngine.Random.Range(0, 7) != 1 : true;
         var initialSection = -1;
+        var minSectionIndex = 0;
+        var maxSectionIndex = mode == EnvironmentMode.Training? Sections.Length -1 : 1;
         for (int i = 0; i < Agents.Length; i++)
         {
             if (!headToHead)
@@ -233,7 +242,7 @@ public class RacingEnvController : MonoBehaviour
                 // Randomly Set Iniital Track Position
                 while (true)
                 {
-                    Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
+                    Agents[i].m_SectionIndex = UnityEngine.Random.Range(minSectionIndex, maxSectionIndex);
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                     Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
                     Agents[i].m_LaneChanges = 0;
@@ -259,7 +268,7 @@ public class RacingEnvController : MonoBehaviour
             {
                 if (addedColliders.Count == 0)
                 {
-                    Agents[i].m_SectionIndex = UnityEngine.Random.Range(0, Sections.Length - 1);
+                    Agents[i].m_SectionIndex = UnityEngine.Random.Range(minSectionIndex, maxSectionIndex);
                     initialSection = Agents[i].m_SectionIndex;
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                     Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);

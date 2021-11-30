@@ -374,6 +374,12 @@ namespace KartGame.KartSystems
 
             // use the max speed for the direction we are going--forward or reverse.
             float maxSpeed = localVelDirectionIsFwd ? m_FinalStats.TopSpeed : m_FinalStats.ReverseSpeed;
+            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGs() * 9.81f * (Mathf.Abs(getTurningRadius())));
+            // print(maxAllowedSpeed);
+            if (!(float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
+            {
+                maxSpeed = Mathf.Clamp(maxSpeed, 0.001f, Mathf.Max(maxAllowedSpeed, 0.001f));
+            }
             float accelPower = accelDirectionIsFwd ? m_FinalStats.Acceleration : m_FinalStats.ReverseAcceleration;
 
             float currentSpeed = Rigidbody.velocity.magnitude;
@@ -407,7 +413,7 @@ namespace KartGame.KartSystems
             newVelocity.y = Rigidbody.velocity.y;
 
             //  clamp max speed if we are on ground
-            if (GroundPercent > 0.0f && !wasOverMaxSpeed)
+            if (GroundPercent > 0.0f && wasOverMaxSpeed)
             {
                 newVelocity = Vector3.ClampMagnitude(newVelocity, maxSpeed);
             }
@@ -499,6 +505,26 @@ namespace KartGame.KartSystems
         public float getMaxLateralGs()
         {
             return (1 - TireWearProportion()) * (m_FinalStats.MaxGs - m_FinalStats.MinGs) + m_FinalStats.MinGs;
+        }
+
+        public float getTurningRadius()
+        {
+            
+            var output = (Vector3.Dot(Rigidbody.velocity, Rigidbody.transform.forward) / Rigidbody.angularVelocity.y);
+            if (float.IsInfinity(output) || float.IsNaN(output))
+                return 1000;
+            return output;
+        }
+
+        public float getMaxSpeedForState()
+        {
+            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGs() * 9.81f * (Mathf.Abs(getTurningRadius())));
+            // print(maxAllowedSpeed);
+            if (!(float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
+            {
+                maxAllowedSpeed = m_FinalStats.TopSpeed;
+            }
+            return maxAllowedSpeed;
         }
     }
 }

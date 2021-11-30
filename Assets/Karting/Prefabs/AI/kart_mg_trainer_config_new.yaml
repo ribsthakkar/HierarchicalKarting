@@ -13,7 +13,7 @@ behaviors:
     network_settings:
       normalize: true
       hidden_units: 128
-      num_layers: 4
+      num_layers: 3
       vis_encode_type: simple
       goal_conditioning_type: hyper
       #memory:
@@ -26,7 +26,7 @@ behaviors:
         network_settings:
           normalize: true
           hidden_units: 128
-          num_layers: 4
+          num_layers: 3
           vis_encode_type: simple
           goal_conditioning_type: hyper
     self_play:
