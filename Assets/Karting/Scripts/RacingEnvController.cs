@@ -29,6 +29,7 @@ public class RacingEnvController : MonoBehaviour
     public KartAgent[] Agents;
     [Header("Checkpoints"), Tooltip("What are the series of checkpoints for the agent to seek and pass through?")]
     public DiscretePositionTracker[] Sections;
+    public float[] initialTireWears;
 
     [Header("Environment Mode"), Tooltip("Mode of the environment")]
     public EnvironmentMode mode = EnvironmentMode.Training;
@@ -221,7 +222,15 @@ public class RacingEnvController : MonoBehaviour
     void ResetGame()
     {
         //print("resetting game");
-        foreach(DiscretePositionTracker section in Sections)
+        //if (mode == EnvironmentMode.Training)
+        //{
+        //    laps = UnityEngine.Random.Range(1, 5);
+        //    maxEpisodeSteps = laps * 1500;
+        //    goalSection = laps * Sections.Length + 1;
+        //}
+        float minTirewearProportion = mode == EnvironmentMode.Training ? 0.0f : 0.25f;
+        float maxTirewearProportion = mode == EnvironmentMode.Training ? 1.0f : 0.25f;
+        foreach (DiscretePositionTracker section in Sections)
         {
             section.resetColors();
         }
@@ -231,10 +240,10 @@ public class RacingEnvController : MonoBehaviour
         var furthestForwardSection = -1;
         var furthestBackSection = 100000;
         HashSet< Collider > addedColliders = new HashSet<Collider>();
-        bool headToHead = mode == EnvironmentMode.Training ? UnityEngine.Random.Range(0, 7) != 1 : true;
+        bool headToHead = mode == EnvironmentMode.Training ? UnityEngine.Random.Range(0, 9) != 1 : true;
         var initialSection = -1;
         var minSectionIndex = 0;
-        var maxSectionIndex = mode == EnvironmentMode.Training? Sections.Length -1 : 1;
+        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 1;
         for (int i = 0; i < Agents.Length; i++)
         {
             if (!headToHead)
@@ -249,7 +258,7 @@ public class RacingEnvController : MonoBehaviour
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     if (!addedColliders.Contains(collider))
                     {
-                        Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);
+                        Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate*minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                         furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                         Agents[i].transform.localRotation = collider.transform.rotation;
@@ -271,7 +280,7 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_SectionIndex = UnityEngine.Random.Range(minSectionIndex, maxSectionIndex);
                     initialSection = Agents[i].m_SectionIndex;
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
-                    Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);
+                    Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate * minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                     furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                     furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                     Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
@@ -297,13 +306,13 @@ public class RacingEnvController : MonoBehaviour
                         var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                         if (!addedColliders.Contains(collider))
                         {
-                            Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(0.0f, Agents[i].m_Kart.TireWearRate);
+                            Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate * minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                             furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                             Agents[i].transform.localRotation = collider.transform.rotation;
                             Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                             Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
-                            Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 2.5f;
+                            Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
                             Agents[i].sectionTimes.Clear();
                             Agents[i].m_UpcomingLanes.Clear();
                             Agents[i].m_UpcomingVelocities.Clear();

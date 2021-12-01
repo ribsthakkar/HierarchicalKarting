@@ -116,7 +116,10 @@ namespace KartGame.AI
         [HideInInspector] public bool m_HitOccured;
         [HideInInspector] public float m_LastAccumulatedReward;
         [HideInInspector] protected int episodeSteps = 0;
+        
         public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
+
+        [HideInInspector] protected bool hitWall = false;
 
         public virtual void Start()
         {        
@@ -394,7 +397,8 @@ namespace KartGame.AI
             {
                 Accelerate = m_Acceleration,
                 Brake = m_Brake,
-                TurnInput = m_Steering
+                TurnInput = m_Steering,
+                HitWall = hitWall
             };
         }
     }

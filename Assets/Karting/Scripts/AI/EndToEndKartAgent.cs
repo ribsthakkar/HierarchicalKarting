@@ -77,7 +77,7 @@ namespace KartGame.AI
                 if (ShowRaycasts)
                     Debug.DrawLine(AgentSensorTransform.position, target.transform.position, Color.magenta);
             }
-            
+            bool hittingWall = false;
             for (var i = 0; i < Sensors.Length; i++)
             {
                 var current = Sensors[i];
@@ -107,13 +107,16 @@ namespace KartGame.AI
 
                 if (hitTrack && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                 {
-                    if(hitTrackInfo.distance < current.WallHitValidationDistance)
+                    if (hitTrackInfo.distance < 1.0f)
+                    {
                         m_envController.ResolveEvent(Event.HitWall, this, null);
+                        hittingWall = true;
+                    }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
                 else if (hitAgent)
                 {
-                    if (hitAgentInfo.distance < current.AgentHitValidationDistance)
+                    if (hitAgentInfo.distance < 1.5f)
                     {
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
@@ -126,8 +129,9 @@ namespace KartGame.AI
                     sensor.AddObservation(current.RayDistance);
                 }
             }
+            hitWall = hittingWall;
         }
-
+        
     }
 
 
