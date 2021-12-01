@@ -1,18 +1,14 @@
 ﻿using UnityEngine;
 using TMPro;
 
-public class FramerateCounter : MonoBehaviour
+public class TelemetryViewer : MonoBehaviour
 {
-    [Tooltip("Delay between updates of the displayed framerate value")]
-    public float pollingTime = 0.05f;
     [Tooltip("The text field displaying the framerate")]
     public TextMeshProUGUI uiText;
 
     public KartGame.AI.KartAgent agent;
     public KartGame.AI.KartAgent agent2;
 
-    float m_AccumulatedDeltaTime = 0f;
-    int m_AccumulatedFrameCount = 0;
     float lastLapTime1 = 0f;
     float lastLapTime2 = 0f;
     float bestLapTime1 = 0f;

@@ -247,6 +247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -879,6 +884,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -1909,6 +1919,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3083,6 +3098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4350,6 +4370,7 @@ MonoBehaviour:
   - {fileID: 1752554033}
   - {fileID: 1153160682}
   - {fileID: 548407218}
+  initialTireWears: []
   mode: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -5309,6 +5330,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -5896,6 +5922,7 @@ MonoBehaviour:
   - {fileID: 860267068}
   - {fileID: 415001124}
   - {fileID: 135891245}
+  initialTireWears: []
   mode: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -8229,6 +8256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -9071,6 +9103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -10626,6 +10663,7 @@ MonoBehaviour:
   - {fileID: 895624689}
   - {fileID: 1629334222}
   - {fileID: 998982253}
+  initialTireWears: []
   mode: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -10901,6 +10939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13839,6 +13882,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -15141,6 +15189,7 @@ MonoBehaviour:
   - {fileID: 327722464}
   - {fileID: 1553871821}
   - {fileID: 1532917104}
+  initialTireWears: []
   mode: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -18446,6 +18495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -22232,6 +22286,7 @@ MonoBehaviour:
   - {fileID: 91539630}
   - {fileID: 820899285}
   - {fileID: 1085811947}
+  initialTireWears: []
   mode: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -22802,6 +22857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: LowMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23617,6 +23677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -24199,6 +24264,7 @@ MonoBehaviour:
   - {fileID: 687031548}
   - {fileID: 1235082794}
   - {fileID: 1670640480}
+  initialTireWears: []
   mode: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5

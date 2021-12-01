@@ -60,9 +60,9 @@ behaviors:
       num_layers: 3
       vis_encode_type: simple
       goal_conditioning_type: hyper
-      #memory:
-      #  memory_size: 256
-      #  sequence_length: 64
+      memory:
+        memory_size: 256
+        sequence_length: 64
     reward_signals:
       extrinsic:
         gamma: 0.99
@@ -82,7 +82,7 @@ behaviors:
       initial_elo: 400
     keep_checkpoints: 5
     checkpoint_interval: 500000
-    max_steps: 50000000000
+    max_steps: 8000000
     time_horizon: 64
     summary_freq: 1000
     threaded: false

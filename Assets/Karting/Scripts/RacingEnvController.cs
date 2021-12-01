@@ -1,7 +1,10 @@
 using KartGame.AI;
 using KartGame.KartSystems;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Threading;
 using UnityEngine;
 
 
@@ -19,7 +22,8 @@ public enum Event
 public enum EnvironmentMode
 {
     Race = 0,
-    Training =1
+    Training =1,
+    Experiment = 2
 }
 
 
@@ -34,6 +38,10 @@ public class RacingEnvController : MonoBehaviour
     [Header("Environment Mode"), Tooltip("Mode of the environment")]
     public EnvironmentMode mode = EnvironmentMode.Training;
 
+    [Header("Experiment Params"), Tooltip("Parameters if running in experiment mode")]
+    public string ExperimentName;
+    public int TotalExperiments;
+    int experimentNum = 0;
 
     #region Rewards
     [Header("Rewards"), Tooltip("What penatly is given when the agent crashes with a wall?")]
@@ -140,13 +148,31 @@ public class RacingEnvController : MonoBehaviour
         {
 
             // print("from here 1");
+            if (initialStarted && mode == EnvironmentMode.Experiment && experimentNum < TotalExperiments)
+            {
+                var tm = FindObjectOfType<TelemetryViewer>();
+                print(tm.uiText.text);
+                StreamWriter writer = new StreamWriter("ExperimentLogs/" + ExperimentName + ".txt", true);
+                writer.WriteLine("Experiment " + experimentNum);
+                writer.WriteLine(tm.uiText.text);
+                writer.Close();
+                experimentNum += 1;
+            }
+
             AddGoalTimingRewards();
             for (int i = 0; i < Agents.Length; i++)
             {
-                if(initialStarted)
+                if (initialStarted)
+                {
                     Agents[i].EndEpisode();
+                }
             }
             ResetGame();
+            if (!initialStarted && mode == EnvironmentMode.Experiment)
+            {
+                StreamWriter writer = new StreamWriter("ExperimentLogs/" + ExperimentName + ".txt", false);
+                writer.Close();
+            }
             initialStarted = true;
         }
         else
@@ -154,6 +180,16 @@ public class RacingEnvController : MonoBehaviour
             episodeSteps += 1;
             if (episodeSteps >= maxEpisodeSteps)
             {
+                if (initialStarted && mode == EnvironmentMode.Experiment && experimentNum < TotalExperiments)
+                {
+                    var tm = FindObjectOfType<TelemetryViewer>();
+                    print(tm.uiText.text);
+                    StreamWriter writer = new StreamWriter("ExperimentLogs/" + ExperimentName + ".txt", true);
+                    writer.WriteLine("Experiment " + experimentNum);
+                    writer.WriteLine(tm.uiText.text);
+                    writer.Close();
+                    experimentNum += 1;
+                }
                 AddGoalTimingRewards();
                 for (int i = 0; i < Agents.Length; i++)
                 {
@@ -218,10 +254,15 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
+    IEnumerator pauseForSC()
+    {
+        yield return new WaitForSeconds(5);
 
+    }
     void ResetGame()
     {
         //print("resetting game");
+        StartCoroutine(pauseForSC());
         //if (mode == EnvironmentMode.Training)
         //{
         //    laps = UnityEngine.Random.Range(1, 5);

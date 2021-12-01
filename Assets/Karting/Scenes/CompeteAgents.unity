@@ -247,6 +247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -4162,6 +4167,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Mask.m_Bits
+      value: 11777
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: SpeedReward
       value: 0.002
       objectReference: {fileID: 0}
@@ -6458,8 +6468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agents:
-  - {fileID: 1575242979}
   - {fileID: 1889518588}
+  - {fileID: 1575242979}
   Sections:
   - {fileID: 919539596}
   - {fileID: 612146711}
@@ -6486,7 +6496,9 @@ MonoBehaviour:
   - {fileID: 1553871821}
   - {fileID: 1532917104}
   initialTireWears: []
-  mode: 0
+  mode: 2
+  ExperimentName: Try1
+  TotalExperiments: 1
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
@@ -6502,11 +6514,11 @@ MonoBehaviour:
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
-  MaxLaneChanges: 2
-  laps: 3
+  MaxLaneChanges: 4
+  laps: 1
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 4500
+  maxEpisodeSteps: 1500
   sectionHorizon: 8
 --- !u!4 &1132641210
 Transform:
@@ -8516,12 +8528,12 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 0
+  MaxStep: 5000
   Mode: 1
   InitCheckpointIndex: 0
   Mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 11777
   Sensors:
   - Transform: {fileID: 1586774679}
     RayDistance: 20
@@ -8883,6 +8895,8 @@ MonoBehaviour:
   - {fileID: 1085811947}
   initialTireWears: []
   mode: 1
+  ExperimentName: 
+  TotalExperiments: 0
   WallHitPenalty: -50
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -3.5
@@ -9441,7 +9455,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5f74294a1e566804380c6fa0369ced83,
+      objectReference: {fileID: 5022602860645237092, guid: a93db035a59a5024ba9c2377a6efcc50,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

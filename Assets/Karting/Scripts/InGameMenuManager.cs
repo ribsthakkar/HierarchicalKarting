@@ -17,14 +17,14 @@ public class InGameMenuManager : MonoBehaviour
     public GameObject controlImage;
 
     //PlayerInputHandler m_PlayerInputsHandler;
-    FramerateCounter m_FramerateCounter;
+    TelemetryViewer m_FramerateCounter;
 
     void Start()
     {
         //m_PlayerInputsHandler = FindObjectOfType<PlayerInputHandler>();
         //DebugUtility.HandleErrorIfNullFindObject<PlayerInputHandler, InGameMenuManager>(m_PlayerInputsHandler, this);
 
-        m_FramerateCounter = FindObjectOfType<FramerateCounter>();
+        m_FramerateCounter = FindObjectOfType<TelemetryViewer>();
         //DebugUtility.HandleErrorIfNullFindObject<FramerateCounter, InGameMenuManager>(m_FramerateCounter, this);
 
         menuRoot.SetActive(false);
