@@ -24,6 +24,13 @@ namespace KartGame.AI
         LQR
     }
 
+    [System.Serializable]
+    public enum HighLevelMode
+    {
+        MCTS,
+        Fixed
+    }
+
     public struct DiscreteKartAction
     {
         public int min_velocity;
@@ -414,6 +421,8 @@ namespace KartGame.AI
         #endregion
         [Tooltip("Are we using the RL brain for low level control or MPC?")]
         public LowLevelMode LowMode = LowLevelMode.MPC;
+        [Tooltip("Which High-Level control mode are we using?")]
+        public HighLevelMode HighMode = HighLevelMode.MCTS;
 
         [HideInInspector] KartMCTSNode currentRoot = null;
         [HideInInspector] List<DiscreteGameState> bestStates = new List<DiscreteGameState>();
@@ -432,7 +441,14 @@ namespace KartGame.AI
             currentRoot = null;
             if (Mode == AgentMode.Inferencing)
             {
-                planWithMCTS();
+                if (HighMode == HighLevelMode.MCTS)
+                {
+                    planWithMCTS();
+                }
+                else
+                {
+                    planFixed();
+                }
             }
             else
             {
@@ -449,6 +465,25 @@ namespace KartGame.AI
                     int lane = Random.Range(1, 4);
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
                     m_UpcomingVelocities[i % m_envController.Sections.Length] = Random.Range(5f, m_Kart.GetMaxSpeed());
+                    if (name.Equals("MCTS-LQR"))
+                    {
+                        m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
+                        //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                    }
+                }
+            }
+        }
+
+
+        public void planFixed()
+        {
+            for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + gameParams.treeSearchDepth, 1000) + 1; i++)
+            {
+                if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
+                {
+                    int lane = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalNextLane();
+                    m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
+                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed();
                     if (name.Equals("MCTS-LQR"))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
@@ -573,7 +608,14 @@ namespace KartGame.AI
 
                 if(Mode == AgentMode.Inferencing)
                 {
-                    planWithMCTS();
+                    if (HighMode == HighLevelMode.MCTS)
+                    {
+                        planWithMCTS();
+                    }
+                    else
+                    {
+                        planFixed();
+                    }
                 }
                 else
                 {
@@ -604,6 +646,7 @@ namespace KartGame.AI
                         }
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
+
                         if (name.Equals("MCTS-LQR"))
                         {
                             m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
@@ -1027,10 +1070,10 @@ namespace KartGame.AI
                 targetState[KartMPC.hIndex] = finalTargetHeading; 
 
                 var targetWeights = new Dictionary<int, double>();
-                targetWeights[KartMPC.xIndex] = 4.5;
-                targetWeights[KartMPC.zIndex] = 4.5;
-                targetWeights[KartMPC.hIndex] = 3;
-                targetWeights[KartMPC.vIndex] = 3;
+                targetWeights[KartMPC.xIndex] = 1.5;
+                targetWeights[KartMPC.zIndex] = 1.5;
+                targetWeights[KartMPC.hIndex] = 1;
+                targetWeights[KartMPC.vIndex] = 1;
 
 
                 var avoidWeights = new Dictionary<int, List<double>>();
@@ -1048,9 +1091,9 @@ namespace KartGame.AI
                 {
                     var o = otherAgents[j];
                     // Avoidance Weights
-                    avoidWeights[KartMPC.xIndex].Add(1.0);
+                    avoidWeights[KartMPC.xIndex].Add(10.0);
                     avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
-                    avoidWeights[KartMPC.zIndex].Add(1.0);
+                    avoidWeights[KartMPC.zIndex].Add(10.0);
                     avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
                     
                     
@@ -1100,9 +1143,9 @@ namespace KartGame.AI
 
                     // Add weights for preventing opponent's target state
                     var otherTargetWeights = new Dictionary<int, double>();
-                    otherTargetWeights[KartMPC.xIndex] = 1.0;
-                    otherTargetWeights[KartMPC.zIndex] = 1.0;
-                    otherTargetWeights[KartMPC.vIndex] = 3.0;
+                    otherTargetWeights[KartMPC.xIndex] = 0.33;
+                    otherTargetWeights[KartMPC.zIndex] = 0.33;
+                    otherTargetWeights[KartMPC.vIndex] = 1.2;
                     opponentTargetWeights.Add(otherTargetWeights);
                 }
 

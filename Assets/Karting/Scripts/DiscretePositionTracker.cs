@@ -32,6 +32,7 @@ public class DiscretePositionTracker : MonoBehaviour
     public float trackWidth;
     public bool leftTurn;
     public float turnDegrees;
+    public int optimalLane;
 
     List<float> radiuses = new List<float>();
     [HideInInspector] public List<Vector2> finePoints = new List<Vector2>();
@@ -190,5 +191,22 @@ public class DiscretePositionTracker : MonoBehaviour
     {
         for (int i = 1; i <= 4; i++)
             getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
+    }
+
+    public int getOptimalLaneSign()
+    {
+        if (optimalLane == 1)
+        {
+            return 1;
+        } else if (optimalLane == 4)
+        {
+            return -1;
+        }
+        return 0;
+    }
+
+    public int getOptimalNextLane()
+    {
+        return optimalLane;
     }
 }
