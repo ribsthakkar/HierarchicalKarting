@@ -409,7 +409,7 @@ namespace KartGame.KartSystems
             if (wasOverMaxSpeed && !isBraking) 
                 acc *= 0.0f;
 
-            Vector3 newVelocity = (Rigidbody.velocity + acc * Time.fixedDeltaTime) * (hitWall ? 0.95f: 1.0f);
+            Vector3 newVelocity = (Rigidbody.velocity + acc * Time.fixedDeltaTime) * (hitWall ? 0.98f: 1.0f);
             newVelocity.y = Rigidbody.velocity.y;
 
             //  clamp max speed if we are on ground

@@ -36,6 +36,8 @@ namespace KartGame.AI.LQR
                 AMat = CreateMatrix.SparseIdentity<double>(xDim);
                 AMat[0, 2] = Math.Cos(initial[3])*dt;
                 AMat[1, 2] = Math.Sin(initial[3])*dt;
+                AMat[0, 3] = -Math.Sin(initial[3])*dt;
+                AMat[1, 3] = Math.Cos(initial[3])*dt;
             }
             return AMat;
         }

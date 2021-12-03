@@ -226,10 +226,10 @@ public class KartMCTS
             }
             DiscreteGameState state = leaf.state;
             int optimalLaneSign = state.envController.Sections[(state.lastCompletedSection + 1) % state.envController.Sections.Length].getOptimalLaneSign();
-            var nextActions = state.nextMoves().OrderByDescending((action) => action.max_velocity).ThenBy((action) => optimalLaneSign*action.lane).ToList();
+            var nextActions = state.nextMoves().OrderBy((action) => optimalLaneSign*action.lane).ThenByDescending((action) => action.max_velocity).ToList();
             // UnityEngine.Debug.Log(nextActions[0].max_velocity);
             // int index = random.Next(nextActions.Count);
-            int index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, 3f, -(float)nextActions.Count + 1f, (float) nextActions.Count -1f)));
+            int index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, 1.5f, -(float)nextActions.Count + 1f, (float) nextActions.Count -1f)));
             DiscreteKartAction move = nextActions[index];
             if(!leaf.children.ContainsKey(move))
             {
