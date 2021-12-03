@@ -254,15 +254,10 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
-    IEnumerator pauseForSC()
-    {
-        yield return new WaitForSeconds(5);
 
-    }
     void ResetGame()
     {
         //print("resetting game");
-        StartCoroutine(pauseForSC());
         //if (mode == EnvironmentMode.Training)
         //{
         //    laps = UnityEngine.Random.Range(1, 5);
@@ -303,9 +298,9 @@ public class RacingEnvController : MonoBehaviour
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                         furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                         Agents[i].transform.localRotation = collider.transform.rotation;
-                        Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
+                        Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 3f;
                         Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
-                        Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
+                        Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 3f;
                         Agents[i].sectionTimes.Clear();
                         Agents[i].m_UpcomingLanes.Clear();
                         Agents[i].m_UpcomingVelocities.Clear();
@@ -328,9 +323,9 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_LaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     Agents[i].transform.localRotation = collider.transform.rotation;
-                    Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
+                    Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 3f;
                     Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
-                    Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
+                    Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 3f;
                     Agents[i].sectionTimes.Clear();
                     Agents[i].m_UpcomingLanes.Clear();
                     Agents[i].m_UpcomingVelocities.Clear();
@@ -351,9 +346,9 @@ public class RacingEnvController : MonoBehaviour
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                             furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
                             Agents[i].transform.localRotation = collider.transform.rotation;
-                            Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
+                            Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 3f;
                             Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
-                            Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 7f;
+                            Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * 3f;
                             Agents[i].sectionTimes.Clear();
                             Agents[i].m_UpcomingLanes.Clear();
                             Agents[i].m_UpcomingVelocities.Clear();

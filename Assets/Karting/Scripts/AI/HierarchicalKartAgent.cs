@@ -801,8 +801,9 @@ namespace KartGame.AI
 
                 if (hitTrack && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                 {
-                    if (hitTrackInfo.distance < 1.0f)
+                    if (hitTrackInfo.distance < current.WallHitValidationDistance)
                     {
+                        //print("hitting wall " + hitTrackInfo.distance);
                         m_envController.ResolveEvent(Event.HitWall, this, null);
                         hittingWall = true;
                     }
@@ -810,7 +811,7 @@ namespace KartGame.AI
                 }
                 else if (hitAgent)
                 {
-                    if (hitAgentInfo.distance < 1.5f)
+                    if (hitAgentInfo.distance < current.AgentHitValidationDistance)
                     {
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
@@ -1058,7 +1059,7 @@ namespace KartGame.AI
                 targetState[KartMPC.vIndex] = vel;
                 double finalTargetHeading;
                 var targetHeading = Mathf.Atan2(lane.transform.position.z - k.m_Kart.transform.position.z, lane.transform.position.x - k.m_Kart.transform.position.x);
-                if ((lane.transform.position - k.m_Kart.transform.position).magnitude <= 4f)
+                if ((lane.transform.position - k.m_Kart.transform.position).magnitude <= 5f)
                 {
                     finalTargetHeading = Mathf.Atan2(lane.transform.forward.z, lane.transform.forward.x);
                     finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex] * Mathf.Rad2Deg, finalTargetHeading * Mathf.Rad2Deg) * Mathf.Deg2Rad;
@@ -1070,10 +1071,10 @@ namespace KartGame.AI
                 targetState[KartMPC.hIndex] = finalTargetHeading; 
 
                 var targetWeights = new Dictionary<int, double>();
-                targetWeights[KartMPC.xIndex] = 1.5;
-                targetWeights[KartMPC.zIndex] = 1.5;
-                targetWeights[KartMPC.hIndex] = 1;
-                targetWeights[KartMPC.vIndex] = 1;
+                targetWeights[KartMPC.xIndex] = 3.0;
+                targetWeights[KartMPC.zIndex] = 3.0;
+                targetWeights[KartMPC.hIndex] = 3.0;
+                targetWeights[KartMPC.vIndex] = 1.0;
 
 
                 var avoidWeights = new Dictionary<int, List<double>>();
@@ -1091,9 +1092,9 @@ namespace KartGame.AI
                 {
                     var o = otherAgents[j];
                     // Avoidance Weights
-                    avoidWeights[KartMPC.xIndex].Add(10.0);
+                    avoidWeights[KartMPC.xIndex].Add(0.5);
                     avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
-                    avoidWeights[KartMPC.zIndex].Add(10.0);
+                    avoidWeights[KartMPC.zIndex].Add(0.5);
                     avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
                     
                     

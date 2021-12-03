@@ -482,6 +482,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Sensors.Array.data[2].Transform
+      value: 
+      objectReference: {fileID: 196420798}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].Transform
+      value: 
+      objectReference: {fileID: 1692771253}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].Transform
+      value: 
+      objectReference: {fileID: 736650424}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].Transform
+      value: 
+      objectReference: {fileID: 465035051}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].Transform
+      value: 
+      objectReference: {fileID: 24737090}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].Transform
+      value: 
+      objectReference: {fileID: 473101124}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].Transform
+      value: 
+      objectReference: {fileID: 552159466}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: Sensors.Array.data[0].RayDistance
       value: 20
       objectReference: {fileID: 0}
@@ -493,6 +528,11 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[2].RayDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].RayDistance
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -523,47 +563,47 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[0].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[1].WallHitValidationDistance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[2].WallHitValidationDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[3].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[4].WallHitValidationDistance
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[5].WallHitValidationDistance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[6].WallHitValidationDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[7].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[8].WallHitValidationDistance
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -624,7 +664,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 62c3e9e80eb70bd42a818f40f5ebe276,
+      objectReference: {fileID: 5022602860645237092, guid: edfd986fb716f3e418425b1f46f74e82,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -1195,6 +1235,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
     type: 3}
   m_PrefabInstance: {fileID: 21112878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &24737090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8540282972694752863, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &24843939
 PrefabInstance:
@@ -2369,6 +2415,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &142853283 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8540282972694752863, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &150755984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2591,6 +2643,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &196420798 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2294172045632017112, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &198531101 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -2993,12 +3051,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1244575716}
+      objectReference: {fileID: 616488456}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1931280202}
+      objectReference: {fileID: 466130552}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -3007,7 +3065,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 13.041
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -3017,7 +3075,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.46
+      value: -5.074
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -3527,6 +3585,18 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 546350215}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &465035051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4966937236340768798, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &466130552 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &471106195 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -3539,6 +3609,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &473101124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6401551412052297723, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &533046535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2366378366719483000, guid: 06604f26f581c4de08c3f45572924c7d,
@@ -3670,6 +3746,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &552159466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9054781172883881609, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &570285531
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -3880,6 +3962,12 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 24843939}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &638987418 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1442251551975190614, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &688809190 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -4055,6 +4143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &736650424 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1442251551975190614, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &738546011 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2366378366719483000, guid: 06604f26f581c4de08c3f45572924c7d,
@@ -4093,7 +4187,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.04
+      value: 13.041
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4103,7 +4197,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.54
+      value: 0.926
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4198,7 +4292,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: HighMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4437,6 +4531,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Sensors.Array.data[2].Transform
+      value: 
+      objectReference: {fileID: 2090220906}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].Transform
+      value: 
+      objectReference: {fileID: 1801496555}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].Transform
+      value: 
+      objectReference: {fileID: 638987418}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].Transform
+      value: 
+      objectReference: {fileID: 1796753068}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].Transform
+      value: 
+      objectReference: {fileID: 142853283}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].Transform
+      value: 
+      objectReference: {fileID: 2121341376}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].Transform
+      value: 
+      objectReference: {fileID: 1238968322}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: Sensors.Array.data[0].RayDistance
       value: 20
       objectReference: {fileID: 0}
@@ -4448,6 +4577,11 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[2].RayDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].RayDistance
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -4478,47 +4612,47 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[0].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[1].WallHitValidationDistance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[2].WallHitValidationDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[3].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[4].WallHitValidationDistance
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[5].WallHitValidationDistance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[6].WallHitValidationDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[7].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[8].WallHitValidationDistance
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4584,7 +4718,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: edfd986fb716f3e418425b1f46f74e82,
+        type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
@@ -7081,7 +7216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
   m_LocalRotation: {x: 0.09761158, y: -0, z: -0, w: 0.9952246}
-  m_LocalPosition: {x: 18.5, y: 3.279, z: -5.46}
+  m_LocalPosition: {x: 13.041, y: 3.279, z: -5.074}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -7117,6 +7252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1238968322 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9054781172883881609, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1244575716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -7499,6 +7640,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
+      propertyPath: Sensors.Array.data[2].Transform
+      value: 
+      objectReference: {fileID: 1255689828}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].Transform
+      value: 
+      objectReference: {fileID: 1255689827}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[4].Transform
+      value: 
+      objectReference: {fileID: 1255689826}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[5].Transform
+      value: 
+      objectReference: {fileID: 1255689825}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[6].Transform
+      value: 
+      objectReference: {fileID: 1255689824}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[7].Transform
+      value: 
+      objectReference: {fileID: 1255689823}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[8].Transform
+      value: 
+      objectReference: {fileID: 1255689822}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
       propertyPath: Sensors.Array.data[0].RayDistance
       value: 20
       objectReference: {fileID: 0}
@@ -7510,6 +7686,11 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[2].RayDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: Sensors.Array.data[3].RayDistance
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -7540,47 +7721,47 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[0].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[1].WallHitValidationDistance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[2].WallHitValidationDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[3].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[4].WallHitValidationDistance
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[5].WallHitValidationDistance
-      value: 0.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[6].WallHitValidationDistance
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[7].WallHitValidationDistance
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: Sensors.Array.data[8].WallHitValidationDistance
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7682,6 +7863,48 @@ PrefabInstance:
 --- !u!4 &1255689821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9054781172883881609, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6401551412052297723, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689824 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8540282972694752863, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689825 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4966937236340768798, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1442251551975190614, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7106280111870196688, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255689828 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2294172045632017112, guid: 68397bf4d4e0ee649a065492a9ac7b64,
     type: 3}
   m_PrefabInstance: {fileID: 1255689820}
   m_PrefabAsset: {fileID: 0}
@@ -8988,6 +9211,12 @@ Transform:
   m_Father: {fileID: 695900666}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1692771253 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7106280111870196688, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 4931594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1716612020
 GameObject:
   m_ObjectHideFlags: 0
@@ -9054,6 +9283,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8540282972694752863, guid: 68397bf4d4e0ee649a065492a9ac7b64,
     type: 3}
   m_PrefabInstance: {fileID: 2075679998}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1796753068 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4966937236340768798, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1801496555 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7106280111870196688, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1842916673
 PrefabInstance:
@@ -9208,39 +9449,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 1586774679}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1522824837}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
-    AgentHitValidationDistance: 1.5
-  - Transform: {fileID: 575507922}
-    RayDistance: 20
-    WallHitValidationDistance: 0.5
-    AgentHitValidationDistance: 1.5
-  - Transform: {fileID: 402809787}
-    RayDistance: 5
-    WallHitValidationDistance: 0.5
-    AgentHitValidationDistance: 1.5
-  - Transform: {fileID: 775740852}
-    RayDistance: 20
-    WallHitValidationDistance: 0.5
-    AgentHitValidationDistance: 1.5
-  - Transform: {fileID: 915259433}
-    RayDistance: 20
-    WallHitValidationDistance: 0.5
-    AgentHitValidationDistance: 1.5
-  - Transform: {fileID: 1139251201}
-    RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 103142360}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
+    AgentHitValidationDistance: 1.5
+  - Transform: {fileID: 575507922}
+    RayDistance: 20
+    WallHitValidationDistance: 0.8
+    AgentHitValidationDistance: 1.5
+  - Transform: {fileID: 402809787}
+    RayDistance: 20
+    WallHitValidationDistance: 0.6
+    AgentHitValidationDistance: 1.5
+  - Transform: {fileID: 775740852}
+    RayDistance: 20
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1780814239}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
+    AgentHitValidationDistance: 1.5
+  - Transform: {fileID: 915259433}
+    RayDistance: 20
+    WallHitValidationDistance: 0.8
+    AgentHitValidationDistance: 1.5
+  - Transform: {fileID: 1139251201}
+    RayDistance: 20
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1575242979}
@@ -9297,12 +9538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1931280202 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 2075679998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1937061325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10151,7 +10386,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -10224,6 +10459,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2090220906 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2294172045632017112, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2121341376 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6401551412052297723, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2126731993
 PrefabInstance:
   m_ObjectHideFlags: 0

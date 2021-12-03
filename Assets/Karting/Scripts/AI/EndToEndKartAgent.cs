@@ -107,7 +107,7 @@ namespace KartGame.AI
 
                 if (hitTrack && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                 {
-                    if (hitTrackInfo.distance < 1.0f)
+                    if (hitTrackInfo.distance < 0.85f)
                     {
                         m_envController.ResolveEvent(Event.HitWall, this, null);
                         hittingWall = true;

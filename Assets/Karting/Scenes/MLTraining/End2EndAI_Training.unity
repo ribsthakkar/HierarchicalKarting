@@ -742,7 +742,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2422,7 +2422,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2548,39 +2548,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 123724076}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724075}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724074}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724073}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724072}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724071}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724070}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724069}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 123724068}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 317176268}
@@ -3345,7 +3345,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3471,39 +3471,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 157946109}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946108}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946107}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946106}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946105}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946104}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946103}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946102}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 157946101}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1881755263}
@@ -5231,7 +5231,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5357,39 +5357,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 317176266}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176265}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176264}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176263}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176262}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176261}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176260}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176259}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 317176258}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 123724078}
@@ -9367,7 +9367,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9493,39 +9493,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 815606094}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606093}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606092}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606091}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606090}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606089}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606088}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606087}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 815606086}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1026048713}
@@ -10926,7 +10926,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -11052,39 +11052,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 882557847}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557846}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557845}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557844}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557843}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557842}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557841}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557840}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 882557839}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 2144856891}
@@ -13223,7 +13223,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13349,39 +13349,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 1026048711}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048710}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048709}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048708}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048707}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048706}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048705}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048704}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1026048703}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 815606096}
@@ -17016,39 +17016,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 789961658}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 903330015}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 752642361}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1380133116}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1715242418}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 523845315}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 469168154}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1869837300}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1561392067}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1800363977}
@@ -18504,7 +18504,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -18630,39 +18630,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 1558749567}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749566}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749565}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749564}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749563}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749562}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749561}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749560}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1558749559}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1729114836}
@@ -20625,7 +20625,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20751,39 +20751,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 1729114834}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114833}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114832}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114831}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114830}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114829}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114828}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114827}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1729114826}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1558749569}
@@ -21990,7 +21990,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -22116,39 +22116,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 1800363975}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363974}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363973}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363972}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363971}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363970}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363969}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363968}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1800363967}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 1487641435}
@@ -23591,7 +23591,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23717,39 +23717,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 1881755261}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755260}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755259}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755258}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755257}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755256}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755255}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755254}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 1881755253}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 157946111}
@@ -26683,7 +26683,7 @@ PrefabInstance:
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_BehaviorName
-      value: E2EAgent
+      value: E2EAgent-NonLSTM
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -26809,39 +26809,39 @@ MonoBehaviour:
   Sensors:
   - Transform: {fileID: 2144856889}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856888}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856887}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856886}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856885}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856884}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.9
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856883}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 1
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856882}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.8
     AgentHitValidationDistance: 1.5
   - Transform: {fileID: 2144856881}
     RayDistance: 20
-    WallHitValidationDistance: 0.5
+    WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
   - {fileID: 882557849}
