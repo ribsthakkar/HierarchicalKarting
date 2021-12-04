@@ -77,7 +77,6 @@ namespace KartGame.AI
                 if (ShowRaycasts)
                     Debug.DrawLine(AgentSensorTransform.position, target.transform.position, Color.magenta);
             }
-            bool hittingWall = false;
             for (var i = 0; i < Sensors.Length; i++)
             {
                 var current = Sensors[i];
@@ -110,7 +109,6 @@ namespace KartGame.AI
                     if (hitTrackInfo.distance < 0.85f)
                     {
                         m_envController.ResolveEvent(Event.HitWall, this, null);
-                        hittingWall = true;
                     }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
@@ -129,7 +127,6 @@ namespace KartGame.AI
                     sensor.AddObservation(current.RayDistance);
                 }
             }
-            hitWall = hittingWall;
         }
         
     }

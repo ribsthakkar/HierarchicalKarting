@@ -269,7 +269,7 @@ namespace KartGame.KartSystems
             // apply vehicle physics
             if (m_CanMove)
             {
-                MoveVehicle(Input.Accelerate, Input.Brake, Input.TurnInput, Input.HitWall);
+                MoveVehicle(Input.Accelerate, Input.Brake, Input.TurnInput);
             }
             GroundAirbourne();
 
@@ -359,7 +359,7 @@ namespace KartGame.KartSystems
             }
         }
 
-        void MoveVehicle(bool accelerate, bool brake, float turnInput, bool hitWall=false)
+        void MoveVehicle(bool accelerate, bool brake, float turnInput)
         {
             // print("actual moving Accelerate " + accelerate + " Brake: " + brake + " turning input: " + turnInput);
 
@@ -409,7 +409,7 @@ namespace KartGame.KartSystems
             if (wasOverMaxSpeed && !isBraking) 
                 acc *= 0.0f;
 
-            Vector3 newVelocity = (Rigidbody.velocity + acc * Time.fixedDeltaTime) * (hitWall ? 0.98f: 1.0f);
+            Vector3 newVelocity = (Rigidbody.velocity + acc * Time.fixedDeltaTime);
             newVelocity.y = Rigidbody.velocity.y;
 
             //  clamp max speed if we are on ground

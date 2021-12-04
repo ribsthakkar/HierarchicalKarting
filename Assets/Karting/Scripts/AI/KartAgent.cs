@@ -119,8 +119,6 @@ namespace KartGame.AI
         
         public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
 
-        [HideInInspector] protected bool hitWall = false;
-
         public virtual void Start()
         {        
             if (Mode == AgentMode.Inferencing) m_SectionIndex = InitCheckpointIndex;
@@ -397,8 +395,7 @@ namespace KartGame.AI
             {
                 Accelerate = m_Acceleration,
                 Brake = m_Brake,
-                TurnInput = m_Steering,
-                HitWall = hitWall
+                TurnInput = m_Steering
             };
         }
     }

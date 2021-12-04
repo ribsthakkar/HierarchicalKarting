@@ -7,7 +7,6 @@ namespace KartGame.KartSystems
         public bool Accelerate;
         public bool Brake;
         public float TurnInput;
-        public bool HitWall;
     }
 
     public interface IInput

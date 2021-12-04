@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3010,7 +3010,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3674,12 +3674,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 4931595}
+      objectReference: {fileID: 1244575716}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1207303565}
+      objectReference: {fileID: 388379107}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -3688,7 +3688,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.53
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -3713,7 +3713,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1e-45
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -4082,6 +4082,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &388379107 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 2075679998}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &402809787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1442251551975190614, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -4222,7 +4228,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 16.4
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4864,7 +4870,7 @@ MonoBehaviour:
     WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
-  - {fileID: 1575242979}
+  - {fileID: 1889518588}
   CheckpointMask:
     serializedVersion: 2
     m_Bits: 16384
@@ -5303,12 +5309,12 @@ PrefabInstance:
         type: 3}
       propertyPath: agent
       value: 
-      objectReference: {fileID: 1644191868}
+      objectReference: {fileID: 1889518588}
     - target: {fileID: 944144076728837461, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: agent2
       value: 
-      objectReference: {fileID: 2049744153}
+      objectReference: {fileID: 1575242979}
     - target: {fileID: 944144076728837461, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_Enabled
@@ -5586,7 +5592,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5822,7 +5828,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 2049744153}
+      objectReference: {fileID: 1889518588}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -7997,8 +8003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agents:
-  - {fileID: 2049744153}
-  - {fileID: 1644191868}
+  - {fileID: 1889518588}
+  - {fileID: 1575242979}
   Sections:
   - {fileID: 919539596}
   - {fileID: 612146711}
@@ -8026,8 +8032,8 @@ MonoBehaviour:
   - {fileID: 1532917104}
   initialTireWears: []
   mode: 2
-  ExperimentName: Try1
-  TotalExperiments: 1
+  ExperimentName: E2E_vs_MCTSLQR
+  TotalExperiments: 30
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
@@ -8044,10 +8050,10 @@ MonoBehaviour:
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
   MaxLaneChanges: 4
-  laps: 3
+  laps: 5
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 4500
+  maxEpisodeSteps: 7500
   sectionHorizon: 8
 --- !u!4 &1132641210
 Transform:
@@ -8524,8 +8530,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 0.09761158, y: 1e-45, z: -0, w: 0.9952246}
-  m_LocalPosition: {x: 16.53, y: 3.279, z: -5.46}
+  m_LocalRotation: {x: 0.09761158, y: -0, z: -0, w: 0.9952246}
+  m_LocalPosition: {x: 18.5, y: 3.279, z: -5.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -10807,7 +10813,7 @@ MonoBehaviour:
     WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
-  - {fileID: 2049744153}
+  - {fileID: 1575242979}
   CheckpointMask:
     serializedVersion: 2
     m_Bits: 16384
@@ -11303,7 +11309,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

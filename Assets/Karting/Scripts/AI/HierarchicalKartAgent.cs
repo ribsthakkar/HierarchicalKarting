@@ -771,7 +771,6 @@ namespace KartGame.AI
                     sensor.AddObservation(m_envController.sectionIsStraight(next));
                 }
             }
-            bool hittingWall = false;
             for (var i = 0; i < Sensors.Length; i++)
             {
                 var current = Sensors[i];
@@ -805,7 +804,6 @@ namespace KartGame.AI
                     {
                         //print("hitting wall " + hitTrackInfo.distance);
                         m_envController.ResolveEvent(Event.HitWall, this, null);
-                        hittingWall = true;
                     }
                     sensor.AddObservation(hitTrackInfo.distance);
                 }
@@ -824,7 +822,6 @@ namespace KartGame.AI
                     sensor.AddObservation(current.RayDistance);
                 }
             }
-            hitWall = hittingWall;
         }
 
         void OnTriggerEnter(Collider other)
@@ -1198,7 +1195,6 @@ namespace KartGame.AI
                 Accelerate = m_Acceleration,
                 Brake = m_Brake,
                 TurnInput = m_Steering,
-                HitWall = hitWall
             };
         }
 
