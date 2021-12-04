@@ -1,0 +1,390 @@
+Experiment 0
+E2ESpeed: 14.66935
+E2E Tire Wear: 0.490426
+E2E Last Lap: 21.48
+E2E Best Lap: 20.64
+E2E Total Time: 115.86
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.84599
+MCTS-LQR Tire Wear :0.4990693
+MCTS-LQR Last Lap: 21.34
+MCTS-LQR Best Lap: 20.6
+MCTS-LQR Overall Time: 112.82
+MCTS-LQR Laps Completed: 5/5
+Experiment 1
+E2ESpeed: 15.02203
+E2E Tire Wear: 0.3281641
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 12.14
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.77501
+MCTS-LQR Tire Wear :0.4970714
+MCTS-LQR Last Lap: 21.44
+MCTS-LQR Best Lap: 20.04
+MCTS-LQR Overall Time: 108.9
+MCTS-LQR Laps Completed: 5/5
+Experiment 2
+E2ESpeed: 12.10191
+E2E Tire Wear: 0.4525534
+E2E Last Lap: 19.8
+E2E Best Lap: 19.6
+E2E Total Time: 100.08
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.68304
+MCTS-LQR Tire Wear :0.4797543
+MCTS-LQR Last Lap: 21.74
+MCTS-LQR Best Lap: 20.34
+MCTS-LQR Overall Time: 106.32
+MCTS-LQR Laps Completed: 5/5
+Experiment 3
+E2ESpeed: 14.96712
+E2E Tire Wear: 0.485773
+E2E Last Lap: 22.22
+E2E Best Lap: 20.4
+E2E Total Time: 109.1
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.78962
+MCTS-LQR Tire Wear :0.4895543
+MCTS-LQR Last Lap: 20.88
+MCTS-LQR Best Lap: 20.88
+MCTS-LQR Overall Time: 108.06
+MCTS-LQR Laps Completed: 5/5
+Experiment 4
+E2ESpeed: 14.22853
+E2E Tire Wear: 0.4547244
+E2E Last Lap: 20.18
+E2E Best Lap: 19.64
+E2E Total Time: 101.2
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.51822
+MCTS-LQR Tire Wear :0.483553
+MCTS-LQR Last Lap: 20.38
+MCTS-LQR Best Lap: 20.38
+MCTS-LQR Overall Time: 106.16
+MCTS-LQR Laps Completed: 5/5
+Experiment 5
+E2ESpeed: 14.95265
+E2E Tire Wear: 0.3208546
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 10.06
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.47987
+MCTS-LQR Tire Wear :0.4797907
+MCTS-LQR Last Lap: 21.44
+MCTS-LQR Best Lap: 20
+MCTS-LQR Overall Time: 105.34
+MCTS-LQR Laps Completed: 5/5
+Experiment 6
+E2ESpeed: 14.99083
+E2E Tire Wear: 0.3242477
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 10.26
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.82119
+MCTS-LQR Tire Wear :0.4842741
+MCTS-LQR Last Lap: 21.84
+MCTS-LQR Best Lap: 19.78
+MCTS-LQR Overall Time: 106.88
+MCTS-LQR Laps Completed: 5/5
+Experiment 7
+E2ESpeed: 14.99788
+E2E Tire Wear: 0.3396102
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 12.88
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.80337
+MCTS-LQR Tire Wear :0.5001091
+MCTS-LQR Last Lap: 21.44
+MCTS-LQR Best Lap: 20.84
+MCTS-LQR Overall Time: 110.54
+MCTS-LQR Laps Completed: 5/5
+Experiment 8
+E2ESpeed: 14.89852
+E2E Tire Wear: 0.4687546
+E2E Last Lap: 21.14
+E2E Best Lap: 20.66
+E2E Total Time: 106.08
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.7254
+MCTS-LQR Tire Wear :0.4673626
+MCTS-LQR Last Lap: 20.52
+MCTS-LQR Best Lap: 20.46
+MCTS-LQR Overall Time: 103.54
+MCTS-LQR Laps Completed: 5/5
+Experiment 9
+E2ESpeed: 15.01582
+E2E Tire Wear: 0.4283161
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 64.1
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.76313
+MCTS-LQR Tire Wear :0.4949321
+MCTS-LQR Last Lap: 22.2
+MCTS-LQR Best Lap: 20.44
+MCTS-LQR Overall Time: 108.36
+MCTS-LQR Laps Completed: 5/5
+Experiment 10
+E2ESpeed: 14.95502
+E2E Tire Wear: 0.4795036
+E2E Last Lap: 21.2
+E2E Best Lap: 20.56
+E2E Total Time: 107.82
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.69489
+MCTS-LQR Tire Wear :0.4953224
+MCTS-LQR Last Lap: 22.28
+MCTS-LQR Best Lap: 20.74
+MCTS-LQR Overall Time: 108.16
+MCTS-LQR Laps Completed: 5/5
+Experiment 11
+E2ESpeed: 14.89812
+E2E Tire Wear: 0.4636018
+E2E Last Lap: 21.08
+E2E Best Lap: 20.56
+E2E Total Time: 105.42
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.77383
+MCTS-LQR Tire Wear :0.4806944
+MCTS-LQR Last Lap: 21.58
+MCTS-LQR Best Lap: 20.04
+MCTS-LQR Overall Time: 104.58
+MCTS-LQR Laps Completed: 5/5
+Experiment 12
+E2ESpeed: 14.96908
+E2E Tire Wear: 0.4694509
+E2E Last Lap: 21.38
+E2E Best Lap: 20.66
+E2E Total Time: 105.98
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.82161
+MCTS-LQR Tire Wear :0.4743847
+MCTS-LQR Last Lap: 20.54
+MCTS-LQR Best Lap: 19.64
+MCTS-LQR Overall Time: 104.6
+MCTS-LQR Laps Completed: 5/5
+Experiment 13
+E2ESpeed: 14.58123
+E2E Tire Wear: 0.4572567
+E2E Last Lap: 20.06
+E2E Best Lap: 19.68
+E2E Total Time: 100.78
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.47745
+MCTS-LQR Tire Wear :0.4819137
+MCTS-LQR Last Lap: 21.7
+MCTS-LQR Best Lap: 20.28
+MCTS-LQR Overall Time: 106
+MCTS-LQR Laps Completed: 5/5
+Experiment 14
+E2ESpeed: 14.02097
+E2E Tire Wear: 0.3503598
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 17.78
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.49485
+MCTS-LQR Tire Wear :0.4993576
+MCTS-LQR Last Lap: 20.46
+MCTS-LQR Best Lap: 20.46
+MCTS-LQR Overall Time: 110.48
+MCTS-LQR Laps Completed: 5/5
+Experiment 15
+E2ESpeed: 14.1325
+E2E Tire Wear: 0.5094582
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 104.04
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.73802
+MCTS-LQR Tire Wear :0.506022
+MCTS-LQR Last Lap: 21.32
+MCTS-LQR Best Lap: 21.32
+MCTS-LQR Overall Time: 112.36
+MCTS-LQR Laps Completed: 5/5
+Experiment 16
+E2ESpeed: 14.5441
+E2E Tire Wear: 0.4770966
+E2E Last Lap: 20.66
+E2E Best Lap: 20.34
+E2E Total Time: 106.94
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.32362
+MCTS-LQR Tire Wear :0.4918112
+MCTS-LQR Last Lap: 21.82
+MCTS-LQR Best Lap: 20.56
+MCTS-LQR Overall Time: 108.62
+MCTS-LQR Laps Completed: 5/5
+Experiment 17
+E2ESpeed: 14.93629
+E2E Tire Wear: 0.3242796
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 12.34
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.73829
+MCTS-LQR Tire Wear :0.4794388
+MCTS-LQR Last Lap: 21.38
+MCTS-LQR Best Lap: 20.12
+MCTS-LQR Overall Time: 105.72
+MCTS-LQR Laps Completed: 5/5
+Experiment 18
+E2ESpeed: 13.40496
+E2E Tire Wear: 0.4537812
+E2E Last Lap: 19.84
+E2E Best Lap: 19.84
+E2E Total Time: 100.84
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.34195
+MCTS-LQR Tire Wear :0.4803521
+MCTS-LQR Last Lap: 21.2
+MCTS-LQR Best Lap: 20.68
+MCTS-LQR Overall Time: 105.46
+MCTS-LQR Laps Completed: 5/5
+Experiment 19
+E2ESpeed: 14.99439
+E2E Tire Wear: 0.3431232
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 16.6
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.86111
+MCTS-LQR Tire Wear :0.4993326
+MCTS-LQR Last Lap: 21.48
+MCTS-LQR Best Lap: 20.24
+MCTS-LQR Overall Time: 110.58
+MCTS-LQR Laps Completed: 5/5
+Experiment 20
+E2ESpeed: 14.68143
+E2E Tire Wear: 0.3331167
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 10.58
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.69029
+MCTS-LQR Tire Wear :0.5114972
+MCTS-LQR Last Lap: 21.48
+MCTS-LQR Best Lap: 20.52
+MCTS-LQR Overall Time: 111.04
+MCTS-LQR Laps Completed: 5/5
+Experiment 21
+E2ESpeed: 14.36251
+E2E Tire Wear: 0.4544752
+E2E Last Lap: 19.74
+E2E Best Lap: 19.66
+E2E Total Time: 100.54
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.48753
+MCTS-LQR Tire Wear :0.4762969
+MCTS-LQR Last Lap: 21.5
+MCTS-LQR Best Lap: 20.06
+MCTS-LQR Overall Time: 105.64
+MCTS-LQR Laps Completed: 5/5
+Experiment 22
+E2ESpeed: 14.8864
+E2E Tire Wear: 0.389266
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 42.24
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.92104
+MCTS-LQR Tire Wear :0.4848322
+MCTS-LQR Last Lap: 21.72
+MCTS-LQR Best Lap: 20.28
+MCTS-LQR Overall Time: 107.3
+MCTS-LQR Laps Completed: 5/5
+Experiment 23
+E2ESpeed: 14.96764
+E2E Tire Wear: 0.4743685
+E2E Last Lap: 21.1
+E2E Best Lap: 20.68
+E2E Total Time: 107.16
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :12.05959
+MCTS-LQR Tire Wear :0.4918363
+MCTS-LQR Last Lap: 21.86
+MCTS-LQR Best Lap: 20.28
+MCTS-LQR Overall Time: 107.54
+MCTS-LQR Laps Completed: 5/5
+Experiment 24
+E2ESpeed: 15.02399
+E2E Tire Wear: 0.4763083
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 85.43999
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.8853
+MCTS-LQR Tire Wear :0.5150406
+MCTS-LQR Last Lap: 22
+MCTS-LQR Best Lap: 21.06
+MCTS-LQR Overall Time: 113.34
+MCTS-LQR Laps Completed: 5/5
+Experiment 25
+E2ESpeed: 15.01967
+E2E Tire Wear: 0.4732215
+E2E Last Lap: 20.28
+E2E Best Lap: 19.94
+E2E Total Time: 104.2
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.34818
+MCTS-LQR Tire Wear :0.4904672
+MCTS-LQR Last Lap: 21.46
+MCTS-LQR Best Lap: 20.52
+MCTS-LQR Overall Time: 108.08
+MCTS-LQR Laps Completed: 5/5
+Experiment 26
+E2ESpeed: 14.35662
+E2E Tire Wear: 0.4959099
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 149.98
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.59102
+MCTS-LQR Tire Wear :0.494845
+MCTS-LQR Last Lap: 22.32
+MCTS-LQR Best Lap: 20.64
+MCTS-LQR Overall Time: 110.56
+MCTS-LQR Laps Completed: 5/5
+Experiment 27
+E2ESpeed: 12.834
+E2E Tire Wear: 0.4524394
+E2E Last Lap: 20.36
+E2E Best Lap: 19.62
+E2E Total Time: 100.04
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.28496
+MCTS-LQR Tire Wear :0.4739466
+MCTS-LQR Last Lap: 21.6
+MCTS-LQR Best Lap: 20.4
+MCTS-LQR Overall Time: 104.14
+MCTS-LQR Laps Completed: 5/5
+Experiment 28
+E2ESpeed: 14.98775
+E2E Tire Wear: 0.3481516
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 17.04
+E2E Laps Completed: 0/5
+MCTS-LQR Speed :14.87973
+MCTS-LQR Tire Wear :0.5019701
+MCTS-LQR Last Lap: 20.22
+MCTS-LQR Best Lap: 20.22
+MCTS-LQR Overall Time: 109.96
+MCTS-LQR Laps Completed: 5/5
+Experiment 29
+E2ESpeed: 13.53524
+E2E Tire Wear: 0.4540248
+E2E Last Lap: 19.84
+E2E Best Lap: 19.78
+E2E Total Time: 100.64
+E2E Laps Completed: 5/5
+MCTS-LQR Speed :14.39428
+MCTS-LQR Tire Wear :0.4887937
+MCTS-LQR Last Lap: 20.78
+MCTS-LQR Best Lap: 20.24
+MCTS-LQR Overall Time: 106.02
+MCTS-LQR Laps Completed: 5/5

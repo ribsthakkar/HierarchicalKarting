@@ -233,7 +233,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -243,6 +243,11 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: LowMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: HighMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -464,7 +469,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1644191868}
+      objectReference: {fileID: 1889518588}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -664,7 +669,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 560cabf5d4fb1dd45bdd761a81a3ef2a,
+      objectReference: {fileID: 5022602860645237092, guid: 6f6d425b627604a4b9f92d918cf68d99,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5314,7 +5319,7 @@ PrefabInstance:
         type: 3}
       propertyPath: agent2
       value: 
-      objectReference: {fileID: 1575242979}
+      objectReference: {fileID: 2049744153}
     - target: {fileID: 944144076728837461, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_Enabled
@@ -5592,7 +5597,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8003,8 +8008,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agents:
+  - {fileID: 2049744153}
   - {fileID: 1889518588}
-  - {fileID: 1575242979}
   Sections:
   - {fileID: 919539596}
   - {fileID: 612146711}
@@ -8032,7 +8037,7 @@ MonoBehaviour:
   - {fileID: 1532917104}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_MCTSLQR
+  ExperimentName: E2E_vs_MCTSRL
   TotalExperiments: 30
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -9777,18 +9782,6 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 1108453782}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1575242979 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 791153974}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8765d53e046ef74898109def269b8cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1576238061 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7716795259828119951, guid: c7a179fd3e1133c469c40819448d3399,
@@ -10231,18 +10224,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1636226115}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1644191868 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 292153805}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8765d53e046ef74898109def269b8cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1645384345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10813,7 +10794,7 @@ MonoBehaviour:
     WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
   otherAgents:
-  - {fileID: 1575242979}
+  - {fileID: 2049744153}
   CheckpointMask:
     serializedVersion: 2
     m_Bits: 16384

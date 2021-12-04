@@ -288,7 +288,7 @@ public class RacingEnvController : MonoBehaviour
         bool headToHead = mode == EnvironmentMode.Training ? UnityEngine.Random.Range(0, 9) != 1 : true;
         var initialSection = -1;
         var minSectionIndex = 0;
-        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 1;
+        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
         for (int i = 0; i < Agents.Length; i++)
         {
             if (!headToHead)
@@ -344,7 +344,10 @@ public class RacingEnvController : MonoBehaviour
                 {
                     while (true)
                     {
-                        Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), initialSection + 1);
+                        if (mode == EnvironmentMode.Training)
+                            Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), initialSection + 1);
+                        else
+                            Agents[i].m_SectionIndex = UnityEngine.Random.Range(initialSection, initialSection);
                         Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                         Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
                         Agents[i].m_LaneChanges = 0;

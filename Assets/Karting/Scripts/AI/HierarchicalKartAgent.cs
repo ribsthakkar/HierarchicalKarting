@@ -465,7 +465,7 @@ namespace KartGame.AI
                     int lane = Random.Range(1, 4);
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
                     m_UpcomingVelocities[i % m_envController.Sections.Length] = Random.Range(5f, m_Kart.GetMaxSpeed());
-                    if (name.Equals("MCTS-LQR"))
+                    if (name.Equals(m_envController.Agents[0].name))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
                         //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
@@ -484,7 +484,7 @@ namespace KartGame.AI
                     int lane = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalNextLane();
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
                     m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed();
-                    if (name.Equals("MCTS-LQR"))
+                    if (name.Equals(m_envController.Agents[0].name))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
                         //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
@@ -640,14 +640,14 @@ namespace KartGame.AI
                     {
                         if (m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
                         {
-                            if (name.Equals("MCTS-LQR"))
+                            if (name.Equals(m_envController.Agents[0].name))
                                 m_envController.Sections[kartState.section % m_envController.Sections.Length].resetColors();
 
                         }
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
 
-                        if (name.Equals("MCTS-LQR"))
+                        if (name.Equals(m_envController.Agents[0].name))
                         {
                             m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
                             //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
@@ -842,7 +842,7 @@ namespace KartGame.AI
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
-                if (name.Equals("MCTS-LQR"))
+                if (name.Equals(m_envController.Agents[0].name))
                     for (int i = 1; i <= 4; i++)
                         m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
                 if (m_LaneChanges + Math.Abs(m_Lane - lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
@@ -1089,10 +1089,21 @@ namespace KartGame.AI
                 {
                     var o = otherAgents[j];
                     // Avoidance Weights
-                    avoidWeights[KartMPC.xIndex].Add(0.5);
-                    avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
-                    avoidWeights[KartMPC.zIndex].Add(0.5);
-                    avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
+                    if ((o.transform.position - k.transform.position).magnitude > 4)
+                    {
+                        avoidWeights[KartMPC.xIndex].Add(0.1);
+                        avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
+                        avoidWeights[KartMPC.zIndex].Add(0.1);
+                        avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
+                    }
+                    else
+                    {
+                        avoidWeights[KartMPC.xIndex].Add(10.1);
+                        avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
+                        avoidWeights[KartMPC.zIndex].Add(10.1);
+                        avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
+                    }
+                    
                     
                     
                     // Create Other Dynamics

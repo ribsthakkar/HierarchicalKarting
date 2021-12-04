@@ -59,8 +59,8 @@ namespace KartGame.AI.LQR
                     for (int i = 0; i < avoidDynamics.Count; i++)
                     {
                         int targetIdx = currIndex + idxIndices[i];
-                        qMat[currStateIndex, targetIdx] = idxWeights[i] / 2;
-                        qMat[targetIdx, currStateIndex] = idxWeights[i] / 2;
+                        qMat[currStateIndex, targetIdx] = idxWeights[i];
+                        qMat[targetIdx, currStateIndex] = idxWeights[i];
                         qMat[targetIdx, targetIdx] = -idxWeights[i];
                         stateIndexTotal -= idxWeights[i];
                         currIndex += avoidDynamics[i].getXDim();
