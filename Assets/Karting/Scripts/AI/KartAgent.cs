@@ -116,7 +116,7 @@ namespace KartGame.AI
         [HideInInspector] public bool m_HitOccured;
         [HideInInspector] public float m_LastAccumulatedReward;
         [HideInInspector] protected int episodeSteps = 0;
-        
+        [HideInInspector] public bool is_active = true;
         public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
 
         public virtual void Start()
@@ -239,7 +239,7 @@ namespace KartGame.AI
                 }
 
             }
-            else if ((triggered > 0 && index !=-1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            else if ((triggered > 0 && index !=-1) && ((index < m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 // print("going backwards");
                 AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
@@ -305,15 +305,29 @@ namespace KartGame.AI
 
         public void Deactivate()
         {
+            //m_Kart.Rigidbody.velocity = new Vector3();
+            //foreach (Collider c in GetComponents<Collider>())
+            //{
+            //    c.enabled = false; 
+            //}
+            //gameObject.layer = 2;
             gameObject.SetActive(false);
-        }
+            is_active = false;
+            }
 
         public void Activate()
         {
             m_LastAccumulatedReward = 0.0f;
             m_timeSteps = 0;
             m_HitOccured = false;
+            //m_Kart.Rigidbody.velocity = new Vector3();
+            //foreach (Collider c in GetComponents<Collider>())
+            //{
+            //    c.enabled = true; 
+            //}
+            //gameObject.layer = 13;
             gameObject.SetActive(true);
+            is_active = true;
         }
 
         public override void OnActionReceived(ActionBuffers actions)
@@ -391,6 +405,13 @@ namespace KartGame.AI
 
         public virtual InputData GenerateInput()
         {
+            if (!is_active)
+                return new InputData
+                {
+                    Accelerate = false,
+                    Brake = false,
+                    TurnInput = 0
+                };
             return new InputData
             {
                 Accelerate = m_Acceleration,

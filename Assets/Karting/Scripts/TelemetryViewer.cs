@@ -82,12 +82,14 @@ public class TelemetryViewer : MonoBehaviour
                     "\n" + agent.name + " Best Lap: " + bestLapTime1.ToString() +
                     "\n" + agent.name + " Total Time: " + lastOverallTime1.ToString() +
                     "\n" + agent.name + " Laps Completed: " + lastCompletedLap1.ToString() + "/" + agent.m_envController.laps.ToString() +
+                    "\n" + agent.name + " Reward: " + agent.GetCumulativeReward() +
                     "\n" + agent2.name + " Speed :" + speed2.ToString() +
                     "\n" + agent2.name + " Tire Wear :" + tireAge2.ToString() +
                     "\n" + agent2.name + " Last Lap: " + lastLapTime2.ToString() +
                     "\n" + agent2.name + " Best Lap: " + bestLapTime2.ToString() +
                     "\n" + agent2.name + " Overall Time: " + lastOverallTime2.ToString() +
-                    "\n" + agent2.name + " Laps Completed: " + lastCompletedLap2.ToString() + "/" + agent2.m_envController.laps.ToString()
+                    "\n" + agent2.name + " Laps Completed: " + lastCompletedLap2.ToString() + "/" + agent2.m_envController.laps.ToString() +
+                    "\n" + agent2.name + " Reward: " +agent2.GetCumulativeReward()
                     ;
 
     }

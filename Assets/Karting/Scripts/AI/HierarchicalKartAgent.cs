@@ -462,9 +462,11 @@ namespace KartGame.AI
             {
                 if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
                 {
-                    int lane = Random.Range(1, 4);
+                    int index = Mathf.RoundToInt(Mathf.Abs(KartMCTS.NextGaussian(0, 0.5f, -(float)4 + 1f, (float)4 - 1f)));
+                    int optimalLaneSign = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalLaneSign();
+                    int lane = Enumerable.Range(1, 4).OrderBy((l) => optimalLaneSign * l).ToList()[index];
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
-                    m_UpcomingVelocities[i % m_envController.Sections.Length] = Random.Range(5f, m_Kart.GetMaxSpeed());
+                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 2f, -8f, 8f));
                     if (name.Equals(m_envController.Agents[0].name))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
@@ -697,14 +699,19 @@ namespace KartGame.AI
                 //var lines = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
                 //print(string.Join(",", lines));
                 //print(sectionIndex);
-                LaneDifferenceRewardDivider = -Mathf.Pow(1.5f, -1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]));
-                //LaneDifferenceRewardDivider = Mathf.Pow(3f, 1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) - 1);
+                int target_lane = m_UpcomingLanes[sectionIndex % m_envController.Sections.Length];
+                if ((m_envController.Sections[sectionIndex % m_envController.Sections.Length].getBoxColliderForLane(target_lane).transform.position - m_Kart.Rigidbody.position).magnitude > 1.3)
+                {
+                    LaneDifferenceRewardDivider = Mathf.Pow(1.3f, 1.0f * ((m_envController.Sections[sectionIndex % m_envController.Sections.Length].getBoxColliderForLane(target_lane).transform.position - m_Kart.Rigidbody.position).magnitude));
+                }
+                    //LaneDifferenceRewardDivider = Mathf.Pow(3f, 1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) - 1);
             }
             else
             {
                 //LaneDifferenceRewardDivider = -Mathf.Pow(2f, -1.0f *3);
                 //LaneDifferenceRewardDivider = Mathf.Pow(2f, 1.0f *3);
             }
+
         }
 
         protected override void setVelocityDifferenceDivider(int sectionIndex, float velocity)
@@ -716,8 +723,8 @@ namespace KartGame.AI
             // print("Upcoming Velocities " + this.name + " " + m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]);
             // print(sectionIndex);
             // print("Actual velocity " + velocity);
-            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length])/m_Kart.GetMaxSpeed() > gameParams.velocityBucketSize/2.0f)
-                VelocityDifferenceRewardDivider = (float)Math.Pow(1.5, 1.0 * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0));
+            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize/2.0f)
+                VelocityDifferenceRewardDivider = Mathf.Pow(1.1f, 1.0f * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0f));
         }
 
         public override void CollectObservations(VectorSensor sensor)
@@ -739,7 +746,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_Acceleration);
                 sensor.AddObservation(agent.m_Lane);
                 sensor.AddObservation(agent.m_LaneChanges * 1f / m_envController.MaxLaneChanges);
-                sensor.AddObservation(agent.gameObject.activeSelf);
+                sensor.AddObservation(agent.is_active);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
                 sensor.AddObservation(agent.m_Kart.TireWearProportion());
                 sensor.AddObservation(agent.m_SectionIndex * 1f / m_envController.goalSection);
@@ -880,7 +887,6 @@ namespace KartGame.AI
             {
                 m_envController.ResolveEvent(Event.DroveReverseLimit, this, null);
             }
-
         }
 
         void updateFinerIdxGuess()
@@ -1201,6 +1207,13 @@ namespace KartGame.AI
 
         public override InputData GenerateInput()
         {
+            if (!is_active)
+                return new InputData
+                {
+                    Accelerate = false,
+                    Brake = false,
+                    TurnInput = 0
+                };
             return new InputData
             {
                 Accelerate = m_Acceleration,

@@ -2902,15 +2902,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -3616,6 +3616,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!65 &44999094 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7716795259828119951, guid: c7a179fd3e1133c469c40819448d3399,
@@ -5181,6 +5182,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &75668248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6962,7 +6964,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -10284,15 +10286,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -11020,7 +11022,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -11951,6 +11953,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &195117175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12772,6 +12775,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!65 &198531101 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -12873,7 +12877,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -13918,6 +13922,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &221203300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14614,6 +14619,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &226566937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16846,15 +16852,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -20244,7 +20250,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -23720,7 +23726,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -26541,7 +26547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &469114926
 Transform:
   m_ObjectHideFlags: 0
@@ -26947,15 +26953,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -34879,6 +34885,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &656510534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36296,7 +36303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &721756976
 Transform:
   m_ObjectHideFlags: 0
@@ -36412,7 +36419,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -37666,6 +37673,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &745134917
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40476,6 +40484,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!114 &818848550 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3288472331767738135, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -43458,15 +43467,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -44780,6 +44789,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &896356919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50795,7 +50805,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -54195,6 +54205,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1085811945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56314,6 +56325,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1125976068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56619,15 +56631,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -59547,6 +59559,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1207918942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59812,7 +59825,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -63241,15 +63254,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -64767,6 +64780,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1353095399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70339,6 +70353,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1424048874
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71484,6 +71499,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1432960985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -75919,6 +75935,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1518946157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76280,7 +76297,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -77327,7 +77344,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -78677,6 +78694,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!65 &1571711065 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 4435582334089114543, guid: 06604f26f581c4de08c3f45572924c7d,
@@ -79597,15 +79615,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -80559,7 +80577,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -82850,6 +82868,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1659674266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -86177,15 +86196,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -88306,15 +88325,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -89589,6 +89608,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1808691343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90654,6 +90674,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1 &1827123080
 GameObject:
   m_ObjectHideFlags: 0
@@ -91615,6 +91636,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1841639577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93537,7 +93559,7 @@ PrefabInstance:
     - target: {fileID: 8524991185438361176, guid: c7a179fd3e1133c469c40819448d3399,
         type: 3}
       propertyPath: optimalLane
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7a179fd3e1133c469c40819448d3399, type: 3}
@@ -94010,15 +94032,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -94740,6 +94762,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &1890042426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -98923,15 +98946,15 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
-  PassCheckpointBase: 5
+  PassCheckpointStateReward: 4
+  PassCheckpointBase: 1
   PassCheckpointTimeMultiplier: 20
   BeingBehindCheckpoingPenalty: -0.005
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
   ReachGoalCheckpointRewardBase: 10
-  TowardsCheckpointReward: 0.008
+  TowardsCheckpointReward: 0.08
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
@@ -102428,6 +102451,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!1001 &2126731993
 PrefabInstance:
   m_ObjectHideFlags: 0

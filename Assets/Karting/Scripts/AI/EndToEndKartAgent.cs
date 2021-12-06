@@ -57,7 +57,7 @@ namespace KartGame.AI
                 sensor.AddObservation(agent.m_Acceleration);
                 sensor.AddObservation(agent.m_Lane);
                 sensor.AddObservation(agent.m_LaneChanges * 1f / m_envController.MaxLaneChanges);
-                sensor.AddObservation(agent.gameObject.activeSelf);
+                sensor.AddObservation(agent.is_active);
                 sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
                 sensor.AddObservation(agent.m_Kart.TireWearProportion());
                 sensor.AddObservation(agent.m_SectionIndex * 1f / m_envController.goalSection);

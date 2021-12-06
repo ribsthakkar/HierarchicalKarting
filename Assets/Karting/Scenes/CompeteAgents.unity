@@ -669,7 +669,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 6f6d425b627604a4b9f92d918cf68d99,
+      objectReference: {fileID: 5022602860645237092, guid: 8d933caf8918418438cc812247659bb1,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3679,12 +3679,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1244575716}
+      objectReference: {fileID: 4931595}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 388379107}
+      objectReference: {fileID: 1207303565}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -3693,7 +3693,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.5
+      value: 16.53
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -4087,12 +4087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &388379107 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 2075679998}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &402809787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1442251551975190614, guid: 68397bf4d4e0ee649a065492a9ac7b64,
@@ -4905,6 +4899,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!65 &442440786 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 4435582334089114543, guid: c7a179fd3e1133c469c40819448d3399,
@@ -8536,7 +8531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
   m_LocalRotation: {x: 0.09761158, y: -0, z: -0, w: 0.9952246}
-  m_LocalPosition: {x: 18.5, y: 3.279, z: -5.46}
+  m_LocalPosition: {x: 16.53, y: 3.279, z: -5.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -10824,6 +10819,7 @@ MonoBehaviour:
   VelocityDifferenceRewardDivider: 1
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
+  is_active: 1
 --- !u!65 &1909490561 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
