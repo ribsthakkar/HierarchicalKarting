@@ -76,7 +76,7 @@ public class TelemetryViewer : MonoBehaviour
             lastOverallTime1 = agent.m_envController.episodeSteps * Time.fixedDeltaTime;
         if (agent2.gameObject.activeSelf)
             lastOverallTime2 = agent2.m_envController.episodeSteps * Time.fixedDeltaTime;
-        uiText.text = ""+ agent.name + "Speed: " + speed1.ToString() +
+        uiText.text = ""+ agent.name + " Speed: " + speed1.ToString() +
                     "\n" + agent.name + " Tire Wear: " + tireAge1.ToString() +
                     "\n" + agent.name + " Last Lap: " + lastLapTime1.ToString() +
                     "\n" + agent.name + " Best Lap: " + bestLapTime1.ToString() +

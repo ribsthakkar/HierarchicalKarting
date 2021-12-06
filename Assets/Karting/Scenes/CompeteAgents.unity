@@ -669,7 +669,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 8d933caf8918418438cc812247659bb1,
+      objectReference: {fileID: 5022602860645237092, guid: ca384951d3b397748bf0a93ab3b68d04,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3446,7 +3446,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 6439616958d075942a7806fc6b3ba357,
+      objectReference: {fileID: 5022602860645237092, guid: af859a7f93bbc364d87c04aa01a58c3e,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8003,8 +8003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agents:
-  - {fileID: 2049744153}
   - {fileID: 1889518588}
+  - {fileID: 2049744153}
   Sections:
   - {fileID: 919539596}
   - {fileID: 612146711}
@@ -8050,10 +8050,10 @@ MonoBehaviour:
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
   MaxLaneChanges: 4
-  laps: 5
+  laps: 4
   goalSection: 0
   episodeSteps: 0
-  maxEpisodeSteps: 7500
+  maxEpisodeSteps: 6000
   sectionHorizon: 8
 --- !u!4 &1132641210
 Transform:

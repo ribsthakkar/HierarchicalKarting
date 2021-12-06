@@ -466,7 +466,7 @@ namespace KartGame.AI
                     int optimalLaneSign = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalLaneSign();
                     int lane = Enumerable.Range(1, 4).OrderBy((l) => optimalLaneSign * l).ToList()[index];
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
-                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 2f, -8f, 8f));
+                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 1f, -8f, 8f));
                     if (name.Equals(m_envController.Agents[0].name))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
@@ -647,7 +647,7 @@ namespace KartGame.AI
 
                         }
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
-                        m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
+                        m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.max_velocity;
 
                         if (name.Equals(m_envController.Agents[0].name))
                         {
@@ -658,7 +658,7 @@ namespace KartGame.AI
                     {
 
                         opponentUpcomingLanes[kartState.name][kartState.section % m_envController.Sections.Length] = kartState.lane;
-                        opponentUpcomingVelocities[kartState.name][kartState.section % m_envController.Sections.Length] = kartState.getAverageVelocity();
+                        opponentUpcomingVelocities[kartState.name][kartState.section % m_envController.Sections.Length] = kartState.max_velocity;
                     }
                 }
             }
@@ -724,7 +724,7 @@ namespace KartGame.AI
             // print(sectionIndex);
             // print("Actual velocity " + velocity);
             if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize/2.0f)
-                VelocityDifferenceRewardDivider = Mathf.Pow(1.1f, 1.0f * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) - gameParams.velocityBucketSize/2.0f));
+                VelocityDifferenceRewardDivider = Mathf.Pow(1.1f, 1.0f * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length])));
         }
 
         public override void CollectObservations(VectorSensor sensor)
@@ -877,7 +877,7 @@ namespace KartGame.AI
                 }
                 currentRoot = null;
             }
-            else if ((triggered > 0 && index != -1) && ((index <= m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
+            else if ((triggered > 0 && index != -1) && ((index < m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 // print("going backwards");
                 AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
