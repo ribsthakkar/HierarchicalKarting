@@ -215,10 +215,12 @@ public class RacingEnvController : MonoBehaviour
     {
         if (!minSectionTimes.ContainsKey(agent.m_SectionIndex))
         {
+            //print(agent.name + "reached " + agent.m_SectionIndex +  " soonest");
             minSectionTimes[agent.m_SectionIndex] = episodeSteps;
         } else
         {
-            agent.AddReward(BeingBehindCheckpoingPenalty * (minSectionTimes[agent.m_SectionIndex] - episodeSteps));
+            //print(agent.name + "reached " + agent.m_SectionIndex + " late by " + (episodeSteps - minSectionTimes[agent.m_SectionIndex]));
+            agent.AddReward(BeingBehindCheckpoingPenalty * (episodeSteps - minSectionTimes[agent.m_SectionIndex]));
         }
     }
 
