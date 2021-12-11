@@ -483,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -669,7 +669,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: ca384951d3b397748bf0a93ab3b68d04,
+      objectReference: {fileID: 5022602860645237092, guid: 700e99dc2b883e34b85eb7576fc9ac5f,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3246,7 +3246,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 2049744153}
+      objectReference: {fileID: 2055731735}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -3718,7 +3718,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -5309,12 +5309,12 @@ PrefabInstance:
         type: 3}
       propertyPath: agent
       value: 
-      objectReference: {fileID: 1889518588}
+      objectReference: {fileID: 2049744153}
     - target: {fileID: 944144076728837461, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: agent2
       value: 
-      objectReference: {fileID: 2049744153}
+      objectReference: {fileID: 1889518588}
     - target: {fileID: 944144076728837461, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_Enabled
@@ -5828,7 +5828,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1889518588}
+      objectReference: {fileID: 2049744153}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -8003,8 +8003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Agents:
-  - {fileID: 1889518588}
   - {fileID: 2049744153}
+  - {fileID: 1889518588}
   Sections:
   - {fileID: 919539596}
   - {fileID: 612146711}
@@ -8031,9 +8031,9 @@ MonoBehaviour:
   - {fileID: 1553871821}
   - {fileID: 1532917104}
   initialTireWears: []
-  mode: 2
-  ExperimentName: E2E_vs_MCTSRL
-  TotalExperiments: 30
+  mode: 0
+  ExperimentName: Fixed_LQR_vs_MCTS_LQR_1
+  TotalExperiments: 20
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
@@ -8054,7 +8054,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  sectionHorizon: 8
+  sectionHorizon: 5
 --- !u!4 &1132641210
 Transform:
   m_ObjectHideFlags: 0
@@ -8530,7 +8530,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 0.09761158, y: -0, z: -0, w: 0.9952246}
+  m_LocalRotation: {x: 0.09761158, y: 1e-45, z: -0, w: 0.9952246}
   m_LocalPosition: {x: 16.53, y: 3.279, z: -5.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8937,7 +8937,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1889518588}
+      objectReference: {fileID: 2055731735}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -11180,6 +11180,18 @@ BoxCollider:
     type: 3}
   m_PrefabInstance: {fileID: 91539628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2055731735 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 791153974}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8765d53e046ef74898109def269b8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &2069226251 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -11682,7 +11694,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: c0a2de6c24481884ea444bc18e2f3b01,
+      objectReference: {fileID: 5022602860645237092, guid: 3e14b5e6ed6e8104f9b7c39973aef892,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
