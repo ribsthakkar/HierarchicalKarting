@@ -462,11 +462,11 @@ namespace KartGame.AI
             {
                 if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
                 {
-                    int index = Mathf.RoundToInt(Mathf.Abs(KartMCTS.NextGaussian(0, 0.5f, -(float)4 + 1f, (float)4 - 1f)));
+                    int index = Mathf.RoundToInt(Mathf.Abs(KartMCTS.NextGaussian(0, 1f, -(float)4 + 1f, (float)4 - 1f)));
                     int optimalLaneSign = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalLaneSign();
                     int lane = Enumerable.Range(1, 4).OrderBy((l) => optimalLaneSign * l).ToList()[index];
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
-                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 1f, -8f, 8f));
+                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 1.5f, -8f, 8f));
                     if (name.Equals(m_envController.Agents[0].name))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
