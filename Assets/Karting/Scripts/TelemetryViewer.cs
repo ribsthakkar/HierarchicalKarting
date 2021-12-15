@@ -19,6 +19,7 @@ public class TelemetryViewer : MonoBehaviour
     int lastCompletedLap2;
     float lastOverallTime1 = 0.0f;
     float lastOverallTime2 = 0.0f;
+    string winner = "";
 
     void Start()
     {
@@ -76,20 +77,29 @@ public class TelemetryViewer : MonoBehaviour
             lastOverallTime1 = agent.m_envController.episodeSteps * Time.fixedDeltaTime;
         if (agent2.gameObject.activeSelf)
             lastOverallTime2 = agent2.m_envController.episodeSteps * Time.fixedDeltaTime;
-        uiText.text = ""+ agent.name + " Speed: " + speed1.ToString() +
+        if (!agent.gameObject.activeSelf && !agent2.gameObject.activeSelf)
+        {
+            winner = lastOverallTime1 < lastOverallTime2 ? agent.name : lastOverallTime2 < lastOverallTime1 ? agent2.name : "Tie";
+        }
+        else
+        {
+            winner = "";
+        }
+        uiText.text = "" + agent.name + " Speed: " + speed1.ToString() +
                     "\n" + agent.name + " Tire Wear: " + tireAge1.ToString() +
                     "\n" + agent.name + " Last Lap: " + lastLapTime1.ToString() +
                     "\n" + agent.name + " Best Lap: " + bestLapTime1.ToString() +
                     "\n" + agent.name + " Total Time: " + lastOverallTime1.ToString() +
                     "\n" + agent.name + " Laps Completed: " + lastCompletedLap1.ToString() + "/" + agent.m_envController.laps.ToString() +
-                    "\n" + agent.name + " Reward: " + agent.GetCumulativeReward() +
+                    "\n" + agent.name + " Lane Changes: " + agent.m_LaneChanges +
                     "\n" + agent2.name + " Speed :" + speed2.ToString() +
                     "\n" + agent2.name + " Tire Wear :" + tireAge2.ToString() +
                     "\n" + agent2.name + " Last Lap: " + lastLapTime2.ToString() +
                     "\n" + agent2.name + " Best Lap: " + bestLapTime2.ToString() +
                     "\n" + agent2.name + " Overall Time: " + lastOverallTime2.ToString() +
                     "\n" + agent2.name + " Laps Completed: " + lastCompletedLap2.ToString() + "/" + agent2.m_envController.laps.ToString() +
-                    "\n" + agent2.name + " Reward: " +agent2.GetCumulativeReward()
+                    "\n" + agent2.name + " Lane Changes: " + agent2.m_LaneChanges +
+                    "\n" + "Winner: " + winner;
                     ;
 
     }

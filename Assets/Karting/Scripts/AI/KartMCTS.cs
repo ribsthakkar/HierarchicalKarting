@@ -227,7 +227,7 @@ public class KartMCTS
             DiscreteGameState state = leaf.state;
             var nextPlayer = state.upNext();
             int optimalLaneSign = state.envController.Sections[(state.lastCompletedSection) % state.envController.Sections.Length].getOptimalLaneSign();
-            var nextActions = state.nextMoves().OrderBy((action) => state.makeMove(action).kartStates[nextPlayer].timeAtSection - state.kartStates[nextPlayer].timeAtSection).ThenByDescending((action) => action.max_velocity).ThenBy((action) => optimalLaneSign * action.lane).ToList();
+            var nextActions = state.nextMoves().OrderBy((action) => state.makeMove(action).kartStates[nextPlayer].timeAtSection - state.kartStates[nextPlayer].timeAtSection).ThenByDescending((action) => action.max_velocity).ThenBy((action) => Math.Abs(action.lane - state.kartStates[nextPlayer].lane)).ThenBy((action) => optimalLaneSign * action.lane).ToList();
             //var nextActions = state.nextMoves().OrderBy((action) => optimalLaneSign * action.lane).ThenByDescending((action) => action.max_velocity).ToList();
             // UnityEngine.Debug.Log(nextActions[0].max_velocity);
             // int index = random.Next(nextActions.Count);

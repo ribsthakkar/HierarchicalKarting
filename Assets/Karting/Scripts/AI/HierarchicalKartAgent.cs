@@ -314,7 +314,7 @@ namespace KartGame.AI
             {
                 //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
-                if (envController.sectionIsStraight(currentState.section) && currentState.laneChanges + (action.lane - currentState.lane) > envController.MaxLaneChanges)
+                if (envController.sectionIsStraight(currentState.section) && currentState.laneChanges + Math.Abs(action.lane - currentState.lane) > envController.MaxLaneChanges)
                 {
                     // Debug.Log("Current Lane changes " + currentState.laneChanges);
                     // Debug.Log("Delta change " + (action.lane - currentState.lane));
@@ -679,11 +679,11 @@ namespace KartGame.AI
             var brainParameters = behaviorParameters.BrainParameters;
             /**
              * Sensors.Lenght -> RayCasts
-             * TreeDepth*5 -> Upcoming Lanes and Velocities and lane types
+             * SectionHorizon*5 -> Upcoming Lanes and Velocities and lane types
              * 7 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (gameParams.treeSearchDepth*5) + 7 + (12 *otherAgents.Length);
+            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon*5) + 7 + (12 *otherAgents.Length);
             foreach (Agent other in otherAgents)
             {
                 opponentUpcomingLanes[other.name] = new Dictionary<int, int>();
@@ -755,7 +755,7 @@ namespace KartGame.AI
             }
 
             // Add an observation for direction of the agent to the next checkpoint and lane and the velocity at that lane.
-            for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + gameParams.treeSearchDepth; i++)
+            for (int i = m_SectionIndex + 1; i < m_SectionIndex + 1 + m_envController.sectionHorizon; i++)
             {
                 var next = (i) % m_envController.Sections.Length;
                 var nextSection = m_envController.Sections[next];

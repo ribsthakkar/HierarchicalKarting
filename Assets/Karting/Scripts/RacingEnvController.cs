@@ -291,6 +291,9 @@ public class RacingEnvController : MonoBehaviour
         var initialSection = -1;
         var minSectionIndex = 0;
         var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
+        int laneDirection = experimentNum % 2 == 0 ? 1: -1;
+        var expLaneChoices = new int[] { 2, 3 };
+        int lastPickedLaneIdx = 0;
         for (int i = 0; i < Agents.Length; i++)
         {
             if (!headToHead)
@@ -330,7 +333,22 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate * minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                     furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                     furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
-                    Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                    if (mode == EnvironmentMode.Experiment)
+                    {
+                        if (laneDirection == 1)
+                        {
+                            Agents[i].m_Lane = expLaneChoices[0];
+                            lastPickedLaneIdx = 0;
+                        } else
+                        {
+                            Agents[i].m_Lane = expLaneChoices[expLaneChoices.Length - 1];
+                            lastPickedLaneIdx = expLaneChoices.Length - 1;
+                        }
+                    }
+                    else
+                    {
+                        Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                    }
                     Agents[i].m_LaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     Agents[i].transform.localRotation = collider.transform.rotation;
@@ -351,7 +369,15 @@ public class RacingEnvController : MonoBehaviour
                         else
                             Agents[i].m_SectionIndex = UnityEngine.Random.Range(initialSection, initialSection);
                         Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
-                        Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                        if (mode == EnvironmentMode.Experiment)
+                        {
+                            Agents[i].m_Lane = expLaneChoices[lastPickedLaneIdx + laneDirection];
+                            lastPickedLaneIdx += laneDirection;
+                        }
+                        else
+                        {
+                            Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                        }
                         Agents[i].m_LaneChanges = 0;
                         var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                         if (!addedColliders.Contains(collider))

@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.treeSearchDepth
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -669,7 +669,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 700e99dc2b883e34b85eb7576fc9ac5f,
+      objectReference: {fileID: 5022602860645237092, guid: cbbeb83fc2a9cbb438098385e9a3a3f6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3255,7 +3255,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.treeSearchDepth
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5837,7 +5837,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.treeSearchDepth
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8031,9 +8031,9 @@ MonoBehaviour:
   - {fileID: 1553871821}
   - {fileID: 1532917104}
   initialTireWears: []
-  mode: 0
-  ExperimentName: Fixed_LQR_vs_MCTS_LQR_1
-  TotalExperiments: 20
+  mode: 2
+  ExperimentName: MCTS_RL_vs_E2E_Updated
+  TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
@@ -8049,7 +8049,7 @@ MonoBehaviour:
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
-  MaxLaneChanges: 4
+  MaxLaneChanges: 3
   laps: 4
   goalSection: 0
   episodeSteps: 0
@@ -11694,7 +11694,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 3e14b5e6ed6e8104f9b7c39973aef892,
+      objectReference: {fileID: 5022602860645237092, guid: f37c16e97d68764479ee40570b057916,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
