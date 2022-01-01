@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Trigger: {fileID: 7954928375381270080}
+  NextTrigger: {fileID: 0}
   Lane1: {fileID: 7162807340217979162}
   Lane2: {fileID: 3967334185714428553}
   Lane3: {fileID: 2832910078839434777}
@@ -153,6 +154,8 @@ MonoBehaviour:
   trackWidth: 10
   leftTurn: 0
   turnDegrees: 0
+  optimalLane: 0
+  finePoints: []
 --- !u!1 &2636524550627141768
 GameObject:
   m_ObjectHideFlags: 0
