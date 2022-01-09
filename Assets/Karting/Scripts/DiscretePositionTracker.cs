@@ -181,8 +181,8 @@ public class DiscretePositionTracker : MonoBehaviour
         {
             float gs = ((velocity * velocity) / radiusOfLane(initLane, finalLane))/9.81f;
             float g_diff = (maxGs - minGs) * (tireWearProportion);
-            if (!(gs <= maxGs - g_diff))
-            Debug.Log("Tested gs: " + gs + " max Gs " + maxGs + " minGs " + minGs);
+            //if (!(gs <= maxGs - g_diff))
+            //Debug.Log("Tested gs: " + gs + " max Gs " + maxGs + " minGs " + minGs);
             return gs <= maxGs - g_diff;
         }
     }

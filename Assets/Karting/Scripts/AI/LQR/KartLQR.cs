@@ -122,9 +122,9 @@ namespace KartGame.AI.LQR
             }
             P = P.SubMatrix(uIndices[0].Item1, uIndices[0].Item2, 0, totalXDim);
             alpha = alpha.SubVector(uIndices[0].Item1, uIndices[0].Item2);
-            print(P.ToString());
-            print(alpha.ToString());
-            print(initial.ToString());
+            // print(P.ToString());
+            // print(alpha.ToString());
+            // print(initial.ToString());
             var optimal_control = -P * initial - alpha;
             return optimal_control;
         }

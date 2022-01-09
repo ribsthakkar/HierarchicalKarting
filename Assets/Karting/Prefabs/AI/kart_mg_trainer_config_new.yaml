@@ -36,7 +36,7 @@ behaviors:
       swap_steps: 10000
       team_change: 100000
       initial_elo: 400
-    keep_checkpoints: 5
+    keep_checkpoints: 20
     checkpoint_interval: 500000
     max_steps: 8000000
     time_horizon: 64
@@ -80,7 +80,7 @@ behaviors:
       swap_steps: 10000
       team_change: 100000
       initial_elo: 400
-    keep_checkpoints: 5
+    keep_checkpoints: 20
     checkpoint_interval: 500000
     max_steps: 8000000
     time_horizon: 64
@@ -121,7 +121,7 @@ behaviors:
       swap_steps: 10000
       team_change: 100000
       initial_elo: 400
-    keep_checkpoints: 5
+    keep_checkpoints: 20
     checkpoint_interval: 500000
     max_steps: 8000000
     time_horizon: 64
@@ -162,7 +162,7 @@ behaviors:
       swap_steps: 10000
       team_change: 100000
       initial_elo: 400
-    keep_checkpoints: 5
+    keep_checkpoints: 20
     checkpoint_interval: 500000
     max_steps: 8000000
     time_horizon: 64

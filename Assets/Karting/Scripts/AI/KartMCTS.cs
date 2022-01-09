@@ -57,7 +57,7 @@ public class KartMCTS
             total += timer.Elapsed.TotalSeconds;
         }
         // UnityEngine.Debug.Log("MCTS explored " + newStates + " states");
-        UnityEngine.Debug.Log("This root explored " + root.childrenAsRoot + " states");
+        // UnityEngine.Debug.Log("This root explored " + root.childrenAsRoot + " states");
 
         return root;
     }
@@ -86,19 +86,23 @@ public class KartMCTS
             total += timer.Elapsed.TotalSeconds;
         }
         // UnityEngine.Debug.Log("MCTS explored " + newStates + " states");
-        UnityEngine.Debug.Log("This root explored " + root.childrenAsRoot + " states");
+        // UnityEngine.Debug.Log("This root explored " + root.childrenAsRoot + " states");
         return root;
     }
 
     public static List<DiscreteGameState> getBestStatesSequence(KartMCTSNode node)
     {
         List<DiscreteGameState> bestStates = new List<DiscreteGameState>();
-        while (node.children.Count > 0)
+        try
         {
-            node = node.children[upperConfidenceStrategy(node)];
-            if (node.state.kartStates.All((state) => state.section == node.state.lastCompletedSection))
-                bestStates.Add(node.state);
+            while (node.children.Count > 0)
+            {
+                node = node.children[upperConfidenceStrategy(node)];
+                if (node.state.kartStates.All((state) => state.section == node.state.lastCompletedSection))
+                    bestStates.Add(node.state);
+            }
         }
+        catch (DivideByZeroException e) { }
         return bestStates;
     }
 
@@ -152,16 +156,16 @@ public class KartMCTS
         DiscreteKartAction best = node.children.Keys.ElementAt(index);
         if (node.children[best].numEpisodes == 0)
         {
-            UnityEngine.Debug.Log("Node score " + node.children[best].totalValue + " num epsiodes " + node.children[best].numEpisodes + " created by "  + node.children[best].createdBy);
-            UnityEngine.Debug.Log("Node children " + node.children.Count + " " + node.state.lastCompletedSection + " " + node.state.initialSection + " " + node.state.finalSection + " " + node.totalValue + " " + node.numEpisodes);
+            // UnityEngine.Debug.Log("Node score " + node.children[best].totalValue + " num epsiodes " + node.children[best].numEpisodes + " created by "  + node.children[best].createdBy);
+            // UnityEngine.Debug.Log("Node children " + node.children.Count + " " + node.state.lastCompletedSection + " " + node.state.initialSection + " " + node.state.finalSection + " " + node.totalValue + " " + node.numEpisodes);
         }
         float best_uct = UCTWeight(node.children[best]);
         foreach(var item in node.children)
         {
             if (item.Value.numEpisodes == 0)
             {
-                UnityEngine.Debug.Log("Node score " + item.Value.totalValue + " num epsiodes " + item.Value.numEpisodes + " created by " + item.Value.createdBy);
-                UnityEngine.Debug.Log("Node children " + node.children.Count + " " + node.state.lastCompletedSection + " " + node.state.initialSection + " " + node.state.finalSection + " " + node.totalValue + " " + node.numEpisodes);
+               //  UnityEngine.Debug.Log("Node score " + item.Value.totalValue + " num epsiodes " + item.Value.numEpisodes + " created by " + item.Value.createdBy);
+                // UnityEngine.Debug.Log("Node children " + node.children.Count + " " + node.state.lastCompletedSection + " " + node.state.initialSection + " " + node.state.finalSection + " " + node.totalValue + " " + node.numEpisodes);
             }
             float node_uct = UCTWeight(item.Value);
             if (node_uct > best_uct)
