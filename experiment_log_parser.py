@@ -2,7 +2,6 @@ import os
 
 logs_dir = "ExperimentLogs"
 experiment_name = "E2E_vs_MCTS_LQR_Complex"
-laps = 3
 wins = {}
 dnfs = {}
 lap_times = {}
@@ -29,8 +28,12 @@ with open(os.path.join(logs_dir, experiment_name + ".txt")) as exp_log:
             agent_type = line.split(" ")[0]
             if "Total Time" in line or "Overall Time" in line:
                 current_laps[agent_type] = float(line.rsplit(" ")[3])
-            if "Laps Completed" in line and f"{laps}/{laps}" not in line:
-                current_dnfs.add(agent_type)
+            if "Laps Completed" in line:
+                lap_details = line.split(" ")[-1]
+                lap_f, lap_t = lap_details.split("/")
+                laps = int(lap_t)
+                if int(lap_f)/int(lap_t) != 1:
+                    current_dnfs.add(agent_type)
     if len(list(filter(lambda t: t not in current_dnfs, current_laps.keys()))):
         current_winner = min(filter(lambda t: t not in current_dnfs, current_laps.keys()),
                              key=lambda t: current_laps[t])

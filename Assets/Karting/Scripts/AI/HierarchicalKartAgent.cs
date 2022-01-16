@@ -50,7 +50,7 @@ namespace KartGame.AI
         public int laneChanges;
         public bool infeasible;
         public string name;
-        
+
 
         public static DiscreteKartState Copy(DiscreteKartState state)
         {
@@ -77,7 +77,7 @@ namespace KartGame.AI
         private float computeTOC(ArcadeKart kart, float distance, float initV, float finalV)
         {
             // Full acceleration or full braking does not have enough distance
-            if (finalV > initV && (finalV*finalV - initV*initV)/(2*kart.m_FinalStats.Acceleration) > distance)
+            if (finalV > initV && (finalV * finalV - initV * initV) / (2 * kart.m_FinalStats.Acceleration) > distance)
             {
                 //Debug.Log(finalV);
                 //Debug.Log(initV);
@@ -92,7 +92,7 @@ namespace KartGame.AI
 
             float t1 = (kart.GetMaxSpeed() - initV) / kart.m_FinalStats.Acceleration;
             float x1 = 0.5f * (initV + kart.GetMaxSpeed()) * t1;
-            float x3 = (kart.GetMaxSpeed() * kart.GetMaxSpeed() - finalV*finalV) / (2 * kart.m_FinalStats.Braking);
+            float x3 = (kart.GetMaxSpeed() * kart.GetMaxSpeed() - finalV * finalV) / (2 * kart.m_FinalStats.Braking);
             float t3 = (kart.GetMaxSpeed() - finalV) / kart.m_FinalStats.Braking;
             float x2 = distance - x1 - x3;
             float t2 = x2 / kart.GetMaxSpeed();
@@ -102,7 +102,7 @@ namespace KartGame.AI
             }
             else
             {
-                float maxSpeed = Mathf.Sqrt((2*distance + initV*initV*kart.m_FinalStats.Braking + finalV*finalV*kart.m_FinalStats.Acceleration) / (kart.m_FinalStats.Acceleration + kart.m_FinalStats.Braking));
+                float maxSpeed = Mathf.Sqrt((2 * distance + initV * initV * kart.m_FinalStats.Braking + finalV * finalV * kart.m_FinalStats.Acceleration) / (kart.m_FinalStats.Acceleration + kart.m_FinalStats.Braking));
                 t1 = (maxSpeed - initV) / kart.m_FinalStats.Acceleration;
                 t3 = (maxSpeed - finalV) / kart.m_FinalStats.Braking;
                 return t1 + t3;
@@ -134,7 +134,7 @@ namespace KartGame.AI
 
             // Update timeAtSection estimate using 1D TOC
             float distanceInSection = environment.computeDistanceInSection(section, lane, action.lane);
-            int timeUpdate = (int) (computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision);
+            int timeUpdate = (int)(computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision);
             if (timeUpdate < 0)
             {
                 // Debug.Log(timeUpdate);
@@ -148,7 +148,7 @@ namespace KartGame.AI
 
             // Update TireAge estimate
             float tireLoad = environment.computeTireLoadInSection(section, action.max_velocity, lane, action.lane);
-            newState.tireAge =  (int) ((tireAge/10000f + tireLoad * kart.m_FinalStats.TireWearFactor) * 10000);
+            newState.tireAge = (int)((tireAge / 10000f + tireLoad * kart.m_FinalStats.TireWearFactor) * 10000);
 
             return newState;
         }
@@ -184,7 +184,7 @@ namespace KartGame.AI
         public int upNext()
         {
             var ordered = kartStates.Where(s => true).ToList();
-            ordered.Sort((a,b) => {
+            ordered.Sort((a, b) => {
                 if (a.section < b.section)
                 {
                     return -1;
@@ -262,10 +262,10 @@ namespace KartGame.AI
                 int minScore = gameParams.timePrecision * 1000;
                 List<float> scores = new List<float>();
                 List<float> normalizedScores = new List<float>();
-                foreach(DiscreteKartState s in kartStates)
+                foreach (DiscreteKartState s in kartStates)
                 {
                     int score = 0;
-                    foreach(DiscreteKartState o in kartStates)
+                    foreach (DiscreteKartState o in kartStates)
                     {
                         if (s.Equals(o))
                         {
@@ -280,12 +280,13 @@ namespace KartGame.AI
                     maxScore = Math.Max(maxScore, score);
                     minScore = Math.Min(minScore, score);
                 }
-                foreach(int score in scores)
+                foreach (int score in scores)
                 {
                     normalizedScores.Add((score - minScore) * 1.0f / (maxScore - minScore));
                 }
                 return Tuple.Create(true, normalizedScores);
-            } else
+            }
+            else
             {
                 List<float> scores = new List<float>();
                 scores.Add(envController.maxEpisodeSteps - kartStates[0].timeAtSection / envController.maxEpisodeSteps);
@@ -298,19 +299,19 @@ namespace KartGame.AI
             KartAgent agent = kartAgents[nextPlayer];
             DiscreteKartState currentState = kartStates[nextPlayer];
             List<DiscreteKartAction> possibleActions = new List<DiscreteKartAction>();
-            for(int i = 6; i < (int) agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
+            for (int i = 6; i < (int)agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
             {
                 for (int j = 1; j < 5; j++)
                 {
                     possibleActions.Add(new DiscreteKartAction
                     {
                         min_velocity = i,
-                        max_velocity = Math.Min(i + gameParams.velocityBucketSize, (int) agent.m_Kart.GetMaxSpeed()),
+                        max_velocity = Math.Min(i + gameParams.velocityBucketSize, (int)agent.m_Kart.GetMaxSpeed()),
                         lane = j
                     });
                 }
             }
-            List<DiscreteKartAction> preCollisionFilteredActions =  possibleActions.FindAll((action) =>
+            List<DiscreteKartAction> preCollisionFilteredActions = possibleActions.FindAll((action) =>
             {
                 //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
@@ -320,13 +321,13 @@ namespace KartGame.AI
                     // Debug.Log("Delta change " + (action.lane - currentState.lane));
                     // Debug.Log("Max change " + envController.MaxLaneChanges);
                     return false;
-                }                
-                
+                }
+
                 // Is lateral gs infeasible?
-                if (!envController.sectionSpeedFeasible(currentState.section, action.max_velocity, currentState.lane, action.lane, currentState.tireAge /10000f, agent.m_Kart))
+                if (!envController.sectionSpeedFeasible(currentState.section, action.max_velocity, currentState.lane, action.lane, currentState.tireAge / 10000f, agent.m_Kart))
                 {
                     // Debug.Log("Tire age " + currentState.tireAge);
-                    if (! envController.sectionIsStraight(currentState.section))
+                    if (!envController.sectionIsStraight(currentState.section))
                     {
                         // Debug.Log("Going on " + currentState.section + " from lane " + currentState.lane + " to " + action.lane + " at max velocity " + action.max_velocity + " with tire age " + currentState.tireAge/10000f + " is infeasible");
                     }
@@ -335,7 +336,7 @@ namespace KartGame.AI
 
                 // Is changing speed infeasible?
                 DiscreteKartState appliedAction = currentState.applyAction(action, envController, gameParams);
-                if(appliedAction.infeasible)
+                if (appliedAction.infeasible)
                 {
                     // Debug.Log("Going from speed " + currentState.getAverageVelocity() + " to " + appliedAction.getAverageVelocity() + " infeasible in section " + appliedAction.section);
                     return false;
@@ -344,7 +345,7 @@ namespace KartGame.AI
                 return true;
             }
             ).ToList();
-            if(preCollisionFilteredActions.Count == 0)
+            if (preCollisionFilteredActions.Count == 0)
             {
                 return preCollisionFilteredActions;
             }
@@ -377,7 +378,7 @@ namespace KartGame.AI
                 ).ToList();
                 windowDivider *= windowGrowthRate;
             } while (filteredActions.Count == 0);
-           
+
             return preCollisionFilteredActions;
         }
         public DiscreteGameState makeMove(DiscreteKartAction action)
@@ -407,7 +408,7 @@ namespace KartGame.AI
             }
             return newGameState;
         }
-    } 
+    }
 
     /// <summary>
     /// The KartAgent will drive the inputs for the KartController.
@@ -452,7 +453,7 @@ namespace KartGame.AI
             }
             else
             {
-            planRandomly();
+                planRandomly();
             }
         }
 
@@ -463,10 +464,17 @@ namespace KartGame.AI
                 if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
                 {
                     int index = Mathf.RoundToInt(Mathf.Abs(KartMCTS.NextGaussian(0, 1f, -(float)4 + 1f, (float)4 - 1f)));
-                    int optimalLaneSign = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalLaneSign();
+                    int optimalLaneSign = m_envController.Sections[(i - 1) % m_envController.Sections.Length].getOptimalLaneSign();
                     int lane = Enumerable.Range(1, 4).OrderBy((l) => optimalLaneSign * l).ToList()[index];
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
-                    m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 1.5f, -8f, 8f));
+                    if (HighMode == HighLevelMode.Fixed)
+                    {
+                        m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed();
+                    }
+                    else
+                    {
+                        m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 1.5f, -8f, 8f));
+                    }
                     if (name.Equals(m_envController.Agents[0].name))
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
@@ -483,7 +491,7 @@ namespace KartGame.AI
             {
                 if (!m_UpcomingLanes.ContainsKey(i % m_envController.Sections.Length))
                 {
-                    int lane = m_envController.Sections[(i-1) % m_envController.Sections.Length].getOptimalNextLane();
+                    int lane = m_envController.Sections[(i - 1) % m_envController.Sections.Length].getOptimalNextLane();
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
                     m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed();
                     if (name.Equals(m_envController.Agents[0].name))
@@ -570,7 +578,7 @@ namespace KartGame.AI
                 {
                     try
                     {
-                        currentRoot = KartMCTS.constructSearchTree(initialGameState, T: 1.0);
+                        currentRoot = KartMCTS.constructSearchTree(initialGameState, T: 0.9);
                         bestStates = KartMCTS.getBestStatesSequence(currentRoot);
                     }
                     catch (Exception e) { }
@@ -585,7 +593,7 @@ namespace KartGame.AI
                 {
                     try
                     {
-                        currentRoot = KartMCTS.constructSearchTree(currentRoot, T: 1.0);
+                        currentRoot = KartMCTS.constructSearchTree(currentRoot, T: 0.9);
                         bestStates = KartMCTS.getBestStatesSequence(currentRoot);
                     }
                     catch (Exception e) { }
@@ -593,7 +601,7 @@ namespace KartGame.AI
                 });
                 t.IsBackground = true;
                 t.Start();
-            }      
+            }
         }
 
         public override void Start()
@@ -609,7 +617,7 @@ namespace KartGame.AI
             updateFinerIdxGuess();
             if (episodeSteps % 1 == 0)
             {
-                if(LowMode == LowLevelMode.LQR && !m_envController.inactiveAgents.Contains(this))
+                if (LowMode == LowLevelMode.LQR && !m_envController.inactiveAgents.Contains(this))
                     SolveLQR(numSteps: mpcSteps);
             }
             if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
@@ -649,7 +657,7 @@ namespace KartGame.AI
                     //    print(kartState.name);
                     //}
 
-                    if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex + (LowMode == LowLevelMode.LQR ? 1 : 0))
+                    if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex + (LowMode == LowLevelMode.LQR && m_SectionIndex > 0 ? 1 : 0))
                     {
                         if (m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
                         {
@@ -665,7 +673,8 @@ namespace KartGame.AI
                             m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
                             //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
                         }
-                    } else if (!kartState.name.Equals(this.name))
+                    }
+                    else if (!kartState.name.Equals(this.name))
                     {
 
                         opponentUpcomingLanes[kartState.name][kartState.section % m_envController.Sections.Length] = kartState.lane;
@@ -694,7 +703,7 @@ namespace KartGame.AI
              * 7 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon*5) + 7 + (12 *otherAgents.Length);
+            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + 7 + (12 * otherAgents.Length);
             foreach (Agent other in otherAgents)
             {
                 opponentUpcomingLanes[other.name] = new Dictionary<int, int>();
@@ -715,7 +724,7 @@ namespace KartGame.AI
                 {
                     LaneDifferenceRewardDivider = Mathf.Pow(1.3f, 1.0f * ((m_envController.Sections[sectionIndex % m_envController.Sections.Length].getBoxColliderForLane(target_lane).transform.position - m_Kart.Rigidbody.position).magnitude));
                 }
-                    //LaneDifferenceRewardDivider = Mathf.Pow(3f, 1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) - 1);
+                //LaneDifferenceRewardDivider = Mathf.Pow(3f, 1.0f*Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) - 1);
             }
             else
             {
@@ -728,13 +737,15 @@ namespace KartGame.AI
         protected override void setVelocityDifferenceDivider(int sectionIndex, float velocity)
         {
             VelocityDifferenceRewardDivider = 1.0f;
+            if (HighMode == HighLevelMode.Fixed)
+                return;
             //var lines1 = m_UpcomingLanes.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
             //print("Upcoming Lanes " + this.name + " " + string.Join(",", lines1));
             //var lines = m_UpcomingVelocities.Select(kvp => kvp.Key + ": " + kvp.Value.ToString());
             // print("Upcoming Velocities " + this.name + " " + m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]);
             // print(sectionIndex);
             // print("Actual velocity " + velocity);
-            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize/2.0f)
+            if (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) > gameParams.velocityBucketSize / 2.0f)
                 VelocityDifferenceRewardDivider = Mathf.Pow(1.1f, 1.0f * (Mathf.Abs(velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length])));
         }
 
@@ -745,7 +756,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Kart.LocalSpeed());
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
-            sensor.AddObservation(m_LaneChanges*1f/m_envController.MaxLaneChanges);
+            sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
             sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
@@ -904,10 +915,10 @@ namespace KartGame.AI
         {
             currentFinerIndex = m_SectionIndex * 10;
             double minDistance = 1000;
-            for(int initialFinerIdxGuess = m_SectionIndex * 10; initialFinerIdxGuess < m_SectionIndex*10 + 10; initialFinerIdxGuess++)
+            for (int initialFinerIdxGuess = m_SectionIndex * 10; initialFinerIdxGuess < m_SectionIndex * 10 + 10; initialFinerIdxGuess++)
             {
                 Vector2 pt = new Vector2(m_Kart.Rigidbody.transform.position.x, m_Kart.Rigidbody.transform.position.z);
-                if((finerWaypoints[initialFinerIdxGuess % finerWaypoints.Count] - pt).sqrMagnitude < minDistance)
+                if ((finerWaypoints[initialFinerIdxGuess % finerWaypoints.Count] - pt).sqrMagnitude < minDistance)
                 {
                     minDistance = (finerWaypoints[initialFinerIdxGuess % finerWaypoints.Count] - pt).sqrMagnitude;
                     currentFinerIndex = initialFinerIdxGuess;
@@ -926,8 +937,8 @@ namespace KartGame.AI
             List<List<KartMPCCosts>> individualCosts = new List<List<KartMPCCosts>>();
             List<List<CoupledKartMPCConstraints>> coupledConstraints = new List<List<CoupledKartMPCConstraints>>();
             List<List<CoupledKartMPCCosts>> coupledCosts = new List<List<CoupledKartMPCCosts>>();
-            double dt = Time.fixedDeltaTime*5;
-            for(int i = 0; i < allPlayers.Count; i ++)
+            double dt = Time.fixedDeltaTime * 5;
+            for (int i = 0; i < allPlayers.Count; i++)
             {
                 KartAgent k = allPlayers[i];
                 // Create Dynamics
@@ -938,7 +949,7 @@ namespace KartGame.AI
                 initial[KartMPC.zIndex * numSteps] = k.m_Kart.transform.position.z;
                 initial[KartMPC.vIndex * numSteps] = k.m_Kart.Rigidbody.velocity.magnitude;
                 var heading = Mathf.Atan2(k.m_Kart.transform.forward.z, k.m_Kart.transform.forward.x);
-                initial[KartMPC.hIndex * numSteps] =  heading;
+                initial[KartMPC.hIndex * numSteps] = heading;
                 initial[KartMPC.aIndex * numSteps] = k.m_Kart.acc.magnitude;
                 initial[KartMPC.sIndex * numSteps] = k.m_Kart.Rigidbody.angularVelocity.y;
                 int T = numSteps;
@@ -965,7 +976,7 @@ namespace KartGame.AI
                 // Create Individual Costs
                 List<KartMPCCosts> costs = new List<KartMPCCosts>();
                 // print(currentFinerIndex + " " + m_SectionIndex*10);
-                for(int s = m_SectionIndex + 1; s < m_SectionIndex + 1 + 1; s++)
+                for (int s = m_SectionIndex + 1; s < m_SectionIndex + 1 + 1; s++)
                 {
                     int idx = s % m_envController.Sections.Length;
                     if (m_UpcomingLanes.ContainsKey(idx))
@@ -1030,7 +1041,7 @@ namespace KartGame.AI
                 var heading = Mathf.Atan2(k.m_Kart.transform.forward.z, k.m_Kart.transform.forward.x);
                 if (heading < 0) heading += 2 * Mathf.PI;
                 initial[KartMPC.hIndex] = heading;
-                
+
                 // Create Dynamics
                 dynamics.Add(new LinearizedBicycle(dt, initial));
 
@@ -1115,16 +1126,23 @@ namespace KartGame.AI
                     //                7, TrackMask, QueryTriggerInteraction.Ignore);
                     if (hitTrack)
                     {
+                        // print(k.name + "here1");
+                        if (finalTargetHeading5 < 0) finalTargetHeading5 += 2 * Mathf.PI;
                         finalTargetHeading = finalTargetHeading5;
-                    }
+}
                     else if ((centerLine.ClosestPoint(k.m_Kart.transform.position) - k.m_Kart.transform.position).magnitude <= 5)
                     {
+                        // print(k.name + "here2");
+
                         targetState[KartMPC.xIndex] = nextLane.transform.position.x;
                         targetState[KartMPC.zIndex] = nextLane.transform.position.z;
+                        if (finalTargetHeading6 < 0) finalTargetHeading6 += 2 * Mathf.PI;
                         finalTargetHeading = finalTargetHeading6;
                     }
                     else
                     {
+                        // print(k.name + "here3");
+
                         if (finalTargetHeading1 < 0) finalTargetHeading1 += 2 * Mathf.PI;
                         if (finalTargetHeading2 < 0) finalTargetHeading2 += 2 * Mathf.PI;
 
@@ -1139,10 +1157,12 @@ namespace KartGame.AI
                 }
                 else
                 {
-                    var hitTrack = Physics.Raycast(m_Kart.transform.position, m_Kart.transform.forward, out var hitTrackInfo,
+                    var hitTrack = Physics.Raycast(k.m_Kart.transform.position, k.m_Kart.transform.forward, out var hitTrackInfo,
                                         8, TrackMask, QueryTriggerInteraction.Ignore);
                     if (hitTrack)
                     {
+                        // print(k.name + "here4");
+
                         float finalTargetHeading5 = Mathf.Atan2(centerLine.transform.position.z - k.m_Kart.transform.position.z, centerLine.transform.position.x - k.m_Kart.transform.position.x);
                         if (finalTargetHeading5 < 0) finalTargetHeading5 += 2 * Mathf.PI;
 
@@ -1150,17 +1170,19 @@ namespace KartGame.AI
                     }
                     else
                     {
+                        // print(k.name + "here5");
+
                         finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], targetHeading);
                     }
                 }
                 // print(k.name + " Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
-                targetState[KartMPC.hIndex] = finalTargetHeading; 
+                targetState[KartMPC.hIndex] = finalTargetHeading;
 
                 var targetWeights = new Dictionary<int, double>();
-                targetWeights[KartMPC.xIndex] = 3.2;
-                targetWeights[KartMPC.zIndex] = 3.2;
-                targetWeights[KartMPC.hIndex] = 4.5;
-                targetWeights[KartMPC.vIndex] = 0.05;
+                targetWeights[KartMPC.xIndex] = HighMode == HighLevelMode.Fixed ? 3.2 : 3.12;
+                targetWeights[KartMPC.zIndex] = HighMode == HighLevelMode.Fixed ? 3.2 : 3.12;
+                targetWeights[KartMPC.hIndex] = HighMode == HighLevelMode.Fixed ? 4.5 : 4.65;
+                targetWeights[KartMPC.vIndex] = HighMode == HighLevelMode.Fixed ? 0.05: 0.005;
 
 
                 var avoidWeights = new Dictionary<int, List<double>>();
@@ -1178,7 +1200,7 @@ namespace KartGame.AI
                 {
                     var o = otherAgents[j];
                     // Avoidance Weights
-                    if (o.name == k.name || (o.transform.position - k.transform.position).magnitude > 8 || !o.is_active)
+                    if (o.name == k.name || (o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude > 8 || !o.is_active)
                     {
                         avoidWeights[KartMPC.xIndex].Add(0.0);
                         avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
@@ -1187,14 +1209,15 @@ namespace KartGame.AI
                     }
                     else
                     {
-                        avoidWeights[KartMPC.xIndex].Add(9.2);
+                        float multiplier = HighMode == HighLevelMode.Fixed? 0.015f : 0.036f;
+                        avoidWeights[KartMPC.xIndex].Add(1f / (Mathf.Pow((o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude, 1.5f) * multiplier));
                         avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
-                        avoidWeights[KartMPC.zIndex].Add(9.2);
+                        avoidWeights[KartMPC.zIndex].Add(1f / (Mathf.Pow((o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude, 1.5f) * multiplier));
                         avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
                     }
-                    
-                    
-                    
+
+
+
                     // Create Other Dynamics
                     var otherInitial = CreateVector.Dense<double>(4);
                     otherInitial[KartMPC.xIndex] = o.m_Kart.transform.position.x;
@@ -1243,15 +1266,15 @@ namespace KartGame.AI
                     var otherTargetWeights = new Dictionary<int, double>();
                     otherTargetWeights[KartMPC.xIndex] = 0.033;
                     otherTargetWeights[KartMPC.zIndex] = 0.033;
-                    otherTargetWeights[KartMPC.vIndex] = .12;
+                    otherTargetWeights[KartMPC.vIndex] = 0.12;
                     opponentTargetWeights.Add(otherTargetWeights);
                 }
 
-                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, 0.115, dynamics.Last(), opponentTargetStates, opponentTargetWeights, avoidWeights, avoidIndices, avoidDynamics));
+                costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, HighMode == HighLevelMode.Fixed ? 0.115 : 0.1, dynamics.Last(), opponentTargetStates, opponentTargetWeights, avoidWeights, avoidIndices, avoidDynamics));
             }
 
             // Sovle LQR
-            var resultVector = KartLQR.solveFeedbackLQR(dynamics, costs, initialStates, numSteps);
+            var resultVector = KartLQR.solveFeedbackLQR(dynamics, costs, initialStates, HighMode == HighLevelMode.Fixed ? numSteps : 3);
 
             // Parse Results
             var angVel = Mathf.Clamp((float)resultVector[1], -m_Kart.getMaxAngularVelocity(), m_Kart.getMaxAngularVelocity());
@@ -1259,7 +1282,8 @@ namespace KartGame.AI
             {
                 m_Acceleration = false;
                 m_Brake = true;
-            } else if (resultVector[0] > 0.1)
+            }
+            else if (resultVector[0] > 0.1)
             {
                 m_Acceleration = true;
                 m_Brake = false;
@@ -1333,7 +1357,7 @@ namespace KartGame.AI
             }
             if (resultVector != null)
             {
-                Color[] colors = {Color.red, Color.green, Color.yellow, Color.cyan };
+                Color[] colors = { Color.red, Color.green, Color.yellow, Color.cyan };
                 for (int i = 0; i < 2; i++)
                 {
                     // print(resultVector[i].ToString());
