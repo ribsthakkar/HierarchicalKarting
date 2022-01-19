@@ -1,7 +1,7 @@
 import os
 
 logs_dir = "ExperimentLogs"
-experiment_name = "E2E_vs_MCTS_LQR_Complex"
+experiment_name = "MCTS_RL_vs_Fixed_LQR_Oval"
 wins = {}
 dnfs = {}
 lap_times = {}
