@@ -1,0 +1,800 @@
+Experiment 0
+Fixed-RL Speed: 14.89772
+Fixed-RL Tire Wear: 0.5137039
+Fixed-RL Last Lap: 34.68
+Fixed-RL Best Lap: 34.68
+Fixed-RL Total Time: 106.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.35104
+Fixed-LQR Tire Wear :0.5121081
+Fixed-LQR Last Lap: 33.68
+Fixed-LQR Best Lap: 32.64
+Fixed-LQR Overall Time: 102.58
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 1
+Fixed-RL Speed: 14.89718
+Fixed-RL Tire Wear: 0.5161452
+Fixed-RL Last Lap: 34.66
+Fixed-RL Best Lap: 33.54
+Fixed-RL Total Time: 102.78
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.78872
+Fixed-LQR Tire Wear :0.5025441
+Fixed-LQR Last Lap: 34.5
+Fixed-LQR Best Lap: 33.44
+Fixed-LQR Overall Time: 103.82
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 2
+Fixed-RL Speed: 14.9957
+Fixed-RL Tire Wear: 0.5232484
+Fixed-RL Last Lap: 35.44
+Fixed-RL Best Lap: 34.14
+Fixed-RL Total Time: 106.14
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.79787
+Fixed-LQR Tire Wear :0.5110137
+Fixed-LQR Last Lap: 32.86
+Fixed-LQR Best Lap: 32.86
+Fixed-LQR Overall Time: 101.34
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 3
+Fixed-RL Speed: 14.91957
+Fixed-RL Tire Wear: 0.5187252
+Fixed-RL Last Lap: 35.26
+Fixed-RL Best Lap: 33.68
+Fixed-RL Total Time: 103.32
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.53554
+Fixed-LQR Tire Wear :0.5058861
+Fixed-LQR Last Lap: 35.52
+Fixed-LQR Best Lap: 33.44
+Fixed-LQR Overall Time: 104.56
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 4
+Fixed-RL Speed: 14.98798
+Fixed-RL Tire Wear: 0.5194215
+Fixed-RL Last Lap: 35.76
+Fixed-RL Best Lap: 34.12
+Fixed-RL Total Time: 104.98
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.53286
+Fixed-LQR Tire Wear :0.5021236
+Fixed-LQR Last Lap: 33.28
+Fixed-LQR Best Lap: 32.74
+Fixed-LQR Overall Time: 99.92
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 5
+Fixed-RL Speed: 14.96656
+Fixed-RL Tire Wear: 0.5140888
+Fixed-RL Last Lap: 34.64
+Fixed-RL Best Lap: 33.46
+Fixed-RL Total Time: 102.38
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.60686
+Fixed-LQR Tire Wear :0.504354
+Fixed-LQR Last Lap: 34.76
+Fixed-LQR Best Lap: 33.34
+Fixed-LQR Overall Time: 103.98
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 6
+Fixed-RL Speed: 14.95824
+Fixed-RL Tire Wear: 0.5221625
+Fixed-RL Last Lap: 38.28
+Fixed-RL Best Lap: 33.96
+Fixed-RL Total Time: 106.88
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.60891
+Fixed-LQR Tire Wear :0.5057932
+Fixed-LQR Last Lap: 33.48
+Fixed-LQR Best Lap: 33.38
+Fixed-LQR Overall Time: 103.02
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 7
+Fixed-RL Speed: 14.93679
+Fixed-RL Tire Wear: 0.5170033
+Fixed-RL Last Lap: 35.76
+Fixed-RL Best Lap: 33.08
+Fixed-RL Total Time: 103.14
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :2.00229E-05
+Fixed-LQR Tire Wear :0.4804209
+Fixed-LQR Last Lap: 33.02
+Fixed-LQR Best Lap: 33.02
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 8
+Fixed-RL Speed: 14.93657
+Fixed-RL Tire Wear: 0.5190928
+Fixed-RL Last Lap: 35.14
+Fixed-RL Best Lap: 34.14
+Fixed-RL Total Time: 104.18
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.85061
+Fixed-LQR Tire Wear :0.5023882
+Fixed-LQR Last Lap: 33.48
+Fixed-LQR Best Lap: 32.96
+Fixed-LQR Overall Time: 100.2
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 9
+Fixed-RL Speed: 14.9645
+Fixed-RL Tire Wear: 0.5127746
+Fixed-RL Last Lap: 34.64
+Fixed-RL Best Lap: 33.42
+Fixed-RL Total Time: 102.42
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.85091
+Fixed-LQR Tire Wear :0.5018255
+Fixed-LQR Last Lap: 34.72
+Fixed-LQR Best Lap: 33.26
+Fixed-LQR Overall Time: 103.6
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 10
+Fixed-RL Speed: 14.92837
+Fixed-RL Tire Wear: 0.5204871
+Fixed-RL Last Lap: 35.98
+Fixed-RL Best Lap: 33.62
+Fixed-RL Total Time: 104.78
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.60442
+Fixed-LQR Tire Wear :0.5053937
+Fixed-LQR Last Lap: 33.2
+Fixed-LQR Best Lap: 33.14
+Fixed-LQR Overall Time: 100.34
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 11
+Fixed-RL Speed: 0.03883039
+Fixed-RL Tire Wear: 0.5042999
+Fixed-RL Last Lap: 33.5
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :0.06496418
+Fixed-LQR Tire Wear :0.4741096
+Fixed-LQR Last Lap: 33.28
+Fixed-LQR Best Lap: 33.28
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 12
+Fixed-RL Speed: 0.06089548
+Fixed-RL Tire Wear: 0.4402188
+Fixed-RL Last Lap: 34.2
+Fixed-RL Best Lap: 34.2
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.78672
+Fixed-LQR Tire Wear :0.501736
+Fixed-LQR Last Lap: 33.26
+Fixed-LQR Best Lap: 32.24
+Fixed-LQR Overall Time: 98.75999
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 13
+Fixed-RL Speed: 14.91831
+Fixed-RL Tire Wear: 0.513038
+Fixed-RL Last Lap: 34.74
+Fixed-RL Best Lap: 32.9
+Fixed-RL Total Time: 101.88
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.57572
+Fixed-LQR Tire Wear :0.5007837
+Fixed-LQR Last Lap: 34.72
+Fixed-LQR Best Lap: 33.6
+Fixed-LQR Overall Time: 103.12
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 14
+Fixed-RL Speed: 14.93484
+Fixed-RL Tire Wear: 0.515984
+Fixed-RL Last Lap: 35.3
+Fixed-RL Best Lap: 33.64
+Fixed-RL Total Time: 103.26
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.61088
+Fixed-LQR Tire Wear :0.5031292
+Fixed-LQR Last Lap: 35.62
+Fixed-LQR Best Lap: 33.22
+Fixed-LQR Overall Time: 104.56
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 15
+Fixed-RL Speed: 14.98863
+Fixed-RL Tire Wear: 0.5211015
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 33.86
+Fixed-RL Total Time: 103.88
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.60559
+Fixed-LQR Tire Wear :0.5050593
+Fixed-LQR Last Lap: 34.88
+Fixed-LQR Best Lap: 34.2
+Fixed-LQR Overall Time: 104.9
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 16
+Fixed-RL Speed: 14.89655
+Fixed-RL Tire Wear: 0.5169321
+Fixed-RL Last Lap: 35
+Fixed-RL Best Lap: 33.92
+Fixed-RL Total Time: 103.62
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+Fixed-LQR Speed :14.81865
+Fixed-LQR Tire Wear :0.5039734
+Fixed-LQR Last Lap: 34.88
+Fixed-LQR Best Lap: 33.7
+Fixed-LQR Overall Time: 104.58
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 17
+Fixed-RL Speed: 14.89788
+Fixed-RL Tire Wear: 0.5160046
+Fixed-RL Last Lap: 34.76
+Fixed-RL Best Lap: 33.54
+Fixed-RL Total Time: 103.14
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.78593
+Fixed-LQR Tire Wear :0.5028411
+Fixed-LQR Last Lap: 34.94
+Fixed-LQR Best Lap: 33.46
+Fixed-LQR Overall Time: 104.28
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 18
+Fixed-RL Speed: 0.05761034
+Fixed-RL Tire Wear: 0.3388688
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :14.51494
+Fixed-LQR Tire Wear :0.5111223
+Fixed-LQR Last Lap: 33.6
+Fixed-LQR Best Lap: 32.7
+Fixed-LQR Overall Time: 100.4
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 19
+Fixed-RL Speed: 14.93091
+Fixed-RL Tire Wear: 0.5192854
+Fixed-RL Last Lap: 36.18
+Fixed-RL Best Lap: 33.52
+Fixed-RL Total Time: 104.5
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.71873
+Fixed-LQR Tire Wear :0.5016644
+Fixed-LQR Last Lap: 35.12
+Fixed-LQR Best Lap: 33.78
+Fixed-LQR Overall Time: 104.4
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 1
+Winner: Fixed-LQR
+Experiment 20
+Fixed-RL Speed: 0.6464203
+Fixed-RL Tire Wear: 0.5009972
+Fixed-RL Last Lap: 33.4
+Fixed-RL Best Lap: 33.4
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :0.06548595
+Fixed-LQR Tire Wear :0.4724572
+Fixed-LQR Last Lap: 33.28
+Fixed-LQR Best Lap: 33.28
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 21
+Fixed-RL Speed: 14.93579
+Fixed-RL Tire Wear: 0.5173977
+Fixed-RL Last Lap: 35.04
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 103.1
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.57083
+Fixed-LQR Tire Wear :0.5069275
+Fixed-LQR Last Lap: 35.14
+Fixed-LQR Best Lap: 33.82
+Fixed-LQR Overall Time: 104.44
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 22
+Fixed-RL Speed: 14.99845
+Fixed-RL Tire Wear: 0.5133119
+Fixed-RL Last Lap: 34.96
+Fixed-RL Best Lap: 33.54
+Fixed-RL Total Time: 102.9
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.58531
+Fixed-LQR Tire Wear :0.4987411
+Fixed-LQR Last Lap: 34.68
+Fixed-LQR Best Lap: 33.7
+Fixed-LQR Overall Time: 103.98
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 23
+Fixed-RL Speed: 0.03224916
+Fixed-RL Tire Wear: 0.5015981
+Fixed-RL Last Lap: 33.62
+Fixed-RL Best Lap: 33.62
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :0.07025851
+Fixed-LQR Tire Wear :0.4715234
+Fixed-LQR Last Lap: 33.26
+Fixed-LQR Best Lap: 33.26
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 24
+Fixed-RL Speed: 0.05765169
+Fixed-RL Tire Wear: 0.4193865
+Fixed-RL Last Lap: 35.12
+Fixed-RL Best Lap: 35.12
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :14.56073
+Fixed-LQR Tire Wear :0.5098609
+Fixed-LQR Last Lap: 33.58
+Fixed-LQR Best Lap: 32.8
+Fixed-LQR Overall Time: 100.06
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 25
+Fixed-RL Speed: 14.88926
+Fixed-RL Tire Wear: 0.5146263
+Fixed-RL Last Lap: 34.58
+Fixed-RL Best Lap: 33.08
+Fixed-RL Total Time: 101.92
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.57609
+Fixed-LQR Tire Wear :0.5004644
+Fixed-LQR Last Lap: 34.18
+Fixed-LQR Best Lap: 33.82
+Fixed-LQR Overall Time: 102.88
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 26
+Fixed-RL Speed: 14.88964
+Fixed-RL Tire Wear: 0.5170996
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 34.12
+Fixed-RL Total Time: 103.98
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.8501
+Fixed-LQR Tire Wear :0.5024833
+Fixed-LQR Last Lap: 33.3
+Fixed-LQR Best Lap: 32.68
+Fixed-LQR Overall Time: 99.5
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 27
+Fixed-RL Speed: 0.09258597
+Fixed-RL Tire Wear: 0.4963524
+Fixed-RL Last Lap: 33.72
+Fixed-RL Best Lap: 33.72
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :0.05673334
+Fixed-LQR Tire Wear :0.4807243
+Fixed-LQR Last Lap: 33.42
+Fixed-LQR Best Lap: 33.42
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 28
+Fixed-RL Speed: 14.89505
+Fixed-RL Tire Wear: 0.5253454
+Fixed-RL Last Lap: 36.48
+Fixed-RL Best Lap: 33.72
+Fixed-RL Total Time: 104.98
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :0.06959432
+Fixed-LQR Tire Wear :0.476634
+Fixed-LQR Last Lap: 33.22
+Fixed-LQR Best Lap: 33.22
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 29
+Fixed-RL Speed: 14.9361
+Fixed-RL Tire Wear: 0.514897
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 33.46
+Fixed-RL Total Time: 102.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.55412
+Fixed-LQR Tire Wear :0.5025201
+Fixed-LQR Last Lap: 34.94
+Fixed-LQR Best Lap: 33.4
+Fixed-LQR Overall Time: 103.72
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 30
+Fixed-RL Speed: 14.93535
+Fixed-RL Tire Wear: 0.5166945
+Fixed-RL Last Lap: 34.96
+Fixed-RL Best Lap: 33.64
+Fixed-RL Total Time: 103.1
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.60987
+Fixed-LQR Tire Wear :0.5056581
+Fixed-LQR Last Lap: 35.08
+Fixed-LQR Best Lap: 33.58
+Fixed-LQR Overall Time: 104.32
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 31
+Fixed-RL Speed: 15.02938
+Fixed-RL Tire Wear: 0.516741
+Fixed-RL Last Lap: 34.4
+Fixed-RL Best Lap: 33.64
+Fixed-RL Total Time: 102.52
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.78774
+Fixed-LQR Tire Wear :0.5015699
+Fixed-LQR Last Lap: 34.54
+Fixed-LQR Best Lap: 33.48
+Fixed-LQR Overall Time: 103.84
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 32
+Fixed-RL Speed: 14.92655
+Fixed-RL Tire Wear: 0.5205946
+Fixed-RL Last Lap: 35.74
+Fixed-RL Best Lap: 34.04
+Fixed-RL Total Time: 104.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+Fixed-LQR Speed :14.85006
+Fixed-LQR Tire Wear :0.5022429
+Fixed-LQR Last Lap: 33.12
+Fixed-LQR Best Lap: 32.46
+Fixed-LQR Overall Time: 99.36
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 33
+Fixed-RL Speed: 14.97183
+Fixed-RL Tire Wear: 0.5167037
+Fixed-RL Last Lap: 35.4
+Fixed-RL Best Lap: 33.54
+Fixed-RL Total Time: 103.3
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.60777
+Fixed-LQR Tire Wear :0.5037725
+Fixed-LQR Last Lap: 35.4
+Fixed-LQR Best Lap: 33.5
+Fixed-LQR Overall Time: 104.46
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 34
+Fixed-RL Speed: 14.89208
+Fixed-RL Tire Wear: 0.5176415
+Fixed-RL Last Lap: 34.08
+Fixed-RL Best Lap: 33.58
+Fixed-RL Total Time: 103.74
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+Fixed-LQR Speed :5.132378
+Fixed-LQR Tire Wear :0.546059
+Fixed-LQR Last Lap: 32.94
+Fixed-LQR Best Lap: 32.94
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 1/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 35
+Fixed-RL Speed: 14.91226
+Fixed-RL Tire Wear: 0.514771
+Fixed-RL Last Lap: 34.92
+Fixed-RL Best Lap: 33.14
+Fixed-RL Total Time: 102.28
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.89691
+Fixed-LQR Tire Wear :0.5004584
+Fixed-LQR Last Lap: 34.74
+Fixed-LQR Best Lap: 33.46
+Fixed-LQR Overall Time: 103.38
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 36
+Fixed-RL Speed: 14.96825
+Fixed-RL Tire Wear: 0.5176427
+Fixed-RL Last Lap: 35.3
+Fixed-RL Best Lap: 33.58
+Fixed-RL Total Time: 103.22
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.60826
+Fixed-LQR Tire Wear :0.5042132
+Fixed-LQR Last Lap: 35.18
+Fixed-LQR Best Lap: 33.42
+Fixed-LQR Overall Time: 104.32
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 37
+Fixed-RL Speed: 14.93104
+Fixed-RL Tire Wear: 0.514698
+Fixed-RL Last Lap: 34.52
+Fixed-RL Best Lap: 33.72
+Fixed-RL Total Time: 102.62
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.78844
+Fixed-LQR Tire Wear :0.5022842
+Fixed-LQR Last Lap: 34.62
+Fixed-LQR Best Lap: 33.5
+Fixed-LQR Overall Time: 103.78
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 38
+Fixed-RL Speed: 15.02449
+Fixed-RL Tire Wear: 0.5168233
+Fixed-RL Last Lap: 35
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 102.72
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.57984
+Fixed-LQR Tire Wear :0.4998424
+Fixed-LQR Last Lap: 35.12
+Fixed-LQR Best Lap: 33.44
+Fixed-LQR Overall Time: 103.88
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 39
+Fixed-RL Speed: 15.00155
+Fixed-RL Tire Wear: 0.5149607
+Fixed-RL Last Lap: 34.76
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 102.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.5683
+Fixed-LQR Tire Wear :0.5027207
+Fixed-LQR Last Lap: 34.56
+Fixed-LQR Best Lap: 33.52
+Fixed-LQR Overall Time: 103.78
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 40
+Fixed-RL Speed: 14.60011
+Fixed-RL Tire Wear: 0.51663
+Fixed-RL Last Lap: 36.02
+Fixed-RL Best Lap: 33.04
+Fixed-RL Total Time: 103.58
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :13.9767
+Fixed-LQR Tire Wear :0.4993932
+Fixed-LQR Last Lap: 34.22
+Fixed-LQR Best Lap: 33.32
+Fixed-LQR Overall Time: 103.26
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-LQR
+Experiment 41
+Fixed-RL Speed: 14.99322
+Fixed-RL Tire Wear: 0.5164774
+Fixed-RL Last Lap: 35.14
+Fixed-RL Best Lap: 33.68
+Fixed-RL Total Time: 103.28
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+Fixed-LQR Speed :14.61336
+Fixed-LQR Tire Wear :0.5042588
+Fixed-LQR Last Lap: 35.18
+Fixed-LQR Best Lap: 33.22
+Fixed-LQR Overall Time: 104.42
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 42
+Fixed-RL Speed: 14.93553
+Fixed-RL Tire Wear: 0.5193833
+Fixed-RL Last Lap: 35.38
+Fixed-RL Best Lap: 33.82
+Fixed-RL Total Time: 103.7
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.61181
+Fixed-LQR Tire Wear :0.5051572
+Fixed-LQR Last Lap: 35.56
+Fixed-LQR Best Lap: 33.3
+Fixed-LQR Overall Time: 104.86
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 43
+Fixed-RL Speed: 0.06103558
+Fixed-RL Tire Wear: 0.4926819
+Fixed-RL Last Lap: 33.92
+Fixed-RL Best Lap: 33.76
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 0
+Fixed-LQR Speed :0.0401129
+Fixed-LQR Tire Wear :0.4748427
+Fixed-LQR Last Lap: 33.44
+Fixed-LQR Best Lap: 33.44
+Fixed-LQR Overall Time: 119.98
+Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 44
+Fixed-RL Speed: 0.06124398
+Fixed-RL Tire Wear: 0.4869891
+Fixed-RL Last Lap: 34.08
+Fixed-RL Best Lap: 34.08
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.60441
+Fixed-LQR Tire Wear :0.5066075
+Fixed-LQR Last Lap: 33.06
+Fixed-LQR Best Lap: 33.06
+Fixed-LQR Overall Time: 100.26
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 45
+Fixed-RL Speed: 14.9349
+Fixed-RL Tire Wear: 0.5116521
+Fixed-RL Last Lap: 34.54
+Fixed-RL Best Lap: 32.92
+Fixed-RL Total Time: 101.5
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.62939
+Fixed-LQR Tire Wear :0.5007088
+Fixed-LQR Last Lap: 34.56
+Fixed-LQR Best Lap: 33.2
+Fixed-LQR Overall Time: 102.9
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 46
+Fixed-RL Speed: 14.93329
+Fixed-RL Tire Wear: 0.5169205
+Fixed-RL Last Lap: 34.56
+Fixed-RL Best Lap: 33.62
+Fixed-RL Total Time: 102.82
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.57831
+Fixed-LQR Tire Wear :0.499849
+Fixed-LQR Last Lap: 34.68
+Fixed-LQR Best Lap: 33.52
+Fixed-LQR Overall Time: 103.84
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 47
+Fixed-RL Speed: 14.90614
+Fixed-RL Tire Wear: 0.5137245
+Fixed-RL Last Lap: 34.84
+Fixed-RL Best Lap: 33.74
+Fixed-RL Total Time: 103.02
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.78389
+Fixed-LQR Tire Wear :0.5034459
+Fixed-LQR Last Lap: 34.7
+Fixed-LQR Best Lap: 33.56
+Fixed-LQR Overall Time: 103.98
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 48
+Fixed-RL Speed: 0.05426634
+Fixed-RL Tire Wear: 0.4878873
+Fixed-RL Last Lap: 34.24
+Fixed-RL Best Lap: 34.24
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.56082
+Fixed-LQR Tire Wear :0.5099335
+Fixed-LQR Last Lap: 33.4
+Fixed-LQR Best Lap: 33.06
+Fixed-LQR Overall Time: 101.16
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: 
+Experiment 49
+Fixed-RL Speed: 14.99479
+Fixed-RL Tire Wear: 0.5142838
+Fixed-RL Last Lap: 35.08
+Fixed-RL Best Lap: 32.8
+Fixed-RL Total Time: 102.52
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+Fixed-LQR Speed :14.56959
+Fixed-LQR Tire Wear :0.5025191
+Fixed-LQR Last Lap: 35.36
+Fixed-LQR Best Lap: 33.34
+Fixed-LQR Overall Time: 103.7
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Lane Changes: 0
+Winner: Fixed-RL

@@ -1,0 +1,850 @@
+Experiment 0
+Fixed-RL Speed: 14.9331
+Fixed-RL Last Lap: 19.76
+Fixed-RL Best Lap: 19.06
+Fixed-RL Total Time: 81.5
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93671
+Fixed-LQR Last Lap: 19.8
+Fixed-LQR Best Lap: 19.1
+Fixed-LQR Total Time: 82.06
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 1
+Fixed-RL Speed: 14.89498
+Fixed-RL Last Lap: 19.84
+Fixed-RL Best Lap: 19.2
+Fixed-RL Total Time: 79.28
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00541
+Fixed-LQR Last Lap: 19.56
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.82
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 2
+Fixed-RL Speed: 14.93594
+Fixed-RL Last Lap: 19.48
+Fixed-RL Best Lap: 18.92
+Fixed-RL Total Time: 77.88
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97233
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.52
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 3
+Fixed-RL Speed: 14.99773
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 19.04
+Fixed-RL Total Time: 78.82
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97241
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.43999
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 4
+Fixed-RL Speed: 14.9651
+Fixed-RL Last Lap: 19.64
+Fixed-RL Best Lap: 19
+Fixed-RL Total Time: 78.16
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.89864
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 78.7
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 5
+Fixed-RL Speed: 14.96921
+Fixed-RL Last Lap: 19.72
+Fixed-RL Best Lap: 19.16
+Fixed-RL Total Time: 81.96
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93675
+Fixed-LQR Last Lap: 19.68
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 82.52
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 6
+Fixed-RL Speed: 14.99521
+Fixed-RL Last Lap: 19.48
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 78.86
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.89871
+Fixed-LQR Last Lap: 19.3
+Fixed-LQR Best Lap: 19.08
+Fixed-LQR Total Time: 79.4
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 2
+Winner: 
+
+Experiment 7
+Fixed-RL Speed: 14.9356
+Fixed-RL Last Lap: 19.68
+Fixed-RL Best Lap: 19.12
+Fixed-RL Total Time: 79.14
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00546
+Fixed-LQR Last Lap: 19.54
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.66
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 8
+Fixed-RL Speed: 15.02045
+Fixed-RL Last Lap: 19.4
+Fixed-RL Best Lap: 18.86
+Fixed-RL Total Time: 78.06
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97233
+Fixed-LQR Last Lap: 19.18
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.66
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Winner: 
+
+Experiment 9
+Fixed-RL Speed: 15.01966
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 18.94
+Fixed-RL Total Time: 81.25999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.89844
+Fixed-LQR Last Lap: 19.42
+Fixed-LQR Best Lap: 19.02
+Fixed-LQR Total Time: 81.84
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 10
+Fixed-RL Speed: 14.96918
+Fixed-RL Last Lap: 19.72
+Fixed-RL Best Lap: 19.04
+Fixed-RL Total Time: 78.42
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97246
+Fixed-LQR Last Lap: 19.56
+Fixed-LQR Best Lap: 19.02
+Fixed-LQR Total Time: 78.96
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Winner: 
+
+Experiment 11
+Fixed-RL Speed: 14.88722
+Fixed-RL Last Lap: 19.7
+Fixed-RL Best Lap: 19
+Fixed-RL Total Time: 79.1
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.9718
+Fixed-LQR Last Lap: 19.42
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.66
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 12
+Fixed-RL Speed: 14.89892
+Fixed-RL Last Lap: 19.4
+Fixed-RL Best Lap: 18.94
+Fixed-RL Total Time: 77.98
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97231
+Fixed-LQR Last Lap: 19.24
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.84
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 13
+Fixed-RL Speed: 14.93338
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 19.18
+Fixed-RL Total Time: 81.84
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 2
+Fixed-RL Collisions: 3
+Fixed-LQR Speed: 15.00542
+Fixed-LQR Last Lap: 19.48
+Fixed-LQR Best Lap: 19.32
+Fixed-LQR Total Time: 82.38
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 1
+Fixed-LQR Collisions: 2
+Winner: 
+
+Experiment 14
+Fixed-RL Speed: 14.8937
+Fixed-RL Last Lap: 19.48
+Fixed-RL Best Lap: 18.84
+Fixed-RL Total Time: 77.74
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00513
+Fixed-LQR Last Lap: 19.28
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 78.28
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 15
+Fixed-RL Speed: 14.96126
+Fixed-RL Last Lap: 19.14
+Fixed-RL Best Lap: 19.12
+Fixed-RL Total Time: 77.92
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97233
+Fixed-LQR Last Lap: 19.16
+Fixed-LQR Best Lap: 19.14
+Fixed-LQR Total Time: 78.66
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 16
+Fixed-RL Speed: 14.89684
+Fixed-RL Last Lap: 19.6
+Fixed-RL Best Lap: 19.04
+Fixed-RL Total Time: 77.96
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97233
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.5
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 17
+Fixed-RL Speed: 14.89636
+Fixed-RL Last Lap: 19.52
+Fixed-RL Best Lap: 19.02
+Fixed-RL Total Time: 78.62
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93671
+Fixed-LQR Last Lap: 19.18
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.36
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 18
+Fixed-RL Speed: 12.86048
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 7.2
+Fixed-RL Laps Completed: 0/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97243
+Fixed-LQR Last Lap: 19.28
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.34
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 1
+Fixed-LQR Collisions: 1
+Winner: Fixed-RL
+
+Experiment 19
+Fixed-RL Speed: 15.0005
+Fixed-RL Last Lap: 19.48
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 79.58
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97243
+Fixed-LQR Last Lap: 19.34
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 80.14
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 20
+Fixed-RL Speed: 14.93468
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 19.06
+Fixed-RL Total Time: 77.9
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97194
+Fixed-LQR Last Lap: 19.3
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.46
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 21
+Fixed-RL Speed: 14.96079
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 78.8
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93669
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.34
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 22
+Fixed-RL Speed: 15.01616
+Fixed-RL Last Lap: 19.72
+Fixed-RL Best Lap: 18.94
+Fixed-RL Total Time: 77.96
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97198
+Fixed-LQR Last Lap: 19.44
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.54
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 23
+Fixed-RL Speed: 14.8863
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 18.9
+Fixed-RL Total Time: 78.75999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93669
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.4
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 24
+Fixed-RL Speed: 14.96458
+Fixed-RL Last Lap: 19.4
+Fixed-RL Best Lap: 19.14
+Fixed-RL Total Time: 78.2
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93675
+Fixed-LQR Last Lap: 19.38
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.8
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 25
+Fixed-RL Speed: 14.93452
+Fixed-RL Last Lap: 19.54
+Fixed-RL Best Lap: 19.16
+Fixed-RL Total Time: 78.7
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00538
+Fixed-LQR Last Lap: 19.34
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.25999
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 26
+Fixed-RL Speed: 14.96642
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 77.92
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00491
+Fixed-LQR Last Lap: 19.22
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 78.48
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Winner: 
+
+Experiment 27
+Fixed-RL Speed: 15.02341
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 19.14
+Fixed-RL Total Time: 78.5
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97237
+Fixed-LQR Last Lap: 19.54
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.1
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 28
+Fixed-RL Speed: 14.93022
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 18.94
+Fixed-RL Total Time: 78.12
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.0053
+Fixed-LQR Last Lap: 19.16
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.64
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Winner: 
+
+Experiment 29
+Fixed-RL Speed: 14.89763
+Fixed-RL Last Lap: 19.72
+Fixed-RL Best Lap: 19.04
+Fixed-RL Total Time: 78.68
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00545
+Fixed-LQR Last Lap: 19.58
+Fixed-LQR Best Lap: 19.08
+Fixed-LQR Total Time: 79.28
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 30
+Fixed-RL Speed: 15.0218
+Fixed-RL Last Lap: 19.6
+Fixed-RL Best Lap: 19.08
+Fixed-RL Total Time: 78.38
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00536
+Fixed-LQR Last Lap: 19.38
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.9
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 31
+Fixed-RL Speed: 15.02412
+Fixed-RL Last Lap: 19.92
+Fixed-RL Best Lap: 19.68
+Fixed-RL Total Time: 82.16
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 4
+Fixed-LQR Speed: 14.9724
+Fixed-LQR Last Lap: 19.26
+Fixed-LQR Best Lap: 19.26
+Fixed-LQR Total Time: 81.08
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 1
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 32
+Fixed-RL Speed: 14.10141
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 8.9
+Fixed-RL Laps Completed: 0/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00534
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.78
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 1
+Fixed-LQR Collisions: 2
+Winner: Fixed-RL
+
+Experiment 33
+Fixed-RL Speed: 14.92909
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 18.9
+Fixed-RL Total Time: 78.68
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97229
+Fixed-LQR Last Lap: 19.46
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.24
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 34
+Fixed-RL Speed: 14.21196
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 8.58
+Fixed-RL Laps Completed: 0/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.0054
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.58
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: Fixed-RL
+
+Experiment 35
+Fixed-RL Speed: 14.93518
+Fixed-RL Last Lap: 19.82
+Fixed-RL Best Lap: 18.9
+Fixed-RL Total Time: 78.64
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97202
+Fixed-LQR Last Lap: 19.68
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 79.2
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 36
+Fixed-RL Speed: 14.93292
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 19.08
+Fixed-RL Total Time: 78.3
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93662
+Fixed-LQR Last Lap: 19.38
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.86
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 37
+Fixed-RL Speed: 15.02571
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 18.88
+Fixed-RL Total Time: 78.42
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93669
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.18
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 38
+Fixed-RL Speed: 14.97013
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 19.06
+Fixed-RL Total Time: 77.96
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97233
+Fixed-LQR Last Lap: 19.18
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.58
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 39
+Fixed-RL Speed: 14.93195
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 19.12
+Fixed-RL Total Time: 79.04
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97235
+Fixed-LQR Last Lap: 19.3
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.62
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 40
+Fixed-RL Speed: 14.95339
+Fixed-RL Last Lap: 19.78
+Fixed-RL Best Lap: 18.9
+Fixed-RL Total Time: 78.08
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97225
+Fixed-LQR Last Lap: 19.26
+Fixed-LQR Best Lap: 19.02
+Fixed-LQR Total Time: 78.66
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Winner: 
+
+Experiment 41
+Fixed-RL Speed: 15.02978
+Fixed-RL Last Lap: 19.68
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 78.3
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00542
+Fixed-LQR Last Lap: 19.5
+Fixed-LQR Best Lap: 19.1
+Fixed-LQR Total Time: 78.84
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 42
+Fixed-RL Speed: 13.35232
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 7.56
+Fixed-RL Laps Completed: 0/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93672
+Fixed-LQR Last Lap: 19.24
+Fixed-LQR Best Lap: 19.08
+Fixed-LQR Total Time: 79.82
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: Fixed-RL
+
+Experiment 43
+Fixed-RL Speed: 14.96985
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 19.12
+Fixed-RL Total Time: 80.74
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97231
+Fixed-LQR Last Lap: 19.32
+Fixed-LQR Best Lap: 19.02
+Fixed-LQR Total Time: 81.28
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 1
+Fixed-LQR Collisions: 2
+Winner: 
+
+Experiment 44
+Fixed-RL Speed: 14.89877
+Fixed-RL Last Lap: 19.58
+Fixed-RL Best Lap: 18.88
+Fixed-RL Total Time: 78.18
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 15.00541
+Fixed-LQR Last Lap: 19.42
+Fixed-LQR Best Lap: 19.02
+Fixed-LQR Total Time: 78.7
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Winner: 
+
+Experiment 45
+Fixed-RL Speed: 14.8963
+Fixed-RL Last Lap: 19.58
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 79.04
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.89874
+Fixed-LQR Last Lap: 19.44
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.58
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 46
+Fixed-RL Speed: 14.89368
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 19.08
+Fixed-RL Total Time: 78.54
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97229
+Fixed-LQR Last Lap: 19.32
+Fixed-LQR Best Lap: 19.16
+Fixed-LQR Total Time: 79.1
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 47
+Fixed-RL Speed: 14.98364
+Fixed-RL Last Lap: 19.36
+Fixed-RL Best Lap: 18.88
+Fixed-RL Total Time: 78.42
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93672
+Fixed-LQR Last Lap: 19.18
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.4
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 48
+Fixed-RL Speed: 14.93419
+Fixed-RL Last Lap: 19.6
+Fixed-RL Best Lap: 18.96
+Fixed-RL Total Time: 78.02
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.97235
+Fixed-LQR Last Lap: 19.2
+Fixed-LQR Best Lap: 19.04
+Fixed-LQR Total Time: 78.72
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+
+Experiment 49
+Fixed-RL Speed: 14.99444
+Fixed-RL Last Lap: 19.48
+Fixed-RL Best Lap: 19.3
+Fixed-RL Total Time: 79.24
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-LQR Speed: 14.93544
+Fixed-LQR Last Lap: 19.3
+Fixed-LQR Best Lap: 19.06
+Fixed-LQR Total Time: 79.75999
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Winner: 
+

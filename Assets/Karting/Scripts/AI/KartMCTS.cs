@@ -8,6 +8,7 @@ using Unity.Collections;
 using Unity.Jobs;
 using System.Threading.Tasks;
 using System.Threading;
+using MathNet.Numerics.Distributions;
 
 public class KartMCTSNode
 {
@@ -32,6 +33,9 @@ public class KartMCTSNode
 }
 public class KartMCTS
 {
+    static System.Random random = new System.Random();
+    static Normal normalDist = new Normal();
+
     public static KartMCTSNode constructSearchTree(DiscreteGameState state, double T = 0.09, bool parallel = false)
     {
         KartMCTSNode root = new KartMCTSNode(state);
@@ -151,7 +155,6 @@ public class KartMCTS
 
     public static DiscreteKartAction upperConfidenceStrategy(KartMCTSNode node)
     {
-        System.Random random = new System.Random();
         int index = random.Next(node.children.Count);
         DiscreteKartAction best = node.children.Keys.ElementAt(index);
         if (node.children[best].numEpisodes == 0)
@@ -190,11 +193,10 @@ public class KartMCTS
     public static float NextGaussian()
     {
         float v1, v2, s;
-        System.Random rand = new System.Random();
         do
         {
-            v1 = 2.0f * (float) rand.NextDouble() - 1.0f;
-            v2 = 2.0f * (float) rand.NextDouble() - 1.0f;
+            v1 = 2.0f * (float) random.NextDouble() - 1.0f;
+            v2 = 2.0f * (float) random.NextDouble() - 1.0f;
             s = v1 * v1 + v2 * v2;
         } while (s >= 1.0f || s == 0f);
 
@@ -204,22 +206,28 @@ public class KartMCTS
     }
     public static float NextGaussian(float mean, float standard_deviation)
     {
-        return mean + NextGaussian() * standard_deviation;
+        return mean + (float) normalDist.Sample() * standard_deviation;
     }
     public static float NextGaussian(float mean, float standard_deviation, float min, float max)
     {
         float x;
+        int attempts = 0;
         do
         {
             x = NextGaussian(mean, standard_deviation);
-        } while (x < min || x > max);
+            attempts += 1;
+        } while ((x < min || x > max) && attempts < 10);
+        //if(attempts > 1)
+        //    UnityEngine.Debug.Log("Attempts to generate bounded Gaussian " + attempts + "details: " + mean + " " + standard_deviation + " " + min + " " + max);
+        if (attempts == 10 && (x < min || x > max))
+            return mean;
         return x;
     }
 
     private static Tuple<KartMCTSNode, List<float>, int> simulate(KartMCTSNode leaf)
     {
-        System.Random random = new System.Random();
         int new_states = 0;
+        int index = 0;
         while (true)
         {
             var result = leaf.state.isOver();
@@ -235,7 +243,10 @@ public class KartMCTS
             //var nextActions = state.nextMoves().OrderBy((action) => optimalLaneSign * action.lane).ThenByDescending((action) => action.max_velocity).ToList();
             // UnityEngine.Debug.Log(nextActions[0].max_velocity);
             // int index = random.Next(nextActions.Count);
-            int index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, 2f, -(float)nextActions.Count + 1f, (float) nextActions.Count -1f)));
+            if (nextActions.Count > 2)
+                index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, nextActions.Count / 6f, -(float)nextActions.Count + 1f, (float)nextActions.Count - 1f)));
+            else
+                index = 0;
             DiscreteKartAction move = nextActions[index];
             if(!leaf.children.ContainsKey(move))
             {

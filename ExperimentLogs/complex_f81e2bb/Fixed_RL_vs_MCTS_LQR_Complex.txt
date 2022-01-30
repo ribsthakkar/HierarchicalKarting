@@ -1,0 +1,800 @@
+Experiment 0
+Fixed-RL Speed: 14.93305
+Fixed-RL Tire Wear: 0.5144155
+Fixed-RL Last Lap: 35.16
+Fixed-RL Best Lap: 33.74
+Fixed-RL Total Time: 105.86
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :8.034849E-06
+MCTS-LQR Tire Wear :0.4600741
+MCTS-LQR Last Lap: 33.14
+MCTS-LQR Best Lap: 33.14
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 3
+Winner: 
+Experiment 1
+Fixed-RL Speed: 14.89333
+Fixed-RL Tire Wear: 0.5160279
+Fixed-RL Last Lap: 34.96
+Fixed-RL Best Lap: 33.52
+Fixed-RL Total Time: 103.28
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.00246
+MCTS-LQR Tire Wear :0.5138333
+MCTS-LQR Last Lap: 35.38
+MCTS-LQR Best Lap: 34.28
+MCTS-LQR Overall Time: 105.32
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Fixed-RL
+Experiment 2
+Fixed-RL Speed: 0.06588332
+Fixed-RL Tire Wear: 0.4085368
+Fixed-RL Last Lap: 33.68
+Fixed-RL Best Lap: 33.68
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :14.0696
+MCTS-LQR Tire Wear :0.4999121
+MCTS-LQR Last Lap: 33.08
+MCTS-LQR Best Lap: 33.08
+MCTS-LQR Overall Time: 100.86
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 3
+Fixed-RL Speed: 14.89394
+Fixed-RL Tire Wear: 0.5133985
+Fixed-RL Last Lap: 34.86
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 102.84
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.99742
+MCTS-LQR Tire Wear :0.4982463
+MCTS-LQR Last Lap: 33.14
+MCTS-LQR Best Lap: 33.14
+MCTS-LQR Overall Time: 100.98
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 4
+Fixed-RL Speed: 14.89744
+Fixed-RL Tire Wear: 0.5132291
+Fixed-RL Last Lap: 34.88
+Fixed-RL Best Lap: 33.22
+Fixed-RL Total Time: 102.52
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.89751
+MCTS-LQR Tire Wear :0.5006275
+MCTS-LQR Last Lap: 33.88
+MCTS-LQR Best Lap: 33.64
+MCTS-LQR Overall Time: 102.26
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 5
+Fixed-RL Speed: 0.05841475
+Fixed-RL Tire Wear: 0.4973427
+Fixed-RL Last Lap: 34.96
+Fixed-RL Best Lap: 33.44
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :14.9946
+MCTS-LQR Tire Wear :0.5034125
+MCTS-LQR Last Lap: 35.78
+MCTS-LQR Best Lap: 34.2
+MCTS-LQR Overall Time: 105.36
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 6
+Fixed-RL Speed: 14.97249
+Fixed-RL Tire Wear: 0.5156392
+Fixed-RL Last Lap: 34.76
+Fixed-RL Best Lap: 33.14
+Fixed-RL Total Time: 102.82
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :15.00471
+MCTS-LQR Tire Wear :0.5097831
+MCTS-LQR Last Lap: 34.92
+MCTS-LQR Best Lap: 33.74
+MCTS-LQR Overall Time: 103.92
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: Fixed-RL
+Experiment 7
+Fixed-RL Speed: 14.89707
+Fixed-RL Tire Wear: 0.4585644
+Fixed-RL Last Lap: 36.52
+Fixed-RL Best Lap: 36.52
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :13.83818
+MCTS-LQR Tire Wear :0.5099354
+MCTS-LQR Last Lap: 34.24
+MCTS-LQR Best Lap: 33.88
+MCTS-LQR Overall Time: 103.9
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 8
+Fixed-RL Speed: 14.96909
+Fixed-RL Tire Wear: 0.5136747
+Fixed-RL Last Lap: 35.56
+Fixed-RL Best Lap: 33.28
+Fixed-RL Total Time: 103.18
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :7.879817
+MCTS-LQR Tire Wear :0.5072246
+MCTS-LQR Last Lap: 83.25999
+MCTS-LQR Best Lap: 33.76
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 9
+Fixed-RL Speed: 0.05671392
+Fixed-RL Tire Wear: 0.4339148
+Fixed-RL Last Lap: 33.42
+Fixed-RL Best Lap: 33.42
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :15.00536
+MCTS-LQR Tire Wear :0.5015045
+MCTS-LQR Last Lap: 33.56
+MCTS-LQR Best Lap: 33.16
+MCTS-LQR Overall Time: 101.24
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 10
+Fixed-RL Speed: 0.05880971
+Fixed-RL Tire Wear: 0.4078963
+Fixed-RL Last Lap: 33.74
+Fixed-RL Best Lap: 33.74
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :14.93412
+MCTS-LQR Tire Wear :0.5066157
+MCTS-LQR Last Lap: 34.6
+MCTS-LQR Best Lap: 33.12
+MCTS-LQR Overall Time: 101.76
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 11
+Fixed-RL Speed: 14.96684
+Fixed-RL Tire Wear: 0.5166532
+Fixed-RL Last Lap: 34.88
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 103.24
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.001
+MCTS-LQR Tire Wear :0.5032875
+MCTS-LQR Last Lap: 34.1
+MCTS-LQR Best Lap: 33.34
+MCTS-LQR Overall Time: 101.48
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 12
+Fixed-RL Speed: 14.89672
+Fixed-RL Tire Wear: 0.5216668
+Fixed-RL Last Lap: 35.6
+Fixed-RL Best Lap: 34
+Fixed-RL Total Time: 104.98
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :14.89762
+MCTS-LQR Tire Wear :0.4985254
+MCTS-LQR Last Lap: 33.5
+MCTS-LQR Best Lap: 32.74
+MCTS-LQR Overall Time: 100.06
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: MCTS-LQR
+Experiment 13
+Fixed-RL Speed: 14.96927
+Fixed-RL Tire Wear: 0.5234242
+Fixed-RL Last Lap: 35.34
+Fixed-RL Best Lap: 34.34
+Fixed-RL Total Time: 104.86
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :13.91858
+MCTS-LQR Tire Wear :0.5103616
+MCTS-LQR Last Lap: 35.66
+MCTS-LQR Best Lap: 33.98
+MCTS-LQR Overall Time: 105.84
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Fixed-RL
+Experiment 14
+Fixed-RL Speed: 0.05903932
+Fixed-RL Tire Wear: 0.4417675
+Fixed-RL Last Lap: 33.24
+Fixed-RL Best Lap: 33.24
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.00082
+MCTS-LQR Tire Wear :0.5025274
+MCTS-LQR Last Lap: 34.14
+MCTS-LQR Best Lap: 32.9
+MCTS-LQR Overall Time: 101.56
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: 
+Experiment 15
+Fixed-RL Speed: 15.02304
+Fixed-RL Tire Wear: 0.5204031
+Fixed-RL Last Lap: 35.84
+Fixed-RL Best Lap: 33.88
+Fixed-RL Total Time: 104.44
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.9718
+MCTS-LQR Tire Wear :0.5116177
+MCTS-LQR Last Lap: 34.86
+MCTS-LQR Best Lap: 33.52
+MCTS-LQR Overall Time: 104.74
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Fixed-RL
+Experiment 16
+Fixed-RL Speed: 15.02663
+Fixed-RL Tire Wear: 0.5109773
+Fixed-RL Last Lap: 35.54
+Fixed-RL Best Lap: 33.02
+Fixed-RL Total Time: 102.32
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :12.19124
+MCTS-LQR Tire Wear :0.4793764
+MCTS-LQR Last Lap: 33.1
+MCTS-LQR Best Lap: 33.1
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 3
+Winner: 
+Experiment 17
+Fixed-RL Speed: 14.89887
+Fixed-RL Tire Wear: 0.5183847
+Fixed-RL Last Lap: 34.82
+Fixed-RL Best Lap: 33.52
+Fixed-RL Total Time: 104.46
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :14.89849
+MCTS-LQR Tire Wear :0.500073
+MCTS-LQR Last Lap: 33.44
+MCTS-LQR Best Lap: 32.54
+MCTS-LQR Overall Time: 101.16
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: MCTS-LQR
+Experiment 18
+Fixed-RL Speed: 14.92397
+Fixed-RL Tire Wear: 0.5138428
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 33.4
+Fixed-RL Total Time: 102.56
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :14.8982
+MCTS-LQR Tire Wear :0.4983377
+MCTS-LQR Last Lap: 33.26
+MCTS-LQR Best Lap: 32.66
+MCTS-LQR Overall Time: 99.86
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: MCTS-LQR
+Experiment 19
+Fixed-RL Speed: 14.96469
+Fixed-RL Tire Wear: 0.513527
+Fixed-RL Last Lap: 34.88
+Fixed-RL Best Lap: 33.08
+Fixed-RL Total Time: 102.18
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.75793
+MCTS-LQR Tire Wear :0.500659
+MCTS-LQR Last Lap: 34.28
+MCTS-LQR Best Lap: 33.16
+MCTS-LQR Overall Time: 102.74
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Fixed-RL
+Experiment 20
+Fixed-RL Speed: 14.84155
+Fixed-RL Tire Wear: 0.5195821
+Fixed-RL Last Lap: 35.32
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 103.7
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :9.590027
+MCTS-LQR Tire Wear :0.4726089
+MCTS-LQR Last Lap: 70.04
+MCTS-LQR Best Lap: 32.68
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 21
+Fixed-RL Speed: 14.93245
+Fixed-RL Tire Wear: 0.527952
+Fixed-RL Last Lap: 36.62
+Fixed-RL Best Lap: 33.66
+Fixed-RL Total Time: 105.48
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 0
+MCTS-LQR Speed :7.928059
+MCTS-LQR Tire Wear :0.5617847
+MCTS-LQR Last Lap: 47
+MCTS-LQR Best Lap: 33.68
+MCTS-LQR Overall Time: 117.02
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: Fixed-RL
+Experiment 22
+Fixed-RL Speed: 0.05989922
+Fixed-RL Tire Wear: 0.3315692
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :15.00209
+MCTS-LQR Tire Wear :0.5081686
+MCTS-LQR Last Lap: 33.76
+MCTS-LQR Best Lap: 33.3
+MCTS-LQR Overall Time: 101.64
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 23
+Fixed-RL Speed: 15.02217
+Fixed-RL Tire Wear: 0.5156373
+Fixed-RL Last Lap: 34.48
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 102.46
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.8972
+MCTS-LQR Tire Wear :0.5006917
+MCTS-LQR Last Lap: 33.5
+MCTS-LQR Best Lap: 33.42
+MCTS-LQR Overall Time: 101.88
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 24
+Fixed-RL Speed: 14.9641
+Fixed-RL Tire Wear: 0.5188954
+Fixed-RL Last Lap: 35.6
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 104.56
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.0093
+MCTS-LQR Tire Wear :0.503485
+MCTS-LQR Last Lap: 33.56
+MCTS-LQR Best Lap: 32.94
+MCTS-LQR Overall Time: 101.02
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: MCTS-LQR
+Experiment 25
+Fixed-RL Speed: 15.01268
+Fixed-RL Tire Wear: 0.525958
+Fixed-RL Last Lap: 35.34
+Fixed-RL Best Lap: 33.38
+Fixed-RL Total Time: 104.68
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :1.235579E-05
+MCTS-LQR Tire Wear :0.4709974
+MCTS-LQR Last Lap: 34.68
+MCTS-LQR Best Lap: 34
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 26
+Fixed-RL Speed: 0.06236411
+Fixed-RL Tire Wear: 0.3348703
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Lane Changes: 0
+MCTS-LQR Speed :0.0611337
+MCTS-LQR Tire Wear :0.33698
+MCTS-LQR Last Lap: 0
+MCTS-LQR Best Lap: 0
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 0/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 27
+Fixed-RL Speed: 14.93605
+Fixed-RL Tire Wear: 0.5132707
+Fixed-RL Last Lap: 34.72
+Fixed-RL Best Lap: 33.6
+Fixed-RL Total Time: 102.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :13.87973
+MCTS-LQR Tire Wear :0.5008344
+MCTS-LQR Last Lap: 33.06
+MCTS-LQR Best Lap: 33.06
+MCTS-LQR Overall Time: 101.52
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: MCTS-LQR
+Experiment 28
+Fixed-RL Speed: 0.05845943
+Fixed-RL Tire Wear: 0.363447
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.00224
+MCTS-LQR Tire Wear :0.5015485
+MCTS-LQR Last Lap: 34.56
+MCTS-LQR Best Lap: 33.1
+MCTS-LQR Overall Time: 102.94
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 29
+Fixed-RL Speed: 15.02399
+Fixed-RL Tire Wear: 0.518051
+Fixed-RL Last Lap: 34.54
+Fixed-RL Best Lap: 34.02
+Fixed-RL Total Time: 103.98
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.12781
+MCTS-LQR Tire Wear :0.5064523
+MCTS-LQR Last Lap: 33.9
+MCTS-LQR Best Lap: 33.78
+MCTS-LQR Overall Time: 103.08
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: MCTS-LQR
+Experiment 30
+Fixed-RL Speed: 0.05997238
+Fixed-RL Tire Wear: 0.3434765
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Lane Changes: 0
+MCTS-LQR Speed :14.95825
+MCTS-LQR Tire Wear :0.5022786
+MCTS-LQR Last Lap: 33.6
+MCTS-LQR Best Lap: 33.6
+MCTS-LQR Overall Time: 102.56
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: 
+Experiment 31
+Fixed-RL Speed: 14.91354
+Fixed-RL Tire Wear: 0.5215368
+Fixed-RL Last Lap: 35.02
+Fixed-RL Best Lap: 34.16
+Fixed-RL Total Time: 104.96
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 4
+MCTS-LQR Speed :13.01009
+MCTS-LQR Tire Wear :0.4764045
+MCTS-LQR Last Lap: 67.4
+MCTS-LQR Best Lap: 34.5
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 32
+Fixed-RL Speed: 14.89822
+Fixed-RL Tire Wear: 0.5172378
+Fixed-RL Last Lap: 35.7
+Fixed-RL Best Lap: 33.44
+Fixed-RL Total Time: 103.42
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 0
+MCTS-LQR Speed :14.302
+MCTS-LQR Tire Wear :0.5082364
+MCTS-LQR Last Lap: 34.18
+MCTS-LQR Best Lap: 33.92
+MCTS-LQR Overall Time: 103.42
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Tie
+Experiment 33
+Fixed-RL Speed: 15.02413
+Fixed-RL Tire Wear: 0.5245547
+Fixed-RL Last Lap: 49.6
+Fixed-RL Best Lap: 33.38
+Fixed-RL Total Time: 117.3
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.00063
+MCTS-LQR Tire Wear :0.5024641
+MCTS-LQR Last Lap: 34.48
+MCTS-LQR Best Lap: 34.24
+MCTS-LQR Overall Time: 103.78
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 34
+Fixed-RL Speed: 14.96148
+Fixed-RL Tire Wear: 0.5235157
+Fixed-RL Last Lap: 34.44
+Fixed-RL Best Lap: 33.78
+Fixed-RL Total Time: 103.32
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :2.338736E-06
+MCTS-LQR Tire Wear :0.468478
+MCTS-LQR Last Lap: 33.54
+MCTS-LQR Best Lap: 33.54
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 35
+Fixed-RL Speed: 14.74602
+Fixed-RL Tire Wear: 0.516711
+Fixed-RL Last Lap: 35.34
+Fixed-RL Best Lap: 33.72
+Fixed-RL Total Time: 104.02
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.00425
+MCTS-LQR Tire Wear :0.5013521
+MCTS-LQR Last Lap: 34.7
+MCTS-LQR Best Lap: 34.04
+MCTS-LQR Overall Time: 104.36
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Fixed-RL
+Experiment 36
+Fixed-RL Speed: 14.96965
+Fixed-RL Tire Wear: 0.5201294
+Fixed-RL Last Lap: 34.72
+Fixed-RL Best Lap: 33.52
+Fixed-RL Total Time: 103.82
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.00061
+MCTS-LQR Tire Wear :0.4961179
+MCTS-LQR Last Lap: 33.06
+MCTS-LQR Best Lap: 33.06
+MCTS-LQR Overall Time: 102.6
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 37
+Fixed-RL Speed: 14.92439
+Fixed-RL Tire Wear: 0.5305163
+Fixed-RL Last Lap: 36.38
+Fixed-RL Best Lap: 34.18
+Fixed-RL Total Time: 107.14
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :13.96317
+MCTS-LQR Tire Wear :0.5130866
+MCTS-LQR Last Lap: 36.86
+MCTS-LQR Best Lap: 33.14
+MCTS-LQR Overall Time: 109.18
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: Fixed-RL
+Experiment 38
+Fixed-RL Speed: 14.98232
+Fixed-RL Tire Wear: 0.51486
+Fixed-RL Last Lap: 35.04
+Fixed-RL Best Lap: 33.62
+Fixed-RL Total Time: 103.04
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.87947
+MCTS-LQR Tire Wear :0.5067242
+MCTS-LQR Last Lap: 33.66
+MCTS-LQR Best Lap: 33.66
+MCTS-LQR Overall Time: 103.34
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: Fixed-RL
+Experiment 39
+Fixed-RL Speed: 15.03071
+Fixed-RL Tire Wear: 0.5201563
+Fixed-RL Last Lap: 35.18
+Fixed-RL Best Lap: 33.86
+Fixed-RL Total Time: 105.12
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :14.89067
+MCTS-LQR Tire Wear :0.4925269
+MCTS-LQR Last Lap: 33.3
+MCTS-LQR Best Lap: 32.66
+MCTS-LQR Overall Time: 100.72
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 0
+Winner: MCTS-LQR
+Experiment 40
+Fixed-RL Speed: 14.89706
+Fixed-RL Tire Wear: 0.5191229
+Fixed-RL Last Lap: 34.86
+Fixed-RL Best Lap: 34.34
+Fixed-RL Total Time: 104.24
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :9.511262
+MCTS-LQR Tire Wear :0.48075
+MCTS-LQR Last Lap: 68.02
+MCTS-LQR Best Lap: 34.06
+MCTS-LQR Overall Time: 119.96
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 41
+Fixed-RL Speed: 14.91989
+Fixed-RL Tire Wear: 0.5196663
+Fixed-RL Last Lap: 35.28
+Fixed-RL Best Lap: 33.74
+Fixed-RL Total Time: 104.6
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.00309
+MCTS-LQR Tire Wear :0.5145751
+MCTS-LQR Last Lap: 34.48
+MCTS-LQR Best Lap: 34.2
+MCTS-LQR Overall Time: 104.54
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 42
+Fixed-RL Speed: 0.05707424
+Fixed-RL Tire Wear: 0.3694576
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :14.98177
+MCTS-LQR Tire Wear :0.5061306
+MCTS-LQR Last Lap: 33.82
+MCTS-LQR Best Lap: 32.88
+MCTS-LQR Overall Time: 101.66
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: 
+Experiment 43
+Fixed-RL Speed: 15.01292
+Fixed-RL Tire Wear: 0.5154139
+Fixed-RL Last Lap: 35.18
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 102.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.93554
+MCTS-LQR Tire Wear :0.5011818
+MCTS-LQR Last Lap: 34.52
+MCTS-LQR Best Lap: 33.9
+MCTS-LQR Overall Time: 103.62
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: Fixed-RL
+Experiment 44
+Fixed-RL Speed: 0.05749484
+Fixed-RL Tire Wear: 0.4384492
+Fixed-RL Last Lap: 34.42
+Fixed-RL Best Lap: 34.42
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 1/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :14.16215
+MCTS-LQR Tire Wear :0.5036063
+MCTS-LQR Last Lap: 34.42
+MCTS-LQR Best Lap: 33.38
+MCTS-LQR Overall Time: 102.98
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 45
+Fixed-RL Speed: 14.89827
+Fixed-RL Tire Wear: 0.5173432
+Fixed-RL Last Lap: 35.46
+Fixed-RL Best Lap: 33.66
+Fixed-RL Total Time: 103.74
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :14.14366
+MCTS-LQR Tire Wear :0.5031444
+MCTS-LQR Last Lap: 33.56
+MCTS-LQR Best Lap: 33.56
+MCTS-LQR Overall Time: 102.72
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: MCTS-LQR
+Experiment 46
+Fixed-RL Speed: 14.99236
+Fixed-RL Tire Wear: 0.5156416
+Fixed-RL Last Lap: 34.76
+Fixed-RL Best Lap: 33.38
+Fixed-RL Total Time: 102.54
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 0
+MCTS-LQR Speed :13.94129
+MCTS-LQR Tire Wear :0.4989609
+MCTS-LQR Last Lap: 33.64
+MCTS-LQR Best Lap: 32.86
+MCTS-LQR Overall Time: 100.68
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 2
+Winner: MCTS-LQR
+Experiment 47
+Fixed-RL Speed: 15.0303
+Fixed-RL Tire Wear: 0.5208035
+Fixed-RL Last Lap: 35.34
+Fixed-RL Best Lap: 33.84
+Fixed-RL Total Time: 104.16
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 1
+MCTS-LQR Speed :15.02109
+MCTS-LQR Tire Wear :0.5109779
+MCTS-LQR Last Lap: 34.02
+MCTS-LQR Best Lap: 33.34
+MCTS-LQR Overall Time: 103.62
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: MCTS-LQR
+Experiment 48
+Fixed-RL Speed: 0.05647323
+Fixed-RL Tire Wear: 0.5045431
+Fixed-RL Last Lap: 33.5
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Lane Changes: 3
+MCTS-LQR Speed :14.8902
+MCTS-LQR Tire Wear :0.5071626
+MCTS-LQR Last Lap: 34.46
+MCTS-LQR Best Lap: 33
+MCTS-LQR Overall Time: 102.5
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Lane Changes: 1
+Winner: 
+Experiment 49
+Fixed-RL Speed: 14.89889
+Fixed-RL Tire Wear: 0.5153866
+Fixed-RL Last Lap: 35.44
+Fixed-RL Best Lap: 33.52
+Fixed-RL Total Time: 104.26
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Lane Changes: 2
+MCTS-LQR Speed :7.589383
+MCTS-LQR Tire Wear :0.5934829
+MCTS-LQR Last Lap: 42.4
+MCTS-LQR Best Lap: 34
+MCTS-LQR Overall Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Lane Changes: 0
+Winner: 

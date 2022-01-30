@@ -1,800 +1,850 @@
 Experiment 0
-E2E Speed: 10.32746
-E2E Tire Wear: 0.4935973
-E2E Last Lap: 50.58
-E2E Best Lap: 50.58
-E2E Total Time: 119.98
-E2E Laps Completed: 2/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.8867
-Fixed-RL Tire Wear :0.512877
-Fixed-RL Last Lap: 35.04
-Fixed-RL Best Lap: 34.46
-Fixed-RL Overall Time: 106.52
+Fixed-RL Speed: 14.98292
+Fixed-RL Last Lap: 35.12
+Fixed-RL Best Lap: 34.32
+Fixed-RL Total Time: 106.78
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 3
+E2E Speed: 15.02712
+E2E Last Lap: 35.52
+E2E Best Lap: 34.16
+E2E Total Time: 106.76
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
 Winner: 
+
 Experiment 1
-E2E Speed: 13.33089
-E2E Tire Wear: 0.5184825
-E2E Last Lap: 36.9
-E2E Best Lap: 33.62
-E2E Total Time: 105.06
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.92708
-Fixed-RL Tire Wear :0.51478
-Fixed-RL Last Lap: 34.92
-Fixed-RL Best Lap: 33.06
-Fixed-RL Overall Time: 102.6
+Fixed-RL Speed: 14.93283
+Fixed-RL Last Lap: 34.94
+Fixed-RL Best Lap: 33.26
+Fixed-RL Total Time: 102.6
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 2
-E2E Speed: 14.787
-E2E Tire Wear: 0.5150275
-E2E Last Lap: 36.46
-E2E Best Lap: 33.88
-E2E Total Time: 105.14
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.93534
-Fixed-RL Tire Wear :0.5128921
-Fixed-RL Last Lap: 34.98
-Fixed-RL Best Lap: 33.28
-Fixed-RL Overall Time: 102.34
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 3
-E2E Speed: 14.92818
-E2E Tire Wear: 0.5161507
-E2E Last Lap: 35.72
-E2E Best Lap: 33.72
-E2E Total Time: 104.46
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.89574
-Fixed-RL Tire Wear :0.5129651
-Fixed-RL Last Lap: 35.26
-Fixed-RL Best Lap: 33.4
-Fixed-RL Overall Time: 102.72
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 4
-E2E Speed: 14.65119
-E2E Tire Wear: 0.5169668
-E2E Last Lap: 35.64
-E2E Best Lap: 33.36
-E2E Total Time: 104.12
-E2E Laps Completed: 3/3
-E2E Lane Changes: 1
-Fixed-RL Speed :14.99438
-Fixed-RL Tire Wear :0.5222597
-Fixed-RL Last Lap: 34.8
-Fixed-RL Best Lap: 33.84
-Fixed-RL Overall Time: 103.64
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 5
-E2E Speed: 14.95552
-E2E Tire Wear: 0.5131586
-E2E Last Lap: 35.62
-E2E Best Lap: 33.94
-E2E Total Time: 104.26
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.93623
-Fixed-RL Tire Wear :0.5128575
-Fixed-RL Last Lap: 34.96
-Fixed-RL Best Lap: 33.32
-Fixed-RL Overall Time: 102.42
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 6
-E2E Speed: 14.3808
-E2E Tire Wear: 0.5139078
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.89352
 E2E Last Lap: 35.6
-E2E Best Lap: 34.06
-E2E Total Time: 104.48
+E2E Best Lap: 33.24
+E2E Total Time: 103.58
 E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.95624
-Fixed-RL Tire Wear :0.5170974
-Fixed-RL Last Lap: 35.2
-Fixed-RL Best Lap: 33.5
-Fixed-RL Overall Time: 102.98
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 7
-E2E Speed: 14.89751
-E2E Tire Wear: 0.5120447
-E2E Last Lap: 35.72
-E2E Best Lap: 33.76
-E2E Total Time: 104.06
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :15.00299
-Fixed-RL Tire Wear :0.5196199
-Fixed-RL Last Lap: 36.34
-Fixed-RL Best Lap: 33.46
-Fixed-RL Overall Time: 104.38
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: E2E
-Experiment 8
-E2E Speed: 14.25377
-E2E Tire Wear: 0.5152895
-E2E Last Lap: 35.46
-E2E Best Lap: 33.9
-E2E Total Time: 104.02
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.88396
-Fixed-RL Tire Wear :0.5140949
-Fixed-RL Last Lap: 35.28
-Fixed-RL Best Lap: 33.48
-Fixed-RL Overall Time: 102.98
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 9
-E2E Speed: 14.93559
-E2E Tire Wear: 0.5127681
-E2E Last Lap: 35.7
-E2E Best Lap: 33.74
-E2E Total Time: 103.96
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.88647
-Fixed-RL Tire Wear :0.5156472
-Fixed-RL Last Lap: 35.06
-Fixed-RL Best Lap: 33.68
-Fixed-RL Overall Time: 103.5
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 2
-Winner: Fixed-RL
-Experiment 10
-E2E Speed: 14.80962
-E2E Tire Wear: 0.5101247
-E2E Last Lap: 35.58
-E2E Best Lap: 33.82
-E2E Total Time: 104.18
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :0.0678977
-Fixed-RL Tire Wear :0.3327762
-Fixed-RL Last Lap: 0
-Fixed-RL Best Lap: 0
-Fixed-RL Overall Time: 119.98
-Fixed-RL Laps Completed: 0/3
-Fixed-RL Lane Changes: 1
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
 Winner: 
-Experiment 11
-E2E Speed: 14.89441
-E2E Tire Wear: 0.5116412
-E2E Last Lap: 35.84
-E2E Best Lap: 33.88
+
+Experiment 2
+Fixed-RL Speed: 14.89757
+Fixed-RL Last Lap: 35.2
+Fixed-RL Best Lap: 33.58
+Fixed-RL Total Time: 103.58
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.2713
+E2E Last Lap: 35.96
+E2E Best Lap: 33.78
+E2E Total Time: 105.48
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+Winner: 
+
+Experiment 3
+Fixed-RL Speed: 14.98381
+Fixed-RL Last Lap: 35.44
+Fixed-RL Best Lap: 33.48
+Fixed-RL Total Time: 103.3
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.55116
+E2E Last Lap: 35.94
+E2E Best Lap: 33.8
+E2E Total Time: 104.42
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 2
+Winner: 
+
+Experiment 4
+Fixed-RL Speed: 14.9291
+Fixed-RL Last Lap: 34.54
+Fixed-RL Best Lap: 34.04
+Fixed-RL Total Time: 103.28
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.39146
+E2E Last Lap: 35.98
+E2E Best Lap: 33.66
 E2E Total Time: 104.44
 E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :15.01624
-Fixed-RL Tire Wear :0.5139557
-Fixed-RL Last Lap: 34.96
-Fixed-RL Best Lap: 33.36
-Fixed-RL Overall Time: 102.54
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 2
-Winner: Fixed-RL
-Experiment 12
-E2E Speed: 14.08833
-E2E Tire Wear: 0.5144199
-E2E Last Lap: 35.82
-E2E Best Lap: 33.46
-E2E Total Time: 104.04
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89686
-Fixed-RL Tire Wear :0.5156443
-Fixed-RL Last Lap: 34.7
-Fixed-RL Best Lap: 33.72
-Fixed-RL Overall Time: 103.24
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 13
-E2E Speed: 14.0261
-E2E Tire Wear: 0.5149734
-E2E Last Lap: 35.7
-E2E Best Lap: 33.82
-E2E Total Time: 104.46
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89109
-Fixed-RL Tire Wear :0.5134236
-Fixed-RL Last Lap: 35.08
-Fixed-RL Best Lap: 33.4
-Fixed-RL Overall Time: 103.08
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 3
-Winner: Fixed-RL
-Experiment 14
-E2E Speed: 13.22188
-E2E Tire Wear: 0.5146639
-E2E Last Lap: 35.62
-E2E Best Lap: 33.7
-E2E Total Time: 104
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :15.02679
-Fixed-RL Tire Wear :0.513814
-Fixed-RL Last Lap: 35.08
-Fixed-RL Best Lap: 33.3
-Fixed-RL Overall Time: 103.04
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 15
-E2E Speed: 14.34583
-E2E Tire Wear: 0.5154068
-E2E Last Lap: 36.56
-E2E Best Lap: 33.5
-E2E Total Time: 104.54
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.89827
-Fixed-RL Tire Wear :0.5183392
-Fixed-RL Last Lap: 34.9
-Fixed-RL Best Lap: 33.7
-Fixed-RL Overall Time: 103.12
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 16
-E2E Speed: 14.92524
-E2E Tire Wear: 0.5144732
-E2E Last Lap: 35.54
-E2E Best Lap: 33.58
-E2E Total Time: 104
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89208
-Fixed-RL Tire Wear :0.5154501
-Fixed-RL Last Lap: 35.02
-Fixed-RL Best Lap: 33.42
-Fixed-RL Overall Time: 102.94
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 17
-E2E Speed: 14.45221
-E2E Tire Wear: 0.5163659
-E2E Last Lap: 36.68
-E2E Best Lap: 33.72
-E2E Total Time: 105
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.93517
-Fixed-RL Tire Wear :0.5143178
-Fixed-RL Last Lap: 34.9
-Fixed-RL Best Lap: 33.2
-Fixed-RL Overall Time: 102.16
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 18
-E2E Speed: 14.01721
-E2E Tire Wear: 0.5148091
-E2E Last Lap: 35.52
-E2E Best Lap: 33.8
-E2E Total Time: 103.94
-E2E Laps Completed: 3/3
-E2E Lane Changes: 6
-Fixed-RL Speed :15.01358
-Fixed-RL Tire Wear :0.514114
-Fixed-RL Last Lap: 35.28
-Fixed-RL Best Lap: 33.34
-Fixed-RL Overall Time: 102.7
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 2
-Winner: Fixed-RL
-Experiment 19
-E2E Speed: 14.33851
-E2E Tire Wear: 0.5122247
-E2E Last Lap: 36
-E2E Best Lap: 33.76
-E2E Total Time: 104.3
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.99482
-Fixed-RL Tire Wear :0.5129837
-Fixed-RL Last Lap: 35.28
-Fixed-RL Best Lap: 33.2
-Fixed-RL Overall Time: 102.72
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 20
-E2E Speed: 13.90163
-E2E Tire Wear: 0.5173835
-E2E Last Lap: 52.04
-E2E Best Lap: 33.84
-E2E Total Time: 119.98
-E2E Laps Completed: 2/3
-E2E Lane Changes: 0
-Fixed-RL Speed :0.05480548
-Fixed-RL Tire Wear :0.4739393
-Fixed-RL Last Lap: 33.42
-Fixed-RL Best Lap: 33.42
-Fixed-RL Overall Time: 119.98
-Fixed-RL Laps Completed: 2/3
-Fixed-RL Lane Changes: 2
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
 Winner: 
-Experiment 21
-E2E Speed: 14.99781
-E2E Tire Wear: 0.5137684
-E2E Last Lap: 36.08
-E2E Best Lap: 34.14
-E2E Total Time: 105.14
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89475
-Fixed-RL Tire Wear :0.5126068
-Fixed-RL Last Lap: 34.84
+
+Experiment 5
+Fixed-RL Speed: 15.01961
+Fixed-RL Last Lap: 35.26
 Fixed-RL Best Lap: 33.28
-Fixed-RL Overall Time: 102.36
+Fixed-RL Total Time: 102.82
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 22
-E2E Speed: 14.92403
-E2E Tire Wear: 0.5119507
-E2E Last Lap: 36.1
-E2E Best Lap: 33.28
-E2E Total Time: 103.98
-E2E Laps Completed: 3/3
-E2E Lane Changes: 1
-Fixed-RL Speed :0.06832256
-Fixed-RL Tire Wear :0.4132232
-Fixed-RL Last Lap: 33.84
-Fixed-RL Best Lap: 33.84
-Fixed-RL Overall Time: 119.98
-Fixed-RL Laps Completed: 1/3
-Fixed-RL Lane Changes: 0
-Winner: 
-Experiment 23
-E2E Speed: 14.99055
-E2E Tire Wear: 0.5148387
-E2E Last Lap: 35.8
-E2E Best Lap: 33.66
-E2E Total Time: 103.86
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.97272
-Fixed-RL Tire Wear :0.5126843
-Fixed-RL Last Lap: 34.78
-Fixed-RL Best Lap: 33.16
-Fixed-RL Overall Time: 102.42
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 24
-E2E Speed: 14.73467
-E2E Tire Wear: 0.5141652
-E2E Last Lap: 35.54
-E2E Best Lap: 33.84
-E2E Total Time: 104.04
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.90049
-Fixed-RL Tire Wear :0.5103084
-Fixed-RL Last Lap: 35.04
-Fixed-RL Best Lap: 33.52
-Fixed-RL Overall Time: 103.08
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 25
-E2E Speed: 14.90358
-E2E Tire Wear: 0.5134354
-E2E Last Lap: 35.48
-E2E Best Lap: 33.5
-E2E Total Time: 103.62
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.95494
-Fixed-RL Tire Wear :0.5149944
-Fixed-RL Last Lap: 35.04
-Fixed-RL Best Lap: 33.1
-Fixed-RL Overall Time: 102.46
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 26
-E2E Speed: 14.26138
-E2E Tire Wear: 0.5153489
-E2E Last Lap: 35.86
-E2E Best Lap: 33.84
-E2E Total Time: 104.82
-E2E Laps Completed: 3/3
-E2E Lane Changes: 1
-Fixed-RL Speed :14.92473
-Fixed-RL Tire Wear :0.5197108
-Fixed-RL Last Lap: 35.1
-Fixed-RL Best Lap: 34.14
-Fixed-RL Overall Time: 104.32
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 27
-E2E Speed: 14.60366
-E2E Tire Wear: 0.5119098
-E2E Last Lap: 35.58
-E2E Best Lap: 33.74
-E2E Total Time: 103.78
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :15.00043
-Fixed-RL Tire Wear :0.5120957
-Fixed-RL Last Lap: 34.96
-Fixed-RL Best Lap: 33.28
-Fixed-RL Overall Time: 102.3
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 28
-E2E Speed: 14.67333
-E2E Tire Wear: 0.5162086
-E2E Last Lap: 35.96
-E2E Best Lap: 33.6
-E2E Total Time: 105.08
-E2E Laps Completed: 3/3
-E2E Lane Changes: 3
-Fixed-RL Speed :0.06126596
-Fixed-RL Tire Wear :0.3622823
-Fixed-RL Last Lap: 0
-Fixed-RL Best Lap: 0
-Fixed-RL Overall Time: 119.98
-Fixed-RL Laps Completed: 0/3
-Fixed-RL Lane Changes: 2
-Winner: 
-Experiment 29
-E2E Speed: 13.16921
-E2E Tire Wear: 0.5162629
-E2E Last Lap: 35.86
-E2E Best Lap: 33.56
-E2E Total Time: 104.76
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.92174
-Fixed-RL Tire Wear :0.5160438
-Fixed-RL Last Lap: 34.94
-Fixed-RL Best Lap: 33.72
-Fixed-RL Overall Time: 103.08
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 30
-E2E Speed: 14.01032
-E2E Tire Wear: 0.5151812
-E2E Last Lap: 35.68
-E2E Best Lap: 33.82
-E2E Total Time: 104.4
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.8988
-Fixed-RL Tire Wear :0.5157015
-Fixed-RL Last Lap: 35.04
-Fixed-RL Best Lap: 33.7
-Fixed-RL Overall Time: 103.32
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 2
-Winner: Fixed-RL
-Experiment 31
-E2E Speed: 14.93452
-E2E Tire Wear: 0.5159307
-E2E Last Lap: 35.94
-E2E Best Lap: 33.68
-E2E Total Time: 104.96
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :0.05899946
-Fixed-RL Tire Wear :0.3644215
-Fixed-RL Last Lap: 0
-Fixed-RL Best Lap: 0
-Fixed-RL Overall Time: 119.98
-Fixed-RL Laps Completed: 0/3
-Fixed-RL Lane Changes: 3
-Winner: 
-Experiment 32
-E2E Speed: 14.95604
-E2E Tire Wear: 0.510797
-E2E Last Lap: 35.68
-E2E Best Lap: 33.56
-E2E Total Time: 103.64
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89803
-Fixed-RL Tire Wear :0.5119036
-Fixed-RL Last Lap: 35.1
-Fixed-RL Best Lap: 32.98
-Fixed-RL Overall Time: 101.94
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 33
-E2E Speed: 14.68218
-E2E Tire Wear: 0.5137385
-E2E Last Lap: 35.86
-E2E Best Lap: 33.84
-E2E Total Time: 104.26
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.92199
-Fixed-RL Tire Wear :0.513175
-Fixed-RL Last Lap: 35.32
-Fixed-RL Best Lap: 33.02
-Fixed-RL Overall Time: 102.58
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 34
-E2E Speed: 14.5329
-E2E Tire Wear: 0.5144723
-E2E Last Lap: 35.88
-E2E Best Lap: 33.92
-E2E Total Time: 104.46
-E2E Laps Completed: 3/3
-E2E Lane Changes: 6
-Fixed-RL Speed :14.9333
-Fixed-RL Tire Wear :0.510716
-Fixed-RL Last Lap: 34.82
-Fixed-RL Best Lap: 33.2
-Fixed-RL Overall Time: 102.14
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 35
-E2E Speed: 14.88131
-E2E Tire Wear: 0.5167496
-E2E Last Lap: 35.88
-E2E Best Lap: 34.16
-E2E Total Time: 105.18
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89807
-Fixed-RL Tire Wear :0.5157351
-Fixed-RL Last Lap: 35.32
-Fixed-RL Best Lap: 33.66
-Fixed-RL Overall Time: 103.4
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 36
-E2E Speed: 13.99264
-E2E Tire Wear: 0.5147123
-E2E Last Lap: 35.54
-E2E Best Lap: 33.82
-E2E Total Time: 104.12
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :15.00547
-Fixed-RL Tire Wear :0.5153238
-Fixed-RL Last Lap: 35.18
-Fixed-RL Best Lap: 33.26
-Fixed-RL Overall Time: 103
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 37
-E2E Speed: 14.76605
-E2E Tire Wear: 0.5141243
-E2E Last Lap: 35.76
-E2E Best Lap: 33.68
-E2E Total Time: 104.34
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.89289
-Fixed-RL Tire Wear :0.5160596
-Fixed-RL Last Lap: 35.04
-Fixed-RL Best Lap: 33.16
-Fixed-RL Overall Time: 102.92
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 38
-E2E Speed: 15.00616
-E2E Tire Wear: 0.515615
-E2E Last Lap: 36.24
-E2E Best Lap: 33.6
-E2E Total Time: 104.4
-E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.93454
-Fixed-RL Tire Wear :0.5108799
-Fixed-RL Last Lap: 35.06
-Fixed-RL Best Lap: 33.16
-Fixed-RL Overall Time: 102.42
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 39
-E2E Speed: 14.9986
-E2E Tire Wear: 0.5147166
-E2E Last Lap: 36.34
-E2E Best Lap: 33.58
-E2E Total Time: 104.48
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :15.03136
-Fixed-RL Tire Wear :0.5128664
-Fixed-RL Last Lap: 34.76
-Fixed-RL Best Lap: 33.38
-Fixed-RL Overall Time: 102.44
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 40
-E2E Speed: 14.95997
-E2E Tire Wear: 0.5181656
-E2E Last Lap: 36.36
-E2E Best Lap: 34.26
-E2E Total Time: 106.28
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.98277
-Fixed-RL Tire Wear :0.5189102
-Fixed-RL Last Lap: 34.96
-Fixed-RL Best Lap: 33.94
-Fixed-RL Overall Time: 107
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: E2E
-Experiment 41
-E2E Speed: 13.23013
-E2E Tire Wear: 0.51279
-E2E Last Lap: 35.4
-E2E Best Lap: 33.9
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.87728
+E2E Last Lap: 35.56
+E2E Best Lap: 33.62
 E2E Total Time: 104.02
 E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.9927
-Fixed-RL Tire Wear :0.5146351
-Fixed-RL Last Lap: 34.88
-Fixed-RL Best Lap: 33.18
-Fixed-RL Overall Time: 102.22
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+Winner: 
+
+Experiment 6
+Fixed-RL Speed: 14.96733
+Fixed-RL Last Lap: 35.28
+Fixed-RL Best Lap: 33.96
+Fixed-RL Total Time: 104.18
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 42
-E2E Speed: 14.89799
-E2E Tire Wear: 0.5135052
-E2E Last Lap: 53.54
-E2E Best Lap: 33.34
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.9674
+E2E Last Lap: 35.64
+E2E Best Lap: 33.62
+E2E Total Time: 104.08
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 7
+Fixed-RL Speed: 15.01915
+Fixed-RL Last Lap: 34.62
+Fixed-RL Best Lap: 33.36
+Fixed-RL Total Time: 102.58
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.94896
+E2E Last Lap: 35.7
+E2E Best Lap: 33.7
+E2E Total Time: 103.96
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 8
+Fixed-RL Speed: 14.93498
+Fixed-RL Last Lap: 35.82
+Fixed-RL Best Lap: 33.66
+Fixed-RL Total Time: 104.4
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.09266
+E2E Last Lap: 35.44
+E2E Best Lap: 35.44
 E2E Total Time: 119.98
 E2E Laps Completed: 2/3
-E2E Lane Changes: 0
-Fixed-RL Speed :14.97003
-Fixed-RL Tire Wear :0.5197887
-Fixed-RL Last Lap: 36.06
-Fixed-RL Best Lap: 33.7
-Fixed-RL Overall Time: 104.54
-Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 4
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
 Winner: 
-Experiment 43
-E2E Speed: 14.24623
-E2E Tire Wear: 0.5144442
-E2E Last Lap: 35.84
+
+Experiment 9
+Fixed-RL Speed: 14.98023
+Fixed-RL Last Lap: 34.58
+Fixed-RL Best Lap: 33.72
+Fixed-RL Total Time: 102.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.47301
+E2E Last Lap: 35.8
+E2E Best Lap: 34
+E2E Total Time: 104.52
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 10
+Fixed-RL Speed: 15.02017
+Fixed-RL Last Lap: 35.66
+Fixed-RL Best Lap: 34.02
+Fixed-RL Total Time: 104.48
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.8855
+E2E Last Lap: 35.6
+E2E Best Lap: 33.58
+E2E Total Time: 104.12
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 11
+Fixed-RL Speed: 14.93395
+Fixed-RL Last Lap: 35.34
+Fixed-RL Best Lap: 33.26
+Fixed-RL Total Time: 103.3
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.57614
+E2E Last Lap: 36.3
+E2E Best Lap: 33.7
+E2E Total Time: 104.58
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 12
+Fixed-RL Speed: 14.93268
+Fixed-RL Last Lap: 34.64
+Fixed-RL Best Lap: 33.68
+Fixed-RL Total Time: 102.84
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 15.02082
+E2E Last Lap: 35.26
+E2E Best Lap: 33.86
+E2E Total Time: 103.88
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 13
+Fixed-RL Speed: 0.06080485
+Fixed-RL Last Lap: 0
+Fixed-RL Best Lap: 0
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 0/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.8913
+E2E Last Lap: 35.64
 E2E Best Lap: 33.72
 E2E Total Time: 104.28
 E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.89589
-Fixed-RL Tire Wear :0.5138254
-Fixed-RL Last Lap: 35.16
-Fixed-RL Best Lap: 33.04
-Fixed-RL Overall Time: 102.52
+E2E Illegal Lane Changes: 3
+E2E Collisions: 1
+Winner: 
+
+Experiment 14
+Fixed-RL Speed: 15.01663
+Fixed-RL Last Lap: 34.88
+Fixed-RL Best Lap: 33.44
+Fixed-RL Total Time: 103.5
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 44
-E2E Speed: 13.40187
-E2E Tire Wear: 0.5109347
-E2E Last Lap: 35.4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.78645
+E2E Last Lap: 36.46
 E2E Best Lap: 33.4
-E2E Total Time: 103.38
+E2E Total Time: 104.68
 E2E Laps Completed: 3/3
-E2E Lane Changes: 1
-Fixed-RL Speed :0.05845603
-Fixed-RL Tire Wear :0.4151402
-Fixed-RL Last Lap: 33.92
-Fixed-RL Best Lap: 33.92
-Fixed-RL Overall Time: 119.98
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 15
+Fixed-RL Speed: 0.05775287
+Fixed-RL Last Lap: 33.26
+Fixed-RL Best Lap: 33.26
+Fixed-RL Total Time: 119.98
 Fixed-RL Laps Completed: 1/3
-Fixed-RL Lane Changes: 1
-Winner: 
-Experiment 45
-E2E Speed: 14.29024
-E2E Tire Wear: 0.5150514
-E2E Last Lap: 35.88
-E2E Best Lap: 33.66
-E2E Total Time: 104.18
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.3408
+E2E Last Lap: 35.7
+E2E Best Lap: 33.78
+E2E Total Time: 104.16
 E2E Laps Completed: 3/3
-E2E Lane Changes: 2
-Fixed-RL Speed :14.89824
-Fixed-RL Tire Wear :0.5153022
-Fixed-RL Last Lap: 34.84
-Fixed-RL Best Lap: 33.38
-Fixed-RL Overall Time: 102.3
+E2E Illegal Lane Changes: 3
+E2E Collisions: 0
+Winner: 
+
+Experiment 16
+Fixed-RL Speed: 14.93151
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 33.36
+Fixed-RL Total Time: 102.82
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 1
-Winner: Fixed-RL
-Experiment 46
-E2E Speed: 11.47023
-E2E Tire Wear: 0.4972495
-E2E Last Lap: 51.12
-E2E Best Lap: 49.4
-E2E Total Time: 119.98
-E2E Laps Completed: 2/3
-E2E Lane Changes: 1
-Fixed-RL Speed :0.05845382
-Fixed-RL Tire Wear :0.481698
-Fixed-RL Last Lap: 35.1
-Fixed-RL Best Lap: 33.66
-Fixed-RL Overall Time: 119.98
-Fixed-RL Laps Completed: 2/3
-Fixed-RL Lane Changes: 2
-Winner: 
-Experiment 47
-E2E Speed: 13.93372
-E2E Tire Wear: 0.5089049
-E2E Last Lap: 35.58
-E2E Best Lap: 33.48
-E2E Total Time: 103.56
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.5223
+E2E Last Lap: 35.8
+E2E Best Lap: 33.7
+E2E Total Time: 104.04
 E2E Laps Completed: 3/3
-E2E Lane Changes: 1
-Fixed-RL Speed :0.05964393
-Fixed-RL Tire Wear :0.3337466
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 17
+Fixed-RL Speed: 15.00272
+Fixed-RL Last Lap: 34.86
+Fixed-RL Best Lap: 33.78
+Fixed-RL Total Time: 103.12
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.38357
+E2E Last Lap: 35.52
+E2E Best Lap: 33.92
+E2E Total Time: 104.24
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 18
+Fixed-RL Speed: 15.0148
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 33.46
+Fixed-RL Total Time: 103.06
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.48902
+E2E Last Lap: 35.84
+E2E Best Lap: 33.58
+E2E Total Time: 104.16
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+Winner: 
+
+Experiment 19
+Fixed-RL Speed: 14.89288
+Fixed-RL Last Lap: 35.28
+Fixed-RL Best Lap: 33.12
+Fixed-RL Total Time: 102.6
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.27629
+E2E Last Lap: 35.56
+E2E Best Lap: 33.8
+E2E Total Time: 103.9
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+Winner: 
+
+Experiment 20
+Fixed-RL Speed: 14.92179
+Fixed-RL Last Lap: 35.24
+Fixed-RL Best Lap: 33.86
+Fixed-RL Total Time: 106.72
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.98612
+E2E Last Lap: 37.18
+E2E Best Lap: 33.68
+E2E Total Time: 105.92
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 21
+Fixed-RL Speed: 14.89522
+Fixed-RL Last Lap: 35.5
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 103.26
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 13.80634
+E2E Last Lap: 35.74
+E2E Best Lap: 33.64
+E2E Total Time: 104.08
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+Winner: 
+
+Experiment 22
+Fixed-RL Speed: 14.96825
+Fixed-RL Last Lap: 35.08
+Fixed-RL Best Lap: 33.38
+Fixed-RL Total Time: 102.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 13.1351
+E2E Last Lap: 35.76
+E2E Best Lap: 33.8
+E2E Total Time: 104.3
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 23
+Fixed-RL Speed: 15.01687
+Fixed-RL Last Lap: 35.68
+Fixed-RL Best Lap: 33.68
+Fixed-RL Total Time: 104.4
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 3
+E2E Speed: 14.9961
+E2E Last Lap: 35.74
+E2E Best Lap: 33.78
+E2E Total Time: 104.14
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+Winner: 
+
+Experiment 24
+Fixed-RL Speed: 14.93485
+Fixed-RL Last Lap: 35.12
+Fixed-RL Best Lap: 33.46
+Fixed-RL Total Time: 103.02
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.66308
+E2E Last Lap: 36.28
+E2E Best Lap: 33.64
+E2E Total Time: 104.46
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+Winner: 
+
+Experiment 25
+Fixed-RL Speed: 14.89727
+Fixed-RL Last Lap: 35.3
+Fixed-RL Best Lap: 33.36
+Fixed-RL Total Time: 103.1
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.32526
+E2E Last Lap: 35.76
+E2E Best Lap: 33.88
+E2E Total Time: 104.48
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 26
+Fixed-RL Speed: 14.92194
+Fixed-RL Last Lap: 35.04
+Fixed-RL Best Lap: 33.58
+Fixed-RL Total Time: 103.18
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 13.60126
+E2E Last Lap: 35.58
+E2E Best Lap: 33.92
+E2E Total Time: 104.22
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+Winner: 
+
+Experiment 27
+Fixed-RL Speed: 14.99854
+Fixed-RL Last Lap: 35.54
+Fixed-RL Best Lap: 34.24
+Fixed-RL Total Time: 104.98
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.89656
+E2E Last Lap: 35.52
+E2E Best Lap: 33.54
+E2E Total Time: 104.62
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 28
+Fixed-RL Speed: 14.98859
+Fixed-RL Last Lap: 34.8
+Fixed-RL Best Lap: 33.88
+Fixed-RL Total Time: 103.52
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 15.02695
+E2E Last Lap: 36.3
+E2E Best Lap: 33.56
+E2E Total Time: 105.44
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+Winner: 
+
+Experiment 29
+Fixed-RL Speed: 0.06020344
 Fixed-RL Last Lap: 0
 Fixed-RL Best Lap: 0
-Fixed-RL Overall Time: 119.98
+Fixed-RL Total Time: 119.98
 Fixed-RL Laps Completed: 0/3
-Fixed-RL Lane Changes: 0
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 12.50935
+E2E Last Lap: 35.92
+E2E Best Lap: 33.4
+E2E Total Time: 104.14
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
 Winner: 
-Experiment 48
-E2E Speed: 14.92889
-E2E Tire Wear: 0.5164667
-E2E Last Lap: 35.96
-E2E Best Lap: 33.36
-E2E Total Time: 104.36
-E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.89552
-Fixed-RL Tire Wear :0.5273783
-Fixed-RL Last Lap: 35.8
-Fixed-RL Best Lap: 33.72
-Fixed-RL Overall Time: 104.52
+
+Experiment 30
+Fixed-RL Speed: 14.89887
+Fixed-RL Last Lap: 34.66
+Fixed-RL Best Lap: 33.64
+Fixed-RL Total Time: 102.94
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 2
-Winner: E2E
-Experiment 49
-E2E Speed: 14.51301
-E2E Tire Wear: 0.514792
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.33815
+E2E Last Lap: 35.42
+E2E Best Lap: 33.48
+E2E Total Time: 103.78
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+Winner: 
+
+Experiment 31
+Fixed-RL Speed: 14.89475
+Fixed-RL Last Lap: 34.94
+Fixed-RL Best Lap: 33.12
+Fixed-RL Total Time: 102.12
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.89216
 E2E Last Lap: 35.66
-E2E Best Lap: 33.7
-E2E Total Time: 104.18
+E2E Best Lap: 33.78
+E2E Total Time: 104.02
 E2E Laps Completed: 3/3
-E2E Lane Changes: 4
-Fixed-RL Speed :14.96685
-Fixed-RL Tire Wear :0.5140658
-Fixed-RL Last Lap: 34.74
-Fixed-RL Best Lap: 33.34
-Fixed-RL Overall Time: 102.78
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+Winner: 
+
+Experiment 32
+Fixed-RL Speed: 14.89765
+Fixed-RL Last Lap: 35.18
+Fixed-RL Best Lap: 33.26
+Fixed-RL Total Time: 102.6
 Fixed-RL Laps Completed: 3/3
-Fixed-RL Lane Changes: 2
-Winner: Fixed-RL
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.04126
+E2E Last Lap: 35.44
+E2E Best Lap: 33.48
+E2E Total Time: 103.52
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+Winner: 
+
+Experiment 33
+Fixed-RL Speed: 14.96376
+Fixed-RL Last Lap: 35.06
+Fixed-RL Best Lap: 33.14
+Fixed-RL Total Time: 102.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.57801
+E2E Last Lap: 35.84
+E2E Best Lap: 33.84
+E2E Total Time: 104.42
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+Winner: 
+
+Experiment 34
+Fixed-RL Speed: 0.06094041
+Fixed-RL Last Lap: 34.12
+Fixed-RL Best Lap: 33.42
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.74479
+E2E Last Lap: 35.26
+E2E Best Lap: 35.26
+E2E Total Time: 119.98
+E2E Laps Completed: 2/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+Winner: 
+
+Experiment 35
+Fixed-RL Speed: 14.89782
+Fixed-RL Last Lap: 35.46
+Fixed-RL Best Lap: 34.1
+Fixed-RL Total Time: 105.3
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 13.94947
+E2E Last Lap: 35.76
+E2E Best Lap: 33.74
+E2E Total Time: 104.54
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 36
+Fixed-RL Speed: 14.98464
+Fixed-RL Last Lap: 36.02
+Fixed-RL Best Lap: 33.64
+Fixed-RL Total Time: 104.26
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+E2E Speed: 13.80984
+E2E Last Lap: 36.16
+E2E Best Lap: 33.86
+E2E Total Time: 105
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 3
+Winner: 
+
+Experiment 37
+Fixed-RL Speed: 14.96993
+Fixed-RL Last Lap: 35.04
+Fixed-RL Best Lap: 33.16
+Fixed-RL Total Time: 102.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.72934
+E2E Last Lap: 35.58
+E2E Best Lap: 33.62
+E2E Total Time: 103.58
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 38
+Fixed-RL Speed: 14.93401
+Fixed-RL Last Lap: 35.72
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 103.62
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 15.0164
+E2E Last Lap: 35.88
+E2E Best Lap: 33.98
+E2E Total Time: 105
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 39
+Fixed-RL Speed: 15.0287
+Fixed-RL Last Lap: 35.06
+Fixed-RL Best Lap: 33.26
+Fixed-RL Total Time: 102.8
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.61117
+E2E Last Lap: 35.5
+E2E Best Lap: 33.8
+E2E Total Time: 103.92
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+Winner: 
+
+Experiment 40
+Fixed-RL Speed: 0.1053716
+Fixed-RL Last Lap: 33.4
+Fixed-RL Best Lap: 33.4
+Fixed-RL Total Time: 119.98
+Fixed-RL Laps Completed: 2/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 13.01572
+E2E Last Lap: 52.58
+E2E Best Lap: 33.26
+E2E Total Time: 119.98
+E2E Laps Completed: 2/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+Winner: 
+
+Experiment 41
+Fixed-RL Speed: 15.02614
+Fixed-RL Last Lap: 35.28
+Fixed-RL Best Lap: 33.54
+Fixed-RL Total Time: 103.04
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.38905
+E2E Last Lap: 35.52
+E2E Best Lap: 33.86
+E2E Total Time: 104.04
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 2
+Winner: 
+
+Experiment 42
+Fixed-RL Speed: 14.89582
+Fixed-RL Last Lap: 35.16
+Fixed-RL Best Lap: 33.6
+Fixed-RL Total Time: 103.28
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.33944
+E2E Last Lap: 35.96
+E2E Best Lap: 33.5
+E2E Total Time: 104.38
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+Winner: 
+
+Experiment 43
+Fixed-RL Speed: 14.89283
+Fixed-RL Last Lap: 35.36
+Fixed-RL Best Lap: 33.2
+Fixed-RL Total Time: 102.88
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.54126
+E2E Last Lap: 35.64
+E2E Best Lap: 33.74
+E2E Total Time: 104.06
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 44
+Fixed-RL Speed: 15.0011
+Fixed-RL Last Lap: 34.72
+Fixed-RL Best Lap: 33.58
+Fixed-RL Total Time: 103.46
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.49345
+E2E Last Lap: 35.56
+E2E Best Lap: 33.82
+E2E Total Time: 104.22
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 45
+Fixed-RL Speed: 15.02417
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 33.5
+Fixed-RL Total Time: 103.06
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 15.00278
+E2E Last Lap: 35.62
+E2E Best Lap: 33.72
+E2E Total Time: 104.26
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 46
+Fixed-RL Speed: 15.00107
+Fixed-RL Last Lap: 34.62
+Fixed-RL Best Lap: 33.36
+Fixed-RL Total Time: 102.44
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.96326
+E2E Last Lap: 35.94
+E2E Best Lap: 33.88
+E2E Total Time: 104.42
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+
+Experiment 47
+Fixed-RL Speed: 14.96495
+Fixed-RL Last Lap: 35
+Fixed-RL Best Lap: 33.58
+Fixed-RL Total Time: 102.96
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+E2E Speed: 14.88043
+E2E Last Lap: 35.32
+E2E Best Lap: 33.92
+E2E Total Time: 103.92
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 48
+Fixed-RL Speed: 14.93376
+Fixed-RL Last Lap: 34.8
+Fixed-RL Best Lap: 33.6
+Fixed-RL Total Time: 102.92
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 14.95804
+E2E Last Lap: 36.04
+E2E Best Lap: 33.82
+E2E Total Time: 104.48
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+Winner: 
+
+Experiment 49
+Fixed-RL Speed: 14.88176
+Fixed-RL Last Lap: 34.74
+Fixed-RL Best Lap: 33.32
+Fixed-RL Total Time: 102.78
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+E2E Speed: 15.006
+E2E Last Lap: 35.4
+E2E Best Lap: 33.98
+E2E Total Time: 104.04
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+Winner: 
+

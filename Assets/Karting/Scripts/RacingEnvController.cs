@@ -95,6 +95,7 @@ public class RacingEnvController : MonoBehaviour
     public int sectionHorizon;
 
     bool initialStarted = false;
+    bool coroStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -150,7 +151,15 @@ public class RacingEnvController : MonoBehaviour
             // print("from here 1");
             if (initialStarted && mode == EnvironmentMode.Experiment && experimentNum < TotalExperiments)
             {
-                var tm = FindObjectOfType<TelemetryViewer>();
+                TelemetryViewer tm = null;
+                foreach(TelemetryViewer viewer in FindObjectsOfType<TelemetryViewer>())
+                {
+                    if (viewer.envController == this)
+                    {
+                        tm = viewer;
+                        break;
+                    }
+                }
                 print(tm.uiText.text);
                 StreamWriter writer = new StreamWriter("ExperimentLogs/" + ExperimentName + ".txt", true);
                 writer.WriteLine("Experiment " + experimentNum);
@@ -182,7 +191,15 @@ public class RacingEnvController : MonoBehaviour
             {
                 if (initialStarted && mode == EnvironmentMode.Experiment && experimentNum < TotalExperiments)
                 {
-                    var tm = FindObjectOfType<TelemetryViewer>();
+                    TelemetryViewer tm = null;
+                    foreach (TelemetryViewer viewer in FindObjectsOfType<TelemetryViewer>())
+                    {
+                        if (viewer.envController == this)
+                        {
+                            tm = viewer;
+                            break;
+                        }
+                    }
                     print(tm.uiText.text);
                     StreamWriter writer = new StreamWriter("ExperimentLogs/" + ExperimentName + ".txt", true);
                     writer.WriteLine("Experiment " + experimentNum);
@@ -199,18 +216,38 @@ public class RacingEnvController : MonoBehaviour
                 ResetGame();
             }
         }
-        if (experimentNum == TotalExperiments && mode == EnvironmentMode.Experiment)
+        if (!coroStarted)
         {
+            StartCoroutine(checkAllExperimentsDone());
+        }
+    }
+    IEnumerator checkAllExperimentsDone()
+    {
+        while (experimentNum == TotalExperiments && mode == EnvironmentMode.Experiment)
+        {
+            coroStarted = true;
+            bool quit = true;
+            foreach (RacingEnvController controller in FindObjectsOfType<RacingEnvController>())
+            {
+                if (controller.experimentNum != controller.TotalExperiments)
+                {
+                    quit = false;
+                }
+
+            }
+            if (quit)
+            {
 #if UNITY_EDITOR
-            // Application.Quit() does not work in the editor so
-            // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
-            UnityEditor.EditorApplication.isPlaying = false;
+                // Application.Quit() does not work in the editor so
+                // UnityEditor.EditorApplication.isPlaying need to be set to false to end the game
+                UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
+            }
+            yield return new WaitForSeconds(30f);
         }
     }
-
     public void timeDifferenceAtSectionPenalty(KartAgent agent)
     {
         if (!minSectionTimes.ContainsKey(agent.m_SectionIndex))
@@ -265,6 +302,13 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
+    public void ResetSectionHighlighting()
+    {
+        foreach (DiscretePositionTracker section in Sections)
+        {
+            section.resetColors();
+        }
+    }
 
     void ResetGame()
     {
@@ -279,12 +323,9 @@ public class RacingEnvController : MonoBehaviour
         float maxTirewearProportion = mode == EnvironmentMode.Training ? 1.0f : 0.25f;
         float minDistFromSpawn = mode == EnvironmentMode.Training ? 1.0f : 3.0f;
         float maxDistFromSpawn = mode == EnvironmentMode.Training ? 4.0f : 3.0f;
-        foreach (DiscretePositionTracker section in Sections)
-        {
-            section.resetColors();
-        }
         episodeSteps = 0;
         inactiveAgents.Clear();
+        minSectionTimes.Clear();
         // For each agent
         var furthestForwardSection = -1;
         var furthestBackSection = 100000;
@@ -307,6 +348,7 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
                     Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
                     Agents[i].m_LaneChanges = 0;
+                    Agents[i].m_IllegalLaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     if (!addedColliders.Contains(collider))
                     {
@@ -353,6 +395,7 @@ public class RacingEnvController : MonoBehaviour
                         Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
                     }
                     Agents[i].m_LaneChanges = 0;
+                    Agents[i].m_IllegalLaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                     Agents[i].transform.localRotation = collider.transform.rotation;
                     Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
@@ -383,6 +426,7 @@ public class RacingEnvController : MonoBehaviour
                             Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
                         }
                         Agents[i].m_LaneChanges = 0;
+                        Agents[i].m_IllegalLaneChanges = 0;
                         var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
                         if (!addedColliders.Contains(collider))
                         {
@@ -416,14 +460,13 @@ public class RacingEnvController : MonoBehaviour
                 Agents[i].sectionTimes[tp] = UnityEngine.Random.Range(earliestTime, 0);
                 earliestTime = Agents[i].sectionTimes[tp];
             }
-
-            Agents[i].sectionTimes[Agents[i].m_SectionIndex] = 0;
-            Agents[i].m_Kart.UpdateStats();
         }
 
+        ResetSectionHighlighting();
         for (int i = 0; i < Agents.Length; i++)
         {
             // Then, for each agent, Generate the initial plan
+            Agents[i].prepareForReuse();
             Agents[i].initialPlan();
         }
 

@@ -106,6 +106,7 @@ namespace KartGame.AI
         [HideInInspector] public int m_SectionIndex;
         [HideInInspector] public int m_Lane;
         [HideInInspector] public int m_LaneChanges;
+        [HideInInspector] public int m_IllegalLaneChanges;
         [HideInInspector] public bool anyHit = false;
         [HideInInspector] public int m_timeSteps = 0;
         [HideInInspector] public float LaneDifferenceRewardDivider = 1.0f;
@@ -118,6 +119,9 @@ namespace KartGame.AI
         [HideInInspector] protected int episodeSteps = 0;
         [HideInInspector] public bool is_active = true;
         public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
+        [HideInInspector] public bool forwardCollision = false;
+        [HideInInspector] public int forwardCollisions = 0;
+        [HideInInspector] public int lastCollisionTime = 0;
 
         public virtual void Start()
         {        
@@ -127,6 +131,28 @@ namespace KartGame.AI
         protected virtual void FixedUpdate()
         {
             episodeSteps += 1;
+            var hitAgent = Physics.Raycast(AgentSensorTransform.position, Sensors[0].Transform.forward, out var hitAgentInfo,
+                0.8f, AgentMask, QueryTriggerInteraction.Ignore) |
+                Physics.Raycast(AgentSensorTransform.position, Sensors[1].Transform.forward, out var hitAgentInfo2,
+                0.8f, AgentMask, QueryTriggerInteraction.Ignore) |
+                Physics.Raycast(AgentSensorTransform.position, Sensors[5].Transform.forward, out var hitAgentInfo3,
+                0.8f, AgentMask, QueryTriggerInteraction.Ignore);
+
+            if (hitAgent && !forwardCollision && (lastCollisionTime == 0 || episodeSteps - lastCollisionTime > 75))
+            {
+                forwardCollision = true;
+                forwardCollisions += 1;
+                lastCollisionTime = episodeSteps;
+            }
+            else if (hitAgent)
+            {
+                forwardCollision = true;
+                lastCollisionTime = episodeSteps;
+            }
+            else
+            {
+                forwardCollision = false;
+            }
         }
 
         protected virtual void Awake()
@@ -134,6 +160,17 @@ namespace KartGame.AI
             m_Kart = GetComponent<ArcadeKart>();
             if (AgentSensorTransform == null) AgentSensorTransform = transform;
             sectionHorizon = m_envController.sectionHorizon;
+        }
+
+        public virtual void prepareForReuse()
+        {
+            sectionTimes[m_SectionIndex] = 0;
+            m_Kart.UpdateStats();
+            forwardCollisions = 0;
+            forwardCollision = false;
+            lastCollisionTime = 0;
+            m_UpcomingLanes = new Dictionary<int, int>();
+            m_UpcomingVelocities = new Dictionary<int, float>();
         }
 
         void LateUpdate()
@@ -217,6 +254,7 @@ namespace KartGame.AI
                 if (m_LaneChanges + Math.Abs(m_Lane-lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
+                    m_IllegalLaneChanges += 1;
                 }
                 if (m_envController.sectionIsStraight(m_SectionIndex) != m_envController.sectionIsStraight(index))
                 {

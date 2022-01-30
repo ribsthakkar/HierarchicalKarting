@@ -1,0 +1,850 @@
+Experiment 0
+MCTS-RL Speed: 14.99877
+MCTS-RL Last Lap: 19.24
+MCTS-RL Best Lap: 18.82
+MCTS-RL Total Time: 79.92
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.99885
+Fixed-RL Last Lap: 19.9
+Fixed-RL Best Lap: 19.04
+Fixed-RL Total Time: 81.72
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 1
+MCTS-RL Speed: 14.96314
+MCTS-RL Last Lap: 19.16
+MCTS-RL Best Lap: 18.9
+MCTS-RL Total Time: 77.1
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+Fixed-RL Speed: 15.02765
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 19.34
+Fixed-RL Total Time: 78.78
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 2
+MCTS-RL Speed: 14.89779
+MCTS-RL Last Lap: 19.16
+MCTS-RL Best Lap: 18.76
+MCTS-RL Total Time: 77.14
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.89025
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 19
+Fixed-RL Total Time: 78.34
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 3
+MCTS-RL Speed: 14.96462
+MCTS-RL Last Lap: 19.3
+MCTS-RL Best Lap: 18.94
+MCTS-RL Total Time: 77.25999
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.93008
+Fixed-RL Last Lap: 19.8
+Fixed-RL Best Lap: 19.22
+Fixed-RL Total Time: 78.5
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 4
+MCTS-RL Speed: 14.8981
+MCTS-RL Last Lap: 19.18
+MCTS-RL Best Lap: 18.84
+MCTS-RL Total Time: 77.04
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.94588
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 18.9
+Fixed-RL Total Time: 78.06
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 5
+MCTS-RL Speed: 14.96959
+MCTS-RL Last Lap: 19.28
+MCTS-RL Best Lap: 18.88
+MCTS-RL Total Time: 77.66
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.8801
+Fixed-RL Last Lap: 19.9
+Fixed-RL Best Lap: 19.16
+Fixed-RL Total Time: 78.52
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 6
+MCTS-RL Speed: 14.96961
+MCTS-RL Last Lap: 19.42
+MCTS-RL Best Lap: 18.72
+MCTS-RL Total Time: 78.3
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.92329
+Fixed-RL Last Lap: 19.7
+Fixed-RL Best Lap: 19.2
+Fixed-RL Total Time: 79.43999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 7
+MCTS-RL Speed: 14.96356
+MCTS-RL Last Lap: 19.26
+MCTS-RL Best Lap: 18.76
+MCTS-RL Total Time: 77.52
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.97035
+Fixed-RL Last Lap: 19.64
+Fixed-RL Best Lap: 19.28
+Fixed-RL Total Time: 78.46
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 8
+MCTS-RL Speed: 14.96037
+MCTS-RL Last Lap: 19.36
+MCTS-RL Best Lap: 18.74
+MCTS-RL Total Time: 77.14
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.96774
+Fixed-RL Last Lap: 19.64
+Fixed-RL Best Lap: 19.26
+Fixed-RL Total Time: 78.7
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 9
+MCTS-RL Speed: 15.01625
+MCTS-RL Last Lap: 19.04
+MCTS-RL Best Lap: 18.82
+MCTS-RL Total Time: 77.3
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.92987
+Fixed-RL Last Lap: 19.54
+Fixed-RL Best Lap: 19.08
+Fixed-RL Total Time: 78.3
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 10
+MCTS-RL Speed: 14.96537
+MCTS-RL Last Lap: 19.22
+MCTS-RL Best Lap: 18.84
+MCTS-RL Total Time: 77.2
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.99856
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 19.18
+Fixed-RL Total Time: 78.58
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 11
+MCTS-RL Speed: 14.98409
+MCTS-RL Last Lap: 19.52
+MCTS-RL Best Lap: 18.78
+MCTS-RL Total Time: 77.78
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.98935
+Fixed-RL Last Lap: 20.08
+Fixed-RL Best Lap: 19
+Fixed-RL Total Time: 78.42
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 12
+MCTS-RL Speed: 14.929
+MCTS-RL Last Lap: 19.06
+MCTS-RL Best Lap: 19.02
+MCTS-RL Total Time: 77.12
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.0285
+Fixed-RL Last Lap: 19.76
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 78.36
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 13
+MCTS-RL Speed: 14.98894
+MCTS-RL Last Lap: 19.04
+MCTS-RL Best Lap: 18.58
+MCTS-RL Total Time: 76.93999
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.97048
+Fixed-RL Last Lap: 19.38
+Fixed-RL Best Lap: 19.12
+Fixed-RL Total Time: 78.2
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 14
+MCTS-RL Speed: 14.96789
+MCTS-RL Last Lap: 19.1
+MCTS-RL Best Lap: 18.74
+MCTS-RL Total Time: 76.7
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.99996
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 19.16
+Fixed-RL Total Time: 78.58
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 15
+MCTS-RL Speed: 14.99237
+MCTS-RL Last Lap: 19.32
+MCTS-RL Best Lap: 18.98
+MCTS-RL Total Time: 77.96
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.96408
+Fixed-RL Last Lap: 20.04
+Fixed-RL Best Lap: 18.92
+Fixed-RL Total Time: 78.34
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 16
+MCTS-RL Speed: 15.004
+MCTS-RL Last Lap: 19.18
+MCTS-RL Best Lap: 18.94
+MCTS-RL Total Time: 77.32
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.97324
+Fixed-RL Last Lap: 19.72
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 78.75999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 17
+MCTS-RL Speed: 14.99726
+MCTS-RL Last Lap: 19.08
+MCTS-RL Best Lap: 19.06
+MCTS-RL Total Time: 77.72
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.00838
+Fixed-RL Last Lap: 19.44
+Fixed-RL Best Lap: 18.96
+Fixed-RL Total Time: 77.64
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 18
+MCTS-RL Speed: 15.0133
+MCTS-RL Last Lap: 19
+MCTS-RL Best Lap: 18.9
+MCTS-RL Total Time: 76.64
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.89311
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 19.02
+Fixed-RL Total Time: 78.2
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 19
+MCTS-RL Speed: 14.9691
+MCTS-RL Last Lap: 19.44
+MCTS-RL Best Lap: 18.74
+MCTS-RL Total Time: 77.54
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.01226
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 78.25999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 20
+MCTS-RL Speed: 14.95717
+MCTS-RL Last Lap: 19.06
+MCTS-RL Best Lap: 19.04
+MCTS-RL Total Time: 77.74
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.93381
+Fixed-RL Last Lap: 19.9
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 79.38
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Winner: 
+
+Experiment 21
+MCTS-RL Speed: 15.01106
+MCTS-RL Last Lap: 19.12
+MCTS-RL Best Lap: 18.74
+MCTS-RL Total Time: 77.42
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.98288
+Fixed-RL Last Lap: 19.64
+Fixed-RL Best Lap: 19.2
+Fixed-RL Total Time: 78.3
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 22
+MCTS-RL Speed: 14.99854
+MCTS-RL Last Lap: 19.1
+MCTS-RL Best Lap: 19.02
+MCTS-RL Total Time: 77.3
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.02486
+Fixed-RL Last Lap: 19.42
+Fixed-RL Best Lap: 19.12
+Fixed-RL Total Time: 78.6
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 23
+MCTS-RL Speed: 15.01149
+MCTS-RL Last Lap: 19.4
+MCTS-RL Best Lap: 19.1
+MCTS-RL Total Time: 78.38
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 3
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.99289
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 19.16
+Fixed-RL Total Time: 78.24
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 24
+MCTS-RL Speed: 15.00498
+MCTS-RL Last Lap: 19.22
+MCTS-RL Best Lap: 19
+MCTS-RL Total Time: 77.16
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.01113
+Fixed-RL Last Lap: 19.72
+Fixed-RL Best Lap: 19.06
+Fixed-RL Total Time: 78.22
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 25
+MCTS-RL Speed: 14.92883
+MCTS-RL Last Lap: 19.18
+MCTS-RL Best Lap: 18.84
+MCTS-RL Total Time: 77.08
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.99644
+Fixed-RL Last Lap: 19.78
+Fixed-RL Best Lap: 19.02
+Fixed-RL Total Time: 78.52
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 26
+MCTS-RL Speed: 15.00229
+MCTS-RL Last Lap: 19.1
+MCTS-RL Best Lap: 18.98
+MCTS-RL Total Time: 77.2
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.96255
+Fixed-RL Last Lap: 19.88
+Fixed-RL Best Lap: 19.26
+Fixed-RL Total Time: 78.86
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 27
+MCTS-RL Speed: 14.895
+MCTS-RL Last Lap: 19.4
+MCTS-RL Best Lap: 18.86
+MCTS-RL Total Time: 77.48
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.98485
+Fixed-RL Last Lap: 19.58
+Fixed-RL Best Lap: 19.4
+Fixed-RL Total Time: 78.54
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 28
+MCTS-RL Speed: 14.95397
+MCTS-RL Last Lap: 19.06
+MCTS-RL Best Lap: 18.64
+MCTS-RL Total Time: 76.82
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.89738
+Fixed-RL Last Lap: 19.48
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 78.32
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 29
+MCTS-RL Speed: 14.56982
+MCTS-RL Last Lap: 19.06
+MCTS-RL Best Lap: 18.98
+MCTS-RL Total Time: 77.6
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 2
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.93418
+Fixed-RL Last Lap: 19.84
+Fixed-RL Best Lap: 18.84
+Fixed-RL Total Time: 78.24
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 30
+MCTS-RL Speed: 14.89357
+MCTS-RL Last Lap: 19.22
+MCTS-RL Best Lap: 18.84
+MCTS-RL Total Time: 77.12
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.93582
+Fixed-RL Last Lap: 19.68
+Fixed-RL Best Lap: 19.18
+Fixed-RL Total Time: 78.32
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 31
+MCTS-RL Speed: 15.00894
+MCTS-RL Last Lap: 19.16
+MCTS-RL Best Lap: 18.86
+MCTS-RL Total Time: 77.36
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.0045
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 19.08
+Fixed-RL Total Time: 78.28
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 32
+MCTS-RL Speed: 14.89894
+MCTS-RL Last Lap: 18.98
+MCTS-RL Best Lap: 18.78
+MCTS-RL Total Time: 77.04
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 1
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.97037
+Fixed-RL Last Lap: 19.68
+Fixed-RL Best Lap: 19.22
+Fixed-RL Total Time: 78.6
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 33
+MCTS-RL Speed: 14.9308
+MCTS-RL Last Lap: 19.2
+MCTS-RL Best Lap: 18.66
+MCTS-RL Total Time: 77.28
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+Fixed-RL Speed: 14.93146
+Fixed-RL Last Lap: 19.68
+Fixed-RL Best Lap: 19
+Fixed-RL Total Time: 78.3
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 34
+MCTS-RL Speed: 14.88654
+MCTS-RL Last Lap: 19.06
+MCTS-RL Best Lap: 18.9
+MCTS-RL Total Time: 76.9
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.89092
+Fixed-RL Last Lap: 19.94
+Fixed-RL Best Lap: 19.06
+Fixed-RL Total Time: 78.64
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 35
+MCTS-RL Speed: 15.01543
+MCTS-RL Last Lap: 19.42
+MCTS-RL Best Lap: 18.74
+MCTS-RL Total Time: 77.38
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.89725
+Fixed-RL Last Lap: 19.7
+Fixed-RL Best Lap: 19.26
+Fixed-RL Total Time: 78.36
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 36
+MCTS-RL Speed: 14.91881
+MCTS-RL Last Lap: 19.08
+MCTS-RL Best Lap: 18.9
+MCTS-RL Total Time: 77.12
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.96686
+Fixed-RL Last Lap: 19.64
+Fixed-RL Best Lap: 19.22
+Fixed-RL Total Time: 78.92
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 37
+MCTS-RL Speed: 14.89732
+MCTS-RL Last Lap: 18.88
+MCTS-RL Best Lap: 18.88
+MCTS-RL Total Time: 77.3
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.98711
+Fixed-RL Last Lap: 19.88
+Fixed-RL Best Lap: 18.9
+Fixed-RL Total Time: 78.06
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 38
+MCTS-RL Speed: 14.95023
+MCTS-RL Last Lap: 19.22
+MCTS-RL Best Lap: 18.92
+MCTS-RL Total Time: 77.18
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.89782
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 78.46
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 39
+MCTS-RL Speed: 15.00012
+MCTS-RL Last Lap: 19.28
+MCTS-RL Best Lap: 18.8
+MCTS-RL Total Time: 77.42
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.99831
+Fixed-RL Last Lap: 19.6
+Fixed-RL Best Lap: 18.94
+Fixed-RL Total Time: 78.22
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 40
+MCTS-RL Speed: 14.93049
+MCTS-RL Last Lap: 19.6
+MCTS-RL Best Lap: 18.64
+MCTS-RL Total Time: 77.84
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.93431
+Fixed-RL Last Lap: 19.56
+Fixed-RL Best Lap: 19.16
+Fixed-RL Total Time: 78.25999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Winner: 
+
+Experiment 41
+MCTS-RL Speed: 14.92419
+MCTS-RL Last Lap: 19
+MCTS-RL Best Lap: 18.98
+MCTS-RL Total Time: 77.58
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 15.00315
+Fixed-RL Last Lap: 19.4
+Fixed-RL Best Lap: 18.86
+Fixed-RL Total Time: 77.64
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 42
+MCTS-RL Speed: 14.24894
+MCTS-RL Last Lap: 19.22
+MCTS-RL Best Lap: 18.9
+MCTS-RL Total Time: 77.2
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 1
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.936
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 19.26
+Fixed-RL Total Time: 78.75999
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 43
+MCTS-RL Speed: 14.98792
+MCTS-RL Last Lap: 19.14
+MCTS-RL Best Lap: 18.8
+MCTS-RL Total Time: 77.68
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 15.00531
+Fixed-RL Last Lap: 19.44
+Fixed-RL Best Lap: 19.24
+Fixed-RL Total Time: 78.32
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 44
+MCTS-RL Speed: 14.89799
+MCTS-RL Last Lap: 19.22
+MCTS-RL Best Lap: 18.82
+MCTS-RL Total Time: 77.02
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 15.02657
+Fixed-RL Last Lap: 19.74
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 78.54
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 45
+MCTS-RL Speed: 14.99953
+MCTS-RL Last Lap: 19.06
+MCTS-RL Best Lap: 18.8
+MCTS-RL Total Time: 76.96
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.99852
+Fixed-RL Last Lap: 19.38
+Fixed-RL Best Lap: 19.34
+Fixed-RL Total Time: 78.36
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 46
+MCTS-RL Speed: 15.0141
+MCTS-RL Last Lap: 19.02
+MCTS-RL Best Lap: 18.92
+MCTS-RL Total Time: 77.14
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.89517
+Fixed-RL Last Lap: 19.62
+Fixed-RL Best Lap: 19.14
+Fixed-RL Total Time: 78.46
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 1
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 47
+MCTS-RL Speed: 14.9699
+MCTS-RL Last Lap: 19.04
+MCTS-RL Best Lap: 19
+MCTS-RL Total Time: 77.84
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.89836
+Fixed-RL Last Lap: 20.06
+Fixed-RL Best Lap: 19.1
+Fixed-RL Total Time: 78.56
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 48
+MCTS-RL Speed: 14.93434
+MCTS-RL Last Lap: 19.56
+MCTS-RL Best Lap: 18.94
+MCTS-RL Total Time: 77.62
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+Fixed-RL Speed: 14.96923
+Fixed-RL Last Lap: 19.5
+Fixed-RL Best Lap: 18.98
+Fixed-RL Total Time: 78.36
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+
+Experiment 49
+MCTS-RL Speed: 15.00045
+MCTS-RL Last Lap: 19.26
+MCTS-RL Best Lap: 18.82
+MCTS-RL Total Time: 77.56
+MCTS-RL Laps Completed: 4/4
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+Fixed-RL Speed: 14.97202
+Fixed-RL Last Lap: 19.66
+Fixed-RL Best Lap: 19.02
+Fixed-RL Total Time: 78.52
+Fixed-RL Laps Completed: 4/4
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Winner: 
+

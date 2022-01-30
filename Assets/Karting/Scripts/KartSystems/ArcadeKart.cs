@@ -526,5 +526,20 @@ namespace KartGame.KartSystems
             }
             return maxAllowedSpeed;
         }
+
+        public Vector3 ForwardDirection()
+        {
+            return transform.InverseTransformVector(Rigidbody.velocity).normalized;
+        }
+
+        public Vector3 LeftDirection()
+        {
+            return Quaternion.Euler(0, 90, 0) * ForwardDirection();
+        }
+
+        public Vector3 RightDirection()
+        {
+            return Quaternion.Euler(0, -90, 0) * ForwardDirection();
+        }
     }
 }

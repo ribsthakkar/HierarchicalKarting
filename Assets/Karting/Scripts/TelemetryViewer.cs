@@ -1,106 +1,105 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Text;
 
 public class TelemetryViewer : MonoBehaviour
 {
     [Tooltip("The text field displaying the framerate")]
     public TextMeshProUGUI uiText;
 
-    public KartGame.AI.KartAgent agent;
-    public KartGame.AI.KartAgent agent2;
 
-    float lastLapTime1 = 0f;
-    float lastLapTime2 = 0f;
-    float bestLapTime1 = 0f;
-    float bestLapTime2 = 0f;
-    int lastEpisodeSteps1 = 0;
-    int lastEpisodeSteps2 = 0;
-    int lastCompletedLap1;
-    int lastCompletedLap2;
-    float lastOverallTime1 = 0.0f;
-    float lastOverallTime2 = 0.0f;
+    public RacingEnvController envController;
+    int[] lastCompletedLaps;
+    int[] lastEpisodeSteps;
+    float[] lastLapTimes;
+    float[] bestLapTimes;
+    float[] lastOverallTimes;
     string winner = "";
 
     void Start()
     {
-        lastCompletedLap1 = agent.m_SectionIndex / (agent.m_envController.Sections.Length);
-        lastCompletedLap2 = agent2.m_SectionIndex / (agent2.m_envController.Sections.Length);
+        lastCompletedLaps = new int[envController.Agents.Length];
+        lastEpisodeSteps = new int[envController.Agents.Length];
+        lastLapTimes = new float[envController.Agents.Length];
+        bestLapTimes = new float[envController.Agents.Length];
+        lastOverallTimes = new float[envController.Agents.Length];
+        int i = 0;
+        foreach (KartGame.AI.KartAgent agent in envController.Agents)
+        {
+            lastCompletedLaps[i] = agent.m_SectionIndex / (envController.Sections.Length);
+            i++;
+        }
     }
 
     private void OnEnable()
     {
-        lastCompletedLap1 = agent.m_SectionIndex / (agent.m_envController.Sections.Length);
-        lastCompletedLap2 = agent2.m_SectionIndex / (agent2.m_envController.Sections.Length);
+        lastCompletedLaps = new int[envController.Agents.Length];
+        lastEpisodeSteps = new int[envController.Agents.Length];
+        lastLapTimes = new float[envController.Agents.Length];
+        bestLapTimes = new float[envController.Agents.Length];
+        lastOverallTimes = new float[envController.Agents.Length];
+        int i = 0;
+        foreach (KartGame.AI.KartAgent agent in envController.Agents)
+        {
+            lastCompletedLaps[i] = agent.m_SectionIndex / (envController.Sections.Length);
+            i++;
+        }
     }
 
     void Update()
     {
-        float speed1 = agent.m_Kart.Rigidbody.velocity.magnitude;
-        float speed2 = agent2.m_Kart.Rigidbody.velocity.magnitude;
-        float tireAge1 = agent.m_Kart.TireWearProportion();
-        float tireAge2 = agent2.m_Kart.TireWearProportion();
-        int currentLap1 = agent.m_SectionIndex / agent.m_envController.Sections.Length;
-        int currentLap2 = agent2.m_SectionIndex / agent2.m_envController.Sections.Length;
-        if (currentLap1 > lastCompletedLap1)
+        StringBuilder telemetryInfo = new StringBuilder();
+        int i = 0;
+        float minTimes = 1000f;
+        winner = "";
+        foreach(KartGame.AI.KartAgent agent in envController.Agents)
         {
-            lastCompletedLap1 = currentLap1;
-            lastLapTime1 = Time.fixedDeltaTime * (agent.m_envController.episodeSteps - lastEpisodeSteps1);
-            if (bestLapTime1 < 10 || lastLapTime1 < bestLapTime1)
+            float speed = agent.m_Kart.Rigidbody.velocity.magnitude;
+            float tireAge = agent.m_Kart.TireWearProportion();
+            int currentLap = agent.m_SectionIndex / agent.m_envController.Sections.Length;
+           if (currentLap > lastCompletedLaps[i])
             {
-                bestLapTime1 = lastLapTime1;
+                lastCompletedLaps[i] = currentLap;
+                lastLapTimes[i] = Time.fixedDeltaTime * (agent.m_envController.episodeSteps - lastEpisodeSteps[i]);
+                if (bestLapTimes[i] < 10 || lastLapTimes[i] < bestLapTimes[i])
+                {
+                    bestLapTimes[i] = lastLapTimes[i];
+                }
+                lastEpisodeSteps[i] = agent.m_envController.episodeSteps;
             }
-            lastEpisodeSteps1 = agent.m_envController.episodeSteps;
-        } else if (currentLap1 < lastCompletedLap1)
-        {
-            lastCompletedLap1 = currentLap1;
-            lastLapTime1 = 0f;
-            bestLapTime1 = 0f;
-            lastEpisodeSteps1 = 0;
-        }
-        if (currentLap2 > lastCompletedLap2)
-        {
-            lastCompletedLap2 = currentLap2;
-            lastLapTime2 = Time.fixedDeltaTime * (agent2.m_envController.episodeSteps - lastEpisodeSteps2);
-            if (bestLapTime2 < 10 || lastLapTime2 < bestLapTime2)
+            else if (currentLap < lastCompletedLaps[i])
             {
-                bestLapTime2 = lastLapTime2;
+                lastCompletedLaps[i] = currentLap;
+                lastLapTimes[i] = 0f;
+                bestLapTimes[i] = 0f;
+                lastEpisodeSteps[i] = 0;
             }
-            lastEpisodeSteps2 = agent2.m_envController.episodeSteps;
-        } else if (currentLap2 < lastCompletedLap2)
-        {
-            lastCompletedLap2 = currentLap2;
-            lastLapTime2 = 0f;
-            bestLapTime2 = 0f;
-            lastEpisodeSteps2 = 0;
+            if (agent.gameObject.activeSelf)
+            {
+                lastOverallTimes[i] = agent.m_envController.episodeSteps * Time.fixedDeltaTime;
+            }
+            if (!agent.gameObject.activeSelf && lastEpisodeSteps[i] < minTimes && !winner.Equals("Tie"))
+            {
+                winner = agent.name;
+                minTimes = lastOverallTimes[i];
+            } else if (!agent.gameObject.activeSelf && lastOverallTimes[i] == minTimes)
+            {
+                winner = "Tie";
+            }
+
+            telemetryInfo.AppendLine(agent.name + " Speed: " + speed.ToString());
+            telemetryInfo.AppendLine(agent.name + " Last Lap: " + lastLapTimes[i].ToString());
+            telemetryInfo.AppendLine(agent.name + " Best Lap: " + bestLapTimes[i].ToString());
+            telemetryInfo.AppendLine(agent.name + " Total Time: " + lastOverallTimes[i].ToString());
+            telemetryInfo.AppendLine(agent.name + " Laps Completed: " + lastCompletedLaps[i].ToString() + "/" + agent.m_envController.laps.ToString());
+            telemetryInfo.AppendLine(agent.name + " Illegal Lane Changes: " + agent.m_IllegalLaneChanges);
+            telemetryInfo.AppendLine(agent.name + " Collisions: " + agent.forwardCollisions);
+
+            i++;
         }
-        if (agent.gameObject.activeSelf)
-            lastOverallTime1 = agent.m_envController.episodeSteps * Time.fixedDeltaTime;
-        if (agent2.gameObject.activeSelf)
-            lastOverallTime2 = agent2.m_envController.episodeSteps * Time.fixedDeltaTime;
-        if (!agent.gameObject.activeSelf && !agent2.gameObject.activeSelf)
-        {
-            winner = lastOverallTime1 < lastOverallTime2 ? agent.name : lastOverallTime2 < lastOverallTime1 ? agent2.name : "Tie";
-        }
-        else
-        {
-            winner = "";
-        }
-        uiText.text = "" + agent.name + " Speed: " + speed1.ToString() +
-                    "\n" + agent.name + " Tire Wear: " + tireAge1.ToString() +
-                    "\n" + agent.name + " Last Lap: " + lastLapTime1.ToString() +
-                    "\n" + agent.name + " Best Lap: " + bestLapTime1.ToString() +
-                    "\n" + agent.name + " Total Time: " + lastOverallTime1.ToString() +
-                    "\n" + agent.name + " Laps Completed: " + lastCompletedLap1.ToString() + "/" + agent.m_envController.laps.ToString() +
-                    "\n" + agent.name + " Lane Changes: " + agent.m_LaneChanges +
-                    "\n" + agent2.name + " Speed :" + speed2.ToString() +
-                    "\n" + agent2.name + " Tire Wear :" + tireAge2.ToString() +
-                    "\n" + agent2.name + " Last Lap: " + lastLapTime2.ToString() +
-                    "\n" + agent2.name + " Best Lap: " + bestLapTime2.ToString() +
-                    "\n" + agent2.name + " Overall Time: " + lastOverallTime2.ToString() +
-                    "\n" + agent2.name + " Laps Completed: " + lastCompletedLap2.ToString() + "/" + agent2.m_envController.laps.ToString() +
-                    "\n" + agent2.name + " Lane Changes: " + agent2.m_LaneChanges +
-                    "\n" + "Winner: " + winner;
-                    ;
+        telemetryInfo.AppendLine("Winner: " + winner);
+
+        uiText.text = telemetryInfo.ToString();
 
     }
 }

@@ -1,800 +1,850 @@
 Experiment 0
-MCTS-RL Speed: 14.89843
-MCTS-RL Tire Wear: 0.511321
-MCTS-RL Last Lap: 34.82
-MCTS-RL Best Lap: 33.58
-MCTS-RL Total Time: 105.56
+MCTS-RL Speed: 14.96083
+MCTS-RL Last Lap: 34.76
+MCTS-RL Best Lap: 33.82
+MCTS-RL Total Time: 105.96
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :14.89833
-MCTS-LQR Tire Wear :0.5076314
-MCTS-LQR Last Lap: 34.78
-MCTS-LQR Best Lap: 33.72
-MCTS-LQR Overall Time: 106.72
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.4072
+MCTS-LQR Last Lap: 34.64
+MCTS-LQR Best Lap: 33.38
+MCTS-LQR Total Time: 106.68
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
 Experiment 1
-MCTS-RL Speed: 14.93502
-MCTS-RL Tire Wear: 0.5133319
-MCTS-RL Last Lap: 34.6
-MCTS-RL Best Lap: 33.46
+MCTS-RL Speed: 14.90374
+MCTS-RL Last Lap: 34.66
+MCTS-RL Best Lap: 33.32
 MCTS-RL Total Time: 102.74
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :14.99842
-MCTS-LQR Tire Wear :0.5003937
-MCTS-LQR Last Lap: 33.06
-MCTS-LQR Best Lap: 33.06
-MCTS-LQR Overall Time: 103.46
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.89857
+MCTS-LQR Last Lap: 34.18
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 104.48
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
 Experiment 2
-MCTS-RL Speed: 15.00073
-MCTS-RL Tire Wear: 0.5152151
-MCTS-RL Last Lap: 48.58
-MCTS-RL Best Lap: 33.46
-MCTS-RL Total Time: 116.52
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :0.006716071
-MCTS-LQR Tire Wear :0.3474611
-MCTS-LQR Last Lap: 0
-MCTS-LQR Best Lap: 0
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 0/3
-MCTS-LQR Lane Changes: 1
-Winner: 
-Experiment 3
-MCTS-RL Speed: 14.9633
-MCTS-RL Tire Wear: 0.5131727
-MCTS-RL Last Lap: 35.04
-MCTS-RL Best Lap: 33.64
-MCTS-RL Total Time: 104.26
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :15.00145
-MCTS-LQR Tire Wear :0.5045199
-MCTS-LQR Last Lap: 33.6
-MCTS-LQR Best Lap: 33.6
-MCTS-LQR Overall Time: 102.22
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 4
-MCTS-RL Speed: 14.93448
-MCTS-RL Tire Wear: 0.509366
-MCTS-RL Last Lap: 34.58
-MCTS-RL Best Lap: 33.2
-MCTS-RL Total Time: 101.7
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.93422
-MCTS-LQR Tire Wear :0.4984705
-MCTS-LQR Last Lap: 34.34
-MCTS-LQR Best Lap: 33.26
-MCTS-LQR Overall Time: 102.42
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
-Experiment 5
-MCTS-RL Speed: 15.02639
-MCTS-RL Tire Wear: 0.5140445
-MCTS-RL Last Lap: 36.1
+MCTS-RL Speed: 15.03155
+MCTS-RL Last Lap: 34.9
 MCTS-RL Best Lap: 33.78
-MCTS-RL Total Time: 104.86
+MCTS-RL Total Time: 104.92
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :5.635555E-05
-MCTS-LQR Tire Wear :0.459774
-MCTS-LQR Last Lap: 32.72
-MCTS-LQR Best Lap: 32.72
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 1
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93615
+MCTS-LQR Last Lap: 34.56
+MCTS-LQR Best Lap: 33.7
+MCTS-LQR Total Time: 106
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 3
 Winner: 
-Experiment 6
-MCTS-RL Speed: 0.05595496
-MCTS-RL Tire Wear: 0.3628203
+
+Experiment 3
+MCTS-RL Speed: 0.06056773
 MCTS-RL Last Lap: 0
 MCTS-RL Best Lap: 0
 MCTS-RL Total Time: 119.98
 MCTS-RL Laps Completed: 0/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :14.93377
-MCTS-LQR Tire Wear :0.5012875
-MCTS-LQR Last Lap: 33.72
-MCTS-LQR Best Lap: 32.94
-MCTS-LQR Overall Time: 101.16
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.42093
+MCTS-LQR Last Lap: 35.16
+MCTS-LQR Best Lap: 34.38
+MCTS-LQR Total Time: 104.78
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 3
 Winner: 
+
+Experiment 4
+MCTS-RL Speed: 14.97128
+MCTS-RL Last Lap: 34.62
+MCTS-RL Best Lap: 33.3
+MCTS-RL Total Time: 102.12
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93495
+MCTS-LQR Last Lap: 35.06
+MCTS-LQR Best Lap: 34.84
+MCTS-LQR Total Time: 105.38
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 5
+MCTS-RL Speed: 14.96579
+MCTS-RL Last Lap: 34.68
+MCTS-RL Best Lap: 33.28
+MCTS-RL Total Time: 102.36
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.88174
+MCTS-LQR Last Lap: 34.16
+MCTS-LQR Best Lap: 34.16
+MCTS-LQR Total Time: 103.56
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 6
+MCTS-RL Speed: 14.93607
+MCTS-RL Last Lap: 34.54
+MCTS-RL Best Lap: 33.82
+MCTS-RL Total Time: 103.26
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 3
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.86417
+MCTS-LQR Last Lap: 34.56
+MCTS-LQR Best Lap: 34.08
+MCTS-LQR Total Time: 104.72
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+Winner: 
+
 Experiment 7
-MCTS-RL Speed: 14.98035
-MCTS-RL Tire Wear: 0.5127177
-MCTS-RL Last Lap: 34.74
-MCTS-RL Best Lap: 33.58
-MCTS-RL Total Time: 102.94
+MCTS-RL Speed: 14.89683
+MCTS-RL Last Lap: 34.46
+MCTS-RL Best Lap: 32.62
+MCTS-RL Total Time: 101.26
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :13.94468
-MCTS-LQR Tire Wear :0.5008895
-MCTS-LQR Last Lap: 32.9
-MCTS-LQR Best Lap: 32.9
-MCTS-LQR Overall Time: 102.44
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.39872
+MCTS-LQR Last Lap: 34.44
+MCTS-LQR Best Lap: 33.96
+MCTS-LQR Total Time: 103.42
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 2
-Winner: MCTS-LQR
-Experiment 8
-MCTS-RL Speed: 14.98911
-MCTS-RL Tire Wear: 0.5136592
-MCTS-RL Last Lap: 34.98
-MCTS-RL Best Lap: 34.26
-MCTS-RL Total Time: 104.24
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :5.966539E-06
-MCTS-LQR Tire Wear :0.4542197
-MCTS-LQR Last Lap: 33.92
-MCTS-LQR Best Lap: 33.92
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 4
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
 Winner: 
-Experiment 9
-MCTS-RL Speed: 14.94699
-MCTS-RL Tire Wear: 0.5139316
-MCTS-RL Last Lap: 34.6
-MCTS-RL Best Lap: 33.92
-MCTS-RL Total Time: 103.44
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.93134
-MCTS-LQR Tire Wear :0.5055867
-MCTS-LQR Last Lap: 35.3
-MCTS-LQR Best Lap: 34.32
-MCTS-LQR Overall Time: 104.92
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
-Experiment 10
-MCTS-RL Speed: 15.00132
-MCTS-RL Tire Wear: 0.5141397
-MCTS-RL Last Lap: 35.26
-MCTS-RL Best Lap: 33.96
-MCTS-RL Total Time: 104.18
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :14.70675
-MCTS-LQR Tire Wear :0.5138462
-MCTS-LQR Last Lap: 33.76
-MCTS-LQR Best Lap: 33.22
-MCTS-LQR Overall Time: 111.9
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
-Experiment 11
-MCTS-RL Speed: 14.41837
-MCTS-RL Tire Wear: 0.5201048
-MCTS-RL Last Lap: 35.58
-MCTS-RL Best Lap: 33.4
-MCTS-RL Total Time: 103.5
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :15.01612
-MCTS-LQR Tire Wear :0.5036556
-MCTS-LQR Last Lap: 34.72
-MCTS-LQR Best Lap: 33.24
-MCTS-LQR Overall Time: 103.24
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 12
-MCTS-RL Speed: 15.0227
-MCTS-RL Tire Wear: 0.5085838
-MCTS-RL Last Lap: 34.44
-MCTS-RL Best Lap: 33.14
-MCTS-RL Total Time: 101.84
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :15.00193
-MCTS-LQR Tire Wear :0.4973191
-MCTS-LQR Last Lap: 34.52
-MCTS-LQR Best Lap: 33.28
-MCTS-LQR Overall Time: 103
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 3
-Winner: MCTS-RL
-Experiment 13
-MCTS-RL Speed: 14.97989
-MCTS-RL Tire Wear: 0.5096958
-MCTS-RL Last Lap: 33.98
-MCTS-RL Best Lap: 33.48
+
+Experiment 8
+MCTS-RL Speed: 14.99707
+MCTS-RL Last Lap: 34.76
+MCTS-RL Best Lap: 33.04
 MCTS-RL Total Time: 102.74
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.97171
-MCTS-LQR Tire Wear :0.4921308
-MCTS-LQR Last Lap: 60.48
-MCTS-LQR Best Lap: 35.7
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 1
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.68942
+MCTS-LQR Last Lap: 34.68
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 105.22
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
 Winner: 
-Experiment 14
-MCTS-RL Speed: 14.95452
-MCTS-RL Tire Wear: 0.507974
-MCTS-RL Last Lap: 34.92
-MCTS-RL Best Lap: 33.02
-MCTS-RL Total Time: 101.96
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :13.7056
-MCTS-LQR Tire Wear :0.5125606
-MCTS-LQR Last Lap: 34.04
-MCTS-LQR Best Lap: 34.04
-MCTS-LQR Overall Time: 103.46
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 2
-Winner: MCTS-RL
-Experiment 15
-MCTS-RL Speed: 14.88918
-MCTS-RL Tire Wear: 0.5086278
-MCTS-RL Last Lap: 34.22
-MCTS-RL Best Lap: 33.48
-MCTS-RL Total Time: 102.1
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.5822
-MCTS-LQR Tire Wear :0.5014977
-MCTS-LQR Last Lap: 33.84
-MCTS-LQR Best Lap: 33.7
-MCTS-LQR Overall Time: 102.76
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: 
-Experiment 16
-MCTS-RL Speed: 0.7133176
-MCTS-RL Tire Wear: 0.4844365
-MCTS-RL Last Lap: 33.94
-MCTS-RL Best Lap: 33.12
-MCTS-RL Total Time: 119.98
-MCTS-RL Laps Completed: 2/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.9343
-MCTS-LQR Tire Wear :0.498089
-MCTS-LQR Last Lap: 33.54
-MCTS-LQR Best Lap: 32.98
-MCTS-LQR Overall Time: 101.78
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: 
-Experiment 17
-MCTS-RL Speed: 14.97151
-MCTS-RL Tire Wear: 0.5204545
-MCTS-RL Last Lap: 35.02
-MCTS-RL Best Lap: 34.6
-MCTS-RL Total Time: 105.76
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.89626
-MCTS-LQR Tire Wear :0.5037172
-MCTS-LQR Last Lap: 33.94
-MCTS-LQR Best Lap: 33.16
-MCTS-LQR Overall Time: 103.54
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 18
-MCTS-RL Speed: 14.9808
-MCTS-RL Tire Wear: 0.5090411
-MCTS-RL Last Lap: 34.12
-MCTS-RL Best Lap: 33.28
+
+Experiment 9
+MCTS-RL Speed: 14.9671
+MCTS-RL Last Lap: 34.28
+MCTS-RL Best Lap: 33.22
 MCTS-RL Total Time: 101.4
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :15.00146
-MCTS-LQR Tire Wear :0.4930704
-MCTS-LQR Last Lap: 33.3
-MCTS-LQR Best Lap: 33.3
-MCTS-LQR Overall Time: 102
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.89871
+MCTS-LQR Last Lap: 35.14
+MCTS-LQR Best Lap: 34.04
+MCTS-LQR Total Time: 104.22
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
-Experiment 19
-MCTS-RL Speed: 14.89793
-MCTS-RL Tire Wear: 0.5168806
-MCTS-RL Last Lap: 35.46
-MCTS-RL Best Lap: 33.78
-MCTS-RL Total Time: 104.48
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :8.089498E-05
-MCTS-LQR Tire Wear :0.4299994
-MCTS-LQR Last Lap: 35.54
-MCTS-LQR Best Lap: 35.54
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 1/3
-MCTS-LQR Lane Changes: 2
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
 Winner: 
-Experiment 20
-MCTS-RL Speed: 15.00006
-MCTS-RL Tire Wear: 0.5148264
-MCTS-RL Last Lap: 34.82
-MCTS-RL Best Lap: 33.24
-MCTS-RL Total Time: 103.42
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :15.00166
-MCTS-LQR Tire Wear :0.5037554
-MCTS-LQR Last Lap: 34.04
-MCTS-LQR Best Lap: 33.14
-MCTS-LQR Overall Time: 101.04
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 21
-MCTS-RL Speed: 15.00294
-MCTS-RL Tire Wear: 0.5226842
-MCTS-RL Last Lap: 36.56
-MCTS-RL Best Lap: 33.34
-MCTS-RL Total Time: 105.04
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :15.00366
-MCTS-LQR Tire Wear :0.5079305
-MCTS-LQR Last Lap: 34.84
-MCTS-LQR Best Lap: 33.7
-MCTS-LQR Overall Time: 104.54
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 22
-MCTS-RL Speed: 14.98485
-MCTS-RL Tire Wear: 0.5083378
-MCTS-RL Last Lap: 34.34
+
+Experiment 10
+MCTS-RL Speed: 14.89193
+MCTS-RL Last Lap: 34.8
 MCTS-RL Best Lap: 33.56
-MCTS-RL Total Time: 102.2
+MCTS-RL Total Time: 103.64
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :14.03529
-MCTS-LQR Tire Wear :0.5093436
-MCTS-LQR Last Lap: 34.02
-MCTS-LQR Best Lap: 34.02
-MCTS-LQR Overall Time: 103.78
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93662
+MCTS-LQR Last Lap: 34.82
+MCTS-LQR Best Lap: 33.6
+MCTS-LQR Total Time: 105.28
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: MCTS-RL
-Experiment 23
-MCTS-RL Speed: 14.95663
-MCTS-RL Tire Wear: 0.5198733
-MCTS-RL Last Lap: 35.34
-MCTS-RL Best Lap: 33.7
-MCTS-RL Total Time: 104.34
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 11
+MCTS-RL Speed: 14.97977
+MCTS-RL Last Lap: 34.86
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 102.02
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :15.00267
-MCTS-LQR Tire Wear :0.5113034
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93335
 MCTS-LQR Last Lap: 34.5
-MCTS-LQR Best Lap: 33.52
-MCTS-LQR Overall Time: 104.78
+MCTS-LQR Best Lap: 33.56
+MCTS-LQR Total Time: 103.86
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
-Experiment 24
-MCTS-RL Speed: 14.98647
-MCTS-RL Tire Wear: 0.5189515
-MCTS-RL Last Lap: 34.56
-MCTS-RL Best Lap: 33.36
-MCTS-RL Total Time: 103.9
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.89863
-MCTS-LQR Tire Wear :0.5006955
-MCTS-LQR Last Lap: 33.92
-MCTS-LQR Best Lap: 32.88
-MCTS-LQR Overall Time: 101.36
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 2
-Winner: MCTS-LQR
-Experiment 25
-MCTS-RL Speed: 14.89706
-MCTS-RL Tire Wear: 0.5195787
-MCTS-RL Last Lap: 35.46
-MCTS-RL Best Lap: 33.78
-MCTS-RL Total Time: 104
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :15.02682
-MCTS-LQR Tire Wear :0.5035744
-MCTS-LQR Last Lap: 34.14
-MCTS-LQR Best Lap: 33.46
-MCTS-LQR Overall Time: 103.2
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 2
-Winner: MCTS-LQR
-Experiment 26
-MCTS-RL Speed: 15.00234
-MCTS-RL Tire Wear: 0.5218431
-MCTS-RL Last Lap: 36.42
-MCTS-RL Best Lap: 33.46
-MCTS-RL Total Time: 104.4
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.9978
-MCTS-LQR Tire Wear :0.4974349
-MCTS-LQR Last Lap: 33.72
-MCTS-LQR Best Lap: 33.24
-MCTS-LQR Overall Time: 102.28
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: MCTS-LQR
-Experiment 27
-MCTS-RL Speed: 15.0258
-MCTS-RL Tire Wear: 0.5151264
-MCTS-RL Last Lap: 35.3
-MCTS-RL Best Lap: 33.22
-MCTS-RL Total Time: 103.02
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :2.679882E-05
-MCTS-LQR Tire Wear :0.4733527
-MCTS-LQR Last Lap: 33.26
-MCTS-LQR Best Lap: 33.26
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 0
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
 Winner: 
-Experiment 28
-MCTS-RL Speed: 14.89578
-MCTS-RL Tire Wear: 0.5115352
-MCTS-RL Last Lap: 34.6
-MCTS-RL Best Lap: 33.42
-MCTS-RL Total Time: 102.2
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :11.31781
-MCTS-LQR Tire Wear :0.475498
-MCTS-LQR Last Lap: 32.68
-MCTS-LQR Best Lap: 32.68
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 3
-Winner: 
-Experiment 29
-MCTS-RL Speed: 14.42639
-MCTS-RL Tire Wear: 0.5218389
-MCTS-RL Last Lap: 35.52
-MCTS-RL Best Lap: 34.96
-MCTS-RL Total Time: 106.38
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :0.05695312
-MCTS-LQR Tire Wear :0.3466357
-MCTS-LQR Last Lap: 0
-MCTS-LQR Best Lap: 0
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 0/3
-MCTS-LQR Lane Changes: 3
-Winner: 
-Experiment 30
-MCTS-RL Speed: 14.96202
-MCTS-RL Tire Wear: 0.511709
-MCTS-RL Last Lap: 34.72
-MCTS-RL Best Lap: 33.42
-MCTS-RL Total Time: 102.4
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.10333
-MCTS-LQR Tire Wear :0.5103767
-MCTS-LQR Last Lap: 35.74
-MCTS-LQR Best Lap: 33.38
-MCTS-LQR Overall Time: 104.44
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: MCTS-RL
-Experiment 31
-MCTS-RL Speed: 14.42847
-MCTS-RL Tire Wear: 0.5079136
-MCTS-RL Last Lap: 46.68
-MCTS-RL Best Lap: 46.68
-MCTS-RL Total Time: 119.98
-MCTS-RL Laps Completed: 2/3
-MCTS-RL Lane Changes: 4
-MCTS-LQR Speed :14.96894
-MCTS-LQR Tire Wear :0.4963802
-MCTS-LQR Last Lap: 33.78
-MCTS-LQR Best Lap: 33.2
-MCTS-LQR Overall Time: 101.68
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: 
-Experiment 32
-MCTS-RL Speed: 14.89864
-MCTS-RL Tire Wear: 0.5120754
-MCTS-RL Last Lap: 35.56
-MCTS-RL Best Lap: 32.62
-MCTS-RL Total Time: 102.5
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.03484
-MCTS-LQR Tire Wear :0.5080698
-MCTS-LQR Last Lap: 34.4
-MCTS-LQR Best Lap: 33.46
-MCTS-LQR Overall Time: 103.02
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-RL
-Experiment 33
-MCTS-RL Speed: 14.96665
-MCTS-RL Tire Wear: 0.5135887
-MCTS-RL Last Lap: 35.24
-MCTS-RL Best Lap: 33.52
-MCTS-RL Total Time: 103.66
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.89739
-MCTS-LQR Tire Wear :0.5053635
-MCTS-LQR Last Lap: 33.9
-MCTS-LQR Best Lap: 33.9
-MCTS-LQR Overall Time: 119.7
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 3
-Winner: MCTS-RL
-Experiment 34
-MCTS-RL Speed: 14.92696
-MCTS-RL Tire Wear: 0.5149711
-MCTS-RL Last Lap: 35.18
-MCTS-RL Best Lap: 33.44
-MCTS-RL Total Time: 103.24
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.88633
-MCTS-LQR Tire Wear :0.4961058
-MCTS-LQR Last Lap: 33.4
-MCTS-LQR Best Lap: 33.4
-MCTS-LQR Overall Time: 102.34
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 35
-MCTS-RL Speed: 14.99461
-MCTS-RL Tire Wear: 0.5144422
-MCTS-RL Last Lap: 34.58
-MCTS-RL Best Lap: 33.52
-MCTS-RL Total Time: 102.88
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :7.156166
-MCTS-LQR Tire Wear :0.6192625
-MCTS-LQR Last Lap: 55.48
-MCTS-LQR Best Lap: 48.9
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 0
-Winner: 
-Experiment 36
-MCTS-RL Speed: 0.05527119
-MCTS-RL Tire Wear: 0.3337207
+
+Experiment 12
+MCTS-RL Speed: 8.930197
 MCTS-RL Last Lap: 0
 MCTS-RL Best Lap: 0
-MCTS-RL Total Time: 119.98
+MCTS-RL Total Time: 11.2
 MCTS-RL Laps Completed: 0/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :7.657456
-MCTS-LQR Tire Wear :0.6298522
-MCTS-LQR Last Lap: 55.72
-MCTS-LQR Best Lap: 52.1
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 2
-Winner: 
-Experiment 37
-MCTS-RL Speed: 14.96887
-MCTS-RL Tire Wear: 0.511613
-MCTS-RL Last Lap: 34.44
-MCTS-RL Best Lap: 33.3
-MCTS-RL Total Time: 102.62
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.99786
-MCTS-LQR Tire Wear :0.5046904
-MCTS-LQR Last Lap: 34.72
-MCTS-LQR Best Lap: 33.56
-MCTS-LQR Overall Time: 103.88
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.71738
+MCTS-LQR Last Lap: 34.64
+MCTS-LQR Best Lap: 34.28
+MCTS-LQR Total Time: 109.22
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
 Winner: MCTS-RL
-Experiment 38
-MCTS-RL Speed: 14.93657
-MCTS-RL Tire Wear: 0.511554
-MCTS-RL Last Lap: 34.44
-MCTS-RL Best Lap: 33.3
+
+Experiment 13
+MCTS-RL Speed: 15.00378
+MCTS-RL Last Lap: 34.4
+MCTS-RL Best Lap: 32.86
 MCTS-RL Total Time: 101.7
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :10.94407
-MCTS-LQR Tire Wear :0.4733926
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.91227
+MCTS-LQR Last Lap: 34.8
+MCTS-LQR Best Lap: 33.88
+MCTS-LQR Total Time: 103.32
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 14
+MCTS-RL Speed: 15.02112
+MCTS-RL Last Lap: 34.82
+MCTS-RL Best Lap: 33.54
+MCTS-RL Total Time: 102.98
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93746
+MCTS-LQR Last Lap: 34.42
+MCTS-LQR Best Lap: 34.36
+MCTS-LQR Total Time: 106.96
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 15
+MCTS-RL Speed: 14.93217
+MCTS-RL Last Lap: 35.08
+MCTS-RL Best Lap: 32.82
+MCTS-RL Total Time: 102.82
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.97053
+MCTS-LQR Last Lap: 35.32
+MCTS-LQR Best Lap: 33.92
+MCTS-LQR Total Time: 104.96
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 16
+MCTS-RL Speed: 14.93033
+MCTS-RL Last Lap: 35
+MCTS-RL Best Lap: 33.52
+MCTS-RL Total Time: 103.46
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93667
+MCTS-LQR Last Lap: 34.6
+MCTS-LQR Best Lap: 34.6
+MCTS-LQR Total Time: 105.94
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 2
+Winner: 
+
+Experiment 17
+MCTS-RL Speed: 14.99186
+MCTS-RL Last Lap: 34.76
+MCTS-RL Best Lap: 33.2
+MCTS-RL Total Time: 101.82
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.96424
+MCTS-LQR Last Lap: 34.76
+MCTS-LQR Best Lap: 33.86
+MCTS-LQR Total Time: 103.52
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 18
+MCTS-RL Speed: 12.88797
+MCTS-RL Last Lap: 0
+MCTS-RL Best Lap: 0
+MCTS-RL Total Time: 11.56
+MCTS-RL Laps Completed: 0/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.98221
+MCTS-LQR Last Lap: 34.96
+MCTS-LQR Best Lap: 34.48
+MCTS-LQR Total Time: 106.96
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: MCTS-RL
+
+Experiment 19
+MCTS-RL Speed: 14.92199
+MCTS-RL Last Lap: 34.5
+MCTS-RL Best Lap: 32.74
+MCTS-RL Total Time: 102.04
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.97176
+MCTS-LQR Last Lap: 35.46
+MCTS-LQR Best Lap: 33.94
+MCTS-LQR Total Time: 104.54
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 20
+MCTS-RL Speed: 14.92989
+MCTS-RL Last Lap: 35.36
+MCTS-RL Best Lap: 33.8
+MCTS-RL Total Time: 105.76
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93351
 MCTS-LQR Last Lap: 34.32
-MCTS-LQR Best Lap: 34.32
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 2
-Winner: 
-Experiment 39
-MCTS-RL Speed: 14.95112
-MCTS-RL Tire Wear: 0.5240647
-MCTS-RL Last Lap: 37.92
-MCTS-RL Best Lap: 33.16
-MCTS-RL Total Time: 106.24
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.93632
-MCTS-LQR Tire Wear :0.4877468
-MCTS-LQR Last Lap: 72.2
-MCTS-LQR Best Lap: 34.04
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 1
-Winner: 
-Experiment 40
-MCTS-RL Speed: 15.01748
-MCTS-RL Tire Wear: 0.5207585
-MCTS-RL Last Lap: 36.54
-MCTS-RL Best Lap: 33.68
-MCTS-RL Total Time: 105.1
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.98317
-MCTS-LQR Tire Wear :0.5082601
-MCTS-LQR Last Lap: 35.6
-MCTS-LQR Best Lap: 32.92
-MCTS-LQR Overall Time: 103.44
+MCTS-LQR Best Lap: 33.76
+MCTS-LQR Total Time: 105.62
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 41
-MCTS-RL Speed: 15.03046
-MCTS-RL Tire Wear: 0.5179184
-MCTS-RL Last Lap: 35.32
-MCTS-RL Best Lap: 33.78
-MCTS-RL Total Time: 103.98
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :14.93161
-MCTS-LQR Tire Wear :0.4995619
-MCTS-LQR Last Lap: 33.28
-MCTS-LQR Best Lap: 33.28
-MCTS-LQR Overall Time: 102.48
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: MCTS-LQR
-Experiment 42
-MCTS-RL Speed: 0.002329489
-MCTS-RL Tire Wear: 0.4573259
-MCTS-RL Last Lap: 33.06
-MCTS-RL Best Lap: 33.06
-MCTS-RL Total Time: 119.98
-MCTS-RL Laps Completed: 1/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :10.68678
-MCTS-LQR Tire Wear :0.4795077
-MCTS-LQR Last Lap: 32.94
-MCTS-LQR Best Lap: 32.94
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 3
 Winner: 
-Experiment 43
-MCTS-RL Speed: 14.97178
-MCTS-RL Tire Wear: 0.511749
-MCTS-RL Last Lap: 34.64
-MCTS-RL Best Lap: 33.58
-MCTS-RL Total Time: 103.32
+
+Experiment 21
+MCTS-RL Speed: 15.00257
+MCTS-RL Last Lap: 34.52
+MCTS-RL Best Lap: 33.38
+MCTS-RL Total Time: 102.62
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :9.893071
-MCTS-LQR Tire Wear :0.4764065
-MCTS-LQR Last Lap: 68.06
-MCTS-LQR Best Lap: 35.12
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 1
-Winner: 
-Experiment 44
-MCTS-RL Speed: 14.91788
-MCTS-RL Tire Wear: 0.5201874
-MCTS-RL Last Lap: 35.54
-MCTS-RL Best Lap: 33.4
-MCTS-RL Total Time: 104.94
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 1
-MCTS-LQR Speed :9.596135
-MCTS-LQR Tire Wear :0.4801176
-MCTS-LQR Last Lap: 33.54
-MCTS-LQR Best Lap: 33.54
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 1
-Winner: 
-Experiment 45
-MCTS-RL Speed: 14.93317
-MCTS-RL Tire Wear: 0.5153814
-MCTS-RL Last Lap: 34.94
-MCTS-RL Best Lap: 33.5
-MCTS-RL Total Time: 103.54
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :15.00126
-MCTS-LQR Tire Wear :0.5028425
-MCTS-LQR Last Lap: 33.66
-MCTS-LQR Best Lap: 33.66
-MCTS-LQR Overall Time: 102.26
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
-Winner: MCTS-LQR
-Experiment 46
-MCTS-RL Speed: 15.00046
-MCTS-RL Tire Wear: 0.5101052
-MCTS-RL Last Lap: 34.82
-MCTS-RL Best Lap: 33.44
-MCTS-RL Total Time: 102.66
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :14.93517
-MCTS-LQR Tire Wear :0.5040205
-MCTS-LQR Last Lap: 34.24
-MCTS-LQR Best Lap: 33.74
-MCTS-LQR Overall Time: 103.86
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 0
-Winner: MCTS-RL
-Experiment 47
-MCTS-RL Speed: 0.05452245
-MCTS-RL Tire Wear: 0.4510456
-MCTS-RL Last Lap: 34.3
-MCTS-RL Best Lap: 34.3
-MCTS-RL Total Time: 119.98
-MCTS-RL Laps Completed: 1/3
-MCTS-RL Lane Changes: 3
-MCTS-LQR Speed :14.49986
-MCTS-LQR Tire Wear :0.4837335
-MCTS-LQR Last Lap: 33.74
-MCTS-LQR Best Lap: 33.74
-MCTS-LQR Overall Time: 119.98
-MCTS-LQR Laps Completed: 2/3
-MCTS-LQR Lane Changes: 2
-Winner: 
-Experiment 48
-MCTS-RL Speed: 14.99459
-MCTS-RL Tire Wear: 0.5096509
-MCTS-RL Last Lap: 34.82
-MCTS-RL Best Lap: 33
-MCTS-RL Total Time: 101.94
-MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 2
-MCTS-LQR Speed :14.99964
-MCTS-LQR Tire Wear :0.5098968
-MCTS-LQR Last Lap: 33.9
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.89821
+MCTS-LQR Last Lap: 34.36
 MCTS-LQR Best Lap: 33.9
-MCTS-LQR Overall Time: 102.86
+MCTS-LQR Total Time: 103.26
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 2
-Winner: MCTS-RL
-Experiment 49
-MCTS-RL Speed: 14.96327
-MCTS-RL Tire Wear: 0.5085509
-MCTS-RL Last Lap: 34.84
-MCTS-RL Best Lap: 33.42
-MCTS-RL Total Time: 102.66
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 22
+MCTS-RL Speed: 14.97274
+MCTS-RL Last Lap: 34.3
+MCTS-RL Best Lap: 33.66
+MCTS-RL Total Time: 104.44
 MCTS-RL Laps Completed: 3/3
-MCTS-RL Lane Changes: 0
-MCTS-LQR Speed :14.19144
-MCTS-LQR Tire Wear :0.505943
-MCTS-LQR Last Lap: 34.18
-MCTS-LQR Best Lap: 33.34
-MCTS-LQR Overall Time: 112.72
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-LQR Speed: 15.00305
+MCTS-LQR Last Lap: 34.88
+MCTS-LQR Best Lap: 34.8
+MCTS-LQR Total Time: 105.76
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Lane Changes: 1
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 23
+MCTS-RL Speed: 14.96058
+MCTS-RL Last Lap: 34.86
+MCTS-RL Best Lap: 33.18
+MCTS-RL Total Time: 102.04
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.68527
+MCTS-LQR Last Lap: 34.42
+MCTS-LQR Best Lap: 33.88
+MCTS-LQR Total Time: 103.38
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 24
+MCTS-RL Speed: 14.95939
+MCTS-RL Last Lap: 33.98
+MCTS-RL Best Lap: 33.58
+MCTS-RL Total Time: 102.06
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 12.17294
+MCTS-LQR Last Lap: 34.9
+MCTS-LQR Best Lap: 34.32
+MCTS-LQR Total Time: 104.88
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 25
+MCTS-RL Speed: 14.96
+MCTS-RL Last Lap: 34.3
+MCTS-RL Best Lap: 33.08
+MCTS-RL Total Time: 101.78
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.93276
+MCTS-LQR Last Lap: 34.46
+MCTS-LQR Best Lap: 34.46
+MCTS-LQR Total Time: 105.52
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 26
+MCTS-RL Speed: 14.35567
+MCTS-RL Last Lap: 36.22
+MCTS-RL Best Lap: 33.8
+MCTS-RL Total Time: 104.52
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-LQR Speed: 14.97228
+MCTS-LQR Last Lap: 34.38
+MCTS-LQR Best Lap: 34.1
+MCTS-LQR Total Time: 104.4
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 27
+MCTS-RL Speed: 14.93227
+MCTS-RL Last Lap: 34.48
+MCTS-RL Best Lap: 33.02
+MCTS-RL Total Time: 101.56
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 15.00126
+MCTS-LQR Last Lap: 34.7
+MCTS-LQR Best Lap: 33.58
+MCTS-LQR Total Time: 102.82
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 28
+MCTS-RL Speed: 14.48616
+MCTS-RL Last Lap: 34.34
+MCTS-RL Best Lap: 34.34
+MCTS-RL Total Time: 107.22
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+MCTS-LQR Speed: 12.24939
+MCTS-LQR Last Lap: 35.86
+MCTS-LQR Best Lap: 35.7
+MCTS-LQR Total Time: 108.32
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 2
+Winner: 
+
+Experiment 29
+MCTS-RL Speed: 14.89648
+MCTS-RL Last Lap: 35.12
+MCTS-RL Best Lap: 33.02
+MCTS-RL Total Time: 102.36
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 15.00249
+MCTS-LQR Last Lap: 34.06
+MCTS-LQR Best Lap: 33.6
+MCTS-LQR Total Time: 104.42
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 30
+MCTS-RL Speed: 14.93103
+MCTS-RL Last Lap: 35.26
+MCTS-RL Best Lap: 33.72
+MCTS-RL Total Time: 104.96
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 1
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.12105
+MCTS-LQR Last Lap: 34.3
+MCTS-LQR Best Lap: 34.3
+MCTS-LQR Total Time: 105.48
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 31
+MCTS-RL Speed: 14.93008
+MCTS-RL Last Lap: 35.56
+MCTS-RL Best Lap: 33.24
+MCTS-RL Total Time: 102.82
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.97172
+MCTS-LQR Last Lap: 35.12
+MCTS-LQR Best Lap: 33.86
+MCTS-LQR Total Time: 104.24
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 32
+MCTS-RL Speed: 15.00491
+MCTS-RL Last Lap: 34.4
+MCTS-RL Best Lap: 33.58
+MCTS-RL Total Time: 102.86
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.76934
+MCTS-LQR Last Lap: 34.6
+MCTS-LQR Best Lap: 34.04
+MCTS-LQR Total Time: 105.34
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 2
+Winner: 
+
+Experiment 33
+MCTS-RL Speed: 15.02706
+MCTS-RL Last Lap: 34.52
+MCTS-RL Best Lap: 33.4
+MCTS-RL Total Time: 102.36
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.97137
+MCTS-LQR Last Lap: 34.7
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 104.12
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 34
+MCTS-RL Speed: 13.7272
+MCTS-RL Last Lap: 0
+MCTS-RL Best Lap: 0
+MCTS-RL Total Time: 13.96
+MCTS-RL Laps Completed: 0/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.89869
+MCTS-LQR Last Lap: 34.9
+MCTS-LQR Best Lap: 34.2
+MCTS-LQR Total Time: 107.24
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
 Winner: MCTS-RL
+
+Experiment 35
+MCTS-RL Speed: 15.0142
+MCTS-RL Last Lap: 34.6
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 102.32
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.87191
+MCTS-LQR Last Lap: 34.8
+MCTS-LQR Best Lap: 34.22
+MCTS-LQR Total Time: 105.48
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 36
+MCTS-RL Speed: 14.88262
+MCTS-RL Last Lap: 34.9
+MCTS-RL Best Lap: 33.9
+MCTS-RL Total Time: 104.96
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.39519
+MCTS-LQR Last Lap: 34.9
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 105.72
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 3
+Winner: 
+
+Experiment 37
+MCTS-RL Speed: 14.93514
+MCTS-RL Last Lap: 34.3
+MCTS-RL Best Lap: 33.24
+MCTS-RL Total Time: 101.46
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.81996
+MCTS-LQR Last Lap: 34.62
+MCTS-LQR Best Lap: 33.58
+MCTS-LQR Total Time: 102.9
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 38
+MCTS-RL Speed: 14.93084
+MCTS-RL Last Lap: 34.62
+MCTS-RL Best Lap: 33.82
+MCTS-RL Total Time: 102.9
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.80104
+MCTS-LQR Last Lap: 34.56
+MCTS-LQR Best Lap: 34.06
+MCTS-LQR Total Time: 105.04
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 39
+MCTS-RL Speed: 14.97141
+MCTS-RL Last Lap: 34.6
+MCTS-RL Best Lap: 33.48
+MCTS-RL Total Time: 102.34
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-LQR Speed: 12.74407
+MCTS-LQR Last Lap: 34.32
+MCTS-LQR Best Lap: 34.16
+MCTS-LQR Total Time: 105.26
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 40
+MCTS-RL Speed: 14.89713
+MCTS-RL Last Lap: 34.46
+MCTS-RL Best Lap: 34.26
+MCTS-RL Total Time: 103.78
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.94029
+MCTS-LQR Last Lap: 34.52
+MCTS-LQR Best Lap: 34.32
+MCTS-LQR Total Time: 104.78
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 41
+MCTS-RL Speed: 14.96981
+MCTS-RL Last Lap: 34.74
+MCTS-RL Best Lap: 33.5
+MCTS-RL Total Time: 102.48
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.96513
+MCTS-LQR Last Lap: 34.32
+MCTS-LQR Best Lap: 33.92
+MCTS-LQR Total Time: 103.24
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 42
+MCTS-RL Speed: 14.96651
+MCTS-RL Last Lap: 34.84
+MCTS-RL Best Lap: 33.8
+MCTS-RL Total Time: 103.42
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.95612
+MCTS-LQR Last Lap: 34.52
+MCTS-LQR Best Lap: 34.52
+MCTS-LQR Total Time: 105.42
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 43
+MCTS-RL Speed: 14.92405
+MCTS-RL Last Lap: 34.44
+MCTS-RL Best Lap: 33
+MCTS-RL Total Time: 101.72
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.89846
+MCTS-LQR Last Lap: 34.78
+MCTS-LQR Best Lap: 34
+MCTS-LQR Total Time: 105.3
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 44
+MCTS-RL Speed: 14.9535
+MCTS-RL Last Lap: 34.46
+MCTS-RL Best Lap: 33.08
+MCTS-RL Total Time: 104.44
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+MCTS-LQR Speed: 15.00466
+MCTS-LQR Last Lap: 34.76
+MCTS-LQR Best Lap: 34.34
+MCTS-LQR Total Time: 105.52
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 3
+Winner: 
+
+Experiment 45
+MCTS-RL Speed: 14.95648
+MCTS-RL Last Lap: 35.22
+MCTS-RL Best Lap: 33.06
+MCTS-RL Total Time: 102.2
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.97079
+MCTS-LQR Last Lap: 35.36
+MCTS-LQR Best Lap: 34.44
+MCTS-LQR Total Time: 104.98
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 46
+MCTS-RL Speed: 14.96429
+MCTS-RL Last Lap: 34.98
+MCTS-RL Best Lap: 33.76
+MCTS-RL Total Time: 103.82
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 13.56253
+MCTS-LQR Last Lap: 35.28
+MCTS-LQR Best Lap: 34.1
+MCTS-LQR Total Time: 105.4
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 47
+MCTS-RL Speed: 14.92091
+MCTS-RL Last Lap: 34.9
+MCTS-RL Best Lap: 32.94
+MCTS-RL Total Time: 102.06
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.89822
+MCTS-LQR Last Lap: 34.56
+MCTS-LQR Best Lap: 34.24
+MCTS-LQR Total Time: 103.78
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+
+Experiment 48
+MCTS-RL Speed: 14.98912
+MCTS-RL Last Lap: 34.52
+MCTS-RL Best Lap: 33.68
+MCTS-RL Total Time: 103.76
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.96587
+MCTS-LQR Last Lap: 34.84
+MCTS-LQR Best Lap: 33.92
+MCTS-LQR Total Time: 105.54
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+Winner: 
+
+Experiment 49
+MCTS-RL Speed: 15.00254
+MCTS-RL Last Lap: 34.62
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 102.38
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-LQR Speed: 14.96725
+MCTS-LQR Last Lap: 34.52
+MCTS-LQR Best Lap: 33.64
+MCTS-LQR Total Time: 104.9
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+Winner: 
+

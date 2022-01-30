@@ -313,13 +313,14 @@ namespace KartGame.AI
             }
             List<DiscreteKartAction> preCollisionFilteredActions = possibleActions.FindAll((action) =>
             {
-                //UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
+                // UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
                 // Is Lane changing not allowed?
                 if (envController.sectionIsStraight(currentState.section) && currentState.laneChanges + Math.Abs(action.lane - currentState.lane) > envController.MaxLaneChanges)
                 {
                     // Debug.Log("Current Lane changes " + currentState.laneChanges);
                     // Debug.Log("Delta change " + (action.lane - currentState.lane));
                     // Debug.Log("Max change " + envController.MaxLaneChanges);
+
                     return false;
                 }
 
@@ -426,6 +427,10 @@ namespace KartGame.AI
         public HighLevelMode HighMode = HighLevelMode.MCTS;
 
         [HideInInspector] KartMCTSNode currentRoot = null;
+        [HideInInspector] int CyclesRootProcessed = 0;
+        [HideInInspector] int deadlinesMissed = 0;
+        [HideInInspector] int abortAttempts = 0;
+        [HideInInspector] bool HLReadyToUse = true;
         [HideInInspector] List<DiscreteGameState> bestStates = new List<DiscreteGameState>();
         [HideInInspector] Thread t = null;
         [HideInInspector] List<Vector2> finerWaypoints;
@@ -436,10 +441,12 @@ namespace KartGame.AI
         [HideInInspector] Dictionary<String, Dictionary<int, float>> opponentUpcomingVelocities = new Dictionary<string, Dictionary<int, float>>();
 
 
+
         public override void initialPlan()
         {
 
             currentRoot = null;
+            CyclesRootProcessed = 0;
             if (Mode == AgentMode.Inferencing)
             {
                 if (HighMode == HighLevelMode.MCTS)
@@ -505,7 +512,7 @@ namespace KartGame.AI
 
         public void planWithMCTS()
         {
-            if (currentRoot == null)
+            if (currentRoot == null && t == null)
             {
                 List<KartAgent> nearbyAgents = new List<KartAgent>();
                 List<DiscreteKartState> nearbyAgentStates = new List<DiscreteKartState>();
@@ -579,15 +586,21 @@ namespace KartGame.AI
                     try
                     {
                         currentRoot = KartMCTS.constructSearchTree(initialGameState, T: 0.9);
+                        // print("Here cr calculated");
                         bestStates = KartMCTS.getBestStatesSequence(currentRoot);
+                        CyclesRootProcessed = 1;
                     }
-                    catch (Exception e) { }
+                    catch (ThreadAbortException e) {
+                        print("Here: " + e.ToString());
+                        return;
+                    }
 
                 });
                 t.IsBackground = true;
                 t.Start();
+
             }
-            else
+            else if (t == null && CyclesRootProcessed < 3)
             {
                 t = new Thread(() =>
                 {
@@ -595,8 +608,12 @@ namespace KartGame.AI
                     {
                         currentRoot = KartMCTS.constructSearchTree(currentRoot, T: 0.9);
                         bestStates = KartMCTS.getBestStatesSequence(currentRoot);
+                        CyclesRootProcessed += 1;
                     }
-                    catch (Exception e) { }
+                    catch (ThreadAbortException e) {
+                        print("Here: " + e.ToString());
+                        return;
+                    }
 
                 });
                 t.IsBackground = true;
@@ -611,27 +628,59 @@ namespace KartGame.AI
             updateFinerIdxGuess();
         }
 
+        System.Collections.IEnumerator ResetHLEnvironment()
+        {
+            while (t.IsAlive){
+                t.Abort();
+                abortAttempts++;
+                print(name + " Thread did not finish in 5 ms fixed Update " + m_SectionIndex + " abort attempts missed " + abortAttempts);
+                yield return new WaitForSeconds(2f);
+            } 
+            t.Join();
+            //deadlinesMissed += 1;
+            //if (deadlinesMissed > 1)
+            //{
+            t = null;
+            currentRoot = null;
+            CyclesRootProcessed = 0;
+            deadlinesMissed = 0;
+            HLReadyToUse = true;
+            //}
+            yield return null;
+        }
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
             updateFinerIdxGuess();
-            if (episodeSteps % 1 == 0)
+            if (m_envController.episodeSteps % 1 == 0)
             {
                 if (LowMode == LowLevelMode.LQR && !m_envController.inactiveAgents.Contains(this))
                     SolveLQR(numSteps: mpcSteps);
             }
-            if (episodeSteps % 100 == 0 && !m_envController.inactiveAgents.Contains(this))
+            if (m_envController.episodeSteps % 100 == 0 && m_envController.episodeSteps < m_envController.maxEpisodeSteps && m_envController.episodeSteps > 0 && !m_envController.inactiveAgents.Contains(this))
             {
                 if (LowMode == LowLevelMode.MPC)
                     SolveMPC(numSteps: mpcSteps);
-                if (t != null)
-                    t.Abort(); // TODO: Investigate and fix why t.join() wont work because of infinite loop in MCTS code
-
+                
                 if (Mode == AgentMode.Inferencing)
                 {
                     if (HighMode == HighLevelMode.MCTS)
                     {
-                        planWithMCTS();
+                        if (t != null)
+                        {
+                            if (HLReadyToUse && !t.Join(5))
+                            {
+                                HLReadyToUse = false;
+                                abortAttempts = 0;
+                                StartCoroutine(ResetHLEnvironment());
+                            } else if (HLReadyToUse)
+                            {
+                                t = null;
+                                deadlinesMissed = 0;
+                            }
+                        }
+                        if (HLReadyToUse)
+                            planWithMCTS();
                     }
                     else
                     {
@@ -643,7 +692,6 @@ namespace KartGame.AI
                     planRandomly();
                 }
 
-
             }
             // print(this.name + " " + initialGameState.kartAgents.Count);
             // print(bestStates.Count);
@@ -652,12 +700,8 @@ namespace KartGame.AI
             {
                 foreach (DiscreteKartState kartState in gameState.kartStates)
                 {
-                    //if (name.Equals("MCTS-LQR"))
-                    //{
-                    //    print(kartState.name);
-                    //}
 
-                    if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex + (LowMode == LowLevelMode.LQR && m_SectionIndex > 0 ? 1 : 0))
+                    if (kartState.name.Equals(this.name) && kartState.section > m_SectionIndex + 1)
                     {
                         if (m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
                         {
@@ -704,11 +748,7 @@ namespace KartGame.AI
              * 12 -> Other player states
              **/
             brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + 7 + (12 * otherAgents.Length);
-            foreach (Agent other in otherAgents)
-            {
-                opponentUpcomingLanes[other.name] = new Dictionary<int, int>();
-                opponentUpcomingVelocities[other.name] = new Dictionary<int, float>();
-            }
+            prepareForReuse();
         }
 
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
@@ -732,6 +772,28 @@ namespace KartGame.AI
                 //LaneDifferenceRewardDivider = Mathf.Pow(2f, 1.0f *3);
             }
 
+        }
+
+        public override void prepareForReuse()
+        {
+            base.prepareForReuse();
+            foreach (Agent other in otherAgents)
+            {
+                opponentUpcomingLanes[other.name] = new Dictionary<int, int>();
+                opponentUpcomingVelocities[other.name] = new Dictionary<int, float>();
+            }
+            if (t != null)
+            {
+                t.Abort();
+                while (t.IsAlive);
+                t = null;
+
+                deadlinesMissed = 0;
+            }
+            currentRoot = null;
+            CyclesRootProcessed = 0;
+            bestStates = new List<DiscreteGameState>();
+            HLReadyToUse = true;
         }
 
         protected override void setVelocityDifferenceDivider(int sectionIndex, float velocity)
@@ -872,11 +934,11 @@ namespace KartGame.AI
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
                 if (name.Equals(m_envController.Agents[0].name))
-                    for (int i = 1; i <= 4; i++)
-                        m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
+                    m_envController.Sections[index % m_envController.Sections.Length].resetColors();
                 if (m_LaneChanges + Math.Abs(m_Lane - lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
+                    m_IllegalLaneChanges += 1;
                 }
                 if (m_envController.sectionIsStraight(m_SectionIndex) != m_envController.sectionIsStraight(index))
                 {
@@ -898,12 +960,15 @@ namespace KartGame.AI
                     m_envController.ResolveEvent(Event.ReachNonGoalSection, this, null);
                 }
                 currentRoot = null;
+                CyclesRootProcessed = 0;
             }
             else if ((triggered > 0 && index != -1) && ((index < m_SectionIndex) || (m_SectionIndex % m_envController.Sections.Length == 0 && index % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
                 // print("going backwards");
                 AddReward(m_envController.ReversePenalty * (m_SectionIndex - index + 1));
                 m_SectionIndex = index;
+                currentRoot = null;
+                CyclesRootProcessed = 0;
             }
             else if ((triggered > 0 && index == -1))
             {
@@ -1107,11 +1172,18 @@ namespace KartGame.AI
                 }
                 targetState[KartMPC.xIndex] = lane.transform.position.x;
                 targetState[KartMPC.zIndex] = lane.transform.position.z;
-                targetState[KartMPC.vIndex] = vel;
+                if (k.GetComponent<Rigidbody>().velocity.magnitude <= 5f)
+                {
+                    targetState[KartMPC.vIndex] = 0.0f;
+                }
+                else
+                {
+                    targetState[KartMPC.vIndex] = vel;
+                }
                 double finalTargetHeading;
                 var targetHeading = Mathf.Atan2(lane.transform.position.z - k.m_Kart.transform.position.z, lane.transform.position.x - k.m_Kart.transform.position.x);
                 if (targetHeading < 0) targetHeading += 2 * Mathf.PI;
-                if ((lane.transform.position - k.m_Kart.transform.position).magnitude <= 7.5f)
+                if ((lane.transform.position - k.m_Kart.transform.position).magnitude <= (k.m_envController.sectionIsStraight(k.m_SectionIndex) ? 10.5f : 7.5f))
                 {
 
                     float finalTargetHeading1 = Mathf.Atan2(lane.transform.position.z - k.m_Kart.transform.position.z, lane.transform.position.x - k.m_Kart.transform.position.x);
@@ -1120,17 +1192,48 @@ namespace KartGame.AI
                     float finalTargetHeading4 = Mathf.Atan2(lane.transform.forward.z, lane.transform.forward.x);
                     float finalTargetHeading5 = Mathf.Atan2(centerLine.transform.position.z - k.m_Kart.transform.position.z, centerLine.transform.position.x - k.m_Kart.transform.position.x);
                     float finalTargetHeading6 = Mathf.Atan2(nextLane.transform.position.z - k.m_Kart.transform.position.z, nextLane.transform.position.x - k.m_Kart.transform.position.x);
-                    var hitTrack = Physics.Raycast(lane.transform.position, nextLane.transform.position - lane.transform.position, out var hitTrackInfo,
-                                        10, TrackMask, QueryTriggerInteraction.Ignore);
-                    //var hitTrack2 = Physics.Raycast(m_Kart.transform.position, m_Kart.transform.forward, out var hitTrackInfo2,
-                    //                7, TrackMask, QueryTriggerInteraction.Ignore);
-                    if (hitTrack)
+                    var cutTrack = Physics.Raycast(lane.transform.position, nextLane.transform.position - lane.transform.position, out var hitTrackInfo,
+                                         (lane.transform.position - nextLane.transform.position).magnitude, TrackMask, QueryTriggerInteraction.Ignore);
+                    var hitTrack0 = Physics.Raycast(k.Sensors[0].Transform.position, k.Sensors[0].Transform.forward, out var hitTrackInfo0,
+                       k.m_Kart.Rigidbody.velocity.magnitude * 0.5f, TrackMask, QueryTriggerInteraction.Ignore);
+                    //var hitTrack0 = false;
+                    var hitTrack1 = Physics.Raycast(k.Sensors[2].Transform.position, k.Sensors[2].Transform.forward, out var hitTrackInfo1,
+                        2.0f, TrackMask, QueryTriggerInteraction.Ignore);
+                    var hitTrack2 = Physics.Raycast(k.Sensors[4].Transform.position, k.Sensors[4].Transform.forward, out var hitTrackInfo2,
+                        1.5f, TrackMask, QueryTriggerInteraction.Ignore);
+                    var hitTrack3 = Physics.Raycast(k.Sensors[8].Transform.position, k.Sensors[8].Transform.forward, out var hitTrackInfo3,
+                        1.5f, TrackMask, QueryTriggerInteraction.Ignore);
+                    var hitTrack4 = Physics.Raycast(k.Sensors[6].Transform.position, k.Sensors[6].Transform.forward, out var hitTrackInfo4,
+                        2.0f, TrackMask, QueryTriggerInteraction.Ignore);
+                    if (cutTrack)
                     {
                         // print(k.name + "here1");
                         if (finalTargetHeading5 < 0) finalTargetHeading5 += 2 * Mathf.PI;
                         finalTargetHeading = finalTargetHeading5;
-}
-                    else if ((centerLine.ClosestPoint(k.m_Kart.transform.position) - k.m_Kart.transform.position).magnitude <= 5)
+                        if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
+                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading);
+                        // print(k.name + "here1 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
+
+                    }
+                    else if ((hitTrack1 || hitTrack2 || hitTrack3 || hitTrack4) && (Mathf.Sign(finalTargetHeading1) == Mathf.Sign(finalTargetHeading5)) || hitTrack0)
+                    {
+                        if (finalTargetHeading5 < 0) finalTargetHeading5 += 2 * Mathf.PI;
+                        finalTargetHeading = finalTargetHeading5 - AngleDifference(finalTargetHeading1, finalTargetHeading5) * 0.7f;
+                        if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
+                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading);
+                        //print(k.name + "here2 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading + "\n" +
+                        //  " ht0: " + hitTrack0 + "," + hitTrackInfo0.distance + " ht1: " + hitTrack1 + "," + hitTrackInfo1.distance + " ht2: " + hitTrack2 + "," + hitTrackInfo2.distance + " ht3: "  + hitTrack3 + "," + hitTrackInfo3.distance + " ht4: " + hitTrack4 + "," + hitTrackInfo4.distance);
+                    }
+                    else if ((hitTrack1 || hitTrack2 || hitTrack3 || hitTrack4) && (Mathf.Sign(finalTargetHeading1) != Mathf.Sign(finalTargetHeading5)))
+                    {
+                        if (finalTargetHeading5 < 0) finalTargetHeading5 += 2 * Mathf.PI;
+                        finalTargetHeading = finalTargetHeading5;
+                        if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
+                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading);
+                        // print(k.name + "here3 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
+
+                    }
+                    else if ((centerLine.ClosestPoint(k.m_Kart.transform.position) - k.m_Kart.transform.position).magnitude <= 4f)
                     {
                         // print(k.name + "here2");
 
@@ -1138,6 +1241,10 @@ namespace KartGame.AI
                         targetState[KartMPC.zIndex] = nextLane.transform.position.z;
                         if (finalTargetHeading6 < 0) finalTargetHeading6 += 2 * Mathf.PI;
                         finalTargetHeading = finalTargetHeading6;
+                        if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
+                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading);
+                        // print(k.name + "here4 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
+
                     }
                     else
                     {
@@ -1146,44 +1253,61 @@ namespace KartGame.AI
                         if (finalTargetHeading1 < 0) finalTargetHeading1 += 2 * Mathf.PI;
                         if (finalTargetHeading2 < 0) finalTargetHeading2 += 2 * Mathf.PI;
 
-                        finalTargetHeading = finalTargetHeading1 - AngleDifference(finalTargetHeading2, finalTargetHeading1) / 2f;
+                        finalTargetHeading = finalTargetHeading1 - AngleDifference(finalTargetHeading2, finalTargetHeading1) * 0.4f;
+                        if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
+                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading);
+                        // print(k.name + "here5 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
+
                     }
                     //Vector3 l2nl = (((nextLane.transform.position - lane.transform.position).normalized + (lane.transform.forward))/2).normalized;
                     //Vector3 car2l = (lane.transform.position - k.m_Kart.transform.position).normalized;
                     //Vector3 finalVector = ((car2l*2.1f + l2nl) / 3.1f).normalized;
                     //finalTargetHeading = Mathf.Atan2(finalVector.z, finalVector.x);
-                    if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
-                    finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading);
                 }
                 else
                 {
-                    var hitTrack = Physics.Raycast(k.m_Kart.transform.position, k.m_Kart.transform.forward, out var hitTrackInfo,
-                                        8, TrackMask, QueryTriggerInteraction.Ignore);
-                    if (hitTrack)
+                    var hitTrack1 = Physics.Raycast(k.m_Kart.transform.position, k.m_Kart.transform.forward, out var hitTrackInfo1,
+                                        k.m_envController.sectionIsStraight(k.m_SectionIndex)? 8: 5, TrackMask, QueryTriggerInteraction.Ignore);
+                    if (hitTrack1)
                     {
                         // print(k.name + "here4");
 
-                        float finalTargetHeading5 = Mathf.Atan2(centerLine.transform.position.z - k.m_Kart.transform.position.z, centerLine.transform.position.x - k.m_Kart.transform.position.x);
-                        if (finalTargetHeading5 < 0) finalTargetHeading5 += 2 * Mathf.PI;
+                        float finalTargetHeading1 = Mathf.Atan2(centerLine.transform.position.z - k.m_Kart.transform.position.z, centerLine.transform.position.x - k.m_Kart.transform.position.x);
+                        if (finalTargetHeading1 < 0) finalTargetHeading1 += 2 * Mathf.PI;
+                        //float finalTargetHeading2 = Mathf.Atan2(lane.transform.position.z - k.m_Kart.transform.position.z, lane.transform.position.x - k.m_Kart.transform.position.x); ;
+                        //if (finalTargetHeading2 < 0) finalTargetHeading2+= 2 * Mathf.PI;
 
-                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading5); ;
+                        //finalTargetHeading = finalTargetHeading1 - AngleDifference(finalTargetHeading2, finalTargetHeading1) / 2f;
+                        //if (finalTargetHeading < 0) finalTargetHeading += 2 * Mathf.PI;
+
+                        finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], finalTargetHeading1)*0.85f;
+                        // print(k.name + "here6 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
+                    
                     }
                     else
                     {
                         // print(k.name + "here5");
 
                         finalTargetHeading = initial[KartMPC.hIndex] - AngleDifference(initial[KartMPC.hIndex], targetHeading);
+                        // print(k.name + "here7 Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
+
                     }
                 }
                 // print(k.name + " Current Heading " + initial[KartMPC.hIndex] + " Target Heading " + finalTargetHeading);
                 targetState[KartMPC.hIndex] = finalTargetHeading;
 
                 var targetWeights = new Dictionary<int, double>();
-                targetWeights[KartMPC.xIndex] = HighMode == HighLevelMode.Fixed ? 3.2 : 3.12;
-                targetWeights[KartMPC.zIndex] = HighMode == HighLevelMode.Fixed ? 3.2 : 3.12;
+                targetWeights[KartMPC.xIndex] = HighMode == HighLevelMode.Fixed ? 3.2 : 3.10;
+                targetWeights[KartMPC.zIndex] = HighMode == HighLevelMode.Fixed ? 3.2 : 3.10;
                 targetWeights[KartMPC.hIndex] = HighMode == HighLevelMode.Fixed ? 4.5 : 4.65;
-                targetWeights[KartMPC.vIndex] = HighMode == HighLevelMode.Fixed ? 0.05: 0.005;
-
+                if (k.GetComponent<Rigidbody>().velocity.magnitude <= 5f)
+                {
+                    targetWeights[KartMPC.vIndex] = -2;
+                }
+                else
+                {
+                    targetWeights[KartMPC.vIndex] = HighMode == HighLevelMode.Fixed ? 0.05 : 0.005;
+                }
 
                 var avoidWeights = new Dictionary<int, List<double>>();
                 avoidWeights[KartMPC.xIndex] = new List<double>();
@@ -1209,7 +1333,7 @@ namespace KartGame.AI
                     }
                     else
                     {
-                        float multiplier = HighMode == HighLevelMode.Fixed? 0.015f : 0.036f;
+                        float multiplier = HighMode == HighLevelMode.Fixed? 0.022f : 0.048f;
                         avoidWeights[KartMPC.xIndex].Add(1f / (Mathf.Pow((o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude, 1.5f) * multiplier));
                         avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
                         avoidWeights[KartMPC.zIndex].Add(1f / (Mathf.Pow((o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude, 1.5f) * multiplier));
@@ -1264,9 +1388,9 @@ namespace KartGame.AI
 
                     // Add weights for preventing opponent's target state
                     var otherTargetWeights = new Dictionary<int, double>();
-                    otherTargetWeights[KartMPC.xIndex] = 0.033;
-                    otherTargetWeights[KartMPC.zIndex] = 0.033;
-                    otherTargetWeights[KartMPC.vIndex] = 0.12;
+                    otherTargetWeights[KartMPC.xIndex] = HighMode == HighLevelMode.Fixed ? 0.033 : 0.00f;
+                    otherTargetWeights[KartMPC.zIndex] = HighMode == HighLevelMode.Fixed ? 0.033 : 0.00f;
+                    otherTargetWeights[KartMPC.vIndex] = HighMode == HighLevelMode.Fixed ? 0.08 : 0.00f;
                     opponentTargetWeights.Add(otherTargetWeights);
                 }
 
