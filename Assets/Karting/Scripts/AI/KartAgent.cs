@@ -57,7 +57,11 @@ namespace KartGame.AI
         public LayerMask Mask;
         [Tooltip("Sensors contain ray information to sense out the world, you can have as many sensors as you need.")]
         public Sensor[] Sensors;
-        [Header("Opponents"), Tooltip("What are the other agents in the racing game?")]
+
+        [Header("Racers")]
+        [Tooltip("Who are the racers on your team in the game?")]
+        public KartAgent[] teamAgents;
+        [Tooltip("Who are the opposing agents in the racing game?")]
         public KartAgent[] otherAgents;
 
         [HideInInspector] protected int sectionHorizon;
@@ -111,6 +115,8 @@ namespace KartGame.AI
         [HideInInspector] public int m_timeSteps = 0;
         [HideInInspector] public float LaneDifferenceRewardDivider = 1.0f;
         [HideInInspector] public float VelocityDifferenceRewardDivider = 1.0f;
+        [HideInInspector] public float AverageVelDifference;
+        [HideInInspector] public float AverageLaneDifference;
         [HideInInspector] public Dictionary<int, int> m_UpcomingLanes = new Dictionary<int, int>();
         [HideInInspector] public Dictionary<int, float> m_UpcomingVelocities = new Dictionary<int, float>();
         [HideInInspector] public HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
@@ -153,6 +159,8 @@ namespace KartGame.AI
             {
                 forwardCollision = false;
             }
+            if (!is_active && m_SectionIndex == m_envController.goalSection)
+                AddReward(m_envController.AtGoalReward);
         }
 
         protected virtual void Awake()
@@ -169,6 +177,8 @@ namespace KartGame.AI
             forwardCollisions = 0;
             forwardCollision = false;
             lastCollisionTime = 0;
+            AverageVelDifference = 0f;
+            AverageLaneDifference = 0f;
             m_UpcomingLanes = new Dictionary<int, int>();
             m_UpcomingVelocities = new Dictionary<int, float>();
         }
@@ -203,6 +213,18 @@ namespace KartGame.AI
 
         }
 
+        public void UpdateLaneDifferenceCalculation(int sectionIndex, int lane)
+        {
+            if (m_UpcomingLanes.ContainsKey(sectionIndex % m_envController.Sections.Length))
+                AverageLaneDifference = (Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) + AverageLaneDifference * (sectionIndex - InitCheckpointIndex - 1)) / (sectionIndex - InitCheckpointIndex);
+        }
+
+        public void UpdateVelocityDifferenceCalculation(int sectionIndex, float velocity)
+        {
+            if (m_UpcomingVelocities.ContainsKey(sectionIndex % m_envController.Sections.Length))
+                AverageVelDifference = ((velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) + AverageVelDifference * (sectionIndex - InitCheckpointIndex - 1)) / (sectionIndex - InitCheckpointIndex);
+        }
+
         protected virtual void setLaneDifferenceDivider(int sectionIndex, int lane)
         {
             LaneDifferenceRewardDivider = 1.0f;
@@ -232,6 +254,7 @@ namespace KartGame.AI
 
         void OnTriggerEnter(Collider other)
         {
+            if (!is_active) return;
             var maskedValue = 1 << other.gameObject.layer;
             var triggered = maskedValue & CheckpointMask;
 
@@ -245,6 +268,8 @@ namespace KartGame.AI
                 {
                     setLaneDifferenceDivider(index, lane);
                     setVelocityDifferenceDivider(index, m_Kart.Rigidbody.velocity.magnitude);
+                    UpdateLaneDifferenceCalculation(index, lane);
+                    UpdateVelocityDifferenceCalculation(index, m_Kart.Rigidbody.velocity.magnitude);
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
@@ -341,36 +366,37 @@ namespace KartGame.AI
             AddReward(m_envController.PassCheckpointStateReward / VelocityDifferenceRewardDivider);
         }
 
-        public void Deactivate()
+        public void Deactivate(bool disable=false)
         {
-            //m_Kart.Rigidbody.velocity = new Vector3();
-            //foreach (Collider c in GetComponents<Collider>())
-            //{
-            //    c.enabled = false; 
-            //}
-            //gameObject.layer = 2;
-            gameObject.SetActive(false);
+            SetZeroInputs();
+            m_Kart.Rigidbody.velocity = Vector3.zero;
+            m_Kart.Rigidbody.angularVelocity = Vector3.zero;
+            m_Kart.Rigidbody.freezeRotation = true;
+            if (disable)
+                gameObject.SetActive(false);
+            gameObject.transform.localScale = Vector3.one*0.001f;
             is_active = false;
-            }
+        }
 
         public void Activate()
         {
             m_LastAccumulatedReward = 0.0f;
             m_timeSteps = 0;
             m_HitOccured = false;
-            //m_Kart.Rigidbody.velocity = new Vector3();
-            //foreach (Collider c in GetComponents<Collider>())
-            //{
-            //    c.enabled = true; 
-            //}
-            //gameObject.layer = 13;
+            m_Kart.Rigidbody.freezeRotation = false;
             gameObject.SetActive(true);
+            gameObject.transform.localScale = Vector3.one;
             is_active = true;
         }
 
         public override void OnActionReceived(ActionBuffers actions)
         {
             base.OnActionReceived(actions);
+            if (!is_active)
+            {
+                SetZeroInputs();
+                return;
+            }
             InterpretDiscreteActions(actions);
 
             // Find the next checkpoint when registering the current checkpoint that the agent has passed.
@@ -439,6 +465,14 @@ namespace KartGame.AI
             m_Steering = actions.ContinuousActions[0];
             m_Acceleration = actions.DiscreteActions[0] > 1;
             m_Brake = actions.DiscreteActions[0] < 1;
+        }
+
+        public void SetZeroInputs()
+        {
+            // print("Here ida");
+            m_Steering = 0f;
+            m_Acceleration = false;
+            m_Brake = false;
         }
 
         public virtual InputData GenerateInput()

@@ -12,6 +12,7 @@ using System.Threading;
 using CenterSpace.NMath.Core;
 using KartGame.AI.MPC;
 using KartGame.AI.LQR;
+using KartGame.AI.MCTS;
 using MathNet.Numerics.LinearAlgebra;
 
 namespace KartGame.AI
@@ -31,129 +32,6 @@ namespace KartGame.AI
         Fixed
     }
 
-    public struct DiscreteKartAction
-    {
-        public int min_velocity;
-        public int max_velocity;
-        public int lane;
-    }
-
-    public struct DiscreteKartState
-    {
-        public int player;
-        public int section;
-        public int timeAtSection;
-        public int min_velocity;
-        public int max_velocity;
-        public int lane;
-        public int tireAge;
-        public int laneChanges;
-        public bool infeasible;
-        public string name;
-
-
-        public static DiscreteKartState Copy(DiscreteKartState state)
-        {
-            return new DiscreteKartState
-            {
-                player = state.player,
-                section = state.section,
-                timeAtSection = state.timeAtSection,
-                min_velocity = state.min_velocity,
-                max_velocity = state.max_velocity,
-                lane = state.lane,
-                tireAge = state.tireAge,
-                laneChanges = state.laneChanges,
-                infeasible = state.infeasible,
-                name = state.name
-            };
-        }
-
-        public float getAverageVelocity()
-        {
-            return (1.0f * (min_velocity + max_velocity)) / 2.0f;
-        }
-
-        private float computeTOC(ArcadeKart kart, float distance, float initV, float finalV)
-        {
-            // Full acceleration or full braking does not have enough distance
-            if (finalV > initV && (finalV * finalV - initV * initV) / (2 * kart.m_FinalStats.Acceleration) > distance)
-            {
-                //Debug.Log(finalV);
-                //Debug.Log(initV);
-                //Debug.Log((finalV * finalV - initV * initV) / (2 * kart.m_FinalStats.Acceleration));
-                //Debug.Log(distance);
-                return -1.0f;
-            }
-            if (initV > finalV && (initV * initV - finalV * finalV) / (2 * kart.m_FinalStats.Braking) > distance)
-            {
-                return -1.0f;
-            }
-
-            float t1 = (kart.GetMaxSpeed() - initV) / kart.m_FinalStats.Acceleration;
-            float x1 = 0.5f * (initV + kart.GetMaxSpeed()) * t1;
-            float x3 = (kart.GetMaxSpeed() * kart.GetMaxSpeed() - finalV * finalV) / (2 * kart.m_FinalStats.Braking);
-            float t3 = (kart.GetMaxSpeed() - finalV) / kart.m_FinalStats.Braking;
-            float x2 = distance - x1 - x3;
-            float t2 = x2 / kart.GetMaxSpeed();
-            if (t2 > 0.001)
-            {
-                return t1 + t2 + t3;
-            }
-            else
-            {
-                float maxSpeed = Mathf.Sqrt((2 * distance + initV * initV * kart.m_FinalStats.Braking + finalV * finalV * kart.m_FinalStats.Acceleration) / (kart.m_FinalStats.Acceleration + kart.m_FinalStats.Braking));
-                t1 = (maxSpeed - initV) / kart.m_FinalStats.Acceleration;
-                t3 = (maxSpeed - finalV) / kart.m_FinalStats.Braking;
-                return t1 + t3;
-            }
-        }
-
-        public DiscreteKartState applyAction(DiscreteKartAction action, RacingEnvController environment, DiscreteGameParams gameParams)
-        {
-            ArcadeKart kart = environment.Agents[player].m_Kart;
-            DiscreteKartState newState = new DiscreteKartState();
-            newState.name = name;
-            newState.player = player;
-            newState.section = section + 1;
-            newState.min_velocity = action.min_velocity;
-            newState.max_velocity = action.max_velocity;
-            newState.lane = action.lane;
-            if (environment.sectionIsStraight(section) != environment.sectionIsStraight(section + 1))
-            {
-                newState.laneChanges = 0;
-            }
-            else if (newState.lane != lane)
-            {
-                newState.laneChanges = laneChanges + Math.Abs(newState.lane - lane);
-            }
-            else
-            {
-                newState.laneChanges = laneChanges;
-            }
-
-            // Update timeAtSection estimate using 1D TOC
-            float distanceInSection = environment.computeDistanceInSection(section, lane, action.lane);
-            int timeUpdate = (int)(computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision);
-            if (timeUpdate < 0)
-            {
-                // Debug.Log(timeUpdate);
-                newState.infeasible = true;
-            }
-            else
-            {
-                // Debug.Log("To travel " + distanceInSection + " it takes " + timeUpdate);
-            }
-            newState.timeAtSection = timeAtSection + timeUpdate;
-
-            // Update TireAge estimate
-            float tireLoad = environment.computeTireLoadInSection(section, action.max_velocity, lane, action.lane);
-            newState.tireAge = (int)((tireAge / 10000f + tireLoad * kart.m_FinalStats.TireWearFactor) * 10000);
-
-            return newState;
-        }
-    }
-
     [System.Serializable]
     public struct DiscreteGameParams
     {
@@ -168,247 +46,6 @@ namespace KartGame.AI
         public int sectionWindow;
         [Tooltip("How far to search in the tree?")]
         public int treeSearchDepth;
-    }
-
-    public class DiscreteGameState
-    {
-        public RacingEnvController envController;
-        public List<DiscreteKartState> kartStates;
-        public List<KartAgent> kartAgents;
-        public DiscreteGameParams gameParams;
-        public int initialSection;
-        public int lastCompletedSection;
-        public int finalSection;
-
-
-        public int upNext()
-        {
-            var ordered = kartStates.Where(s => true).ToList();
-            ordered.Sort((a, b) => {
-                if (a.section < b.section)
-                {
-                    return -1;
-                }
-                else if (a.section > b.section)
-                {
-                    return 1;
-                }
-                else
-                {
-                    if (a.timeAtSection < b.timeAtSection)
-                    {
-                        return -1;
-                    }
-                    else if (a.timeAtSection == b.timeAtSection)
-                    {
-                        if (a.getAverageVelocity() > b.getAverageVelocity())
-                        {
-                            return -1;
-                        }
-                        else if (a.getAverageVelocity() == b.getAverageVelocity())
-                        {
-                            return 0;
-                        }
-                        else
-                        {
-                            return 1;
-                        }
-                    }
-                    else
-                    {
-                        return 1;
-                    }
-                }
-            });
-            for (int i = 0; i < ordered.Count; ++i)
-            {
-                if (ordered[i].section != lastCompletedSection + 1)
-                {
-                    for (int j = 0; j < kartStates.Count; j++)
-                    {
-                        if (ordered[i].Equals(kartStates[j]))
-                        {
-                            return j;
-                        }
-                    }
-                    return -1;
-                }
-            }
-            return -1;
-        }
-        public Tuple<bool, List<float>> isOver()
-        {
-            if (nextMoves().Count == 0)
-            {
-                List<float> scores = new List<float>();
-                int noMovePlayer = upNext();
-                for (int i = 0; i < kartStates.Count; i++)
-                {
-                    if (i == noMovePlayer)
-                    {
-                        scores.Add(0.0f);
-                    }
-                    scores.Add(0.5f);
-                }
-                return Tuple.Create(true, scores);
-            }
-            else if (lastCompletedSection != finalSection)
-            {
-                return Tuple.Create(false, new List<float>());
-            }
-            else if (kartStates.Count > 1)
-            {
-                int maxScore = gameParams.timePrecision * -1000;
-                int minScore = gameParams.timePrecision * 1000;
-                List<float> scores = new List<float>();
-                List<float> normalizedScores = new List<float>();
-                foreach (DiscreteKartState s in kartStates)
-                {
-                    int score = 0;
-                    foreach (DiscreteKartState o in kartStates)
-                    {
-                        if (s.Equals(o))
-                        {
-                            score -= o.timeAtSection;
-                        }
-                        else
-                        {
-                            score += o.timeAtSection;
-                        }
-                    }
-                    scores.Add(score);
-                    maxScore = Math.Max(maxScore, score);
-                    minScore = Math.Min(minScore, score);
-                }
-                foreach (int score in scores)
-                {
-                    normalizedScores.Add((score - minScore) * 1.0f / (maxScore - minScore));
-                }
-                return Tuple.Create(true, normalizedScores);
-            }
-            else
-            {
-                List<float> scores = new List<float>();
-                scores.Add(envController.maxEpisodeSteps - kartStates[0].timeAtSection / envController.maxEpisodeSteps);
-                return Tuple.Create(true, scores);
-            }
-        }
-        public List<DiscreteKartAction> nextMoves()
-        {
-            int nextPlayer = upNext();
-            KartAgent agent = kartAgents[nextPlayer];
-            DiscreteKartState currentState = kartStates[nextPlayer];
-            List<DiscreteKartAction> possibleActions = new List<DiscreteKartAction>();
-            for (int i = 6; i < (int)agent.m_Kart.GetMaxSpeed(); i += gameParams.velocityBucketSize)
-            {
-                for (int j = 1; j < 5; j++)
-                {
-                    possibleActions.Add(new DiscreteKartAction
-                    {
-                        min_velocity = i,
-                        max_velocity = Math.Min(i + gameParams.velocityBucketSize, (int)agent.m_Kart.GetMaxSpeed()),
-                        lane = j
-                    });
-                }
-            }
-            List<DiscreteKartAction> preCollisionFilteredActions = possibleActions.FindAll((action) =>
-            {
-                // UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
-                // Is Lane changing not allowed?
-                if (envController.sectionIsStraight(currentState.section) && currentState.laneChanges + Math.Abs(action.lane - currentState.lane) > envController.MaxLaneChanges)
-                {
-                    // Debug.Log("Current Lane changes " + currentState.laneChanges);
-                    // Debug.Log("Delta change " + (action.lane - currentState.lane));
-                    // Debug.Log("Max change " + envController.MaxLaneChanges);
-
-                    return false;
-                }
-
-                // Is lateral gs infeasible?
-                if (!envController.sectionSpeedFeasible(currentState.section, action.max_velocity, currentState.lane, action.lane, currentState.tireAge / 10000f, agent.m_Kart))
-                {
-                    // Debug.Log("Tire age " + currentState.tireAge);
-                    if (!envController.sectionIsStraight(currentState.section))
-                    {
-                        // Debug.Log("Going on " + currentState.section + " from lane " + currentState.lane + " to " + action.lane + " at max velocity " + action.max_velocity + " with tire age " + currentState.tireAge/10000f + " is infeasible");
-                    }
-                    return false;
-                }
-
-                // Is changing speed infeasible?
-                DiscreteKartState appliedAction = currentState.applyAction(action, envController, gameParams);
-                if (appliedAction.infeasible)
-                {
-                    // Debug.Log("Going from speed " + currentState.getAverageVelocity() + " to " + appliedAction.getAverageVelocity() + " infeasible in section " + appliedAction.section);
-                    return false;
-                }
-
-                return true;
-            }
-            ).ToList();
-            if (preCollisionFilteredActions.Count == 0)
-            {
-                return preCollisionFilteredActions;
-            }
-            // If can't find collision free action set, allow collision action-set hoping that Low-level planner will prevent the crash
-            List<DiscreteKartAction> filteredActions = new List<DiscreteKartAction>();
-            float windowDivider = 1.0f;
-            float windowGrowthRate = 2f;
-            do
-            {
-                filteredActions = preCollisionFilteredActions.FindAll((action) =>
-                {
-
-                    DiscreteKartState appliedAction = currentState.applyAction(action, envController, gameParams);
-                    // Will there be a collision?
-                    foreach (DiscreteKartState other in kartStates)
-                    {
-                        //Debug.Log(Math.Abs(appliedAction.timeAtSection - other.timeAtSection) * 1.0f / gameParams.timePrecision);
-                        if (false && !other.name.Equals(appliedAction.name) && other.section == appliedAction.section && appliedAction.lane == other.lane && Math.Abs(appliedAction.timeAtSection - other.timeAtSection) * 1.0f / gameParams.timePrecision < 0)
-                        {
-                            //Debug.Log("Our Player" + appliedAction.name);
-                            //Debug.Log("Other Player " + other.name);
-                            //Debug.Log("Our tas " + appliedAction.timeAtSection);
-                            //Debug.Log("Other tas " + other.timeAtSection);
-                            //Debug.Log("Collision Fear");
-                            return false;
-                        }
-                    }
-                    return true;
-                }
-                ).ToList();
-                windowDivider *= windowGrowthRate;
-            } while (filteredActions.Count == 0);
-
-            return preCollisionFilteredActions;
-        }
-        public DiscreteGameState makeMove(DiscreteKartAction action)
-        {
-            DiscreteGameState newGameState = new DiscreteGameState
-            {
-                envController = envController,
-                kartStates = kartStates.ConvertAll(state => DiscreteKartState.Copy(state)),
-                kartAgents = kartAgents,
-                initialSection = initialSection,
-                lastCompletedSection = lastCompletedSection,
-                finalSection = finalSection,
-                gameParams = gameParams
-            };
-            int nextPlayer = upNext();
-            DiscreteKartState currentState = newGameState.kartStates[nextPlayer];
-            DiscreteKartState newState = currentState.applyAction(action, envController, gameParams);
-            newGameState.kartStates[nextPlayer] = newState;
-            bool allAhead = true;
-            foreach (var state in newGameState.kartStates)
-            {
-                allAhead &= state.section > lastCompletedSection;
-            }
-            if (allAhead)
-            {
-                newGameState.lastCompletedSection += 1;
-            }
-            return newGameState;
-        }
     }
 
     /// <summary>
@@ -558,12 +195,13 @@ namespace KartGame.AI
                     nearbyAgentStates.Add(new DiscreteKartState
                     {
                         player = count,
+                        team = m_envController.getTeamID(agent),
                         section = initialSection,
                         timeAtSection = timeAtSection,
                         min_velocity = min_velocity,
                         max_velocity = max_velocity,
                         lane = agent.m_Lane,
-                        tireAge = (int)((m_Kart.baseStats.MaxSteer - m_Kart.m_FinalStats.Steer) / (m_Kart.baseStats.MaxSteer - m_Kart.baseStats.MinSteer) * 10000),
+                        tireAge = (int)((agent.m_Kart.baseStats.MaxSteer - agent.m_Kart.m_FinalStats.Steer) / (agent.m_Kart.baseStats.MaxSteer - agent.m_Kart.baseStats.MinSteer) * 10000),
                         laneChanges = agent.m_LaneChanges,
                         infeasible = false,
                         name = agent.name
@@ -659,9 +297,6 @@ namespace KartGame.AI
             }
             if (m_envController.episodeSteps % 100 == 0 && m_envController.episodeSteps < m_envController.maxEpisodeSteps && m_envController.episodeSteps > 0 && !m_envController.inactiveAgents.Contains(this))
             {
-                if (LowMode == LowLevelMode.MPC)
-                    SolveMPC(numSteps: mpcSteps);
-                
                 if (Mode == AgentMode.Inferencing)
                 {
                     if (HighMode == HighLevelMode.MCTS)
@@ -718,7 +353,7 @@ namespace KartGame.AI
                             //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
                         }
                     }
-                    else if (!kartState.name.Equals(this.name))
+                    else if (!kartState.name.Equals(this.name) && opponentUpcomingLanes.ContainsKey(kartState.name))
                     {
 
                         opponentUpcomingLanes[kartState.name][kartState.section % m_envController.Sections.Length] = kartState.lane;
@@ -744,10 +379,10 @@ namespace KartGame.AI
             /**
              * Sensors.Lenght -> RayCasts
              * SectionHorizon*5 -> Upcoming Lanes and Velocities and lane types
-             * 7 -> Current Player's state
+             * 8 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + 7 + (12 * otherAgents.Length);
+            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + ((name.Contains("3") || name.Contains("4") || name.Equals("MCTS-RL"))?7:8) + (12 * (otherAgents.Length + teamAgents.Length));
             prepareForReuse();
         }
 
@@ -778,6 +413,11 @@ namespace KartGame.AI
         {
             base.prepareForReuse();
             foreach (Agent other in otherAgents)
+            {
+                opponentUpcomingLanes[other.name] = new Dictionary<int, int>();
+                opponentUpcomingVelocities[other.name] = new Dictionary<int, float>();
+            }
+            foreach (Agent other in teamAgents)
             {
                 opponentUpcomingLanes[other.name] = new Dictionary<int, int>();
                 opponentUpcomingVelocities[other.name] = new Dictionary<int, float>();
@@ -819,9 +459,26 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
+            if (!name.Contains("4") && !name.Contains("3") && !name.Equals("MCTS-RL")) sensor.AddObservation(is_active);
             sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
+
+
+            // Add observations for team agent states (Speed, acceleration, lane, recent lane chagnes, section type, tire age, distance, relative position)
+            foreach (KartAgent agent in teamAgents)
+            {
+                sensor.AddObservation(agent.m_Kart.LocalSpeed());
+                sensor.AddObservation(agent.m_Acceleration);
+                sensor.AddObservation(agent.m_Lane);
+                sensor.AddObservation(agent.m_LaneChanges * 1f / m_envController.MaxLaneChanges);
+                sensor.AddObservation(agent.is_active);
+                sensor.AddObservation(m_envController.Sections[agent.m_SectionIndex % m_envController.Sections.Length].isStraight());
+                sensor.AddObservation(agent.m_Kart.TireWearProportion());
+                sensor.AddObservation(agent.m_SectionIndex * 1f / m_envController.goalSection);
+                sensor.AddObservation((agent.m_Kart.transform.position - m_Kart.transform.position).magnitude);
+                sensor.AddObservation(m_Kart.transform.InverseTransformPoint(agent.m_Kart.transform.position));
+            }
 
             // Add observation for opponent agent states (Speed, acceleration, lane, recent lane chagnes, section type, tire age, distance, relative position)
             foreach (KartAgent agent in otherAgents)
@@ -917,6 +574,7 @@ namespace KartGame.AI
 
         void OnTriggerEnter(Collider other)
         {
+            if (!is_active) return;
             var maskedValue = 1 << other.gameObject.layer;
             var triggered = maskedValue & CheckpointMask;
 
@@ -930,6 +588,8 @@ namespace KartGame.AI
                 {
                     setLaneDifferenceDivider(index, lane);
                     setVelocityDifferenceDivider(index, m_Kart.Rigidbody.velocity.magnitude);
+                    UpdateLaneDifferenceCalculation(index, lane);
+                    UpdateVelocityDifferenceCalculation(index, m_Kart.Rigidbody.velocity.magnitude);
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
@@ -991,106 +651,9 @@ namespace KartGame.AI
             }
         }
 
-
-
-        public InputData SolveMPC(int numSteps = 200)
-        {
-            List<KartAgent> allPlayers = new[] { this }.Concat(otherAgents).ToList();
-            List<KartMPCDynamics> dynamics = new List<KartMPCDynamics>();
-            List<DoubleVector> initialStates = new List<DoubleVector>();
-            List<List<KartMPCConstraints>> individualConstraints = new List<List<KartMPCConstraints>>();
-            List<List<KartMPCCosts>> individualCosts = new List<List<KartMPCCosts>>();
-            List<List<CoupledKartMPCConstraints>> coupledConstraints = new List<List<CoupledKartMPCConstraints>>();
-            List<List<CoupledKartMPCCosts>> coupledCosts = new List<List<CoupledKartMPCCosts>>();
-            double dt = Time.fixedDeltaTime * 5;
-            for (int i = 0; i < allPlayers.Count; i++)
-            {
-                KartAgent k = allPlayers[i];
-                // Create Dynamics
-                dynamics.Add(new Bicycle(dt, k.m_Kart.m_FinalStats.Acceleration, -k.m_Kart.m_FinalStats.Braking, k.m_Kart.getMaxAngularVelocity(), -k.m_Kart.getMaxAngularVelocity(), k.m_Kart.GetMaxSpeed(), k.m_Kart.getMaxLateralGs()));
-                // Create Initial Vector
-                DoubleVector initial = new DoubleVector(numSteps * (KartMPC.xDim + KartMPC.uDim));
-                initial[KartMPC.xIndex * numSteps] = k.m_Kart.transform.position.x;
-                initial[KartMPC.zIndex * numSteps] = k.m_Kart.transform.position.z;
-                initial[KartMPC.vIndex * numSteps] = k.m_Kart.Rigidbody.velocity.magnitude;
-                var heading = Mathf.Atan2(k.m_Kart.transform.forward.z, k.m_Kart.transform.forward.x);
-                initial[KartMPC.hIndex * numSteps] = heading;
-                initial[KartMPC.aIndex * numSteps] = k.m_Kart.acc.magnitude;
-                initial[KartMPC.sIndex * numSteps] = k.m_Kart.Rigidbody.angularVelocity.y;
-                int T = numSteps;
-                for (int t = 1; t < T; t++)
-                {
-                    // Piecewise Dynamics
-                    // initial[KartMPC.xIndex * T + (t)] = initial[KartMPC.xIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Cos(initial[KartMPC.hIndex * T + (t - 1)]);
-                    initial[KartMPC.xIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].x;
-                    // initial[KartMPC.zIndex * T + (t)] = initial[KartMPC.zIndex * T + (t - 1)] + dt * initial[KartMPC.vIndex * T + (t - 1)] * Math.Sin(initial[KartMPC.hIndex * T + (t - 1)]);
-                    initial[KartMPC.zIndex * T + (t)] = finerWaypoints[(currentFinerIndex + t) % finerWaypoints.Count].y;
-                    initial[KartMPC.hIndex * T + (t)] = initial[KartMPC.hIndex * T + (t - 1)] + dt * initial[KartMPC.sIndex * T + (t - 1)];
-                    initial[KartMPC.vIndex * T + (t)] = initial[KartMPC.vIndex * T + (t - 1)] + dt * initial[KartMPC.aIndex * T + (t - 1)];
-                    initial[KartMPC.aIndex * T + (t)] = 0;
-                    initial[KartMPC.sIndex * T + (t)] = 0;
-                }
-
-                print(initial.ToString());
-                initialStates.Add(initial);
-                // Create Individual Constraints
-                List<KartMPCConstraints> constraints = new List<KartMPCConstraints>();
-                //constraints.Add(new OnTrackConstraint(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5));
-                individualConstraints.Add(constraints);
-
-                // Create Individual Costs
-                List<KartMPCCosts> costs = new List<KartMPCCosts>();
-                // print(currentFinerIndex + " " + m_SectionIndex*10);
-                for (int s = m_SectionIndex + 1; s < m_SectionIndex + 1 + 1; s++)
-                {
-                    int idx = s % m_envController.Sections.Length;
-                    if (m_UpcomingLanes.ContainsKey(idx))
-                    {
-                        var lane = m_envController.Sections[idx].getBoxColliderForLane(m_UpcomingLanes[idx]);
-                        // costs.Add(new WaypointCost(10, 4, lane.transform.position.x, lane.transform.position.z, m_UpcomingVelocities[idx]));
-                    }
-                }
-                costs.Add(new DistanceFromCenterCost(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 5f, 1000));
-                // costs.Add(new ForwardProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon / 2 * 10, 50));
-                costs.Add(new DistanceTraveledReward(dt, 50));
-                individualCosts.Add(costs);
-
-                List<CoupledKartMPCConstraints> cConstraints = new List<CoupledKartMPCConstraints>();
-                List<CoupledKartMPCCosts> cCosts = new List<CoupledKartMPCCosts>();
-                for (int j = 0; j < allPlayers.Count; j++)
-                {
-                    if (i == j) continue;
-                    KartAgent k2 = allPlayers[j];
-                    // Create Coupled Constraints
-                    // cConstraints.Add(new CoupledDistanceConstraint(0.8, j));
-                    // Create Coupled Costs
-                    // cCosts.Add(new CoupledProgressReward(finerWaypoints, currentFinerIndex, currentFinerIndex + sectionHorizon/2 * 10, 20, j));
-                }
-                coupledConstraints.Add(cConstraints);
-                coupledCosts.Add(cCosts);
-            }
-
-            // Sovle MPC
-            resultVector = KartMPC.solveGame(dynamics, individualCosts, individualConstraints, coupledCosts, coupledConstraints, initialStates, numSteps);
-            // Parse Results
-            m_Acceleration = resultVector[0][KartMPC.aIndex * numSteps + 1] > 0.1;
-            m_Brake = resultVector[0][KartMPC.aIndex * numSteps + 1] < -0.1;
-            m_Steering = Mathf.Clamp((float)resultVector[0][KartMPC.sIndex * numSteps + 1], -m_Kart.getMaxAngularVelocity(), m_Kart.getMaxAngularVelocity()) / (0.4f * m_Kart.m_FinalStats.Steer);
-
-
-
-
-            return new InputData
-            {
-                Accelerate = m_Acceleration,
-                Brake = m_Brake,
-                TurnInput = m_Steering
-            };
-        }
-
         public InputData SolveLQR(int numSteps = 200)
         {
-            List<KartAgent> allPlayers = new[] { this }.Concat(otherAgents).ToList();
+            List<KartAgent> allPlayers = new[] { this }.Concat(teamAgents).Concat(otherAgents).ToList();
             List<KartLQRDynamics> dynamics = new List<KartLQRDynamics>();
             List<Vector<double>> initialStates = new List<Vector<double>>();
             List<KartLQRCosts> costs = new List<KartLQRCosts>();
@@ -1386,13 +949,89 @@ namespace KartGame.AI
                     otherTarget[KartMPC.vIndex] = vel;
                     opponentTargetStates.Add(otherTarget);
 
-                    // Add weights for preventing opponent's target state
+                    // Add weights for preventing or helping opponent's target state
                     var otherTargetWeights = new Dictionary<int, double>();
+
                     otherTargetWeights[KartMPC.xIndex] = HighMode == HighLevelMode.Fixed ? 0.033 : 0.00f;
                     otherTargetWeights[KartMPC.zIndex] = HighMode == HighLevelMode.Fixed ? 0.033 : 0.00f;
                     otherTargetWeights[KartMPC.vIndex] = HighMode == HighLevelMode.Fixed ? 0.08 : 0.00f;
                     opponentTargetWeights.Add(otherTargetWeights);
                 }
+
+                for (int j = 0; j < k.teamAgents.Length; j++)
+                {
+                    var o = teamAgents[j];
+                    // Avoidance Weights
+                    if (o.name == k.name || (o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude > 8 || !o.is_active)
+                    {
+                        avoidWeights[KartMPC.xIndex].Add(0.0);
+                        avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
+                        avoidWeights[KartMPC.zIndex].Add(0.0);
+                        avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
+                    }
+                    else
+                    {
+                        float multiplier = HighMode == HighLevelMode.Fixed ? 0.022f : 0.048f;
+                        avoidWeights[KartMPC.xIndex].Add(1f / (Mathf.Pow((o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude, 1.5f) * multiplier));
+                        avoidIndices[KartMPC.xIndex].Add(KartMPC.xIndex);
+                        avoidWeights[KartMPC.zIndex].Add(1f / (Mathf.Pow((o.m_Kart.transform.position - k.m_Kart.transform.position).magnitude, 1.5f) * multiplier));
+                        avoidIndices[KartMPC.zIndex].Add(KartMPC.zIndex);
+                    }
+
+
+
+                    // Create Other Dynamics
+                    var otherInitial = CreateVector.Dense<double>(4);
+                    otherInitial[KartMPC.xIndex] = o.m_Kart.transform.position.x;
+                    otherInitial[KartMPC.zIndex] = o.m_Kart.transform.position.z;
+                    otherInitial[KartMPC.vIndex] = o.m_Kart.Rigidbody.velocity.magnitude;
+                    heading = Mathf.Atan2(o.m_Kart.transform.forward.z, o.m_Kart.transform.forward.x);
+                    otherInitial[KartMPC.hIndex] = heading;
+                    avoidDynamics.Add(new LinearizedBicycle(dt, otherInitial));
+
+                    // Create Opponent Target State
+                    var otherTarget = CreateVector.Dense<double>(avoidDynamics.Last().getXDim());
+                    s = o.m_SectionIndex + 1;
+                    idx = s % m_envController.Sections.Length;
+                    if (o == this)
+                    {
+                        if (m_UpcomingLanes.ContainsKey(idx))
+                        {
+                            lane = m_envController.Sections[idx].getBoxColliderForLane(m_UpcomingLanes[idx]);
+                            vel = m_Kart.getMaxSpeedForState();
+                        }
+                        else
+                        {
+                            lane = m_envController.Sections[idx].Trigger;
+                            vel = m_Kart.getMaxSpeedForState();
+                        }
+                    }
+                    else
+                    {
+                        if (opponentUpcomingLanes[o.name].ContainsKey(idx))
+                        {
+                            lane = m_envController.Sections[idx].getBoxColliderForLane(opponentUpcomingLanes[o.name][idx]);
+                            vel = o.m_Kart.getMaxSpeedForState();
+                        }
+                        else
+                        {
+                            lane = m_envController.Sections[idx].Trigger;
+                            vel = o.m_Kart.getMaxSpeedForState();
+                        }
+                    }
+                    otherTarget[KartMPC.xIndex] = lane.transform.position.x;
+                    otherTarget[KartMPC.zIndex] = lane.transform.position.z;
+                    otherTarget[KartMPC.vIndex] = vel;
+                    opponentTargetStates.Add(otherTarget);
+
+                    // Add weights for preventing or helping opponent's target state
+                    var otherTargetWeights = new Dictionary<int, double>();
+                    otherTargetWeights[KartMPC.xIndex] = HighMode == HighLevelMode.Fixed ? -0.033 : -0.033f;
+                    otherTargetWeights[KartMPC.zIndex] = HighMode == HighLevelMode.Fixed ? -0.033 : -0.033f;
+                    otherTargetWeights[KartMPC.vIndex] = HighMode == HighLevelMode.Fixed ? -0.08 : -0.08f;
+                    opponentTargetWeights.Add(otherTargetWeights);
+                }
+
 
                 costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, HighMode == HighLevelMode.Fixed ? 0.115 : 0.1, dynamics.Last(), opponentTargetStates, opponentTargetWeights, avoidWeights, avoidIndices, avoidDynamics));
             }

@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using Unity.MLAgents;
 using UnityEngine;
 
 
@@ -26,14 +27,25 @@ public enum EnvironmentMode
     Experiment = 2
 }
 
+[System.Serializable]
+public class RacingTeam
+{
+    public List<KartAgent> Racers;
+}
 
 public class RacingEnvController : MonoBehaviour
 {
-    [Header("Racers"), Tooltip("What are the racing agents in the game?")]
+    [Tooltip("What are the teams in the game?")]
+    public RacingTeam[] Teams;
+
+    [Tooltip("Who are the Racers in the game?")]
     public KartAgent[] Agents;
+
     [Header("Checkpoints"), Tooltip("What are the series of checkpoints for the agent to seek and pass through?")]
     public DiscretePositionTracker[] Sections;
     public float[] initialTireWears;
+
+
 
     [Header("Environment Mode"), Tooltip("Mode of the environment")]
     public EnvironmentMode mode = EnvironmentMode.Training;
@@ -57,7 +69,11 @@ public class RacingEnvController : MonoBehaviour
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints in faster time")]
     public float PassCheckpointTimeMultiplier = 10f;
     [Tooltip("How much penalty is given for being behind first agent?")]
-    public float BeingBehindCheckpoingPenalty = -0.1f;
+    public float BeingBehindOpponentCheckpointPenalty = -0.06f;
+    [Tooltip("How much penalty is given for being behind first agent?")]
+    public float BeingBehindTeammateCheckpointPenalty = -0.02f;
+    [Tooltip("How much emphasis on performance of teammates?")]
+    public float TeamScoreRewardMultiplier = 0.75f;
     [Tooltip("How much reward is given when the agent travels backwards through the checkpoints?")]
     public float ReversePenalty = -0.5f;
     [Tooltip("How much reward is given when the agent switches lanes multiple times on a straightaway?")]
@@ -74,6 +90,8 @@ public class RacingEnvController : MonoBehaviour
     public float SlowMovingPenalty = -3.0f;
     [Tooltip("Reward the agent when it keeps accelerating")]
     public float AccelerationReward = 0.002f;
+    [Tooltip("Reward the agent for being at the goal accelerating")]
+    public float AtGoalReward = 0.5f;
     #endregion
 
     #region Rules
@@ -86,11 +104,14 @@ public class RacingEnvController : MonoBehaviour
     public Dictionary<Rigidbody, KartAgent> AgentBodies = new Dictionary<Rigidbody, KartAgent>();
     public HashSet<KartAgent> inactiveAgents = new HashSet<KartAgent>();
     [HideInInspector] public int goalSection;
-    [HideInInspector] public Dictionary<int, float> minSectionTimes = new Dictionary<int, float>();
+    [HideInInspector] public Dictionary<int, Dictionary<int, float>> minSectionTimes = new Dictionary<int, Dictionary<int, float>>();
+    [HideInInspector] public Dictionary<int, Dictionary<int, int>> agentsPastSection = new Dictionary<int, Dictionary<int, int>>();
+    List<SimpleMultiAgentGroup> m_AgentGroups;
 
     [Header("Training Params")]
     public int episodeSteps;
     public int maxEpisodeSteps;
+    public bool disableOnEnd;
     [Tooltip("How many sections ahead should the agents be looking ahead/driving to")]
     public int sectionHorizon;
 
@@ -100,10 +121,19 @@ public class RacingEnvController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_AgentGroups = new List<SimpleMultiAgentGroup>();
         for (int i = 0; i < Agents.Length; i++)
         {
             inactiveAgents.Add(Agents[i]);
             AgentBodies[Agents[i].GetComponent<Rigidbody>()] = Agents[i];
+        }
+        for (int i = 0; i < Teams.Length; i++)
+        {
+            minSectionTimes[i] = new Dictionary<int, float>();
+            agentsPastSection[i] = new Dictionary<int, int>();
+            m_AgentGroups.Add(new SimpleMultiAgentGroup());
+            foreach (KartAgent k in Teams[i].Racers)
+                m_AgentGroups[i].RegisterAgent(k);
         }
         goalSection = laps * Sections.Length + 1;
         //ResetGame();
@@ -119,28 +149,60 @@ public class RacingEnvController : MonoBehaviour
             }
             return;
         }
+        List<float> gtRewards = new List<float>();
+        float maxReward = 1f;
+        float minReward = -1f;
+        float maxGTReward = -1000f;
+        float minGTReward = 1000f;
+        for (int i = 0; i < Agents.Length;i++)
+        {
+            if (Agents[i].m_timeSteps == 0)
+                Agents[i].m_timeSteps = 2*maxEpisodeSteps;
+        }
         for (int i = 0; i < Agents.Length; i++)
         {
-            int currAgentScore = (Agents.Length - 1)*Agents[i].m_timeSteps;
+            int opponentAgents = Agents[i].otherAgents.Length;
+            int teamAgents = Agents[i].teamAgents.Length;
+            int currAgentTeamScore = 0;
+            int currAgentScore = Agents[i].m_timeSteps;
             int oppAgentScore = 0;
-            for (int j = 0; j < Agents.Length; j++)
+            for (int j = 0; j < Agents[i].otherAgents.Length; j++)
             {
-                if (i != j)
-                    oppAgentScore += Agents[j].m_timeSteps;
-
+                oppAgentScore += Agents[i].otherAgents[j].m_timeSteps;
             }
-            Agents[i].AddReward(-ReachGoalCheckpointRewardMultplier * (currAgentScore - oppAgentScore)/(1f*(Agents.Length-1)*maxEpisodeSteps));
-            if (currAgentScore - oppAgentScore < 0)
+            for (int j = 0; j < Agents[i].teamAgents.Length; j++)
             {
-                Agents[i].AddReward(1);
-            } else if (currAgentScore - oppAgentScore > 0)
+                currAgentTeamScore += Agents[i].teamAgents[j].m_timeSteps;
+            }
+            float finalCurrAgentScore = currAgentScore + currAgentTeamScore * TeamScoreRewardMultiplier;
+            float finalOpponentScore = oppAgentScore * (1f + teamAgents * TeamScoreRewardMultiplier)/ (opponentAgents * 1f);
+            float reward = ((finalOpponentScore - finalCurrAgentScore)/(1f + teamAgents * TeamScoreRewardMultiplier))/maxEpisodeSteps;
+            // maxReward = Mathf.Max(maxReward, reward);
+            // minReward = Mathf.Min(minReward, reward);
+            print(i + " individual reward is " + reward +" opp agent score " + finalOpponentScore + " curr agent team score " + finalCurrAgentScore);
+            gtRewards.Add(reward);
+        } 
+        float[] groupRewards = new float[m_AgentGroups.Count];
+        for (int i = 0; i < Agents.Length; i++)
+        {
+            if (Agents[i].Mode != AgentMode.Training) continue;
+            if (maxReward != minReward)
             {
-                Agents[i].AddReward(-1);
-            } else
+                float s = (ReachGoalCheckpointRewardBase + ReachGoalCheckpointRewardMultplier * ((gtRewards[i] - minReward) * 1.0f / (maxReward - minReward)));
+                print("Goal checkpoint Agent " + i + " score is " + s + " with cumulative reward " + Agents[i].GetCumulativeReward());
+                groupRewards[getTeamID(Agents[i])] += s;
+            }
+            else
             {
-                Agents[i].AddReward(0);
+                groupRewards[getTeamID(Agents[i])] += 0f;
             }
         }
+        for (int i = 0; i < m_AgentGroups.Count; i++)
+        {
+            m_AgentGroups[i].AddGroupReward(groupRewards[i]);
+            m_AgentGroups[i].EndGroupEpisode();
+        }
+        
     }
 
     void FixedUpdate()
@@ -169,13 +231,6 @@ public class RacingEnvController : MonoBehaviour
             }
 
             AddGoalTimingRewards();
-            for (int i = 0; i < Agents.Length; i++)
-            {
-                if (initialStarted)
-                {
-                    Agents[i].EndEpisode();
-                }
-            }
             ResetGame();
             if (!initialStarted && mode == EnvironmentMode.Experiment)
             {
@@ -189,6 +244,11 @@ public class RacingEnvController : MonoBehaviour
             episodeSteps += 1;
             if (episodeSteps >= maxEpisodeSteps)
             {
+                foreach (KartAgent agent in Agents)
+                {
+                    if (agent.is_active)
+                        agent.Deactivate(disableOnEnd);
+                }
                 if (initialStarted && mode == EnvironmentMode.Experiment && experimentNum < TotalExperiments)
                 {
                     TelemetryViewer tm = null;
@@ -208,22 +268,19 @@ public class RacingEnvController : MonoBehaviour
                     experimentNum += 1;
                 }
                 AddGoalTimingRewards();
-                for (int i = 0; i < Agents.Length; i++)
-                {
-                    Agents[i].EndEpisode();
-                }
                 //print("from here 2");
                 ResetGame();
             }
         }
-        if (!coroStarted)
+        if (!coroStarted && mode == EnvironmentMode.Experiment)
         {
             StartCoroutine(checkAllExperimentsDone());
         }
     }
+
     IEnumerator checkAllExperimentsDone()
     {
-        while (experimentNum == TotalExperiments && mode == EnvironmentMode.Experiment)
+        while (experimentNum == TotalExperiments)
         {
             coroStarted = true;
             bool quit = true;
@@ -248,23 +305,70 @@ public class RacingEnvController : MonoBehaviour
             yield return new WaitForSeconds(30f);
         }
     }
+
     public void timeDifferenceAtSectionPenalty(KartAgent agent)
     {
-        if (!minSectionTimes.ContainsKey(agent.m_SectionIndex))
+        int agentTeam = getTeamID(agent);
+        int totalAgentsPastSection = 0;
+        if (!minSectionTimes[agentTeam].ContainsKey(agent.m_SectionIndex))
         {
             //print(agent.name + "reached " + agent.m_SectionIndex +  " soonest");
-            minSectionTimes[agent.m_SectionIndex] = episodeSteps;
+            minSectionTimes[agentTeam][agent.m_SectionIndex] = episodeSteps;
+            agentsPastSection[agentTeam][agent.m_SectionIndex] = 1;
+            for (int i = 0; i < Teams.Length; i++)
+            {
+                if (i != agentTeam && minSectionTimes[i].ContainsKey(agent.m_SectionIndex))
+                {
+                    agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
+                    totalAgentsPastSection += agentsPastSection[i][agent.m_SectionIndex];
+                }
+            }
+            totalAgentsPastSection += 1;
         } else
         {
             //print(agent.name + "reached " + agent.m_SectionIndex + " late by " + (episodeSteps - minSectionTimes[agent.m_SectionIndex]));
-            agent.AddReward(BeingBehindCheckpoingPenalty * (episodeSteps - minSectionTimes[agent.m_SectionIndex]));
+            for (int i = 0; i < Teams.Length; i++)
+            {
+                if (i == agentTeam)
+                {
+                    agent.AddReward(BeingBehindTeammateCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
+                    m_AgentGroups[i].AddGroupReward((1f - (episodeSteps * 1f) / (maxEpisodeSteps*m_AgentGroups[i].GetRegisteredAgents().Count)));
+                }
+                else if (minSectionTimes[i].ContainsKey(agent.m_SectionIndex))
+                {
+                    agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
+                    totalAgentsPastSection += agentsPastSection[i][agent.m_SectionIndex];
+                } else
+                {
+                    m_AgentGroups[i].AddGroupReward(-(1f - (episodeSteps * 1f) / (maxEpisodeSteps * (Agents.Length - m_AgentGroups[i].GetRegisteredAgents().Count))));
+                }
+                
+            }
+            agentsPastSection[agentTeam][agent.m_SectionIndex] += 1;
+            totalAgentsPastSection += 1;
         }
+        for (int i = 0; i < Teams.Length; i++)
+        {
+            if (i == agentTeam)
+            {
+                m_AgentGroups[i].AddGroupReward((1f - (episodeSteps * 1f) / (maxEpisodeSteps * m_AgentGroups[i].GetRegisteredAgents().Count)));
+            } else
+            {
+                m_AgentGroups[i].AddGroupReward(-(1f - (episodeSteps * 1f) / (maxEpisodeSteps * (Agents.Length - m_AgentGroups[i].GetRegisteredAgents().Count))));
+            }
+        }
+        //float[] groupRewardMultipliers = {1f, 0.6f, 0.4f, 0.1f};
+        //float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
+        //m_AgentGroups[agentTeam].AddGroupReward(groupRewardMult * (groupRewardMult > 0 ? (1 - (episodeSteps * 1f)/maxEpisodeSteps) : (episodeSteps * 1f) / maxEpisodeSteps));
+
     }
 
     public void ResolveEvent(Event triggeringEvent, KartAgent triggeringAgent, HashSet<KartAgent> otherInvolvedAgents)
     {
         //print("Resolving event");
         //print(triggeringEvent);
+        if (!triggeringAgent.is_active)
+            return;
         switch (triggeringEvent)
         {
             case Event.HitWall:
@@ -286,17 +390,17 @@ public class RacingEnvController : MonoBehaviour
                 break;
             case Event.ReachGoalSection:
                 triggeringAgent.m_timeSteps = episodeSteps;
-                triggeringAgent.Deactivate();
+                triggeringAgent.Deactivate(disableOnEnd);
                 inactiveAgents.Add(triggeringAgent);
                 break;
             case Event.DroveReverseLimit:
-                triggeringAgent.m_timeSteps = maxEpisodeSteps*2;
-                triggeringAgent.Deactivate();
+                triggeringAgent.m_timeSteps = maxEpisodeSteps*3;
+                triggeringAgent.Deactivate(disableOnEnd);
                 inactiveAgents.Add(triggeringAgent);
                 break;
             case Event.FellOffWorld:
-                triggeringAgent.m_timeSteps = maxEpisodeSteps*2;
-                triggeringAgent.Deactivate();
+                triggeringAgent.m_timeSteps = maxEpisodeSteps*3;
+                triggeringAgent.Deactivate(disableOnEnd);
                 inactiveAgents.Add(triggeringAgent);
                 break;
         }
@@ -312,28 +416,26 @@ public class RacingEnvController : MonoBehaviour
 
     void ResetGame()
     {
-        //print("resetting game");
-        //if (mode == EnvironmentMode.Training)
-        //{
-        //    laps = UnityEngine.Random.Range(1, 5);
-        //    maxEpisodeSteps = laps * 1500;
-        //    goalSection = laps * Sections.Length + 1;
-        //}
         float minTirewearProportion = mode == EnvironmentMode.Training ? 0.0f : 0.25f;
         float maxTirewearProportion = mode == EnvironmentMode.Training ? 1.0f : 0.25f;
         float minDistFromSpawn = mode == EnvironmentMode.Training ? 1.0f : 3.0f;
         float maxDistFromSpawn = mode == EnvironmentMode.Training ? 4.0f : 3.0f;
         episodeSteps = 0;
         inactiveAgents.Clear();
-        minSectionTimes.Clear();
+
+        for (int i = 0; i < Teams.Length; i++)
+        {
+            minSectionTimes[i].Clear();
+            agentsPastSection[i].Clear();
+        }
         // For each agent
         var furthestForwardSection = -1;
         var furthestBackSection = 100000;
         HashSet< Collider > addedColliders = new HashSet<Collider>();
         bool headToHead = mode == EnvironmentMode.Training ? UnityEngine.Random.Range(0, 9) != 1 : true;
         var initialSection = -1;
-        var minSectionIndex = 0;
-        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
+        var minSectionIndex = mode == EnvironmentMode.Training ? 2 : 0;
+        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection-2 : 0;
         int laneDirection = experimentNum % 2 == 0 ? 1: -1;
         var expLaneChoices = new int[] { 2, 3 };
         int lastPickedLaneIdx = 0;
@@ -346,7 +448,7 @@ public class RacingEnvController : MonoBehaviour
                 {
                     Agents[i].m_SectionIndex = UnityEngine.Random.Range(minSectionIndex, maxSectionIndex);
                     Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
-                    Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                    Agents[i].m_Lane = UnityEngine.Random.Range(1, 5);
                     Agents[i].m_LaneChanges = 0;
                     Agents[i].m_IllegalLaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
@@ -355,9 +457,9 @@ public class RacingEnvController : MonoBehaviour
                         Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate*minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                         furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                         furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
-                        Agents[i].transform.localRotation = collider.transform.rotation;
+                        Agents[i].transform.rotation = collider.transform.rotation;
                         Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
-                        Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
+                        Agents[i].GetComponent<Rigidbody>().transform.rotation = collider.transform.rotation;
                         Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
                         Agents[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
                         Agents[i].sectionTimes.Clear();
@@ -392,14 +494,14 @@ public class RacingEnvController : MonoBehaviour
                     }
                     else
                     {
-                        Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                        Agents[i].m_Lane = UnityEngine.Random.Range(1, 5);
                     }
                     Agents[i].m_LaneChanges = 0;
                     Agents[i].m_IllegalLaneChanges = 0;
                     var collider = Sections[Agents[i].m_SectionIndex % Sections.Length].getBoxColliderForLane(Agents[i].m_Lane);
-                    Agents[i].transform.localRotation = collider.transform.rotation;
+                    Agents[i].transform.rotation = collider.transform.rotation;
                     Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
-                    Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
+                    Agents[i].GetComponent<Rigidbody>().transform.rotation = collider.transform.rotation;
                     Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
                     Agents[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
                     Agents[i].sectionTimes.Clear();
@@ -411,6 +513,7 @@ public class RacingEnvController : MonoBehaviour
                 {
                     while (true)
                     {
+                        // print("Trying to find a spot for " + Agents[i].name + " near section " + initialSection);
                         if (mode == EnvironmentMode.Training)
                             Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), initialSection + 1);
                         else
@@ -423,7 +526,7 @@ public class RacingEnvController : MonoBehaviour
                         }
                         else
                         {
-                            Agents[i].m_Lane = UnityEngine.Random.Range(1, 4);
+                            Agents[i].m_Lane = UnityEngine.Random.Range(1, 5);
                         }
                         Agents[i].m_LaneChanges = 0;
                         Agents[i].m_IllegalLaneChanges = 0;
@@ -433,9 +536,9 @@ public class RacingEnvController : MonoBehaviour
                             Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate * minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                             furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                             furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
-                            Agents[i].transform.localRotation = collider.transform.rotation;
+                            Agents[i].transform.rotation = collider.transform.rotation;
                             Agents[i].transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
-                            Agents[i].GetComponent<Rigidbody>().transform.localRotation = collider.transform.rotation;
+                            Agents[i].GetComponent<Rigidbody>().transform.rotation = collider.transform.rotation;
                             Agents[i].GetComponent<Rigidbody>().transform.position = collider.transform.position + (collider.transform.rotation * Vector3.forward).normalized * UnityEngine.Random.Range(minDistFromSpawn, maxDistFromSpawn);
                             Agents[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
                             Agents[i].sectionTimes.Clear();
@@ -460,6 +563,7 @@ public class RacingEnvController : MonoBehaviour
                 Agents[i].sectionTimes[tp] = UnityEngine.Random.Range(earliestTime, 0);
                 earliestTime = Agents[i].sectionTimes[tp];
             }
+            Agents[i].sectionTimes[Agents[i].m_SectionIndex] = 0;
         }
 
         ResetSectionHighlighting();
@@ -472,7 +576,6 @@ public class RacingEnvController : MonoBehaviour
 
         for (int i = 0; i < Agents.Length; i++)
         {
-
             Agents[i].Activate();
             Agents[i].OnEpisodeBegin();
         }
@@ -500,4 +603,15 @@ public class RacingEnvController : MonoBehaviour
         return Sections[section % Sections.Length].tireLoad(max_velocity, initLane, finalLane);
     }
 
+    public int getTeamID(KartAgent k)
+    {
+        for(int i = 0; i < Teams.Length; i++)
+        {
+            if (Teams[i].Racers.Contains(k))
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
 }

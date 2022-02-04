@@ -94,6 +94,8 @@ public class TelemetryViewer : MonoBehaviour
             telemetryInfo.AppendLine(agent.name + " Laps Completed: " + lastCompletedLaps[i].ToString() + "/" + agent.m_envController.laps.ToString());
             telemetryInfo.AppendLine(agent.name + " Illegal Lane Changes: " + agent.m_IllegalLaneChanges);
             telemetryInfo.AppendLine(agent.name + " Collisions: " + agent.forwardCollisions);
+            telemetryInfo.AppendLine(agent.name + " Avg Target Lane Difference: " + agent.AverageLaneDifference);
+            telemetryInfo.AppendLine(agent.name + " Avg Target Vel Difference: " + agent.AverageVelDifference);
 
             i++;
         }
