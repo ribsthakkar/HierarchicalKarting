@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading;
 using Unity.MLAgents;
 using UnityEngine;
@@ -90,8 +91,8 @@ public class RacingEnvController : MonoBehaviour
     public float SlowMovingPenalty = -3.0f;
     [Tooltip("Reward the agent when it keeps accelerating")]
     public float AccelerationReward = 0.002f;
-    [Tooltip("Reward the agent for being at the goal accelerating")]
-    public float AtGoalReward = 0.5f;
+    [Tooltip("Penalty the agent for existing and not being at goal")]
+    public float NotAtGoalPenalty = -0.001f;
     #endregion
 
     #region Rules
@@ -179,7 +180,7 @@ public class RacingEnvController : MonoBehaviour
             float reward = ((finalOpponentScore - finalCurrAgentScore)/(1f + teamAgents * TeamScoreRewardMultiplier))/maxEpisodeSteps;
             // maxReward = Mathf.Max(maxReward, reward);
             // minReward = Mathf.Min(minReward, reward);
-            print(i + " individual reward is " + reward +" opp agent score " + finalOpponentScore + " curr agent team score " + finalCurrAgentScore);
+            // print(i + " individual reward is " + reward +" opp agent score " + finalOpponentScore + " curr agent team score " + finalCurrAgentScore);
             gtRewards.Add(reward);
         } 
         float[] groupRewards = new float[m_AgentGroups.Count];
@@ -189,7 +190,7 @@ public class RacingEnvController : MonoBehaviour
             if (maxReward != minReward)
             {
                 float s = (ReachGoalCheckpointRewardBase + ReachGoalCheckpointRewardMultplier * ((gtRewards[i] - minReward) * 1.0f / (maxReward - minReward)));
-                print("Goal checkpoint Agent " + i + " score is " + s + " with cumulative reward " + Agents[i].GetCumulativeReward());
+                // print("Goal checkpoint Agent " + i + " score is " + s + " with cumulative reward " + Agents[i].GetCumulativeReward());
                 groupRewards[getTeamID(Agents[i])] += s;
             }
             else
@@ -199,7 +200,7 @@ public class RacingEnvController : MonoBehaviour
         }
         for (int i = 0; i < m_AgentGroups.Count; i++)
         {
-            m_AgentGroups[i].AddGroupReward(groupRewards[i]);
+            m_AgentGroups[i].AddGroupReward(groupRewards[i]/Teams[i].Racers.Count);
             m_AgentGroups[i].EndGroupEpisode();
         }
         
@@ -306,8 +307,12 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
-    public void timeDifferenceAtSectionPenalty(KartAgent agent)
+    public void ApplySectionRewardsAndPenalties(KartAgent agent)
     {
+        agent.ApplySectionReward();
+        agent.AddReward(PassCheckpointBase);
+        agent.AddReward(PassCheckpointTimeMultiplier * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
+
         int agentTeam = getTeamID(agent);
         int totalAgentsPastSection = 0;
         if (!minSectionTimes[agentTeam].ContainsKey(agent.m_SectionIndex))
@@ -324,7 +329,8 @@ public class RacingEnvController : MonoBehaviour
                 }
             }
             totalAgentsPastSection += 1;
-        } else
+        }
+        else
         {
             //print(agent.name + "reached " + agent.m_SectionIndex + " late by " + (episodeSteps - minSectionTimes[agent.m_SectionIndex]));
             for (int i = 0; i < Teams.Length; i++)
@@ -332,34 +338,33 @@ public class RacingEnvController : MonoBehaviour
                 if (i == agentTeam)
                 {
                     agent.AddReward(BeingBehindTeammateCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
-                    m_AgentGroups[i].AddGroupReward((1f - (episodeSteps * 1f) / (maxEpisodeSteps*m_AgentGroups[i].GetRegisteredAgents().Count)));
                 }
                 else if (minSectionTimes[i].ContainsKey(agent.m_SectionIndex))
                 {
                     agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
                     totalAgentsPastSection += agentsPastSection[i][agent.m_SectionIndex];
-                } else
-                {
-                    m_AgentGroups[i].AddGroupReward(-(1f - (episodeSteps * 1f) / (maxEpisodeSteps * (Agents.Length - m_AgentGroups[i].GetRegisteredAgents().Count))));
-                }
+                } 
                 
             }
             agentsPastSection[agentTeam][agent.m_SectionIndex] += 1;
             totalAgentsPastSection += 1;
         }
+        float[] groupRewardMultipliers = {0.2f, 0.15f, 0.1f, 0.05f};
+        float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
         for (int i = 0; i < Teams.Length; i++)
         {
             if (i == agentTeam)
             {
-                m_AgentGroups[i].AddGroupReward((1f - (episodeSteps * 1f) / (maxEpisodeSteps * m_AgentGroups[i].GetRegisteredAgents().Count)));
-            } else
+                m_AgentGroups[i].AddGroupReward(groupRewardMult*(1f - (episodeSteps * 1f) / (maxEpisodeSteps * Teams[i].Racers.Count)));
+            }
+            else
             {
-                m_AgentGroups[i].AddGroupReward(-(1f - (episodeSteps * 1f) / (maxEpisodeSteps * (Agents.Length - m_AgentGroups[i].GetRegisteredAgents().Count))));
+                m_AgentGroups[i].AddGroupReward(-groupRewardMult*(1f - (episodeSteps * 1f) / (maxEpisodeSteps * (Agents.Length - Teams[i].Racers.Count))));
             }
         }
-        //float[] groupRewardMultipliers = {1f, 0.6f, 0.4f, 0.1f};
+        //float[] groupRewardMultipliers = { 1f, 0.6f, 0.4f, 0.1f };
         //float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
-        //m_AgentGroups[agentTeam].AddGroupReward(groupRewardMult * (groupRewardMult > 0 ? (1 - (episodeSteps * 1f)/maxEpisodeSteps) : (episodeSteps * 1f) / maxEpisodeSteps));
+        //m_AgentGroups[agentTeam].AddGroupReward(groupRewardMult * (groupRewardMult > 0 ? (1 - (episodeSteps * 1f) / maxEpisodeSteps) : (episodeSteps * 1f) / maxEpisodeSteps));
 
     }
 
@@ -383,13 +388,11 @@ public class RacingEnvController : MonoBehaviour
                 otherInvolvedAgents.Clear();
                 break;
             case Event.ReachNonGoalSection:
-                triggeringAgent.ApplySectionReward();
-                triggeringAgent.AddReward(PassCheckpointBase);
-                triggeringAgent.AddReward(PassCheckpointTimeMultiplier * (maxEpisodeSteps - episodeSteps)/(1f*maxEpisodeSteps));
-                timeDifferenceAtSectionPenalty(triggeringAgent);
+                ApplySectionRewardsAndPenalties(triggeringAgent);
                 break;
             case Event.ReachGoalSection:
                 triggeringAgent.m_timeSteps = episodeSteps;
+                ApplySectionRewardsAndPenalties(triggeringAgent);
                 triggeringAgent.Deactivate(disableOnEnd);
                 inactiveAgents.Add(triggeringAgent);
                 break;
@@ -427,6 +430,11 @@ public class RacingEnvController : MonoBehaviour
         {
             minSectionTimes[i].Clear();
             agentsPastSection[i].Clear();
+            foreach (KartAgent k in Teams[i].Racers)
+            {
+                if (!m_AgentGroups[i].GetRegisteredAgents().Contains(k))
+                    m_AgentGroups[i].RegisterAgent(k);
+            }
         }
         // For each agent
         var furthestForwardSection = -1;
@@ -553,17 +561,27 @@ public class RacingEnvController : MonoBehaviour
         }
 
         // Use the furthest forward agent to determine the final goal track section by adding a fixed amount of sections to it
+        // Also update number of agents past the section
         var maxSection = furthestForwardSection + sectionHorizon;
         for (int i = 0; i < Agents.Length; i++)
         {
+            int team = getTeamID(Agents[i]);
             // Generate times for reaching certain sections upto random one
             int earliestTime = -maxEpisodeSteps;
             for (int tp = furthestBackSection; tp < Agents[i].m_SectionIndex; tp++)
             {
                 Agents[i].sectionTimes[tp] = UnityEngine.Random.Range(earliestTime, 0);
                 earliestTime = Agents[i].sectionTimes[tp];
+                if (!agentsPastSection[team].ContainsKey(tp))
+                    agentsPastSection[team][tp] = 1;
+                else
+                    agentsPastSection[team][tp] += 1;
             }
             Agents[i].sectionTimes[Agents[i].m_SectionIndex] = 0;
+            if (!agentsPastSection[team].ContainsKey(Agents[i].m_SectionIndex))
+                agentsPastSection[team][Agents[i].m_SectionIndex] = 1;
+            else
+                agentsPastSection[team][Agents[i].m_SectionIndex] += 1;
         }
 
         ResetSectionHighlighting();

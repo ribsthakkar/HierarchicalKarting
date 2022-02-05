@@ -159,8 +159,8 @@ namespace KartGame.AI
             {
                 forwardCollision = false;
             }
-            if (!is_active && m_SectionIndex == m_envController.goalSection)
-                AddReward(m_envController.AtGoalReward);
+            if (is_active && m_SectionIndex != m_envController.goalSection)
+                AddReward(m_envController.NotAtGoalPenalty);
         }
 
         protected virtual void Awake()
