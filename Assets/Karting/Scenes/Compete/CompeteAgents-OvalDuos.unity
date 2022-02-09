@@ -1324,7 +1324,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 315b9b409684bad4dbfc4e23e2d6c203,
+      objectReference: {fileID: 5022602860645237092, guid: b6b695cdb27122945a76efa9836e81cb,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6982,7 +6982,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 315b9b409684bad4dbfc4e23e2d6c203,
+      objectReference: {fileID: 5022602860645237092, guid: b6b695cdb27122945a76efa9836e81cb,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8095,6 +8095,8 @@ MonoBehaviour:
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
   PassCheckpointStateReward: 2
+  PassCheckpointLaneReward: 4
+  PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
   PassCheckpointTimeMultiplier: 20
   BeingBehindOpponentCheckpointPenalty: -0.06
@@ -8108,7 +8110,7 @@ MonoBehaviour:
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
-  AtGoalReward: 0.5
+  NotAtGoalPenalty: -0.001
   MaxLaneChanges: 3
   laps: 4
   goalSection: 0
@@ -13240,6 +13242,8 @@ MonoBehaviour:
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 5
+  PassCheckpointLaneReward: 4
+  PassCheckpointVelocityReward: 4
   PassCheckpointBase: 2
   PassCheckpointTimeMultiplier: 20
   BeingBehindOpponentCheckpointPenalty: -0.06
@@ -13253,7 +13257,7 @@ MonoBehaviour:
   SpeedReward: 1
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
-  AtGoalReward: 0.5
+  NotAtGoalPenalty: -0.001
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0

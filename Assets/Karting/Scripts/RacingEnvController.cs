@@ -65,6 +65,10 @@ public class RacingEnvController : MonoBehaviour
     public float HitByOpponentPenalty = -2f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired state?")]
     public float PassCheckpointStateReward = 0.1f;
+    [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired lane?")]
+    public float PassCheckpointLaneReward = 4f;
+    [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired velocity?")]
+    public float PassCheckpointVelocityReward = 4f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
     public float PassCheckpointBase = 5f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints in faster time")]
@@ -200,6 +204,7 @@ public class RacingEnvController : MonoBehaviour
         }
         for (int i = 0; i < m_AgentGroups.Count; i++)
         {
+            // print(name + " Group reward to add " + (groupRewards[i] / Teams[i].Racers.Count));
             m_AgentGroups[i].AddGroupReward(groupRewards[i]/Teams[i].Racers.Count);
             m_AgentGroups[i].EndGroupEpisode();
         }
@@ -324,7 +329,7 @@ public class RacingEnvController : MonoBehaviour
             {
                 if (i != agentTeam && minSectionTimes[i].ContainsKey(agent.m_SectionIndex))
                 {
-                    agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
+                    agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]/(1f * (Agents.Length - Teams[i].Racers.Count)));
                     totalAgentsPastSection += agentsPastSection[i][agent.m_SectionIndex];
                 }
             }
@@ -337,11 +342,11 @@ public class RacingEnvController : MonoBehaviour
             {
                 if (i == agentTeam)
                 {
-                    agent.AddReward(BeingBehindTeammateCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
+                    agent.AddReward(BeingBehindTeammateCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex] / (1f * (Teams[i].Racers.Count)));
                 }
                 else if (minSectionTimes[i].ContainsKey(agent.m_SectionIndex))
                 {
-                    agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex]);
+                    agent.AddReward(BeingBehindOpponentCheckpointPenalty * (episodeSteps - minSectionTimes[i][agent.m_SectionIndex]) * agentsPastSection[i][agent.m_SectionIndex] / (1f * (Agents.Length - Teams[i].Racers.Count)));
                     totalAgentsPastSection += agentsPastSection[i][agent.m_SectionIndex];
                 } 
                 
@@ -349,20 +354,27 @@ public class RacingEnvController : MonoBehaviour
             agentsPastSection[agentTeam][agent.m_SectionIndex] += 1;
             totalAgentsPastSection += 1;
         }
-        float[] groupRewardMultipliers = {0.2f, 0.15f, 0.1f, 0.05f};
+        //float[] groupRewardMultipliers = {0.1f, 0.075f, 0.05f, 0.05f};
+        //float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
+        //for (int i = 0; i < Teams.Length; i++)
+        //{
+        //    float timeRemainingProportion = (1f - (episodeSteps * 1f) / (maxEpisodeSteps));
+        //    if (i == agentTeam)
+        //    {
+        //       m_AgentGroups[i].AddGroupReward(groupRewardMult*timeRemainingProportion/ Teams[i].Racers.Count);
+        //    }
+        //    else
+        //    {
+        //        m_AgentGroups[i].AddGroupReward(-groupRewardMult*timeRemainingProportion/(Agents.Length - Teams[i].Racers.Count));
+        //    }
+        //}
+
+        float[] groupRewardMultipliers = {20f, 15f, 10f, 7.5f};
         float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
-        for (int i = 0; i < Teams.Length; i++)
-        {
-            if (i == agentTeam)
-            {
-                m_AgentGroups[i].AddGroupReward(groupRewardMult*(1f - (episodeSteps * 1f) / (maxEpisodeSteps * Teams[i].Racers.Count)));
-            }
-            else
-            {
-                m_AgentGroups[i].AddGroupReward(-groupRewardMult*(1f - (episodeSteps * 1f) / (maxEpisodeSteps * (Agents.Length - Teams[i].Racers.Count))));
-            }
-        }
-        //float[] groupRewardMultipliers = { 1f, 0.6f, 0.4f, 0.1f };
+        m_AgentGroups[agentTeam].AddGroupReward(groupRewardMult  * (1f - (episodeSteps * 1f) / maxEpisodeSteps));
+
+
+        //float[] groupRewardMultipliers = { 0.3f, 0.15f, -0.15f, -0.3f };
         //float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
         //m_AgentGroups[agentTeam].AddGroupReward(groupRewardMult * (groupRewardMult > 0 ? (1 - (episodeSteps * 1f) / maxEpisodeSteps) : (episodeSteps * 1f) / maxEpisodeSteps));
 
@@ -442,8 +454,8 @@ public class RacingEnvController : MonoBehaviour
         HashSet< Collider > addedColliders = new HashSet<Collider>();
         bool headToHead = mode == EnvironmentMode.Training ? UnityEngine.Random.Range(0, 9) != 1 : true;
         var initialSection = -1;
-        var minSectionIndex = mode == EnvironmentMode.Training ? 2 : 0;
-        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection-2 : 0;
+        var minSectionIndex = 0;
+        var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
         int laneDirection = experimentNum % 2 == 0 ? 1: -1;
         var expLaneChoices = new int[] { 2, 3 };
         int lastPickedLaneIdx = 0;
@@ -523,7 +535,7 @@ public class RacingEnvController : MonoBehaviour
                     {
                         // print("Trying to find a spot for " + Agents[i].name + " near section " + initialSection);
                         if (mode == EnvironmentMode.Training)
-                            Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), initialSection + 1);
+                            Agents[i].m_SectionIndex = UnityEngine.Random.Range(Math.Max(initialSection - 1, 0), Math.Min(initialSection + 2, maxSectionIndex));
                         else
                             Agents[i].m_SectionIndex = UnityEngine.Random.Range(initialSection, initialSection);
                         Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;

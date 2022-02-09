@@ -159,7 +159,7 @@ namespace KartGame.AI
             {
                 forwardCollision = false;
             }
-            if (is_active && m_SectionIndex != m_envController.goalSection)
+            if (is_active || m_SectionIndex != m_envController.goalSection)
                 AddReward(m_envController.NotAtGoalPenalty);
         }
 
@@ -362,8 +362,8 @@ namespace KartGame.AI
 
         public void ApplySectionReward()
         {
-            AddReward(m_envController.PassCheckpointStateReward /LaneDifferenceRewardDivider);
-            AddReward(m_envController.PassCheckpointStateReward / VelocityDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointLaneReward /LaneDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointVelocityReward / VelocityDifferenceRewardDivider);
         }
 
         public void Deactivate(bool disable=false)
