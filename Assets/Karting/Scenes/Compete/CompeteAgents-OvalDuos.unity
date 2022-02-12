@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45078796, g: 0.29568976, b: 0.42685202, a: 1}
+  m_IndirectSpecularColor: {r: 0.4515345, g: 0.29632834, b: 0.4279434, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1119,12 +1119,12 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1533209902}
+      objectReference: {fileID: 2025686600}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: otherAgents.Array.data[1]
       value: 
-      objectReference: {fileID: 1490529404}
+      objectReference: {fileID: 1700101628}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -1324,7 +1324,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b6b695cdb27122945a76efa9836e81cb,
+      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4272,7 +4272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &453834922
 Transform:
   m_ObjectHideFlags: 0
@@ -6772,12 +6772,12 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1533209902}
+      objectReference: {fileID: 2025686600}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: otherAgents.Array.data[1]
       value: 
-      objectReference: {fileID: 1490529404}
+      objectReference: {fileID: 1700101628}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: otherAgents.Array.data[2]
@@ -6982,7 +6982,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b6b695cdb27122945a76efa9836e81cb,
+      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8055,13 +8055,13 @@ MonoBehaviour:
     - {fileID: 2049744153}
     - {fileID: 935556465}
   - Racers:
-    - {fileID: 1533209902}
-    - {fileID: 1490529404}
+    - {fileID: 2025686600}
+    - {fileID: 1700101628}
   Agents:
   - {fileID: 2049744153}
   - {fileID: 935556465}
-  - {fileID: 1533209902}
-  - {fileID: 1490529404}
+  - {fileID: 2025686600}
+  - {fileID: 1700101628}
   Sections:
   - {fileID: 919539596}
   - {fileID: 612146711}
@@ -9333,7 +9333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1268148852
 Transform:
   m_ObjectHideFlags: 0
@@ -12533,7 +12533,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 223121e3efaf127469efc7e0c55dba4d,
+      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13842,7 +13842,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 223121e3efaf127469efc7e0c55dba4d,
+      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

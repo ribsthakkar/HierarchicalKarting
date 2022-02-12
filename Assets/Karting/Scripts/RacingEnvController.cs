@@ -315,8 +315,7 @@ public class RacingEnvController : MonoBehaviour
     public void ApplySectionRewardsAndPenalties(KartAgent agent)
     {
         agent.ApplySectionReward();
-        agent.AddReward(PassCheckpointBase);
-        agent.AddReward(PassCheckpointTimeMultiplier * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
+        //agent.AddReward(PassCheckpointBase + PassCheckpointTimeMultiplier * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
 
         int agentTeam = getTeamID(agent);
         int totalAgentsPastSection = 0;
@@ -369,9 +368,18 @@ public class RacingEnvController : MonoBehaviour
         //    }
         //}
 
-        float[] groupRewardMultipliers = {20f, 15f, 10f, 7.5f};
+        float[] agentRewardMultipliers = { PassCheckpointTimeMultiplier, PassCheckpointTimeMultiplier * 0.6f, PassCheckpointTimeMultiplier * 0.4f, PassCheckpointTimeMultiplier * 0.2f };
+        float[] agentRewardBase = {PassCheckpointBase, PassCheckpointBase * 0.75f, PassCheckpointBase * 0.5f, PassCheckpointBase * 0.375f };
+        float agentRewardMult = agentRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
+        float agentRewardB = agentRewardBase[Math.Min(totalAgentsPastSection - 1, 3)];
+
+        agent.AddReward(agentRewardB + agentRewardMult * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
+
+        float[] groupRewardMultipliers = { 5f, 3f, 2f, 1f };
+        float[] groupRewardBase = { 20f, 15f, 10f, 7.5f };
         float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
-        m_AgentGroups[agentTeam].AddGroupReward(groupRewardMult  * (1f - (episodeSteps * 1f) / maxEpisodeSteps));
+        float groupRewardB = groupRewardBase[Math.Min(totalAgentsPastSection - 1, 3)];
+        m_AgentGroups[agentTeam].AddGroupReward(groupRewardB + groupRewardMult  * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
 
 
         //float[] groupRewardMultipliers = { 0.3f, 0.15f, -0.15f, -0.3f };
@@ -396,6 +404,12 @@ public class RacingEnvController : MonoBehaviour
                 foreach (KartAgent agent in otherInvolvedAgents)
                 {
                     agent.ApplyHitByOpponentPenalty();
+                    // Double penalties for crashing into teammate
+                    if (getTeamID(triggeringAgent) == getTeamID(agent))
+                    {
+                        triggeringAgent.ApplyHitOpponentPenalty();
+                        agent.ApplyHitByOpponentPenalty();
+                    }
                 }
                 otherInvolvedAgents.Clear();
                 break;
