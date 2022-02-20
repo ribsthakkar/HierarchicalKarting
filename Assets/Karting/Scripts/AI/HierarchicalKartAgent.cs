@@ -1086,6 +1086,8 @@ namespace KartGame.AI
                     Brake = false,
                     TurnInput = 0
                 };
+            //if (name.Equals(m_envController.Agents[0].name))
+            //    print("Accelerate " + m_Acceleration + " brake " + m_Brake + "  steering " + m_Steering);
             return new InputData
             {
                 Accelerate = m_Acceleration,

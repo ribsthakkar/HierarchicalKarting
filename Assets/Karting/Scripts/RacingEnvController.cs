@@ -70,9 +70,13 @@ public class RacingEnvController : MonoBehaviour
     [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired velocity?")]
     public float PassCheckpointVelocityReward = 4f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
-    public float PassCheckpointBase = 5f;
+    public float PassCheckpointBase = 20f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoints in faster time")]
-    public float PassCheckpointTimeMultiplier = 10f;
+    public float PassCheckpointTimeMultiplier = 5f;
+    [Tooltip("How much reward is given when the agent successfully passes the checkpoints?")]
+    public float TeamPassCheckpointBase = 20f;
+    [Tooltip("How much reward is given when the agent successfully passes the checkpoints in faster time")]
+    public float TeamPassCheckpointTimeMultiplier = 5f;
     [Tooltip("How much penalty is given for being behind first agent?")]
     public float BeingBehindOpponentCheckpointPenalty = -0.06f;
     [Tooltip("How much penalty is given for being behind first agent?")]
@@ -368,15 +372,15 @@ public class RacingEnvController : MonoBehaviour
         //    }
         //}
 
-        float[] agentRewardMultipliers = { PassCheckpointTimeMultiplier, PassCheckpointTimeMultiplier * 0.6f, PassCheckpointTimeMultiplier * 0.4f, PassCheckpointTimeMultiplier * 0.2f };
-        float[] agentRewardBase = {PassCheckpointBase, PassCheckpointBase * 0.75f, PassCheckpointBase * 0.5f, PassCheckpointBase * 0.375f };
+        float[] agentRewardMultipliers = { PassCheckpointTimeMultiplier, PassCheckpointTimeMultiplier * 0.75f, PassCheckpointTimeMultiplier * 0.6f, PassCheckpointTimeMultiplier * 0.4f };
+        float[] agentRewardBase = {PassCheckpointBase, PassCheckpointBase * 0.75f, PassCheckpointBase * 0.6f, PassCheckpointBase * 0.4f };
         float agentRewardMult = agentRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
         float agentRewardB = agentRewardBase[Math.Min(totalAgentsPastSection - 1, 3)];
 
         agent.AddReward(agentRewardB + agentRewardMult * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
 
-        float[] groupRewardMultipliers = { 5f, 3f, 2f, 1f };
-        float[] groupRewardBase = { 20f, 15f, 10f, 7.5f };
+        float[] groupRewardMultipliers = { TeamPassCheckpointTimeMultiplier, TeamPassCheckpointTimeMultiplier * 0.75f, TeamPassCheckpointTimeMultiplier * 0.6f, TeamPassCheckpointTimeMultiplier * 0.4f };
+        float[] groupRewardBase = { TeamPassCheckpointBase, TeamPassCheckpointBase * 0.75f, TeamPassCheckpointBase * 0.6f, TeamPassCheckpointBase * 0.4f };
         float groupRewardMult = groupRewardMultipliers[Math.Min(totalAgentsPastSection - 1, 3)];
         float groupRewardB = groupRewardBase[Math.Min(totalAgentsPastSection - 1, 3)];
         m_AgentGroups[agentTeam].AddGroupReward(groupRewardB + groupRewardMult  * (maxEpisodeSteps - episodeSteps) / (1f * maxEpisodeSteps));
@@ -403,11 +407,14 @@ public class RacingEnvController : MonoBehaviour
                 triggeringAgent.ApplyHitOpponentPenalty();
                 foreach (KartAgent agent in otherInvolvedAgents)
                 {
-                    agent.ApplyHitByOpponentPenalty();
                     // Double penalties for crashing into teammate
                     if (getTeamID(triggeringAgent) == getTeamID(agent))
                     {
-                        triggeringAgent.ApplyHitOpponentPenalty();
+                        triggeringAgent.ApplyHitOpponentPenalty(2f);
+                        agent.ApplyHitByOpponentPenalty(1.5f);
+                    }
+                    else
+                    {
                         agent.ApplyHitByOpponentPenalty();
                     }
                 }
@@ -471,7 +478,7 @@ public class RacingEnvController : MonoBehaviour
         var minSectionIndex = 0;
         var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
         int laneDirection = experimentNum % 2 == 0 ? 1: -1;
-        var expLaneChoices = new int[] { 2, 3 };
+        var expLaneChoices = new int[] { 2, 1, 4, 3 };
         int lastPickedLaneIdx = 0;
         for (int i = 0; i < Agents.Length; i++)
         {
@@ -514,7 +521,7 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_Kart.m_AccumulatedAngularV = UnityEngine.Random.Range(Agents[i].m_Kart.TireWearRate * minTirewearProportion, Agents[i].m_Kart.TireWearRate * maxTirewearProportion);
                     furthestForwardSection = Math.Max(Agents[i].m_SectionIndex, furthestForwardSection);
                     furthestBackSection = Math.Min(Agents[i].m_SectionIndex, furthestBackSection);
-                    if (mode == EnvironmentMode.Experiment)
+                    if (mode == EnvironmentMode.Experiment || mode == EnvironmentMode.Race)
                     {
                         if (laneDirection == 1)
                         {
@@ -553,7 +560,7 @@ public class RacingEnvController : MonoBehaviour
                         else
                             Agents[i].m_SectionIndex = UnityEngine.Random.Range(initialSection, initialSection);
                         Agents[i].InitCheckpointIndex = Agents[i].m_SectionIndex;
-                        if (mode == EnvironmentMode.Experiment)
+                        if (mode == EnvironmentMode.Experiment || mode == EnvironmentMode.Race)
                         {
                             Agents[i].m_Lane = expLaneChoices[lastPickedLaneIdx + laneDirection];
                             lastPickedLaneIdx += laneDirection;

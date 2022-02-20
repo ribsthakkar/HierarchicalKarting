@@ -1324,7 +1324,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
+      objectReference: {fileID: 5022602860645237092, guid: ca3888f9dd7c69843a27099a6bf5770c,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6982,7 +6982,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
+      objectReference: {fileID: 5022602860645237092, guid: ca3888f9dd7c69843a27099a6bf5770c,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8099,6 +8099,8 @@ MonoBehaviour:
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
   PassCheckpointTimeMultiplier: 20
+  TeamPassCheckpointBase: 20
+  TeamPassCheckpointTimeMultiplier: 5
   BeingBehindOpponentCheckpointPenalty: -0.06
   BeingBehindTeammateCheckpointPenalty: -0.02
   TeamScoreRewardMultiplier: 0.75
@@ -12533,7 +12535,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
+      objectReference: {fileID: 5022602860645237092, guid: 46da85405572bc64badd4c591736d64b,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13246,6 +13248,8 @@ MonoBehaviour:
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 2
   PassCheckpointTimeMultiplier: 20
+  TeamPassCheckpointBase: 20
+  TeamPassCheckpointTimeMultiplier: 5
   BeingBehindOpponentCheckpointPenalty: -0.06
   BeingBehindTeammateCheckpointPenalty: -0.02
   TeamScoreRewardMultiplier: 0.75
@@ -13842,7 +13846,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9e0297cffd6530d488d03925733060fa,
+      objectReference: {fileID: 5022602860645237092, guid: 46da85405572bc64badd4c591736d64b,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

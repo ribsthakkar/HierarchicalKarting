@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45078796, g: 0.29568976, b: 0.42685202, a: 1}
+  m_IndirectSpecularColor: {r: 0.4515345, g: 0.29632834, b: 0.4279434, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -702,12 +702,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 619116701}
+      objectReference: {fileID: 1363226780}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 701285941}
+      objectReference: {fileID: 1211542090}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -716,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.111
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -726,7 +726,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -110.414
+      value: -110.8
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -2636,7 +2636,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -3314,12 +3314,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
     type: 3}
   m_PrefabInstance: {fileID: 695900665}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &701285941 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 619116700}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &717698226
 PrefabInstance:
@@ -4363,9 +4357,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Teams:
+  - Racers:
+    - {fileID: 1363226779}
+  - Racers:
+    - {fileID: 1098230961}
   Agents:
-  - {fileID: 1283800002}
-  - {fileID: 727026990}
+  - {fileID: 1363226779}
+  - {fileID: 1098230961}
   Sections:
   - {fileID: 157562409}
   - {fileID: 247003394}
@@ -4416,9 +4415,15 @@ MonoBehaviour:
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
   PassCheckpointStateReward: 0.1
+  PassCheckpointLaneReward: 4
+  PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
   PassCheckpointTimeMultiplier: 10
-  BeingBehindCheckpoingPenalty: -0.1
+  TeamPassCheckpointBase: 20
+  TeamPassCheckpointTimeMultiplier: 5
+  BeingBehindOpponentCheckpointPenalty: -0.06
+  BeingBehindTeammateCheckpointPenalty: -0.02
+  TeamScoreRewardMultiplier: 0.75
   ReversePenalty: -0.5
   SwervingPenalty: -0.5
   ReachGoalCheckpointRewardMultplier: 5
@@ -4427,11 +4432,13 @@ MonoBehaviour:
   SpeedReward: 0.07
   SlowMovingPenalty: -3
   AccelerationReward: 0.002
+  NotAtGoalPenalty: -0.001
   MaxLaneChanges: 4
   laps: 3
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
+  disableOnEnd: 0
   sectionHorizon: 5
 --- !u!65 &968688638 stripped
 BoxCollider:
@@ -4975,7 +4982,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5597,7 +5604,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6158,8 +6165,9 @@ MonoBehaviour:
     RayDistance: 20
     WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
+  teamAgents: []
   otherAgents:
-  - {fileID: 727026990}
+  - {fileID: 1363226779}
   CheckpointMask:
     serializedVersion: 2
     m_Bits: 16384
@@ -6183,13 +6191,25 @@ MonoBehaviour:
   m_SectionIndex: 0
   m_Lane: 0
   m_LaneChanges: 0
+  m_IllegalLaneChanges: 0
   anyHit: 0
   m_timeSteps: 0
   LaneDifferenceRewardDivider: 1
   VelocityDifferenceRewardDivider: 1
+  AverageVelDifference: 0
+  AverageLaneDifference: 0
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
   is_active: 1
+  forwardCollision: 0
+  forwardCollisions: 0
+  lastCollisionTime: 0
+  velocityBucketSize: 1
+  timePrecision: 100
+  collisionWindow: 0.1
+  sectionWindow: 2
+  treeSearchDepth: 8
+  runQuasiMCTS: 0
 --- !u!1001 &1120278769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6540,12 +6560,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
   m_LocalRotation: {x: -4.1988552e-10, y: 0.9952246, z: -0.09761158, w: -0.0000000042810537}
-  m_LocalPosition: {x: 14.111, y: 3.279, z: -110.414}
+  m_LocalPosition: {x: 17.6, y: 3.279, z: -110.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 88.627, y: 0, z: 0}
+--- !u!4 &1211542090 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1363226778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1256805496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6923,7 +6949,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7159,7 +7185,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1283800002}
+      objectReference: {fileID: 1098230961}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow

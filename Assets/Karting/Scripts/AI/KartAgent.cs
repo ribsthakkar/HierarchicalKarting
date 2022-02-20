@@ -216,7 +216,7 @@ namespace KartGame.AI
         public void UpdateLaneDifferenceCalculation(int sectionIndex, int lane)
         {
             if (m_UpcomingLanes.ContainsKey(sectionIndex % m_envController.Sections.Length))
-                AverageLaneDifference = (Math.Abs(lane - m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]) + AverageLaneDifference * (sectionIndex - InitCheckpointIndex - 1)) / (sectionIndex - InitCheckpointIndex);
+                AverageLaneDifference = (Mathf.Max((m_Kart.transform.position - m_envController.Sections[sectionIndex % m_envController.Sections.Length].getBoxColliderForLane(m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]).transform.position).magnitude-1.3f, 0f) + AverageLaneDifference * (sectionIndex - InitCheckpointIndex - 1)) / (sectionIndex - InitCheckpointIndex);
         }
 
         public void UpdateVelocityDifferenceCalculation(int sectionIndex, float velocity)
@@ -345,19 +345,19 @@ namespace KartGame.AI
             return 0;
         }
 
-        public void ApplyHitWallPenalty()
+        public void ApplyHitWallPenalty(float factor=1f)
         {
-            AddReward(m_envController.WallHitPenalty);
+            AddReward(factor*m_envController.WallHitPenalty);
         }
 
-        public void ApplyHitOpponentPenalty()
+        public void ApplyHitOpponentPenalty(float factor=1f)
         {
-            AddReward(m_envController.OpponentHitPenalty);
+            AddReward(factor*m_envController.OpponentHitPenalty);
         }
 
-        public void ApplyHitByOpponentPenalty()
+        public void ApplyHitByOpponentPenalty(float factor=1f)
         {
-            AddReward(m_envController.HitByOpponentPenalty);
+            AddReward(factor*m_envController.HitByOpponentPenalty);
         }
 
         public void ApplySectionReward()
