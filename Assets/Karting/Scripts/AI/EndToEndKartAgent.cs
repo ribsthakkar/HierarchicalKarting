@@ -252,7 +252,7 @@ namespace KartGame.AI
              * 8 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + ((name.Contains("3") || name.Contains("4") || name.Equals("E2E")) ? 7 : 8) + (12 * (teamAgents.Length + otherAgents.Length));
+            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + (name.Equals("E2E")? 7: 8) + (12 * (teamAgents.Length + otherAgents.Length));
             gameParams = new DiscreteGameParams
             {
                 collisionWindow = collisionWindow,
@@ -279,7 +279,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
-            if (!name.Contains("4") && !name.Contains("3") && !name.Equals("E2E")) sensor.AddObservation(is_active);
+            if (!name.Equals("E2E")) sensor.AddObservation(is_active);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
             sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);

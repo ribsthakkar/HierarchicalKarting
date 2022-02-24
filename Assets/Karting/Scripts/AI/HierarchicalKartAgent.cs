@@ -382,7 +382,7 @@ namespace KartGame.AI
              * 8 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + ((name.Contains("3") || name.Contains("4") || name.Equals("MCTS-RL"))?7:8) + (12 * (otherAgents.Length + teamAgents.Length));
+            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + (name.Equals("MCTS-RL") || name.Equals("Fixed-RL") ?7:8) + (12 * (otherAgents.Length + teamAgents.Length));
             prepareForReuse();
         }
 
@@ -459,7 +459,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
-            if (!name.Contains("4") && !name.Contains("3") && !name.Equals("MCTS-RL")) sensor.AddObservation(is_active);
+            if (!name.Equals("MCTS-RL") && !name.Equals("Fixed-RL")) sensor.AddObservation(is_active);
             sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());

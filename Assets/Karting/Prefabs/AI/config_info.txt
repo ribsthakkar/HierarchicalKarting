@@ -9,11 +9,12 @@
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-0
+basemult-teamrewards-test-0
 - HierarchicalAgent-Team
-  - learning_rate: 0.0002
-  - beta: 0.004
+  - learning_rate: 0.0003
+  - beta: 0.003
   - learning_rate_schedule: linear
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -31,33 +32,12 @@ run-0
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-1
+basemult-teamrewards-test-1
 - HierarchicalAgent-Team
-  - learning_rate: 0.0002
-  - beta: 0.004
-  - learning_rate_schedule: constant
-- HierarchicalAgent-TeamDOE
-  - no value options
-- E2EAgent-Team
-  - no value options
-- FixedHierarchicalAgent-Team
-  - no value options
-- HierarchicalAgent-LSTM
-  - no value options
-- E2EAgent-LSTM
-  - no value options
-- HierarchicalAgent-NonLSTM
-  - no value options
-- E2EAgent-NonLSTM
-  - no value options
-- FixedHierarchicalAgent-NonLSTM
-  - no value options
-
-run-2
-- HierarchicalAgent-Team
-  - learning_rate: 0.0002
-  - beta: 0.005
+  - learning_rate: 0.0003
+  - beta: 0.003
   - learning_rate_schedule: linear
+  - beta_schedule: constant
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -75,11 +55,12 @@ run-2
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-3
+basemult-teamrewards-test-2
 - HierarchicalAgent-Team
-  - learning_rate: 0.0002
-  - beta: 0.005
+  - learning_rate: 0.0003
+  - beta: 0.003
   - learning_rate_schedule: constant
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -97,33 +78,12 @@ run-3
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-4
+basemult-teamrewards-test-3
 - HierarchicalAgent-Team
-  - learning_rate: 0.0002
-  - beta: 0.006
-  - learning_rate_schedule: linear
-- HierarchicalAgent-TeamDOE
-  - no value options
-- E2EAgent-Team
-  - no value options
-- FixedHierarchicalAgent-Team
-  - no value options
-- HierarchicalAgent-LSTM
-  - no value options
-- E2EAgent-LSTM
-  - no value options
-- HierarchicalAgent-NonLSTM
-  - no value options
-- E2EAgent-NonLSTM
-  - no value options
-- FixedHierarchicalAgent-NonLSTM
-  - no value options
-
-run-5
-- HierarchicalAgent-Team
-  - learning_rate: 0.0002
-  - beta: 0.006
+  - learning_rate: 0.0003
+  - beta: 0.003
   - learning_rate_schedule: constant
+  - beta_schedule: constant
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -141,11 +101,12 @@ run-5
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-6
+basemult-teamrewards-test-4
 - HierarchicalAgent-Team
   - learning_rate: 0.0003
   - beta: 0.004
   - learning_rate_schedule: linear
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -163,11 +124,35 @@ run-6
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-7
+basemult-teamrewards-test-5
+- HierarchicalAgent-Team
+  - learning_rate: 0.0003
+  - beta: 0.004
+  - learning_rate_schedule: linear
+  - beta_schedule: constant
+- HierarchicalAgent-TeamDOE
+  - no value options
+- E2EAgent-Team
+  - no value options
+- FixedHierarchicalAgent-Team
+  - no value options
+- HierarchicalAgent-LSTM
+  - no value options
+- E2EAgent-LSTM
+  - no value options
+- HierarchicalAgent-NonLSTM
+  - no value options
+- E2EAgent-NonLSTM
+  - no value options
+- FixedHierarchicalAgent-NonLSTM
+  - no value options
+
+basemult-teamrewards-test-6
 - HierarchicalAgent-Team
   - learning_rate: 0.0003
   - beta: 0.004
   - learning_rate_schedule: constant
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -185,33 +170,12 @@ run-7
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-8
+basemult-teamrewards-test-7
 - HierarchicalAgent-Team
   - learning_rate: 0.0003
-  - beta: 0.005
-  - learning_rate_schedule: linear
-- HierarchicalAgent-TeamDOE
-  - no value options
-- E2EAgent-Team
-  - no value options
-- FixedHierarchicalAgent-Team
-  - no value options
-- HierarchicalAgent-LSTM
-  - no value options
-- E2EAgent-LSTM
-  - no value options
-- HierarchicalAgent-NonLSTM
-  - no value options
-- E2EAgent-NonLSTM
-  - no value options
-- FixedHierarchicalAgent-NonLSTM
-  - no value options
-
-run-9
-- HierarchicalAgent-Team
-  - learning_rate: 0.0003
-  - beta: 0.005
+  - beta: 0.004
   - learning_rate_schedule: constant
+  - beta_schedule: constant
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -229,11 +193,12 @@ run-9
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-10
+basemult-teamrewards-test-8
 - HierarchicalAgent-Team
-  - learning_rate: 0.0003
-  - beta: 0.006
+  - learning_rate: 0.0004
+  - beta: 0.003
   - learning_rate_schedule: linear
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -251,11 +216,12 @@ run-10
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-11
+basemult-teamrewards-test-9
 - HierarchicalAgent-Team
-  - learning_rate: 0.0003
-  - beta: 0.006
-  - learning_rate_schedule: constant
+  - learning_rate: 0.0004
+  - beta: 0.003
+  - learning_rate_schedule: linear
+  - beta_schedule: constant
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -273,11 +239,58 @@ run-11
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-12
+basemult-teamrewards-test-10
+- HierarchicalAgent-Team
+  - learning_rate: 0.0004
+  - beta: 0.003
+  - learning_rate_schedule: constant
+  - beta_schedule: linear
+- HierarchicalAgent-TeamDOE
+  - no value options
+- E2EAgent-Team
+  - no value options
+- FixedHierarchicalAgent-Team
+  - no value options
+- HierarchicalAgent-LSTM
+  - no value options
+- E2EAgent-LSTM
+  - no value options
+- HierarchicalAgent-NonLSTM
+  - no value options
+- E2EAgent-NonLSTM
+  - no value options
+- FixedHierarchicalAgent-NonLSTM
+  - no value options
+
+basemult-teamrewards-test-11
+- HierarchicalAgent-Team
+  - learning_rate: 0.0004
+  - beta: 0.003
+  - learning_rate_schedule: constant
+  - beta_schedule: constant
+- HierarchicalAgent-TeamDOE
+  - no value options
+- E2EAgent-Team
+  - no value options
+- FixedHierarchicalAgent-Team
+  - no value options
+- HierarchicalAgent-LSTM
+  - no value options
+- E2EAgent-LSTM
+  - no value options
+- HierarchicalAgent-NonLSTM
+  - no value options
+- E2EAgent-NonLSTM
+  - no value options
+- FixedHierarchicalAgent-NonLSTM
+  - no value options
+
+basemult-teamrewards-test-12
 - HierarchicalAgent-Team
   - learning_rate: 0.0004
   - beta: 0.004
   - learning_rate_schedule: linear
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -295,11 +308,35 @@ run-12
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-13
+basemult-teamrewards-test-13
+- HierarchicalAgent-Team
+  - learning_rate: 0.0004
+  - beta: 0.004
+  - learning_rate_schedule: linear
+  - beta_schedule: constant
+- HierarchicalAgent-TeamDOE
+  - no value options
+- E2EAgent-Team
+  - no value options
+- FixedHierarchicalAgent-Team
+  - no value options
+- HierarchicalAgent-LSTM
+  - no value options
+- E2EAgent-LSTM
+  - no value options
+- HierarchicalAgent-NonLSTM
+  - no value options
+- E2EAgent-NonLSTM
+  - no value options
+- FixedHierarchicalAgent-NonLSTM
+  - no value options
+
+basemult-teamrewards-test-14
 - HierarchicalAgent-Team
   - learning_rate: 0.0004
   - beta: 0.004
   - learning_rate_schedule: constant
+  - beta_schedule: linear
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team
@@ -317,77 +354,12 @@ run-13
 - FixedHierarchicalAgent-NonLSTM
   - no value options
 
-run-14
+basemult-teamrewards-test-15
 - HierarchicalAgent-Team
   - learning_rate: 0.0004
-  - beta: 0.005
-  - learning_rate_schedule: linear
-- HierarchicalAgent-TeamDOE
-  - no value options
-- E2EAgent-Team
-  - no value options
-- FixedHierarchicalAgent-Team
-  - no value options
-- HierarchicalAgent-LSTM
-  - no value options
-- E2EAgent-LSTM
-  - no value options
-- HierarchicalAgent-NonLSTM
-  - no value options
-- E2EAgent-NonLSTM
-  - no value options
-- FixedHierarchicalAgent-NonLSTM
-  - no value options
-
-run-15
-- HierarchicalAgent-Team
-  - learning_rate: 0.0004
-  - beta: 0.005
+  - beta: 0.004
   - learning_rate_schedule: constant
-- HierarchicalAgent-TeamDOE
-  - no value options
-- E2EAgent-Team
-  - no value options
-- FixedHierarchicalAgent-Team
-  - no value options
-- HierarchicalAgent-LSTM
-  - no value options
-- E2EAgent-LSTM
-  - no value options
-- HierarchicalAgent-NonLSTM
-  - no value options
-- E2EAgent-NonLSTM
-  - no value options
-- FixedHierarchicalAgent-NonLSTM
-  - no value options
-
-run-16
-- HierarchicalAgent-Team
-  - learning_rate: 0.0004
-  - beta: 0.006
-  - learning_rate_schedule: linear
-- HierarchicalAgent-TeamDOE
-  - no value options
-- E2EAgent-Team
-  - no value options
-- FixedHierarchicalAgent-Team
-  - no value options
-- HierarchicalAgent-LSTM
-  - no value options
-- E2EAgent-LSTM
-  - no value options
-- HierarchicalAgent-NonLSTM
-  - no value options
-- E2EAgent-NonLSTM
-  - no value options
-- FixedHierarchicalAgent-NonLSTM
-  - no value options
-
-run-17
-- HierarchicalAgent-Team
-  - learning_rate: 0.0004
-  - beta: 0.006
-  - learning_rate_schedule: constant
+  - beta_schedule: constant
 - HierarchicalAgent-TeamDOE
   - no value options
 - E2EAgent-Team

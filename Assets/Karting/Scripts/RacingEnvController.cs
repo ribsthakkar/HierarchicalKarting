@@ -478,7 +478,7 @@ public class RacingEnvController : MonoBehaviour
         var minSectionIndex = 0;
         var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
         int laneDirection = experimentNum % 2 == 0 ? 1: -1;
-        var expLaneChoices = new int[] { 2, 1, 4, 3 };
+        var expLaneChoices = new int[] { 2, 3, 1, 4, 1, 4, 2, 3 };
         int lastPickedLaneIdx = 0;
         for (int i = 0; i < Agents.Length; i++)
         {
