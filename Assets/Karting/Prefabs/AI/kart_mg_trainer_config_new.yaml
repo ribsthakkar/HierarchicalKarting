@@ -297,7 +297,7 @@ behaviors:
     threaded: false
 
   FixedHierarchicalAgent-Team:
-    trainer_type: ppo
+    trainer_type: poca
     hyperparameters:
       batch_size: 512
       buffer_size: 10240
