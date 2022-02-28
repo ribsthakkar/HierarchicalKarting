@@ -7,13 +7,21 @@ using UnityEngine;
 
 namespace KartGame.AI.LQR
 {
+    /**
+    * Abstract class for LQ costs that return the appropriate matrices based on the weights that would be set in the explicit class derivations
+    **/
     public abstract class KartLQRCosts
     {
+    
         public abstract Vector<double> getQVec();
         public abstract Matrix<double> getQMatrix();
         public abstract Matrix<double> getRMatrix();
     }
 
+    /**
+    * Areach avoid cost derivation.
+    * We construct cost matrix based on a target state, and a set of weights for each of those parts of the state, a control cost, opponent target states, estimated weights for opponents to hit those target states, and the weights for avoiding opposing states
+    **/
     public class LQRCheckpointReachAvoidCost: KartLQRCosts
     {
         Vector<double> targetState;
@@ -43,6 +51,9 @@ namespace KartGame.AI.LQR
             this.opponentTargetWeights = opponentTargetWeights;
         }
 
+        /**
+         * 2nd-order components of the quadratic costs
+        **/
         public override Matrix<double> getQMatrix()
         {
             if (qMat == null)
@@ -86,6 +97,9 @@ namespace KartGame.AI.LQR
             return qMat;
         }
 
+        /**
+         * Linear components of the quadratic cost functions
+        **/
         public override Vector<double> getQVec()
         {
             if (qVec == null)
@@ -112,6 +126,9 @@ namespace KartGame.AI.LQR
             return qVec;
         }
 
+        /**
+         * Basic cost matrix for the control
+        **/
         public override Matrix<double> getRMatrix()
         {
             if (rMat == null)

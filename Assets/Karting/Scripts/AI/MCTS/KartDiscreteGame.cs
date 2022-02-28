@@ -8,6 +8,9 @@ using UnityEngine;
 
 namespace KartGame.AI.MCTS
 {
+    /**
+    * Structs for constructing the discrete representation of the Racing Game
+    **/
     public struct DiscreteKartAction
     {
         public int min_velocity;
@@ -48,11 +51,19 @@ namespace KartGame.AI.MCTS
             };
         }
 
+
+        /**
+        * Average velocity bucket
+        **/
         public float getAverageVelocity()
         {
             return (1.0f * (min_velocity + max_velocity)) / 2.0f;
         }
 
+        /**
+        * Time optimal control estimate to determine how long it would take to start at some initial velocity and reach a target velocity for a given distance
+        * Return -1 if it is impossible to make such an action.
+        **/
         private float computeTOC(ArcadeKart kart, float distance, float initV, float finalV)
         {
             // Full acceleration or full braking does not have enough distance
@@ -88,6 +99,9 @@ namespace KartGame.AI.MCTS
             }
         }
 
+        /**
+        * Return the next game state if an action was played by the player who is up next
+        **/
         public DiscreteKartState applyAction(DiscreteKartAction action, RacingEnvController environment, DiscreteGameParams gameParams)
         {
             ArcadeKart kart = environment.Agents[player].m_Kart;
@@ -144,7 +158,10 @@ namespace KartGame.AI.MCTS
         public int lastCompletedSection;
         public int finalSection;
 
-
+        /**
+        * Determine which player is upnext.
+        * First the player with the furthest back checkpoint makes a choice, then time at checkpoint, then velocity.
+        **/
         public int upNext()
         {
             var ordered = kartStates.Where(s => true).ToList();
@@ -201,6 +218,13 @@ namespace KartGame.AI.MCTS
             }
             return -1;
         }
+
+        /**
+        * Check if game is over based on conditions: players have reached final checkpoint or next player has no legal choices
+        * Return the normalized game score based on time at final checkpoint to determine the winners. 
+        * Score depends an agent's own time and the time of its teammantes and opponents.
+        * In the two player, head-to-head case, the score is simply time_ego - time_adversary
+        **/
         public Tuple<bool, List<float>> isOver()
         {
             if (nextMoves().Count == 0)
@@ -268,8 +292,13 @@ namespace KartGame.AI.MCTS
                 return Tuple.Create(true, scores);
             }
         }
+
+        /**
+        * Determine the next moves the upNext player can make from the current game state.
+        **/
         public List<DiscreteKartAction> nextMoves()
         {
+            // Generate candidate actions
             int nextPlayer = upNext();
             KartAgent agent = kartAgents[nextPlayer];
             DiscreteKartState currentState = kartStates[nextPlayer];
@@ -286,6 +315,7 @@ namespace KartGame.AI.MCTS
                     });
                 }
             }
+            // Filter out actions without considering collision avoidance
             List<DiscreteKartAction> preCollisionFilteredActions = possibleActions.FindAll((action) =>
             {
             // UnityEngine.Debug.Log(currentState.lane + " " + action.lane + ", " + currentState.player);
@@ -325,7 +355,9 @@ namespace KartGame.AI.MCTS
             {
                 return preCollisionFilteredActions;
             }
-            // If can't find collision free action set, allow collision action-set hoping that Low-level planner will prevent the crash
+            
+            // Check for collision actions based on slowly reducing the collision avoidnace window. SOmetimes our discrete game parameters might be too harsh/coarse.
+            // If can't find collision free action set, allow collision action-set hoping that Low-level planner will prevent the crash iteratively reducing collision window
             List<DiscreteKartAction> filteredActions = new List<DiscreteKartAction>();
             float windowDivider = 1.0f;
             float windowGrowthRate = 2f;
@@ -357,6 +389,10 @@ namespace KartGame.AI.MCTS
 
             return preCollisionFilteredActions;
         }
+
+        /**
+        * Update state of the game based on the action that is applied.
+        **/
         public DiscreteGameState makeMove(DiscreteKartAction action)
         {
             DiscreteGameState newGameState = new DiscreteGameState

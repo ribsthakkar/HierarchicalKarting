@@ -702,12 +702,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1363226780}
+      objectReference: {fileID: 619116701}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1211542090}
+      objectReference: {fileID: 679810228}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -716,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.6
+      value: 14.111
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -726,17 +726,17 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -110.8
+      value: -110.414
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000004281041
+      value: 0.0000000035093015
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.198842e-10
+      value: 3.4419204e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -895,7 +895,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2294,18 +2294,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &491088955 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 332677530}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8765d53e046ef74898109def269b8cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!850595691 &570285531
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -2648,7 +2636,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2884,7 +2872,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 1098230961}
+      objectReference: {fileID: 727026990}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -3168,6 +3156,12 @@ Transform:
 --- !u!4 &619116708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2294172045632017112, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 619116700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &679810228 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
     type: 3}
   m_PrefabInstance: {fileID: 619116700}
   m_PrefabAsset: {fileID: 0}
@@ -4371,12 +4365,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Teams:
   - Racers:
-    - {fileID: 1363226779}
+    - {fileID: 1283800002}
   - Racers:
-    - {fileID: 491088955}
+    - {fileID: 727026990}
   Agents:
-  - {fileID: 1363226779}
-  - {fileID: 491088955}
+  - {fileID: 1283800002}
+  - {fileID: 727026990}
   Sections:
   - {fileID: 157562409}
   - {fileID: 247003394}
@@ -4450,7 +4444,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
 --- !u!65 &968688638 stripped
 BoxCollider:
@@ -4994,7 +4988,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6216,11 +6210,6 @@ MonoBehaviour:
   forwardCollision: 0
   forwardCollisions: 0
   lastCollisionTime: 0
-  velocityBucketSize: 1
-  timePrecision: 100
-  collisionWindow: 0.1
-  sectionWindow: 2
-  treeSearchDepth: 8
   runQuasiMCTS: 0
 --- !u!1001 &1120278769
 PrefabInstance:
@@ -6571,19 +6560,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: -4.198842e-10, y: 0.9952246, z: -0.09761158, w: -0.000000004281041}
-  m_LocalPosition: {x: 17.6, y: 3.279, z: -110.8}
+  m_LocalRotation: {x: 3.4419204e-10, y: 0.9952246, z: -0.09761158, w: 0.0000000035093015}
+  m_LocalPosition: {x: 14.111, y: 3.279, z: -110.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 88.627, y: 0, z: 0}
---- !u!4 &1211542090 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 1363226778}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1256805496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6961,7 +6944,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7197,7 +7180,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 491088955}
+      objectReference: {fileID: 727026990}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow

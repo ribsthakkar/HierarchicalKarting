@@ -10,6 +10,11 @@ public enum SectionType
     Straight = 0,
     Turn = 1
 }
+
+/**
+* Class that handles all of the information about a checkpoint
+* Includes the optimal best choice of lane and calculations estimating how many Gs would be pulled when making a turn over this part of the track
+**/
 public class DiscretePositionTracker : MonoBehaviour
 {
     [Header("Trigger Boxes")]
@@ -83,6 +88,9 @@ public class DiscretePositionTracker : MonoBehaviour
         
     }
 
+    /**
+    * Get box collider game object for a lane in this checkpoint
+    **/
     public BoxCollider getBoxColliderForLane(int lane)
     {
         switch(lane)
@@ -97,6 +105,9 @@ public class DiscretePositionTracker : MonoBehaviour
         }
     }
 
+    /**
+    * Determine which lane a player is in
+    **/
     public int CalculateLane(ArcadeKart player)
     {
         float distanceLane1 = Vector3.Distance(player.transform.position, Lane1.transform.position);
@@ -131,12 +142,17 @@ public class DiscretePositionTracker : MonoBehaviour
         }
     }
 
+    /**
+    * Calculate the average radius of turning for a given initial lane when entering checkpont and final lane when exiting checkpoint
+    **/
     public float radiusOfLane(int initLane, int finalLane)
     {
         return (radiuses[initLane - 1] + radiuses[finalLane - 1]) / 2.0f;
     }
 
-
+    /**
+    * Estimate how much one would need to travel through the track section when entering checkpoint at initial lane and exiting at final lane
+    **/
     public float distanceToTravel(int initLane, int finalLane)
     {
         if (isStraight())
@@ -151,6 +167,9 @@ public class DiscretePositionTracker : MonoBehaviour
         }
     }
 
+    /**
+    * Compute an estimate for the overall gForce integrated when making a turn from initial to final lane
+    **/
     public float tireLoad(float velocity, int initLane, int finalLane)
     {
         if (isStraight())
@@ -165,12 +184,17 @@ public class DiscretePositionTracker : MonoBehaviour
         }
     }
 
+
     public bool isStraight()
     {
         return trackInsideRadius == 0f;
         // return transform.parent.GetComponent<MeshCollider>().sharedMesh.name == "ModularTrackStraight";
     }
 
+    /**
+    * Check if a velocity is feasible to attack this section of the track given some car parameters and calculations of the track's geometry
+    * Used by MCTS
+    **/
     internal bool isVelFeasible(int velocity, int initLane, int finalLane, float tireWearProportion, float maxGs, float minGs)
     {
         if (isStraight())
@@ -186,13 +210,18 @@ public class DiscretePositionTracker : MonoBehaviour
             return gs <= maxGs - g_diff;
         }
     }
-    
+
+
     public void resetColors()
     {
         for (int i = 1; i <= 4; i++)
             getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
     }
 
+    /**
+    * Return 1 or -1 depending on whether is good to be on the left or the right of the lane. This is used in heuristics for randomly sampling lane choices
+    * during RL training or for the MCTS heuristic.
+    **/
     public int getOptimalLaneSign()
     {
         if (optimalLane == 1)
@@ -205,6 +234,9 @@ public class DiscretePositionTracker : MonoBehaviour
         return 0;
     }
 
+    /**
+    * Get optimal choice of next lane to hit from the current lane. This optimal choice is based on the best fixed racing line.
+    **/
     public int getOptimalNextLane()
     {
         return optimalLane;

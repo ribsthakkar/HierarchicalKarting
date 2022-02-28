@@ -34,6 +34,12 @@ public class RacingTeam
     public List<KartAgent> Racers;
 }
 
+/**
+* Class responsible for managing the racing environment
+* Resets differently depending on whether it is set for Racing, Experiment or Training modes
+* Outlines the teams in the game
+* Stores the rewards that the RL algorithms use during training
+**/
 public class RacingEnvController : MonoBehaviour
 {
     [Tooltip("What are the teams in the game?")]
@@ -130,6 +136,7 @@ public class RacingEnvController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Create Agent groups and calcualte the checkpoint index of the goal based on the number of laps.
         m_AgentGroups = new List<SimpleMultiAgentGroup>();
         for (int i = 0; i < Agents.Length; i++)
         {
@@ -148,6 +155,10 @@ public class RacingEnvController : MonoBehaviour
         //ResetGame();
     }
 
+    /**
+    * Rewards added after the game has run out of time or all players have reached teh goal
+    * The score is normalized between -1 and 1 and euqally applied to all team members depending on the overall performance of the teams
+    **/
     void AddGoalTimingRewards()
     {
         if(Agents.Length == 1)
@@ -161,8 +172,6 @@ public class RacingEnvController : MonoBehaviour
         List<float> gtRewards = new List<float>();
         float maxReward = 1f;
         float minReward = -1f;
-        float maxGTReward = -1000f;
-        float minGTReward = 1000f;
         for (int i = 0; i < Agents.Length;i++)
         {
             if (Agents[i].m_timeSteps == 0)
@@ -217,7 +226,7 @@ public class RacingEnvController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (inactiveAgents.Count == Agents.Length)
+        if (inactiveAgents.Count == Agents.Length) // Everyone has finished or deactivated
         {
 
             // print("from here 1");
@@ -252,7 +261,7 @@ public class RacingEnvController : MonoBehaviour
         else
         {
             episodeSteps += 1;
-            if (episodeSteps >= maxEpisodeSteps)
+            if (episodeSteps >= maxEpisodeSteps) // Game has run out of time
             {
                 foreach (KartAgent agent in Agents)
                 {
@@ -288,6 +297,10 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
+    /**
+    * Coroutine to check all experiments done when multiple environments are runnign experiments simulatenously
+    * Once they all finish, the game ends.
+    **/
     IEnumerator checkAllExperimentsDone()
     {
         while (experimentNum == TotalExperiments)
@@ -316,6 +329,10 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
+    /**
+    * For an agent, apply penalties and rewards based on the time at which they reached the section
+    * Also include group rewards/penalties for a team's overall performance
+    **/
     public void ApplySectionRewardsAndPenalties(KartAgent agent)
     {
         agent.ApplySectionReward();
@@ -392,6 +409,9 @@ public class RacingEnvController : MonoBehaviour
 
     }
 
+    /**
+    * Switch to handle various events that occur in the environment and the penalties or rewards that need to be enacted based on the involving/triggering agents
+    **/
     public void ResolveEvent(Event triggeringEvent, KartAgent triggeringAgent, HashSet<KartAgent> otherInvolvedAgents)
     {
         //print("Resolving event");
@@ -450,6 +470,9 @@ public class RacingEnvController : MonoBehaviour
         }
     }
 
+    /**
+    * Routine to reset the game.
+    **/
     void ResetGame()
     {
         float minTirewearProportion = mode == EnvironmentMode.Training ? 0.0f : 0.25f;
@@ -484,7 +507,7 @@ public class RacingEnvController : MonoBehaviour
         {
             if (!headToHead)
             {
-                // Randomly Set Iniital Track Position
+                // Randomly Set Iniital Track Position for all agents (only used in Training mode)
                 while (true)
                 {
                     Agents[i].m_SectionIndex = UnityEngine.Random.Range(minSectionIndex, maxSectionIndex);
@@ -513,6 +536,7 @@ public class RacingEnvController : MonoBehaviour
             }
             else
             {
+                // Set the first agent so we can then place the other agents near them in the headtohead mode
                 if (addedColliders.Count == 0)
                 {
                     Agents[i].m_SectionIndex = UnityEngine.Random.Range(minSectionIndex, maxSectionIndex);
@@ -550,7 +574,7 @@ public class RacingEnvController : MonoBehaviour
                     Agents[i].m_UpcomingVelocities.Clear();
                     addedColliders.Add(collider);
                 }
-                else
+                else // Place remaining agents nearby. +/- one checkpoint
                 {
                     while (true)
                     {

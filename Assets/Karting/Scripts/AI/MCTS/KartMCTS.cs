@@ -12,6 +12,9 @@ using MathNet.Numerics.Distributions;
 
 namespace KartGame.AI.MCTS
 {
+    /**
+     * Class that represents a TreeNode in the MCTS Calculations
+     **/
     public class KartMCTSNode
     {
         public DiscreteGameState state;
@@ -33,6 +36,12 @@ namespace KartGame.AI.MCTS
             this.createdBy = createdBy;
         }
     }
+
+    /**
+    * Implementation of the Monte Carlo Tree Search algorithm
+    * Much of the algorithm is the same as the original with one exception in the simulation step
+    * The simulation step uses a heuristic to prioritize choices that would be more optimal such as being faster or closer to the optimal racing lane.
+    **/
     public class KartMCTS
     {
         static System.Random random = new System.Random();
@@ -108,7 +117,7 @@ namespace KartGame.AI.MCTS
                         bestStates.Add(node.state);
                 }
             }
-            catch (DivideByZeroException e) { }
+            catch (DivideByZeroException) { }
             return bestStates;
         }
 
@@ -241,6 +250,9 @@ namespace KartGame.AI.MCTS
                 DiscreteGameState state = leaf.state;
                 var nextPlayer = state.upNext();
                 int optimalLaneSign = state.envController.Sections[(state.lastCompletedSection) % state.envController.Sections.Length].getOptimalLaneSign();
+
+                // Sort the actions by ones that minimize time first, then by speed, and then by optimal lane choice
+                // Then randomly select the action using absolute value of the Gaussian distribution with relatively low standard deviation
                 var nextActions = state.nextMoves().OrderBy((action) => state.makeMove(action).kartStates[nextPlayer].timeAtSection - state.kartStates[nextPlayer].timeAtSection).ThenByDescending((action) => action.max_velocity).ThenBy((action) => Math.Abs(action.lane - state.kartStates[nextPlayer].lane)).ThenBy((action) => optimalLaneSign * action.lane).ToList();
                 //var nextActions = state.nextMoves().OrderBy((action) => optimalLaneSign * action.lane).ThenByDescending((action) => action.max_velocity).ToList();
                 // UnityEngine.Debug.Log(nextActions[0].max_velocity);

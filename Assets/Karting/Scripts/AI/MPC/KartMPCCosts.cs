@@ -7,6 +7,9 @@ using System.Linq;
 
 namespace KartGame.AI.MPC
 {
+    /**
+    * Abstract class and interface for the Costs/Rewards that would be in the MPC algorithm
+    **/
     public interface KartMPCCosts
     {
         double Evaluate(DoubleVector m);
@@ -20,7 +23,9 @@ namespace KartGame.AI.MPC
         public abstract double Evaluate(DoubleVector m);
     }
 
-
+    /**
+    * Cost that accumulates distance from some target waypoint and the difference in speed at the closest approach to the waypoint
+    **/
     public class WaypointCost: KartMPCCosts
     {
         double position_weight;
@@ -46,10 +51,11 @@ namespace KartGame.AI.MPC
             double speedCost = 0.0;
             for(int j = 0; j < T; j++)
             {
-                double dist = Math.Pow((v[KartMPC.xIndex*T + j] - x), 2) + Math.Pow((v[KartMPC.zIndex*T + j] - z), 2);
+                double dist = Math.Sqrt(Math.Pow((v[KartMPC.xIndex*T + j] - x), 2) + Math.Pow((v[KartMPC.zIndex*T + j] - z), 2));
+                distCost += 0.5 * position_weight * dist;
                 if (dist < minDist)
                 {
-                    distCost = 0.5 * position_weight * dist;
+                    // distCost = 0.5 * position_weight * dist;
                     speedCost = 0.5 * speed_weight * Math.Pow(speed - v[KartMPC.vIndex*T + j], 2);
                 }
             }
@@ -57,6 +63,9 @@ namespace KartGame.AI.MPC
         }
     }
 
+    /**
+    * Cost representation of the on track constraint.
+    **/
     public class DistanceFromCenterCost : KartMPCCosts
     {
         List<Vector2> centerPoints;
@@ -91,6 +100,9 @@ namespace KartGame.AI.MPC
         }
     }
 
+    /**
+    * Reward for how many finer checkpoints a trajectory passes
+    **/
     public class ForwardProgressReward : KartMPCCosts
     {
         List<Vector2> centerPoints;
@@ -120,10 +132,13 @@ namespace KartGame.AI.MPC
                 }
             }
             // UnityEngine.Debug.Log("obj:" + (-bestProgress*weight) + " x " + x.ToString());
-            return -bestProgress * weight;
+            return -(bestProgress-initialIndex) * weight;
         }
     }
 
+    /**
+    * Reward for traveling a large distance
+    **/
     public class DistanceTraveledReward : KartMPCCosts
     {
         double weight;
@@ -148,6 +163,10 @@ namespace KartGame.AI.MPC
         }
     }
 
+    /**
+    * Coupled cost for being close to other trajectories.
+    * Alternative to coupled distance constraint.
+    **/
     public class CoupledDistanceCost : CoupledKartMPCCosts
     {
         double minDist;
@@ -172,6 +191,9 @@ namespace KartGame.AI.MPC
         }
     }
 
+    /**
+    * Reward indicating the difference between opponents progress and your own.
+    **/
     public class CoupledProgressReward: CoupledKartMPCCosts
     {
         List<Vector2> centerPoints;
@@ -181,6 +203,7 @@ namespace KartGame.AI.MPC
 
         public CoupledProgressReward(List<Vector2> centerPoints, int initialIndex, int finalIndex, double weight, int otherIdx)
         {
+            this.centerPoints = centerPoints;
             this.otherIdx = otherIdx;
             this.initialIndex = initialIndex;
             this.finalIndex = finalIndex;

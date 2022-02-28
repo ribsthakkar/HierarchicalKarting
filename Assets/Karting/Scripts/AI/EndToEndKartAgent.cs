@@ -15,20 +15,14 @@ namespace KartGame.AI
 {
     public class EndToEndKartAgent : KartAgent
     {
-        [HideInInspector]
-        public int velocityBucketSize = 1;
-        [HideInInspector]
-        public int timePrecision = 100;
-        [HideInInspector]
-        public float collisionWindow = 0.1f;
-        [HideInInspector]
-        public int sectionWindow = 2;
-        [HideInInspector]
-        public int treeSearchDepth = 8;
+        [HideInInspector] public const int velocityBucketSize = 1;
+        [HideInInspector] public const int timePrecision = 100;
+        [HideInInspector] public const float collisionWindow = 0.1f;
+        [HideInInspector] public const int sectionWindow = 2;
+        [HideInInspector] public const int treeSearchDepth = 8;
         [HideInInspector] DiscreteGameParams gameParams;
         [HideInInspector] KartMCTSNode currentRoot = null;
         [HideInInspector] int CyclesRootProcessed = 0;
-        [HideInInspector] int deadlinesMissed = 0;
         [HideInInspector] int abortAttempts = 0;
         [HideInInspector] bool HLReadyToUse = true;
         [HideInInspector] List<DiscreteGameState> bestStates = new List<DiscreteGameState>();
@@ -54,7 +48,6 @@ namespace KartGame.AI
                         else if (HLReadyToUse)
                         {
                             t = null;
-                            deadlinesMissed = 0;
                         }
                     }
                     if (HLReadyToUse)
@@ -88,6 +81,7 @@ namespace KartGame.AI
             }
         }
 
+        #region QuasiMCTS Code
         public override void prepareForReuse()
         {
             base.prepareForReuse();
@@ -97,7 +91,6 @@ namespace KartGame.AI
                 while (t.IsAlive) ;
                 t = null;
 
-                deadlinesMissed = 0;
             }
             currentRoot = null;
             CyclesRootProcessed = 0;
@@ -115,18 +108,16 @@ namespace KartGame.AI
                 yield return new WaitForSeconds(2f);
             }
             t.Join();
-            //deadlinesMissed += 1;
-            //if (deadlinesMissed > 1)
-            //{
             t = null;
             currentRoot = null;
             CyclesRootProcessed = 0;
-            deadlinesMissed = 0;
             HLReadyToUse = true;
-            //}
             yield return null;
         }
 
+        /**
+         * Although this is an End-to-End RL Kart, we have and MCTS planner here that allows us to collect metrics of how closely the E2E planner follows the MCTS plan
+        **/
         public void planWithMCTS()
         {
             if (currentRoot == null && t == null)
@@ -240,6 +231,7 @@ namespace KartGame.AI
                 t.Start();
             }
         }
+        #endregion
 
         protected override void Awake()
         {
@@ -253,6 +245,8 @@ namespace KartGame.AI
              * 12 -> Other player states
              **/
             brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + (name.Equals("E2E")? 7: 8) + (12 * (teamAgents.Length + otherAgents.Length));
+
+            // construct game params struct for quasi MCTS running
             gameParams = new DiscreteGameParams
             {
                 collisionWindow = collisionWindow,
@@ -263,16 +257,25 @@ namespace KartGame.AI
             };
         }
 
+        /**
+         * Set Divider to just default because there is no target lane in E2E
+        **/
         protected override void setLaneDifferenceDivider(int sectionIndex, int lane)
         {
             LaneDifferenceRewardDivider = 1.0f;
         }
 
+        /**
+         * Set divier to default because there is no target velocity in E2E
+        **/
         protected override void setVelocityDifferenceDivider(int sectionIndex, float velocity)
         {
             VelocityDifferenceRewardDivider = 1.0f;
         }
 
+        /**
+         * Collect Observations for E2E RL brain
+        **/
         public override void CollectObservations(VectorSensor sensor)
         {
             sensor.AddObservation(m_Kart.LocalSpeed());
@@ -376,6 +379,9 @@ namespace KartGame.AI
             }
         }
 
+        /**
+         * Interpret RL brain actions
+        **/
         public override void OnActionReceived(ActionBuffers actions)
         {
             base.OnActionReceived(actions);
@@ -408,6 +414,11 @@ namespace KartGame.AI
             }
         }
 
+        /**
+         * Executed when agent passes through the major checkpoints. 
+         * Updates the section index (aka Checkpoint) and computes illegal lane change information.
+         * Also detects if driving in reverse.
+        **/
         void OnTriggerEnter(Collider other)
         {
             if (!is_active) return;

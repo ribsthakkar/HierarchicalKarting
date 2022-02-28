@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace KartGame.AI.MPC
 {
+    /**
+    * Abstract/Interface of the Dynamics constraints used in the MPC calculations
+    * Also check if the computed inputs satsify the dynamics
+    **/
     public interface KartMPCDynamics
     {
         void AddDynamics(NonlinearProgrammingProblem problem);
@@ -13,6 +17,9 @@ namespace KartGame.AI.MPC
         DoubleVector nextX(DoubleVector x);
     }
 
+    /**
+    * Use the linearized bicycle dynamics.
+    **/
     public class Bicycle : KartMPCDynamics
     {
         double dt;
@@ -23,6 +30,10 @@ namespace KartGame.AI.MPC
         double vUpper;
         double lateralGsUpper;
 
+        /**
+        * Not the full Bicycle dyamics model with tire slip, but simplified with acceleration and yaw-rate inputs and using x,y,v,theta as state.
+        * We also add bounds to the inputs in the state as well as maximum velocity and lateral Gs
+        **/
         public Bicycle(double dt, double aUpper, double aLower, double sUpper, double sLower, double vUpper, double lateralGsUpper)
         {
             this.dt = dt;
