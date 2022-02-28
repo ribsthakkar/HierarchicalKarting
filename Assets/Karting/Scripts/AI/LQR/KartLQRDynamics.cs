@@ -4,9 +4,13 @@ using UnityEngine;
 using CenterSpace.NMath.Core;
 using System;
 using MathNet.Numerics.LinearAlgebra;
+using KartGame.AI.MPC;
 
 namespace KartGame.AI.LQR
 {
+    /**
+    * Construct the A and B matrices for the dynamics of an LQ problem
+    **/
     public abstract class KartLQRDynamics
     {
         public abstract Matrix<double> getA();
@@ -14,6 +18,10 @@ namespace KartGame.AI.LQR
         public abstract int getXDim();
         public abstract int getUDim();
     }
+
+    /**
+    * Linearized dynamics of the simplified bicycle model used in the MPC algorithm. The dynamics are linearized over the initial state.
+    **/
     public class LinearizedBicycle : KartLQRDynamics
     {
         public const int xDim = 4;
@@ -34,10 +42,10 @@ namespace KartGame.AI.LQR
             if (AMat == null)
             {
                 AMat = CreateMatrix.SparseIdentity<double>(xDim);
-                AMat[0, 2] = Math.Cos(initial[3])*dt;
-                AMat[1, 2] = Math.Sin(initial[3])*dt;
-                AMat[0, 3] = -Math.Sin(initial[3])*dt;
-                AMat[1, 3] = Math.Cos(initial[3])*dt;
+                AMat[KartMPC.xIndex, KartMPC.vIndex] = Math.Cos(initial[KartMPC.hIndex]) * dt;
+                AMat[KartMPC.zIndex, KartMPC.vIndex] = Math.Sin(initial[KartMPC.hIndex]) * dt;
+                AMat[KartMPC.xIndex, KartMPC.hIndex] = -Math.Sin(initial[KartMPC.hIndex])*dt;
+                AMat[KartMPC.zIndex, KartMPC.hIndex] = Math.Cos(initial[KartMPC.hIndex])*dt;
             }
             return AMat;
         }
@@ -47,8 +55,8 @@ namespace KartGame.AI.LQR
             if (BMat == null)
             {
                 BMat = CreateMatrix.Sparse<double>(xDim, uDim);
-                BMat[2, 0] = dt;
-                BMat[3, 1] = dt;
+                BMat[KartMPC.vIndex, 0] = dt;
+                BMat[KartMPC.hIndex, 1] = dt;
             }
             return BMat;
         }

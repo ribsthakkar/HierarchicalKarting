@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace KartGame.AI.MPC
 {
-    public class KartMPC : MonoBehaviour
+    public class KartMPC
     {
         public const int xDim = 4;
         public const int uDim = 2;
@@ -30,11 +30,12 @@ namespace KartGame.AI.MPC
             {
                 last_trajectory.Add(solveOptimalControl(dynamics[ii], individualConstraints[ii], individualCosts[ii], initial[ii], steps));
             }
-            print("Finished initial trajectory");
+            // UnityEngine.Debug.Log("Finished initial trajectory");
             for(int iter = 0; iter < maxIBRIterations; iter++)
             {
                 for (int ii = 0; ii < N; ii++)
                 {
+                    // UnityEngine.Debug.Log(iter + ", ii = " + ii);
                     foreach (CoupledKartMPCCosts c in coupledCosts[ii])
                     {
                         c.other = last_trajectory[c.otherIdx];
@@ -69,7 +70,7 @@ namespace KartGame.AI.MPC
                 problem.AddBounds(i, initial[i], initial[i]);
             }
 
-            print(dynamics.areInputsFeasible(x0));
+            // UnityEngine.Debug.Log(dynamics.areInputsFeasible(x0));
 
             // Add dynamic constraints
             dynamics.AddDynamics(problem);
@@ -80,18 +81,18 @@ namespace KartGame.AI.MPC
                 c.AddConstraints(problem);
             }
 
-            var solver = new ActiveSetLineSearchSQP(1e-12);
+            var solver = new ActiveSetLineSearchSQP();
             bool succcess = solver.Solve(problem, x0);
-            print(solver.SolverTerminationStatus);
+            UnityEngine.Debug.Log(solver.SolverTerminationStatus);
             // print(constraints[0].isSatisfied(solver.OptimalX));
             //var solverParams = new StochasticHillClimbingParameters { Minimize = true, TimeLimitMilliSeconds = 1500, Presolve = true };
             //var solver = new StochasticHillClimbingSolver();
             //solver.Solve(problem, x0, solverParams);
 
-            print(dynamics.areInputsFeasible(solver.OptimalX));
+            UnityEngine.Debug.Log(dynamics.areInputsFeasible(solver.OptimalX));
 
             DoubleMatrix m = new DoubleMatrix(solver.OptimalX).Resize(solver.OptimalX.Length / 6, 6).Transpose();
-            print(objective(solver.OptimalX) + " " + m.ToString());
+            UnityEngine.Debug.Log(objective(solver.OptimalX) + " " + m.ToString());
             return solver.OptimalX;
         }
     }

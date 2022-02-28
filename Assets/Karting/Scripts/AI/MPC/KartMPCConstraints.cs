@@ -6,6 +6,11 @@ using UnityEngine;
 
 namespace KartGame.AI.MPC
 {
+
+    /**
+    * Abstract/interface representations of Costs that would be part of the MPC algorithm
+    * The implemented functions add the constraints to a Problem instance and return if they are satisfied for a given trajectory
+     **/
     public interface KartMPCConstraints
     {
         void AddConstraints(NonlinearProgrammingProblem problem);
@@ -21,6 +26,10 @@ namespace KartGame.AI.MPC
         public abstract bool isSatisfied(DoubleVector x);
     }
 
+    /**
+     * Constraint to ensure the car is on track.
+     * Player is at most some distance away from the nearest progress checkpoint defining the center line of the track
+    **/
     public class OnTrackConstraint : KartMPCConstraints
     {
         List<Vector2> centerPoints;
@@ -58,7 +67,6 @@ namespace KartGame.AI.MPC
         public bool isSatisfied(DoubleVector x)
         {
             int T = x.Length / (KartMPC.xDim + KartMPC.uDim);
-            double cost = 0;
             for (int t = 1; t < T; t++)
             {
                 int i = t;
@@ -77,6 +85,10 @@ namespace KartGame.AI.MPC
         }
     }
 
+    /**
+     * Constraint limiting how close two players can get next to one antoher. 
+     * THis is to ensure collision avoidance.
+    **/
     public class CoupledDistanceConstraint : CoupledKartMPCConstraints
     {
         double minDist;
@@ -88,7 +100,6 @@ namespace KartGame.AI.MPC
         public override void AddConstraints(NonlinearProgrammingProblem problem)
         {
             int T = problem.NumVariables / (KartMPC.xDim + KartMPC.uDim);
-            double cost = 0;
             for (int t = 1; t < T; t++)
             {
                 int i = t;
@@ -103,7 +114,6 @@ namespace KartGame.AI.MPC
         public override bool isSatisfied(DoubleVector x)
         {
             int T = x.Length / (KartMPC.xDim + KartMPC.uDim);
-            double cost = 0;
             for (int t = 1; t < T; t++)
             {
                 int i = t;

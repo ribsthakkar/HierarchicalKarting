@@ -48,11 +48,19 @@ Our controller implementations all reside in the
    `Assets/Karting/Scenes/Compete/CompeteAgents-ComplexAll` or the
    `Assets/Karting/Scenes/Compete/CompeteAgents-OvalAll` scene to find
    pre-loaded racing environments for every pair of agents.
+
+![](./readme_images/SceneListing.png)
+
 2. Disable/Enable the desired racing environments that include desired
    pair of agents to be tested. Note all of the MARL agents already
    refer to proper the pre-trained policies.
+
+![](./readme_images/EnvEnable.png)
+
 3. Select the environment mode in inspector panel. 
     
+![](./readme_images/EnvModeSelect.png)
+
    1.  If the environment is set to Training mode, then the agents will
        be spawned in random locations and the hierarchical control will
        be disabled.
@@ -64,15 +72,37 @@ Our controller implementations all reside in the
    3.  If the environment is set to Race mode, the game will run
        simulations until play mode has ended.
      
-4. Set the Cinemachine Virtual Camera to follow the desired Agent's game
+4. Set the Cinemachine Virtual Camera GameObject Script's Follow and Look At parameters the desired Agent's game
    object and Kart.
+
+![](./readme_images/CameraSetup.png)
+
+
 5. Select which enabled environment's race details should appear on the
    screen by finding the TelemetryViewer Script settings in the GameHUD
-   game object's inspector panel.
+   game object's inspector panel. 2 can be set at a time, but if only one environment is in use, then disable the second telemetry viewer.
+
+![](./readme_images/TelemetryViewerSetup.png)
+
 6. Press play in the Unity Editor to start simulations.
 
+![](./readme_images/RunGame.gif)
+
 ## Media
+Paper on arXiv [here](https://arxiv.org/abs/2202.12861) 
 
 Link to a video of some tactics executed by our hierarchical agents in
 the simulations:
 [Here](https://www.youtube.com/playlist?list=PLEkfZ4KJSCcG4yGWD7K5ENGXW5nBPYiF1)
+
+## Cite
+```
+@misc{thakkar2022hierarchical,
+      title={Hierarchical Control for Multi-Agent Autonomous Racing}, 
+      author={Rishabh Saumil Thakkar and Aryaman Singh Samyal and David Fridovich-Keil and Zhe Xu and Ufuk Topcu},
+      year={2022},
+      eprint={2202.12861},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA}
+}
+```

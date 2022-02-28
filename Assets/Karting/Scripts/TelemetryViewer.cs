@@ -74,15 +74,15 @@ public class TelemetryViewer : MonoBehaviour
                 bestLapTimes[i] = 0f;
                 lastEpisodeSteps[i] = 0;
             }
-            if (agent.gameObject.activeSelf)
+            if (agent.is_active)
             {
                 lastOverallTimes[i] = agent.m_envController.episodeSteps * Time.fixedDeltaTime;
             }
-            if (!agent.gameObject.activeSelf && lastEpisodeSteps[i] < minTimes && !winner.Equals("Tie"))
+            if (!agent.is_active && lastEpisodeSteps[i] < minTimes && !winner.Equals("Tie"))
             {
                 winner = agent.name;
                 minTimes = lastOverallTimes[i];
-            } else if (!agent.gameObject.activeSelf && lastOverallTimes[i] == minTimes)
+            } else if (!agent.is_active && lastOverallTimes[i] == minTimes)
             {
                 winner = "Tie";
             }
@@ -94,6 +94,8 @@ public class TelemetryViewer : MonoBehaviour
             telemetryInfo.AppendLine(agent.name + " Laps Completed: " + lastCompletedLaps[i].ToString() + "/" + agent.m_envController.laps.ToString());
             telemetryInfo.AppendLine(agent.name + " Illegal Lane Changes: " + agent.m_IllegalLaneChanges);
             telemetryInfo.AppendLine(agent.name + " Collisions: " + agent.forwardCollisions);
+            telemetryInfo.AppendLine(agent.name + " Avg Target Lane Difference: " + agent.AverageLaneDifference);
+            telemetryInfo.AppendLine(agent.name + " Avg Target Vel Difference: " + agent.AverageVelDifference);
 
             i++;
         }

@@ -57,7 +57,11 @@ namespace KartGame.AI
         public LayerMask Mask;
         [Tooltip("Sensors contain ray information to sense out the world, you can have as many sensors as you need.")]
         public Sensor[] Sensors;
-        [Header("Opponents"), Tooltip("What are the other agents in the racing game?")]
+
+        [Header("Racers")]
+        [Tooltip("Who are the racers on your team in the game?")]
+        public KartAgent[] teamAgents;
+        [Tooltip("Who are the opposing agents in the racing game?")]
         public KartAgent[] otherAgents;
 
         [HideInInspector] protected int sectionHorizon;
@@ -90,19 +94,16 @@ namespace KartGame.AI
         public float GroundCastDistance;
         #endregion
 
-#region Debugging
+        #region Debugging
         [Header("Debug Option")] [Tooltip("Should we visualize the rays that the agent draws?")]
         public bool ShowRaycasts;
-#endregion
+        #endregion
 
-        [HideInInspector]
-        public ArcadeKart m_Kart;
-        [HideInInspector]
-        public bool m_Acceleration;
-        [HideInInspector]
-        public bool m_Brake;
-        [HideInInspector]
-        public float m_Steering;
+        #region StateVariables
+        [HideInInspector] public ArcadeKart m_Kart;
+        [HideInInspector] public bool m_Acceleration;
+        [HideInInspector] public bool m_Brake;
+        [HideInInspector] public float m_Steering;
         [HideInInspector] public int m_SectionIndex;
         [HideInInspector] public int m_Lane;
         [HideInInspector] public int m_LaneChanges;
@@ -111,6 +112,8 @@ namespace KartGame.AI
         [HideInInspector] public int m_timeSteps = 0;
         [HideInInspector] public float LaneDifferenceRewardDivider = 1.0f;
         [HideInInspector] public float VelocityDifferenceRewardDivider = 1.0f;
+        [HideInInspector] public float AverageVelDifference;
+        [HideInInspector] public float AverageLaneDifference;
         [HideInInspector] public Dictionary<int, int> m_UpcomingLanes = new Dictionary<int, int>();
         [HideInInspector] public Dictionary<int, float> m_UpcomingVelocities = new Dictionary<int, float>();
         [HideInInspector] public HashSet<KartAgent> hitAgents = new HashSet<KartAgent>();
@@ -118,10 +121,11 @@ namespace KartGame.AI
         [HideInInspector] public float m_LastAccumulatedReward;
         [HideInInspector] protected int episodeSteps = 0;
         [HideInInspector] public bool is_active = true;
-        public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
+        [HideInInspector] public Dictionary<int, int> sectionTimes = new Dictionary<int, int>();
         [HideInInspector] public bool forwardCollision = false;
         [HideInInspector] public int forwardCollisions = 0;
         [HideInInspector] public int lastCollisionTime = 0;
+        #endregion
 
         public virtual void Start()
         {        
@@ -138,6 +142,7 @@ namespace KartGame.AI
                 Physics.Raycast(AgentSensorTransform.position, Sensors[5].Transform.forward, out var hitAgentInfo3,
                 0.8f, AgentMask, QueryTriggerInteraction.Ignore);
 
+            // Discretely Count collisions by check if consecutive hits to other agents are greater than 1.5 seconds apart
             if (hitAgent && !forwardCollision && (lastCollisionTime == 0 || episodeSteps - lastCollisionTime > 75))
             {
                 forwardCollision = true;
@@ -153,6 +158,8 @@ namespace KartGame.AI
             {
                 forwardCollision = false;
             }
+            if (is_active || m_SectionIndex != m_envController.goalSection)
+                AddReward(m_envController.NotAtGoalPenalty);
         }
 
         protected virtual void Awake()
@@ -160,17 +167,6 @@ namespace KartGame.AI
             m_Kart = GetComponent<ArcadeKart>();
             if (AgentSensorTransform == null) AgentSensorTransform = transform;
             sectionHorizon = m_envController.sectionHorizon;
-        }
-
-        public virtual void prepareForReuse()
-        {
-            sectionTimes[m_SectionIndex] = 0;
-            m_Kart.UpdateStats();
-            forwardCollisions = 0;
-            forwardCollision = false;
-            lastCollisionTime = 0;
-            m_UpcomingLanes = new Dictionary<int, int>();
-            m_UpcomingVelocities = new Dictionary<int, float>();
         }
 
         void LateUpdate()
@@ -182,7 +178,7 @@ namespace KartGame.AI
             var dist2Track = (m_Kart.transform.position - m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform.position).magnitude;
             if (inAir && dist2Track > 25)
             {
-                // print("I am falling");
+                // print(agent.name + " is falling");
                 switch(Mode)
                 {
                     case AgentMode.Training:
@@ -203,16 +199,61 @@ namespace KartGame.AI
 
         }
 
+        /**
+         * Reset some parameters for re-using this game object for training purposes or resetting the environment
+         **/
+        public virtual void prepareForReuse()
+        {
+            // Reset some parameters when re-activating this game object
+            sectionTimes[m_SectionIndex] = 0;
+            m_Kart.UpdateStats();
+            forwardCollisions = 0;
+            forwardCollision = false;
+            lastCollisionTime = 0;
+            AverageVelDifference = 0f;
+            AverageLaneDifference = 0f;
+            m_UpcomingLanes = new Dictionary<int, int>();
+            m_UpcomingVelocities = new Dictionary<int, float>();
+        }
+
+        /**
+         * Update average lane difference state. Used for metrics to compare implemented hierarchical agents.
+         **/
+        public void UpdateLaneDifferenceCalculation(int sectionIndex, int lane)
+        {
+            if (m_UpcomingLanes.ContainsKey(sectionIndex % m_envController.Sections.Length))
+                AverageLaneDifference = (Mathf.Max((m_Kart.transform.position - m_envController.Sections[sectionIndex % m_envController.Sections.Length].getBoxColliderForLane(m_UpcomingLanes[sectionIndex % m_envController.Sections.Length]).transform.position).magnitude-1.3f, 0f) + AverageLaneDifference * (sectionIndex - InitCheckpointIndex - 1)) / (sectionIndex - InitCheckpointIndex);
+        }
+
+        /**
+         * Update average velocity difference state. Used for metrics to compare implemented hierarchical agents.
+         **/
+        public void UpdateVelocityDifferenceCalculation(int sectionIndex, float velocity)
+        {
+            if (m_UpcomingVelocities.ContainsKey(sectionIndex % m_envController.Sections.Length))
+                AverageVelDifference = ((velocity - m_UpcomingVelocities[sectionIndex % m_envController.Sections.Length]) + AverageVelDifference * (sectionIndex - InitCheckpointIndex - 1)) / (sectionIndex - InitCheckpointIndex);
+        }
+
+
+        /**
+         * Set the reward divider for RL agents based on lane difference
+        **/
         protected virtual void setLaneDifferenceDivider(int sectionIndex, int lane)
         {
             LaneDifferenceRewardDivider = 1.0f;
         }
 
+        /**
+         * Set the reward divider for RL agents based on velocity difference
+        **/
         protected virtual void setVelocityDifferenceDivider(int sectionIndex, float velocity)
         {
             VelocityDifferenceRewardDivider = 1.0f;
         }
 
+        /**
+         * Set random target velocity and lanes. Used for generating plans during RL training.
+        **/
         public virtual void planRandomly()
         {
             for (int i = m_SectionIndex + 1; i < Math.Min(m_SectionIndex + sectionHorizon,1000) + 1; i++)
@@ -225,13 +266,22 @@ namespace KartGame.AI
             }
         }
 
+        /**
+         * Calculate initial plan for agent for waking up the GameObject
+        **/
         public virtual void initialPlan()
         {
             planRandomly();
         }
 
+        /**
+         * Executed when agent passes through the major checkpoints. 
+         * Updates the section index (aka Checkpoint) and computes illegal lane change information.
+         * Also detects if driving in reverse.
+        **/
         void OnTriggerEnter(Collider other)
         {
+            if (!is_active) return;
             var maskedValue = 1 << other.gameObject.layer;
             var triggered = maskedValue & CheckpointMask;
 
@@ -241,14 +291,17 @@ namespace KartGame.AI
             // Ensure that the agent touched the checkpoint and the new index is greater than the m_SectionIndex.
             if ((triggered > 0 && index != -1) && ((index > m_SectionIndex) || (index % m_envController.Sections.Length == 0 && m_SectionIndex % m_envController.Sections.Length == m_envController.Sections.Length - 1)))
             {
+                // If section is in plan, then calculate errors and set reward dividers
                 if (m_UpcomingLanes.ContainsKey(index % m_envController.Sections.Length))
                 {
                     setLaneDifferenceDivider(index, lane);
                     setVelocityDifferenceDivider(index, m_Kart.Rigidbody.velocity.magnitude);
+                    UpdateLaneDifferenceCalculation(index, lane);
+                    UpdateVelocityDifferenceCalculation(index, m_Kart.Rigidbody.velocity.magnitude);
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
-                if (name.Equals("KartClassic_HierarchicalMLAgent"))
+                if (name.Equals(m_envController.Agents[0].name))
                     for(int i = 1; i <=4; i++)
                         m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
                 if (m_LaneChanges + Math.Abs(m_Lane-lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
@@ -320,57 +373,69 @@ namespace KartGame.AI
             return 0;
         }
 
-        public void ApplyHitWallPenalty()
+        #region Penalties/Rewards for RL agents
+        public void ApplyHitWallPenalty(float factor=1f)
         {
-            AddReward(m_envController.WallHitPenalty);
+            AddReward(factor*m_envController.WallHitPenalty);
         }
 
-        public void ApplyHitOpponentPenalty()
+        public void ApplyHitOpponentPenalty(float factor=1f)
         {
-            AddReward(m_envController.OpponentHitPenalty);
+            AddReward(factor*m_envController.OpponentHitPenalty);
         }
 
-        public void ApplyHitByOpponentPenalty()
+        public void ApplyHitByOpponentPenalty(float factor=1f)
         {
-            AddReward(m_envController.HitByOpponentPenalty);
+            AddReward(factor*m_envController.HitByOpponentPenalty);
         }
 
         public void ApplySectionReward()
         {
-            AddReward(m_envController.PassCheckpointStateReward /LaneDifferenceRewardDivider);
-            AddReward(m_envController.PassCheckpointStateReward / VelocityDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointLaneReward /LaneDifferenceRewardDivider);
+            AddReward(m_envController.PassCheckpointVelocityReward / VelocityDifferenceRewardDivider);
+        }
+        #endregion
+
+        /**
+         * Gracefully disable the gameobject when reaching finishline or driving too far in reverse
+        **/
+        public void Deactivate(bool disable=true)
+        {
+            SetZeroInputs();
+            m_Kart.Rigidbody.velocity = Vector3.zero;
+            m_Kart.Rigidbody.angularVelocity = Vector3.zero;
+            m_Kart.Rigidbody.freezeRotation = true;
+            if (disable)
+                gameObject.SetActive(false);
+            gameObject.transform.localScale = Vector3.one*0.001f;
+            is_active = false;
         }
 
-        public void Deactivate()
-        {
-            //m_Kart.Rigidbody.velocity = new Vector3();
-            //foreach (Collider c in GetComponents<Collider>())
-            //{
-            //    c.enabled = false; 
-            //}
-            //gameObject.layer = 2;
-            gameObject.SetActive(false);
-            is_active = false;
-            }
-
+        /**
+         * Re-enable gameObject and reset some parameters when re-activating it 
+        **/
         public void Activate()
         {
             m_LastAccumulatedReward = 0.0f;
             m_timeSteps = 0;
             m_HitOccured = false;
-            //m_Kart.Rigidbody.velocity = new Vector3();
-            //foreach (Collider c in GetComponents<Collider>())
-            //{
-            //    c.enabled = true; 
-            //}
-            //gameObject.layer = 13;
+            m_Kart.Rigidbody.freezeRotation = false;
             gameObject.SetActive(true);
+            gameObject.transform.localScale = Vector3.one;
             is_active = true;
         }
 
+        /**
+         * Process actions received from the Agent Brain for ML Agents
+        **/
         public override void OnActionReceived(ActionBuffers actions)
         {
             base.OnActionReceived(actions);
+            if (!is_active)
+            {
+                SetZeroInputs();
+                return;
+            }
             InterpretDiscreteActions(actions);
 
             // Find the next checkpoint when registering the current checkpoint that the agent has passed.
@@ -395,6 +460,42 @@ namespace KartGame.AI
             }
         }
 
+        public virtual void InterpretDiscreteActions(ActionBuffers actions)
+        {
+            // print("Here ida");
+            m_Steering = actions.ContinuousActions[0];
+            m_Acceleration = actions.DiscreteActions[0] > 1;
+            m_Brake = actions.DiscreteActions[0] < 1;
+        }
+
+        public void SetZeroInputs()
+        {
+            // print("Here ida");
+            m_Steering = 0f;
+            m_Acceleration = false;
+            m_Brake = false;
+        }
+
+        public virtual InputData GenerateInput()
+        {
+            if (!is_active)
+                return new InputData
+                {
+                    Accelerate = false,
+                    Brake = false,
+                    TurnInput = 0
+                };
+            return new InputData
+            {
+                Accelerate = m_Acceleration,
+                Brake = m_Brake,
+                TurnInput = m_Steering
+            };
+        }
+
+        /**
+         * Provide Heuristic function for ML agents to test that the environment is setup correctly using human input 
+        **/
         public override void Heuristic(in ActionBuffers actionsOut)
         {
             ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
@@ -417,6 +518,7 @@ namespace KartGame.AI
 
         }
 
+
         public override void OnEpisodeBegin()
         {
             base.OnEpisodeBegin();
@@ -424,38 +526,12 @@ namespace KartGame.AI
             {
                 case AgentMode.Training:
                     m_Kart.Rigidbody.velocity = default;
-                    m_Acceleration = false;
-                    m_Brake = false;
-                    m_Steering = 0f;
+                    SetZeroInputs();
                     break;
                 default:
                     break;
             }
         }
 
-        public virtual void InterpretDiscreteActions(ActionBuffers actions)
-        {
-            // print("Here ida");
-            m_Steering = actions.ContinuousActions[0];
-            m_Acceleration = actions.DiscreteActions[0] > 1;
-            m_Brake = actions.DiscreteActions[0] < 1;
-        }
-
-        public virtual InputData GenerateInput()
-        {
-            if (!is_active)
-                return new InputData
-                {
-                    Accelerate = false,
-                    Brake = false,
-                    TurnInput = 0
-                };
-            return new InputData
-            {
-                Accelerate = m_Acceleration,
-                Brake = m_Brake,
-                TurnInput = m_Steering
-            };
-        }
     }
 }

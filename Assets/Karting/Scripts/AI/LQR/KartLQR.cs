@@ -9,7 +9,11 @@ namespace KartGame.AI.LQR
 {
     public class KartLQR : MonoBehaviour
     {
-
+        /**
+         * Solve a feedback LQ Nash game
+         * We assume that the dynamics is time invariant
+         * Following the equations from here: https://github.com/HJReachability/ilqgames/blob/master/derivations/feedback_lq_nash.pdf
+        **/
         public static Vector<double> solveFeedbackLQR(List<KartLQRDynamics> dynamics, List<KartLQRCosts> costs, List<Vector<double>> initials, int horizon)
         {
             Matrix<double> P = null;
@@ -65,7 +69,6 @@ namespace KartGame.AI.LQR
                 for (int i = 0; i < players; i++)
                 {
                     Matrix<double> col = CreateMatrix.Sparse<double>(0, dynamics[i].getUDim());
-                    Matrix<double> offDiag = null;
                     for (int j = 0; j < players; j++)
                     {
                         //print(Zs[i].RowCount + " " + Zs[i].ColumnCount);
@@ -77,10 +80,6 @@ namespace KartGame.AI.LQR
                         }
                         else
                         {
-                            //if (offDiag == null)
-                            //{
-                            //    offDiag = dynamics[j].getB().TransposeThisAndMultiply(Zs[j].Multiply(Enumerable.Range(0, players).Where((k) => k != j).Aggregate(,(acc, k) => acc + dynamics[k].getB())));
-                            //}
                             col = col.Stack(Bs[i].TransposeThisAndMultiply(Zs[i].Multiply(Bs[j])));
                         }
                     }
