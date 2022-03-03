@@ -228,7 +228,11 @@ public class RacingEnvController : MonoBehaviour
     {
         if (inactiveAgents.Count == Agents.Length) // Everyone has finished or deactivated
         {
-
+            foreach (KartAgent agent in Agents)
+            {
+                if (agent.is_active)
+                    agent.Deactivate(disableOnEnd);
+            }
             // print("from here 1");
             if (initialStarted && mode == EnvironmentMode.Experiment && experimentNum < TotalExperiments)
             {
@@ -670,6 +674,12 @@ public class RacingEnvController : MonoBehaviour
     {
         // print("Going from lane " + initLane + " to lane " + finalLane + " in section " + Sections[section % Sections.Length].name + "is this long " + Sections[section % Sections.Length].distanceToTravel(initLane, finalLane));
         return Sections[section % Sections.Length].distanceToTravel(initLane, finalLane);
+    }
+
+    public float computeAvgSectionRadius(int section, int initLane, int finalLane)
+    {
+        // print("Going from lane " + initLane + " to lane " + finalLane + " in section " + Sections[section % Sections.Length].name + "is this long " + Sections[section % Sections.Length].distanceToTravel(initLane, finalLane));
+        return Sections[section % Sections.Length].radiusOfLane(initLane, finalLane);
     }
 
     public float computeTireLoadInSection(int section, int max_velocity, int initLane, int finalLane)

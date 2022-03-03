@@ -147,6 +147,8 @@ public class DiscretePositionTracker : MonoBehaviour
     **/
     public float radiusOfLane(int initLane, int finalLane)
     {
+        if (isStraight())
+            return 0;
         return (radiuses[initLane - 1] + radiuses[finalLane - 1]) / 2.0f;
     }
 

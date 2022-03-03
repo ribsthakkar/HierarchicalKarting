@@ -731,12 +731,12 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000000035093015
+      value: -0.0000000042810533
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 3.4419204e-10
+      value: -4.1988546e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -2872,7 +2872,7 @@ PrefabInstance:
         type: 3}
       propertyPath: otherAgents.Array.data[0]
       value: 
-      objectReference: {fileID: 727026990}
+      objectReference: {fileID: 1098230961}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.collisionWindow
@@ -4367,10 +4367,10 @@ MonoBehaviour:
   - Racers:
     - {fileID: 1283800002}
   - Racers:
-    - {fileID: 727026990}
+    - {fileID: 1098230961}
   Agents:
   - {fileID: 1283800002}
-  - {fileID: 727026990}
+  - {fileID: 1098230961}
   Sections:
   - {fileID: 157562409}
   - {fileID: 247003394}
@@ -4988,7 +4988,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5610,7 +5610,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198663, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -6560,7 +6560,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 3.4419204e-10, y: 0.9952246, z: -0.09761158, w: 0.0000000035093015}
+  m_LocalRotation: {x: -4.1988546e-10, y: 0.9952246, z: -0.09761158, w: -0.0000000042810533}
   m_LocalPosition: {x: 14.111, y: 3.279, z: -110.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

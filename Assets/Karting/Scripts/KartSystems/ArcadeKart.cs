@@ -518,13 +518,20 @@ namespace KartGame.KartSystems
 
         public float getMaxSpeedForState()
         {
-            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGs() * 9.81f * (Mathf.Abs(getTurningRadius())));
+            return getMaxSpeedForRadius(getTurningRadius());
+        }
+
+        public float getMaxSpeedForRadius(float radius)
+        {
+            if (radius == 0)
+                return m_FinalStats.TopSpeed;
+            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGs() * 9.81f * (Mathf.Abs(radius)));
             // print(maxAllowedSpeed);
-            if (!(float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
+            if ((float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
             {
                 maxAllowedSpeed = m_FinalStats.TopSpeed;
             }
-            return maxAllowedSpeed;
+            return Mathf.Clamp(maxAllowedSpeed, 0.0001f, m_FinalStats.TopSpeed);
         }
 
         public Vector3 ForwardDirection()

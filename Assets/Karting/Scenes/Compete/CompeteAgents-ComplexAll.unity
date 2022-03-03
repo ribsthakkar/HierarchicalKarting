@@ -5420,7 +5420,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8936,7 +8936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 269521132}
+  - Racers:
+    - {fileID: 526791381}
   Agents:
   - {fileID: 269521132}
   - {fileID: 526791381}
@@ -9426,12 +9430,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 690188231}
+      objectReference: {fileID: 1296297086}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 690188240}
+      objectReference: {fileID: 948367763}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -9440,7 +9444,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.6
+      value: 89.111
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -9450,27 +9454,27 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 262.2
+      value: 262.586
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000008562109
+      value: -0.0000000074150015
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -8.3976914e-10
+      value: -7.272613e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99522465
+      value: 0.9952246
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.097611345
+      value: -0.09761135
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -12954,7 +12958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &481435478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12967,7 +12971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 212102608}
+  - Racers:
+    - {fileID: 1386406127}
   Agents:
   - {fileID: 212102608}
   - {fileID: 1386406127}
@@ -20905,12 +20913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8765d53e046ef74898109def269b8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &690188240 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 690188230}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &692584361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21173,7 +21175,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1508489065}
+      objectReference: {fileID: 1283396213}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -21312,13 +21314,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711707164}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bb4b9b492a196d46b75760761528eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1078163298}
-  envController: {fileID: 1627745233}
+  envController: {fileID: 481435478}
 --- !u!1001 &717698226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25385,7 +25387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 332677539}
+  - Racers:
+    - {fileID: 727026990}
   Agents:
   - {fileID: 332677539}
   - {fileID: 727026990}
@@ -25572,6 +25578,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &948367763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1296297085}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &956550742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29602,7 +29614,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1596230262}
+  - Racers:
+    - {fileID: 195988107}
   Agents:
   - {fileID: 1596230262}
   - {fileID: 195988107}
@@ -31509,8 +31525,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: -8.3976914e-10, y: 0.99522465, z: -0.097611345, w: -0.000000008562109}
-  m_LocalPosition: {x: 17.6, y: 3.279, z: 262.2}
+  m_LocalRotation: {x: -7.272613e-10, y: 0.9952246, z: -0.09761135, w: -0.0000000074150015}
+  m_LocalPosition: {x: 89.111, y: 3.279, z: 262.586}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -33183,7 +33199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1283396213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33196,7 +33212,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1296297094}
+  - Racers:
+    - {fileID: 1416960267}
   Agents:
   - {fileID: 1296297094}
   - {fileID: 1416960267}
@@ -33823,7 +33843,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -34923,7 +34943,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -35656,7 +35676,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1347022099}
+  - Racers:
+    - {fileID: 576421544}
   Agents:
   - {fileID: 1347022099}
   - {fileID: 576421544}
@@ -42039,7 +42063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1508489065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42180,7 +42204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1460051993}
+  - Racers:
+    - {fileID: 1867461281}
   Agents:
   - {fileID: 1460051993}
   - {fileID: 1867461281}
@@ -44449,7 +44477,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 910430395}
+  - Racers:
+    - {fileID: 910430395}
   Agents:
   - {fileID: 910430395}
   - {fileID: 568535833}
@@ -55011,7 +55043,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 57557286}
+  - Racers:
+    - {fileID: 1831028573}
   Agents:
   - {fileID: 57557286}
   - {fileID: 1831028573}

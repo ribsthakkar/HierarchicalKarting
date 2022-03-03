@@ -44,8 +44,8 @@ namespace KartGame.AI.LQR
                 AMat = CreateMatrix.SparseIdentity<double>(xDim);
                 AMat[KartMPC.xIndex, KartMPC.vIndex] = Math.Cos(initial[KartMPC.hIndex]) * dt;
                 AMat[KartMPC.zIndex, KartMPC.vIndex] = Math.Sin(initial[KartMPC.hIndex]) * dt;
-                AMat[KartMPC.xIndex, KartMPC.hIndex] = -Math.Sin(initial[KartMPC.hIndex])*dt;
-                AMat[KartMPC.zIndex, KartMPC.hIndex] = Math.Cos(initial[KartMPC.hIndex])*dt;
+                AMat[KartMPC.xIndex, KartMPC.hIndex] = -Math.Sin(initial[KartMPC.hIndex]) * dt * initial[KartMPC.vIndex];
+                AMat[KartMPC.zIndex, KartMPC.hIndex] = Math.Cos(initial[KartMPC.hIndex]) * dt * initial[KartMPC.vIndex];
             }
             return AMat;
         }

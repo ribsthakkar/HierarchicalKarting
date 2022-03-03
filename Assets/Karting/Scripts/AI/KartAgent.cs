@@ -422,6 +422,8 @@ namespace KartGame.AI
             m_Kart.Rigidbody.freezeRotation = false;
             gameObject.SetActive(true);
             gameObject.transform.localScale = Vector3.one;
+            m_Kart.Rigidbody.velocity = default;
+            SetZeroInputs();
             is_active = true;
         }
 
@@ -522,15 +524,6 @@ namespace KartGame.AI
         public override void OnEpisodeBegin()
         {
             base.OnEpisodeBegin();
-            switch (Mode)
-            {
-                case AgentMode.Training:
-                    m_Kart.Rigidbody.velocity = default;
-                    SetZeroInputs();
-                    break;
-                default:
-                    break;
-            }
         }
 
     }
