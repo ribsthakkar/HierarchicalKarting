@@ -301,9 +301,8 @@ namespace KartGame.AI
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
-                if (name.Equals(m_envController.Agents[0].name))
-                    for(int i = 1; i <=4; i++)
-                        m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
+                if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
+                    m_envController.Sections[index % m_envController.Sections.Length].resetColors();
                 if (m_LaneChanges + Math.Abs(m_Lane-lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);

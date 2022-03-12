@@ -504,7 +504,12 @@ namespace KartGame.KartSystems
 
         public float getMaxLateralGs()
         {
-            return (1 - TireWearProportion()) * (m_FinalStats.MaxGs - m_FinalStats.MinGs) + m_FinalStats.MinGs;
+            return getMaxLateralGsForWear(TireWearProportion());
+        }
+
+        public float getMaxLateralGsForWear(float tireWear)
+        {
+            return (1 - tireWear) * (m_FinalStats.MaxGs - m_FinalStats.MinGs) + m_FinalStats.MinGs;
         }
 
         public float getTurningRadius()
@@ -518,14 +523,14 @@ namespace KartGame.KartSystems
 
         public float getMaxSpeedForState()
         {
-            return getMaxSpeedForRadius(getTurningRadius());
+            return getMaxSpeedForRadiusAndWear(getTurningRadius(), TireWearProportion());
         }
 
-        public float getMaxSpeedForRadius(float radius)
+        public float getMaxSpeedForRadiusAndWear(float radius, float tireWear)
         {
             if (radius == 0)
                 return m_FinalStats.TopSpeed;
-            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGs() * 9.81f * (Mathf.Abs(radius)));
+            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGsForWear(tireWear) * 9.81f * (Mathf.Abs(radius)));
             // print(maxAllowedSpeed);
             if ((float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
             {

@@ -9019,6 +9019,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &324486809
 Transform:
   m_ObjectHideFlags: 0
@@ -9430,12 +9431,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1296297086}
+      objectReference: {fileID: 1460052001}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 948367763}
+      objectReference: {fileID: 1460052002}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -9444,7 +9445,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 89.111
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -9454,27 +9455,27 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 262.586
+      value: -302.8
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000000074150015
+      value: -0.000000008562109
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -7.272613e-10
+      value: -8.3976914e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9952246
+      value: 0.99522465
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09761135
+      value: -0.097611345
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -12958,7 +12959,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &481435478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13022,7 +13023,7 @@ MonoBehaviour:
   - {fileID: 190365858}
   - {fileID: 770639862}
   initialTireWears: []
-  mode: 2
+  mode: 0
   ExperimentName: E2E_vs_Fixed_LQR_Complex
   TotalExperiments: 50
   WallHitPenalty: -0.05
@@ -13054,6 +13055,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &481435479
 Transform:
   m_ObjectHideFlags: 0
@@ -21175,7 +21177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1283396213}
+      objectReference: {fileID: 1509936318}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -21320,7 +21322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1078163298}
-  envController: {fileID: 481435478}
+  envController: {fileID: 1627745233}
 --- !u!1001 &717698226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25470,6 +25472,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!1001 &947105546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25578,12 +25581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &948367763 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 1296297085}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &956550742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29697,6 +29694,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &1118193867
 Transform:
   m_ObjectHideFlags: 0
@@ -31525,8 +31523,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: -7.272613e-10, y: 0.9952246, z: -0.09761135, w: -0.0000000074150015}
-  m_LocalPosition: {x: 89.111, y: 3.279, z: 262.586}
+  m_LocalRotation: {x: -8.3976914e-10, y: 0.99522465, z: -0.097611345, w: -0.000000008562109}
+  m_LocalPosition: {x: 17.6, y: 3.279, z: -302.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -33199,7 +33197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1283396213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33263,7 +33261,7 @@ MonoBehaviour:
   - {fileID: 828156573}
   - {fileID: 1210248275}
   initialTireWears: []
-  mode: 2
+  mode: 0
   ExperimentName: E2E_vs_MCTS_LQR_Complex
   TotalExperiments: 50
   WallHitPenalty: -0.05
@@ -33295,6 +33293,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1283396214
 Transform:
   m_ObjectHideFlags: 0
@@ -35759,6 +35758,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &1363735034
 Transform:
   m_ObjectHideFlags: 0
@@ -40487,6 +40487,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1460051992}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1460052002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1460051992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1465957942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42159,6 +42165,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &1508489066
 Transform:
   m_ObjectHideFlags: 0
@@ -42191,7 +42198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1509936318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42256,7 +42263,7 @@ MonoBehaviour:
   - {fileID: 470032921}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_MCTS_LQR_Complex
+  ExperimentName: MCTS_RL_vs_MCTS_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -42287,6 +42294,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1509936319
 Transform:
   m_ObjectHideFlags: 0
@@ -44464,7 +44472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1627745233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44481,7 +44489,7 @@ MonoBehaviour:
   - Racers:
     - {fileID: 910430395}
   - Racers:
-    - {fileID: 910430395}
+    - {fileID: 568535833}
   Agents:
   - {fileID: 910430395}
   - {fileID: 568535833}
@@ -44529,7 +44537,7 @@ MonoBehaviour:
   - {fileID: 1237969437}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_LQR_Complex
+  ExperimentName: MCTS_RL_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -44560,6 +44568,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1627745234
 Transform:
   m_ObjectHideFlags: 0
@@ -55126,6 +55135,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 0
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &2058157680
 Transform:
   m_ObjectHideFlags: 0

@@ -124,7 +124,7 @@ namespace KartGame.AI
                     {
                         m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed() - Mathf.Abs(KartMCTS.NextGaussian(0, 1.5f, -8f, 8f));
                     }
-                    if (name.Equals(m_envController.Agents[0].name))
+                    if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
                         //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
@@ -145,7 +145,7 @@ namespace KartGame.AI
                     int lane = m_envController.Sections[(i - 1) % m_envController.Sections.Length].getOptimalNextLane();
                     m_UpcomingLanes[i % m_envController.Sections.Length] = lane;
                     m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed();
-                    if (name.Equals(m_envController.Agents[0].name))
+                    if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                     {
                         m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
                         //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
@@ -365,7 +365,7 @@ namespace KartGame.AI
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.max_velocity;
 
-                        if (name.Equals(m_envController.Agents[0].name))
+                        if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                         {
                             m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
                         }

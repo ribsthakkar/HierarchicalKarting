@@ -122,16 +122,29 @@ public class RacingEnvController : MonoBehaviour
     [HideInInspector] public Dictionary<int, Dictionary<int, float>> minSectionTimes = new Dictionary<int, Dictionary<int, float>>();
     [HideInInspector] public Dictionary<int, Dictionary<int, int>> agentsPastSection = new Dictionary<int, Dictionary<int, int>>();
     List<SimpleMultiAgentGroup> m_AgentGroups;
-
+    List<List<int>> allOrderings;
     [Header("Training Params")]
     public int episodeSteps;
     public int maxEpisodeSteps;
     public bool disableOnEnd;
     [Tooltip("How many sections ahead should the agents be looking ahead/driving to")]
     public int sectionHorizon;
+    public bool highlightWaypoints;
 
     bool initialStarted = false;
     bool coroStarted = false;
+
+
+    // Retreived from stack overflow here: https://stackoverflow.com/questions/756055/listing-all-permutations-of-a-string-integer
+    public static IEnumerable<IEnumerable<T>>
+    GetPermutations<T>(IEnumerable<T> list, int length)
+    {
+        if (length == 1) return list.Select(t => new T[] { t });
+
+        return GetPermutations(list, length - 1)
+            .SelectMany(t => list.Where(e => !t.Contains(e)),
+                (t1, t2) => t1.Concat(new T[] { t2 })).ToList();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -152,6 +165,7 @@ public class RacingEnvController : MonoBehaviour
                 m_AgentGroups[i].RegisterAgent(k);
         }
         goalSection = laps * Sections.Length + 1;
+        allOrderings = GetPermutations(Enumerable.Range(0, Agents.Length), Agents.Length).Select(perm => perm.ToList()).ToList();
         //ResetGame();
     }
 
@@ -250,16 +264,18 @@ public class RacingEnvController : MonoBehaviour
                 writer.WriteLine("Experiment " + experimentNum);
                 writer.WriteLine(tm.uiText.text);
                 writer.Close();
-                experimentNum += 1;
             }
 
             AddGoalTimingRewards();
+            if (initialStarted)
+                experimentNum += 1;
             ResetGame();
             if (!initialStarted && mode == EnvironmentMode.Experiment)
             {
                 StreamWriter writer = new StreamWriter("ExperimentLogs/" + ExperimentName + ".txt", false);
                 writer.Close();
             }
+
             initialStarted = true;
         }
         else
@@ -288,13 +304,14 @@ public class RacingEnvController : MonoBehaviour
                     writer.WriteLine("Experiment " + experimentNum);
                     writer.WriteLine(tm.uiText.text);
                     writer.Close();
-                    experimentNum += 1;
                 }
                 AddGoalTimingRewards();
                 //print("from here 2");
+                experimentNum += 1;
                 ResetGame();
             }
         }
+
         if (!coroStarted && mode == EnvironmentMode.Experiment)
         {
             StartCoroutine(checkAllExperimentsDone());
@@ -431,10 +448,10 @@ public class RacingEnvController : MonoBehaviour
                 triggeringAgent.ApplyHitOpponentPenalty();
                 foreach (KartAgent agent in otherInvolvedAgents)
                 {
-                    // Double penalties for crashing into teammate
+                    // Extra penalties for crashing into teammate
                     if (getTeamID(triggeringAgent) == getTeamID(agent))
                     {
-                        triggeringAgent.ApplyHitOpponentPenalty(2f);
+                        triggeringAgent.ApplyHitOpponentPenalty(2.5f);
                         agent.ApplyHitByOpponentPenalty(1.5f);
                     }
                     else
@@ -504,11 +521,12 @@ public class RacingEnvController : MonoBehaviour
         var initialSection = -1;
         var minSectionIndex = 0;
         var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : 0;
-        int laneDirection = experimentNum % 2 == 0 ? 1: -1;
+        int laneDirection = 1;
         var expLaneChoices = new int[] { 2, 3, 1, 4, 1, 4, 2, 3 };
         int lastPickedLaneIdx = 0;
-        for (int i = 0; i < Agents.Length; i++)
+        for (int j = 0; j < allOrderings[experimentNum % allOrderings.Count()].Count(); j++)
         {
+            int i = allOrderings[experimentNum % allOrderings.Count()][j];
             if (!headToHead)
             {
                 // Randomly Set Iniital Track Position for all agents (only used in Training mode)

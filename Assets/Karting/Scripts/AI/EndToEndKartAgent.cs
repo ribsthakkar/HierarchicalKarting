@@ -71,7 +71,7 @@ namespace KartGame.AI
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.max_velocity;
 
-                        if (name.Equals(m_envController.Agents[0].name))
+                        if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                         {
                             m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
                             //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
