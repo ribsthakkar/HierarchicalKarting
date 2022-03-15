@@ -23,6 +23,8 @@ advantages. We show that hierarchical planning for game-theoretic
 reasoning produces competitive behavior even when challenged with
 complex rules and constraints.
 
+Submitted to IEEE - Robotics and Automation Letters - IROS Option
+
 ## Code Structure
 
 Our controller implementations all reside in the
