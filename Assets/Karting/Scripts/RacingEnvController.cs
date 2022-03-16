@@ -316,6 +316,10 @@ public class RacingEnvController : MonoBehaviour
         {
             StartCoroutine(checkAllExperimentsDone());
         }
+        //for (int i =0; i < Agents.Length; i ++)
+        //{
+        //    print(episodeSteps+ ":" + Agents[i].name + " " + Agents[i].m_Kart.Rigidbody.velocity);
+        //}
     }
 
     /**
@@ -330,7 +334,7 @@ public class RacingEnvController : MonoBehaviour
             bool quit = true;
             foreach (RacingEnvController controller in FindObjectsOfType<RacingEnvController>())
             {
-                if (controller.experimentNum != controller.TotalExperiments)
+                if (controller.experimentNum < controller.TotalExperiments)
                 {
                     quit = false;
                 }
@@ -674,8 +678,24 @@ public class RacingEnvController : MonoBehaviour
         for (int i = 0; i < Agents.Length; i++)
         {
             Agents[i].Activate();
+            Agents[i].m_Kart.Rigidbody.transform.position = new Vector3(Agents[i].transform.position.x, 0.28f, Agents[i].transform.position.z);
+            Agents[i].transform.position = Agents[i].m_Kart.Rigidbody.transform.position;
+        }
+        StartCoroutine(StartRaceAfterDelay());
+    }
+
+    IEnumerator StartRaceAfterDelay()
+    {
+        if (mode != EnvironmentMode.Training)
+            yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < Agents.Length; i++)
+        {
+            Agents[i].m_Kart.Rigidbody.constraints = RigidbodyConstraints.None;
+            Agents[i].m_Kart.Rigidbody.velocity = Vector3.zero;
+            Agents[i].m_Kart.SetCanMove(true);
             Agents[i].OnEpisodeBegin();
         }
+        // resetted = true;
     }
 
     public bool sectionIsStraight(int section)

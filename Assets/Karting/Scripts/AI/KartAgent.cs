@@ -189,7 +189,7 @@ namespace KartGame.AI
                         var checkpoint = m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform;
                         transform.localRotation = checkpoint.rotation;
                         transform.position = checkpoint.position;
-                        m_Kart.Rigidbody.velocity = default;
+                        m_Kart.Rigidbody.velocity = Vector3.zero;
                         m_Steering = 0f;
 				        m_Acceleration = m_Brake = false;
                         break;
@@ -403,7 +403,8 @@ namespace KartGame.AI
             SetZeroInputs();
             m_Kart.Rigidbody.velocity = Vector3.zero;
             m_Kart.Rigidbody.angularVelocity = Vector3.zero;
-            m_Kart.Rigidbody.freezeRotation = true;
+            m_Kart.Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            m_Kart.SetCanMove(false);
             if (disable)
                 gameObject.SetActive(false);
             gameObject.transform.localScale = Vector3.one*0.001f;
@@ -421,9 +422,12 @@ namespace KartGame.AI
             m_Kart.Rigidbody.freezeRotation = false;
             gameObject.SetActive(true);
             gameObject.transform.localScale = Vector3.one;
-            m_Kart.Rigidbody.velocity = default;
+            m_Kart.Rigidbody.velocity = Vector3.zero;
+            m_Kart.Rigidbody.angularVelocity = Vector3.zero;
+            // m_Kart.Rigidbody.WakeUp();
             SetZeroInputs();
             is_active = true;
+            // m_Kart.SetCanMove(true);
         }
 
         /**

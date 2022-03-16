@@ -269,6 +269,7 @@ namespace KartGame.KartSystems
             // apply vehicle physics
             if (m_CanMove)
             {
+                // print("Moving vehicle ");
                 MoveVehicle(Input.Accelerate, Input.Brake, Input.TurnInput);
             }
             GroundAirbourne();
@@ -336,7 +337,7 @@ namespace KartGame.KartSystems
             else
             {
                 // use this value to play kart sound when it is waiting the race start countdown.
-                return Input.Accelerate ? 1.0f : 0.0f;
+                return  0.0f;
             }
         }
         void OnEnable()
