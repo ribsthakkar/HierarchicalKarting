@@ -138,21 +138,25 @@ namespace KartGame.AI
             var hitAgent = Physics.Raycast(AgentSensorTransform.position, Sensors[0].Transform.forward, out var hitAgentInfo,
                 0.8f, AgentMask, QueryTriggerInteraction.Ignore) |
                 Physics.Raycast(AgentSensorTransform.position, Sensors[1].Transform.forward, out var hitAgentInfo2,
-                0.8f, AgentMask, QueryTriggerInteraction.Ignore) |
+                0.9f, AgentMask, QueryTriggerInteraction.Ignore) |
                 Physics.Raycast(AgentSensorTransform.position, Sensors[5].Transform.forward, out var hitAgentInfo3,
-                0.8f, AgentMask, QueryTriggerInteraction.Ignore);
+                0.9f, AgentMask, QueryTriggerInteraction.Ignore);
 
+            Debug.DrawRay(AgentSensorTransform.position,  0.9f*Sensors[0].Transform.forward, Color.green);
+            Debug.DrawRay(AgentSensorTransform.position,  0.9f*Sensors[1].Transform.forward, Color.green);
+            Debug.DrawRay(AgentSensorTransform.position,  0.9f*Sensors[5].Transform.forward, Color.green);
+            
             // Discretely Count collisions by check if consecutive hits to other agents are greater than 1.5 seconds apart
-            if (hitAgent && !forwardCollision && (lastCollisionTime == 0 || episodeSteps - lastCollisionTime > 75))
+            if (hitAgent && !forwardCollision && (lastCollisionTime == 0 || m_envController.episodeSteps - lastCollisionTime > 75))
             {
                 forwardCollision = true;
                 forwardCollisions += 1;
-                lastCollisionTime = episodeSteps;
+                lastCollisionTime = m_envController.episodeSteps;
             }
             else if (hitAgent)
             {
                 forwardCollision = true;
-                lastCollisionTime = episodeSteps;
+                lastCollisionTime = m_envController.episodeSteps;
             }
             else
             {

@@ -1,850 +1,1050 @@
 Experiment 0
-Fixed-LQR Speed: 14.9718
-Fixed-LQR Last Lap: 22.88
-Fixed-LQR Best Lap: 20.28
-Fixed-LQR Total Time: 88.98
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.46
+MCTS-LQR Best Lap: 19.46
+MCTS-LQR Total Time: 82.25999
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4173295
+MCTS-LQR Avg Target Vel Difference: -0.20121
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.32
+Fixed-LQR Best Lap: 19.32
+Fixed-LQR Total Time: 82.84
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 14.89765
-MCTS-LQR Last Lap: 22.76
-MCTS-LQR Best Lap: 20.22
-MCTS-LQR Total Time: 88.46
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1698762
+Fixed-LQR Avg Target Vel Difference: -1.137252
 Winner: 
 
 Experiment 1
-Fixed-LQR Speed: 14.89871
-Fixed-LQR Last Lap: 20.6
-Fixed-LQR Best Lap: 20.16
-Fixed-LQR Total Time: 84.2
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.94
+MCTS-LQR Best Lap: 19.72
+MCTS-LQR Total Time: 81.66
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.3579585
+MCTS-LQR Avg Target Vel Difference: 0.04467455
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.12
+Fixed-LQR Best Lap: 19.5
+Fixed-LQR Total Time: 82.56
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 15.00378
-MCTS-LQR Last Lap: 20.58
-MCTS-LQR Best Lap: 20.2
-MCTS-LQR Total Time: 83.66
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 3
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1685318
+Fixed-LQR Avg Target Vel Difference: -1.102589
 Winner: 
 
 Experiment 2
-Fixed-LQR Speed: 14.97215
-Fixed-LQR Last Lap: 20.84
-Fixed-LQR Best Lap: 20
-Fixed-LQR Total Time: 83.28
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.82
+MCTS-LQR Best Lap: 19.56
+MCTS-LQR Total Time: 82.38
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 5
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4347407
+MCTS-LQR Avg Target Vel Difference: -0.1595704
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.7
+Fixed-LQR Best Lap: 18.62
+Fixed-LQR Total Time: 77.25999
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89849
-MCTS-LQR Last Lap: 21.04
-MCTS-LQR Best Lap: 19.94
-MCTS-LQR Total Time: 82.7
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1836959
+Fixed-LQR Avg Target Vel Difference: -0.3165913
 Winner: 
 
 Experiment 3
-Fixed-LQR Speed: 14.93674
-Fixed-LQR Last Lap: 20.38
-Fixed-LQR Best Lap: 19.42
-Fixed-LQR Total Time: 82.6
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.68
+MCTS-LQR Best Lap: 19.56
+MCTS-LQR Total Time: 81.8
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 3
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.3481394
+MCTS-LQR Avg Target Vel Difference: 0.09921509
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.34
+Fixed-LQR Best Lap: 19.34
+Fixed-LQR Total Time: 82.46
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89838
-MCTS-LQR Last Lap: 20.52
+Fixed-LQR Avg Target Lane Difference: 0.1787092
+Fixed-LQR Avg Target Vel Difference: -1.162219
+Winner: 
+
+Experiment 4
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.94
+MCTS-LQR Best Lap: 19.2
+MCTS-LQR Total Time: 81.34
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.3981302
+MCTS-LQR Avg Target Vel Difference: -0.03397354
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.98
+Fixed-LQR Best Lap: 19.1
+Fixed-LQR Total Time: 82.06
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1804102
+Fixed-LQR Avg Target Vel Difference: -1.106541
+Winner: 
+
+Experiment 5
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.84
+MCTS-LQR Best Lap: 19.82
+MCTS-LQR Total Time: 82.74
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4503684
+MCTS-LQR Avg Target Vel Difference: -0.04854919
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.74
+Fixed-LQR Best Lap: 19.74
+Fixed-LQR Total Time: 83.42
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1719816
+Fixed-LQR Avg Target Vel Difference: -1.283753
+Winner: 
+
+Experiment 6
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.5
+MCTS-LQR Best Lap: 19.5
+MCTS-LQR Total Time: 81.08
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5154681
+MCTS-LQR Avg Target Vel Difference: -0.0749618
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.38
+Fixed-LQR Best Lap: 19.38
+Fixed-LQR Total Time: 81.86
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1813012
+Fixed-LQR Avg Target Vel Difference: -0.9436078
+Winner: 
+
+Experiment 7
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.94
+MCTS-LQR Best Lap: 19.66
+MCTS-LQR Total Time: 82.36
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4931372
+MCTS-LQR Avg Target Vel Difference: 0.2180636
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.12
+Fixed-LQR Best Lap: 19.74
+Fixed-LQR Total Time: 83.3
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1661293
+Fixed-LQR Avg Target Vel Difference: -1.282779
+Winner: 
+
+Experiment 8
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.34
+MCTS-LQR Best Lap: 19.74
+MCTS-LQR Total Time: 82.24
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4528521
+MCTS-LQR Avg Target Vel Difference: 0.2047501
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.42
+Fixed-LQR Best Lap: 19.48
+Fixed-LQR Total Time: 82.96
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1679814
+Fixed-LQR Avg Target Vel Difference: -1.132174
+Winner: 
+
+Experiment 9
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.8
+MCTS-LQR Best Lap: 19.64
+MCTS-LQR Total Time: 81.86
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4687976
+MCTS-LQR Avg Target Vel Difference: -0.09818331
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.6
+Fixed-LQR Total Time: 77.08
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1692316
+Fixed-LQR Avg Target Vel Difference: -0.2803831
+Winner: 
+
+Experiment 10
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.96
 MCTS-LQR Best Lap: 19.22
+MCTS-LQR Total Time: 80.92
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.3719196
+MCTS-LQR Avg Target Vel Difference: -0.02644286
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.98
+Fixed-LQR Best Lap: 18.82
+Fixed-LQR Total Time: 81.54
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1758412
+Fixed-LQR Avg Target Vel Difference: -0.9222894
+Winner: 
+
+Experiment 11
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.84
+MCTS-LQR Best Lap: 18.98
+MCTS-LQR Total Time: 80.56
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5035654
+MCTS-LQR Avg Target Vel Difference: 0.2779164
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.22
+Fixed-LQR Best Lap: 18.88
+Fixed-LQR Total Time: 81.56
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1758631
+Fixed-LQR Avg Target Vel Difference: -0.9833372
+Winner: 
+
+Experiment 12
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.24
+MCTS-LQR Best Lap: 19.7
+MCTS-LQR Total Time: 82.16
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5526474
+MCTS-LQR Avg Target Vel Difference: 0.02911673
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.26
+Fixed-LQR Best Lap: 19.6
+Fixed-LQR Total Time: 82.86
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1934531
+Fixed-LQR Avg Target Vel Difference: -1.15494
+Winner: 
+
+Experiment 13
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.84
+MCTS-LQR Best Lap: 19.54
 MCTS-LQR Total Time: 81.88
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 4
-Fixed-LQR Speed: 14.89876
-Fixed-LQR Last Lap: 20.84
-Fixed-LQR Best Lap: 19.68
-Fixed-LQR Total Time: 84.54
+MCTS-LQR Avg Target Lane Difference: 0.444777
+MCTS-LQR Avg Target Vel Difference: -0.006787183
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20
+Fixed-LQR Best Lap: 19.44
+Fixed-LQR Total Time: 82.64
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.93626
-MCTS-LQR Last Lap: 20.72
-MCTS-LQR Best Lap: 19.7
-MCTS-LQR Total Time: 83.88
+Fixed-LQR Avg Target Lane Difference: 0.1732455
+Fixed-LQR Avg Target Vel Difference: -1.170396
+Winner: 
+
+Experiment 14
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.06
+MCTS-LQR Best Lap: 19.42
+MCTS-LQR Total Time: 81.06
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 4
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 5
-Fixed-LQR Speed: 15.00461
-Fixed-LQR Last Lap: 21.52
-Fixed-LQR Best Lap: 20.22
-Fixed-LQR Total Time: 84.72
+MCTS-LQR Avg Target Lane Difference: 0.3865692
+MCTS-LQR Avg Target Vel Difference: 0.1228542
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.82
+Fixed-LQR Best Lap: 19.5
+Fixed-LQR Total Time: 81.72
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.93624
-MCTS-LQR Last Lap: 21.42
-MCTS-LQR Best Lap: 20.14
-MCTS-LQR Total Time: 84.2
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1931177
+Fixed-LQR Avg Target Vel Difference: -0.9677365
+Winner: 
+
+Experiment 15
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.1
+MCTS-LQR Best Lap: 19.56
+MCTS-LQR Total Time: 82.2
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4902406
+MCTS-LQR Avg Target Vel Difference: 0.2578087
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.56
+Fixed-LQR Total Time: 77.08
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1693173
+Fixed-LQR Avg Target Vel Difference: -0.2684574
+Winner: 
+
+Experiment 16
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.94
+MCTS-LQR Best Lap: 19.72
+MCTS-LQR Total Time: 81.66
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 1
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 6
-Fixed-LQR Speed: 14.96871
-Fixed-LQR Last Lap: 20.3
-Fixed-LQR Best Lap: 20.06
-Fixed-LQR Total Time: 82.98
+MCTS-LQR Avg Target Lane Difference: 0.3333966
+MCTS-LQR Avg Target Vel Difference: 0.128988
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.88
+Fixed-LQR Best Lap: 19.8
+Fixed-LQR Total Time: 82.54
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89854
-MCTS-LQR Last Lap: 20.26
-MCTS-LQR Best Lap: 20.12
-MCTS-LQR Total Time: 82.36
+Fixed-LQR Avg Target Lane Difference: 0.1785404
+Fixed-LQR Avg Target Vel Difference: -1.17455
+Winner: 
+
+Experiment 17
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.46
+MCTS-LQR Best Lap: 19.12
+MCTS-LQR Total Time: 80.7
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 3
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 7
-Fixed-LQR Speed: 14.89871
-Fixed-LQR Last Lap: 19.84
-Fixed-LQR Best Lap: 19.56
+MCTS-LQR Avg Target Lane Difference: 0.4706346
+MCTS-LQR Avg Target Vel Difference: 0.3098715
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.7
+Fixed-LQR Best Lap: 19.24
 Fixed-LQR Total Time: 81.7
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.94845
-MCTS-LQR Last Lap: 19.86
-MCTS-LQR Best Lap: 19.48
-MCTS-LQR Total Time: 81.14
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1630797
+Fixed-LQR Avg Target Vel Difference: -0.9946104
 Winner: 
 
-Experiment 8
-Fixed-LQR Speed: 14.93674
-Fixed-LQR Last Lap: 19.86
-Fixed-LQR Best Lap: 19.86
-Fixed-LQR Total Time: 81.78
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89391
-MCTS-LQR Last Lap: 19.96
-MCTS-LQR Best Lap: 19.8
-MCTS-LQR Total Time: 81.14
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 9
-Fixed-LQR Speed: 15.00526
-Fixed-LQR Last Lap: 20.18
-Fixed-LQR Best Lap: 19.64
-Fixed-LQR Total Time: 82.84
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 15.00538
-MCTS-LQR Last Lap: 20.36
-MCTS-LQR Best Lap: 19.98
-MCTS-LQR Total Time: 82.32
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 10
-Fixed-LQR Speed: 14.97147
-Fixed-LQR Last Lap: 21.84
-Fixed-LQR Best Lap: 19.82
-Fixed-LQR Total Time: 84.28
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 15.00066
-MCTS-LQR Last Lap: 21.86
-MCTS-LQR Best Lap: 19.8
-MCTS-LQR Total Time: 83.72
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 4
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 11
-Fixed-LQR Speed: 15.0048
-Fixed-LQR Last Lap: 20.54
-Fixed-LQR Best Lap: 19.8
-Fixed-LQR Total Time: 83
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 15.02534
-MCTS-LQR Last Lap: 20.72
-MCTS-LQR Best Lap: 19.78
-MCTS-LQR Total Time: 82.62
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 12
-Fixed-LQR Speed: 15.00535
-Fixed-LQR Last Lap: 20.54
-Fixed-LQR Best Lap: 19.84
-Fixed-LQR Total Time: 82.75999
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.93503
-MCTS-LQR Last Lap: 20.56
-MCTS-LQR Best Lap: 19.84
-MCTS-LQR Total Time: 82.04
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 13
-Fixed-LQR Speed: 14.89871
-Fixed-LQR Last Lap: 20.16
-Fixed-LQR Best Lap: 19.74
-Fixed-LQR Total Time: 83.1
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.98816
-MCTS-LQR Last Lap: 20.1
-MCTS-LQR Best Lap: 19.74
-MCTS-LQR Total Time: 82.43999
+Experiment 18
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.3
+MCTS-LQR Best Lap: 19.3
+MCTS-LQR Total Time: 81.04
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 3
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 14
-Fixed-LQR Speed: 14.89868
-Fixed-LQR Last Lap: 20.28
-Fixed-LQR Best Lap: 20.06
-Fixed-LQR Total Time: 83.24
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 13.79349
-MCTS-LQR Last Lap: 20.06
-MCTS-LQR Best Lap: 20.02
-MCTS-LQR Total Time: 82.62
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 15
-Fixed-LQR Speed: 15.00415
-Fixed-LQR Last Lap: 20.7
-Fixed-LQR Best Lap: 20.1
-Fixed-LQR Total Time: 83.64
+MCTS-LQR Avg Target Lane Difference: 0.4644577
+MCTS-LQR Avg Target Vel Difference: 0.09827072
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.38
+Fixed-LQR Best Lap: 19.26
+Fixed-LQR Total Time: 81.8
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 14.92865
-MCTS-LQR Last Lap: 20.7
-MCTS-LQR Best Lap: 20.14
-MCTS-LQR Total Time: 83.22
+Fixed-LQR Avg Target Lane Difference: 0.2015065
+Fixed-LQR Avg Target Vel Difference: -1.021416
+Winner: 
+
+Experiment 19
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.02
+MCTS-LQR Best Lap: 19.34
+MCTS-LQR Total Time: 81.88
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 2
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 16
-Fixed-LQR Speed: 14.89869
-Fixed-LQR Last Lap: 20.76
-Fixed-LQR Best Lap: 19.66
-Fixed-LQR Total Time: 82.5
+MCTS-LQR Avg Target Lane Difference: 0.3742363
+MCTS-LQR Avg Target Vel Difference: 0.1315203
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.28
+Fixed-LQR Best Lap: 19.26
+Fixed-LQR Total Time: 82.82
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.51648
-MCTS-LQR Last Lap: 20.7
+Fixed-LQR Avg Target Lane Difference: 0.1749742
+Fixed-LQR Avg Target Vel Difference: -1.192706
+Winner: 
+
+Experiment 20
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.12
 MCTS-LQR Best Lap: 19.76
 MCTS-LQR Total Time: 81.78
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 1
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 17
-Fixed-LQR Speed: 15.0044
-Fixed-LQR Last Lap: 20.22
-Fixed-LQR Best Lap: 20.22
-Fixed-LQR Total Time: 83.42
+MCTS-LQR Avg Target Lane Difference: 0.2658176
+MCTS-LQR Avg Target Vel Difference: -0.001622254
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.26
+Fixed-LQR Best Lap: 19.88
+Fixed-LQR Total Time: 82.64
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 13.70465
-MCTS-LQR Last Lap: 20.26
-MCTS-LQR Best Lap: 20.26
-MCTS-LQR Total Time: 83.04
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 18
-Fixed-LQR Speed: 14.93674
-Fixed-LQR Last Lap: 20.36
-Fixed-LQR Best Lap: 20.36
-Fixed-LQR Total Time: 83.38
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.9723
-MCTS-LQR Last Lap: 20.4
-MCTS-LQR Best Lap: 20.1
-MCTS-LQR Total Time: 82.62
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 19
-Fixed-LQR Speed: 14.94219
-Fixed-LQR Last Lap: 22.84
-Fixed-LQR Best Lap: 19.62
-Fixed-LQR Total Time: 85.02
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.97189
-MCTS-LQR Last Lap: 22.86
-MCTS-LQR Best Lap: 19.54
-MCTS-LQR Total Time: 84.5
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 20
-Fixed-LQR Speed: 14.9905
-Fixed-LQR Last Lap: 21.08
-Fixed-LQR Best Lap: 20.18
-Fixed-LQR Total Time: 83.9
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.93563
-MCTS-LQR Last Lap: 21.12
-MCTS-LQR Best Lap: 20.02
-MCTS-LQR Total Time: 83.24
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1847703
+Fixed-LQR Avg Target Vel Difference: -1.235293
 Winner: 
 
 Experiment 21
-Fixed-LQR Speed: 14.97143
-Fixed-LQR Last Lap: 20.86
-Fixed-LQR Best Lap: 19.74
-Fixed-LQR Total Time: 82
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.96935
-MCTS-LQR Last Lap: 20.76
-MCTS-LQR Best Lap: 19.68
-MCTS-LQR Total Time: 81.7
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.7
+MCTS-LQR Best Lap: 19.7
+MCTS-LQR Total Time: 81.82
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 3
 MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.491805
+MCTS-LQR Avg Target Vel Difference: 0.09821949
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.74
+Fixed-LQR Best Lap: 19.66
+Fixed-LQR Total Time: 82.42
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1831676
+Fixed-LQR Avg Target Vel Difference: -1.111786
 Winner: 
 
 Experiment 22
-Fixed-LQR Speed: 15.00463
-Fixed-LQR Last Lap: 20.68
-Fixed-LQR Best Lap: 20
-Fixed-LQR Total Time: 83.22
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.58
+MCTS-LQR Best Lap: 19.54
+MCTS-LQR Total Time: 82.58
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 3
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4350396
+MCTS-LQR Avg Target Vel Difference: -0.04323347
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.68
+Fixed-LQR Best Lap: 18.58
+Fixed-LQR Total Time: 78.42
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.71619
-MCTS-LQR Last Lap: 20.58
-MCTS-LQR Best Lap: 20.04
-MCTS-LQR Total Time: 82.75999
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.200005
+Fixed-LQR Avg Target Vel Difference: -0.4276809
 Winner: 
 
 Experiment 23
-Fixed-LQR Speed: 14.89849
-Fixed-LQR Last Lap: 20.6
-Fixed-LQR Best Lap: 19.64
-Fixed-LQR Total Time: 84.3
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.88
+MCTS-LQR Best Lap: 19.24
+MCTS-LQR Total Time: 81.42
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4352314
+MCTS-LQR Avg Target Vel Difference: 0.06377521
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.94
+Fixed-LQR Best Lap: 19.24
+Fixed-LQR Total Time: 82.16
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 15.01239
-MCTS-LQR Last Lap: 20.64
-MCTS-LQR Best Lap: 19.88
-MCTS-LQR Total Time: 83.84
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 5
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.166386
+Fixed-LQR Avg Target Vel Difference: -1.087566
 Winner: 
 
 Experiment 24
-Fixed-LQR Speed: 14.93634
-Fixed-LQR Last Lap: 20.48
-Fixed-LQR Best Lap: 19.76
-Fixed-LQR Total Time: 81.96
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.66
+MCTS-LQR Best Lap: 19.66
+MCTS-LQR Total Time: 81.24
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4159923
+MCTS-LQR Avg Target Vel Difference: 0.0589947
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.88
+Fixed-LQR Best Lap: 19.7
+Fixed-LQR Total Time: 82.2
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89864
-MCTS-LQR Last Lap: 20.78
-MCTS-LQR Best Lap: 19.72
-MCTS-LQR Total Time: 81.5
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1795836
+Fixed-LQR Avg Target Vel Difference: -1.066489
 Winner: 
 
 Experiment 25
-Fixed-LQR Speed: 15.02556
-Fixed-LQR Last Lap: 21.26
-Fixed-LQR Best Lap: 20.32
-Fixed-LQR Total Time: 84.06
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.99324
-MCTS-LQR Last Lap: 21.52
-MCTS-LQR Best Lap: 19.96
-MCTS-LQR Total Time: 83.48
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.42
+MCTS-LQR Best Lap: 19.42
+MCTS-LQR Total Time: 81.42
 MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 3
+MCTS-LQR Illegal Lane Changes: 5
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 26
-Fixed-LQR Speed: 14.9208
-Fixed-LQR Last Lap: 20.94
-Fixed-LQR Best Lap: 20.12
-Fixed-LQR Total Time: 83.18
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 15.00362
-MCTS-LQR Last Lap: 20.9
-MCTS-LQR Best Lap: 20.1
-MCTS-LQR Total Time: 82.62
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 27
-Fixed-LQR Speed: 14.89878
-Fixed-LQR Last Lap: 20.34
-Fixed-LQR Best Lap: 19.66
-Fixed-LQR Total Time: 82.56
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89832
-MCTS-LQR Last Lap: 20.3
-MCTS-LQR Best Lap: 19.94
-MCTS-LQR Total Time: 82.02
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 28
-Fixed-LQR Speed: 14.89866
-Fixed-LQR Last Lap: 20.54
-Fixed-LQR Best Lap: 20.32
-Fixed-LQR Total Time: 83.56
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.98081
-MCTS-LQR Last Lap: 20.52
-MCTS-LQR Best Lap: 20.38
-MCTS-LQR Total Time: 83.02
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 29
-Fixed-LQR Speed: 14.97243
-Fixed-LQR Last Lap: 20.5
-Fixed-LQR Best Lap: 20.5
-Fixed-LQR Total Time: 84.54
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 14.93629
-MCTS-LQR Last Lap: 20.42
-MCTS-LQR Best Lap: 20.42
-MCTS-LQR Total Time: 84
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 4
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 30
-Fixed-LQR Speed: 14.97238
-Fixed-LQR Last Lap: 20.2
-Fixed-LQR Best Lap: 20.16
-Fixed-LQR Total Time: 82.08
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89872
-MCTS-LQR Last Lap: 20.14
-MCTS-LQR Best Lap: 20.04
-MCTS-LQR Total Time: 81.38
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 31
-Fixed-LQR Speed: 14.89867
-Fixed-LQR Last Lap: 20.32
-Fixed-LQR Best Lap: 19.96
-Fixed-LQR Total Time: 82.22
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 13.99745
-MCTS-LQR Last Lap: 20.38
-MCTS-LQR Best Lap: 19.96
-MCTS-LQR Total Time: 81.68
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 3
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 32
-Fixed-LQR Speed: 14.93666
-Fixed-LQR Last Lap: 20.56
-Fixed-LQR Best Lap: 19.98
-Fixed-LQR Total Time: 82.86
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 15.0205
-MCTS-LQR Last Lap: 20.62
-MCTS-LQR Best Lap: 20.06
-MCTS-LQR Total Time: 82.28
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 33
-Fixed-LQR Speed: 14.89867
-Fixed-LQR Last Lap: 20.08
-Fixed-LQR Best Lap: 20.08
-Fixed-LQR Total Time: 82.58
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 14.99801
-MCTS-LQR Last Lap: 20.16
-MCTS-LQR Best Lap: 20.1
-MCTS-LQR Total Time: 82.12
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 34
-Fixed-LQR Speed: 14.93672
-Fixed-LQR Last Lap: 21.04
-Fixed-LQR Best Lap: 19.96
-Fixed-LQR Total Time: 86.08
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 14.97121
-MCTS-LQR Last Lap: 20.98
-MCTS-LQR Best Lap: 20.1
-MCTS-LQR Total Time: 85.5
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 4
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 35
-Fixed-LQR Speed: 14.89868
-Fixed-LQR Last Lap: 19.9
-Fixed-LQR Best Lap: 19.9
-Fixed-LQR Total Time: 82.86
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.93868
-MCTS-LQR Last Lap: 20.08
-MCTS-LQR Best Lap: 20.08
-MCTS-LQR Total Time: 82.32
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 36
-Fixed-LQR Speed: 14.89866
-Fixed-LQR Last Lap: 21.12
-Fixed-LQR Best Lap: 20.46
-Fixed-LQR Total Time: 85.18
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.97233
-MCTS-LQR Last Lap: 21.12
-MCTS-LQR Best Lap: 20.44
-MCTS-LQR Total Time: 84.68
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 37
-Fixed-LQR Speed: 14.97243
-Fixed-LQR Last Lap: 20.54
-Fixed-LQR Best Lap: 19.84
+MCTS-LQR Avg Target Lane Difference: 0.403821
+MCTS-LQR Avg Target Vel Difference: 0.2185223
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.48
+Fixed-LQR Best Lap: 19.46
 Fixed-LQR Total Time: 82.12
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 0.4207643
-MCTS-LQR Last Lap: 20.04
-MCTS-LQR Best Lap: 19.78
-MCTS-LQR Total Time: 119.84
-MCTS-LQR Laps Completed: 3/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1812868
+Fixed-LQR Avg Target Vel Difference: -1.105664
 Winner: 
 
-Experiment 38
-Fixed-LQR Speed: 14.89861
-Fixed-LQR Last Lap: 20.44
-Fixed-LQR Best Lap: 19.48
-Fixed-LQR Total Time: 82.4
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.96824
-MCTS-LQR Last Lap: 20.52
-MCTS-LQR Best Lap: 19.42
-MCTS-LQR Total Time: 81.86
+Experiment 26
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.54
+MCTS-LQR Best Lap: 19.54
+MCTS-LQR Total Time: 82.62
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 2
 MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4305549
+MCTS-LQR Avg Target Vel Difference: -0.05236533
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.52
+Fixed-LQR Best Lap: 19.52
+Fixed-LQR Total Time: 83.46
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1682398
+Fixed-LQR Avg Target Vel Difference: -1.162839
 Winner: 
 
-Experiment 39
-Fixed-LQR Speed: 15.00544
-Fixed-LQR Last Lap: 20.72
-Fixed-LQR Best Lap: 20.56
-Fixed-LQR Total Time: 84.38
+Experiment 27
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.3
+MCTS-LQR Best Lap: 19.8
+MCTS-LQR Total Time: 82.54
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.51961
+MCTS-LQR Avg Target Vel Difference: -0.04769021
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.2
+Fixed-LQR Best Lap: 19.68
+Fixed-LQR Total Time: 83.16
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1753362
+Fixed-LQR Avg Target Vel Difference: -1.282809
+Winner: 
+
+Experiment 28
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.2
+MCTS-LQR Best Lap: 19.72
+MCTS-LQR Total Time: 82.56
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.6437913
+MCTS-LQR Avg Target Vel Difference: -0.2261656
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.3
+Fixed-LQR Best Lap: 19.72
+Fixed-LQR Total Time: 83.24
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1937801
+Fixed-LQR Avg Target Vel Difference: -1.251769
+Winner: 
+
+Experiment 29
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.04
+MCTS-LQR Best Lap: 19.72
+MCTS-LQR Total Time: 82.52
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5106019
+MCTS-LQR Avg Target Vel Difference: 0.2373587
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.58
+Fixed-LQR Total Time: 77.43999
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 14.93639
-MCTS-LQR Last Lap: 20.82
-MCTS-LQR Best Lap: 20.54
-MCTS-LQR Total Time: 83.82
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1681466
+Fixed-LQR Avg Target Vel Difference: -0.3303834
 Winner: 
 
-Experiment 40
-Fixed-LQR Speed: 14.93677
-Fixed-LQR Last Lap: 21.1
-Fixed-LQR Best Lap: 20.84
-Fixed-LQR Total Time: 86.04
+Experiment 30
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.7
+MCTS-LQR Best Lap: 19.58
+MCTS-LQR Total Time: 82.04
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5037764
+MCTS-LQR Avg Target Vel Difference: 0.1613665
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.7
+Fixed-LQR Best Lap: 18.64
+Fixed-LQR Total Time: 77.36
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 14.97228
-MCTS-LQR Last Lap: 21.1
-MCTS-LQR Best Lap: 20.88
-MCTS-LQR Total Time: 85.43999
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.180606
+Fixed-LQR Avg Target Vel Difference: -0.2950296
 Winner: 
 
-Experiment 41
-Fixed-LQR Speed: 14.97238
-Fixed-LQR Last Lap: 19.8
-Fixed-LQR Best Lap: 19.56
-Fixed-LQR Total Time: 82.43999
+Experiment 31
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.78
+MCTS-LQR Best Lap: 19.66
+MCTS-LQR Total Time: 82.2
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 3
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5511825
+MCTS-LQR Avg Target Vel Difference: 0.0808903
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.58
+Fixed-LQR Total Time: 77.42
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 15.00294
-MCTS-LQR Last Lap: 19.88
-MCTS-LQR Best Lap: 19.68
-MCTS-LQR Total Time: 81.92
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1694103
+Fixed-LQR Avg Target Vel Difference: -0.3260482
+Winner: 
+
+Experiment 32
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.1
+MCTS-LQR Best Lap: 19.44
+MCTS-LQR Total Time: 81.32
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 3
 MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.2620842
+MCTS-LQR Avg Target Vel Difference: -0.03549536
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.16
+Fixed-LQR Best Lap: 19.44
+Fixed-LQR Total Time: 82.34
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1747837
+Fixed-LQR Avg Target Vel Difference: -1.066513
+Winner: 
+
+Experiment 33
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.62
+MCTS-LQR Best Lap: 19.36
+MCTS-LQR Total Time: 81.54
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.3918656
+MCTS-LQR Avg Target Vel Difference: 0.1407411
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.58
+Fixed-LQR Total Time: 77.24
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1678422
+Fixed-LQR Avg Target Vel Difference: -0.3052027
+Winner: 
+
+Experiment 34
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20
+MCTS-LQR Best Lap: 19.56
+MCTS-LQR Total Time: 81.8
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 3
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4775867
+MCTS-LQR Avg Target Vel Difference: 0.08217439
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.02
+Fixed-LQR Best Lap: 19.58
+Fixed-LQR Total Time: 82.46
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1895916
+Fixed-LQR Avg Target Vel Difference: -1.136009
+Winner: 
+
+Experiment 35
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.48
+MCTS-LQR Best Lap: 19.48
+MCTS-LQR Total Time: 81.9
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.3873765
+MCTS-LQR Avg Target Vel Difference: 0.1548338
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.58
+Fixed-LQR Total Time: 77.46
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.172259
+Fixed-LQR Avg Target Vel Difference: -0.3186079
+Winner: 
+
+Experiment 36
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.78
+MCTS-LQR Best Lap: 19.66
+MCTS-LQR Total Time: 81.58
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4145678
+MCTS-LQR Avg Target Vel Difference: 0.02892384
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.78
+Fixed-LQR Best Lap: 19.7
+Fixed-LQR Total Time: 82.24
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1995006
+Fixed-LQR Avg Target Vel Difference: -1.130167
+Winner: 
+
+Experiment 37
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.14
+MCTS-LQR Best Lap: 19.7
+MCTS-LQR Total Time: 82.18
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4194015
+MCTS-LQR Avg Target Vel Difference: 0.01149974
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.36
+Fixed-LQR Best Lap: 19.66
+Fixed-LQR Total Time: 82.98
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1679959
+Fixed-LQR Avg Target Vel Difference: -1.123435
+Winner: 
+
+Experiment 38
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.62
+MCTS-LQR Best Lap: 19.38
+MCTS-LQR Total Time: 81.93999
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4395151
+MCTS-LQR Avg Target Vel Difference: -0.04204307
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.6
+Fixed-LQR Total Time: 77.58
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1839975
+Fixed-LQR Avg Target Vel Difference: -0.3728527
+Winner: 
+
+Experiment 39
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.98
+MCTS-LQR Best Lap: 19.58
+MCTS-LQR Total Time: 82.4
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4185063
+MCTS-LQR Avg Target Vel Difference: 0.2172597
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.6
+Fixed-LQR Best Lap: 18.6
+Fixed-LQR Total Time: 77.68
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1668842
+Fixed-LQR Avg Target Vel Difference: -0.3881722
+Winner: 
+
+Experiment 40
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.64
+MCTS-LQR Best Lap: 19.62
+MCTS-LQR Total Time: 81.52
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4132056
+MCTS-LQR Avg Target Vel Difference: 0.05049448
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.54
+Fixed-LQR Best Lap: 19.54
+Fixed-LQR Total Time: 82.2
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1626776
+Fixed-LQR Avg Target Vel Difference: -1.052922
+Winner: 
+
+Experiment 41
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.7
+MCTS-LQR Best Lap: 19.54
+MCTS-LQR Total Time: 82.24
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 6
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4846056
+MCTS-LQR Avg Target Vel Difference: 0.1326023
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.7
+Fixed-LQR Best Lap: 18.62
+Fixed-LQR Total Time: 77.14
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1678534
+Fixed-LQR Avg Target Vel Difference: -0.2722457
 Winner: 
 
 Experiment 42
-Fixed-LQR Speed: 14.89871
-Fixed-LQR Last Lap: 20.44
-Fixed-LQR Best Lap: 20.44
-Fixed-LQR Total Time: 84.12
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.2
+MCTS-LQR Best Lap: 19.48
+MCTS-LQR Total Time: 81.48
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 4
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5226731
+MCTS-LQR Avg Target Vel Difference: 0.2591101
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.12
+Fixed-LQR Best Lap: 19.48
+Fixed-LQR Total Time: 82.14
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.97113
-MCTS-LQR Last Lap: 20.48
-MCTS-LQR Best Lap: 20.44
-MCTS-LQR Total Time: 83.58
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.176207
+Fixed-LQR Avg Target Vel Difference: -1.127355
 Winner: 
 
 Experiment 43
-Fixed-LQR Speed: 14.97095
-Fixed-LQR Last Lap: 21.18
-Fixed-LQR Best Lap: 20.26
-Fixed-LQR Total Time: 84.38
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.54
+MCTS-LQR Best Lap: 19.48
+MCTS-LQR Total Time: 81.56
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4288998
+MCTS-LQR Avg Target Vel Difference: 0.2601418
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.32
+Fixed-LQR Best Lap: 19.32
+Fixed-LQR Total Time: 82.24
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 15.00254
-MCTS-LQR Last Lap: 21.4
-MCTS-LQR Best Lap: 20.2
-MCTS-LQR Total Time: 83.84
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1665951
+Fixed-LQR Avg Target Vel Difference: -1.123148
 Winner: 
 
 Experiment 44
-Fixed-LQR Speed: 14.97222
-Fixed-LQR Last Lap: 21.22
-Fixed-LQR Best Lap: 20.12
-Fixed-LQR Total Time: 83.52
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.9
+MCTS-LQR Best Lap: 19.38
+MCTS-LQR Total Time: 81.56
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 3
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.3817318
+MCTS-LQR Avg Target Vel Difference: -0.04264707
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.92
+Fixed-LQR Best Lap: 19.16
+Fixed-LQR Total Time: 82.34
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 14.70276
-MCTS-LQR Last Lap: 21.26
-MCTS-LQR Best Lap: 20.18
-MCTS-LQR Total Time: 83.04
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1910155
+Fixed-LQR Avg Target Vel Difference: -1.097114
 Winner: 
 
 Experiment 45
-Fixed-LQR Speed: 14.97239
-Fixed-LQR Last Lap: 20.58
-Fixed-LQR Best Lap: 19.82
-Fixed-LQR Total Time: 82.8
-Fixed-LQR Laps Completed: 4/4
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.86194
-MCTS-LQR Last Lap: 20.66
-MCTS-LQR Best Lap: 19.76
-MCTS-LQR Total Time: 82.2
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.16
+MCTS-LQR Best Lap: 19.68
+MCTS-LQR Total Time: 81.48
 MCTS-LQR Laps Completed: 4/4
 MCTS-LQR Illegal Lane Changes: 1
 MCTS-LQR Collisions: 0
-Winner: 
-
-Experiment 46
-Fixed-LQR Speed: 14.93674
-Fixed-LQR Last Lap: 20.78
-Fixed-LQR Best Lap: 19.78
-Fixed-LQR Total Time: 83.48
+MCTS-LQR Avg Target Lane Difference: 0.433438
+MCTS-LQR Avg Target Vel Difference: -0.2447217
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.06
+Fixed-LQR Best Lap: 19.62
+Fixed-LQR Total Time: 82.22
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-MCTS-LQR Speed: 14.89563
-MCTS-LQR Last Lap: 20.82
-MCTS-LQR Best Lap: 19.78
-MCTS-LQR Total Time: 82.92
+Fixed-LQR Avg Target Lane Difference: 0.1742791
+Fixed-LQR Avg Target Vel Difference: -1.042957
+Winner: 
+
+Experiment 46
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 19.82
+MCTS-LQR Best Lap: 19.58
+MCTS-LQR Total Time: 81.36
 MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Illegal Lane Changes: 1
 MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4655055
+MCTS-LQR Avg Target Vel Difference: 0.4342514
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 19.7
+Fixed-LQR Best Lap: 19.56
+Fixed-LQR Total Time: 81.98
+Fixed-LQR Laps Completed: 4/4
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.180168
+Fixed-LQR Avg Target Vel Difference: -1.105244
 Winner: 
 
 Experiment 47
-Fixed-LQR Speed: 14.89878
-Fixed-LQR Last Lap: 19.86
-Fixed-LQR Best Lap: 19.86
-Fixed-LQR Total Time: 81.9
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20
+MCTS-LQR Best Lap: 19.88
+MCTS-LQR Total Time: 82.74
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 6
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5819925
+MCTS-LQR Avg Target Vel Difference: 0.274016
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 18.66
+Fixed-LQR Best Lap: 18.58
+Fixed-LQR Total Time: 77.38
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 13.32802
-MCTS-LQR Last Lap: 19.9
-MCTS-LQR Best Lap: 19.86
-MCTS-LQR Total Time: 81.32
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.1676798
+Fixed-LQR Avg Target Vel Difference: -0.3353007
 Winner: 
 
 Experiment 48
-Fixed-LQR Speed: 14.93672
-Fixed-LQR Last Lap: 20.76
-Fixed-LQR Best Lap: 20.22
-Fixed-LQR Total Time: 84.86
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.12
+MCTS-LQR Best Lap: 19.82
+MCTS-LQR Total Time: 83.1
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4016545
+MCTS-LQR Avg Target Vel Difference: -0.1125685
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.46
+Fixed-LQR Best Lap: 19.76
+Fixed-LQR Total Time: 84.14
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-MCTS-LQR Speed: 14.97135
-MCTS-LQR Last Lap: 20.8
-MCTS-LQR Best Lap: 20.16
-MCTS-LQR Total Time: 84.32
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1674848
+Fixed-LQR Avg Target Vel Difference: -1.359267
 Winner: 
 
 Experiment 49
-Fixed-LQR Speed: 14.89867
-Fixed-LQR Last Lap: 21.54
-Fixed-LQR Best Lap: 19.76
-Fixed-LQR Total Time: 83.93999
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 20.14
+MCTS-LQR Best Lap: 19.84
+MCTS-LQR Total Time: 82.24
+MCTS-LQR Laps Completed: 4/4
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4952013
+MCTS-LQR Avg Target Vel Difference: 0.3105816
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 20.46
+Fixed-LQR Best Lap: 19.48
+Fixed-LQR Total Time: 83.16
 Fixed-LQR Laps Completed: 4/4
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-MCTS-LQR Speed: 14.98147
-MCTS-LQR Last Lap: 21.5
-MCTS-LQR Best Lap: 19.74
-MCTS-LQR Total Time: 83.4
-MCTS-LQR Laps Completed: 4/4
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.1719017
+Fixed-LQR Avg Target Vel Difference: -1.246422
 Winner: 
 

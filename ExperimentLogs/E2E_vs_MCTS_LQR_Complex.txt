@@ -1,1050 +1,1050 @@
 Experiment 0
-MCTS-LQR Speed: 0.0001452958
-MCTS-LQR Last Lap: 34.9
-MCTS-LQR Best Lap: 34.32
-MCTS-LQR Total Time: 108.64
-MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Speed: 11.95781
+MCTS-LQR Last Lap: 34.22
+MCTS-LQR Best Lap: 34.22
+MCTS-LQR Total Time: 119.98
+MCTS-LQR Laps Completed: 2/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7919362
-MCTS-LQR Avg Target Vel Difference: 1.386414
+MCTS-LQR Avg Target Lane Difference: 0.5170441
+MCTS-LQR Avg Target Vel Difference: 1.040925
 E2E Speed: 0
-E2E Last Lap: 36.68
-E2E Best Lap: 34.16
-E2E Total Time: 109.64
+E2E Last Lap: 36.2
+E2E Best Lap: 34.4
+E2E Total Time: 106.12
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.088874
-E2E Avg Target Vel Difference: 1.828555
+E2E Avg Target Lane Difference: 1.471515
+E2E Avg Target Vel Difference: 2.01245
 Winner: 
 
 Experiment 1
-MCTS-LQR Speed: 6.957678E-05
-MCTS-LQR Last Lap: 35.94
-MCTS-LQR Best Lap: 34.4
-MCTS-LQR Total Time: 105.58
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 33.58
+MCTS-LQR Best Lap: 33.2
+MCTS-LQR Total Time: 101.6
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7193643
-MCTS-LQR Avg Target Vel Difference: 1.321468
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5063899
+MCTS-LQR Avg Target Vel Difference: 1.236273
 E2E Speed: 0
-E2E Last Lap: 37.44
-E2E Best Lap: 33.94
-E2E Total Time: 106.5
+E2E Last Lap: 36
+E2E Best Lap: 34.44
+E2E Total Time: 106.54
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.9830373
-E2E Avg Target Vel Difference: 3.972661
+E2E Illegal Lane Changes: 0
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 1.690452
+E2E Avg Target Vel Difference: 2.352634
 Winner: 
 
 Experiment 2
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 36.02
-MCTS-LQR Best Lap: 34.2
-MCTS-LQR Total Time: 105.46
+MCTS-LQR Last Lap: 34.88
+MCTS-LQR Best Lap: 34.74
+MCTS-LQR Total Time: 106.38
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.8537384
-MCTS-LQR Avg Target Vel Difference: 1.467841
-E2E Speed: 1.89354E-05
-E2E Last Lap: 36.26
-E2E Best Lap: 33.82
-E2E Total Time: 104.92
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4654075
+MCTS-LQR Avg Target Vel Difference: 0.8927403
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 33.98
+E2E Total Time: 105.64
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
+E2E Illegal Lane Changes: 2
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 0
-E2E Avg Target Vel Difference: 2.439879
+E2E Avg Target Lane Difference: 1.695182
+E2E Avg Target Vel Difference: 2.634576
 Winner: 
 
 Experiment 3
-MCTS-LQR Speed: 9.575684E-05
-MCTS-LQR Last Lap: 33.8
-MCTS-LQR Best Lap: 33.24
-MCTS-LQR Total Time: 101.34
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.8096114
-MCTS-LQR Avg Target Vel Difference: 1.801828
-E2E Speed: 0
-E2E Last Lap: 35.34
-E2E Best Lap: 33.88
-E2E Total Time: 104.46
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.6539935
-E2E Avg Target Vel Difference: 4.016009
-Winner: 
-
-Experiment 4
-MCTS-LQR Speed: 1.842354E-07
-MCTS-LQR Last Lap: 34.72
-MCTS-LQR Best Lap: 34.42
-MCTS-LQR Total Time: 104.3
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 34
+MCTS-LQR Best Lap: 33.42
+MCTS-LQR Total Time: 104.28
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.8351548
-MCTS-LQR Avg Target Vel Difference: 1.589215
+MCTS-LQR Avg Target Lane Difference: 0.6696512
+MCTS-LQR Avg Target Vel Difference: 1.454779
 E2E Speed: 0
-E2E Last Lap: 36.24
-E2E Best Lap: 33.74
-E2E Total Time: 104.94
+E2E Last Lap: 35.92
+E2E Best Lap: 34.06
+E2E Total Time: 107.08
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.76051
+E2E Avg Target Vel Difference: 2.067519
+Winner: 
+
+Experiment 4
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.16
+MCTS-LQR Best Lap: 33.76
+MCTS-LQR Total Time: 107.28
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5997246
+MCTS-LQR Avg Target Vel Difference: 0.5825963
+E2E Speed: 0
+E2E Last Lap: 35.94
+E2E Best Lap: 34.32
+E2E Total Time: 106.4
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.007527
-E2E Avg Target Vel Difference: 5.6639
+E2E Avg Target Lane Difference: 1.653039
+E2E Avg Target Vel Difference: 2.139495
 Winner: 
 
 Experiment 5
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.92
-MCTS-LQR Best Lap: 34.18
-MCTS-LQR Total Time: 105.64
+MCTS-LQR Last Lap: 33.98
+MCTS-LQR Best Lap: 33.18
+MCTS-LQR Total Time: 102.6
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.7330688
-MCTS-LQR Avg Target Vel Difference: 1.430663
-E2E Speed: 0.0003471418
-E2E Last Lap: 36.12
-E2E Best Lap: 34.12
-E2E Total Time: 105.1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.6131738
+MCTS-LQR Avg Target Vel Difference: 1.472239
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 33.68
+E2E Total Time: 105.18
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.4675487
-E2E Avg Target Vel Difference: 2.783212
+E2E Collisions: 4
+E2E Avg Target Lane Difference: 1.488646
+E2E Avg Target Vel Difference: 2.103568
 Winner: 
 
 Experiment 6
-MCTS-LQR Speed: 0.0001377025
-MCTS-LQR Last Lap: 33.76
-MCTS-LQR Best Lap: 33.76
-MCTS-LQR Total Time: 103.22
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.72
+MCTS-LQR Best Lap: 33.86
+MCTS-LQR Total Time: 107.82
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.9314802
-MCTS-LQR Avg Target Vel Difference: 1.67696
+MCTS-LQR Collisions: 2
+MCTS-LQR Avg Target Lane Difference: 0.5684471
+MCTS-LQR Avg Target Vel Difference: 0.5873696
 E2E Speed: 0
-E2E Last Lap: 36.32
-E2E Best Lap: 33.54
-E2E Total Time: 104.8
+E2E Last Lap: 36.9
+E2E Best Lap: 34.2
+E2E Total Time: 107.22
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.266864
-E2E Avg Target Vel Difference: 1.846768
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.534022
+E2E Avg Target Vel Difference: 2.336293
 Winner: 
 
 Experiment 7
-MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 36.46
-MCTS-LQR Best Lap: 34.32
-MCTS-LQR Total Time: 105.96
+MCTS-LQR Speed: 15.00072
+MCTS-LQR Last Lap: 35.7
+MCTS-LQR Best Lap: 33.8
+MCTS-LQR Total Time: 106.72
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7429175
-MCTS-LQR Avg Target Vel Difference: 1.193998
-E2E Speed: 0.000652848
-E2E Last Lap: 36.54
-E2E Best Lap: 33.74
-E2E Total Time: 105.36
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4857006
+MCTS-LQR Avg Target Vel Difference: 0.9599324
+E2E Speed: 0
+E2E Last Lap: 35.74
+E2E Best Lap: 34.16
+E2E Total Time: 106.2
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.5185232
-E2E Avg Target Vel Difference: 4.033776
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.530361
+E2E Avg Target Vel Difference: 2.217998
 Winner: 
 
 Experiment 8
-MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.62
-MCTS-LQR Best Lap: 34
-MCTS-LQR Total Time: 104.46
+MCTS-LQR Speed: 14.76942
+MCTS-LQR Last Lap: 35.3
+MCTS-LQR Best Lap: 34.78
+MCTS-LQR Total Time: 106.68
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.640032
-MCTS-LQR Avg Target Vel Difference: 1.201714
-E2E Speed: 3.004129E-05
-E2E Last Lap: 35.68
-E2E Best Lap: 33.44
-E2E Total Time: 103.94
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5343378
+MCTS-LQR Avg Target Vel Difference: 0.7082776
+E2E Speed: 0
+E2E Last Lap: 35.82
+E2E Best Lap: 34.24
+E2E Total Time: 106.12
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.150254
-E2E Avg Target Vel Difference: 4.011196
+E2E Avg Target Lane Difference: 1.648991
+E2E Avg Target Vel Difference: 2.163488
 Winner: 
 
 Experiment 9
-MCTS-LQR Speed: 1.092379E-05
-MCTS-LQR Last Lap: 33.88
-MCTS-LQR Best Lap: 32.88
-MCTS-LQR Total Time: 100.52
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36
+MCTS-LQR Best Lap: 33.6
+MCTS-LQR Total Time: 106.84
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.813732
-MCTS-LQR Avg Target Vel Difference: 1.765018
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5870653
+MCTS-LQR Avg Target Vel Difference: 0.933408
 E2E Speed: 0
-E2E Last Lap: 35.8
-E2E Best Lap: 33.92
-E2E Total Time: 104.46
+E2E Last Lap: 35.82
+E2E Best Lap: 34.14
+E2E Total Time: 106.1
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.9993321
-E2E Avg Target Vel Difference: 0.8737208
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.581286
+E2E Avg Target Vel Difference: 2.092432
 Winner: 
 
 Experiment 10
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.44
-MCTS-LQR Best Lap: 34.16
-MCTS-LQR Total Time: 104.44
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7360845
-MCTS-LQR Avg Target Vel Difference: 1.486651
-E2E Speed: 1.823145E-07
-E2E Last Lap: 35.5
-E2E Best Lap: 33.48
-E2E Total Time: 103.94
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.343173
-E2E Avg Target Vel Difference: 4.925714
-Winner: 
-
-Experiment 11
-MCTS-LQR Speed: 1.849499E-07
-MCTS-LQR Last Lap: 35.58
-MCTS-LQR Best Lap: 34.2
-MCTS-LQR Total Time: 105.58
+MCTS-LQR Last Lap: 34.62
+MCTS-LQR Best Lap: 33.14
+MCTS-LQR Total Time: 103.92
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7380101
-MCTS-LQR Avg Target Vel Difference: 1.384737
+MCTS-LQR Avg Target Lane Difference: 0.4979731
+MCTS-LQR Avg Target Vel Difference: 1.23042
 E2E Speed: 0
-E2E Last Lap: 37.2
-E2E Best Lap: 34.08
-E2E Total Time: 106.24
+E2E Last Lap: 35.7
+E2E Best Lap: 33.92
+E2E Total Time: 106.94
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
 E2E Collisions: 1
-E2E Avg Target Lane Difference: 1.229789
-E2E Avg Target Vel Difference: 1.061675
+E2E Avg Target Lane Difference: 1.622082
+E2E Avg Target Vel Difference: 1.848711
+Winner: 
+
+Experiment 11
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 35.14
+MCTS-LQR Best Lap: 34.66
+MCTS-LQR Total Time: 107.08
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5090683
+MCTS-LQR Avg Target Vel Difference: 0.853201
+E2E Speed: 0
+E2E Last Lap: 35.82
+E2E Best Lap: 33.94
+E2E Total Time: 106.36
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.562449
+E2E Avg Target Vel Difference: 2.443239
 Winner: 
 
 Experiment 12
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.9
-MCTS-LQR Best Lap: 33.72
-MCTS-LQR Total Time: 104.7
+MCTS-LQR Last Lap: 36.64
+MCTS-LQR Best Lap: 33.96
+MCTS-LQR Total Time: 108.12
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7691494
-MCTS-LQR Avg Target Vel Difference: 1.546444
-E2E Speed: 1.833501E-07
-E2E Last Lap: 35.98
-E2E Best Lap: 33.46
-E2E Total Time: 104.24
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
+MCTS-LQR Collisions: 2
+MCTS-LQR Avg Target Lane Difference: 0.5066648
+MCTS-LQR Avg Target Vel Difference: 0.8578802
+E2E Speed: 0.06139568
+E2E Last Lap: 33.88
+E2E Best Lap: 33.88
+E2E Total Time: 119.98
+E2E Laps Completed: 2/3
+E2E Illegal Lane Changes: 2
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.110551
-E2E Avg Target Vel Difference: 4.600061
+E2E Avg Target Lane Difference: 1.346691
+E2E Avg Target Vel Difference: 1.996348
 Winner: 
 
 Experiment 13
-MCTS-LQR Speed: 3.282712E-06
-MCTS-LQR Last Lap: 33.6
-MCTS-LQR Best Lap: 32.78
-MCTS-LQR Total Time: 100.16
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7028335
-MCTS-LQR Avg Target Vel Difference: 1.980788
-E2E Speed: 0
-E2E Last Lap: 36.08
-E2E Best Lap: 33.92
-E2E Total Time: 105.24
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.4089698
-E2E Avg Target Vel Difference: 2.268065
-Winner: 
-
-Experiment 14
-MCTS-LQR Speed: 0.0003395021
-MCTS-LQR Last Lap: 35.14
-MCTS-LQR Best Lap: 34.04
-MCTS-LQR Total Time: 104.08
+MCTS-LQR Speed: 14.93434
+MCTS-LQR Last Lap: 36.12
+MCTS-LQR Best Lap: 34.18
+MCTS-LQR Total Time: 107.46
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7356683
-MCTS-LQR Avg Target Vel Difference: 1.547257
+MCTS-LQR Avg Target Lane Difference: 0.5286468
+MCTS-LQR Avg Target Vel Difference: 0.6723268
 E2E Speed: 0
-E2E Last Lap: 36.54
-E2E Best Lap: 33.7
-E2E Total Time: 104.96
+E2E Last Lap: 36.2
+E2E Best Lap: 34.4
+E2E Total Time: 106.68
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 0
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.5995005
-E2E Avg Target Vel Difference: 1.614271
+E2E Avg Target Lane Difference: 1.689956
+E2E Avg Target Vel Difference: 2.223968
+Winner: 
+
+Experiment 14
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 35.68
+MCTS-LQR Best Lap: 34.1
+MCTS-LQR Total Time: 106.96
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5965509
+MCTS-LQR Avg Target Vel Difference: 0.4466418
+E2E Speed: 0
+E2E Last Lap: 35.96
+E2E Best Lap: 34.32
+E2E Total Time: 106.44
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.509235
+E2E Avg Target Vel Difference: 2.530434
 Winner: 
 
 Experiment 15
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 37.58
-MCTS-LQR Best Lap: 33.92
-MCTS-LQR Total Time: 106.68
+MCTS-LQR Last Lap: 35.82
+MCTS-LQR Best Lap: 33.82
+MCTS-LQR Total Time: 107.26
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.7743549
-MCTS-LQR Avg Target Vel Difference: 1.068293
-E2E Speed: 0.0003304742
-E2E Last Lap: 37.58
-E2E Best Lap: 33.72
-E2E Total Time: 105.96
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5189025
+MCTS-LQR Avg Target Vel Difference: 0.8330531
+E2E Speed: 0
+E2E Last Lap: 35.96
+E2E Best Lap: 34.38
+E2E Total Time: 106.62
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.272845
-E2E Avg Target Vel Difference: 2.58752
+E2E Avg Target Lane Difference: 1.559607
+E2E Avg Target Vel Difference: 2.155437
 Winner: 
 
 Experiment 16
-MCTS-LQR Speed: 0.981
-MCTS-LQR Last Lap: 36.46
-MCTS-LQR Best Lap: 34.28
-MCTS-LQR Total Time: 105.88
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Speed: 0.0568261
+MCTS-LQR Last Lap: 33.92
+MCTS-LQR Best Lap: 33.92
+MCTS-LQR Total Time: 119.96
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.8016042
-MCTS-LQR Avg Target Vel Difference: 1.28895
+MCTS-LQR Avg Target Lane Difference: 0.4536297
+MCTS-LQR Avg Target Vel Difference: 0.8394663
 E2E Speed: 0
-E2E Last Lap: 37.26
-E2E Best Lap: 33.68
-E2E Total Time: 105.94
+E2E Last Lap: 37.14
+E2E Best Lap: 34.4
+E2E Total Time: 107.46
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.7210709
-E2E Avg Target Vel Difference: 3.31137
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.506351
+E2E Avg Target Vel Difference: 2.45553
 Winner: 
 
 Experiment 17
-MCTS-LQR Speed: 0.0003764416
-MCTS-LQR Last Lap: 35.72
-MCTS-LQR Best Lap: 34.16
-MCTS-LQR Total Time: 106.26
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 35.5
+MCTS-LQR Best Lap: 33.8
+MCTS-LQR Total Time: 107.76
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.649007
-MCTS-LQR Avg Target Vel Difference: 1.135093
+MCTS-LQR Avg Target Lane Difference: 0.5484537
+MCTS-LQR Avg Target Vel Difference: 0.9958403
 E2E Speed: 0
-E2E Last Lap: 37.54
+E2E Last Lap: 35.74
 E2E Best Lap: 34.3
-E2E Total Time: 107.46
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 3
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.151129
-E2E Avg Target Vel Difference: 2.09375
-Winner: 
-
-Experiment 18
-MCTS-LQR Speed: 5.515561E-07
-MCTS-LQR Last Lap: 34.26
-MCTS-LQR Best Lap: 34.26
-MCTS-LQR Total Time: 103.68
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.6892651
-MCTS-LQR Avg Target Vel Difference: 1.440509
-E2E Speed: 0
-E2E Last Lap: 35.64
-E2E Best Lap: 33.64
-E2E Total Time: 104.22
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 2.172558
-E2E Avg Target Vel Difference: 3.237686
-Winner: 
-
-Experiment 19
-MCTS-LQR Speed: 1.606506E-05
-MCTS-LQR Last Lap: 34.84
-MCTS-LQR Best Lap: 34.36
-MCTS-LQR Total Time: 104.84
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7182475
-MCTS-LQR Avg Target Vel Difference: 1.357303
-E2E Speed: 0
-E2E Last Lap: 35.88
-E2E Best Lap: 34.14
-E2E Total Time: 105.04
+E2E Total Time: 107.16
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
 E2E Collisions: 1
-E2E Avg Target Lane Difference: 2.565804
-E2E Avg Target Vel Difference: 2.46075
+E2E Avg Target Lane Difference: 1.70076
+E2E Avg Target Vel Difference: 2.203349
+Winner: 
+
+Experiment 18
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 35.08
+MCTS-LQR Best Lap: 34.9
+MCTS-LQR Total Time: 106.46
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5022637
+MCTS-LQR Avg Target Vel Difference: 0.6966998
+E2E Speed: 0
+E2E Last Lap: 36.12
+E2E Best Lap: 33.9
+E2E Total Time: 105.74
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.597941
+E2E Avg Target Vel Difference: 2.023303
+Winner: 
+
+Experiment 19
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 33.62
+MCTS-LQR Best Lap: 32.4
+MCTS-LQR Total Time: 100.62
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4783457
+MCTS-LQR Avg Target Vel Difference: 1.449953
+E2E Speed: 0
+E2E Last Lap: 36.3
+E2E Best Lap: 33.92
+E2E Total Time: 106.24
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.606237
+E2E Avg Target Vel Difference: 2.281497
 Winner: 
 
 Experiment 20
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.74
-MCTS-LQR Best Lap: 34.26
-MCTS-LQR Total Time: 105
+MCTS-LQR Last Lap: 35.88
+MCTS-LQR Best Lap: 34.68
+MCTS-LQR Total Time: 107.36
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.5952016
-MCTS-LQR Avg Target Vel Difference: 1.297022
-E2E Speed: 4.565752E-05
-E2E Last Lap: 35.86
-E2E Best Lap: 33.68
-E2E Total Time: 104.5
+MCTS-LQR Avg Target Lane Difference: 0.5195441
+MCTS-LQR Avg Target Vel Difference: 0.8185844
+E2E Speed: 0
+E2E Last Lap: 36.02
+E2E Best Lap: 34.18
+E2E Total Time: 106.3
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.750138
-E2E Avg Target Vel Difference: 4.387237
+E2E Avg Target Lane Difference: 1.579788
+E2E Avg Target Vel Difference: 2.389498
 Winner: 
 
 Experiment 21
-MCTS-LQR Speed: 1.812523E-07
-MCTS-LQR Last Lap: 33.32
-MCTS-LQR Best Lap: 33
-MCTS-LQR Total Time: 100.7
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.6
+MCTS-LQR Best Lap: 34.04
+MCTS-LQR Total Time: 108.24
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7804502
-MCTS-LQR Avg Target Vel Difference: 1.869752
-E2E Speed: 0.2051449
-E2E Last Lap: 33.94
-E2E Best Lap: 33.94
-E2E Total Time: 119.98
-E2E Laps Completed: 2/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.6991449
-E2E Avg Target Vel Difference: 3.793064
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 2
+MCTS-LQR Avg Target Lane Difference: 0.5220166
+MCTS-LQR Avg Target Vel Difference: 0.8493495
+E2E Speed: 0
+E2E Last Lap: 36.84
+E2E Best Lap: 34.04
+E2E Total Time: 107.74
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.5108
+E2E Avg Target Vel Difference: 2.144211
 Winner: 
 
 Experiment 22
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.82
-MCTS-LQR Best Lap: 34.12
-MCTS-LQR Total Time: 105.24
+MCTS-LQR Last Lap: 35.62
+MCTS-LQR Best Lap: 34.44
+MCTS-LQR Total Time: 106.22
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.7233907
-MCTS-LQR Avg Target Vel Difference: 1.072057
-E2E Speed: 5.987315E-05
-E2E Last Lap: 35.96
-E2E Best Lap: 33.88
-E2E Total Time: 104.72
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.6001388
+MCTS-LQR Avg Target Vel Difference: 0.6559489
+E2E Speed: 0
+E2E Last Lap: 35.86
+E2E Best Lap: 34.12
+E2E Total Time: 105.46
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 2.384942
-E2E Avg Target Vel Difference: 4.973794
+E2E Avg Target Lane Difference: 1.584285
+E2E Avg Target Vel Difference: 2.226106
 Winner: 
 
 Experiment 23
-MCTS-LQR Speed: 8.74231E-06
-MCTS-LQR Last Lap: 33.94
-MCTS-LQR Best Lap: 32.58
-MCTS-LQR Total Time: 100.58
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.62
+MCTS-LQR Best Lap: 34.14
+MCTS-LQR Total Time: 107.64
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.6747356
-MCTS-LQR Avg Target Vel Difference: 1.750373
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5926898
+MCTS-LQR Avg Target Vel Difference: 0.8361252
 E2E Speed: 0
-E2E Last Lap: 35.62
+E2E Last Lap: 36.66
 E2E Best Lap: 34.1
-E2E Total Time: 104.96
+E2E Total Time: 106.84
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.7202153
-E2E Avg Target Vel Difference: 2.805932
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.858507
+E2E Avg Target Vel Difference: 2.266462
 Winner: 
 
 Experiment 24
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.38
-MCTS-LQR Best Lap: 34.26
-MCTS-LQR Total Time: 104.78
+MCTS-LQR Last Lap: 38.92
+MCTS-LQR Best Lap: 33.6
+MCTS-LQR Total Time: 109.42
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7999316
-MCTS-LQR Avg Target Vel Difference: 1.442943
-E2E Speed: 5.188826E-06
-E2E Last Lap: 35.74
-E2E Best Lap: 33.52
-E2E Total Time: 104.38
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.59365
+MCTS-LQR Avg Target Vel Difference: 0.838507
+E2E Speed: 0
+E2E Last Lap: 38.2
+E2E Best Lap: 34.28
+E2E Total Time: 108.2
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.934841
-E2E Avg Target Vel Difference: 3.702257
+E2E Avg Target Lane Difference: 1.734309
+E2E Avg Target Vel Difference: 2.250766
 Winner: 
 
 Experiment 25
-MCTS-LQR Speed: 0.0001116236
-MCTS-LQR Last Lap: 36.02
-MCTS-LQR Best Lap: 34.38
-MCTS-LQR Total Time: 105.64
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.2
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 106.88
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7305385
-MCTS-LQR Avg Target Vel Difference: 1.408014
+MCTS-LQR Avg Target Lane Difference: 0.5059299
+MCTS-LQR Avg Target Vel Difference: 0.7878551
 E2E Speed: 0
-E2E Last Lap: 37.9
-E2E Best Lap: 33.94
-E2E Total Time: 106.76
+E2E Last Lap: 35.92
+E2E Best Lap: 34.16
+E2E Total Time: 106.02
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 1
 E2E Collisions: 1
-E2E Avg Target Lane Difference: 0.1847736
-E2E Avg Target Vel Difference: 1.218343
+E2E Avg Target Lane Difference: 1.579599
+E2E Avg Target Vel Difference: 2.315762
 Winner: 
 
 Experiment 26
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.64
-MCTS-LQR Best Lap: 34.14
-MCTS-LQR Total Time: 104.74
+MCTS-LQR Last Lap: 36
+MCTS-LQR Best Lap: 34.08
+MCTS-LQR Total Time: 107.14
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.75165
-MCTS-LQR Avg Target Vel Difference: 1.319037
-E2E Speed: 3.609109E-05
-E2E Last Lap: 35.58
-E2E Best Lap: 33.4
-E2E Total Time: 104.12
+MCTS-LQR Avg Target Lane Difference: 0.4640454
+MCTS-LQR Avg Target Vel Difference: 0.6264374
+E2E Speed: 0
+E2E Last Lap: 36.28
+E2E Best Lap: 34.1
+E2E Total Time: 106.54
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.11874
-E2E Avg Target Vel Difference: 5.477648
+E2E Avg Target Lane Difference: 1.520983
+E2E Avg Target Vel Difference: 2.059568
 Winner: 
 
 Experiment 27
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.64
-MCTS-LQR Best Lap: 34.7
-MCTS-LQR Total Time: 106.24
+MCTS-LQR Last Lap: 35.56
+MCTS-LQR Best Lap: 33.58
+MCTS-LQR Total Time: 106.12
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.769107
-MCTS-LQR Avg Target Vel Difference: 1.503945
-E2E Speed: 0.0001894163
-E2E Last Lap: 35.58
-E2E Best Lap: 34.58
-E2E Total Time: 105.48
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.5610298
+MCTS-LQR Avg Target Vel Difference: 0.8497069
+E2E Speed: 0
+E2E Last Lap: 35.88
+E2E Best Lap: 34
+E2E Total Time: 105.66
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.7124014
-E2E Avg Target Vel Difference: 5.693287
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.636228
+E2E Avg Target Vel Difference: 2.227287
 Winner: 
 
 Experiment 28
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.3
-MCTS-LQR Best Lap: 34.54
-MCTS-LQR Total Time: 105.26
+MCTS-LQR Last Lap: 35.68
+MCTS-LQR Best Lap: 33.52
+MCTS-LQR Total Time: 106.98
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.8775395
-MCTS-LQR Avg Target Vel Difference: 1.188797
-E2E Speed: 0.0003281161
-E2E Last Lap: 35.72
-E2E Best Lap: 33.64
-E2E Total Time: 104.32
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5777111
+MCTS-LQR Avg Target Vel Difference: 0.9829077
+E2E Speed: 0
+E2E Last Lap: 35.82
+E2E Best Lap: 34.5
+E2E Total Time: 106.42
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
+E2E Illegal Lane Changes: 2
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 2.787875
-E2E Avg Target Vel Difference: 3.459807
+E2E Avg Target Lane Difference: 1.637975
+E2E Avg Target Vel Difference: 2.136328
 Winner: 
 
 Experiment 29
-MCTS-LQR Speed: 2.050048E-05
-MCTS-LQR Last Lap: 33.48
-MCTS-LQR Best Lap: 33.42
-MCTS-LQR Total Time: 101
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 34.38
+MCTS-LQR Best Lap: 32.86
+MCTS-LQR Total Time: 103.32
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.8929498
-MCTS-LQR Avg Target Vel Difference: 1.781393
+MCTS-LQR Collisions: 2
+MCTS-LQR Avg Target Lane Difference: 0.5967192
+MCTS-LQR Avg Target Vel Difference: 1.318252
 E2E Speed: 0
-E2E Last Lap: 36.06
-E2E Best Lap: 34.4
-E2E Total Time: 106.06
+E2E Last Lap: 35.9
+E2E Best Lap: 34.2
+E2E Total Time: 106.88
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 3
-E2E Avg Target Lane Difference: 1.080382
-E2E Avg Target Vel Difference: 5.892731
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.593083
+E2E Avg Target Vel Difference: 2.313715
 Winner: 
 
 Experiment 30
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.3
-MCTS-LQR Best Lap: 34.38
-MCTS-LQR Total Time: 104.94
+MCTS-LQR Last Lap: 35.66
+MCTS-LQR Best Lap: 34
+MCTS-LQR Total Time: 107.1
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.7607901
-MCTS-LQR Avg Target Vel Difference: 1.244623
-E2E Speed: 3.203802E-05
-E2E Last Lap: 35.86
-E2E Best Lap: 33.8
-E2E Total Time: 104.46
+MCTS-LQR Avg Target Lane Difference: 0.4955917
+MCTS-LQR Avg Target Vel Difference: 1.045532
+E2E Speed: 0
+E2E Last Lap: 35.62
+E2E Best Lap: 34.5
+E2E Total Time: 106.46
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.4509406
-E2E Avg Target Vel Difference: 5.19686
+E2E Avg Target Lane Difference: 1.605638
+E2E Avg Target Vel Difference: 2.45891
 Winner: 
 
 Experiment 31
-MCTS-LQR Speed: 0.0008109193
-MCTS-LQR Last Lap: 35.48
-MCTS-LQR Best Lap: 34.16
-MCTS-LQR Total Time: 105
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 33.34
+MCTS-LQR Best Lap: 33.34
+MCTS-LQR Total Time: 103.18
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7929437
-MCTS-LQR Avg Target Vel Difference: 1.389186
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5337862
+MCTS-LQR Avg Target Vel Difference: 1.188595
 E2E Speed: 0
-E2E Last Lap: 37.06
-E2E Best Lap: 33.94
-E2E Total Time: 105.82
+E2E Last Lap: 35.82
+E2E Best Lap: 34.2
+E2E Total Time: 106.26
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 1.026113
-E2E Avg Target Vel Difference: 0.7322912
+E2E Illegal Lane Changes: 1
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.597684
+E2E Avg Target Vel Difference: 2.412301
 Winner: 
 
 Experiment 32
-MCTS-LQR Speed: 4.313497E-05
-MCTS-LQR Last Lap: 35.02
-MCTS-LQR Best Lap: 33.96
-MCTS-LQR Total Time: 104.34
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.36
+MCTS-LQR Best Lap: 34.24
+MCTS-LQR Total Time: 108.1
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.8583623
-MCTS-LQR Avg Target Vel Difference: 1.381847
+MCTS-LQR Avg Target Lane Difference: 0.4955822
+MCTS-LQR Avg Target Vel Difference: 0.7557944
 E2E Speed: 0
-E2E Last Lap: 36.36
-E2E Best Lap: 33.84
-E2E Total Time: 105.16
+E2E Last Lap: 35.96
+E2E Best Lap: 34.36
+E2E Total Time: 107.02
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 2.407276
-E2E Avg Target Vel Difference: 5.567579
+E2E Avg Target Lane Difference: 1.713111
+E2E Avg Target Vel Difference: 2.238143
 Winner: 
 
 Experiment 33
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.88
-MCTS-LQR Best Lap: 34.18
-MCTS-LQR Total Time: 105.34
+MCTS-LQR Last Lap: 35.66
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 106.18
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 1
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.737325
-MCTS-LQR Avg Target Vel Difference: 1.256997
-E2E Speed: 0.001119297
-E2E Last Lap: 35.88
-E2E Best Lap: 33.82
-E2E Total Time: 104.64
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.4749985
+MCTS-LQR Avg Target Vel Difference: 0.9733843
+E2E Speed: 0
+E2E Last Lap: 36.3
+E2E Best Lap: 34.14
+E2E Total Time: 106.22
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.3629041
-E2E Avg Target Vel Difference: 4.126088
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.613209
+E2E Avg Target Vel Difference: 2.613105
 Winner: 
 
 Experiment 34
-MCTS-LQR Speed: 0.04723166
-MCTS-LQR Last Lap: 0
-MCTS-LQR Best Lap: 0
-MCTS-LQR Total Time: 119.98
-MCTS-LQR Laps Completed: 0/3
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 35.08
+MCTS-LQR Best Lap: 34.06
+MCTS-LQR Total Time: 106.46
+MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.2718821
-MCTS-LQR Avg Target Vel Difference: 1.110885
-E2E Speed: 0.1099802
-E2E Last Lap: 0
-E2E Best Lap: 0
-E2E Total Time: 119.98
-E2E Laps Completed: 0/3
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5751547
+MCTS-LQR Avg Target Vel Difference: 0.8098387
+E2E Speed: 0
+E2E Last Lap: 36.34
+E2E Best Lap: 34.1
+E2E Total Time: 106.92
+E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-E2E Avg Target Lane Difference: 2.867868
-E2E Avg Target Vel Difference: 1.518444
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.531312
+E2E Avg Target Vel Difference: 1.996555
 Winner: 
 
 Experiment 35
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.92
-MCTS-LQR Best Lap: 34.54
-MCTS-LQR Total Time: 106.92
+MCTS-LQR Last Lap: 33.76
+MCTS-LQR Best Lap: 33.26
+MCTS-LQR Total Time: 102.78
 MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 2
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.708491
-MCTS-LQR Avg Target Vel Difference: 1.243401
-E2E Speed: 1.767842E-06
-E2E Last Lap: 36.7
-E2E Best Lap: 34.26
-E2E Total Time: 106.42
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 2.112154
-E2E Avg Target Vel Difference: 3.591555
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.6150998
+MCTS-LQR Avg Target Vel Difference: 1.13664
+E2E Speed: 14.9266
+E2E Last Lap: 36
+E2E Best Lap: 36
+E2E Total Time: 119.98
+E2E Laps Completed: 2/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.848025
+E2E Avg Target Vel Difference: 1.823552
 Winner: 
 
 Experiment 36
-MCTS-LQR Speed: 1.852686E-07
-MCTS-LQR Last Lap: 35.24
-MCTS-LQR Best Lap: 34.16
-MCTS-LQR Total Time: 104.58
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.6210244
-MCTS-LQR Avg Target Vel Difference: 1.28533
-E2E Speed: 0
-E2E Last Lap: 36.32
-E2E Best Lap: 33.8
-E2E Total Time: 105.04
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 1.424245
-E2E Avg Target Vel Difference: 4.262321
-Winner: 
-
-Experiment 37
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.7
-MCTS-LQR Best Lap: 34.02
-MCTS-LQR Total Time: 104.46
+MCTS-LQR Last Lap: 34.8
+MCTS-LQR Best Lap: 34.44
+MCTS-LQR Total Time: 106
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.8083761
-MCTS-LQR Avg Target Vel Difference: 1.656364
-E2E Speed: 0.0007884816
-E2E Last Lap: 35.38
-E2E Best Lap: 33.32
-E2E Total Time: 103.56
+MCTS-LQR Avg Target Lane Difference: 0.4949678
+MCTS-LQR Avg Target Vel Difference: 0.9324425
+E2E Speed: 0
+E2E Last Lap: 36.12
+E2E Best Lap: 34.24
+E2E Total Time: 106.46
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
+E2E Illegal Lane Changes: 0
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.088551
-E2E Avg Target Vel Difference: 6.348457
+E2E Avg Target Lane Difference: 1.500048
+E2E Avg Target Vel Difference: 2.125186
+Winner: 
+
+Experiment 37
+MCTS-LQR Speed: 0.06034788
+MCTS-LQR Last Lap: 36.16
+MCTS-LQR Best Lap: 36.16
+MCTS-LQR Total Time: 119.98
+MCTS-LQR Laps Completed: 1/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5237682
+MCTS-LQR Avg Target Vel Difference: 1.694624
+E2E Speed: 0
+E2E Last Lap: 36.22
+E2E Best Lap: 34.78
+E2E Total Time: 108.46
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.616101
+E2E Avg Target Vel Difference: 1.863406
 Winner: 
 
 Experiment 38
-MCTS-LQR Speed: 8.667658E-05
-MCTS-LQR Last Lap: 35.18
-MCTS-LQR Best Lap: 34.2
-MCTS-LQR Total Time: 104.34
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 36.3
+MCTS-LQR Best Lap: 34.02
+MCTS-LQR Total Time: 107.16
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.6118046
-MCTS-LQR Avg Target Vel Difference: 1.073857
+MCTS-LQR Collisions: 2
+MCTS-LQR Avg Target Lane Difference: 0.5462384
+MCTS-LQR Avg Target Vel Difference: 0.6828524
 E2E Speed: 0
-E2E Last Lap: 37.3
-E2E Best Lap: 33.72
-E2E Total Time: 105.86
+E2E Last Lap: 37.32
+E2E Best Lap: 34.08
+E2E Total Time: 107.22
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.994578
-E2E Avg Target Vel Difference: 1.692565
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.766994
+E2E Avg Target Vel Difference: 2.510427
 Winner: 
 
 Experiment 39
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.5
-MCTS-LQR Best Lap: 34.1
-MCTS-LQR Total Time: 105.46
+MCTS-LQR Last Lap: 35.38
+MCTS-LQR Best Lap: 34.14
+MCTS-LQR Total Time: 105.6
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.787894
-MCTS-LQR Avg Target Vel Difference: 1.549557
-E2E Speed: 1.834931E-07
-E2E Last Lap: 35.74
-E2E Best Lap: 34.22
-E2E Total Time: 104.94
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4682667
+MCTS-LQR Avg Target Vel Difference: 0.919267
+E2E Speed: 0
+E2E Last Lap: 36.78
+E2E Best Lap: 34.2
+E2E Total Time: 106.54
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.8544155
-E2E Avg Target Vel Difference: 5.362244
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.442615
+E2E Avg Target Vel Difference: 2.049333
 Winner: 
 
 Experiment 40
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.54
-MCTS-LQR Best Lap: 34
-MCTS-LQR Total Time: 104.78
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.6227899
-MCTS-LQR Avg Target Vel Difference: 1.182717
-E2E Speed: 1.648174E-05
-E2E Last Lap: 35.8
-E2E Best Lap: 33.72
-E2E Total Time: 104.42
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 3.281511
-E2E Avg Target Vel Difference: 1.768963
-Winner: 
-
-Experiment 41
-MCTS-LQR Speed: 1.098692E-06
-MCTS-LQR Last Lap: 33.66
-MCTS-LQR Best Lap: 32.84
-MCTS-LQR Total Time: 100.24
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7570023
-MCTS-LQR Avg Target Vel Difference: 1.796059
-E2E Speed: 0
-E2E Last Lap: 36.06
-E2E Best Lap: 34.06
-E2E Total Time: 105.4
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-E2E Avg Target Lane Difference: 0.8060024
-E2E Avg Target Vel Difference: 3.014836
-Winner: 
-
-Experiment 42
-MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 35.4
-MCTS-LQR Best Lap: 34.44
-MCTS-LQR Total Time: 105.48
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.6764052
-MCTS-LQR Avg Target Vel Difference: 1.420047
-E2E Speed: 0.001366619
-E2E Last Lap: 35.9
-E2E Best Lap: 33.84
-E2E Total Time: 104.7
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.178568
-E2E Avg Target Vel Difference: 5.669483
-Winner: 
-
-Experiment 43
-MCTS-LQR Speed: 8.98765E-06
-MCTS-LQR Last Lap: 34.12
-MCTS-LQR Best Lap: 32.98
-MCTS-LQR Total Time: 101.78
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.813484
-MCTS-LQR Avg Target Vel Difference: 1.921181
-E2E Speed: 0
-E2E Last Lap: 35.42
-E2E Best Lap: 33.94
-E2E Total Time: 105.04
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-E2E Avg Target Lane Difference: 0.2780699
-E2E Avg Target Vel Difference: 2.242442
-Winner: 
-
-Experiment 44
-MCTS-LQR Speed: 8.297551E-05
-MCTS-LQR Last Lap: 35.1
-MCTS-LQR Best Lap: 34.1
-MCTS-LQR Total Time: 104.24
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 1
-MCTS-LQR Avg Target Lane Difference: 0.8514339
-MCTS-LQR Avg Target Vel Difference: 1.359757
-E2E Speed: 0
-E2E Last Lap: 38.02
-E2E Best Lap: 33.54
-E2E Total Time: 106.66
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.587414
-E2E Avg Target Vel Difference: 4.275269
-Winner: 
-
-Experiment 45
-MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 36.28
-MCTS-LQR Best Lap: 34.14
-MCTS-LQR Total Time: 105.5
+MCTS-LQR Last Lap: 34.58
+MCTS-LQR Best Lap: 33.34
+MCTS-LQR Total Time: 102.12
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 1
 MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.6797006
-MCTS-LQR Avg Target Vel Difference: 1.187748
-E2E Speed: 0.0004138929
-E2E Last Lap: 35.86
-E2E Best Lap: 33.72
-E2E Total Time: 104.42
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-E2E Avg Target Lane Difference: 0.7981209
-E2E Avg Target Vel Difference: 1.996385
-Winner: 
-
-Experiment 46
-MCTS-LQR Speed: 5.622548E-05
-MCTS-LQR Last Lap: 35.38
-MCTS-LQR Best Lap: 34.04
-MCTS-LQR Total Time: 105.5
-MCTS-LQR Laps Completed: 3/3
-MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 2
-MCTS-LQR Avg Target Lane Difference: 0.7143216
-MCTS-LQR Avg Target Vel Difference: 1.355855
+MCTS-LQR Avg Target Lane Difference: 0.5690318
+MCTS-LQR Avg Target Vel Difference: 1.580038
 E2E Speed: 0
-E2E Last Lap: 37.66
-E2E Best Lap: 34.1
-E2E Total Time: 107.12
+E2E Last Lap: 36.06
+E2E Best Lap: 34.16
+E2E Total Time: 105.9
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
 E2E Collisions: 1
-E2E Avg Target Lane Difference: 4.267705
-E2E Avg Target Vel Difference: 4.059257
+E2E Avg Target Lane Difference: 1.741359
+E2E Avg Target Vel Difference: 2.458883
 Winner: 
 
-Experiment 47
-MCTS-LQR Speed: 2.685537E-06
-MCTS-LQR Last Lap: 35.36
-MCTS-LQR Best Lap: 33.96
-MCTS-LQR Total Time: 104.38
+Experiment 41
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 33.62
+MCTS-LQR Best Lap: 32.44
+MCTS-LQR Total Time: 102.64
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 2
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5989152
+MCTS-LQR Avg Target Vel Difference: 1.715666
+E2E Speed: 0
+E2E Last Lap: 36.22
+E2E Best Lap: 34.52
+E2E Total Time: 107.66
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.34199
+E2E Avg Target Vel Difference: 2.017852
+Winner: 
+
+Experiment 42
+MCTS-LQR Speed: 14.59035
+MCTS-LQR Last Lap: 35.76
+MCTS-LQR Best Lap: 34.36
+MCTS-LQR Total Time: 106.56
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 1
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.4711084
+MCTS-LQR Avg Target Vel Difference: 0.8211716
+E2E Speed: 0
+E2E Last Lap: 35.8
+E2E Best Lap: 34.36
+E2E Total Time: 105.94
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.699041
+E2E Avg Target Vel Difference: 2.424024
+Winner: 
+
+Experiment 43
+MCTS-LQR Speed: 15.00055
+MCTS-LQR Last Lap: 35.62
+MCTS-LQR Best Lap: 34.38
+MCTS-LQR Total Time: 106.42
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
 MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7410558
-MCTS-LQR Avg Target Vel Difference: 1.592385
+MCTS-LQR Avg Target Lane Difference: 0.5941173
+MCTS-LQR Avg Target Vel Difference: 0.8135526
 E2E Speed: 0
-E2E Last Lap: 36.56
-E2E Best Lap: 33.64
-E2E Total Time: 104.94
+E2E Last Lap: 35.78
+E2E Best Lap: 34.28
+E2E Total Time: 105.86
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
-E2E Avg Target Lane Difference: 1.081345
-E2E Avg Target Vel Difference: 0.8687498
+E2E Avg Target Lane Difference: 1.826884
+E2E Avg Target Vel Difference: 2.494528
+Winner: 
+
+Experiment 44
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 34.84
+MCTS-LQR Best Lap: 32.58
+MCTS-LQR Total Time: 103.48
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5029777
+MCTS-LQR Avg Target Vel Difference: 1.315898
+E2E Speed: 0
+E2E Last Lap: 36.02
+E2E Best Lap: 34.32
+E2E Total Time: 107.98
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.861771
+E2E Avg Target Vel Difference: 2.300745
+Winner: 
+
+Experiment 45
+MCTS-LQR Speed: 13.71035
+MCTS-LQR Last Lap: 33.24
+MCTS-LQR Best Lap: 33.24
+MCTS-LQR Total Time: 119.98
+MCTS-LQR Laps Completed: 2/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 0
+MCTS-LQR Avg Target Lane Difference: 0.6144488
+MCTS-LQR Avg Target Vel Difference: 1.027695
+E2E Speed: 0.1540439
+E2E Last Lap: 33.88
+E2E Best Lap: 33.88
+E2E Total Time: 119.98
+E2E Laps Completed: 2/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.66155
+E2E Avg Target Vel Difference: 2.275357
+Winner: 
+
+Experiment 46
+MCTS-LQR Speed: 15.00499
+MCTS-LQR Last Lap: 36.3
+MCTS-LQR Best Lap: 33.94
+MCTS-LQR Total Time: 106.82
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5077723
+MCTS-LQR Avg Target Vel Difference: 0.8622925
+E2E Speed: 0
+E2E Last Lap: 36.3
+E2E Best Lap: 34.1
+E2E Total Time: 106.22
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.7619
+E2E Avg Target Vel Difference: 2.20709
+Winner: 
+
+Experiment 47
+MCTS-LQR Speed: 0
+MCTS-LQR Last Lap: 33.34
+MCTS-LQR Best Lap: 33.32
+MCTS-LQR Total Time: 101.42
+MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Illegal Lane Changes: 0
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5700119
+MCTS-LQR Avg Target Vel Difference: 1.428023
+E2E Speed: 0
+E2E Last Lap: 36.1
+E2E Best Lap: 34.1
+E2E Total Time: 106.38
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.661434
+E2E Avg Target Vel Difference: 2.047624
 Winner: 
 
 Experiment 48
 MCTS-LQR Speed: 0
-MCTS-LQR Last Lap: 36.92
-MCTS-LQR Best Lap: 34.28
-MCTS-LQR Total Time: 106.34
+MCTS-LQR Last Lap: 35.64
+MCTS-LQR Best Lap: 34.18
+MCTS-LQR Total Time: 106.26
 MCTS-LQR Laps Completed: 3/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.7575422
-MCTS-LQR Avg Target Vel Difference: 1.309551
-E2E Speed: 1.891281E-07
-E2E Last Lap: 37.1
-E2E Best Lap: 33.66
-E2E Total Time: 105.8
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5335999
+MCTS-LQR Avg Target Vel Difference: 0.6969305
+E2E Speed: 0
+E2E Last Lap: 35.92
+E2E Best Lap: 33.94
+E2E Total Time: 105.62
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-E2E Avg Target Lane Difference: 1.525685
-E2E Avg Target Vel Difference: 1.181671
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.628823
+E2E Avg Target Vel Difference: 2.490415
 Winner: 
 
 Experiment 49
-MCTS-LQR Speed: 1.359183E-06
-MCTS-LQR Last Lap: 33.56
-MCTS-LQR Best Lap: 32.86
-MCTS-LQR Total Time: 100.28
-MCTS-LQR Laps Completed: 3/3
+MCTS-LQR Speed: 14.03157
+MCTS-LQR Last Lap: 33.48
+MCTS-LQR Best Lap: 33.48
+MCTS-LQR Total Time: 119.98
+MCTS-LQR Laps Completed: 2/3
 MCTS-LQR Illegal Lane Changes: 0
-MCTS-LQR Collisions: 0
-MCTS-LQR Avg Target Lane Difference: 0.6850441
-MCTS-LQR Avg Target Vel Difference: 2.125082
+MCTS-LQR Collisions: 1
+MCTS-LQR Avg Target Lane Difference: 0.5204948
+MCTS-LQR Avg Target Vel Difference: 1.260483
 E2E Speed: 0
-E2E Last Lap: 35.7
-E2E Best Lap: 33.86
-E2E Total Time: 104.74
+E2E Last Lap: 37.38
+E2E Best Lap: 34.44
+E2E Total Time: 109.82
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-E2E Avg Target Lane Difference: 0.2040358
-E2E Avg Target Vel Difference: 3.494559
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 1.519165
+E2E Avg Target Vel Difference: 1.973297
 Winner: 
 

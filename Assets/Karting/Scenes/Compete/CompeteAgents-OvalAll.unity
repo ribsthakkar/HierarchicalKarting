@@ -1058,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &55243090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1135,7 +1135,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &55243091
@@ -5843,7 +5843,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &247569105
@@ -8090,12 +8090,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1961563614}
+      objectReference: {fileID: 1255689821}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 504746542}
+      objectReference: {fileID: 1546406848}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -8114,27 +8114,27 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 233.28442
+      value: -5.46
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99522465
+      value: 0.9952246
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.097611345
+      value: 0.09761158
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000042810537
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.1988446e-10
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -11671,12 +11671,6 @@ Transform:
   m_Father: {fileID: 55243091}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &504746542 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 1961563612}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &506639200
 GameObject:
   m_ObjectHideFlags: 0
@@ -14901,7 +14895,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1817770416}
+      objectReference: {fileID: 1132641209}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -15046,7 +15040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 506639202}
-  envController: {fileID: 55243090}
+  envController: {fileID: 1958903313}
 --- !u!224 &695900669 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3878065802378232314, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
@@ -18485,7 +18479,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &821749583
@@ -21615,8 +21609,8 @@ MonoBehaviour:
   - Racers:
     - {fileID: 776239454}
   Agents:
-  - {fileID: 766719803}
   - {fileID: 776239454}
+  - {fileID: 766719803}
   Sections:
   - {fileID: 1057550822}
   - {fileID: 2124966645}
@@ -21673,7 +21667,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &1008197502
@@ -24932,7 +24926,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1132641209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24980,7 +24974,7 @@ MonoBehaviour:
   - {fileID: 1532917104}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_LQR_vs_Fixed_LQR_Oval
+  ExperimentName: MCTS_LQR_vs_Fixed_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -25009,7 +25003,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 1
 --- !u!4 &1132641210
@@ -26093,8 +26087,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 0.097611345, y: -0.0000000042810537, z: 4.1988446e-10, w: 0.99522465}
-  m_LocalPosition: {x: 14.8, y: 3.279, z: 233.28442}
+  m_LocalRotation: {x: 0.09761158, y: -1e-45, z: -0, w: 0.9952246}
+  m_LocalPosition: {x: 14.8, y: 3.279, z: -5.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -32078,7 +32072,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &1428046124
@@ -33559,7 +33553,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &1503736003
@@ -34255,6 +34249,12 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
     type: 3}
   m_PrefabInstance: {fileID: 1543756160}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1546406848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255689820}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1553777572
 PrefabInstance:
@@ -38145,7 +38145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1817770416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38192,7 +38192,7 @@ MonoBehaviour:
   - {fileID: 1235229541}
   - {fileID: 365964170}
   initialTireWears: []
-  mode: 0
+  mode: 2
   ExperimentName: MCTS_RL_vs_MCTS_LQR_Oval
   TotalExperiments: 50
   WallHitPenalty: -4.5
@@ -38222,7 +38222,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &1817770417
@@ -39665,7 +39665,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &1871431244
@@ -40632,7 +40632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1958903313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40680,7 +40680,7 @@ MonoBehaviour:
   - {fileID: 1371205936}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_Fixed_LQR_Oval
+  ExperimentName: Fixed_RL_vs_Fixed_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -40709,7 +40709,7 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
   highlightWaypoints: 0
 --- !u!4 &1958903314
@@ -44193,6 +44193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DirectionalLight
       objectReference: {fileID: 0}
+    - target: {fileID: 8594000581837295005, guid: 993d2f3ed51454869af0023769df26ed,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 15302, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents:
     - {fileID: 1370003261880785647, guid: 993d2f3ed51454869af0023769df26ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 993d2f3ed51454869af0023769df26ed, type: 3}
