@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Karting/Scenes/WinScene.unity
     guid: d6801f2e59f75ee4b919cf5da4e48e3b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Karting/Scenes/MLTraining/CombinedTeamAITraining.unity
     guid: 52ac7f050d7f06746859ea2d8b926bf0
+  - enabled: 1
+    path: Assets/Karting/Scenes/MLTraining/CombinedAITraining.unity
+    guid: b91b74b98715e5c439d0f3102a207b35
   m_configObjects: {}

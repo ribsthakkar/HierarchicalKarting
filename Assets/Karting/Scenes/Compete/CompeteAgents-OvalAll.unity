@@ -1058,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &55243090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   - {fileID: 218937118}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_LQR_Oval
+  ExperimentName: MCTS_RL_vs_Fixed_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -15040,7 +15040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 506639202}
-  envController: {fileID: 1958903313}
+  envController: {fileID: 55243090}
 --- !u!224 &695900669 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3878065802378232314, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
@@ -32043,7 +32043,7 @@ MonoBehaviour:
   - {fileID: 1543756161}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_RL_Oval
+  ExperimentName: MCTS_RL_vs_Fixed_RL_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -39636,7 +39636,7 @@ MonoBehaviour:
   - {fileID: 1054555400}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_E2E_Oval
+  ExperimentName: MCTS_RL_vs_E2E_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
@@ -40632,7 +40632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1958903313
 MonoBehaviour:
   m_ObjectHideFlags: 0

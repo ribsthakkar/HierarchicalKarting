@@ -961,14 +961,14 @@ namespace KartGame.AI
                 if (actualAllPlayers.Count > 2)
                 {
                     if (k == this)
-                        multiplier = (HighMode == HighLevelMode.Fixed ? 1.0f : 1.6f) / nearbyAgents;
+                        multiplier = (HighMode == HighLevelMode.Fixed ? 0.55f : 1.0f) / nearbyAgents;
                     else
-                        multiplier = (HighMode == HighLevelMode.Fixed ? 1.9f : 1.9f) / nearbyAgents;
+                        multiplier = (HighMode == HighLevelMode.Fixed ? 1.7f : 1.7f) / nearbyAgents;
                 }
                 else
                 {
                     if (k == this)
-                        multiplier = (HighMode == HighLevelMode.Fixed ? 0.7f : 1.1f);
+                        multiplier = (HighMode == HighLevelMode.Fixed ? 0.8f : 1.2f);
                     else
                         multiplier = (HighMode == HighLevelMode.Fixed ? 1.3f : 1.3f);
                 }
@@ -1163,7 +1163,7 @@ namespace KartGame.AI
                 double controlcost = (HighMode == HighLevelMode.Fixed ? 0.115 : 0.115);
                 if (actualAllPlayers.Count > 2)
                 {
-                    controlcost = (HighMode == HighLevelMode.Fixed ? 0.115: 0.25);
+                    controlcost = (HighMode == HighLevelMode.Fixed ? 0.135: 0.25);
                 }
                 costs.Add(new LQRCheckpointReachAvoidCost(targetState, targetWeights, controlcost, dynamics.Last(), opponentTargetStates, opponentTargetWeights, avoidWeights, avoidIndices, avoidDynamics));
             }

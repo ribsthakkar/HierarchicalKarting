@@ -30,7 +30,7 @@ def summarize_experiment(experiment_name):
                     wins[l] = wins.get(l, 0) + 1
                 for d in current_dnfs:
                     l = d.split("(")[0]
-                    dnfs[l] = dnfs.get(d, 0) + 1
+                    dnfs[l] = dnfs.get(l, 0) + 1
                 if len(finishers) > 1 and current_winner != "":
                     l = current_winner.split("(")[0]
                     if l not in win_margins:
@@ -40,17 +40,17 @@ def summarize_experiment(experiment_name):
                     agent_type = a.split("(")[0]
                     l = agent_type
                     if l not in points: points[l] = []
+                    if l not in collisions: collisions[l] = []
+                    if l not in illegal_changes: illegal_changes[l] = []
                     if l not in current_dnfs:
                         if l not in lap_times: lap_times[l] = []
-                        if l not in collisions: collisions[l] = []
-                        if l not in illegal_changes: illegal_changes[l] = []
                         if l not in lane_differences: lane_differences[l] = []
                         if l not in vel_differences: vel_differences[l] = []
                         lap_times.get(l).append(current_laps[a])
-                        collisions.get(l).append(current_collisions[a])
-                        illegal_changes.get(l).append(current_lcs[a])
                         lane_differences.get(l).append(current_tld[a])
                         vel_differences.get(l).append(current_tvd[a])
+                    collisions.get(l).append(current_collisions[a])
+                    illegal_changes.get(l).append(current_lcs[a])
                     points[l].append(0)
                     for idx, finisher in enumerate(ordering):
                         if finisher.startswith(l):
@@ -94,26 +94,28 @@ def summarize_experiment(experiment_name):
             l = current_winner.split("(")[0]
             wins[l] = wins.get(l, 0) + 1
         for d in current_dnfs:
-            dnfs[d] = dnfs.get(d, 0) + 1
+            l = d.split("(")[0]
+            dnfs[l] = dnfs.get(l, 0) + 1
         if len(finishers) > 1 and current_winner != "":
-            if current_winner not in win_margins:
-                win_margins[current_winner] = []
-            win_margins[current_winner].append(current_laps[max(finishers, key=lambda t: current_laps[t])] - current_laps[min(finishers, key=lambda t: current_laps[t])])
+            l = current_winner.split("(")[0]
+            if l not in win_margins:
+                win_margins[l] = []
+            win_margins[l].append(current_laps[max(finishers, key=lambda t: current_laps[t])] - current_laps[min(finishers, key=lambda t: current_laps[t])])
         for a in current_laps:
             agent_type = a.split("(")[0]
             l = agent_type
             if l not in points: points[l] = []
+            if l not in collisions: collisions[l] = []
+            if l not in illegal_changes: illegal_changes[l] = []
             if l not in current_dnfs:
                 if l not in lap_times: lap_times[l] = []
-                if l not in collisions: collisions[l] = []
-                if l not in illegal_changes: illegal_changes[l] = []
                 if l not in lane_differences: lane_differences[l] = []
                 if l not in vel_differences: vel_differences[l] = []
                 lap_times.get(l).append(current_laps[a])
-                collisions.get(l).append(current_collisions[a])
-                illegal_changes.get(l).append(current_lcs[a])
                 lane_differences.get(l).append(current_tld[a])
                 vel_differences.get(l).append(current_tvd[a])
+            collisions.get(l).append(current_collisions[a])
+            illegal_changes.get(l).append(current_lcs[a])
             points[l].append(0)
             for idx, finisher in enumerate(ordering):
                 if finisher.startswith(l):
@@ -129,7 +131,7 @@ def summarize_experiment(experiment_name):
     stddv_safety_score = {l: (sum([((illegal_changes[l][i]+collisions[l][i])-avg_safety_score[l])**2 for i in range(len(collisions[l]))])/len(collisions[l]))**0.5 for l in collisions}
 
     print("Wins", wins)
-    # print("DNFs", dnfs)
+    print("DNFs", dnfs)
     # print("Avg Lap Times", avg_lap_times)
     # print ("Avg Win Margins", avg_win_margins)
     print ("Avg Collisions", avg_colls)
@@ -137,8 +139,9 @@ def summarize_experiment(experiment_name):
     # print ("Avg Target Lane Distance", avg_tld)
     # print("Avg Target Vel Diff", avg_tvd)
     print("Avg Points Per Race", avg_points)
-    # print("Avg Safety Score", avg_safety_score)
+    print("Avg Safety Score", avg_safety_score)
     # print("Std Dev safety Score", stddv_safety_score)
+    print()
 
 def summarize_multiple_experiments(experiments_list):
     wins = {}
@@ -168,7 +171,7 @@ def summarize_multiple_experiments(experiments_list):
                         wins[l] = wins.get(l, 0) + 1
                     for d in current_dnfs:
                         l = d.split("(")[0]
-                        dnfs[l] = dnfs.get(d, 0) + 1
+                        dnfs[l] = dnfs.get(l, 0) + 1
                     if len(finishers) > 1 and current_winner != "":
                         l = current_winner.split("(")[0]
                         if l not in win_margins:
@@ -178,17 +181,17 @@ def summarize_multiple_experiments(experiments_list):
                         agent_type = a.split("(")[0]
                         l = agent_type
                         if l not in points: points[l] = []
+                        if l not in collisions: collisions[l] = []
+                        if l not in illegal_changes: illegal_changes[l] = []
                         if l not in current_dnfs:
                             if l not in lap_times: lap_times[l] = []
-                            if l not in collisions: collisions[l] = []
-                            if l not in illegal_changes: illegal_changes[l] = []
                             if l not in lane_differences: lane_differences[l] = []
                             if l not in vel_differences: vel_differences[l] = []
                             lap_times.get(l).append(current_laps[a])
-                            collisions.get(l).append(current_collisions[a])
-                            illegal_changes.get(l).append(current_lcs[a])
                             lane_differences.get(l).append(current_tld[a])
                             vel_differences.get(l).append(current_tvd[a])
+                        collisions.get(l).append(current_collisions[a])
+                        illegal_changes.get(l).append(current_lcs[a])
                         points[l].append(0)
                         for idx, finisher in enumerate(ordering):
                             if finisher.startswith(l):
@@ -232,26 +235,28 @@ def summarize_multiple_experiments(experiments_list):
                 l = current_winner.split("(")[0]
                 wins[l] = wins.get(l, 0) + 1
             for d in current_dnfs:
-                dnfs[d] = dnfs.get(d, 0) + 1
+                l = d.split("(")[0]
+                dnfs[l] = dnfs.get(l, 0) + 1
             if len(finishers) > 1 and current_winner != "":
-                if current_winner not in win_margins:
-                    win_margins[current_winner] = []
-                win_margins[current_winner].append(current_laps[max(finishers, key=lambda t: current_laps[t])] - current_laps[min(finishers, key=lambda t: current_laps[t])])
+                l = current_winner.split("(")[0]
+                if l not in win_margins:
+                    win_margins[l] = []
+                win_margins[l].append(current_laps[max(finishers, key=lambda t: current_laps[t])] - current_laps[min(finishers, key=lambda t: current_laps[t])])
             for a in current_laps:
                 agent_type = a.split("(")[0]
                 l = agent_type
                 if l not in points: points[l] = []
+                if l not in collisions: collisions[l] = []
+                if l not in illegal_changes: illegal_changes[l] = []
                 if l not in current_dnfs:
                     if l not in lap_times: lap_times[l] = []
-                    if l not in collisions: collisions[l] = []
-                    if l not in illegal_changes: illegal_changes[l] = []
                     if l not in lane_differences: lane_differences[l] = []
                     if l not in vel_differences: vel_differences[l] = []
                     lap_times.get(l).append(current_laps[a])
-                    collisions.get(l).append(current_collisions[a])
-                    illegal_changes.get(l).append(current_lcs[a])
                     lane_differences.get(l).append(current_tld[a])
                     vel_differences.get(l).append(current_tvd[a])
+                collisions.get(l).append(current_collisions[a])
+                illegal_changes.get(l).append(current_lcs[a])
                 points[l].append(0)
                 for idx, finisher in enumerate(ordering):
                     if finisher.startswith(l):
@@ -267,35 +272,35 @@ def summarize_multiple_experiments(experiments_list):
     stddv_safety_score = {l: (sum([((illegal_changes[l][i]+collisions[l][i])-avg_safety_score[l])**2 for i in range(len(collisions[l]))])/len(collisions[l]))**0.5 for l in collisions}
 
     print("Wins", wins)
-    # print("DNFs", dnfs)
+    print("DNFs", dnfs)
     # print("Avg Lap Times", avg_lap_times)
     # print ("Avg Win Margins", avg_win_margins)
     print ("Avg Collisions", avg_colls)
     # print ("Avg Illegal Lane Changes", avg_lcs)
-    # print ("Avg Target Lane Distance", avg_tld)
+    print ("Avg Target Lane Distance", avg_tld)
     # print("Avg Target Vel Diff", avg_tvd)
     print("Avg Points Per Race", avg_points)
     print("Avg Safety Score", avg_safety_score)
     # print("Std Dev safety Score", stddv_safety_score)
-
+    print()
 
 oval_experiments = [
-    "MCTS_LQR_vs_Fixed_LQR_Oval",
-    "Fixed_RL_vs_MCTS_LQR_Oval", 
-    "Fixed_RL_vs_Fixed_LQR_Oval", 
-    "E2E_vs_Fixed_RL_Oval",
-    "E2E_vs_MCTS_LQR_Oval", 
-    "E2E_vs_Fixed_LQR_Oval", 
-    "MCTS_RL_vs_E2E_Oval", 
-    "MCTS_RL_vs_Fixed_RL_Oval", 
-    "MCTS_RL_vs_MCTS_LQR_Oval", 
-    "MCTS_RL_vs_Fixed_LQR_Oval",
+    # "MCTS_LQR_vs_Fixed_LQR_Oval",
+    # "Fixed_RL_vs_MCTS_LQR_Oval", 
+    # "Fixed_RL_vs_Fixed_LQR_Oval", 
+    # "E2E_vs_Fixed_RL_Oval",
+    # "E2E_vs_MCTS_LQR_Oval", 
+    # "E2E_vs_Fixed_LQR_Oval", 
+    # "MCTS_RL_vs_E2E_Oval", 
+    # "MCTS_RL_vs_Fixed_RL_Oval", 
+    # "MCTS_RL_vs_MCTS_LQR_Oval", 
+    # "MCTS_RL_vs_Fixed_LQR_Oval",
 ]
 
 complex_experiments = [
     "MCTS_LQR_vs_Fixed_LQR_Complex",
     "Fixed_RL_vs_MCTS_LQR_Complex", 
-    "Fixed_RL_vs_Fixed_LQR_Complex", 
+    "Fixed_RL_vs_Fixed_LQR_Complex2", 
     "E2E_vs_Fixed_LQR_Complex", 
     "E2E_vs_MCTS_LQR_Complex", 
     "E2E_vs_Fixed_RL_Complex",
@@ -319,45 +324,45 @@ summarize_multiple_experiments(complex_experiments)
 print("All Experiments Aggregated:")
 summarize_multiple_experiments(oval_experiments + complex_experiments)
 
-print()
-print()
+# print()
+# print()
 
-duo_oval_experiments = [
-    "MCTS_LQR_vs_Fixed_LQR_OvalDuos",
-    "Fixed_RL_vs_MCTS_LQR_OvalDuos", 
-    "Fixed_RL_vs_Fixed_LQR_OvalDuos", 
-    "E2E_vs_Fixed_RL_OvalDuos",
-    # "E2E_vs_MCTS_LQR_OvalDuos", 
-    # "E2E_vs_Fixed_LQR_OvalDuos", 
-    "MCTS_RL_vs_E2E_OvalDuos", 
-    # "MCTS_RL_vs_Fixed_RL_OvalDuos", 
-    # "MCTS_RL_vs_MCTS_LQR_OvalDuos", 
-    # "MCTS_RL_vs_Fixed_LQR_OvalDuos",
-]
+# duo_oval_experiments = [
+#     "MCTS_LQR_vs_Fixed_LQR_OvalDuos",
+#     "Fixed_RL_vs_MCTS_LQR_OvalDuos", 
+#     "Fixed_RL_vs_Fixed_LQR_OvalDuos", 
+#     "E2E_vs_Fixed_RL_OvalDuos",
+#     "E2E_vs_MCTS_LQR_OvalDuos", 
+#     "E2E_vs_Fixed_LQR_OvalDuos", 
+#     "MCTS_RL_vs_E2E_OvalDuos", 
+#     "MCTS_RL_vs_Fixed_RL_OvalDuos", 
+#     "MCTS_RL_vs_MCTS_LQR_OvalDuos", 
+#     "MCTS_RL_vs_Fixed_LQR_OvalDuos",
+# ]
 
-duo_complex_experiments = [
-    "MCTS_LQR_vs_Fixed_LQR_ComplexDuos",
-    # "Fixed_RL_vs_MCTS_LQR_ComplexDuos", 
-    # "Fixed_RL_vs_Fixed_LQR_ComplexDuos", 
-    # "E2E_vs_Fixed_LQR_ComplexDuos", 
-    # "E2E_vs_MCTS_LQR_ComplexDuos", 
-    # "E2E_vs_Fixed_RL_ComplexDuos",
-    # "MCTS_RL_vs_MCTS_LQR_ComplexDuos", 
-    # "MCTS_RL_vs_Fixed_LQR_ComplexDuos",
-    # "MCTS_RL_vs_Fixed_RL_ComplexDuos", 
-    "MCTS_RL_vs_E2E_ComplexDuos", 
-]
+# duo_complex_experiments = [
+#     "MCTS_LQR_vs_Fixed_LQR_ComplexDuos",
+#     "Fixed_RL_vs_MCTS_LQR_ComplexDuos", 
+#     "Fixed_RL_vs_Fixed_LQR_ComplexDuos", 
+#     "E2E_vs_Fixed_LQR_ComplexDuos", 
+#     "E2E_vs_MCTS_LQR_ComplexDuos", 
+#     "E2E_vs_Fixed_RL_ComplexDuos",
+#     "MCTS_RL_vs_MCTS_LQR_ComplexDuos", 
+#     "MCTS_RL_vs_Fixed_LQR_ComplexDuos",
+#     "MCTS_RL_vs_Fixed_RL_ComplexDuos", 
+#     "MCTS_RL_vs_E2E_ComplexDuos", 
+# ]
 
-for exp in duo_oval_experiments:
-    summarize_experiment(exp)
+# for exp in duo_oval_experiments:
+#     summarize_experiment(exp)
 
-for exp in duo_complex_experiments:
-    summarize_experiment(exp)
+# for exp in duo_complex_experiments:
+#     summarize_experiment(exp)
 
 
-print("Duo Oval Experiments Aggregated:")
-summarize_multiple_experiments(duo_oval_experiments)
-print("Duo Complex Experiments Aggregated:")
-summarize_multiple_experiments(duo_complex_experiments)
-print("Duo All Experiments Aggregated:")
-summarize_multiple_experiments(duo_oval_experiments + duo_complex_experiments)
+# print("Duo Oval Experiments Aggregated:")
+# summarize_multiple_experiments(duo_oval_experiments)
+# print("Duo Complex Experiments Aggregated:")
+# summarize_multiple_experiments(duo_complex_experiments)
+# print("Duo All Experiments Aggregated:")
+# summarize_multiple_experiments(duo_oval_experiments + duo_complex_experiments)

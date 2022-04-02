@@ -1612,7 +1612,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -1633,6 +1633,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2918,7 +2923,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -2939,6 +2944,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4389,7 +4399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &137837111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4489,7 +4499,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 1
   sectionHorizon: 5
-  highlightWaypoints: 0
+  highlightWaypoints: 1
 --- !u!4 &137837112
 Transform:
   m_ObjectHideFlags: 0
@@ -4591,7 +4601,7 @@ MonoBehaviour:
   - {fileID: 83117595}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_Fixed_LQR_ComplexDuos
+  ExperimentName: Fixed_RL_vs_Fixed_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -5621,7 +5631,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5642,6 +5652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7067,7 +7082,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7088,6 +7103,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8390,7 +8410,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8411,6 +8431,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9485,7 +9510,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9506,6 +9531,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -10194,7 +10224,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -10215,6 +10245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12795,12 +12830,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 1929748966}
+      objectReference: {fileID: 605941706}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 1485045908}
+      objectReference: {fileID: 1847960920}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -12809,7 +12844,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.324646
+      value: 223.83565
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -12819,27 +12854,27 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -111.04318
+      value: -300.65717
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000000042810533
+      value: 0.000000008562108
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.1988546e-10
+      value: 8.397691e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9952246
+      value: 0.99522465
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09761158
+      value: -0.097611345
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -16125,7 +16160,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -16146,6 +16181,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -18330,7 +18370,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -18351,6 +18391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20171,7 +20216,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20192,6 +20237,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -21231,7 +21281,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -21252,6 +21302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -22346,7 +22401,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -22367,6 +22422,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23167,7 +23227,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23188,6 +23248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23891,7 +23956,7 @@ MonoBehaviour:
   - {fileID: 1217278482}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_RL_ComplexDuos
+  ExperimentName: MCTS_RL_vs_Fixed_RL_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -24115,7 +24180,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 936833196}
+      objectReference: {fileID: 1969536736}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -24266,7 +24331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1359978272}
-  envController: {fileID: 137837111}
+  envController: {fileID: 1376070125}
 --- !u!1001 &697076627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24456,7 +24521,7 @@ MonoBehaviour:
     - {fileID: 203028622}
   Agents:
   - {fileID: 173882735}
-  - {fileID: 173882735}
+  - {fileID: 203028622}
   - {fileID: 1434589059}
   - {fileID: 909570594}
   Sections:
@@ -28630,12 +28695,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80aca137a2109463fb6c86f09a521374, type: 2}
+      objectReference: {fileID: 2100000, guid: 4ae0a8e21fe944960ae7238feeda49f1, type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -28656,6 +28721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -33010,7 +33080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &936833195
 Transform:
   m_ObjectHideFlags: 0
@@ -37978,12 +38048,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 80aca137a2109463fb6c86f09a521374, type: 2}
+      objectReference: {fileID: 2100000, guid: 4ae0a8e21fe944960ae7238feeda49f1, type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -38004,6 +38074,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -39992,7 +40067,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -40013,6 +40088,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -41135,8 +41215,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: -4.1988546e-10, y: 0.9952246, z: -0.09761158, w: -0.0000000042810533}
-  m_LocalPosition: {x: 19.324646, y: 3.279, z: -111.04318}
+  m_LocalRotation: {x: 8.397691e-10, y: 0.99522465, z: -0.097611345, w: 0.000000008562108}
+  m_LocalPosition: {x: 223.83565, y: 3.279, z: -300.65717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -42501,7 +42581,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -42522,6 +42602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -43874,7 +43959,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -43895,6 +43980,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -45969,7 +46059,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -45990,6 +46080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -46854,7 +46949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1376070125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46923,7 +47018,7 @@ MonoBehaviour:
   - {fileID: 2133404083}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_RL_ComplexDuos
+  ExperimentName: E2E_vs_Fixed_RL_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -48817,7 +48912,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -48838,6 +48933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -51042,12 +51142,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1032077402}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1485045908 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 1483441991}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1504707530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51717,7 +51811,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -51738,6 +51832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -58340,7 +58439,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5bc283af1f1d13c448dcba3e04f9452b,
+      objectReference: {fileID: 5022602860645237092, guid: 5f769136e4638fd418c7c6476402b027,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -58361,6 +58460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -59498,7 +59602,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -59519,6 +59623,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -62068,7 +62177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -62089,6 +62198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -62707,6 +62821,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7106280111870196688, guid: 68397bf4d4e0ee649a065492a9ac7b64,
     type: 3}
   m_PrefabInstance: {fileID: 1956766024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1847960920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 605941704}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1849341609
 GameObject:
@@ -64740,7 +64860,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -64761,6 +64881,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -65586,7 +65711,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -65607,6 +65732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -67085,7 +67215,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -67106,6 +67236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -67264,7 +67399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1969536736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67333,7 +67468,7 @@ MonoBehaviour:
   - {fileID: 1595491100}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_MCTS_LQR_ComplexDuos
+  ExperimentName: Fixed_RL_vs_MCTS_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -69185,7 +69320,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4ef69e7e5859beb49972a4a64d0c88f5,
+      objectReference: {fileID: 5022602860645237092, guid: a9b96478199033a48bc42235f59dca42,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -69206,6 +69341,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -69898,7 +70038,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -69919,6 +70059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -73144,7 +73289,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 4e21d492f4db2d54a8921f237f865c3b,
+      objectReference: {fileID: 5022602860645237092, guid: 3ed2171a12b7ea14cbc5deb11f414dd6,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -73165,6 +73310,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BrainParameters.VectorActionSize.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+        type: 3}
+      propertyPath: m_BrainParameters.NumStackedVectorObservations
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

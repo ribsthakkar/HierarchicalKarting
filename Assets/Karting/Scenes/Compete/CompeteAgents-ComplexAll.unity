@@ -1485,7 +1485,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7698,7 +7698,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8988,7 +8988,7 @@ MonoBehaviour:
   - {fileID: 63109403}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_RL_Complex
+  ExperimentName: MCTS_RL_vs_Fixed_RL_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -9460,12 +9460,12 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.0000000074150015
+      value: -0.0000000074150015
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 7.272613e-10
+      value: -7.272613e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -10201,7 +10201,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -15082,7 +15082,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20821,7 +20821,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -21177,7 +21177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1283396213}
+      objectReference: {fileID: 1508489065}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -21322,7 +21322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1078163298}
-  envController: {fileID: 1118193866}
+  envController: {fileID: 2058157679}
 --- !u!1001 &717698226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24896,7 +24896,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -25441,7 +25441,7 @@ MonoBehaviour:
   - {fileID: 175415744}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_Fixed_LQR_Complex
+  ExperimentName: Fixed_RL_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -29598,7 +29598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1118193866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31523,7 +31523,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 7.272613e-10, y: 0.9952246, z: -0.09761135, w: 0.0000000074150015}
+  m_LocalRotation: {x: -7.272613e-10, y: 0.9952246, z: -0.09761135, w: -0.0000000074150015}
   m_LocalPosition: {x: 89.111, y: 3.279, z: -302.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -33197,7 +33197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1283396213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40399,7 +40399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -42069,7 +42069,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1508489065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42134,7 +42134,7 @@ MonoBehaviour:
   - {fileID: 664798614}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_E2E_Complex
+  ExperimentName: MCTS_RL_vs_E2E_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
@@ -43656,7 +43656,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -55039,7 +55039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2058157679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55104,7 +55104,7 @@ MonoBehaviour:
   - {fileID: 654353291}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_RL_Complex
+  ExperimentName: E2E_vs_Fixed_RL_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2

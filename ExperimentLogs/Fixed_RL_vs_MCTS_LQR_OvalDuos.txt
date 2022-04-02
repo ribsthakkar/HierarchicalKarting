@@ -1,0 +1,2064 @@
+Experiment 0
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.6
+MCTS-LQR(0) Best Lap: 20.1
+MCTS-LQR(0) Total Time: 84.7
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 2
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.5484042
+MCTS-LQR(0) Avg Target Vel Difference: 0.03737745
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.24
+MCTS-LQR(1) Best Lap: 19.72
+MCTS-LQR(1) Total Time: 82.64
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.309855
+MCTS-LQR(1) Avg Target Vel Difference: 0.0238697
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.04
+Fixed-RL(0) Best Lap: 19.4
+Fixed-RL(0) Total Time: 80.78
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.618858
+Fixed-RL(0) Avg Target Vel Difference: -0.8057179
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.82
+Fixed-RL(1) Best Lap: 19.44
+Fixed-RL(1) Total Time: 80.32
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 3
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.230863
+Fixed-RL(1) Avg Target Vel Difference: -0.5537273
+Winner: 
+
+Experiment 1
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.06
+MCTS-LQR(0) Best Lap: 20.06
+MCTS-LQR(0) Total Time: 82.9
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3169585
+MCTS-LQR(0) Avg Target Vel Difference: 0.266263
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.46
+MCTS-LQR(1) Best Lap: 19.42
+MCTS-LQR(1) Total Time: 84.43999
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.3134859
+MCTS-LQR(1) Avg Target Vel Difference: 0.05860311
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.84
+Fixed-RL(0) Best Lap: 19.16
+Fixed-RL(0) Total Time: 79.74
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.306925
+Fixed-RL(0) Avg Target Vel Difference: -0.5396292
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.76
+Fixed-RL(1) Best Lap: 19.54
+Fixed-RL(1) Total Time: 80.68
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 2
+Fixed-RL(1) Collisions: 3
+Fixed-RL(1) Avg Target Lane Difference: 1.148529
+Fixed-RL(1) Avg Target Vel Difference: -0.6261951
+Winner: 
+
+Experiment 2
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.22
+MCTS-LQR(0) Best Lap: 19.86
+MCTS-LQR(0) Total Time: 82.8
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 5
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3038155
+MCTS-LQR(0) Avg Target Vel Difference: 0.3245308
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.02
+MCTS-LQR(1) Best Lap: 20.02
+MCTS-LQR(1) Total Time: 81.68
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3243319
+MCTS-LQR(1) Avg Target Vel Difference: 0.06960937
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.42
+Fixed-RL(0) Best Lap: 19.96
+Fixed-RL(0) Total Time: 83.46
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 3
+Fixed-RL(0) Avg Target Lane Difference: 0.9876749
+Fixed-RL(0) Avg Target Vel Difference: -0.6295449
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.24
+Fixed-RL(1) Best Lap: 19.72
+Fixed-RL(1) Total Time: 82
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.8371184
+Fixed-RL(1) Avg Target Vel Difference: -0.5747747
+Winner: 
+
+Experiment 3
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 19.98
+MCTS-LQR(0) Best Lap: 19.98
+MCTS-LQR(0) Total Time: 84.58
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.4579718
+MCTS-LQR(0) Avg Target Vel Difference: 0.2516441
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.36
+MCTS-LQR(1) Best Lap: 19.66
+MCTS-LQR(1) Total Time: 82.96
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3118782
+MCTS-LQR(1) Avg Target Vel Difference: 0.4049177
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.02
+Fixed-RL(0) Best Lap: 19.2
+Fixed-RL(0) Total Time: 81.58
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.325772
+Fixed-RL(0) Avg Target Vel Difference: -0.6102138
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.92
+Fixed-RL(1) Best Lap: 19.32
+Fixed-RL(1) Total Time: 80.78
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.267646
+Fixed-RL(1) Avg Target Vel Difference: -0.7588744
+Winner: 
+
+Experiment 4
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.58
+MCTS-LQR(0) Best Lap: 20.06
+MCTS-LQR(0) Total Time: 83.62
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.368304
+MCTS-LQR(0) Avg Target Vel Difference: 0.1950221
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.68
+MCTS-LQR(1) Best Lap: 19.98
+MCTS-LQR(1) Total Time: 82.04
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.325971
+MCTS-LQR(1) Avg Target Vel Difference: 0.2896451
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.8
+Fixed-RL(0) Best Lap: 19.8
+Fixed-RL(0) Total Time: 82.68
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 4
+Fixed-RL(0) Avg Target Lane Difference: 1.211097
+Fixed-RL(0) Avg Target Vel Difference: -0.9046704
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.52
+Fixed-RL(1) Best Lap: 19.82
+Fixed-RL(1) Total Time: 82.32
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.04172
+Fixed-RL(1) Avg Target Vel Difference: -0.6833095
+Winner: 
+
+Experiment 5
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.18
+MCTS-LQR(0) Best Lap: 20.18
+MCTS-LQR(0) Total Time: 85.16
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.4323736
+MCTS-LQR(0) Avg Target Vel Difference: 0.00371975
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.06
+MCTS-LQR(1) Best Lap: 19.7
+MCTS-LQR(1) Total Time: 82.96
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 2
+MCTS-LQR(1) Avg Target Lane Difference: 0.4923947
+MCTS-LQR(1) Avg Target Vel Difference: 0.1687201
+Fixed-RL(0) Speed: 14.99727
+Fixed-RL(0) Reward: -4779.665
+Fixed-RL(0) Last Lap: 20.78
+Fixed-RL(0) Best Lap: 20.78
+Fixed-RL(0) Total Time: 119.98
+Fixed-RL(0) Laps Completed: 2/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.089113
+Fixed-RL(0) Avg Target Vel Difference: -0.8218625
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.66
+Fixed-RL(1) Best Lap: 20.52
+Fixed-RL(1) Total Time: 87.22
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.6945508
+Fixed-RL(1) Avg Target Vel Difference: -1.105986
+Winner: 
+
+Experiment 6
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.62
+MCTS-LQR(0) Best Lap: 20.08
+MCTS-LQR(0) Total Time: 83.92
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3622975
+MCTS-LQR(0) Avg Target Vel Difference: 0.2472406
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.46
+MCTS-LQR(1) Best Lap: 20.14
+MCTS-LQR(1) Total Time: 84.74
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.3798535
+MCTS-LQR(1) Avg Target Vel Difference: 0.2496497
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.4
+Fixed-RL(0) Best Lap: 19.12
+Fixed-RL(0) Total Time: 79.54
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.269424
+Fixed-RL(0) Avg Target Vel Difference: -0.5871943
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.74
+Fixed-RL(1) Best Lap: 19.52
+Fixed-RL(1) Total Time: 81.43999
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 3
+Fixed-RL(1) Avg Target Lane Difference: 1.270122
+Fixed-RL(1) Avg Target Vel Difference: -0.6728308
+Winner: 
+
+Experiment 7
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.02
+MCTS-LQR(0) Best Lap: 20.02
+MCTS-LQR(0) Total Time: 83.38
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3335201
+MCTS-LQR(0) Avg Target Vel Difference: 0.2547043
+MCTS-LQR(1) Speed: 14.91086
+MCTS-LQR(1) Reward: 6839.983
+MCTS-LQR(1) Last Lap: 20.18
+MCTS-LQR(1) Best Lap: 19.98
+MCTS-LQR(1) Total Time: 84.34
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.3075971
+MCTS-LQR(1) Avg Target Vel Difference: 0.3028059
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20
+Fixed-RL(0) Best Lap: 19.36
+Fixed-RL(0) Total Time: 80.58
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 2
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.410963
+Fixed-RL(0) Avg Target Vel Difference: -0.6872838
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.68
+Fixed-RL(1) Best Lap: 19.26
+Fixed-RL(1) Total Time: 79.72
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.207464
+Fixed-RL(1) Avg Target Vel Difference: -0.5081663
+Winner: 
+
+Experiment 8
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.46
+MCTS-LQR(0) Best Lap: 19.98
+MCTS-LQR(0) Total Time: 84.24
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 2
+MCTS-LQR(0) Collisions: 2
+MCTS-LQR(0) Avg Target Lane Difference: 0.3531007
+MCTS-LQR(0) Avg Target Vel Difference: -0.2444061
+MCTS-LQR(1) Speed: 11.64012
+MCTS-LQR(1) Reward: 5357.524
+MCTS-LQR(1) Last Lap: 20.44
+MCTS-LQR(1) Best Lap: 20.12
+MCTS-LQR(1) Total Time: 85.25999
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3445003
+MCTS-LQR(1) Avg Target Vel Difference: -0.1550051
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.46
+Fixed-RL(0) Best Lap: 19.3
+Fixed-RL(0) Total Time: 80.86
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 2
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.28619
+Fixed-RL(0) Avg Target Vel Difference: -0.5656442
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.42
+Fixed-RL(1) Best Lap: 19.42
+Fixed-RL(1) Total Time: 81.36
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.093472
+Fixed-RL(1) Avg Target Vel Difference: -0.6808863
+Winner: 
+
+Experiment 9
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.5
+MCTS-LQR(0) Best Lap: 20.06
+MCTS-LQR(0) Total Time: 86.96
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 2
+MCTS-LQR(0) Avg Target Lane Difference: 0.3551906
+MCTS-LQR(0) Avg Target Vel Difference: -0.09047943
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.4
+MCTS-LQR(1) Best Lap: 19.92
+MCTS-LQR(1) Total Time: 84.12
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 6
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.393543
+MCTS-LQR(1) Avg Target Vel Difference: 0.1964572
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.9
+Fixed-RL(0) Best Lap: 19.2
+Fixed-RL(0) Total Time: 81.14
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.338626
+Fixed-RL(0) Avg Target Vel Difference: -0.5788222
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.1
+Fixed-RL(1) Best Lap: 19.9
+Fixed-RL(1) Total Time: 86.08
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.6732242
+Fixed-RL(1) Avg Target Vel Difference: -0.6187963
+Winner: 
+
+Experiment 10
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.28
+MCTS-LQR(0) Best Lap: 20.2
+MCTS-LQR(0) Total Time: 84.92
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.3835686
+MCTS-LQR(0) Avg Target Vel Difference: -0.01893438
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.26
+MCTS-LQR(1) Best Lap: 20.26
+MCTS-LQR(1) Total Time: 86.06
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 4
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.4768187
+MCTS-LQR(1) Avg Target Vel Difference: -0.07293865
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.34
+Fixed-RL(0) Best Lap: 19.56
+Fixed-RL(0) Total Time: 103.9
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.157342
+Fixed-RL(0) Avg Target Vel Difference: -0.8752805
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.38
+Fixed-RL(1) Best Lap: 19.38
+Fixed-RL(1) Total Time: 81.4
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.9662145
+Fixed-RL(1) Avg Target Vel Difference: -0.6831915
+Winner: 
+
+Experiment 11
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.34
+MCTS-LQR(0) Best Lap: 20.04
+MCTS-LQR(0) Total Time: 87.12
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.4906555
+MCTS-LQR(0) Avg Target Vel Difference: -0.148025
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 19.82
+MCTS-LQR(1) Best Lap: 19.36
+MCTS-LQR(1) Total Time: 84
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.398665
+MCTS-LQR(1) Avg Target Vel Difference: 0.2693348
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.28
+Fixed-RL(0) Best Lap: 19.8
+Fixed-RL(0) Total Time: 85.8
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 5
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.115781
+Fixed-RL(0) Avg Target Vel Difference: -0.9650739
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.88
+Fixed-RL(1) Best Lap: 19.26
+Fixed-RL(1) Total Time: 81.16
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.205033
+Fixed-RL(1) Avg Target Vel Difference: -0.5128167
+Winner: 
+
+Experiment 12
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 21.76
+MCTS-LQR(0) Best Lap: 19.96
+MCTS-LQR(0) Total Time: 86.06
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.3166946
+MCTS-LQR(0) Avg Target Vel Difference: 0.07432484
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.36
+MCTS-LQR(1) Best Lap: 19.9
+MCTS-LQR(1) Total Time: 81.96
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 5
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3938393
+MCTS-LQR(1) Avg Target Vel Difference: 0.09790127
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.8
+Fixed-RL(0) Best Lap: 20.02
+Fixed-RL(0) Total Time: 85.25999
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 5
+Fixed-RL(0) Avg Target Lane Difference: 0.9825844
+Fixed-RL(0) Avg Target Vel Difference: -0.6677931
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.24
+Fixed-RL(1) Best Lap: 20.06
+Fixed-RL(1) Total Time: 82.28
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 2
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.070668
+Fixed-RL(1) Avg Target Vel Difference: -0.5318536
+Winner: 
+
+Experiment 13
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.68
+MCTS-LQR(0) Best Lap: 20
+MCTS-LQR(0) Total Time: 84.7
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.287275
+MCTS-LQR(0) Avg Target Vel Difference: 0.2910328
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.28
+MCTS-LQR(1) Best Lap: 19.72
+MCTS-LQR(1) Total Time: 83.06
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.3249846
+MCTS-LQR(1) Avg Target Vel Difference: 0.009625772
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.88
+Fixed-RL(0) Best Lap: 19.72
+Fixed-RL(0) Total Time: 84.78
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 0.7038493
+Fixed-RL(0) Avg Target Vel Difference: -0.7060357
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.54
+Fixed-RL(1) Best Lap: 19.28
+Fixed-RL(1) Total Time: 80.28
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.343973
+Fixed-RL(1) Avg Target Vel Difference: -0.6974403
+Winner: 
+
+Experiment 14
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.12
+MCTS-LQR(0) Best Lap: 19.72
+MCTS-LQR(0) Total Time: 81.16
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 6
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.350565
+MCTS-LQR(0) Avg Target Vel Difference: 0.04211257
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.54
+MCTS-LQR(1) Best Lap: 19.74
+MCTS-LQR(1) Total Time: 84.1
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3037767
+MCTS-LQR(1) Avg Target Vel Difference: 0.1994479
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.04
+Fixed-RL(0) Best Lap: 19.36
+Fixed-RL(0) Total Time: 82.04
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.336427
+Fixed-RL(0) Avg Target Vel Difference: -0.7208281
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.2
+Fixed-RL(1) Best Lap: 19.74
+Fixed-RL(1) Total Time: 81.8
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.020552
+Fixed-RL(1) Avg Target Vel Difference: -0.6332765
+Winner: 
+
+Experiment 15
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 21.66
+MCTS-LQR(0) Best Lap: 20.02
+MCTS-LQR(0) Total Time: 85.78
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 2
+MCTS-LQR(0) Avg Target Lane Difference: 0.2828541
+MCTS-LQR(0) Avg Target Vel Difference: -0.2413833
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.44
+MCTS-LQR(1) Best Lap: 20.14
+MCTS-LQR(1) Total Time: 84
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.2904191
+MCTS-LQR(1) Avg Target Vel Difference: -0.1919994
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.16
+Fixed-RL(0) Best Lap: 19.82
+Fixed-RL(0) Total Time: 84.58
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 0.6622012
+Fixed-RL(0) Avg Target Vel Difference: -0.7325898
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.4
+Fixed-RL(1) Best Lap: 19.48
+Fixed-RL(1) Total Time: 98.74
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 6
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.303698
+Fixed-RL(1) Avg Target Vel Difference: -0.6967304
+Winner: 
+
+Experiment 16
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.24
+MCTS-LQR(0) Best Lap: 19.82
+MCTS-LQR(0) Total Time: 84.04
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.3460121
+MCTS-LQR(0) Avg Target Vel Difference: -0.0148473
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.74
+MCTS-LQR(1) Best Lap: 19.76
+MCTS-LQR(1) Total Time: 82.04
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 5
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.4972465
+MCTS-LQR(1) Avg Target Vel Difference: 0.210014
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.14
+Fixed-RL(0) Best Lap: 19.7
+Fixed-RL(0) Total Time: 82.48
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 3
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.15069
+Fixed-RL(0) Avg Target Vel Difference: -0.5971709
+Fixed-RL(1) Speed: 13.94903
+Fixed-RL(1) Reward: 1560.785
+Fixed-RL(1) Last Lap: 20.36
+Fixed-RL(1) Best Lap: 19.98
+Fixed-RL(1) Total Time: 84.9
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.00143
+Fixed-RL(1) Avg Target Vel Difference: -0.7375399
+Winner: 
+
+Experiment 17
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.62
+MCTS-LQR(0) Best Lap: 20.48
+MCTS-LQR(0) Total Time: 84.64
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 2
+MCTS-LQR(0) Avg Target Lane Difference: 0.2897037
+MCTS-LQR(0) Avg Target Vel Difference: 0.1130373
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 19.92
+MCTS-LQR(1) Best Lap: 19.84
+MCTS-LQR(1) Total Time: 81.62
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.2940132
+MCTS-LQR(1) Avg Target Vel Difference: 0.4159895
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.42
+Fixed-RL(0) Best Lap: 19.74
+Fixed-RL(0) Total Time: 83.3
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 3
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.055217
+Fixed-RL(0) Avg Target Vel Difference: -0.6061413
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.38
+Fixed-RL(1) Best Lap: 19.9
+Fixed-RL(1) Total Time: 82.4
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.9437434
+Fixed-RL(1) Avg Target Vel Difference: -0.7078276
+Winner: 
+
+Experiment 18
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 19.9
+MCTS-LQR(0) Best Lap: 19.58
+MCTS-LQR(0) Total Time: 83.42
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3088972
+MCTS-LQR(0) Avg Target Vel Difference: 0.3820215
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.34
+MCTS-LQR(1) Best Lap: 19.7
+MCTS-LQR(1) Total Time: 82.54
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3642348
+MCTS-LQR(1) Avg Target Vel Difference: 0.1814044
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.62
+Fixed-RL(0) Best Lap: 19.12
+Fixed-RL(0) Total Time: 80
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.226498
+Fixed-RL(0) Avg Target Vel Difference: -0.6160111
+Fixed-RL(1) Speed: 13.97851
+Fixed-RL(1) Reward: 9407.077
+Fixed-RL(1) Last Lap: 20.1
+Fixed-RL(1) Best Lap: 19.76
+Fixed-RL(1) Total Time: 83.9
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 4
+Fixed-RL(1) Avg Target Lane Difference: 0.7990219
+Fixed-RL(1) Avg Target Vel Difference: -0.627718
+Winner: 
+
+Experiment 19
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.24
+MCTS-LQR(0) Best Lap: 20.02
+MCTS-LQR(0) Total Time: 83.72
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.449083
+MCTS-LQR(0) Avg Target Vel Difference: 0.332109
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.3
+MCTS-LQR(1) Best Lap: 20.3
+MCTS-LQR(1) Total Time: 87.25999
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 4
+MCTS-LQR(1) Collisions: 2
+MCTS-LQR(1) Avg Target Lane Difference: 0.371587
+MCTS-LQR(1) Avg Target Vel Difference: -0.1060762
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.86
+Fixed-RL(0) Best Lap: 19.62
+Fixed-RL(0) Total Time: 84.38
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 3
+Fixed-RL(0) Avg Target Lane Difference: 1.08137
+Fixed-RL(0) Avg Target Vel Difference: -0.8416252
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.36
+Fixed-RL(1) Best Lap: 19.82
+Fixed-RL(1) Total Time: 86.18
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 3
+Fixed-RL(1) Avg Target Lane Difference: 1.071854
+Fixed-RL(1) Avg Target Vel Difference: -0.6677222
+Winner: 
+
+Experiment 20
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.7
+MCTS-LQR(0) Best Lap: 19.9
+MCTS-LQR(0) Total Time: 83.93999
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.368702
+MCTS-LQR(0) Avg Target Vel Difference: -0.1475532
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.28
+MCTS-LQR(1) Best Lap: 19.86
+MCTS-LQR(1) Total Time: 84.66
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.4773117
+MCTS-LQR(1) Avg Target Vel Difference: -0.06882864
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.9
+Fixed-RL(0) Best Lap: 19.72
+Fixed-RL(0) Total Time: 82.28
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 4
+Fixed-RL(0) Avg Target Lane Difference: 1.330494
+Fixed-RL(0) Avg Target Vel Difference: -0.6845874
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.56
+Fixed-RL(1) Best Lap: 19.56
+Fixed-RL(1) Total Time: 82.24
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 4
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.135396
+Fixed-RL(1) Avg Target Vel Difference: -0.6459558
+Winner: 
+
+Experiment 21
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.02
+MCTS-LQR(0) Best Lap: 19.88
+MCTS-LQR(0) Total Time: 84.02
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.4192861
+MCTS-LQR(0) Avg Target Vel Difference: -0.1217923
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.64
+MCTS-LQR(1) Best Lap: 19.48
+MCTS-LQR(1) Total Time: 85.96
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.335785
+MCTS-LQR(1) Avg Target Vel Difference: -0.0937573
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.36
+Fixed-RL(0) Best Lap: 19.8
+Fixed-RL(0) Total Time: 84.68
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 7
+Fixed-RL(0) Avg Target Lane Difference: 1.110661
+Fixed-RL(0) Avg Target Vel Difference: -0.9939195
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.28
+Fixed-RL(1) Best Lap: 19.56
+Fixed-RL(1) Total Time: 84.54
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.000443
+Fixed-RL(1) Avg Target Vel Difference: -0.9186958
+Winner: 
+
+Experiment 22
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.22
+MCTS-LQR(0) Best Lap: 19.48
+MCTS-LQR(0) Total Time: 83.62
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 5
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.429704
+MCTS-LQR(0) Avg Target Vel Difference: 0.0001138056
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.26
+MCTS-LQR(1) Best Lap: 19.6
+MCTS-LQR(1) Total Time: 85.64
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 2
+MCTS-LQR(1) Avg Target Lane Difference: 0.4082601
+MCTS-LQR(1) Avg Target Vel Difference: 0.03706428
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.46
+Fixed-RL(0) Best Lap: 19.72
+Fixed-RL(0) Total Time: 85.06
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 4
+Fixed-RL(0) Avg Target Lane Difference: 1.087046
+Fixed-RL(0) Avg Target Vel Difference: -0.7596493
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.34
+Fixed-RL(1) Best Lap: 19.86
+Fixed-RL(1) Total Time: 86.86
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 4
+Fixed-RL(1) Collisions: 4
+Fixed-RL(1) Avg Target Lane Difference: 0.9246734
+Fixed-RL(1) Avg Target Vel Difference: -0.9440127
+Winner: 
+
+Experiment 23
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.5
+MCTS-LQR(0) Best Lap: 19.84
+MCTS-LQR(0) Total Time: 83.34
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 2
+MCTS-LQR(0) Avg Target Lane Difference: 0.3831749
+MCTS-LQR(0) Avg Target Vel Difference: -0.1009558
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.68
+MCTS-LQR(1) Best Lap: 20.2
+MCTS-LQR(1) Total Time: 84.43999
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.2958981
+MCTS-LQR(1) Avg Target Vel Difference: 0.1602545
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.48
+Fixed-RL(0) Best Lap: 19.92
+Fixed-RL(0) Total Time: 83.62
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 4
+Fixed-RL(0) Collisions: 3
+Fixed-RL(0) Avg Target Lane Difference: 1.183064
+Fixed-RL(0) Avg Target Vel Difference: -0.7525269
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.02
+Fixed-RL(1) Best Lap: 19.7
+Fixed-RL(1) Total Time: 82.1
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 3
+Fixed-RL(1) Avg Target Lane Difference: 1.039489
+Fixed-RL(1) Avg Target Vel Difference: -0.5688189
+Winner: 
+
+Experiment 24
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.66
+MCTS-LQR(0) Best Lap: 19.86
+MCTS-LQR(0) Total Time: 84.06
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 2
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3276923
+MCTS-LQR(0) Avg Target Vel Difference: 0.1572318
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.56
+MCTS-LQR(1) Best Lap: 20.08
+MCTS-LQR(1) Total Time: 84.9
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.2621298
+MCTS-LQR(1) Avg Target Vel Difference: 0.1109846
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.66
+Fixed-RL(0) Best Lap: 19.48
+Fixed-RL(0) Total Time: 81.08
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.276604
+Fixed-RL(0) Avg Target Vel Difference: -0.7476795
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.84
+Fixed-RL(1) Best Lap: 19.84
+Fixed-RL(1) Total Time: 81.93999
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.322709
+Fixed-RL(1) Avg Target Vel Difference: -0.5894161
+Winner: 
+
+Experiment 25
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.4
+MCTS-LQR(0) Best Lap: 20.06
+MCTS-LQR(0) Total Time: 84.4
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.3870166
+MCTS-LQR(0) Avg Target Vel Difference: -0.05626048
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.4
+MCTS-LQR(1) Best Lap: 19.64
+MCTS-LQR(1) Total Time: 82.06
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3792777
+MCTS-LQR(1) Avg Target Vel Difference: 0.4191001
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.66
+Fixed-RL(0) Best Lap: 19.38
+Fixed-RL(0) Total Time: 80.14
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.297715
+Fixed-RL(0) Avg Target Vel Difference: -0.5485903
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.5
+Fixed-RL(1) Best Lap: 19.46
+Fixed-RL(1) Total Time: 79.3
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.277782
+Fixed-RL(1) Avg Target Vel Difference: -0.4981767
+Winner: 
+
+Experiment 26
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.34
+MCTS-LQR(0) Best Lap: 20.34
+MCTS-LQR(0) Total Time: 84.1
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3341464
+MCTS-LQR(0) Avg Target Vel Difference: 0.1882862
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.1
+MCTS-LQR(1) Best Lap: 20.1
+MCTS-LQR(1) Total Time: 81.82
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.2748217
+MCTS-LQR(1) Avg Target Vel Difference: 0.3738815
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.12
+Fixed-RL(0) Best Lap: 20.12
+Fixed-RL(0) Total Time: 84.24
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 2
+Fixed-RL(0) Collisions: 3
+Fixed-RL(0) Avg Target Lane Difference: 0.9579859
+Fixed-RL(0) Avg Target Vel Difference: -0.7295903
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.14
+Fixed-RL(1) Best Lap: 20.14
+Fixed-RL(1) Total Time: 82.12
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 2
+Fixed-RL(1) Collisions: 3
+Fixed-RL(1) Avg Target Lane Difference: 0.8266709
+Fixed-RL(1) Avg Target Vel Difference: -0.692558
+Winner: 
+
+Experiment 27
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.44
+MCTS-LQR(0) Best Lap: 20.16
+MCTS-LQR(0) Total Time: 85.56
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 5
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3934495
+MCTS-LQR(0) Avg Target Vel Difference: -0.2068401
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.2
+MCTS-LQR(1) Best Lap: 20.1
+MCTS-LQR(1) Total Time: 84.8
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.4849824
+MCTS-LQR(1) Avg Target Vel Difference: -0.05154116
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.82
+Fixed-RL(0) Best Lap: 19.52
+Fixed-RL(0) Total Time: 81.54
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 3
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.239634
+Fixed-RL(0) Avg Target Vel Difference: -0.6675396
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.72
+Fixed-RL(1) Best Lap: 19.4
+Fixed-RL(1) Total Time: 82.42
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 4
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.276056
+Fixed-RL(1) Avg Target Vel Difference: -0.8475365
+Winner: 
+
+Experiment 28
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.68
+MCTS-LQR(0) Best Lap: 19.7
+MCTS-LQR(0) Total Time: 85.8
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.2896159
+MCTS-LQR(0) Avg Target Vel Difference: 0.08449139
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20
+MCTS-LQR(1) Best Lap: 19.62
+MCTS-LQR(1) Total Time: 81.28
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.4233742
+MCTS-LQR(1) Avg Target Vel Difference: 0.3339947
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.32
+Fixed-RL(0) Best Lap: 19.88
+Fixed-RL(0) Total Time: 81.9
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.162184
+Fixed-RL(0) Avg Target Vel Difference: -0.7877679
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.34
+Fixed-RL(1) Best Lap: 19.76
+Fixed-RL(1) Total Time: 84.88
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 6
+Fixed-RL(1) Avg Target Lane Difference: 0.6053783
+Fixed-RL(1) Avg Target Vel Difference: -0.6517582
+Winner: 
+
+Experiment 29
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.06
+MCTS-LQR(0) Best Lap: 20.06
+MCTS-LQR(0) Total Time: 86.04
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.30153
+MCTS-LQR(0) Avg Target Vel Difference: -0.1421376
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 21.02
+MCTS-LQR(1) Best Lap: 19.74
+MCTS-LQR(1) Total Time: 85.38
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 4
+MCTS-LQR(1) Collisions: 3
+MCTS-LQR(1) Avg Target Lane Difference: 0.2409152
+MCTS-LQR(1) Avg Target Vel Difference: 0.07731576
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.76
+Fixed-RL(0) Best Lap: 19.76
+Fixed-RL(0) Total Time: 83.93999
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 3
+Fixed-RL(0) Avg Target Lane Difference: 1.219427
+Fixed-RL(0) Avg Target Vel Difference: -0.6437868
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.56
+Fixed-RL(1) Best Lap: 19.32
+Fixed-RL(1) Total Time: 82.1
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 3
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.016592
+Fixed-RL(1) Avg Target Vel Difference: -0.5426577
+Winner: 
+
+Experiment 30
+MCTS-LQR(0) Speed: 14.96643
+MCTS-LQR(0) Reward: 1881.928
+MCTS-LQR(0) Last Lap: 20.66
+MCTS-LQR(0) Best Lap: 19.54
+MCTS-LQR(0) Total Time: 84.66
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.4410953
+MCTS-LQR(0) Avg Target Vel Difference: -0.0157307
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.42
+MCTS-LQR(1) Best Lap: 19.62
+MCTS-LQR(1) Total Time: 83.4
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 5
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.4159535
+MCTS-LQR(1) Avg Target Vel Difference: 0.0764211
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.9
+Fixed-RL(0) Best Lap: 19.32
+Fixed-RL(0) Total Time: 79.84
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.425573
+Fixed-RL(0) Avg Target Vel Difference: -0.5624871
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.9
+Fixed-RL(1) Best Lap: 19.42
+Fixed-RL(1) Total Time: 80.74
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.182876
+Fixed-RL(1) Avg Target Vel Difference: -0.5585678
+Winner: 
+
+Experiment 31
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.46
+MCTS-LQR(0) Best Lap: 19.94
+MCTS-LQR(0) Total Time: 83.34
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 2
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.33272
+MCTS-LQR(0) Avg Target Vel Difference: 0.4160304
+MCTS-LQR(1) Speed: 14.95423
+MCTS-LQR(1) Reward: 7785.885
+MCTS-LQR(1) Last Lap: 20.22
+MCTS-LQR(1) Best Lap: 19.86
+MCTS-LQR(1) Total Time: 84.04
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.366755
+MCTS-LQR(1) Avg Target Vel Difference: -0.02044962
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.52
+Fixed-RL(0) Best Lap: 19.4
+Fixed-RL(0) Total Time: 79.88
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.251168
+Fixed-RL(0) Avg Target Vel Difference: -0.571809
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20
+Fixed-RL(1) Best Lap: 19.46
+Fixed-RL(1) Total Time: 80.96
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 3
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.430935
+Fixed-RL(1) Avg Target Vel Difference: -0.7075773
+Winner: 
+
+Experiment 32
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.44
+MCTS-LQR(0) Best Lap: 19.5
+MCTS-LQR(0) Total Time: 80.98
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.4510403
+MCTS-LQR(0) Avg Target Vel Difference: 0.2992568
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.36
+MCTS-LQR(1) Best Lap: 20.04
+MCTS-LQR(1) Total Time: 84.02
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3423836
+MCTS-LQR(1) Avg Target Vel Difference: 0.3637126
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.3
+Fixed-RL(0) Best Lap: 19.9
+Fixed-RL(0) Total Time: 82.46
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.174282
+Fixed-RL(0) Avg Target Vel Difference: -0.6734729
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.24
+Fixed-RL(1) Best Lap: 19.68
+Fixed-RL(1) Total Time: 81.72
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 0.9298946
+Fixed-RL(1) Avg Target Vel Difference: -0.5926036
+Winner: 
+
+Experiment 33
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 21.1
+MCTS-LQR(0) Best Lap: 19.62
+MCTS-LQR(0) Total Time: 84.42
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 7
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.3603446
+MCTS-LQR(0) Avg Target Vel Difference: 0.0949541
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 21.06
+MCTS-LQR(1) Best Lap: 20
+MCTS-LQR(1) Total Time: 85.42
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3538491
+MCTS-LQR(1) Avg Target Vel Difference: -0.03020967
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20
+Fixed-RL(0) Best Lap: 19.36
+Fixed-RL(0) Total Time: 81.08
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.258155
+Fixed-RL(0) Avg Target Vel Difference: -0.6792321
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.24
+Fixed-RL(1) Best Lap: 19.82
+Fixed-RL(1) Total Time: 83.22
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.122927
+Fixed-RL(1) Avg Target Vel Difference: -0.5138296
+Winner: 
+
+Experiment 34
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.32
+MCTS-LQR(0) Best Lap: 19.92
+MCTS-LQR(0) Total Time: 82.1
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.220815
+MCTS-LQR(0) Avg Target Vel Difference: 0.1605153
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.02
+MCTS-LQR(1) Best Lap: 19.94
+MCTS-LQR(1) Total Time: 84.04
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.4283176
+MCTS-LQR(1) Avg Target Vel Difference: 0.3456563
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.88
+Fixed-RL(0) Best Lap: 19.24
+Fixed-RL(0) Total Time: 80.02
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.289955
+Fixed-RL(0) Avg Target Vel Difference: -0.5349085
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.98
+Fixed-RL(1) Best Lap: 19.82
+Fixed-RL(1) Total Time: 82.32
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.9029822
+Fixed-RL(1) Avg Target Vel Difference: -0.6049373
+Winner: 
+
+Experiment 35
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.22
+MCTS-LQR(0) Best Lap: 19.54
+MCTS-LQR(0) Total Time: 82.14
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3629207
+MCTS-LQR(0) Avg Target Vel Difference: 0.1576939
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.36
+MCTS-LQR(1) Best Lap: 19.9
+MCTS-LQR(1) Total Time: 84.1
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3506077
+MCTS-LQR(1) Avg Target Vel Difference: 0.03801214
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.88
+Fixed-RL(0) Best Lap: 19.88
+Fixed-RL(0) Total Time: 82.62
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 5
+Fixed-RL(0) Avg Target Lane Difference: 1.275007
+Fixed-RL(0) Avg Target Vel Difference: -0.7592949
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.22
+Fixed-RL(1) Best Lap: 19.54
+Fixed-RL(1) Total Time: 82.64
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 8
+Fixed-RL(1) Avg Target Lane Difference: 1.141386
+Fixed-RL(1) Avg Target Vel Difference: -0.7643073
+Winner: 
+
+Experiment 36
+MCTS-LQR(0) Speed: 14.89874
+MCTS-LQR(0) Reward: 1634.508
+MCTS-LQR(0) Last Lap: 20.56
+MCTS-LQR(0) Best Lap: 20.48
+MCTS-LQR(0) Total Time: 86.74
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.4126135
+MCTS-LQR(0) Avg Target Vel Difference: -0.1590163
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.42
+MCTS-LQR(1) Best Lap: 20.02
+MCTS-LQR(1) Total Time: 84.36
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3823985
+MCTS-LQR(1) Avg Target Vel Difference: 0.3010776
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.86
+Fixed-RL(0) Best Lap: 19.36
+Fixed-RL(0) Total Time: 81.48
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.541546
+Fixed-RL(0) Avg Target Vel Difference: -0.7529515
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.14
+Fixed-RL(1) Best Lap: 19.72
+Fixed-RL(1) Total Time: 84.7
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 4
+Fixed-RL(1) Avg Target Lane Difference: 0.7015842
+Fixed-RL(1) Avg Target Vel Difference: -0.7529318
+Winner: 
+
+Experiment 37
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 21.5
+MCTS-LQR(0) Best Lap: 20.12
+MCTS-LQR(0) Total Time: 85.75999
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 2
+MCTS-LQR(0) Avg Target Lane Difference: 0.4052117
+MCTS-LQR(0) Avg Target Vel Difference: 0.3760405
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 24.74
+MCTS-LQR(1) Best Lap: 20.08
+MCTS-LQR(1) Total Time: 87.08
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 4
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.4531552
+MCTS-LQR(1) Avg Target Vel Difference: 0.2554585
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 21.26
+Fixed-RL(0) Best Lap: 19.9
+Fixed-RL(0) Total Time: 84.34
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 0.7161014
+Fixed-RL(0) Avg Target Vel Difference: -0.6774916
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.14
+Fixed-RL(1) Best Lap: 19.46
+Fixed-RL(1) Total Time: 95.64
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.421289
+Fixed-RL(1) Avg Target Vel Difference: -0.7899833
+Winner: 
+
+Experiment 38
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.46
+MCTS-LQR(0) Best Lap: 19.96
+MCTS-LQR(0) Total Time: 83.42
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.4195368
+MCTS-LQR(0) Avg Target Vel Difference: 0.1435373
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.4
+MCTS-LQR(1) Best Lap: 20.06
+MCTS-LQR(1) Total Time: 87.46
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 0
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.4646339
+MCTS-LQR(1) Avg Target Vel Difference: -0.1282763
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.14
+Fixed-RL(0) Best Lap: 19.76
+Fixed-RL(0) Total Time: 88.34
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 0.7526327
+Fixed-RL(0) Avg Target Vel Difference: -0.8380581
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.94
+Fixed-RL(1) Best Lap: 19.26
+Fixed-RL(1) Total Time: 80.24
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 0
+Fixed-RL(1) Avg Target Lane Difference: 1.161577
+Fixed-RL(1) Avg Target Vel Difference: -0.5424043
+Winner: 
+
+Experiment 39
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 21.12
+MCTS-LQR(0) Best Lap: 19.98
+MCTS-LQR(0) Total Time: 106.06
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.5930511
+MCTS-LQR(0) Avg Target Vel Difference: -0.1963745
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.16
+MCTS-LQR(1) Best Lap: 19.72
+MCTS-LQR(1) Total Time: 86.32
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.4356269
+MCTS-LQR(1) Avg Target Vel Difference: 0.1128049
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.46
+Fixed-RL(0) Best Lap: 19.8
+Fixed-RL(0) Total Time: 87.4
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 3
+Fixed-RL(0) Collisions: 5
+Fixed-RL(0) Avg Target Lane Difference: 1.591758
+Fixed-RL(0) Avg Target Vel Difference: -1.256664
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.42
+Fixed-RL(1) Best Lap: 19.84
+Fixed-RL(1) Total Time: 86.9
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.074032
+Fixed-RL(1) Avg Target Vel Difference: -0.6380538
+Winner: 
+
+Experiment 40
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.84
+MCTS-LQR(0) Best Lap: 20.06
+MCTS-LQR(0) Total Time: 83.6
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 2
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3577113
+MCTS-LQR(0) Avg Target Vel Difference: -0.1196056
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.24
+MCTS-LQR(1) Best Lap: 20.12
+MCTS-LQR(1) Total Time: 84.25999
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 5
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.3605542
+MCTS-LQR(1) Avg Target Vel Difference: -0.07322892
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.28
+Fixed-RL(0) Best Lap: 19.86
+Fixed-RL(0) Total Time: 85.18
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 3
+Fixed-RL(0) Avg Target Lane Difference: 1.109214
+Fixed-RL(0) Avg Target Vel Difference: -0.8156507
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.16
+Fixed-RL(1) Best Lap: 19.52
+Fixed-RL(1) Total Time: 84.82
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.194183
+Fixed-RL(1) Avg Target Vel Difference: -0.7525434
+Winner: 
+
+Experiment 41
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.18
+MCTS-LQR(0) Best Lap: 19.7
+MCTS-LQR(0) Total Time: 81.66
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3288668
+MCTS-LQR(0) Avg Target Vel Difference: 0.3482206
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.38
+MCTS-LQR(1) Best Lap: 19.82
+MCTS-LQR(1) Total Time: 83.36
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 2
+MCTS-LQR(1) Collisions: 2
+MCTS-LQR(1) Avg Target Lane Difference: 0.3187136
+MCTS-LQR(1) Avg Target Vel Difference: 0.002347612
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.16
+Fixed-RL(0) Best Lap: 19.96
+Fixed-RL(0) Total Time: 83.18
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 3
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 0.7542791
+Fixed-RL(0) Avg Target Vel Difference: -0.5434297
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.44
+Fixed-RL(1) Best Lap: 19.78
+Fixed-RL(1) Total Time: 84.84
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 1.092536
+Fixed-RL(1) Avg Target Vel Difference: -0.6649778
+Winner: 
+
+Experiment 42
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 19.9
+MCTS-LQR(0) Best Lap: 19.7
+MCTS-LQR(0) Total Time: 84.4
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3470215
+MCTS-LQR(0) Avg Target Vel Difference: 0.3254872
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.76
+MCTS-LQR(1) Best Lap: 19.8
+MCTS-LQR(1) Total Time: 81.82
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.4508
+MCTS-LQR(1) Avg Target Vel Difference: 0.2129067
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.24
+Fixed-RL(0) Best Lap: 19.52
+Fixed-RL(0) Total Time: 81.74
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 1
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.087013
+Fixed-RL(0) Avg Target Vel Difference: -0.7198154
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.74
+Fixed-RL(1) Best Lap: 19.6
+Fixed-RL(1) Total Time: 84.16
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 2
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.7948864
+Fixed-RL(1) Avg Target Vel Difference: -0.9511864
+Winner: 
+
+Experiment 43
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.68
+MCTS-LQR(0) Best Lap: 19.82
+MCTS-LQR(0) Total Time: 83.78
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 3
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3111935
+MCTS-LQR(0) Avg Target Vel Difference: 0.0697924
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.56
+MCTS-LQR(1) Best Lap: 19.52
+MCTS-LQR(1) Total Time: 81.72
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.2901001
+MCTS-LQR(1) Avg Target Vel Difference: 0.1455652
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.64
+Fixed-RL(0) Best Lap: 19.48
+Fixed-RL(0) Total Time: 79.84
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 0
+Fixed-RL(0) Avg Target Lane Difference: 1.359906
+Fixed-RL(0) Avg Target Vel Difference: -0.5289879
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.26
+Fixed-RL(1) Best Lap: 19.96
+Fixed-RL(1) Total Time: 82.7
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 1
+Fixed-RL(1) Avg Target Lane Difference: 0.9021639
+Fixed-RL(1) Avg Target Vel Difference: -0.6523768
+Winner: 
+
+Experiment 44
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.3
+MCTS-LQR(0) Best Lap: 19.94
+MCTS-LQR(0) Total Time: 82
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 5
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.3309929
+MCTS-LQR(0) Avg Target Vel Difference: 0.3171547
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.18
+MCTS-LQR(1) Best Lap: 20.18
+MCTS-LQR(1) Total Time: 85.12
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 3
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.390086
+MCTS-LQR(1) Avg Target Vel Difference: -0.05398034
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.42
+Fixed-RL(0) Best Lap: 19.42
+Fixed-RL(0) Total Time: 80.3
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.296731
+Fixed-RL(0) Avg Target Vel Difference: -0.556306
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.8
+Fixed-RL(1) Best Lap: 19.8
+Fixed-RL(1) Total Time: 83.6
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 4
+Fixed-RL(1) Avg Target Lane Difference: 0.8371094
+Fixed-RL(1) Avg Target Vel Difference: -0.6598897
+Winner: 
+
+Experiment 45
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.28
+MCTS-LQR(0) Best Lap: 19.98
+MCTS-LQR(0) Total Time: 86.54
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 0
+MCTS-LQR(0) Collisions: 0
+MCTS-LQR(0) Avg Target Lane Difference: 0.4445198
+MCTS-LQR(0) Avg Target Vel Difference: -0.1883494
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.5
+MCTS-LQR(1) Best Lap: 19.86
+MCTS-LQR(1) Total Time: 85.66
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 5
+MCTS-LQR(1) Collisions: 1
+MCTS-LQR(1) Avg Target Lane Difference: 0.4940551
+MCTS-LQR(1) Avg Target Vel Difference: 0.05962354
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 20.42
+Fixed-RL(0) Best Lap: 19.88
+Fixed-RL(0) Total Time: 87.54
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 2
+Fixed-RL(0) Collisions: 2
+Fixed-RL(0) Avg Target Lane Difference: 1.126125
+Fixed-RL(0) Avg Target Vel Difference: -0.8763701
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.32
+Fixed-RL(1) Best Lap: 19.96
+Fixed-RL(1) Total Time: 86.08
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 1
+Fixed-RL(1) Collisions: 3
+Fixed-RL(1) Avg Target Lane Difference: 1.284596
+Fixed-RL(1) Avg Target Vel Difference: -0.9147813
+Winner: 
+
+Experiment 46
+MCTS-LQR(0) Speed: 0
+MCTS-LQR(0) Reward: 0
+MCTS-LQR(0) Last Lap: 20.24
+MCTS-LQR(0) Best Lap: 19.94
+MCTS-LQR(0) Total Time: 84.84
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 4
+MCTS-LQR(0) Collisions: 3
+MCTS-LQR(0) Avg Target Lane Difference: 0.3831803
+MCTS-LQR(0) Avg Target Vel Difference: 0.2098042
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.52
+MCTS-LQR(1) Best Lap: 19.92
+MCTS-LQR(1) Total Time: 83.1
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 0
+MCTS-LQR(1) Avg Target Lane Difference: 0.3928024
+MCTS-LQR(1) Avg Target Vel Difference: 0.2434325
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.84
+Fixed-RL(0) Best Lap: 19.84
+Fixed-RL(0) Total Time: 83.34
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 4
+Fixed-RL(0) Avg Target Lane Difference: 1.240948
+Fixed-RL(0) Avg Target Vel Difference: -0.8069009
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 20.18
+Fixed-RL(1) Best Lap: 19.7
+Fixed-RL(1) Total Time: 83.36
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 0
+Fixed-RL(1) Collisions: 2
+Fixed-RL(1) Avg Target Lane Difference: 1.064516
+Fixed-RL(1) Avg Target Vel Difference: -0.7124407
+Winner: 
+
+Experiment 47
+MCTS-LQR(0) Speed: 14.93103
+MCTS-LQR(0) Reward: 6994.782
+MCTS-LQR(0) Last Lap: 21.4
+MCTS-LQR(0) Best Lap: 20.18
+MCTS-LQR(0) Total Time: 87.93999
+MCTS-LQR(0) Laps Completed: 4/4
+MCTS-LQR(0) Illegal Lane Changes: 1
+MCTS-LQR(0) Collisions: 1
+MCTS-LQR(0) Avg Target Lane Difference: 0.2546624
+MCTS-LQR(0) Avg Target Vel Difference: -0.2539874
+MCTS-LQR(1) Speed: 0
+MCTS-LQR(1) Reward: 0
+MCTS-LQR(1) Last Lap: 20.78
+MCTS-LQR(1) Best Lap: 19.84
+MCTS-LQR(1) Total Time: 86.68
+MCTS-LQR(1) Laps Completed: 4/4
+MCTS-LQR(1) Illegal Lane Changes: 1
+MCTS-LQR(1) Collisions: 4
+MCTS-LQR(1) Avg Target Lane Difference: 0.3292069
+MCTS-LQR(1) Avg Target Vel Difference: -0.1830869
+Fixed-RL(0) Speed: 0
+Fixed-RL(0) Reward: 0
+Fixed-RL(0) Last Lap: 19.82
+Fixed-RL(0) Best Lap: 19.58
+Fixed-RL(0) Total Time: 82.1
+Fixed-RL(0) Laps Completed: 4/4
+Fixed-RL(0) Illegal Lane Changes: 0
+Fixed-RL(0) Collisions: 1
+Fixed-RL(0) Avg Target Lane Difference: 1.002022
+Fixed-RL(0) Avg Target Vel Difference: -0.655261
+Fixed-RL(1) Speed: 0
+Fixed-RL(1) Reward: 0
+Fixed-RL(1) Last Lap: 19.74
+Fixed-RL(1) Best Lap: 19.74
+Fixed-RL(1) Total Time: 85.34
+Fixed-RL(1) Laps Completed: 4/4
+Fixed-RL(1) Illegal Lane Changes: 4
+Fixed-RL(1) Collisions: 4
+Fixed-RL(1) Avg Target Lane Difference: 1.25456
+Fixed-RL(1) Avg Target Vel Difference: -1.003769
+Winner: 
+

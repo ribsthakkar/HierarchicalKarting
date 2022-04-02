@@ -356,7 +356,7 @@ namespace KartGame.AI
 
                 if (hitTrack && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                 {
-                    if (hitTrackInfo.distance < 0.85f)
+                    if (hitTrackInfo.distance < current.WallHitValidationDistance)
                     {
                         m_envController.ResolveEvent(Event.HitWall, this, null);
                     }
@@ -364,7 +364,7 @@ namespace KartGame.AI
                 }
                 else if (hitAgent)
                 {
-                    if (hitAgentInfo.distance < 1.5f)
+                    if (hitAgentInfo.distance < current.AgentHitValidationDistance)
                     {
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);
