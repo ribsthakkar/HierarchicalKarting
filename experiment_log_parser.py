@@ -285,29 +285,29 @@ def summarize_multiple_experiments(experiments_list):
     print()
 
 oval_experiments = [
-    # "MCTS_LQR_vs_Fixed_LQR_Oval",
-    # "Fixed_RL_vs_MCTS_LQR_Oval", 
-    # "Fixed_RL_vs_Fixed_LQR_Oval", 
-    # "E2E_vs_Fixed_RL_Oval",
-    # "E2E_vs_MCTS_LQR_Oval", 
-    # "E2E_vs_Fixed_LQR_Oval", 
-    # "MCTS_RL_vs_E2E_Oval", 
-    # "MCTS_RL_vs_Fixed_RL_Oval", 
-    # "MCTS_RL_vs_MCTS_LQR_Oval", 
-    # "MCTS_RL_vs_Fixed_LQR_Oval",
+    "MCTS_LQR_vs_Fixed_LQR_Oval2",
+    "Fixed_RL_vs_MCTS_LQR_Oval2", 
+    "Fixed_RL_vs_Fixed_LQR_Oval2", 
+    "E2E_vs_Fixed_RL_Oval2",
+    "E2E_vs_MCTS_LQR_Oval2", 
+    "E2E_vs_Fixed_LQR_Oval2", 
+    "MCTS_RL_vs_E2E_Oval2", 
+    "MCTS_RL_vs_Fixed_RL_Oval2", 
+    "MCTS_RL_vs_MCTS_LQR_Oval2", 
+    "MCTS_RL_vs_Fixed_LQR_Oval2",
 ]
 
 complex_experiments = [
-    "MCTS_LQR_vs_Fixed_LQR_Complex",
-    "Fixed_RL_vs_MCTS_LQR_Complex", 
+    "MCTS_LQR_vs_Fixed_LQR_Complex3",
+    "Fixed_RL_vs_MCTS_LQR_Complex2", 
     "Fixed_RL_vs_Fixed_LQR_Complex2", 
-    "E2E_vs_Fixed_LQR_Complex", 
-    "E2E_vs_MCTS_LQR_Complex", 
-    "E2E_vs_Fixed_RL_Complex",
-    "MCTS_RL_vs_MCTS_LQR_Complex", 
-    "MCTS_RL_vs_Fixed_LQR_Complex",
-    "MCTS_RL_vs_Fixed_RL_Complex", 
-    "MCTS_RL_vs_E2E_Complex", 
+    "E2E_vs_Fixed_LQR_Complex2", 
+    "E2E_vs_MCTS_LQR_Complex2", 
+    "E2E_vs_Fixed_RL_Complex2",
+    "MCTS_RL_vs_MCTS_LQR_Complex2", 
+    "MCTS_RL_vs_Fixed_LQR_Complex2",
+    "MCTS_RL_vs_Fixed_RL_Complex2", 
+    "MCTS_RL_vs_E2E_Complex2", 
 ]
 
 for exp in oval_experiments:
@@ -324,45 +324,45 @@ summarize_multiple_experiments(complex_experiments)
 print("All Experiments Aggregated:")
 summarize_multiple_experiments(oval_experiments + complex_experiments)
 
-# print()
-# print()
+print()
+print()
 
-# duo_oval_experiments = [
-#     "MCTS_LQR_vs_Fixed_LQR_OvalDuos",
-#     "Fixed_RL_vs_MCTS_LQR_OvalDuos", 
-#     "Fixed_RL_vs_Fixed_LQR_OvalDuos", 
-#     "E2E_vs_Fixed_RL_OvalDuos",
-#     "E2E_vs_MCTS_LQR_OvalDuos", 
-#     "E2E_vs_Fixed_LQR_OvalDuos", 
-#     "MCTS_RL_vs_E2E_OvalDuos", 
-#     "MCTS_RL_vs_Fixed_RL_OvalDuos", 
-#     "MCTS_RL_vs_MCTS_LQR_OvalDuos", 
-#     "MCTS_RL_vs_Fixed_LQR_OvalDuos",
-# ]
+duo_oval_experiments = [
+    "MCTS_LQR_vs_Fixed_LQR_OvalDuos2",
+    "Fixed_RL_vs_MCTS_LQR_OvalDuos2", 
+    "Fixed_RL_vs_Fixed_LQR_OvalDuos2", 
+    "E2E_vs_Fixed_RL_OvalDuos",
+    "E2E_vs_MCTS_LQR_OvalDuos2", 
+    "E2E_vs_Fixed_LQR_OvalDuos2", 
+    "MCTS_RL_vs_E2E_OvalDuos", 
+    "MCTS_RL_vs_Fixed_RL_OvalDuos", 
+    "MCTS_RL_vs_MCTS_LQR_OvalDuos2", 
+    "MCTS_RL_vs_Fixed_LQR_OvalDuos2",
+]
 
-# duo_complex_experiments = [
-#     "MCTS_LQR_vs_Fixed_LQR_ComplexDuos",
-#     "Fixed_RL_vs_MCTS_LQR_ComplexDuos", 
-#     "Fixed_RL_vs_Fixed_LQR_ComplexDuos", 
-#     "E2E_vs_Fixed_LQR_ComplexDuos", 
-#     "E2E_vs_MCTS_LQR_ComplexDuos", 
-#     "E2E_vs_Fixed_RL_ComplexDuos",
-#     "MCTS_RL_vs_MCTS_LQR_ComplexDuos", 
-#     "MCTS_RL_vs_Fixed_LQR_ComplexDuos",
-#     "MCTS_RL_vs_Fixed_RL_ComplexDuos", 
-#     "MCTS_RL_vs_E2E_ComplexDuos", 
-# ]
+duo_complex_experiments = [
+    "MCTS_LQR_vs_Fixed_LQR_ComplexDuos2",
+    "Fixed_RL_vs_MCTS_LQR_ComplexDuos2", 
+    "Fixed_RL_vs_Fixed_LQR_ComplexDuos2", 
+    "E2E_vs_Fixed_LQR_ComplexDuos2", 
+    "E2E_vs_MCTS_LQR_ComplexDuos2", 
+    "E2E_vs_Fixed_RL_ComplexDuos",
+    "MCTS_RL_vs_MCTS_LQR_ComplexDuos2", 
+    "MCTS_RL_vs_Fixed_LQR_ComplexDuos2",
+    "MCTS_RL_vs_Fixed_RL_ComplexDuos", 
+    "MCTS_RL_vs_E2E_ComplexDuos", 
+]
 
-# for exp in duo_oval_experiments:
-#     summarize_experiment(exp)
+for exp in duo_oval_experiments:
+    summarize_experiment(exp)
 
-# for exp in duo_complex_experiments:
-#     summarize_experiment(exp)
+for exp in duo_complex_experiments:
+    summarize_experiment(exp)
 
 
-# print("Duo Oval Experiments Aggregated:")
-# summarize_multiple_experiments(duo_oval_experiments)
-# print("Duo Complex Experiments Aggregated:")
-# summarize_multiple_experiments(duo_complex_experiments)
-# print("Duo All Experiments Aggregated:")
-# summarize_multiple_experiments(duo_oval_experiments + duo_complex_experiments)
+print("Duo Oval Experiments Aggregated:")
+summarize_multiple_experiments(duo_oval_experiments)
+print("Duo Complex Experiments Aggregated:")
+summarize_multiple_experiments(duo_complex_experiments)
+print("Duo All Experiments Aggregated:")
+summarize_multiple_experiments(duo_oval_experiments + duo_complex_experiments)

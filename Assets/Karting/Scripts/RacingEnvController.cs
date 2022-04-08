@@ -69,8 +69,6 @@ public class RacingEnvController : MonoBehaviour
     public float OpponentHitPenalty = -2f;
     [Tooltip("What penatly is given when the agent is crashed by another agent?")]
     public float HitByOpponentPenalty = -2f;
-    [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired state?")]
-    public float PassCheckpointStateReward = 0.1f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired lane?")]
     public float PassCheckpointLaneReward = 4f;
     [Tooltip("How much reward is given when the agent successfully passes the checkpoint with desired velocity?")]
@@ -526,7 +524,7 @@ public class RacingEnvController : MonoBehaviour
         var minSectionIndex = 0;
         var maxSectionIndex = mode == EnvironmentMode.Training? goalSection : Agents.Length/2;
         var expLaneChoices = new int[] { 2, 3, 2, 3 };
-        var expSectionChoices = new int[] { 0, 0, 1, 1 };
+        var expSectionChoices = new int[] { 0, 0, 1, 1  };
         for (int j = 0; j < allOrderings[experimentNum % allOrderings.Count()].Count(); j++)
         {
             int i = allOrderings[experimentNum % allOrderings.Count()][j];

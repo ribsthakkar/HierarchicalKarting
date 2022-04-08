@@ -4473,7 +4473,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -4606,7 +4605,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -12859,12 +12857,12 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.000000008562108
+      value: -0.000000008562109
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 8.397691e-10
+      value: -8.3976914e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -23961,7 +23959,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -24180,7 +24177,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1969536736}
+      objectReference: {fileID: 699365658}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -24325,13 +24322,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695900668}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bb4b9b492a196d46b75760761528eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1359978272}
-  envController: {fileID: 1376070125}
+  envController: {fileID: 765801306}
 --- !u!1001 &697076627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24499,7 +24496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &699365658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24568,12 +24565,11 @@ MonoBehaviour:
   - {fileID: 1971627482}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_MCTS_LQR_ComplexDuos
+  ExperimentName: MCTS_RL_vs_MCTS_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -27001,12 +26997,11 @@ MonoBehaviour:
   - {fileID: 1059054561}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_LQR_ComplexDuos
+  ExperimentName: MCTS_RL_vs_Fixed_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -31367,12 +31362,11 @@ MonoBehaviour:
   - {fileID: 480818622}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_LQR_ComplexDuos
+  ExperimentName: E2E_vs_Fixed_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -33165,12 +33159,11 @@ MonoBehaviour:
   - {fileID: 175415744}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_LQR_vs_Fixed_LQR_ComplexDuos
+  ExperimentName: MCTS_LQR_vs_Fixed_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -35564,12 +35557,11 @@ MonoBehaviour:
   - {fileID: 894208557}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_MCTS_LQR_ComplexDuos
+  ExperimentName: E2E_vs_MCTS_LQR_ComplexDuos2
   TotalExperiments: 48
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -41215,7 +41207,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 8.397691e-10, y: 0.99522465, z: -0.097611345, w: 0.000000008562108}
+  m_LocalRotation: {x: -8.3976914e-10, y: 0.99522465, z: -0.097611345, w: -0.000000008562109}
   m_LocalPosition: {x: 223.83565, y: 3.279, z: -300.65717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -46949,7 +46941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1376070125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47023,7 +47015,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -67399,7 +67390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1969536736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67473,7 +67464,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5

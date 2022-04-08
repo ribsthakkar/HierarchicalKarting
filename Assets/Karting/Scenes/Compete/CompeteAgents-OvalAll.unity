@@ -1058,7 +1058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &55243090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1111,6 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -4407,7 +4406,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -4997,7 +4996,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5814,12 +5813,11 @@ MonoBehaviour:
   - {fileID: 1444408464}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_LQR_Oval
+  ExperimentName: E2E_vs_Fixed_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -7168,7 +7166,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -9128,7 +9126,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12477,7 +12475,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -13410,7 +13408,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -14895,7 +14893,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1132641209}
+      objectReference: {fileID: 1008197501}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -15040,7 +15038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 506639202}
-  envController: {fileID: 55243090}
+  envController: {fileID: 1958903313}
 --- !u!224 &695900669 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3878065802378232314, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
@@ -17287,7 +17285,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -18450,12 +18448,11 @@ MonoBehaviour:
   - {fileID: 469923103}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_MCTS_LQR_Oval
+  ExperimentName: E2E_vs_MCTS_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -21123,7 +21120,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -21590,7 +21587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1008197501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21638,12 +21635,11 @@ MonoBehaviour:
   - {fileID: 66825974}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_MCTS_LQR_Oval
+  ExperimentName: Fixed_RL_vs_MCTS_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -22429,7 +22425,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -23840,7 +23836,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -24926,7 +24922,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1132641209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24979,7 +24975,6 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -26278,7 +26273,7 @@ PrefabInstance:
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5209091469959198656, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -31590,7 +31585,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -32048,7 +32043,6 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -33524,12 +33518,11 @@ MonoBehaviour:
   - {fileID: 2092599026}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_RL_Oval
+  ExperimentName: E2E_vs_Fixed_RL_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -38193,12 +38186,11 @@ MonoBehaviour:
   - {fileID: 365964170}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_MCTS_LQR_Oval
+  ExperimentName: MCTS_RL_vs_MCTS_LQR_Oval2
   TotalExperiments: 50
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -39641,7 +39633,6 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -40632,7 +40623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1958903313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40685,7 +40676,6 @@ MonoBehaviour:
   WallHitPenalty: -4.5
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
-  PassCheckpointStateReward: 2
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -43926,7 +43916,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}

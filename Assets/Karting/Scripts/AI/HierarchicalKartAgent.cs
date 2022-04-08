@@ -127,7 +127,12 @@ namespace KartGame.AI
                     }
                     if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                     {
-                        m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
+                        m_envController.Sections[i % m_envController.Sections.Length].setColorForAgent(name, lane, Color.green);
+                        //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                    }
+                    if (name.Equals(m_envController.Agents[1].name) && m_envController.highlightWaypoints)
+                    {
+                        m_envController.Sections[i % m_envController.Sections.Length].setColorForAgent(name, lane, new Color(1f, 0.6f, 0f));
                         //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
                     }
                 }
@@ -148,7 +153,12 @@ namespace KartGame.AI
                     m_UpcomingVelocities[i % m_envController.Sections.Length] = m_Kart.GetMaxSpeed();
                     if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                     {
-                        m_envController.Sections[i % m_envController.Sections.Length].getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = Color.green;
+                        m_envController.Sections[i % m_envController.Sections.Length].setColorForAgent(name, lane, Color.green);
+                        //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                    }
+                    if (name.Equals(m_envController.Agents[1].name) && m_envController.highlightWaypoints)
+                    {
+                        m_envController.Sections[i % m_envController.Sections.Length].setColorForAgent(name, lane, new Color(1f, 0.6f, 0f));
                         //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
                     }
                 }
@@ -363,15 +373,23 @@ namespace KartGame.AI
                         if (m_UpcomingLanes.ContainsKey(kartState.section % m_envController.Sections.Length))
                         {
                             if (name.Equals(m_envController.Agents[0].name))
-                                m_envController.Sections[kartState.section % m_envController.Sections.Length].resetColors();
-
+                                m_envController.Sections[kartState.section % m_envController.Sections.Length].resetColorForAgent(name);
+                            
+                            if (name.Equals(m_envController.Agents[1].name))
+                                m_envController.Sections[kartState.section % m_envController.Sections.Length].resetColorForAgent(name);
                         }
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.max_velocity;
 
                         if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                         {
-                            m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
+                            m_envController.Sections[kartState.section % m_envController.Sections.Length].setColorForAgent(name, kartState.lane, Color.green);
+                            //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
+                        }
+                        if (name.Equals(m_envController.Agents[1].name) && m_envController.highlightWaypoints)
+                        {
+                            m_envController.Sections[kartState.section % m_envController.Sections.Length].setColorForAgent(name, kartState.lane, new Color(1f, 0.6f, 0f));
+                            //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
                         }
                     }
                     else if (!kartState.name.Equals(this.name) && opponentUpcomingLanes.ContainsKey(kartState.name))
@@ -403,7 +421,7 @@ namespace KartGame.AI
              * 8 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + (name.Equals("MCTS-RL") || name.Equals("Fixed-RL") ?7:8) + (12 * (otherAgents.Length + teamAgents.Length));
+            brainParameters.VectorObservationSize = Sensors.Length + (m_envController.sectionHorizon * 5) + (8) + (12 * (otherAgents.Length + teamAgents.Length));
             prepareForReuse();
         }
 
@@ -472,7 +490,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
-            if (!name.Equals("MCTS-RL") && !name.Equals("Fixed-RL")) sensor.AddObservation(is_active);
+            sensor.AddObservation(is_active);
             sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
@@ -521,8 +539,8 @@ namespace KartGame.AI
                     sensor.AddObservation(m_Kart.transform.InverseTransformPoint(targetLaneInSection.transform.position));
                     sensor.AddObservation(m_UpcomingVelocities[next] / m_Kart.GetMaxSpeed());
                     sensor.AddObservation(m_envController.sectionIsStraight(next));
-                    if (ShowRaycasts)
-                        Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
+                    //if (ShowRaycasts)
+                    //    Debug.DrawLine(AgentSensorTransform.position, targetLaneInSection.transform.position, Color.magenta);
                 }
                 else
                 {
@@ -612,7 +630,9 @@ namespace KartGame.AI
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
                 if (name.Equals(m_envController.Agents[0].name))
-                    m_envController.Sections[index % m_envController.Sections.Length].resetColors();
+                    m_envController.Sections[index % m_envController.Sections.Length].resetColorForAgent(name);
+                if (name.Equals(m_envController.Agents[1].name))
+                    m_envController.Sections[index % m_envController.Sections.Length].resetColorForAgent(name);
                 if (m_LaneChanges + Math.Abs(m_Lane - lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
@@ -957,18 +977,27 @@ namespace KartGame.AI
                 int nearbyOpponents = 0;
                 var avoidDynamics = new List<KartLQRDynamics>();
                 float multiplier = 0.0f;
-
-                if (actualAllPlayers.Count > 2)
+                if (m_envController.Agents.Length > 2)
                 {
-                    if (k == this)
-                        multiplier = (HighMode == HighLevelMode.Fixed ? 0.55f : 1.0f) / nearbyAgents;
+                    if (actualAllPlayers.Count > 2)
+                    {
+                        if (k == this)
+                            multiplier = (HighMode == HighLevelMode.Fixed ? 0.55f : 1.0f) / nearbyAgents;
+                        else
+                            multiplier = (HighMode == HighLevelMode.Fixed ? 1.7f : 1.7f) / nearbyAgents;
+                    }
                     else
-                        multiplier = (HighMode == HighLevelMode.Fixed ? 1.7f : 1.7f) / nearbyAgents;
+                    {
+                        if (k == this)
+                            multiplier = (HighMode == HighLevelMode.Fixed ? 0.45f : 1.0f);
+                        else
+                            multiplier = (HighMode == HighLevelMode.Fixed ? 1.3f : 1.3f);
+                    }
                 }
                 else
                 {
                     if (k == this)
-                        multiplier = (HighMode == HighLevelMode.Fixed ? 0.8f : 1.2f);
+                        multiplier = (HighMode == HighLevelMode.Fixed ? 0.45f : 1.0f);
                     else
                         multiplier = (HighMode == HighLevelMode.Fixed ? 1.3f : 1.3f);
                 }

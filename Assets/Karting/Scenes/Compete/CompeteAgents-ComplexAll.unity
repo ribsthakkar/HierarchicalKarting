@@ -1485,7 +1485,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7698,7 +7698,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8993,7 +8993,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -10201,7 +10200,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12959,7 +12958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &481435478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13024,12 +13023,11 @@ MonoBehaviour:
   - {fileID: 770639862}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_LQR_Complex
+  ExperimentName: E2E_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -15082,7 +15080,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20821,7 +20819,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -21177,7 +21175,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1508489065}
+      objectReference: {fileID: 481435478}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -21322,7 +21320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1078163298}
-  envController: {fileID: 2058157679}
+  envController: {fileID: 1118193866}
 --- !u!1001 &717698226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24896,7 +24894,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -25395,8 +25393,8 @@ MonoBehaviour:
   - Racers:
     - {fileID: 727026990}
   Agents:
-  - {fileID: 332677539}
   - {fileID: 727026990}
+  - {fileID: 332677539}
   Sections:
   - {fileID: 157562409}
   - {fileID: 247003394}
@@ -25446,7 +25444,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -25472,7 +25469,7 @@ MonoBehaviour:
   maxEpisodeSteps: 6000
   disableOnEnd: 1
   sectionHorizon: 5
-  highlightWaypoints: 0
+  highlightWaypoints: 1
 --- !u!1001 &947105546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29598,7 +29595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1118193866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29663,12 +29660,11 @@ MonoBehaviour:
   - {fileID: 1606286574}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_MCTS_LQR_Complex
+  ExperimentName: Fixed_RL_vs_MCTS_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -33262,12 +33258,11 @@ MonoBehaviour:
   - {fileID: 1210248275}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_MCTS_LQR_Complex
+  ExperimentName: E2E_vs_MCTS_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -35733,12 +35728,11 @@ MonoBehaviour:
   - {fileID: 424788334}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_LQR_vs_Fixed_LQR_Complex
+  ExperimentName: MCTS_LQR_vs_Fixed_LQR_Complex3
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -36830,7 +36824,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -37639,7 +37633,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -38934,7 +38928,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -40399,7 +40393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b67425fffb9695b41aedaee8abe141b3,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -42069,7 +42063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1508489065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42139,7 +42133,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -42263,12 +42256,11 @@ MonoBehaviour:
   - {fileID: 470032921}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_MCTS_LQR_Complex
+  ExperimentName: MCTS_RL_vs_MCTS_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -43656,7 +43648,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 5a5986a69403c3d4695a6e81f157f4ec,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -44537,12 +44529,11 @@ MonoBehaviour:
   - {fileID: 1237969437}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_LQR_Complex
+  ExperimentName: MCTS_RL_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -49931,7 +49922,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -55039,7 +55030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2058157679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55109,7 +55100,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
