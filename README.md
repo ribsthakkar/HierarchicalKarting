@@ -25,6 +25,7 @@ reasoning produces competitive behavior even when challenged with
 complex rules and constraints.
 
 To the best of our knowledge, this is the first project to study teamwork in the context of autonomous racing. 
+
 ## Code Structure
 
 Our controller implementations all reside in the
@@ -125,3 +126,4 @@ The first video in the playlist supplements the head-to-head racing paper. The s
       primaryClass={cs.MA}
 }
 ```
+
