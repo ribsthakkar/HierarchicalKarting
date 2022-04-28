@@ -1,6 +1,7 @@
 # Hierarchical Karting
 Abstract - We develop a hierarchical controller for head-to-head
-autonomous racing. A high-level planner approximates the race as a
+autonomous racing and autonomous racing amongst teams composed of cooperative agents subject to realistic safety and fairness rules. 
+A high-level planner approximates the race as a
 discrete game with simplified dynamics and encodes the complex safety
 and fairness rules seen in real-life racing and calculates a series of
 target waypoints. The low-level controller takes the resulting waypoints
@@ -18,11 +19,12 @@ controller using MARL for low-level control consistently outperformed
 all other methods in head-to-head races and more consistently adhered to
 the complex racing rules. Qualitatively, we observe the proposed
 controllers mimicking actions performed by expert human drivers such as
-shielding/blocking, overtaking, and long-term planning for delayed
+shielding/blocking, overtaking, coordination amongst teammates, and long-term planning for delayed
 advantages. We show that hierarchical planning for game-theoretic
 reasoning produces competitive behavior even when challenged with
 complex rules and constraints.
 
+To the best of our knowledge, this is the first project to study teamwork in the context of autonomous racing. 
 ## Code Structure
 
 Our controller implementations all reside in the
@@ -89,19 +91,36 @@ Our controller implementations all reside in the
 ![](./readme_images/RunGame.gif)
 
 ## Media
-Paper on arXiv [here](https://arxiv.org/abs/2202.12861) 
+#### Papers
+Head to head racing paper on arXiv [here](https://arxiv.org/abs/2202.12861) 
 
+Team-based racing paper on arXiv [here](https://arxiv.org/abs/2204.13070) 
+
+#### Videos
 Link to a video of some tactics executed by our hierarchical agents in
-the simulations:
-[Here](https://www.youtube.com/playlist?list=PLEkfZ4KJSCcG4yGWD7K5ENGXW5nBPYiF1)
+the simulations. [Here](https://www.youtube.com/playlist?list=PLEkfZ4KJSCcG4yGWD7K5ENGXW5nBPYiF1)
 
-## Cite
+The first video in the playlist supplements the head-to-head racing paper. The second video in the playlist supplements the team-based racing extension/paper:
+
+
+## Cite Head-to-head racing paper
 ```
 @misc{thakkar2022hierarchical,
       title={Hierarchical Control for Multi-Agent Autonomous Racing}, 
       author={Rishabh Saumil Thakkar and Aryaman Singh Samyal and David Fridovich-Keil and Zhe Xu and Ufuk Topcu},
       year={2022},
       eprint={2202.12861},
+      archivePrefix={arXiv},
+      primaryClass={cs.MA}
+}
+```
+## Cite Team-based racing racing paper
+```
+@misc{thakkar2022hierarchical,
+      title={Hierarchical Control for Cooperative Teams in Competitive Autonomous Racing}, 
+      author={Rishabh Saumil Thakkar and Aryaman Singh Samyal and David Fridovich-Keil and Zhe Xu and Ufuk Topcu},
+      year={2022},
+      eprint={2204.13070},
       archivePrefix={arXiv},
       primaryClass={cs.MA}
 }
