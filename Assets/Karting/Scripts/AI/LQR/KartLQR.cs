@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace KartGame.AI.LQR
 {
-    public class KartLQR : MonoBehaviour
+    public class KartLQR
     {
         /**
          * Solve a feedback LQ Nash game
@@ -50,7 +50,6 @@ namespace KartGame.AI.LQR
                 }
                 Bs.Add(B);
             }
-
             // Create appended initial matrix
             var initial = CreateVector.Sparse<double>(totalXDim);
             currIndex = 0;
@@ -71,9 +70,9 @@ namespace KartGame.AI.LQR
                     Matrix<double> col = CreateMatrix.Sparse<double>(0, dynamics[i].getUDim());
                     for (int j = 0; j < players; j++)
                     {
-                        //print(Zs[i].RowCount + " " + Zs[i].ColumnCount);
-                        //print(Bs[i].RowCount + " " + Bs[i].ColumnCount);
-                        //print(Bs[j].RowCount + " " + Bs[j].ColumnCount);
+                        //Debug.Log(Zs[i].RowCount + " " + Zs[i].ColumnCount);
+                        //Debug.Log(Bs[i].RowCount + " " + Bs[i].ColumnCount);
+                        //Debug.Log(Bs[j].RowCount + " " + Bs[j].ColumnCount);
                         if (i == j)
                         {
                             col = col.Stack(costs[i].getRMatrix() + Bs[i].TransposeThisAndMultiply(Zs[i].Multiply(Bs[i])));
@@ -121,9 +120,9 @@ namespace KartGame.AI.LQR
             }
             P = P.SubMatrix(uIndices[0].Item1, uIndices[0].Item2, 0, totalXDim);
             alpha = alpha.SubVector(uIndices[0].Item1, uIndices[0].Item2);
-            // print(P.ToString());
-            // print(alpha.ToString());
-            // print(initial.ToString());
+            //Debug.Log(P.ToString());
+            //Debug.Log(alpha.ToString());
+            //Debug.Log(initial.ToString());
             var optimal_control = -P * initial - alpha;
             return optimal_control;
         }

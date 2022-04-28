@@ -269,6 +269,7 @@ namespace KartGame.KartSystems
             // apply vehicle physics
             if (m_CanMove)
             {
+                // print("Moving vehicle ");
                 MoveVehicle(Input.Accelerate, Input.Brake, Input.TurnInput);
             }
             GroundAirbourne();
@@ -336,7 +337,7 @@ namespace KartGame.KartSystems
             else
             {
                 // use this value to play kart sound when it is waiting the race start countdown.
-                return Input.Accelerate ? 1.0f : 0.0f;
+                return  0.0f;
             }
         }
         void OnEnable()
@@ -504,7 +505,12 @@ namespace KartGame.KartSystems
 
         public float getMaxLateralGs()
         {
-            return (1 - TireWearProportion()) * (m_FinalStats.MaxGs - m_FinalStats.MinGs) + m_FinalStats.MinGs;
+            return getMaxLateralGsForWear(TireWearProportion());
+        }
+
+        public float getMaxLateralGsForWear(float tireWear)
+        {
+            return (1 - tireWear) * (m_FinalStats.MaxGs - m_FinalStats.MinGs) + m_FinalStats.MinGs;
         }
 
         public float getTurningRadius()
@@ -518,13 +524,20 @@ namespace KartGame.KartSystems
 
         public float getMaxSpeedForState()
         {
-            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGs() * 9.81f * (Mathf.Abs(getTurningRadius())));
+            return getMaxSpeedForRadiusAndWear(getTurningRadius(), TireWearProportion());
+        }
+
+        public float getMaxSpeedForRadiusAndWear(float radius, float tireWear)
+        {
+            if (radius == 0)
+                return m_FinalStats.TopSpeed;
+            var maxAllowedSpeed = Mathf.Sqrt(getMaxLateralGsForWear(tireWear) * 9.81f * (Mathf.Abs(radius)));
             // print(maxAllowedSpeed);
-            if (!(float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
+            if ((float.IsInfinity(maxAllowedSpeed) || float.IsNaN(maxAllowedSpeed)))
             {
                 maxAllowedSpeed = m_FinalStats.TopSpeed;
             }
-            return maxAllowedSpeed;
+            return Mathf.Clamp(maxAllowedSpeed, 0.0001f, m_FinalStats.TopSpeed);
         }
 
         public Vector3 ForwardDirection()

@@ -1,850 +1,1050 @@
 Experiment 0
-Fixed-LQR Speed: 0.06093157
-Fixed-LQR Last Lap: 39.36
-Fixed-LQR Best Lap: 39.36
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 1/3
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 33.04
+Fixed-LQR Best Lap: 32.94
+Fixed-LQR Total Time: 103.82
+Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-E2E Speed: 15.0239
-E2E Last Lap: 35.76
-E2E Best Lap: 34.6
-E2E Total Time: 109.44
+Fixed-LQR Avg Target Lane Difference: 0.4881441
+Fixed-LQR Avg Target Vel Difference: -1.406102
+E2E Speed: 0
+E2E Last Lap: 36.04
+E2E Best Lap: 34.24
+E2E Total Time: 109.96
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.801125
+E2E Avg Target Vel Difference: 2.546832
 Winner: 
 
 Experiment 1
-Fixed-LQR Speed: 14.02719
-Fixed-LQR Last Lap: 33.28
-Fixed-LQR Best Lap: 32.86
-Fixed-LQR Total Time: 101.7
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.78
+Fixed-LQR Best Lap: 34.22
+Fixed-LQR Total Time: 106.7
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 7.465838
-E2E Last Lap: 0
-E2E Best Lap: 0
-E2E Total Time: 9.559999
-E2E Laps Completed: 0/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: E2E
-
-Experiment 2
-Fixed-LQR Speed: 13.30592
-Fixed-LQR Last Lap: 70.32
-Fixed-LQR Best Lap: 34.26
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.89825
-E2E Last Lap: 36.88
-E2E Best Lap: 33.52
-E2E Total Time: 105.66
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.3436716
+Fixed-LQR Avg Target Vel Difference: -2.029487
+E2E Speed: 0
+E2E Last Lap: 35.88
+E2E Best Lap: 34.18
+E2E Total Time: 106.04
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 2
 E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.450855
+E2E Avg Target Vel Difference: 2.246613
+Winner: 
+
+Experiment 2
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.56
+Fixed-LQR Best Lap: 34.12
+Fixed-LQR Total Time: 107.94
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 2
+Fixed-LQR Avg Target Lane Difference: 0.3481325
+Fixed-LQR Avg Target Vel Difference: -2.03791
+E2E Speed: 0
+E2E Last Lap: 37.78
+E2E Best Lap: 34.08
+E2E Total Time: 108.46
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.539996
+E2E Avg Target Vel Difference: 2.466004
 Winner: 
 
 Experiment 3
-Fixed-LQR Speed: 13.70963
-Fixed-LQR Last Lap: 36.2
-Fixed-LQR Best Lap: 34.6
-Fixed-LQR Total Time: 106.6
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.94
+Fixed-LQR Best Lap: 34.16
+Fixed-LQR Total Time: 107.16
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 14.93028
-E2E Last Lap: 36.54
-E2E Best Lap: 34.34
-E2E Total Time: 106.08
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.3448897
+Fixed-LQR Avg Target Vel Difference: -2.067857
+E2E Speed: 0
+E2E Last Lap: 35.86
+E2E Best Lap: 34.32
+E2E Total Time: 106.52
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
+E2E Illegal Lane Changes: 1
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.549286
+E2E Avg Target Vel Difference: 1.924453
 Winner: 
 
 Experiment 4
-Fixed-LQR Speed: 13.88042
-Fixed-LQR Last Lap: 33.42
-Fixed-LQR Best Lap: 32.86
-Fixed-LQR Total Time: 99.92
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.95288
-E2E Last Lap: 35.92
-E2E Best Lap: 33.74
-E2E Total Time: 104.48
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 5
-Fixed-LQR Speed: 13.88121
-Fixed-LQR Last Lap: 33.24
-Fixed-LQR Best Lap: 32.76
-Fixed-LQR Total Time: 101.22
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.7
+Fixed-LQR Best Lap: 34.18
+Fixed-LQR Total Time: 106.48
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-E2E Speed: 14.89735
-E2E Last Lap: 36.26
-E2E Best Lap: 34.06
-E2E Total Time: 107.02
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-Winner: 
-
-Experiment 6
-Fixed-LQR Speed: 13.88096
-Fixed-LQR Last Lap: 33.24
-Fixed-LQR Best Lap: 32.68
-Fixed-LQR Total Time: 99.3
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.91096
-E2E Last Lap: 36.1
-E2E Best Lap: 33.96
-E2E Total Time: 104.84
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 7
-Fixed-LQR Speed: 1.394293E-05
-Fixed-LQR Last Lap: 34.38
-Fixed-LQR Best Lap: 34.38
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.43906
-E2E Last Lap: 36.68
-E2E Best Lap: 34.44
-E2E Total Time: 106.48
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 8
-Fixed-LQR Speed: 13.82066
-Fixed-LQR Last Lap: 33.16
-Fixed-LQR Best Lap: 32.76
-Fixed-LQR Total Time: 99.42
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 13.21842
+Fixed-LQR Avg Target Lane Difference: 0.3773658
+Fixed-LQR Avg Target Vel Difference: -2.057636
+E2E Speed: 0
 E2E Last Lap: 35.88
-E2E Best Lap: 33.78
-E2E Total Time: 104.72
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 9
-Fixed-LQR Speed: 15.01379
-Fixed-LQR Last Lap: 36.24
-Fixed-LQR Best Lap: 34.28
-Fixed-LQR Total Time: 106.36
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.31547
-E2E Last Lap: 37.36
-E2E Best Lap: 34.28
-E2E Total Time: 106.64
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-Winner: 
-
-Experiment 10
-Fixed-LQR Speed: 13.85256
-Fixed-LQR Last Lap: 37.24
-Fixed-LQR Best Lap: 34.22
-Fixed-LQR Total Time: 106.92
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 0.0602546
-E2E Last Lap: 34.26
-E2E Best Lap: 33.88
-E2E Total Time: 119.98
-E2E Laps Completed: 2/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 11
-Fixed-LQR Speed: 13.8811
-Fixed-LQR Last Lap: 35.4
-Fixed-LQR Best Lap: 34.04
-Fixed-LQR Total Time: 104.88
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 13.82068
-E2E Last Lap: 35.78
-E2E Best Lap: 33.9
-E2E Total Time: 104.4
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-Winner: 
-
-Experiment 12
-Fixed-LQR Speed: 13.85244
-Fixed-LQR Last Lap: 33.22
-Fixed-LQR Best Lap: 32.8
-Fixed-LQR Total Time: 99.64
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.91021
-E2E Last Lap: 36.12
-E2E Best Lap: 34.18
-E2E Total Time: 105.42
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 13
-Fixed-LQR Speed: 13.88092
-Fixed-LQR Last Lap: 36.54
-Fixed-LQR Best Lap: 34.2
-Fixed-LQR Total Time: 106.58
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 14.97802
-E2E Last Lap: 38.12
-E2E Best Lap: 34.3
-E2E Total Time: 107.4
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-Winner: 
-
-Experiment 14
-Fixed-LQR Speed: 13.82217
-Fixed-LQR Last Lap: 33.4
-Fixed-LQR Best Lap: 32.64
-Fixed-LQR Total Time: 99.84
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 13.93993
-E2E Last Lap: 36.32
-E2E Best Lap: 34.14
-E2E Total Time: 105.84
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-Winner: 
-
-Experiment 15
-Fixed-LQR Speed: 14.98766
-Fixed-LQR Last Lap: 35.4
-Fixed-LQR Best Lap: 34.02
-Fixed-LQR Total Time: 105.48
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.96255
-E2E Last Lap: 36.14
-E2E Best Lap: 34.06
-E2E Total Time: 105.4
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-Winner: 
-
-Experiment 16
-Fixed-LQR Speed: 13.85233
-Fixed-LQR Last Lap: 36.42
-Fixed-LQR Best Lap: 34.08
-Fixed-LQR Total Time: 106.02
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.87723
-E2E Last Lap: 39.78
-E2E Best Lap: 33.86
-E2E Total Time: 108.56
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 17
-Fixed-LQR Speed: 3.020103E-06
-Fixed-LQR Last Lap: 35.32
-Fixed-LQR Best Lap: 35.32
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 1/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.95295
-E2E Last Lap: 36.18
-E2E Best Lap: 34.46
-E2E Total Time: 105.96
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 18
-Fixed-LQR Speed: 13.88089
-Fixed-LQR Last Lap: 33.38
-Fixed-LQR Best Lap: 32.7
-Fixed-LQR Total Time: 99.48
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.70491
-E2E Last Lap: 36.2
-E2E Best Lap: 34.22
-E2E Total Time: 105.76
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-Winner: 
-
-Experiment 19
-Fixed-LQR Speed: 10.16489
-Fixed-LQR Last Lap: 70.02
-Fixed-LQR Best Lap: 35.22
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 14.94211
-E2E Last Lap: 36.14
-E2E Best Lap: 34.32
-E2E Total Time: 105.4
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
-Winner: 
-
-Experiment 20
-Fixed-LQR Speed: 13.85247
-Fixed-LQR Last Lap: 33.18
-Fixed-LQR Best Lap: 32.68
-Fixed-LQR Total Time: 99.3
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.9325
-E2E Last Lap: 36
-E2E Best Lap: 33.84
-E2E Total Time: 104.88
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-Winner: 
-
-Experiment 21
-Fixed-LQR Speed: 13.82203
-Fixed-LQR Last Lap: 33.4
-Fixed-LQR Best Lap: 32.74
-Fixed-LQR Total Time: 100.9
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.57901
-E2E Last Lap: 36.1
 E2E Best Lap: 34.2
-E2E Total Time: 106.62
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-Winner: 
-
-Experiment 22
-Fixed-LQR Speed: 13.85038
-Fixed-LQR Last Lap: 33.6
-Fixed-LQR Best Lap: 32.86
-Fixed-LQR Total Time: 101.06
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 0.06915913
-E2E Last Lap: 0
-E2E Best Lap: 0
-E2E Total Time: 119.96
-E2E Laps Completed: 0/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-Winner: 
-
-Experiment 23
-Fixed-LQR Speed: 11.81853
-Fixed-LQR Last Lap: 69.54
-Fixed-LQR Best Lap: 34.76
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.92903
-E2E Last Lap: 35.74
-E2E Best Lap: 33.82
-E2E Total Time: 104.5
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-Winner: 
-
-Experiment 24
-Fixed-LQR Speed: 13.8504
-Fixed-LQR Last Lap: 33.44
-Fixed-LQR Best Lap: 32.72
-Fixed-LQR Total Time: 99.88
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 15.00128
-E2E Last Lap: 35.4
-E2E Best Lap: 34.06
-E2E Total Time: 104.2
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-Winner: 
-
-Experiment 25
-Fixed-LQR Speed: 14.93389
-Fixed-LQR Last Lap: 35.96
-Fixed-LQR Best Lap: 34.4
-Fixed-LQR Total Time: 106.38
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.99507
-E2E Last Lap: 37.04
-E2E Best Lap: 34.44
-E2E Total Time: 106.7
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 1
-Winner: 
-
-Experiment 26
-Fixed-LQR Speed: 10.58514
-Fixed-LQR Last Lap: 70.04
-Fixed-LQR Best Lap: 35.14
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 13.7124
-E2E Last Lap: 38.56
-E2E Best Lap: 34.22
-E2E Total Time: 107.86
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 3
-E2E Collisions: 0
-Winner: 
-
-Experiment 27
-Fixed-LQR Speed: 13.87923
-Fixed-LQR Last Lap: 36.1
-Fixed-LQR Best Lap: 34.24
-Fixed-LQR Total Time: 106.24
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 13.75102
-E2E Last Lap: 37.66
-E2E Best Lap: 34.12
-E2E Total Time: 107
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
-Winner: 
-
-Experiment 28
-Fixed-LQR Speed: 13.8811
-Fixed-LQR Last Lap: 35.82
-Fixed-LQR Best Lap: 34.46
-Fixed-LQR Total Time: 105.84
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.87133
-E2E Last Lap: 35.76
-E2E Best Lap: 33.96
-E2E Total Time: 105.24
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-Winner: 
-
-Experiment 29
-Fixed-LQR Speed: 13.79264
-Fixed-LQR Last Lap: 35.94
-Fixed-LQR Best Lap: 34.48
-Fixed-LQR Total Time: 106.6
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 14.96567
-E2E Last Lap: 36.62
-E2E Best Lap: 34.16
 E2E Total Time: 106.04
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 2
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.668286
+E2E Avg Target Vel Difference: 2.046804
 Winner: 
 
-Experiment 30
-Fixed-LQR Speed: 13.78748
-Fixed-LQR Last Lap: 33.44
-Fixed-LQR Best Lap: 32.88
-Fixed-LQR Total Time: 99.84
+Experiment 5
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.58
+Fixed-LQR Best Lap: 34.22
+Fixed-LQR Total Time: 106.84
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-E2E Speed: 14.91813
-E2E Last Lap: 36.28
-E2E Best Lap: 33.84
-E2E Total Time: 105.06
+Fixed-LQR Avg Target Lane Difference: 0.3405682
+Fixed-LQR Avg Target Vel Difference: -2.007957
+E2E Speed: 0
+E2E Last Lap: 35.7
+E2E Best Lap: 34.22
+E2E Total Time: 106.24
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.742999
+E2E Avg Target Vel Difference: 2.11455
 Winner: 
 
-Experiment 31
-Fixed-LQR Speed: 9.930333
-Fixed-LQR Last Lap: 69.76
-Fixed-LQR Best Lap: 35.86
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
+Experiment 6
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.7
+Fixed-LQR Best Lap: 34.24
+Fixed-LQR Total Time: 108.26
+Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 2
-E2E Speed: 14.72027
-E2E Last Lap: 36.66
-E2E Best Lap: 34.66
-E2E Total Time: 106.94
+Fixed-LQR Avg Target Lane Difference: 0.3607302
+Fixed-LQR Avg Target Vel Difference: -2.035681
+E2E Speed: 0
+E2E Last Lap: 37.8
+E2E Best Lap: 34.36
+E2E Total Time: 108.78
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 2
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.590118
+E2E Avg Target Vel Difference: 2.180892
 Winner: 
 
-Experiment 32
-Fixed-LQR Speed: 13.88093
-Fixed-LQR Last Lap: 33.32
-Fixed-LQR Best Lap: 32.7
-Fixed-LQR Total Time: 99.52
+Experiment 7
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.7
+Fixed-LQR Best Lap: 33.98
+Fixed-LQR Total Time: 106.34
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-E2E Speed: 14.26565
-E2E Last Lap: 36.26
-E2E Best Lap: 34.3
-E2E Total Time: 105.56
+Fixed-LQR Avg Target Lane Difference: 0.3563212
+Fixed-LQR Avg Target Vel Difference: -1.946003
+E2E Speed: 0
+E2E Last Lap: 35.72
+E2E Best Lap: 34.06
+E2E Total Time: 105.74
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
+E2E Illegal Lane Changes: 2
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.614493
+E2E Avg Target Vel Difference: 2.565725
 Winner: 
 
-Experiment 33
-Fixed-LQR Speed: 13.66054
-Fixed-LQR Last Lap: 35.78
-Fixed-LQR Best Lap: 34.3
-Fixed-LQR Total Time: 106.38
+Experiment 8
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.02
+Fixed-LQR Best Lap: 34.02
+Fixed-LQR Total Time: 107.2
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-E2E Speed: 14.89816
-E2E Last Lap: 36.28
-E2E Best Lap: 34.5
-E2E Total Time: 106.14
+Fixed-LQR Avg Target Lane Difference: 0.3837072
+Fixed-LQR Avg Target Vel Difference: -1.968112
+E2E Speed: 0
+E2E Last Lap: 36.12
+E2E Best Lap: 34.12
+E2E Total Time: 106.66
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
+E2E Illegal Lane Changes: 2
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.659114
+E2E Avg Target Vel Difference: 2.395209
 Winner: 
 
-Experiment 34
-Fixed-LQR Speed: 13.88008
-Fixed-LQR Last Lap: 33.4
-Fixed-LQR Best Lap: 32.88
-Fixed-LQR Total Time: 101.4
+Experiment 9
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.46
+Fixed-LQR Best Lap: 34.22
+Fixed-LQR Total Time: 106.92
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 15.01512
-E2E Last Lap: 35.84
-E2E Best Lap: 34.14
-E2E Total Time: 106
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
-Winner: 
-
-Experiment 35
-Fixed-LQR Speed: 13.80032
-Fixed-LQR Last Lap: 36.1
-Fixed-LQR Best Lap: 34.4
-Fixed-LQR Total Time: 106.32
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 14.82379
-E2E Last Lap: 36.48
-E2E Best Lap: 34.3
-E2E Total Time: 105.82
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 1
-E2E Collisions: 0
-Winner: 
-
-Experiment 36
-Fixed-LQR Speed: 13.79239
-Fixed-LQR Last Lap: 33.42
-Fixed-LQR Best Lap: 32.84
-Fixed-LQR Total Time: 101.14
-Fixed-LQR Laps Completed: 3/3
-Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.91963
-E2E Last Lap: 36.1
-E2E Best Lap: 34.06
-E2E Total Time: 106.98
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3541787
+Fixed-LQR Avg Target Vel Difference: -1.945391
+E2E Speed: 0
+E2E Last Lap: 35.72
+E2E Best Lap: 34.28
+E2E Total Time: 106.44
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
 E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.632103
+E2E Avg Target Vel Difference: 2.339561
 Winner: 
 
-Experiment 37
-Fixed-LQR Speed: 13.86845
-Fixed-LQR Last Lap: 35.58
-Fixed-LQR Best Lap: 34.56
-Fixed-LQR Total Time: 106.16
+Experiment 10
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.88
+Fixed-LQR Best Lap: 34.34
+Fixed-LQR Total Time: 107.26
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-E2E Speed: 14.97038
+Fixed-LQR Avg Target Lane Difference: 0.3762199
+Fixed-LQR Avg Target Vel Difference: -2.066148
+E2E Speed: 0
 E2E Last Lap: 35.98
-E2E Best Lap: 34.4
-E2E Total Time: 105.64
+E2E Best Lap: 34.46
+E2E Total Time: 106.8
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.700548
+E2E Avg Target Vel Difference: 2.148116
+Winner: 
+
+Experiment 11
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.18
+Fixed-LQR Best Lap: 34.06
+Fixed-LQR Total Time: 105.66
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.3783707
+Fixed-LQR Avg Target Vel Difference: -1.86695
+E2E Speed: 0
+E2E Last Lap: 35.36
+E2E Best Lap: 34.06
+E2E Total Time: 105.1
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 1
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.472735
+E2E Avg Target Vel Difference: 2.494293
 Winner: 
 
-Experiment 38
-Fixed-LQR Speed: 6.747914E-05
+Experiment 12
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.68
+Fixed-LQR Best Lap: 33.96
+Fixed-LQR Total Time: 106.9
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3756146
+Fixed-LQR Avg Target Vel Difference: -1.892647
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 34.06
+E2E Total Time: 106.38
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.643511
+E2E Avg Target Vel Difference: 2.346008
+Winner: 
+
+Experiment 13
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.04
+Fixed-LQR Best Lap: 33.74
+Fixed-LQR Total Time: 106.6
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.3552158
+Fixed-LQR Avg Target Vel Difference: -2.01018
+E2E Speed: 0
+E2E Last Lap: 36.12
+E2E Best Lap: 33.84
+E2E Total Time: 106.04
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.573995
+E2E Avg Target Vel Difference: 2.134117
+Winner: 
+
+Experiment 14
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36
+Fixed-LQR Best Lap: 34.4
+Fixed-LQR Total Time: 107.4
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3930213
+Fixed-LQR Avg Target Vel Difference: -1.984158
+E2E Speed: 0
+E2E Last Lap: 36.22
+E2E Best Lap: 34.38
+E2E Total Time: 106.82
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.685425
+E2E Avg Target Vel Difference: 2.408275
+Winner: 
+
+Experiment 15
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 34.86
+Fixed-LQR Best Lap: 33.9
+Fixed-LQR Total Time: 105.44
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.352396
+Fixed-LQR Avg Target Vel Difference: -1.977828
+E2E Speed: 0
+E2E Last Lap: 36.5
+E2E Best Lap: 33.94
+E2E Total Time: 106.4
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 3
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.592752
+E2E Avg Target Vel Difference: 2.455985
+Winner: 
+
+Experiment 16
+Fixed-LQR Speed: 14.89864
+Fixed-LQR Last Lap: 35.4
+Fixed-LQR Best Lap: 34.06
+Fixed-LQR Total Time: 106.58
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.4000507
+Fixed-LQR Avg Target Vel Difference: -1.948265
+E2E Speed: 0
+E2E Last Lap: 35.64
+E2E Best Lap: 34.08
+E2E Total Time: 106.16
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.708017
+E2E Avg Target Vel Difference: 2.206098
+Winner: 
+
+Experiment 17
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.24
+Fixed-LQR Best Lap: 34.12
+Fixed-LQR Total Time: 107.2
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.3472494
+Fixed-LQR Avg Target Vel Difference: -2.10812
+E2E Speed: 0
+E2E Last Lap: 36.28
+E2E Best Lap: 34.16
+E2E Total Time: 106.54
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.664529
+E2E Avg Target Vel Difference: 2.386526
+Winner: 
+
+Experiment 18
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.82
+Fixed-LQR Best Lap: 34.06
+Fixed-LQR Total Time: 106.8
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3846272
+Fixed-LQR Avg Target Vel Difference: -1.94301
+E2E Speed: 0
+E2E Last Lap: 35.94
+E2E Best Lap: 34.16
+E2E Total Time: 106.26
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.64455
+E2E Avg Target Vel Difference: 2.205105
+Winner: 
+
+Experiment 19
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 33.12
+Fixed-LQR Best Lap: 32.84
+Fixed-LQR Total Time: 101.66
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.4101437
+Fixed-LQR Avg Target Vel Difference: -1.316592
+E2E Speed: 0.2906972
+E2E Last Lap: 34.1
+E2E Best Lap: 34.1
+E2E Total Time: 119.98
+E2E Laps Completed: 2/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.634843
+E2E Avg Target Vel Difference: 2.401587
+Winner: 
+
+Experiment 20
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.18
+Fixed-LQR Best Lap: 34.18
+Fixed-LQR Total Time: 107.4
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3604715
+Fixed-LQR Avg Target Vel Difference: -2.129662
+E2E Speed: 0
+E2E Last Lap: 36.2
+E2E Best Lap: 34.18
+E2E Total Time: 106.74
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.463583
+E2E Avg Target Vel Difference: 1.95081
+Winner: 
+
+Experiment 21
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.5
+Fixed-LQR Best Lap: 34.12
+Fixed-LQR Total Time: 106.66
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3624279
+Fixed-LQR Avg Target Vel Difference: -1.994345
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 34.08
+E2E Total Time: 106.2
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.678125
+E2E Avg Target Vel Difference: 2.20067
+Winner: 
+
+Experiment 22
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.64
+Fixed-LQR Best Lap: 34.44
+Fixed-LQR Total Time: 106.42
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3861564
+Fixed-LQR Avg Target Vel Difference: -1.978431
+E2E Speed: 0
+E2E Last Lap: 35.84
+E2E Best Lap: 34.46
+E2E Total Time: 105.94
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.573802
+E2E Avg Target Vel Difference: 2.275545
+Winner: 
+
+Experiment 23
+Fixed-LQR Speed: 0.03623036
+Fixed-LQR Last Lap: 0
+Fixed-LQR Best Lap: 0
+Fixed-LQR Total Time: 119.98
+Fixed-LQR Laps Completed: 0/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.2321026
+Fixed-LQR Avg Target Vel Difference: -1.326684
+E2E Speed: 0.05718819
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 119.98
+E2E Laps Completed: 0/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 0.7540619
+E2E Avg Target Vel Difference: 1.653197
+Winner: 
+
+Experiment 24
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.82
+Fixed-LQR Best Lap: 33.96
+Fixed-LQR Total Time: 106.36
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.375275
+Fixed-LQR Avg Target Vel Difference: -1.940879
+E2E Speed: 0
+E2E Last Lap: 35.82
+E2E Best Lap: 34.14
+E2E Total Time: 105.74
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.654873
+E2E Avg Target Vel Difference: 2.431081
+Winner: 
+
+Experiment 25
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 33.1
+Fixed-LQR Best Lap: 32.76
+Fixed-LQR Total Time: 101.52
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.4013807
+Fixed-LQR Avg Target Vel Difference: -1.318756
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 33.82
+E2E Total Time: 106.12
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.497355
+E2E Avg Target Vel Difference: 2.139399
+Winner: 
+
+Experiment 26
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.46
+Fixed-LQR Best Lap: 34.1
+Fixed-LQR Total Time: 107.02
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 2
+Fixed-LQR Avg Target Lane Difference: 0.3756979
+Fixed-LQR Avg Target Vel Difference: -2.018682
+E2E Speed: 0
+E2E Last Lap: 36.58
+E2E Best Lap: 34.06
+E2E Total Time: 106.4
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.566827
+E2E Avg Target Vel Difference: 2.222757
+Winner: 
+
+Experiment 27
+Fixed-LQR Speed: 0.05265513
 Fixed-LQR Last Lap: 0
 Fixed-LQR Best Lap: 0
 Fixed-LQR Total Time: 119.98
 Fixed-LQR Laps Completed: 0/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-E2E Speed: 0.0566225
+Fixed-LQR Avg Target Lane Difference: 0.3038447
+Fixed-LQR Avg Target Vel Difference: -1.266854
+E2E Speed: 0.05674471
 E2E Last Lap: 0
 E2E Best Lap: 0
 E2E Total Time: 119.98
 E2E Laps Completed: 0/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 2
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 1.108362
+E2E Avg Target Vel Difference: 1.056108
 Winner: 
 
-Experiment 39
-Fixed-LQR Speed: 13.88041
-Fixed-LQR Last Lap: 33.46
-Fixed-LQR Best Lap: 32.86
-Fixed-LQR Total Time: 101.58
+Experiment 28
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.86
+Fixed-LQR Best Lap: 34.02
+Fixed-LQR Total Time: 106.3
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-E2E Speed: 14.88781
-E2E Last Lap: 36.1
-E2E Best Lap: 35.4
-E2E Total Time: 107.7
+Fixed-LQR Avg Target Lane Difference: 0.3735938
+Fixed-LQR Avg Target Vel Difference: -1.968025
+E2E Speed: 0
+E2E Last Lap: 36.12
+E2E Best Lap: 33.94
+E2E Total Time: 105.8
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.660888
+E2E Avg Target Vel Difference: 2.14041
 Winner: 
 
-Experiment 40
-Fixed-LQR Speed: 10.55584
-Fixed-LQR Last Lap: 69.72
-Fixed-LQR Best Lap: 35.44
+Experiment 29
+Fixed-LQR Speed: 0.6273589
+Fixed-LQR Last Lap: 0
+Fixed-LQR Best Lap: 0
 Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Laps Completed: 0/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 0
-E2E Speed: 14.95918
-E2E Last Lap: 35.5
-E2E Best Lap: 34.42
-E2E Total Time: 105.26
+Fixed-LQR Avg Target Lane Difference: 0.3828051
+Fixed-LQR Avg Target Vel Difference: -1.969008
+E2E Speed: 0.05800631
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 119.98
+E2E Laps Completed: 0/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 1.184998
+E2E Avg Target Vel Difference: 1.997062
+Winner: 
+
+Experiment 30
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.6
+Fixed-LQR Best Lap: 33.82
+Fixed-LQR Total Time: 105.9
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3850051
+Fixed-LQR Avg Target Vel Difference: -1.880096
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 33.9
+E2E Total Time: 105.42
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.722429
+E2E Avg Target Vel Difference: 2.174924
+Winner: 
+
+Experiment 31
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.62
+Fixed-LQR Best Lap: 34.14
+Fixed-LQR Total Time: 106.28
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3608316
+Fixed-LQR Avg Target Vel Difference: -1.925928
+E2E Speed: 0
+E2E Last Lap: 35.82
+E2E Best Lap: 34.18
+E2E Total Time: 105.8
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.585218
+E2E Avg Target Vel Difference: 2.366018
+Winner: 
+
+Experiment 32
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.76
+Fixed-LQR Best Lap: 34.16
+Fixed-LQR Total Time: 106.96
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3810167
+Fixed-LQR Avg Target Vel Difference: -2.008392
+E2E Speed: 0
+E2E Last Lap: 35.96
+E2E Best Lap: 34.18
+E2E Total Time: 106.5
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.583086
+E2E Avg Target Vel Difference: 2.536186
+Winner: 
+
+Experiment 33
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.12
+Fixed-LQR Best Lap: 33.84
+Fixed-LQR Total Time: 106.76
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3454769
+Fixed-LQR Avg Target Vel Difference: -2.072847
+E2E Speed: 0
+E2E Last Lap: 36.14
+E2E Best Lap: 33.96
+E2E Total Time: 106.12
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.758992
+E2E Avg Target Vel Difference: 2.60329
+Winner: 
+
+Experiment 34
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.62
+Fixed-LQR Best Lap: 33.8
+Fixed-LQR Total Time: 106.1
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.380988
+Fixed-LQR Avg Target Vel Difference: -1.954542
+E2E Speed: 0
+E2E Last Lap: 35.82
+E2E Best Lap: 33.9
+E2E Total Time: 105.62
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.740138
+E2E Avg Target Vel Difference: 2.370124
+Winner: 
+
+Experiment 35
+Fixed-LQR Speed: 0.07220251
+Fixed-LQR Last Lap: 0
+Fixed-LQR Best Lap: 0
+Fixed-LQR Total Time: 119.98
+Fixed-LQR Laps Completed: 0/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.2190218
+Fixed-LQR Avg Target Vel Difference: -1.307538
+E2E Speed: 0.05032273
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 119.98
+E2E Laps Completed: 0/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 0.2917625
+E2E Avg Target Vel Difference: 1.931957
+Winner: 
+
+Experiment 36
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 34.9
+Fixed-LQR Best Lap: 34.06
+Fixed-LQR Total Time: 105.4
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3702167
+Fixed-LQR Avg Target Vel Difference: -1.804571
+E2E Speed: 0
+E2E Last Lap: 36.44
+E2E Best Lap: 34.1
+E2E Total Time: 106.3
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 2
 E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.503768
+E2E Avg Target Vel Difference: 2.06407
+Winner: 
+
+Experiment 37
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.68
+Fixed-LQR Best Lap: 33.84
+Fixed-LQR Total Time: 106.62
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3404239
+Fixed-LQR Avg Target Vel Difference: -2.006567
+E2E Speed: 0
+E2E Last Lap: 35.78
+E2E Best Lap: 33.94
+E2E Total Time: 106.06
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.636296
+E2E Avg Target Vel Difference: 2.360948
+Winner: 
+
+Experiment 38
+Fixed-LQR Speed: 14.89866
+Fixed-LQR Last Lap: 35.88
+Fixed-LQR Best Lap: 34.46
+Fixed-LQR Total Time: 106.7
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3675833
+Fixed-LQR Avg Target Vel Difference: -2.065139
+E2E Speed: 0
+E2E Last Lap: 36
+E2E Best Lap: 34.54
+E2E Total Time: 106.24
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.504462
+E2E Avg Target Vel Difference: 2.510813
+Winner: 
+
+Experiment 39
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.74
+Fixed-LQR Best Lap: 34.28
+Fixed-LQR Total Time: 106.74
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3564896
+Fixed-LQR Avg Target Vel Difference: -2.007265
+E2E Speed: 0
+E2E Last Lap: 35.88
+E2E Best Lap: 34.26
+E2E Total Time: 106.18
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.605308
+E2E Avg Target Vel Difference: 2.390681
+Winner: 
+
+Experiment 40
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.74
+Fixed-LQR Best Lap: 34.08
+Fixed-LQR Total Time: 106.26
+Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Illegal Lane Changes: 0
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3739698
+Fixed-LQR Avg Target Vel Difference: -1.992148
+E2E Speed: 0
+E2E Last Lap: 35.8
+E2E Best Lap: 34.1
+E2E Total Time: 105.62
+E2E Laps Completed: 3/3
+E2E Illegal Lane Changes: 1
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.74188
+E2E Avg Target Vel Difference: 2.404532
 Winner: 
 
 Experiment 41
-Fixed-LQR Speed: 2.965725E-06
-Fixed-LQR Last Lap: 34.06
-Fixed-LQR Best Lap: 34.06
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 33
+Fixed-LQR Best Lap: 32.92
+Fixed-LQR Total Time: 101.52
+Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 0.2364549
-E2E Last Lap: 34.1
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.4262735
+Fixed-LQR Avg Target Vel Difference: -1.287258
+E2E Speed: 0
+E2E Last Lap: 36.08
 E2E Best Lap: 34.1
-E2E Total Time: 119.98
-E2E Laps Completed: 2/3
+E2E Total Time: 106.78
+E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.677196
+E2E Avg Target Vel Difference: 2.235938
 Winner: 
 
 Experiment 42
-Fixed-LQR Speed: 13.88037
-Fixed-LQR Last Lap: 36.2
-Fixed-LQR Best Lap: 34.54
-Fixed-LQR Total Time: 106.16
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 34.84
+Fixed-LQR Best Lap: 34.28
+Fixed-LQR Total Time: 106.1
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
 Fixed-LQR Collisions: 1
-E2E Speed: 14.9993
-E2E Last Lap: 36.28
-E2E Best Lap: 33.82
-E2E Total Time: 105.42
+Fixed-LQR Avg Target Lane Difference: 0.3601447
+Fixed-LQR Avg Target Vel Difference: -1.910742
+E2E Speed: 0
+E2E Last Lap: 36.18
+E2E Best Lap: 34.32
+E2E Total Time: 106.76
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.431089
+E2E Avg Target Vel Difference: 2.13664
 Winner: 
 
 Experiment 43
-Fixed-LQR Speed: 13.70034
-Fixed-LQR Last Lap: 35.78
-Fixed-LQR Best Lap: 33.82
-Fixed-LQR Total Time: 106.4
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 32.98
+Fixed-LQR Best Lap: 32.88
+Fixed-LQR Total Time: 101.28
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.88712
-E2E Last Lap: 36.02
-E2E Best Lap: 34.44
-E2E Total Time: 105.82
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.4155425
+Fixed-LQR Avg Target Vel Difference: -1.260861
+E2E Speed: 14.93405
+E2E Last Lap: 36.12
+E2E Best Lap: 34.08
+E2E Total Time: 106.48
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 0
-E2E Collisions: 0
+E2E Collisions: 2
+E2E Avg Target Lane Difference: 1.67341
+E2E Avg Target Vel Difference: 2.328274
 Winner: 
 
 Experiment 44
-Fixed-LQR Speed: 13.85232
-Fixed-LQR Last Lap: 33.44
-Fixed-LQR Best Lap: 32.82
-Fixed-LQR Total Time: 99.84
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.22
+Fixed-LQR Best Lap: 33.9
+Fixed-LQR Total Time: 107.46
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.93755
-E2E Last Lap: 35.84
-E2E Best Lap: 33.9
-E2E Total Time: 104.74
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3854308
+Fixed-LQR Avg Target Vel Difference: -2.057353
+E2E Speed: 0
+E2E Last Lap: 36.3
+E2E Best Lap: 33.98
+E2E Total Time: 106.82
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.478528
+E2E Avg Target Vel Difference: 2.138333
 Winner: 
 
 Experiment 45
-Fixed-LQR Speed: 13.85274
-Fixed-LQR Last Lap: 35.76
-Fixed-LQR Best Lap: 34.24
-Fixed-LQR Total Time: 106.2
-Fixed-LQR Laps Completed: 3/3
+Fixed-LQR Speed: 0.629593
+Fixed-LQR Last Lap: 0
+Fixed-LQR Best Lap: 0
+Fixed-LQR Total Time: 119.98
+Fixed-LQR Laps Completed: 0/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 14.88504
-E2E Last Lap: 35.94
-E2E Best Lap: 34.32
-E2E Total Time: 105.58
-E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 2
-E2E Collisions: 0
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.2089003
+Fixed-LQR Avg Target Vel Difference: -1.564234
+E2E Speed: 0.05361585
+E2E Last Lap: 0
+E2E Best Lap: 0
+E2E Total Time: 119.98
+E2E Laps Completed: 0/3
+E2E Illegal Lane Changes: 0
+E2E Collisions: 3
+E2E Avg Target Lane Difference: 0.6641534
+E2E Avg Target Vel Difference: 1.147515
 Winner: 
 
 Experiment 46
-Fixed-LQR Speed: 13.88092
-Fixed-LQR Last Lap: 33.38
-Fixed-LQR Best Lap: 32.7
-Fixed-LQR Total Time: 99.62
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 35.64
+Fixed-LQR Best Lap: 33.98
+Fixed-LQR Total Time: 106.82
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 14.96364
-E2E Last Lap: 36.32
-E2E Best Lap: 34.2
-E2E Total Time: 105.46
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3838473
+Fixed-LQR Avg Target Vel Difference: -1.946198
+E2E Speed: 0
+E2E Last Lap: 35.76
+E2E Best Lap: 33.98
+E2E Total Time: 106.24
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
+E2E Illegal Lane Changes: 1
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.700647
+E2E Avg Target Vel Difference: 2.282152
 Winner: 
 
 Experiment 47
-Fixed-LQR Speed: 14.95879
-Fixed-LQR Last Lap: 71.18
-Fixed-LQR Best Lap: 35.46
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36.4
+Fixed-LQR Best Lap: 34.08
+Fixed-LQR Total Time: 107.08
+Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 2
-E2E Speed: 14.89793
-E2E Last Lap: 37.9
-E2E Best Lap: 34.5
-E2E Total Time: 107.78
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.3508796
+Fixed-LQR Avg Target Vel Difference: -2.143878
+E2E Speed: 0
+E2E Last Lap: 36.56
+E2E Best Lap: 34.1
+E2E Total Time: 106.54
 E2E Laps Completed: 3/3
 E2E Illegal Lane Changes: 2
 E2E Collisions: 0
+E2E Avg Target Lane Difference: 1.596699
+E2E Avg Target Vel Difference: 2.324172
 Winner: 
 
 Experiment 48
-Fixed-LQR Speed: 13.85216
-Fixed-LQR Last Lap: 33.44
-Fixed-LQR Best Lap: 32.94
-Fixed-LQR Total Time: 101.64
+Fixed-LQR Speed: 0
+Fixed-LQR Last Lap: 36
+Fixed-LQR Best Lap: 34.32
+Fixed-LQR Total Time: 108.12
 Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 0
-E2E Speed: 15.00843
+Fixed-LQR Collisions: 1
+Fixed-LQR Avg Target Lane Difference: 0.421409
+Fixed-LQR Avg Target Vel Difference: -1.917972
+E2E Speed: 0
 E2E Last Lap: 36.02
-E2E Best Lap: 34
-E2E Total Time: 106.9
+E2E Best Lap: 34.44
+E2E Total Time: 107.56
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 2
+E2E Illegal Lane Changes: 2
+E2E Collisions: 0
+E2E Avg Target Lane Difference: 2.142557
+E2E Avg Target Vel Difference: 2.52318
 Winner: 
 
 Experiment 49
-Fixed-LQR Speed: 3.510503E-06
-Fixed-LQR Last Lap: 34.3
-Fixed-LQR Best Lap: 34.3
-Fixed-LQR Total Time: 119.98
-Fixed-LQR Laps Completed: 2/3
+Fixed-LQR Speed: 14.93618
+Fixed-LQR Last Lap: 35.56
+Fixed-LQR Best Lap: 34.08
+Fixed-LQR Total Time: 106.36
+Fixed-LQR Laps Completed: 3/3
 Fixed-LQR Illegal Lane Changes: 0
-Fixed-LQR Collisions: 1
-E2E Speed: 15.02643
-E2E Last Lap: 36.42
-E2E Best Lap: 34.14
-E2E Total Time: 105.62
+Fixed-LQR Collisions: 0
+Fixed-LQR Avg Target Lane Difference: 0.3418371
+Fixed-LQR Avg Target Vel Difference: -1.997914
+E2E Speed: 0
+E2E Last Lap: 35.56
+E2E Best Lap: 34.24
+E2E Total Time: 105.84
 E2E Laps Completed: 3/3
-E2E Illegal Lane Changes: 0
-E2E Collisions: 0
+E2E Illegal Lane Changes: 2
+E2E Collisions: 1
+E2E Avg Target Lane Difference: 1.579525
+E2E Avg Target Vel Difference: 2.233945
 Winner: 
 

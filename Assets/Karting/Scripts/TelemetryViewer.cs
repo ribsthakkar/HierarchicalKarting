@@ -88,6 +88,8 @@ public class TelemetryViewer : MonoBehaviour
             }
 
             telemetryInfo.AppendLine(agent.name + " Speed: " + speed.ToString());
+            //if (envController.mode == EnvironmentMode.Training)
+                telemetryInfo.AppendLine(agent.name + " Reward: " + agent.GetCumulativeReward());
             telemetryInfo.AppendLine(agent.name + " Last Lap: " + lastLapTimes[i].ToString());
             telemetryInfo.AppendLine(agent.name + " Best Lap: " + bestLapTimes[i].ToString());
             telemetryInfo.AppendLine(agent.name + " Total Time: " + lastOverallTimes[i].ToString());

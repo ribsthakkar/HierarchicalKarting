@@ -1485,7 +1485,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -5420,7 +5420,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -7698,7 +7698,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -8936,7 +8936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 269521132}
+  - Racers:
+    - {fileID: 526791381}
   Agents:
   - {fileID: 269521132}
   - {fileID: 526791381}
@@ -8984,12 +8988,11 @@ MonoBehaviour:
   - {fileID: 63109403}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_RL_Complex
+  ExperimentName: MCTS_RL_vs_Fixed_RL_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -9013,8 +9016,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &324486809
 Transform:
   m_ObjectHideFlags: 0
@@ -9426,12 +9430,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 690188231}
+      objectReference: {fileID: 1347022091}
     - target: {fileID: 6691645748356329552, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 690188240}
+      objectReference: {fileID: 1356772074}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_RootOrder
@@ -9440,7 +9444,7 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.6
+      value: 89.111
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -9450,27 +9454,27 @@ PrefabInstance:
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 262.2
+      value: -302.414
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.000000008562109
+      value: -0.0000000074150015
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -8.3976914e-10
+      value: -7.272613e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99522465
+      value: 0.9952246
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.097611345
+      value: -0.09761135
       objectReference: {fileID: 0}
     - target: {fileID: 6691645748356329553, guid: 4366ba6a4d5213d4f9fc7bba3e778799,
         type: 3}
@@ -10196,7 +10200,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -12954,7 +12958,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &481435478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12967,7 +12971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 212102608}
+  - Racers:
+    - {fileID: 1386406127}
   Agents:
   - {fileID: 212102608}
   - {fileID: 1386406127}
@@ -13015,12 +13023,11 @@ MonoBehaviour:
   - {fileID: 770639862}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_LQR_Complex
+  ExperimentName: E2E_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -13044,8 +13051,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &481435479
 Transform:
   m_ObjectHideFlags: 0
@@ -15072,7 +15080,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20811,7 +20819,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -20905,12 +20913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8765d53e046ef74898109def269b8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &690188240 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
-    type: 3}
-  m_PrefabInstance: {fileID: 690188230}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &692584361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21173,7 +21175,7 @@ PrefabInstance:
         type: 3}
       propertyPath: envController
       value: 
-      objectReference: {fileID: 1508489065}
+      objectReference: {fileID: 481435478}
     - target: {fileID: 1315839542190839937, guid: b26c4a65cf4c6475a92bfd03c2c3282b,
         type: 3}
       propertyPath: m_RootOrder
@@ -21312,13 +21314,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711707164}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bb4b9b492a196d46b75760761528eeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiText: {fileID: 1078163298}
-  envController: {fileID: 1627745233}
+  envController: {fileID: 1118193866}
 --- !u!1001 &717698226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24892,7 +24894,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -25385,10 +25387,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 332677539}
+  - Racers:
+    - {fileID: 727026990}
   Agents:
-  - {fileID: 332677539}
   - {fileID: 727026990}
+  - {fileID: 332677539}
   Sections:
   - {fileID: 157562409}
   - {fileID: 247003394}
@@ -25433,12 +25439,11 @@ MonoBehaviour:
   - {fileID: 175415744}
   initialTireWears: []
   mode: 2
-  ExperimentName: Fixed_RL_vs_Fixed_LQR_Complex
+  ExperimentName: Fixed_RL_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -25462,8 +25467,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!1001 &947105546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29589,7 +29595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1118193866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29602,7 +29608,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1596230262}
+  - Racers:
+    - {fileID: 195988107}
   Agents:
   - {fileID: 1596230262}
   - {fileID: 195988107}
@@ -29655,7 +29665,6 @@ MonoBehaviour:
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -29679,8 +29688,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &1118193867
 Transform:
   m_ObjectHideFlags: 0
@@ -31509,8 +31519,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: -8.3976914e-10, y: 0.99522465, z: -0.097611345, w: -0.000000008562109}
-  m_LocalPosition: {x: 17.6, y: 3.279, z: 262.2}
+  m_LocalRotation: {x: -7.272613e-10, y: 0.9952246, z: -0.09761135, w: -0.0000000074150015}
+  m_LocalPosition: {x: 89.111, y: 3.279, z: -302.414}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 695900666}
@@ -33196,7 +33206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1296297094}
+  - Racers:
+    - {fileID: 1416960267}
   Agents:
   - {fileID: 1296297094}
   - {fileID: 1416960267}
@@ -33244,12 +33258,11 @@ MonoBehaviour:
   - {fileID: 1210248275}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_MCTS_LQR_Complex
+  ExperimentName: E2E_vs_MCTS_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -33273,8 +33286,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1283396214
 Transform:
   m_ObjectHideFlags: 0
@@ -33823,7 +33837,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -34923,7 +34937,7 @@ PrefabInstance:
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
       propertyPath: gameParams.velocityBucketSize
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6521773912976216144, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -35461,6 +35475,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f3f07a8985f3b47b15bc7b937b6d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1356772074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5209091469546302549, guid: 68397bf4d4e0ee649a065492a9ac7b64,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347022090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1359101754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35656,7 +35676,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1347022099}
+  - Racers:
+    - {fileID: 576421544}
   Agents:
   - {fileID: 1347022099}
   - {fileID: 576421544}
@@ -35704,12 +35728,11 @@ MonoBehaviour:
   - {fileID: 424788334}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_LQR_vs_Fixed_LQR_Complex
+  ExperimentName: MCTS_LQR_vs_Fixed_LQR_Complex3
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -35733,8 +35756,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1363735034
 Transform:
   m_ObjectHideFlags: 0
@@ -36800,7 +36824,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -37004,7 +37028,7 @@ MonoBehaviour:
   forwardCollision: 0
   forwardCollisions: 0
   lastCollisionTime: 0
-  runQuasiMCTS: 0
+  runQuasiMCTS: 1
 --- !u!1001 &1384719479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37609,7 +37633,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -37813,7 +37837,7 @@ MonoBehaviour:
   forwardCollision: 0
   forwardCollisions: 0
   lastCollisionTime: 0
-  runQuasiMCTS: 0
+  runQuasiMCTS: 1
 --- !u!1001 &1387307724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38904,7 +38928,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -39108,7 +39132,7 @@ MonoBehaviour:
   forwardCollision: 0
   forwardCollisions: 0
   lastCollisionTime: 0
-  runQuasiMCTS: 0
+  runQuasiMCTS: 1
 --- !u!1001 &1425503555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40369,7 +40393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b3cc135251338c8449a5f26c1c8b5dab,
+      objectReference: {fileID: 5022602860645237092, guid: bb11a045c942d854198c93da28f3a2da,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -42039,7 +42063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1508489065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42104,12 +42128,11 @@ MonoBehaviour:
   - {fileID: 664798614}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_E2E_Complex
+  ExperimentName: MCTS_RL_vs_E2E_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -42133,8 +42156,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &1508489066
 Transform:
   m_ObjectHideFlags: 0
@@ -42180,7 +42204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 1460051993}
+  - Racers:
+    - {fileID: 1867461281}
   Agents:
   - {fileID: 1460051993}
   - {fileID: 1867461281}
@@ -42228,12 +42256,11 @@ MonoBehaviour:
   - {fileID: 470032921}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_MCTS_LQR_Complex
+  ExperimentName: MCTS_RL_vs_MCTS_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -42257,8 +42284,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1509936319
 Transform:
   m_ObjectHideFlags: 0
@@ -43620,7 +43648,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 95ace2c61324fd8438b316dc67435596,
+      objectReference: {fileID: 5022602860645237092, guid: acc579571b0915140b17e179f98b3b53,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -44449,7 +44477,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 910430395}
+  - Racers:
+    - {fileID: 568535833}
   Agents:
   - {fileID: 910430395}
   - {fileID: 568535833}
@@ -44497,12 +44529,11 @@ MonoBehaviour:
   - {fileID: 1237969437}
   initialTireWears: []
   mode: 2
-  ExperimentName: MCTS_RL_vs_Fixed_LQR_Complex
+  ExperimentName: MCTS_RL_vs_Fixed_LQR_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -44526,8 +44557,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 1
 --- !u!4 &1627745234
 Transform:
   m_ObjectHideFlags: 0
@@ -49890,7 +49922,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: 9a6fba0d2d3cb264d97d750adc7fdc42,
+      objectReference: {fileID: 5022602860645237092, guid: 7602f41b7257e654f9639dd99fbe3389,
         type: 3}
     - target: {fileID: 8760494638502963209, guid: 68397bf4d4e0ee649a065492a9ac7b64,
         type: 3}
@@ -50094,7 +50126,7 @@ MonoBehaviour:
   forwardCollision: 0
   forwardCollisions: 0
   lastCollisionTime: 0
-  runQuasiMCTS: 0
+  runQuasiMCTS: 1
 --- !u!1001 &1834198848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55011,7 +55043,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Teams: []
+  Teams:
+  - Racers:
+    - {fileID: 57557286}
+  - Racers:
+    - {fileID: 1831028573}
   Agents:
   - {fileID: 57557286}
   - {fileID: 1831028573}
@@ -55059,12 +55095,11 @@ MonoBehaviour:
   - {fileID: 654353291}
   initialTireWears: []
   mode: 2
-  ExperimentName: E2E_vs_Fixed_RL_Complex
+  ExperimentName: E2E_vs_Fixed_RL_Complex2
   TotalExperiments: 50
   WallHitPenalty: -0.05
   OpponentHitPenalty: -2
   HitByOpponentPenalty: -2
-  PassCheckpointStateReward: 0.1
   PassCheckpointLaneReward: 4
   PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
@@ -55088,8 +55123,9 @@ MonoBehaviour:
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
-  disableOnEnd: 0
+  disableOnEnd: 1
   sectionHorizon: 5
+  highlightWaypoints: 0
 --- !u!4 &2058157680
 Transform:
   m_ObjectHideFlags: 0

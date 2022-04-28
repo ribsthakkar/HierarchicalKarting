@@ -138,21 +138,25 @@ namespace KartGame.AI
             var hitAgent = Physics.Raycast(AgentSensorTransform.position, Sensors[0].Transform.forward, out var hitAgentInfo,
                 0.8f, AgentMask, QueryTriggerInteraction.Ignore) |
                 Physics.Raycast(AgentSensorTransform.position, Sensors[1].Transform.forward, out var hitAgentInfo2,
-                0.8f, AgentMask, QueryTriggerInteraction.Ignore) |
+                0.9f, AgentMask, QueryTriggerInteraction.Ignore) |
                 Physics.Raycast(AgentSensorTransform.position, Sensors[5].Transform.forward, out var hitAgentInfo3,
-                0.8f, AgentMask, QueryTriggerInteraction.Ignore);
+                0.9f, AgentMask, QueryTriggerInteraction.Ignore);
 
+            //Debug.DrawRay(AgentSensorTransform.position,  0.9f*Sensors[0].Transform.forward, Color.green);
+            //Debug.DrawRay(AgentSensorTransform.position,  0.9f*Sensors[1].Transform.forward, Color.green);
+            //Debug.DrawRay(AgentSensorTransform.position,  0.9f*Sensors[5].Transform.forward, Color.green);
+            
             // Discretely Count collisions by check if consecutive hits to other agents are greater than 1.5 seconds apart
-            if (hitAgent && !forwardCollision && (lastCollisionTime == 0 || episodeSteps - lastCollisionTime > 75))
+            if (hitAgent && !forwardCollision && (lastCollisionTime == 0 || m_envController.episodeSteps - lastCollisionTime > 75))
             {
                 forwardCollision = true;
                 forwardCollisions += 1;
-                lastCollisionTime = episodeSteps;
+                lastCollisionTime = m_envController.episodeSteps;
             }
             else if (hitAgent)
             {
                 forwardCollision = true;
-                lastCollisionTime = episodeSteps;
+                lastCollisionTime = m_envController.episodeSteps;
             }
             else
             {
@@ -189,7 +193,7 @@ namespace KartGame.AI
                         var checkpoint = m_envController.Sections[m_SectionIndex % m_envController.Sections.Length].transform;
                         transform.localRotation = checkpoint.rotation;
                         transform.position = checkpoint.position;
-                        m_Kart.Rigidbody.velocity = default;
+                        m_Kart.Rigidbody.velocity = Vector3.zero;
                         m_Steering = 0f;
 				        m_Acceleration = m_Brake = false;
                         break;
@@ -301,9 +305,8 @@ namespace KartGame.AI
                     m_UpcomingLanes.Remove(index % m_envController.Sections.Length);
                     m_UpcomingVelocities.Remove(index % m_envController.Sections.Length);
                 }
-                if (name.Equals(m_envController.Agents[0].name))
-                    for(int i = 1; i <=4; i++)
-                        m_envController.Sections[index % m_envController.Sections.Length].getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
+                if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
+                    m_envController.Sections[index % m_envController.Sections.Length].resetColors();
                 if (m_LaneChanges + Math.Abs(m_Lane-lane) > m_envController.MaxLaneChanges && m_envController.sectionIsStraight(m_SectionIndex))
                 {
                     AddReward(m_envController.SwervingPenalty);
@@ -404,7 +407,8 @@ namespace KartGame.AI
             SetZeroInputs();
             m_Kart.Rigidbody.velocity = Vector3.zero;
             m_Kart.Rigidbody.angularVelocity = Vector3.zero;
-            m_Kart.Rigidbody.freezeRotation = true;
+            m_Kart.Rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            m_Kart.SetCanMove(false);
             if (disable)
                 gameObject.SetActive(false);
             gameObject.transform.localScale = Vector3.one*0.001f;
@@ -422,7 +426,12 @@ namespace KartGame.AI
             m_Kart.Rigidbody.freezeRotation = false;
             gameObject.SetActive(true);
             gameObject.transform.localScale = Vector3.one;
+            m_Kart.Rigidbody.velocity = Vector3.zero;
+            m_Kart.Rigidbody.angularVelocity = Vector3.zero;
+            // m_Kart.Rigidbody.WakeUp();
+            SetZeroInputs();
             is_active = true;
+            // m_Kart.SetCanMove(true);
         }
 
         /**
@@ -522,15 +531,6 @@ namespace KartGame.AI
         public override void OnEpisodeBegin()
         {
             base.OnEpisodeBegin();
-            switch (Mode)
-            {
-                case AgentMode.Training:
-                    m_Kart.Rigidbody.velocity = default;
-                    SetZeroInputs();
-                    break;
-                default:
-                    break;
-            }
         }
 
     }

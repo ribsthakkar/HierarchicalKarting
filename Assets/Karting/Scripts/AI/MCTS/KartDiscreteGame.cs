@@ -64,7 +64,7 @@ namespace KartGame.AI.MCTS
         * Time optimal control estimate to determine how long it would take to start at some initial velocity and reach a target velocity for a given distance
         * Return -1 if it is impossible to make such an action.
         **/
-        private float computeTOC(ArcadeKart kart, float distance, float initV, float finalV)
+        private float computeTOC(ArcadeKart kart, float distance, float radius, float tireWear, float initV, float finalV)
         {
             // Full acceleration or full braking does not have enough distance
             if (finalV > initV && (finalV * finalV - initV * initV) / (2 * kart.m_FinalStats.Acceleration) > distance)
@@ -79,24 +79,46 @@ namespace KartGame.AI.MCTS
             {
                 return -1.0f;
             }
-
-            float t1 = (kart.GetMaxSpeed() - initV) / kart.m_FinalStats.Acceleration;
-            float x1 = 0.5f * (initV + kart.GetMaxSpeed()) * t1;
-            float x3 = (kart.GetMaxSpeed() * kart.GetMaxSpeed() - finalV * finalV) / (2 * kart.m_FinalStats.Braking);
-            float t3 = (kart.GetMaxSpeed() - finalV) / kart.m_FinalStats.Braking;
-            float x2 = distance - x1 - x3;
-            float t2 = x2 / kart.GetMaxSpeed();
-            if (t2 > 0.001)
+            float maxSpeedForRadiusAndWear = kart.getMaxSpeedForRadiusAndWear(radius, tireWear);
+            float t1;
+            if (maxSpeedForRadiusAndWear >= initV)
             {
-                return t1 + t2 + t3;
+                t1 = (maxSpeedForRadiusAndWear - initV) / kart.m_FinalStats.Acceleration;
             }
             else
             {
-                float maxSpeed = Mathf.Sqrt((2 * distance + initV * initV * kart.m_FinalStats.Braking + finalV * finalV * kart.m_FinalStats.Acceleration) / (kart.m_FinalStats.Acceleration + kart.m_FinalStats.Braking));
+                t1 = (initV - maxSpeedForRadiusAndWear) / kart.m_FinalStats.Braking;
+            }
+            float t3;
+            if (maxSpeedForRadiusAndWear >= finalV)
+                t3 = (maxSpeedForRadiusAndWear - finalV) / kart.m_FinalStats.Braking;
+            else
+                t3 = (finalV - maxSpeedForRadiusAndWear) / kart.m_FinalStats.Acceleration;
+            float x1 = 0.5f * (initV + maxSpeedForRadiusAndWear) * t1;
+            float x3 = 0.5f * (finalV + maxSpeedForRadiusAndWear) * t3;
+            float x2 = distance - x1 - x3;
+            float t2 = x2 / maxSpeedForRadiusAndWear;
+            //Debug.Log("fv:" + finalV);
+            //Debug.Log("iv:" + initV);
+            //Debug.Log("d:" + distance);
+            //Debug.Log("x1:" + x1);
+            //Debug.Log("x3:" + x3);
+            if (t2 > 0.001)
+            {
+                //Debug.Log("t:" + (t1 + t2 + t3));
+                return t1 + t2 + t3;
+            }
+            else if (initV <= maxSpeedForRadiusAndWear)
+            {
+                // float maxSpeed = Mathf.Sqrt((2 * distance + initV * initV * kart.m_FinalStats.Braking + finalV * finalV * kart.m_FinalStats.Acceleration) / (kart.m_FinalStats.Acceleration + kart.m_FinalStats.Braking));
+                float maxSpeed = Mathf.Sqrt((2 * distance * -kart.m_FinalStats.Braking * kart.m_FinalStats.Acceleration + -kart.m_FinalStats.Braking*initV*initV - kart.m_FinalStats.Acceleration*finalV*finalV) / (-kart.m_FinalStats.Acceleration-kart.m_FinalStats.Braking));
                 t1 = (maxSpeed - initV) / kart.m_FinalStats.Acceleration;
                 t3 = (maxSpeed - finalV) / kart.m_FinalStats.Braking;
+
+                //Debug.Log(t1 + t2);
                 return t1 + t3;
             }
+            return -1.0f;
         }
 
         /**
@@ -128,7 +150,8 @@ namespace KartGame.AI.MCTS
 
             // Update timeAtSection estimate using 1D TOC
             float distanceInSection = environment.computeDistanceInSection(section, lane, action.lane);
-            int timeUpdate = (int)(computeTOC(kart, distanceInSection, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision);
+            float radiusOfSection = environment.computeAvgSectionRadius(section, lane, action.lane);
+            int timeUpdate = (int)(computeTOC(kart, distanceInSection, radiusOfSection, newState.tireAge/10000f, getAverageVelocity(), newState.getAverageVelocity()) * gameParams.timePrecision);
             if (timeUpdate < 0)
             {
                 // Debug.Log(timeUpdate);
@@ -328,14 +351,15 @@ namespace KartGame.AI.MCTS
 
                 return false;
                 }
+            float radius = envController.computeAvgSectionRadius(currentState.section, currentState.lane, action.lane);
 
             // Is lateral gs infeasible?
-            if (!envController.sectionSpeedFeasible(currentState.section, action.max_velocity, currentState.lane, action.lane, currentState.tireAge / 10000f, agent.m_Kart))
+            if (agent.m_Kart.getMaxSpeedForRadiusAndWear(radius, currentState.tireAge / 10000f) < action.min_velocity)
                 {
                 // Debug.Log("Tire age " + currentState.tireAge);
                 if (!envController.sectionIsStraight(currentState.section))
                     {
-                    // Debug.Log("Going on " + currentState.section + " from lane " + currentState.lane + " to " + action.lane + " at max velocity " + action.max_velocity + " with tire age " + currentState.tireAge/10000f + " is infeasible");
+                    // Debug.Log("Going on " + currentState.section + " from lane " + currentState.lane + " to " + action.lane + " at max velocity " + action.max_velocity + " with tire age " + currentState.tireAge/10000f + " is infeasible because feasible vel is " + agent.m_Kart.getMaxSpeedForRadiusAndWear(radius, currentState.tireAge / 10000f));
                 }
                     return false;
                 }

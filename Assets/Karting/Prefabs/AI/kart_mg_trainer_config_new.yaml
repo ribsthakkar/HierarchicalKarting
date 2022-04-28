@@ -248,7 +248,7 @@ behaviors:
       initial_elo: 400
     keep_checkpoints: 25
     checkpoint_interval: 500000
-    max_steps: 16000000
+    max_steps: 8000000
     time_horizon: 64
     summary_freq: 10000
     threaded: false
@@ -291,13 +291,13 @@ behaviors:
       initial_elo: 400
     keep_checkpoints: 25
     checkpoint_interval: 500000
-    max_steps: 16000000
+    max_steps: 8000000
     time_horizon: 64
     summary_freq: 10000
     threaded: false
-
+  
   FixedHierarchicalAgent-Team:
-    trainer_type: ppo
+    trainer_type: poca
     hyperparameters:
       batch_size: 512
       buffer_size: 10240
@@ -334,7 +334,7 @@ behaviors:
       initial_elo: 400
     keep_checkpoints: 25
     checkpoint_interval: 500000
-    max_steps: 16000000
+    max_steps: 8000000
     time_horizon: 64
-    summary_freq: 1000
+    summary_freq: 10000
     threaded: false

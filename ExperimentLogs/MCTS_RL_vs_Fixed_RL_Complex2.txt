@@ -1,0 +1,1150 @@
+Experiment 0
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.26
+MCTS-RL Best Lap: 32.6
+MCTS-RL Total Time: 103.1
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.514281
+MCTS-RL Avg Target Vel Difference: 2.196231
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.52
+Fixed-RL Best Lap: 34.72
+Fixed-RL Total Time: 106.06
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 3
+Fixed-RL Avg Target Lane Difference: 1.290572
+Fixed-RL Avg Target Vel Difference: -1.241619
+Winner: 
+
+Experiment 1
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.44
+MCTS-RL Best Lap: 32.96
+MCTS-RL Total Time: 102.14
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.368673
+MCTS-RL Avg Target Vel Difference: 2.64205
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.44
+Fixed-RL Best Lap: 34.3
+Fixed-RL Total Time: 105.6
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.245556
+Fixed-RL Avg Target Vel Difference: -1.255798
+Winner: 
+
+Experiment 2
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.42
+MCTS-RL Best Lap: 33.24
+MCTS-RL Total Time: 103.02
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.283678
+MCTS-RL Avg Target Vel Difference: 2.29734
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.72
+Fixed-RL Best Lap: 33.96
+Fixed-RL Total Time: 105.7
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.299675
+Fixed-RL Avg Target Vel Difference: -1.29492
+Winner: 
+
+Experiment 3
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.24
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 102.42
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.401891
+MCTS-RL Avg Target Vel Difference: 2.356169
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.6
+Fixed-RL Best Lap: 34.34
+Fixed-RL Total Time: 106.08
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.19442
+Fixed-RL Avg Target Vel Difference: -1.273362
+Winner: 
+
+Experiment 4
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.4
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 103.76
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 3
+MCTS-RL Avg Target Lane Difference: 1.364518
+MCTS-RL Avg Target Vel Difference: 2.221846
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.76
+Fixed-RL Best Lap: 34.84
+Fixed-RL Total Time: 106.4
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.312328
+Fixed-RL Avg Target Vel Difference: -1.318044
+Winner: 
+
+Experiment 5
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.12
+MCTS-RL Best Lap: 33.06
+MCTS-RL Total Time: 102.24
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.387494
+MCTS-RL Avg Target Vel Difference: 2.266232
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.5
+Fixed-RL Best Lap: 34.16
+Fixed-RL Total Time: 105.6
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.209009
+Fixed-RL Avg Target Vel Difference: -1.218883
+Winner: 
+
+Experiment 6
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.38
+MCTS-RL Best Lap: 33.42
+MCTS-RL Total Time: 103.4
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.522881
+MCTS-RL Avg Target Vel Difference: 2.626549
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.38
+Fixed-RL Best Lap: 34.54
+Fixed-RL Total Time: 105.94
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.318896
+Fixed-RL Avg Target Vel Difference: -1.235898
+Winner: 
+
+Experiment 7
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.46
+MCTS-RL Best Lap: 33.08
+MCTS-RL Total Time: 102.36
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.18369
+MCTS-RL Avg Target Vel Difference: 2.00296
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.92
+Fixed-RL Best Lap: 33.84
+Fixed-RL Total Time: 105.74
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.280308
+Fixed-RL Avg Target Vel Difference: -1.227063
+Winner: 
+
+Experiment 8
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.54
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 102.66
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.432962
+MCTS-RL Avg Target Vel Difference: 2.390893
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.48
+Fixed-RL Best Lap: 34.26
+Fixed-RL Total Time: 105.94
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.237783
+Fixed-RL Avg Target Vel Difference: -1.238613
+Winner: 
+
+Experiment 9
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.08
+MCTS-RL Best Lap: 33.22
+MCTS-RL Total Time: 102.1
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.317381
+MCTS-RL Avg Target Vel Difference: 2.296166
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.94
+Fixed-RL Best Lap: 34.46
+Fixed-RL Total Time: 106.28
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.226856
+Fixed-RL Avg Target Vel Difference: -1.25525
+Winner: 
+
+Experiment 10
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 33.96
+MCTS-RL Best Lap: 32.78
+MCTS-RL Total Time: 101.46
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.306146
+MCTS-RL Avg Target Vel Difference: 2.337734
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.56
+Fixed-RL Best Lap: 34.26
+Fixed-RL Total Time: 105.96
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.313719
+Fixed-RL Avg Target Vel Difference: -1.275186
+Winner: 
+
+Experiment 11
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.32
+MCTS-RL Best Lap: 33.54
+MCTS-RL Total Time: 102.88
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.245134
+MCTS-RL Avg Target Vel Difference: 2.20576
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 34
+Fixed-RL Total Time: 105.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.251811
+Fixed-RL Avg Target Vel Difference: -1.219071
+Winner: 
+
+Experiment 12
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.3
+MCTS-RL Best Lap: 33.62
+MCTS-RL Total Time: 103.42
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+MCTS-RL Avg Target Lane Difference: 1.367665
+MCTS-RL Avg Target Vel Difference: 2.323611
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.66
+Fixed-RL Best Lap: 34.34
+Fixed-RL Total Time: 105.96
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.352286
+Fixed-RL Avg Target Vel Difference: -1.340468
+Winner: 
+
+Experiment 13
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.24
+MCTS-RL Best Lap: 33.28
+MCTS-RL Total Time: 102.24
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.314133
+MCTS-RL Avg Target Vel Difference: 2.256481
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 34.18
+Fixed-RL Total Time: 105.86
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.216276
+Fixed-RL Avg Target Vel Difference: -1.29068
+Winner: 
+
+Experiment 14
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.28
+MCTS-RL Best Lap: 33.24
+MCTS-RL Total Time: 102.58
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.365508
+MCTS-RL Avg Target Vel Difference: 2.44973
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.62
+Fixed-RL Best Lap: 33.86
+Fixed-RL Total Time: 105.9
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.226721
+Fixed-RL Avg Target Vel Difference: -1.274874
+Winner: 
+
+Experiment 15
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.16
+MCTS-RL Best Lap: 33.5
+MCTS-RL Total Time: 102.36
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.262292
+MCTS-RL Avg Target Vel Difference: 2.27568
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.16
+Fixed-RL Best Lap: 34
+Fixed-RL Total Time: 105.12
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.196843
+Fixed-RL Avg Target Vel Difference: -1.212148
+Winner: 
+
+Experiment 16
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.04
+MCTS-RL Best Lap: 33.36
+MCTS-RL Total Time: 102.94
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 1
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.391901
+MCTS-RL Avg Target Vel Difference: 2.840902
+Fixed-RL Speed: 14.94235
+Fixed-RL Reward: 692.5897
+Fixed-RL Last Lap: 35.46
+Fixed-RL Best Lap: 34.38
+Fixed-RL Total Time: 105.72
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.325167
+Fixed-RL Avg Target Vel Difference: -1.233296
+Winner: 
+
+Experiment 17
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.64
+MCTS-RL Best Lap: 33.98
+MCTS-RL Total Time: 103.54
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.186084
+MCTS-RL Avg Target Vel Difference: 2.21076
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.28
+Fixed-RL Best Lap: 34.38
+Fixed-RL Total Time: 105.44
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.203642
+Fixed-RL Avg Target Vel Difference: -1.172397
+Winner: 
+
+Experiment 18
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.46
+MCTS-RL Best Lap: 33.08
+MCTS-RL Total Time: 102.68
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.287846
+MCTS-RL Avg Target Vel Difference: 2.255635
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.5
+Fixed-RL Best Lap: 34.2
+Fixed-RL Total Time: 105.84
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.22937
+Fixed-RL Avg Target Vel Difference: -1.28419
+Winner: 
+
+Experiment 19
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34
+MCTS-RL Best Lap: 33.28
+MCTS-RL Total Time: 102.04
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.241903
+MCTS-RL Avg Target Vel Difference: 2.23987
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.54
+Fixed-RL Best Lap: 33.9
+Fixed-RL Total Time: 105.12
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.194905
+Fixed-RL Avg Target Vel Difference: -1.25714
+Winner: 
+
+Experiment 20
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.2
+MCTS-RL Best Lap: 33.06
+MCTS-RL Total Time: 102.52
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.338507
+MCTS-RL Avg Target Vel Difference: 2.257642
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.08
+Fixed-RL Best Lap: 34
+Fixed-RL Total Time: 105.18
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.287617
+Fixed-RL Avg Target Vel Difference: -1.221627
+Winner: 
+
+Experiment 21
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.16
+MCTS-RL Best Lap: 33.38
+MCTS-RL Total Time: 102.74
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.124147
+MCTS-RL Avg Target Vel Difference: 2.638109
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.36
+Fixed-RL Best Lap: 34.24
+Fixed-RL Total Time: 105.54
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.250726
+Fixed-RL Avg Target Vel Difference: -1.226776
+Winner: 
+
+Experiment 22
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.42
+MCTS-RL Best Lap: 33.3
+MCTS-RL Total Time: 102.68
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 1
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.309886
+MCTS-RL Avg Target Vel Difference: 2.351514
+Fixed-RL Speed: 14.99791
+Fixed-RL Reward: 265.234
+Fixed-RL Last Lap: 35.28
+Fixed-RL Best Lap: 34.28
+Fixed-RL Total Time: 105.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 3
+Fixed-RL Avg Target Lane Difference: 1.304258
+Fixed-RL Avg Target Vel Difference: -1.363306
+Winner: 
+
+Experiment 23
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.08
+MCTS-RL Best Lap: 33.56
+MCTS-RL Total Time: 102.48
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.359575
+MCTS-RL Avg Target Vel Difference: 2.611781
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 34.2
+Fixed-RL Total Time: 105.36
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.175482
+Fixed-RL Avg Target Vel Difference: -1.326143
+Winner: 
+
+Experiment 24
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.2
+MCTS-RL Best Lap: 33.72
+MCTS-RL Total Time: 102.52
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.238593
+MCTS-RL Avg Target Vel Difference: 2.373417
+Fixed-RL Speed: 14.99339
+Fixed-RL Reward: 458.1277
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 34.28
+Fixed-RL Total Time: 105.82
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.31527
+Fixed-RL Avg Target Vel Difference: -1.236671
+Winner: 
+
+Experiment 25
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.4
+MCTS-RL Best Lap: 32.66
+MCTS-RL Total Time: 101.58
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.265167
+MCTS-RL Avg Target Vel Difference: 2.561876
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.72
+Fixed-RL Best Lap: 33.86
+Fixed-RL Total Time: 105.58
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.285901
+Fixed-RL Avg Target Vel Difference: -1.184115
+Winner: 
+
+Experiment 26
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.54
+MCTS-RL Best Lap: 33.14
+MCTS-RL Total Time: 103.1
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.339651
+MCTS-RL Avg Target Vel Difference: 2.235459
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 34.52
+Fixed-RL Total Time: 106.06
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.272608
+Fixed-RL Avg Target Vel Difference: -1.398761
+Winner: 
+
+Experiment 27
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.42
+MCTS-RL Best Lap: 33.14
+MCTS-RL Total Time: 102.18
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.453057
+MCTS-RL Avg Target Vel Difference: 2.26163
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.38
+Fixed-RL Best Lap: 34.26
+Fixed-RL Total Time: 105.72
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.200804
+Fixed-RL Avg Target Vel Difference: -1.330029
+Winner: 
+
+Experiment 28
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.26
+MCTS-RL Best Lap: 33.56
+MCTS-RL Total Time: 102.92
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.274152
+MCTS-RL Avg Target Vel Difference: 2.300288
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.54
+Fixed-RL Best Lap: 34.12
+Fixed-RL Total Time: 105.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.288246
+Fixed-RL Avg Target Vel Difference: -1.279657
+Winner: 
+
+Experiment 29
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 33.96
+MCTS-RL Best Lap: 32.94
+MCTS-RL Total Time: 101.82
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 2
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.386979
+MCTS-RL Avg Target Vel Difference: 2.542073
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.3
+Fixed-RL Best Lap: 33.96
+Fixed-RL Total Time: 105.36
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.214154
+Fixed-RL Avg Target Vel Difference: -1.247686
+Winner: 
+
+Experiment 30
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.32
+MCTS-RL Best Lap: 33.32
+MCTS-RL Total Time: 103.4
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+MCTS-RL Avg Target Lane Difference: 1.468199
+MCTS-RL Avg Target Vel Difference: 2.195285
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.74
+Fixed-RL Best Lap: 34.14
+Fixed-RL Total Time: 105.66
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.206317
+Fixed-RL Avg Target Vel Difference: -1.352614
+Winner: 
+
+Experiment 31
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.48
+MCTS-RL Best Lap: 33.36
+MCTS-RL Total Time: 102.84
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.342967
+MCTS-RL Avg Target Vel Difference: 2.560582
+Fixed-RL Speed: 14.89732
+Fixed-RL Reward: 1093.326
+Fixed-RL Last Lap: 35.76
+Fixed-RL Best Lap: 33.94
+Fixed-RL Total Time: 105.94
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.319293
+Fixed-RL Avg Target Vel Difference: -1.266686
+Winner: 
+
+Experiment 32
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.16
+MCTS-RL Best Lap: 32.84
+MCTS-RL Total Time: 102.62
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.383256
+MCTS-RL Avg Target Vel Difference: 2.400861
+Fixed-RL Speed: 14.89797
+Fixed-RL Reward: 747.4023
+Fixed-RL Last Lap: 35.16
+Fixed-RL Best Lap: 34.18
+Fixed-RL Total Time: 105.06
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 3
+Fixed-RL Avg Target Lane Difference: 1.342884
+Fixed-RL Avg Target Vel Difference: -1.171789
+Winner: 
+
+Experiment 33
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.02
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 102.34
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.369545
+MCTS-RL Avg Target Vel Difference: 2.365898
+Fixed-RL Speed: 14.9655
+Fixed-RL Reward: 1250.539
+Fixed-RL Last Lap: 35.88
+Fixed-RL Best Lap: 34.16
+Fixed-RL Total Time: 106.02
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.23682
+Fixed-RL Avg Target Vel Difference: -1.299887
+Winner: 
+
+Experiment 34
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.36
+MCTS-RL Best Lap: 33.32
+MCTS-RL Total Time: 103.02
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.313163
+MCTS-RL Avg Target Vel Difference: 2.290142
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 34.98
+Fixed-RL Best Lap: 34.08
+Fixed-RL Total Time: 105.6
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.260677
+Fixed-RL Avg Target Vel Difference: -1.24227
+Winner: 
+
+Experiment 35
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.34
+MCTS-RL Best Lap: 33.32
+MCTS-RL Total Time: 102.6
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.326991
+MCTS-RL Avg Target Vel Difference: 2.532289
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.46
+Fixed-RL Best Lap: 34.42
+Fixed-RL Total Time: 105.92
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.218857
+Fixed-RL Avg Target Vel Difference: -1.20249
+Winner: 
+
+Experiment 36
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 33.7
+MCTS-RL Best Lap: 33.34
+MCTS-RL Total Time: 103.78
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+MCTS-RL Avg Target Lane Difference: 1.263445
+MCTS-RL Avg Target Vel Difference: 2.413769
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 36
+Fixed-RL Best Lap: 33.98
+Fixed-RL Total Time: 105.74
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.225296
+Fixed-RL Avg Target Vel Difference: -1.247996
+Winner: 
+
+Experiment 37
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 33.84
+MCTS-RL Best Lap: 32.7
+MCTS-RL Total Time: 102.02
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.45696
+MCTS-RL Avg Target Vel Difference: 2.316725
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.44
+Fixed-RL Best Lap: 34.02
+Fixed-RL Total Time: 105.2
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.180566
+Fixed-RL Avg Target Vel Difference: -1.250937
+Winner: 
+
+Experiment 38
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.64
+MCTS-RL Best Lap: 33.54
+MCTS-RL Total Time: 103.06
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.357834
+MCTS-RL Avg Target Vel Difference: 2.426795
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.42
+Fixed-RL Best Lap: 34.08
+Fixed-RL Total Time: 105.5
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.282744
+Fixed-RL Avg Target Vel Difference: -1.262403
+Winner: 
+
+Experiment 39
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.36
+MCTS-RL Best Lap: 33.08
+MCTS-RL Total Time: 102.6
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.291954
+MCTS-RL Avg Target Vel Difference: 2.287405
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.56
+Fixed-RL Best Lap: 34.6
+Fixed-RL Total Time: 106.58
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.243893
+Fixed-RL Avg Target Vel Difference: -1.274539
+Winner: 
+
+Experiment 40
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.9
+MCTS-RL Best Lap: 33.38
+MCTS-RL Total Time: 106.06
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 2
+MCTS-RL Avg Target Lane Difference: 1.4164
+MCTS-RL Avg Target Vel Difference: 2.274445
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.64
+Fixed-RL Best Lap: 34.88
+Fixed-RL Total Time: 107.94
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 4
+Fixed-RL Avg Target Lane Difference: 1.296428
+Fixed-RL Avg Target Vel Difference: -1.429046
+Winner: 
+
+Experiment 41
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.1
+MCTS-RL Best Lap: 32.94
+MCTS-RL Total Time: 101.94
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 1
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.297069
+MCTS-RL Avg Target Vel Difference: 2.315835
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.34
+Fixed-RL Best Lap: 34.5
+Fixed-RL Total Time: 105.78
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.223051
+Fixed-RL Avg Target Vel Difference: -1.256955
+Winner: 
+
+Experiment 42
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.28
+MCTS-RL Best Lap: 33.06
+MCTS-RL Total Time: 102.6
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.38512
+MCTS-RL Avg Target Vel Difference: 2.44556
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.2
+Fixed-RL Best Lap: 34.32
+Fixed-RL Total Time: 106.12
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.244877
+Fixed-RL Avg Target Vel Difference: -1.302816
+Winner: 
+
+Experiment 43
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.48
+MCTS-RL Best Lap: 33.68
+MCTS-RL Total Time: 102.78
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.373186
+MCTS-RL Avg Target Vel Difference: 2.353514
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.52
+Fixed-RL Best Lap: 34.52
+Fixed-RL Total Time: 105.86
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.161118
+Fixed-RL Avg Target Vel Difference: -1.194546
+Winner: 
+
+Experiment 44
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.3
+MCTS-RL Best Lap: 33.44
+MCTS-RL Total Time: 103
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 1
+MCTS-RL Avg Target Lane Difference: 1.567641
+MCTS-RL Avg Target Vel Difference: 2.567526
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.92
+Fixed-RL Best Lap: 34.36
+Fixed-RL Total Time: 106.16
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 1
+Fixed-RL Avg Target Lane Difference: 1.23426
+Fixed-RL Avg Target Vel Difference: -1.313774
+Winner: 
+
+Experiment 45
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.4
+MCTS-RL Best Lap: 33.24
+MCTS-RL Total Time: 102.42
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.328761
+MCTS-RL Avg Target Vel Difference: 2.063463
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.4
+Fixed-RL Best Lap: 34.1
+Fixed-RL Total Time: 105.5
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.218479
+Fixed-RL Avg Target Vel Difference: -1.1964
+Winner: 
+
+Experiment 46
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.46
+MCTS-RL Best Lap: 33.3
+MCTS-RL Total Time: 102.5
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.353561
+MCTS-RL Avg Target Vel Difference: 2.347343
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 36.46
+Fixed-RL Best Lap: 34
+Fixed-RL Total Time: 106.64
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 4
+Fixed-RL Avg Target Lane Difference: 1.258399
+Fixed-RL Avg Target Vel Difference: -1.368223
+Winner: 
+
+Experiment 47
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.5
+MCTS-RL Best Lap: 33
+MCTS-RL Total Time: 102.52
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.350481
+MCTS-RL Avg Target Vel Difference: 2.445104
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.8
+Fixed-RL Best Lap: 34.22
+Fixed-RL Total Time: 106.2
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.196195
+Fixed-RL Avg Target Vel Difference: -1.281107
+Winner: 
+
+Experiment 48
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.42
+MCTS-RL Best Lap: 33.54
+MCTS-RL Total Time: 103.18
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.23997
+MCTS-RL Avg Target Vel Difference: 2.298394
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.06
+Fixed-RL Best Lap: 34.38
+Fixed-RL Total Time: 105.42
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 2
+Fixed-RL Avg Target Lane Difference: 1.245811
+Fixed-RL Avg Target Vel Difference: -1.252862
+Winner: 
+
+Experiment 49
+MCTS-RL Speed: 0
+MCTS-RL Reward: 0
+MCTS-RL Last Lap: 34.62
+MCTS-RL Best Lap: 33.26
+MCTS-RL Total Time: 103.18
+MCTS-RL Laps Completed: 3/3
+MCTS-RL Illegal Lane Changes: 0
+MCTS-RL Collisions: 0
+MCTS-RL Avg Target Lane Difference: 1.315811
+MCTS-RL Avg Target Vel Difference: 2.296297
+Fixed-RL Speed: 0
+Fixed-RL Reward: 0
+Fixed-RL Last Lap: 35.6
+Fixed-RL Best Lap: 34.02
+Fixed-RL Total Time: 105.58
+Fixed-RL Laps Completed: 3/3
+Fixed-RL Illegal Lane Changes: 0
+Fixed-RL Collisions: 0
+Fixed-RL Avg Target Lane Difference: 1.250135
+Fixed-RL Avg Target Vel Difference: -1.18035
+Winner: 
+

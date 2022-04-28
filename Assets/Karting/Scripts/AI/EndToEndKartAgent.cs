@@ -71,7 +71,7 @@ namespace KartGame.AI
                         m_UpcomingLanes[kartState.section % m_envController.Sections.Length] = kartState.lane;
                         m_UpcomingVelocities[kartState.section % m_envController.Sections.Length] = kartState.max_velocity;
 
-                        if (name.Equals(m_envController.Agents[0].name))
+                        if (name.Equals(m_envController.Agents[0].name) && m_envController.highlightWaypoints)
                         {
                             m_envController.Sections[kartState.section % m_envController.Sections.Length].getBoxColliderForLane(kartState.lane).GetComponent<Renderer>().material.color = Color.green;
                             //print(kartState.name + " Will reach Section " + kartState.section + " at time " + kartState.timeAtSection + " in lane " + kartState.lane + " with velocity " + kartState.getAverageVelocity());
@@ -244,7 +244,7 @@ namespace KartGame.AI
              * 8 -> Current Player's state
              * 12 -> Other player states
              **/
-            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + (name.Equals("E2E")? 7: 8) + (12 * (teamAgents.Length + otherAgents.Length));
+            brainParameters.VectorObservationSize = Sensors.Length + (sectionHorizon * 5) + (8) + (12 * (teamAgents.Length + otherAgents.Length));
 
             // construct game params struct for quasi MCTS running
             gameParams = new DiscreteGameParams
@@ -282,7 +282,7 @@ namespace KartGame.AI
             sensor.AddObservation(m_Acceleration);
             sensor.AddObservation(m_Lane);
             sensor.AddObservation(m_LaneChanges * 1f / m_envController.MaxLaneChanges);
-            if (!name.Equals("E2E")) sensor.AddObservation(is_active);
+            sensor.AddObservation(is_active);
             sensor.AddObservation(m_envController.sectionIsStraight(m_SectionIndex));
             sensor.AddObservation(m_Kart.TireWearProportion());
             sensor.AddObservation(m_SectionIndex * 1f / m_envController.goalSection);
@@ -356,7 +356,7 @@ namespace KartGame.AI
 
                 if (hitTrack && (!hitAgent || hitTrackInfo.distance < hitAgentInfo.distance))
                 {
-                    if (hitTrackInfo.distance < 0.85f)
+                    if (hitTrackInfo.distance < current.WallHitValidationDistance)
                     {
                         m_envController.ResolveEvent(Event.HitWall, this, null);
                     }
@@ -364,7 +364,7 @@ namespace KartGame.AI
                 }
                 else if (hitAgent)
                 {
-                    if (hitAgentInfo.distance < 1.5f)
+                    if (hitAgentInfo.distance < current.AgentHitValidationDistance)
                     {
                         m_LastAccumulatedReward += m_envController.OpponentHitPenalty;
                         hitAgents.Add(m_envController.AgentBodies[hitAgentInfo.collider.attachedRigidbody]);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45078796, g: 0.29568976, b: 0.42685202, a: 1}
+  m_IndirectSpecularColor: {r: 0.4515345, g: 0.29632834, b: 0.4279434, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7343,6 +7343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Teams:
+  - Racers:
+    - {fileID: 1571517777}
+  - Racers:
+    - {fileID: 4693463}
   Agents:
   - {fileID: 1571517777}
   - {fileID: 4693463}
@@ -7379,9 +7384,15 @@ MonoBehaviour:
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -4.5
   PassCheckpointStateReward: 2
+  PassCheckpointLaneReward: 4
+  PassCheckpointVelocityReward: 4
   PassCheckpointBase: 5
   PassCheckpointTimeMultiplier: 20
-  BeingBehindCheckpoingPenalty: -0.005
+  TeamPassCheckpointBase: 20
+  TeamPassCheckpointTimeMultiplier: 5
+  BeingBehindOpponentCheckpointPenalty: -0.06
+  BeingBehindTeammateCheckpointPenalty: -0.02
+  TeamScoreRewardMultiplier: 0.75
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
@@ -7390,11 +7401,13 @@ MonoBehaviour:
   SpeedReward: 2.5
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
+  NotAtGoalPenalty: -0.001
   MaxLaneChanges: 3
   laps: 4
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 6000
+  disableOnEnd: 1
   sectionHorizon: 5
 --- !u!4 &1132641210
 Transform:
@@ -10146,6 +10159,7 @@ MonoBehaviour:
     RayDistance: 20
     WallHitValidationDistance: 0.6
     AgentHitValidationDistance: 1.5
+  teamAgents: []
   otherAgents:
   - {fileID: 4693463}
   CheckpointMask:
@@ -10171,13 +10185,20 @@ MonoBehaviour:
   m_SectionIndex: 0
   m_Lane: 0
   m_LaneChanges: 0
+  m_IllegalLaneChanges: 0
   anyHit: 0
   m_timeSteps: 0
   LaneDifferenceRewardDivider: 1
   VelocityDifferenceRewardDivider: 1
+  AverageVelDifference: 0
+  AverageLaneDifference: 0
   m_HitOccured: 0
   m_LastAccumulatedReward: 0
   is_active: 1
+  forwardCollision: 0
+  forwardCollisions: 0
+  lastCollisionTime: 0
+  runQuasiMCTS: 0
 --- !u!65 &1909490561 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 7377882282695432928, guid: 941fac9249b6442cdb2d3f23472128e2,
@@ -10445,6 +10466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83c52cfa72e3b04aaada8bc4075b0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Teams: []
   Agents:
   - {fileID: 79360867}
   - {fileID: 21112879}
@@ -10481,9 +10503,15 @@ MonoBehaviour:
   OpponentHitPenalty: -4.5
   HitByOpponentPenalty: -3.5
   PassCheckpointStateReward: 5
+  PassCheckpointLaneReward: 4
+  PassCheckpointVelocityReward: 4
   PassCheckpointBase: 2
   PassCheckpointTimeMultiplier: 20
-  BeingBehindCheckpoingPenalty: -0.005
+  TeamPassCheckpointBase: 20
+  TeamPassCheckpointTimeMultiplier: 5
+  BeingBehindOpponentCheckpointPenalty: -0.06
+  BeingBehindTeammateCheckpointPenalty: -0.02
+  TeamScoreRewardMultiplier: 0.75
   ReversePenalty: -10
   SwervingPenalty: -15
   ReachGoalCheckpointRewardMultplier: 100
@@ -10492,11 +10520,13 @@ MonoBehaviour:
   SpeedReward: 1
   SlowMovingPenalty: 0
   AccelerationReward: 0.002
+  NotAtGoalPenalty: -0.001
   MaxLaneChanges: 4
   laps: 1
   goalSection: 0
   episodeSteps: 0
   maxEpisodeSteps: 1500
+  disableOnEnd: 0
   sectionHorizon: 8
 --- !u!4 &1999774420
 Transform:

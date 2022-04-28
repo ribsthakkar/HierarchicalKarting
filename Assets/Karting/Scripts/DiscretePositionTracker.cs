@@ -38,12 +38,17 @@ public class DiscretePositionTracker : MonoBehaviour
     public bool leftTurn;
     public float turnDegrees;
     public int optimalLane;
+    public List<HashSet<string>> colorMaps = new List<HashSet<string>>();
 
     List<float> radiuses = new List<float>();
     [HideInInspector] public List<Vector2> finePoints = new List<Vector2>();
 
     void Awake()
     {
+        for (int i = 0; i < 4; i++)
+        {
+            colorMaps.Add(new HashSet<string>());
+        }
         if (isStraight())
         {
             for (int i = 0; i < 10; i++)
@@ -147,6 +152,8 @@ public class DiscretePositionTracker : MonoBehaviour
     **/
     public float radiusOfLane(int initLane, int finalLane)
     {
+        if (isStraight())
+            return 0;
         return (radiuses[initLane - 1] + radiuses[finalLane - 1]) / 2.0f;
     }
 
@@ -215,7 +222,10 @@ public class DiscretePositionTracker : MonoBehaviour
     public void resetColors()
     {
         for (int i = 1; i <= 4; i++)
+        {
+            colorMaps[i - 1].Clear();
             getBoxColliderForLane(i).GetComponent<Renderer>().material.color = Color.magenta;
+        }
     }
 
     /**
@@ -240,5 +250,25 @@ public class DiscretePositionTracker : MonoBehaviour
     public int getOptimalNextLane()
     {
         return optimalLane;
+    }
+
+    public void resetColorForAgent(string name)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (colorMaps[i].Contains(name))
+            {
+                colorMaps[i].Remove(name);
+                if (colorMaps[i].Count == 0)
+                    getBoxColliderForLane(i+1).GetComponent<Renderer>().material.color = Color.magenta;
+                break;
+            }
+        }
+    }
+
+    public void setColorForAgent(string name, int lane, Color color)
+    {
+        colorMaps[lane - 1].Add(name);
+        getBoxColliderForLane(lane).GetComponent<Renderer>().material.color = color;
     }
 }

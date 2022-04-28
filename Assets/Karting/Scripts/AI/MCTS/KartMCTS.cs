@@ -257,10 +257,16 @@ namespace KartGame.AI.MCTS
                 //var nextActions = state.nextMoves().OrderBy((action) => optimalLaneSign * action.lane).ThenByDescending((action) => action.max_velocity).ToList();
                 // UnityEngine.Debug.Log(nextActions[0].max_velocity);
                 // int index = random.Next(nextActions.Count);
+                //String s = "action order: ";
+                //foreach (DiscreteKartAction a in nextActions)
+                //{
+                //    s += a.max_velocity + " " + (state.makeMove(a).kartStates[nextPlayer].timeAtSection - state.kartStates[nextPlayer].timeAtSection) + ",";
+                //}
+                //UnityEngine.Debug.Log(s);
                 if (nextActions.Count > 2)
                     index = Mathf.RoundToInt(Mathf.Abs(NextGaussian(0, nextActions.Count / 6f, -(float)nextActions.Count + 1f, (float)nextActions.Count - 1f)));
                 else
-                    index = 0;
+                    index = random.Next(nextActions.Count);
                 DiscreteKartAction move = nextActions[index];
                 if (!leaf.children.ContainsKey(move))
                 {
