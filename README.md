@@ -115,7 +115,7 @@ parameters
 #### Master's Report
 Expanded discussion of the two papers below and a detailed study of the
 High-Level planner model are part of my complete Master's Report
-[here](./THAKKAR_MASTERSREPORT-2022.pdf)
+[here](./THAKKAR-MASTERSREPORT-2022.pdf)
 
 #### Papers
 Head to head racing paper on arXiv [here](https://arxiv.org/abs/2202.12861) 
