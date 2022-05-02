@@ -1,0 +1,8 @@
+<<p0>>R{"time_diff0"}max=? [ ((!"crash") U ("end")) ]
+
+<<p1>>R{"time_diff0"}min=? [ ((!"crash") U ("end")) ]
+
+<<p1>>R{"time_diff1"}max=? [ ((!"crash") U ("end")) ]
+
+<<p0>>R{"time_diff1"}min=? [ ((!"crash") U ("end")) ]
+
