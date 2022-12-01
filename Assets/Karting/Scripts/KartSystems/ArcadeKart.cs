@@ -362,6 +362,12 @@ namespace KartGame.KartSystems
 
         void MoveVehicle(bool accelerate, bool brake, float turnInput)
         {
+            // turnInput assumes it is equiavalent v*tan(steering angle) to model kinematic bicycle model physics with no slippage. yaw_dot = v*tan(steering_angle)/L
+            // v is current velocity of vehicle and steering angle is desired steering angle and L is length of kart.
+            // the RL-based agents learn how to incorporate this when producing the turn input commands
+            // the LQNG-based agents compute the turnInput from the yaw rate output by the solver (yaw_dot) and apply the inverse of the equation
+            // more details on the kinematic bicycle model are here: Vehicle Dynamics and Control by Rajesh Rajamani
+            
             // print("actual moving Accelerate " + accelerate + " Brake: " + brake + " turning input: " + turnInput);
 
             float accelInput = (accelerate ? 1.0f : 0.0f) - (brake ? 1.0f : 0.0f);
