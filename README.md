@@ -145,24 +145,10 @@ racing extension/paper.
 
 ## Cite Head-to-head racing paper
 ```
-@misc{thakkar2022hierarchical,
-      title={Hierarchical Control for Multi-Agent Autonomous Racing}, 
-      author={Rishabh Saumil Thakkar and Aryaman Singh Samyal and David Fridovich-Keil and Zhe Xu and Ufuk Topcu},
-      year={2022},
-      eprint={2202.12861},
-      archivePrefix={arXiv},
-      primaryClass={cs.MA}
-}
+@article{Thakkar_2024, title={Hierarchical Control for Head-to-Head Autonomous Racing}, volume={4}, ISSN={2771-3989}, url={http://dx.doi.org/10.55417/fr.2024002}, DOI={10.55417/fr.2024002}, number={1}, journal={Field Robotics}, publisher={Field Robotics Publication Society}, author={Thakkar, Rishabh and Samyal, Aryaman and Fridovich-Keil, David and Xu, Zhe and Topcu, Ufuk}, year={2024}, month=jan, pages={46–69} }
 ```
 ## Cite Team-based racing paper
 ```
-@misc{thakkar2022hierarchical,
-      title={Hierarchical Control for Cooperative Teams in Competitive Autonomous Racing}, 
-      author={Rishabh Saumil Thakkar and Aryaman Singh Samyal and David Fridovich-Keil and Zhe Xu and Ufuk Topcu},
-      year={2022},
-      eprint={2204.13070},
-      archivePrefix={arXiv},
-      primaryClass={cs.MA}
-}
+@article{10423812, author={Thakkar, Rishabh Saumil and Samyal, Aryaman Singh and Fridovich-Keil, David and Xu, Zhe and Topcu, Ufuk}, journal={IEEE Transactions on Intelligent Vehicles}, title={Hierarchical Control for Cooperative Teams in Competitive Autonomous Racing}, year={2024}, volume={}, number={}, pages={1-17}, keywords={Safety;Games;Trajectory;Real-time systems;Planning;Vehicle dynamics;Reinforcement learning;multi-agent systems;reinforcement learning;hierarchical control;game theory;Monte Carlo methods}, doi={10.1109/TIV.2024.3363177}}
 ```
 
